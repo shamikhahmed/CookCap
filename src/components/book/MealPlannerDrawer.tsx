@@ -1,18 +1,16 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { AnimatePresence, motion } from 'motion/react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { getMeta, putMeta, addIngredientsToShopping } from '@/lib/db/store';
 import { useApp } from '@/components/app/AppStore';
 import { useBook } from '@/components/book/BookController';
 import { Icon } from '@/components/ui/Icon';
+import { motionReduce, useDialogA11y } from '@/lib/a11y/dialog';
 
 const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as const;
 type Day = (typeof DAYS)[number];
 type Plan = Partial<Record<Day, string>>;
-
-const FOCUSABLE =
-  'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
 /** Simple week meal plan — IndexedDB meta. Generates shopping from assigned days. */
 export function MealPlannerDrawer({
@@ -26,34 +24,33 @@ export function MealPlannerDrawer({
 }) {
   const { allRecipes, recipeMap, refreshShoppingCount } = useApp();
   const { goToRecipe } = useBook();
+  const reduce = useReducedMotion();
   const [plan, setPlan] = useState<Plan>({});
   const [picking, setPicking] = useState<Day | null>(null);
   const [q, setQ] = useState('');
   const panelRef = useRef<HTMLElement>(null);
+  const pickingRef = useRef(picking);
+  pickingRef.current = picking;
 
   useEffect(() => {
-    if (!open) return;
+    if (!open) {
+      setPicking(null);
+      setQ('');
+      return;
+    }
     void getMeta<Plan>('meal-plan').then((p) => setPlan(p ?? {}));
   }, [open]);
 
-  useEffect(() => {
-    if (!open) return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        if (picking) setPicking(null);
-        else onClose();
-      }
-    };
-    window.addEventListener('keydown', onKey);
-    requestAnimationFrame(() => panelRef.current?.querySelector<HTMLElement>(FOCUSABLE)?.focus());
-    return () => {
-      window.removeEventListener('keydown', onKey);
-      document.body.style.overflow = prev;
-    };
-  }, [open, onClose, picking]);
+  const closeHandler = useCallback(() => {
+    if (pickingRef.current) {
+      setPicking(null);
+      setQ('');
+      return;
+    }
+    onClose();
+  }, [onClose]);
+
+  useDialogA11y(open, closeHandler, panelRef);
 
   const save = async (next: Plan) => {
     setPlan(next);
@@ -91,6 +88,8 @@ export function MealPlannerDrawer({
     onShop();
   };
 
+  const assignedCount = DAYS.filter((d) => plan[d]).length;
+
   const matches = allRecipes
     .filter((r) => r.chapter !== 'tips')
     .filter((r) => {
@@ -107,6 +106,7 @@ export function MealPlannerDrawer({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          transition={motionReduce(reduce)}
           className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
           onClick={onClose}
         >
@@ -115,16 +115,19 @@ export function MealPlannerDrawer({
             initial={{ y: '100%' }}
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
-            transition={{ type: 'spring', stiffness: 320, damping: 34 }}
+            transition={motionReduce(reduce)}
             onClick={(e) => e.stopPropagation()}
             className="absolute bottom-0 left-0 right-0 mx-auto flex max-h-[88dvh] w-full max-w-lg flex-col rounded-t-2xl bg-[color:var(--color-paper-raised)] shadow-[var(--shadow-lg)] sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 sm:rounded-2xl"
             role="dialog"
             aria-modal="true"
-            aria-label="Meal planner"
+            aria-labelledby="meal-planner-title"
           >
             <header className="flex items-center justify-between border-b border-[color:var(--color-line)] px-5 py-4">
               <div>
-                <h2 className="font-serif text-2xl font-semibold text-[color:var(--color-ink)]">
+                <h2
+                  id="meal-planner-title"
+                  className="font-serif text-2xl font-semibold text-[color:var(--color-ink)]"
+                >
                   This week
                 </h2>
                 <p className="text-xs text-[color:var(--color-ink-faint)]">
@@ -137,6 +140,12 @@ export function MealPlannerDrawer({
             </header>
 
             <div className="min-h-0 flex-1 space-y-2 overflow-y-auto px-5 py-4">
+              {assignedCount === 0 && !picking && (
+                <p className="rounded-lg bg-[color:var(--color-paper-sunk)] p-3 text-sm text-[color:var(--color-ink-faint)]">
+                  No days assigned yet — tap Pick on a day to plan the week.
+                </p>
+              )}
+
               {DAYS.map((day) => {
                 const id = plan[day];
                 const r = id ? recipeMap[id] : undefined;
@@ -196,17 +205,23 @@ export function MealPlannerDrawer({
                     autoFocus
                   />
                   <ul className="max-h-48 space-y-1 overflow-y-auto">
-                    {matches.map((r) => (
-                      <li key={r.id}>
-                        <button
-                          type="button"
-                          className="w-full rounded-lg px-2 py-2 text-left text-sm hover:bg-[color:var(--color-paper-raised)]"
-                          onClick={() => void assign(picking, r.id)}
-                        >
-                          {r.title}
-                        </button>
+                    {matches.length === 0 ? (
+                      <li className="px-2 py-3 text-center text-sm text-[color:var(--color-ink-faint)]">
+                        No recipes match
                       </li>
-                    ))}
+                    ) : (
+                      matches.map((r) => (
+                        <li key={r.id}>
+                          <button
+                            type="button"
+                            className="w-full rounded-lg px-2 py-2 text-left text-sm hover:bg-[color:var(--color-paper-raised)]"
+                            onClick={() => void assign(picking, r.id)}
+                          >
+                            {r.title}
+                          </button>
+                        </li>
+                      ))
+                    )}
                   </ul>
                 </div>
               )}

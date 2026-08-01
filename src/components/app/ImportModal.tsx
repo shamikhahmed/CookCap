@@ -1,13 +1,14 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { AnimatePresence, motion } from 'motion/react';
+import { useCallback, useMemo, useRef, useState } from 'react';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { parseWhatsAppRecipe } from '@/lib/import/whatsapp';
 import type { ChapterId, Recipe } from '@/lib/recipes/types';
 import { CHAPTERS } from '@/lib/recipes/chapters';
 import { useApp } from '@/components/app/AppStore';
 import { useBook } from '@/components/book/BookController';
 import { Icon } from '@/components/ui/Icon';
+import { motionReduce, useDialogA11y } from '@/lib/a11y/dialog';
 
 const PLACEHOLDER = `Aloo Gobi
 
@@ -27,44 +28,23 @@ const FOOD_CHAPTERS = CHAPTERS.filter(
   (c) => c.id !== 'favorites' && c.id !== 'tips',
 );
 
-const FOCUSABLE =
-  'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-
 /** Paste a WhatsApp-forwarded recipe → preview → save into the book. */
 export function ImportModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const { addCustom } = useApp();
   const { goToRecipe } = useBook();
+  const reduce = useReducedMotion();
   const [raw, setRaw] = useState('');
   const [chapter, setChapter] = useState<ChapterId>('meals');
   const [preview, setPreview] = useState<Recipe | null>(null);
   const [saving, setSaving] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
 
-  const close = () => {
+  const close = useCallback(() => {
     setPreview(null);
     onClose();
-  };
+  }, [onClose]);
 
-  useEffect(() => {
-    if (!open) return;
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        setPreview(null);
-        onClose();
-      }
-    };
-    window.addEventListener('keydown', onKey);
-    requestAnimationFrame(() => {
-      panelRef.current?.querySelector<HTMLElement>(FOCUSABLE)?.focus();
-    });
-    return () => {
-      window.removeEventListener('keydown', onKey);
-      document.body.style.overflow = prevOverflow;
-    };
-  }, [open, onClose]);
+  useDialogA11y(open, close, panelRef);
 
   const counts = useMemo(() => {
     if (!preview) return null;
@@ -99,6 +79,7 @@ export function ImportModal({ open, onClose }: { open: boolean; onClose: () => v
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          transition={motionReduce(reduce)}
           className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm sm:items-center sm:p-6"
           onClick={close}
         >
@@ -107,15 +88,18 @@ export function ImportModal({ open, onClose }: { open: boolean; onClose: () => v
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 24, opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 320, damping: 34 }}
+            transition={motionReduce(reduce)}
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
-            aria-label="Import recipe"
+            aria-labelledby="import-modal-title"
             className="flex max-h-[92dvh] w-full max-w-lg flex-col overflow-hidden rounded-t-2xl bg-[color:var(--color-paper-raised)] shadow-[var(--shadow-lg)] sm:rounded-2xl"
           >
             <header className="flex items-center justify-between border-b border-[color:var(--color-line)] px-5 py-4">
-              <h2 className="font-serif text-2xl font-semibold text-[color:var(--color-ink)]">
+              <h2
+                id="import-modal-title"
+                className="font-serif text-2xl font-semibold text-[color:var(--color-ink)]"
+              >
                 Import recipe
               </h2>
               <button onClick={close} aria-label="Close" className="text-[color:var(--color-ink-faint)]">

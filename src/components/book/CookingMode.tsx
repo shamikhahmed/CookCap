@@ -2,14 +2,22 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { Icon } from '@/components/ui/Icon';
 import { useBook } from '@/components/book/BookController';
+import { motionReduce, useDialogA11y } from '@/lib/a11y/dialog';
 import type { Recipe } from '@/lib/recipes/types';
 
+type ActiveTimer = {
+  stepIndex: number;
+  label: string;
+  total: number;
+  left: number;
+  running: boolean;
+};
+
 /**
- * Fullscreen cooking mode (portaled to body). Locks book nav so arrow keys
- * advance steps, not pages. Wake Lock keeps the screen on.
+ * Fullscreen cooking mode. Wake Lock. Multiple concurrent timers survive step hops.
  */
 export function CookingMode({
   recipe,
@@ -21,10 +29,13 @@ export function CookingMode({
   onClose: () => void;
 }) {
   const { setLocked } = useBook();
+  const reduce = useReducedMotion();
   const [step, setStep] = useState(0);
   const [done, setDone] = useState<Set<number>>(new Set());
   const [mounted, setMounted] = useState(false);
+  const [timers, setTimers] = useState<ActiveTimer[]>([]);
   const wakeRef = useRef<WakeLockSentinel | null>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => setMounted(true), []);
 
@@ -37,7 +48,10 @@ export function CookingMode({
     if (!open) return;
     setStep(0);
     setDone(new Set());
+    setTimers([]);
   }, [open, recipe.id]);
+
+  useDialogA11y(open, onClose, panelRef);
 
   useEffect(() => {
     if (!open) return;
@@ -64,6 +78,18 @@ export function CookingMode({
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open || timers.every((t) => !t.running || t.left <= 0)) return;
+    const id = window.setInterval(() => {
+      setTimers((prev) =>
+        prev.map((t) =>
+          t.running && t.left > 0 ? { ...t, left: Math.max(0, t.left - 1) } : t,
+        ),
+      );
+    }, 1000);
+    return () => window.clearInterval(id);
+  }, [open, timers]);
+
   const goNext = useCallback(() => {
     setDone((d) => new Set(d).add(step));
     setStep((s) => Math.min(recipe.steps.length - 1, s + 1));
@@ -76,16 +102,14 @@ export function CookingMode({
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      e.stopPropagation();
-      if (e.key === 'Escape') {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
         e.preventDefault();
-        onClose();
-      } else if (e.key === 'ArrowRight' || e.key === ' ') {
-        e.preventDefault();
+        e.stopPropagation();
         if (step < recipe.steps.length - 1) goNext();
         else onClose();
       } else if (e.key === 'ArrowLeft') {
         e.preventDefault();
+        e.stopPropagation();
         goPrev();
       }
     };
@@ -102,8 +126,33 @@ export function CookingMode({
     });
 
   const current = recipe.steps[step];
-  const progress = recipe.steps.length ? ((step + (done.has(step) ? 1 : 0)) / recipe.steps.length) * 100 : 0;
+  const progress = recipe.steps.length
+    ? ((step + (done.has(step) ? 1 : 0)) / recipe.steps.length) * 100
+    : 0;
   const atLast = step >= recipe.steps.length - 1;
+  const stepHasTimer = current?.durationSec != null;
+  const existingForStep = timers.find((t) => t.stepIndex === step);
+
+  const startStepTimer = () => {
+    if (current?.durationSec == null) return;
+    setTimers((prev) => {
+      if (prev.some((t) => t.stepIndex === step)) {
+        return prev.map((t) =>
+          t.stepIndex === step ? { ...t, running: true, left: t.left || t.total } : t,
+        );
+      }
+      return [
+        ...prev,
+        {
+          stepIndex: step,
+          label: `Step ${step + 1}`,
+          total: current.durationSec!,
+          left: current.durationSec!,
+          running: true,
+        },
+      ];
+    });
+  };
 
   if (!mounted) return null;
 
@@ -111,13 +160,15 @@ export function CookingMode({
     <AnimatePresence>
       {open && current && (
         <motion.div
+          ref={panelRef}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          transition={motionReduce(reduce)}
           className="fixed inset-0 z-[80] flex flex-col bg-[color:var(--color-paper)] text-[color:var(--color-ink)]"
           role="dialog"
           aria-modal="true"
-          aria-label={`Cooking ${recipe.title}`}
+          aria-labelledby="cook-mode-title"
           onPointerDown={(e) => e.stopPropagation()}
           onClick={(e) => e.stopPropagation()}
         >
@@ -126,7 +177,9 @@ export function CookingMode({
               <p className="truncate text-xs uppercase tracking-[0.25em] text-[color:var(--color-ink-faint)]">
                 Cooking mode · step {step + 1}/{recipe.steps.length}
               </p>
-              <h2 className="truncate font-serif text-xl font-semibold">{recipe.title}</h2>
+              <h2 id="cook-mode-title" className="truncate font-serif text-xl font-semibold">
+                {recipe.title}
+              </h2>
             </div>
             <button
               type="button"
@@ -142,7 +195,11 @@ export function CookingMode({
             <motion.div
               className="h-full rounded-full bg-[color:var(--color-accent)]"
               animate={{ width: `${Math.min(100, progress)}%` }}
-              transition={{ type: 'spring', stiffness: 200, damping: 28 }}
+              transition={
+                reduce
+                  ? { duration: 0 }
+                  : { type: 'spring', stiffness: 200, damping: 28 }
+              }
             />
           </div>
 
@@ -179,17 +236,72 @@ export function CookingMode({
                 <span className="italic">{current.tip}</span>
               </p>
             )}
-            {current.durationSec != null && (
-              <CookTimer key={`${recipe.id}-${step}`} seconds={current.durationSec} />
+
+            {stepHasTimer && !existingForStep && (
+              <button
+                type="button"
+                onClick={startStepTimer}
+                className="mt-8 rounded-full bg-[color:var(--color-paper-sunk)] px-5 py-3 text-sm font-medium"
+              >
+                Start {Math.round((current.durationSec ?? 0) / 60)} min timer
+              </button>
             )}
           </div>
+
+          {timers.length > 0 && (
+            <div className="border-t border-[color:var(--color-line)] px-4 py-3 sm:px-6">
+              <p className="mb-2 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-ink-faint)]">
+                Timers
+              </p>
+              <ul className="flex flex-wrap gap-2">
+                {timers.map((t) => {
+                  const m = Math.floor(t.left / 60);
+                  const s = t.left % 60;
+                  return (
+                    <li
+                      key={t.stepIndex}
+                      className="flex items-center gap-2 rounded-full bg-[color:var(--color-paper-sunk)] px-3 py-2 text-sm"
+                    >
+                      <span className="text-[color:var(--color-ink-faint)]">{t.label}</span>
+                      <span className="font-serif text-lg tabular-nums">
+                        {m}:{s.toString().padStart(2, '0')}
+                      </span>
+                      <button
+                        type="button"
+                        className="text-xs font-medium"
+                        onClick={() =>
+                          setTimers((prev) =>
+                            prev.map((x) =>
+                              x.stepIndex === t.stepIndex ? { ...x, running: !x.running } : x,
+                            ),
+                          )
+                        }
+                      >
+                        {t.left === 0 ? 'Done' : t.running ? 'Pause' : 'Resume'}
+                      </button>
+                      <button
+                        type="button"
+                        aria-label={`Dismiss ${t.label} timer`}
+                        className="text-[color:var(--color-ink-faint)]"
+                        onClick={() =>
+                          setTimers((prev) => prev.filter((x) => x.stepIndex !== t.stepIndex))
+                        }
+                      >
+                        ×
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
 
           <footer className="flex items-center justify-between gap-4 px-4 pb-[max(1rem,env(safe-area-inset-bottom))] pt-2 sm:px-6">
             <button
               type="button"
               onClick={goPrev}
               disabled={step === 0}
-              className="flex items-center gap-2 rounded-full px-4 py-3 text-[color:var(--color-ink-soft)] disabled:opacity-30"
+              className="flex min-h-11 items-center gap-2 rounded-full px-4 py-3 text-[color:var(--color-ink-soft)] disabled:opacity-30"
             >
               <Icon name="arrow-left" size={20} />
               Back
@@ -201,8 +313,9 @@ export function CookingMode({
                   key={i}
                   type="button"
                   aria-label={`Go to step ${i + 1}`}
+                  aria-current={i === step ? 'step' : undefined}
                   onClick={() => setStep(i)}
-                  className="size-2 rounded-full transition-colors"
+                  className="size-2.5 rounded-full transition-colors"
                   style={{
                     background:
                       i === step
@@ -219,7 +332,7 @@ export function CookingMode({
               <button
                 type="button"
                 onClick={onClose}
-                className="rounded-full bg-[color:var(--color-success)] px-5 py-3 font-medium text-white"
+                className="min-h-11 rounded-full bg-[color:var(--color-success)] px-5 py-3 font-medium text-white"
               >
                 Done cooking
               </button>
@@ -227,7 +340,7 @@ export function CookingMode({
               <button
                 type="button"
                 onClick={goNext}
-                className="flex items-center gap-2 rounded-full bg-[color:var(--color-accent)] px-5 py-3 font-medium text-white"
+                className="flex min-h-11 items-center gap-2 rounded-full bg-[color:var(--color-accent)] px-5 py-3 font-medium text-white"
               >
                 Next
                 <Icon name="arrow-right" size={20} />
@@ -238,46 +351,5 @@ export function CookingMode({
       )}
     </AnimatePresence>,
     document.body,
-  );
-}
-
-function CookTimer({ seconds }: { seconds: number }) {
-  const [left, setLeft] = useState(seconds);
-  const [running, setRunning] = useState(false);
-
-  useEffect(() => {
-    if (!running || left <= 0) return;
-    const id = window.setInterval(() => setLeft((s) => Math.max(0, s - 1)), 1000);
-    return () => clearInterval(id);
-  }, [running, left]);
-
-  const m = Math.floor(left / 60);
-  const s = left % 60;
-
-  return (
-    <div className="mt-8 flex flex-col items-center gap-3">
-      <p className="font-serif text-5xl tabular-nums tracking-tight">
-        {m}:{s.toString().padStart(2, '0')}
-      </p>
-      <div className="flex gap-2">
-        <button
-          type="button"
-          onClick={() => setRunning((r) => !r)}
-          className="rounded-full bg-[color:var(--color-paper-sunk)] px-4 py-2 text-sm font-medium"
-        >
-          {running ? 'Pause' : left === 0 ? 'Done' : 'Start timer'}
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            setLeft(seconds);
-            setRunning(false);
-          }}
-          className="rounded-full px-4 py-2 text-sm text-[color:var(--color-ink-faint)]"
-        >
-          Reset
-        </button>
-      </div>
-    </div>
   );
 }

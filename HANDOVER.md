@@ -1,6 +1,6 @@
 # Jia Cooks — Handover
 
-Heirloom family cookbook PWA. Version **1.4.0**.
+Heirloom family cookbook PWA. Version **1.4.1**.
 
 ## Stack
 

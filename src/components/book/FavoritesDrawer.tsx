@@ -1,50 +1,41 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { AnimatePresence, motion } from 'motion/react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { useApp } from '@/components/app/AppStore';
 import { useBook } from './BookController';
 import { CHAPTER_MAP } from '@/lib/recipes/chapters';
 import { RecipeImage } from '@/components/ui/RecipeImage';
 import { Icon } from '@/components/ui/Icon';
+import { motionReduce, useDialogA11y } from '@/lib/a11y/dialog';
 import type { Recipe } from '@/lib/recipes/types';
-
-const FOCUSABLE =
-  'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
 /** Slide-over: favorites, recent, imported customs (edit/delete). */
 export function FavoritesDrawer({ open, onClose }: { open: boolean; onClose: () => void }) {
   const { favorites, recent, toggleFavorite, recipeMap, customs, removeCustom, updateCustom, ready } =
     useApp();
   const { goToRecipe } = useBook();
+  const reduce = useReducedMotion();
   const favList = ready ? Array.from(favorites) : [];
   const recentList = ready ? recent : [];
   const panelRef = useRef<HTMLElement>(null);
   const [editId, setEditId] = useState<string | null>(null);
+  const editIdRef = useRef(editId);
+  editIdRef.current = editId;
 
   useEffect(() => {
-    if (!open) {
+    if (!open) setEditId(null);
+  }, [open]);
+
+  const closeHandler = useCallback(() => {
+    if (editIdRef.current) {
       setEditId(null);
       return;
     }
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        if (editId) setEditId(null);
-        else onClose();
-      }
-    };
-    window.addEventListener('keydown', onKey);
-    requestAnimationFrame(() => {
-      panelRef.current?.querySelector<HTMLElement>(FOCUSABLE)?.focus();
-    });
-    return () => {
-      window.removeEventListener('keydown', onKey);
-      document.body.style.overflow = prevOverflow;
-    };
-  }, [open, onClose, editId]);
+    onClose();
+  }, [onClose]);
+
+  useDialogA11y(open, closeHandler, panelRef);
 
   const jump = (id: string) => {
     goToRecipe(id);
@@ -60,6 +51,7 @@ export function FavoritesDrawer({ open, onClose }: { open: boolean; onClose: () 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          transition={motionReduce(reduce)}
           className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
           onClick={onClose}
         >
@@ -68,15 +60,18 @@ export function FavoritesDrawer({ open, onClose }: { open: boolean; onClose: () 
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
-            transition={{ type: 'spring', stiffness: 320, damping: 34 }}
+            transition={motionReduce(reduce)}
             onClick={(e) => e.stopPropagation()}
             className="absolute right-0 top-0 flex h-full w-full max-w-sm flex-col bg-[color:var(--color-paper-raised)] shadow-[var(--shadow-lg)]"
             role="dialog"
             aria-modal="true"
-            aria-label="Favorites and history"
+            aria-labelledby="favorites-drawer-title"
           >
             <header className="flex items-center justify-between border-b border-[color:var(--color-line)] px-5 py-4">
-              <h2 className="font-serif text-2xl font-semibold text-[color:var(--color-ink)]">
+              <h2
+                id="favorites-drawer-title"
+                className="font-serif text-2xl font-semibold text-[color:var(--color-ink)]"
+              >
                 Your Kitchen
               </h2>
               <button

@@ -39,7 +39,6 @@ interface BookState {
   leaves: Leaf[];
   chapterStart: Record<string, number>;
   step: number;
-  spreadActive: boolean;
 }
 
 const Ctx = createContext<BookState | null>(null);
@@ -48,7 +47,6 @@ const POS_KEY = 'jia-pos';
 export function BookController({ children }: { children: ReactNode }) {
   const { leaves, chapterStart, soundOn } = useApp();
   const step = 1;
-  const spreadActive = false;
 
   const [index, setIndex] = useState(0);
   const [locked, setLocked] = useState(false);
@@ -177,7 +175,7 @@ export function BookController({ children }: { children: ReactNode }) {
         setIndex(target);
       }, 520);
     },
-    [chapterStart, clamp, setTurning, soundOn],
+    [chapterStart, clamp, soundOn],
   );
 
   const goToRecipe = useCallback(
@@ -218,7 +216,6 @@ export function BookController({ children }: { children: ReactNode }) {
       leaves,
       chapterStart,
       step,
-      spreadActive,
     }),
     [
       index,
@@ -235,7 +232,6 @@ export function BookController({ children }: { children: ReactNode }) {
       clearAnimateJump,
       chapterStart,
       step,
-      spreadActive,
     ],
   );
 

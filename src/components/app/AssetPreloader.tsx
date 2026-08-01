@@ -5,8 +5,8 @@ import { useApp } from '@/components/app/AppStore';
 import stepMap from '@/lib/recipes/step-images.generated.json';
 
 /**
- * On enter: warm every recipe hero (+ @sm) and step photo into the browser
- * (and SW asset cache in prod). Flip lag is mostly cold image decode.
+ * On enter: warm every recipe hero (+ @sm when available) and step photo into
+ * the browser (and SW asset cache in prod). Flip lag is mostly cold image decode.
  */
 
 const STEP = stepMap as Record<string, string[]>;

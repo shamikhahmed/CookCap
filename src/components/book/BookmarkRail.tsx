@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useState, type CSSProperties } from 'react';
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { CHAPTERS } from '@/lib/recipes/chapters';
+import { motionReduce, useDialogA11y } from '@/lib/a11y/dialog';
 import { useBook } from './BookController';
 
 /**
@@ -47,6 +48,7 @@ export function BookmarkRail() {
   const [sheetOpen, setSheetOpen] = useState(false);
   const [narrow, setNarrow] = useState(false);
   const [tablet, setTablet] = useState(false);
+  const sheetRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const phone = window.matchMedia('(max-width: 639px)');
@@ -64,14 +66,8 @@ export function BookmarkRail() {
     };
   }, []);
 
-  useEffect(() => {
-    if (!sheetOpen) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setSheetOpen(false);
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [sheetOpen]);
+  const closeSheet = useCallback(() => setSheetOpen(false), []);
+  useDialogA11y(sheetOpen, closeSheet, sheetRef);
 
   const tabs = CHAPTERS.map((c, i) => {
     const active = c.id === activeChapter;
@@ -98,23 +94,29 @@ export function BookmarkRail() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              transition={motionReduce(reduce)}
             >
               <button
                 type="button"
                 aria-label="Close chapters"
                 className="absolute inset-0 bg-black/45 backdrop-blur-[2px]"
-                onClick={() => setSheetOpen(false)}
+                onClick={closeSheet}
               />
               <motion.nav
+                ref={sheetRef}
                 role="dialog"
                 aria-modal="true"
-                aria-label="Chapter stickers"
+                aria-labelledby="chapter-sheet-title"
                 initial={{ x: 48 }}
                 animate={{ x: 0 }}
                 exit={{ x: 48 }}
+                transition={motionReduce(reduce)}
                 className="journal-sheet relative flex h-full w-[min(18rem,90vw)] flex-col gap-2 overflow-y-auto p-5 shadow-[var(--shadow-lg)]"
               >
-                <p className="mb-0.5 font-serif text-xl font-semibold text-[color:var(--color-ink)]">
+                <p
+                  id="chapter-sheet-title"
+                  className="mb-0.5 font-serif text-xl font-semibold text-[color:var(--color-ink)]"
+                >
                   Chapter tabs
                 </p>
                 <p className="mb-3 text-xs leading-relaxed text-[color:var(--color-ink-faint)]">
@@ -128,7 +130,7 @@ export function BookmarkRail() {
                     aria-current={active ? 'page' : undefined}
                     onClick={() => {
                       goToChapter(c.id);
-                      setSheetOpen(false);
+                      closeSheet();
                     }}
                     className="sticker-chip text-left disabled:opacity-40"
                     style={

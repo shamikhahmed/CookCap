@@ -1,6 +1,6 @@
 /**
- * RecipeImage: prefer blur manifest; if missing, still try /recipes/<id>.webp
- * so orphans on disk don't fall back to abstract blobs.
+ * RecipeImage: blur manifest preferred; disk path fallback; generated art on error.
+ * Skeleton while first paint / decode.
  */
 'use client';
 
@@ -31,6 +31,7 @@ export function RecipeImage({
 }) {
   const meta = getImage(recipeId);
   const [failed, setFailed] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const src = meta?.src ?? `/recipes/${recipeId}.webp`;
   const blur = meta?.blurDataURL ?? EMPTY_BLUR;
 
@@ -47,18 +48,27 @@ export function RecipeImage({
   }
 
   return (
-    <Image
-      src={src}
-      alt={alt}
-      fill
-      sizes={sizes}
-      quality={82}
-      priority={priority}
-      unoptimized
-      placeholder="blur"
-      blurDataURL={blur}
-      onError={() => setFailed(true)}
-      className={`object-cover ${className}`}
-    />
+    <>
+      {!loaded && (
+        <div
+          className="absolute inset-0 animate-pulse bg-[color:var(--color-paper-sunk)]"
+          aria-hidden
+        />
+      )}
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={sizes}
+        quality={82}
+        priority={priority}
+        unoptimized
+        placeholder="blur"
+        blurDataURL={blur}
+        onLoad={() => setLoaded(true)}
+        onError={() => setFailed(true)}
+        className={`object-cover transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'} ${className}`}
+      />
+    </>
   );
 }

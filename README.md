@@ -78,7 +78,7 @@ full `prefers-reduced-motion` path (instant page cut).
 ## Docs
 
 - [HANDOVER.md](./HANDOVER.md) — stack, architecture, editions, deploy
-- [CHANGELOG.md](./CHANGELOG.md) — release history (`VERSION` is `1.4.0`)
+- [CHANGELOG.md](./CHANGELOG.md) — release history (`VERSION` is `1.4.1`)
 - [USER_GUIDE.md](./USER_GUIDE.md) — plain-language how-to
 - [docs/photos.md](./docs/photos.md) — hero + step photo drop-in
 - [docs/claude-code-depth-prompt.md](./docs/claude-code-depth-prompt.md) — Claude Code brief for 3D book/tabs

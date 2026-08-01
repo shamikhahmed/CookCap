@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { searchRecipes, type SearchFilters } from '@/lib/search/search';
 import { CHAPTER_MAP } from '@/lib/recipes/chapters';
 import { RecipeImage } from '@/components/ui/RecipeImage';
@@ -9,6 +9,7 @@ import { useBook } from '@/components/book/BookController';
 import { useApp } from '@/components/app/AppStore';
 import { RECIPE_MAP } from '@/lib/recipes/data';
 import { Icon } from '@/components/ui/Icon';
+import { useDialogA11y } from '@/lib/a11y/dialog';
 
 const RECENT_KEY = 'jia-recent-search';
 
@@ -26,12 +27,16 @@ export function SearchOverlay({
 }) {
   const { goToRecipe, goToChapter } = useBook();
   const { recent, favorites, allRecipes, recipeMap, theme, setTheme } = useApp();
+  const reduce = useReducedMotion();
   const [q, setQ] = useState('');
   const [filters, setFilters] = useState<SearchFilters>({});
   const [recentSearches, setRecentSearches] = useState<string[]>([]);
   const [cursor, setCursor] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  useDialogA11y(open, onClose, panelRef, { initialFocus: 'none' });
 
   useEffect(() => {
     if (!open) return;
@@ -93,11 +98,6 @@ export function SearchOverlay({
   };
 
   const onKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      e.preventDefault();
-      onClose();
-      return;
-    }
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       setCursor((c) => Math.min(rows.length - 1, c + 1));
@@ -113,6 +113,8 @@ export function SearchOverlay({
   const isMac =
     typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.platform);
 
+  const hasFilters = Object.keys(filters).some((k) => filters[k as keyof SearchFilters]);
+
   return (
     <AnimatePresence>
       {open && (
@@ -120,15 +122,20 @@ export function SearchOverlay({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.15 }}
+          transition={reduce ? { duration: 0 } : { duration: 0.15 }}
           className="fixed inset-0 z-50 flex items-start justify-center bg-black/55 p-3 backdrop-blur-md sm:pt-[12vh]"
           onClick={onClose}
         >
           <motion.div
+            ref={panelRef}
             initial={{ opacity: 0, y: -16, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.98 }}
-            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            transition={
+              reduce
+                ? { duration: 0 }
+                : { duration: 0.22, ease: [0.22, 1, 0.36, 1] }
+            }
             onClick={(e) => e.stopPropagation()}
             onKeyDown={onKeyDown}
             className="flex max-h-[78vh] w-full max-w-xl flex-col overflow-hidden rounded-2xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)]/95 shadow-[var(--shadow-lg)] backdrop-blur-xl"
@@ -239,8 +246,17 @@ export function SearchOverlay({
 
             <ul ref={listRef} className="min-h-0 flex-1 overflow-y-auto p-2">
               {rows.length === 0 && (
-                <li className="p-10 text-center text-sm text-[color:var(--color-ink-faint)]">
-                  Nothing matches.
+                <li className="space-y-1 p-10 text-center text-sm text-[color:var(--color-ink-faint)]">
+                  <p>
+                    {q.trim()
+                      ? `No recipes match “${q.trim()}”.`
+                      : 'No recipes match these filters.'}
+                  </p>
+                  <p className="text-xs">
+                    {hasFilters
+                      ? 'Try clearing Easy / ≤ 30 min, or search a different ingredient.'
+                      : 'Try another spelling, a cuisine, or an ingredient name.'}
+                  </p>
                 </li>
               )}
               {rows.map((r, i) => {

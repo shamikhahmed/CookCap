@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { BookController, useBook } from './BookController';
 import { Book } from './Book';
 import { FavoritesDrawer } from './FavoritesDrawer';
@@ -56,8 +56,8 @@ function Frame() {
       />
 
       <main className="journal-stage relative flex min-h-0 flex-1 items-center justify-center overflow-visible px-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-1 sm:px-6 sm:pr-36 md:pr-40 lg:pr-48">
-        <div className="book-stage relative mx-auto flex h-full min-h-0 w-full max-w-[min(720px,calc(100vw-10rem))] items-center justify-center py-1 md:py-2">
-          <div className="relative aspect-[5/7] h-[min(100%,calc(100dvh-7.5rem))] w-auto max-w-full">
+        <div className="book-stage relative mx-auto flex h-full min-h-0 w-full max-w-full items-center justify-center py-1 sm:max-w-[min(720px,calc(100%-9rem))] md:py-2">
+          <div className="relative aspect-[5/7] h-[min(100%,calc(100dvh-7.5rem))] w-auto max-w-full min-w-0">
             <Book />
           </div>
         </div>
@@ -107,6 +107,7 @@ function TopBar({
     shoppingCount,
   } = useApp();
   const dark = theme === 'dark';
+  const reduce = useReducedMotion();
   const [more, setMore] = useState(false);
   const moreRef = useRef<HTMLDivElement>(null);
 
@@ -156,7 +157,7 @@ function TopBar({
                 initial={{ opacity: 0, y: -4 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -4 }}
-                transition={{ duration: 0.15 }}
+                transition={{ duration: reduce ? 0 : 0.15 }}
                 className="absolute right-0 top-full z-50 mt-1 min-w-[11rem] overflow-hidden rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] py-1 shadow-[var(--shadow-lg)]"
               >
                 <MenuItem
@@ -213,6 +214,7 @@ function MenuItem({ label, onClick }: { label: string; onClick: () => void }) {
 function BottomBar() {
   const { index, total, next, prev, atStart, atEnd, locked, turning } = useBook();
   const { ready, customs } = useApp();
+  const reduce = useReducedMotion();
   const progress = total > 1 ? index / (total - 1) : 0;
   const busy = locked || turning;
   const extras = customs.length;
@@ -227,7 +229,11 @@ function BottomBar() {
           className="absolute inset-y-0 left-0 rounded-full"
           style={{ background: 'var(--color-accent)' }}
           animate={{ width: `${progress * 100}%` }}
-          transition={{ type: 'spring', stiffness: 200, damping: 30 }}
+          transition={
+            reduce
+              ? { duration: 0 }
+              : { type: 'spring', stiffness: 200, damping: 30 }
+          }
         />
       </div>
 

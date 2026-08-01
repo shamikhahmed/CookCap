@@ -15,7 +15,6 @@ import { buildLeaves, type Leaf } from '@/lib/book/pages';
 import type { Recipe } from '@/lib/recipes/types';
 
 type Theme = 'light' | 'dark' | 'system';
-export type SpreadMode = 'single' | 'double';
 
 const DEFAULT_EDITION = listEditions()[0]!;
 
@@ -32,8 +31,6 @@ interface AppState {
   editionReady: boolean;
   soundOn: boolean;
   setSoundOn: (v: boolean) => void;
-  spread: SpreadMode;
-  setSpread: (v: SpreadMode) => void;
   edition: Edition;
   customs: Recipe[];
   addCustom: (r: Recipe) => Promise<void>;
@@ -51,7 +48,6 @@ const Ctx = createContext<AppState | null>(null);
 
 const THEME_KEY = 'jia-theme';
 const SOUND_KEY = 'jia-sound';
-const SPREAD_KEY = 'jia-spread';
 
 function applyTheme(theme: Theme) {
   const root = document.documentElement;
@@ -65,7 +61,6 @@ export function AppStore({ children }: { children: ReactNode }) {
   const [recent, setRecent] = useState<string[]>([]);
   const [ready, setReady] = useState(false);
   const [soundOn, setSoundOnState] = useState(false);
-  const [spread, setSpreadState] = useState<SpreadMode>('single');
   const [edition, setEdition] = useState<Edition>(DEFAULT_EDITION);
   const [editionReady, setEditionReady] = useState(false);
   const [customs, setCustoms] = useState<Recipe[]>([]);
@@ -79,10 +74,7 @@ export function AppStore({ children }: { children: ReactNode }) {
     setThemeState(savedTheme);
     applyTheme(savedTheme);
     setSoundOnState(localStorage.getItem(SOUND_KEY) === '1');
-    // Reset 2P — prior build showed empty leather half; user re-enables via ···.
-    setSpreadState('single');
-    localStorage.setItem(SPREAD_KEY, 'single');
-    // Resolve edition before ready — cover fades in once, no Jia→Ali flash.
+    localStorage.removeItem('jia-spread');
     setEdition(resolveEdition());
     setEditionReady(true);
 
@@ -113,11 +105,6 @@ export function AppStore({ children }: { children: ReactNode }) {
   const setSoundOn = useCallback((v: boolean) => {
     setSoundOnState(v);
     localStorage.setItem(SOUND_KEY, v ? '1' : '0');
-  }, []);
-
-  const setSpread = useCallback((v: SpreadMode) => {
-    setSpreadState(v);
-    localStorage.setItem(SPREAD_KEY, v);
   }, []);
 
   const toggleFavorite = useCallback((id: string) => {
@@ -170,8 +157,6 @@ export function AppStore({ children }: { children: ReactNode }) {
       editionReady,
       soundOn,
       setSoundOn,
-      spread,
-      setSpread,
       edition,
       customs,
       addCustom,
@@ -195,8 +180,6 @@ export function AppStore({ children }: { children: ReactNode }) {
       editionReady,
       soundOn,
       setSoundOn,
-      spread,
-      setSpread,
       edition,
       customs,
       addCustom,

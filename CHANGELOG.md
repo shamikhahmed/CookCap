@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.4.1 — 2026-08-01
+
+### Fix
+- **Mobile book stage** — stop subtracting 10rem width on phone (tabs sheet, no fat rail); book was crushed / looked “not opening”
+- **Missing `@sm` heroes** — generated 69 thumbnails (mostly FoodFusion); kills preload 404 storm
+- Dialog a11y: shared `useDialogA11y` (focus trap + Escape + restore) on search/drawers/cook/import/tabs sheet
+- Cook mode: concurrent timers across steps; reduced-motion springs
+- Dead 2P/`spread` API removed from AppStore + BookController
+- RecipeImage pulse skeleton while decode
+- Lint clean
+
 ## 1.4.0 — 2026-08-01
 
 ### Fixes
