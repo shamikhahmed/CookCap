@@ -1,0 +1,159 @@
+{
+  "wpId": 11108,
+  "slug": "guramba",
+  "id": "ff-guramba",
+  "title": "Guramba",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/guramba/",
+  "date": "2019-06-22T10:46:28",
+  "modified": "2019-06-22T13:36:24",
+  "classList": [
+    "post-11108",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-everyday-cooking",
+    "recipe_category-lunch-dinner",
+    "recipe_category-national-holidays",
+    "recipe_category-seasonal",
+    "recipe_category-summer",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2019/06/Guramba-Recipe-by-Food-fusion-5.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 0.5,
+          "unit": "kg",
+          "item": "Kary (Raw mango)",
+          "note": null,
+          "raw": "Kary (Raw mango) ½ kg"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Hing (Asafeotida)",
+          "note": "/4 tsp",
+          "raw": "Hing (Asafeotida) 1/4 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Zeera (Cumin seeds)",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Saunf (Fennel seeds)",
+          "note": null,
+          "raw": "Saunf (Fennel seeds) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Raidana (Mustard seeds)",
+          "note": "/4 tsp",
+          "raw": "Raidana (Mustard seeds) 1/4 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Kalonji (Nigella seeds)",
+          "note": null,
+          "raw": "Kalonji (Nigella seeds) ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Namak (Salt)",
+          "note": "/4 tsp or to taste",
+          "raw": "Namak (Salt) 1/4 tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chili powder) ½ tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Lal mirch (Red chili) crushed",
+          "note": "/4 tsp",
+          "raw": "Lal mirch (Red chili) crushed 1/4 tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) 2 Cups or as required"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "cup",
+          "item": "Gur (Jaggery) crushed",
+          "note": null,
+          "raw": "Gur (Jaggery) crushed 1 & ½ Cups"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "Peel raw mango and cut into slices or cubes & set aside.",
+      "romanUrdu": "Kary ko peel ker ka slices ya cubes mein cut ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "In wok,add cooking oil,asafeotida,cumin seeds,fennel seeds,mustard seeds,nigella seeds and mix well.",
+      "romanUrdu": "Karhai mein cooking oil,hing,zeera,saunf,raidana aur kalonji dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add raw mango and mix well.",
+      "romanUrdu": "Kary dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add salt,red chili powder,red chili crushed and mix well.",
+      "romanUrdu": "Namak,lal mirch powder aur lal mirch crushed dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add water and mix,cover and cook on low flame for 12-15 minutes.",
+      "romanUrdu": "Pani dal ker mix karein aur dhak ker halki ancch per 12-15 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add jaggery and mix well,cover and cook on low flame for 6-8 minutes.",
+      "romanUrdu": "Gur dal ker ache tarhan mix karein aur halki ancch per 6-8 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Let it cool down.",
+      "romanUrdu": "Thanda ker lein."
+    },
+    {
+      "instruction": "Can be stored in an air tight container for up to 1 month.",
+      "romanUrdu": "Air tight container mein dal ker 1 month tak store ker saktay han."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2019/06/Guramba-Recipe-by-Food-fusion-5.jpg?v=1587763423",
+  "ogDescription": "Make the most of this mango season.Try this Guramba recipe and pack the goodness of raw mangoes in a bottle. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:40:07Z"
+}

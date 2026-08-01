@@ -1,0 +1,200 @@
+{
+  "wpId": 1142,
+  "slug": "balti-aloo",
+  "id": "ff-balti-aloo",
+  "title": "Balti Aloo (Potatoes)",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/balti-aloo/",
+  "date": "2016-09-22T20:31:30",
+  "modified": "2018-08-06T11:33:55",
+  "classList": [
+    "post-1142",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "tag-aloo",
+    "tag-alu",
+    "tag-potato",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-vegetable",
+    "recipe_category-potato",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-breakfast-meal",
+    "recipe_category-ramazan",
+    "recipe_category-2iftar",
+    "recipe_category-dinner",
+    "recipe_category-sehri",
+    "recipe_category-breakfast",
+    "recipe_category-desi-breakfast",
+    "recipe_category-dish-type",
+    "recipe_category-salanscurrys",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-vegetables",
+    "recipe_category-lunch-dinner",
+    "recipe_category-sabzi-vegetable",
+    "recipe_category-occasions",
+    "recipe_category-2ramzan",
+    "recipe_category-ramzan",
+    "recipe_category-1sehri",
+    "recipe_behind_camera-sameen-moiz"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2017/05/ID-R00219-1.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Oil",
+          "note": null,
+          "raw": "Oil ½ cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) 1 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Methi dana (Fenugreek seeds)",
+          "note": null,
+          "raw": "Methi dana (Fenugreek seeds) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Zeera (Cumin seeds)",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Rai dana (Mustard seeds)",
+          "note": null,
+          "raw": "Rai dana (Mustard seeds) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Kalonji (Nigella seeds)",
+          "note": null,
+          "raw": "Kalonji (Nigella seeds) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Saunf (Fennel seeds)",
+          "note": null,
+          "raw": "Saunf (Fennel seeds) ½ tsp"
+        },
+        {
+          "quantity": 6.0,
+          "unit": "",
+          "item": "Kari pata (Curry leaves)",
+          "note": null,
+          "raw": "Kari pata (Curry leaves) 6-8"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Pyaz (Onion) Sliced",
+          "note": null,
+          "raw": "Pyaz (Onion) Sliced 2"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Tamatar (Tomatoes) Chopped",
+          "note": null,
+          "raw": "Tamatar (Tomatoes) Chopped 2"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": null,
+          "raw": "Lal mirch powder (Red chili powder) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Lal mirch (Red chili) Crushed",
+          "note": null,
+          "raw": "Lal mirch (Red chili) Crushed ½ tsp"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldee powder (Turmeric powder) ¼ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 4.0,
+          "unit": "",
+          "item": "Aalo (Potatoes) Sliced",
+          "note": null,
+          "raw": "Aalo (Potatoes) Sliced 4-5"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Hari mirch (Green chili)",
+          "note": null,
+          "raw": "Hari mirch (Green chili) 3-4"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Hara dhania (Green coriander)",
+          "note": null,
+          "raw": "Hara dhania (Green coriander) 3 tbs"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In wok,add oil,ginger garlic paste,fenugreek seeds,cumin seeds,mustard seeds,nigella seeds,fennel seeds,curry leaves and sauté for a minute.",
+      "romanUrdu": "Karhai mein oil aur adrak lehsan paste,methi dana,zeera,rai dana,kalonji,saunf aur kari pata dal ker ek minute kliya saute ker lein."
+    },
+    {
+      "instruction": "Add onion and fry until translucent.",
+      "romanUrdu": "Pyaz shamil karein aur translucent hunay tak fry lein."
+    },
+    {
+      "instruction": "Add tomatoes,red chili powder,red chili crushed,turmeric powder and salt,mix well and cook until tomatoes are soft.",
+      "romanUrdu": "Tamatar,lal mirch powder,kuti lal mirch,haldee powder aur namak dal ker ache tarhan mix karein aur tamatar naram hunay tak paka lein."
+    },
+    {
+      "instruction": "Now add potatoes, green chili and green coriander,cover and cook on low flame for 15 minutes or until potatoes are tender.",
+      "romanUrdu": "Ab is mein aalo,hari mirch aur hara dhania dal ker dhak ker 15 minute kliya halki ancch per ya aalo gul janay tak paka lein."
+    },
+    {
+      "instruction": "Garnish with green coriander.",
+      "romanUrdu": "Hara dhania sa garnish karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2017/05/ID-R00219-1.jpg?v=1587767112",
+  "ogDescription": "Try our version of balti potatoes recipe. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:41:39Z"
+}

@@ -1,0 +1,287 @@
+{
+  "wpId": 7212,
+  "slug": "mutanjan",
+  "id": "ff-mutanjan",
+  "title": "Mutanjan",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/mutanjan/",
+  "date": "2018-08-21T12:14:51",
+  "modified": "2018-08-25T07:55:05",
+  "classList": [
+    "post-7212",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-rice",
+    "recipe_category-1milk",
+    "recipe_category-1desserts-2",
+    "recipe_category-desi-desserts",
+    "recipe_category-desserts",
+    "recipe_category-dish-type",
+    "recipe_category-1desserts",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-occasions",
+    "recipe_category-bakra-eid",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_category-bakra-eid1",
+    "recipe_category-eid1",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "desserts",
+  "imageUrl": "https://media.foodfusion.com/2018/08/Mutanjan-Recipe-by-Food-fusion-2.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 0.5,
+          "unit": "kg",
+          "item": "Chawal (Rice) sella",
+          "note": "(soaked & boiled with cloves 6,green cardamom 6,salt ½ tbs until ¾th done)",
+          "raw": "Chawal (Rice) sella ½ kg (soaked & boiled with cloves 6,green cardamom 6,salt ½ tbs until ¾th done)"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Yellow food color",
+          "note": "dissolve in 2 tbs water",
+          "raw": "Yellow food color ½ tsp dissolve in 2 tbs water"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Red food color",
+          "note": "dissolve in 2 tbs water",
+          "raw": "Red food color ½ tsp dissolve in 2 tbs water"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Green food color",
+          "note": "dissolve in 2 tbs water",
+          "raw": "Green food color ½ tsp dissolve in 2 tbs water"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Makhan (Butter)",
+          "note": null,
+          "raw": "Makhan (Butter) 2 tbs"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Sukha narial (Dried coconut)",
+          "note": null,
+          "raw": "Sukha narial (Dried coconut) ¼ Cup"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Badam (Almonds) blanched",
+          "note": null,
+          "raw": "Badam (Almonds) blanched ¼ Cup"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Pista (Pistachio)",
+          "note": null,
+          "raw": "Pista (Pistachio) 2 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "ishmish (Raisins)",
+          "note": null,
+          "raw": "ishmish (Raisins) 2 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Cheeni (Sugar)",
+          "note": null,
+          "raw": "Cheeni (Sugar) 2 tbs"
+        },
+        {
+          "quantity": 200.0,
+          "unit": "",
+          "item": "Khoya",
+          "note": "gms",
+          "raw": "Khoya 200 gms"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Ghee",
+          "note": null,
+          "raw": "Ghee ½ Cup"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Laung (Cloves)",
+          "note": null,
+          "raw": "Laung (Cloves) 3-4"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Hari elaichi (Green cardamom)",
+          "note": null,
+          "raw": "Hari elaichi (Green cardamom) 3-4"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "cup",
+          "item": "Cheeni (Sugar)",
+          "note": "or to taste",
+          "raw": "Cheeni (Sugar) 1 & ½ Cups or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Doodh (Milk)",
+          "note": null,
+          "raw": "Doodh (Milk) ½ Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Lemon juice",
+          "note": null,
+          "raw": "Lemon juice ½ tsp"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Remaining boiled rice",
+          "note": null,
+          "raw": "Remaining boiled rice"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tbsp",
+          "item": "Kewra water",
+          "note": null,
+          "raw": "Kewra water ½ tbs"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Green colored rice",
+          "note": null,
+          "raw": "Green colored rice"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Red colored rice",
+          "note": null,
+          "raw": "Red colored rice"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Yellow colored rice",
+          "note": null,
+          "raw": "Yellow colored rice"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Gulab janum",
+          "note": null,
+          "raw": "Gulab janum"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Cham cham",
+          "note": null,
+          "raw": "Cham cham"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In 3 bowls,add ½ cup of boiled rice in each bowl.",
+      "romanUrdu": "3 bowls mein ½ cup boiled chawal dal dein."
+    },
+    {
+      "instruction": "Add yellow color,red color,green color,mix well & set aside.",
+      "romanUrdu": "Yellow color,red color aur green color dal ker ache tarhan mix ker karein & side per rakh dein."
+    },
+    {
+      "instruction": "In pot,add butter and let it melt,add dried coconut,almonds,pistachio and fry for 2 minutes.",
+      "romanUrdu": "Pot mein makhan dal ker melt karein,sukha narial,badam aur pista dal ker 2 minutes kliya fry ker lein."
+    },
+    {
+      "instruction": "Add raisins and fry for 1 minute & take out in a bowl.",
+      "romanUrdu": "Kishmish dal ker 1 minute kliya fry ker lein & bowl mein niakl lein."
+    },
+    {
+      "instruction": "Add sugar and mix well.",
+      "romanUrdu": "Cheeni dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add khoya,mix continuously and fry until brown and take out in a bowl.",
+      "romanUrdu": "Khoya dal ker musalsal mix kertay rahein aur brown hunay tak fry ker lein aur bowl mein nikal lein."
+    },
+    {
+      "instruction": "In the same pot,add ghee and let it melt.",
+      "romanUrdu": "Us he pot mein ghee dal ker melt karein."
+    },
+    {
+      "instruction": "Add cloves,green cardamom and mix.",
+      "romanUrdu": "Laung aur hari elaichi dal ker mix karein."
+    },
+    {
+      "instruction": "Add sugar and milk,mix well and cook until sugar is dissolved.",
+      "romanUrdu": "Cheeni aur doodh shamil karein aur cheeni ghul janay tak paka lein."
+    },
+    {
+      "instruction": "Add lemon juice and mix well.",
+      "romanUrdu": "Lemon juice dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add remaining boiled rice and mix well.",
+      "romanUrdu": "Baqi boiled rice dal ker mix ker lein."
+    },
+    {
+      "instruction": "Add half quantity of fried dry nuts and give it a good mix.",
+      "romanUrdu": "Fried dry nuts ki adhe quantity dal ker mix karein."
+    },
+    {
+      "instruction": "Add kewra water,mix well and cook for 4-5 minutes.",
+      "romanUrdu": "Kewra water dal ker ache tarhan mix karein aur 4-5 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add half quantity of fried khoya and mix well.",
+      "romanUrdu": "Fried khoya ki adhe quantity dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add fried khoya,green colored rice,red colored rice and yellow colored rice.",
+      "romanUrdu": "Fried khoya,green colored chawal,red colored chawal aur yellow colored chawal dal dein."
+    },
+    {
+      "instruction": "Cover and simmer on low flame for 8-10 minutes.",
+      "romanUrdu": "Dhak dein aur 8-10 minutes kliya halki ancch per dum per rakh dein."
+    },
+    {
+      "instruction": "Garnish with fried khoya,fried dry nuts,gulab janum,cham cham & serve.",
+      "romanUrdu": "Fried khoya,fried dry nuts,gulab jamun aur cham cham sa garnish ker ka serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/08/Mutanjan-Recipe-by-Food-fusion-2.jpg?v=1587764638",
+  "ogDescription": "A festive dessert for a festive occasion. Make Mutanjan with our recipe and enjoy the sweetness of Eid. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:40:35Z"
+}

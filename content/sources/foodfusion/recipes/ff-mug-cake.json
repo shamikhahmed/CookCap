@@ -1,0 +1,190 @@
+{
+  "wpId": 5872,
+  "slug": "mug-cake",
+  "id": "ff-mug-cake",
+  "title": "Mug Cake",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/mug-cake/",
+  "date": "2018-05-19T14:26:43",
+  "modified": "2018-05-20T17:02:18",
+  "classList": [
+    "post-5872",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "tag-horlics",
+    "tag-malt-powder",
+    "recipe_brand-horlicks_pakistan",
+    "recipe_category-1-meal-type",
+    "recipe_category-1baking",
+    "recipe_category-baked-desserts",
+    "recipe_category-1desserts-2",
+    "recipe_category-1-baked",
+    "recipe_category-desserts",
+    "recipe_category-dish-type",
+    "recipe_category-1desserts",
+    "recipe_category-kids-menu",
+    "recipe_category-occasions",
+    "recipe_category-birthday",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "desserts",
+  "imageUrl": "https://media.foodfusion.com/2018/04/Mug-cake-Recipe-by-Food-fusion-3.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": "Chocolate Mug Cake",
+      "items": [
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Anda (Egg)",
+          "note": null,
+          "raw": "Anda (Egg) 1"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Makhan (Butter) melted",
+          "note": "(unsalted)",
+          "raw": "Makhan (Butter) melted 1 tbs (unsalted)"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Vanilla essence",
+          "note": null,
+          "raw": "Vanilla essence ½ tsp"
+        },
+        {
+          "quantity": 2.5,
+          "unit": "tbsp",
+          "item": "Caster sugar",
+          "note": null,
+          "raw": "Caster sugar 2 & ½ tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Maida (All-purpose flour) sifted",
+          "note": null,
+          "raw": "Maida (All-purpose flour) sifted 1 tbs"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Baking powder",
+          "note": null,
+          "raw": "Baking powder ¼ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "pinch",
+          "item": "Namak (Salt)",
+          "note": null,
+          "raw": "Namak (Salt) 1 pinch"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Horlicks Chocolate powder",
+          "note": null,
+          "raw": "Horlicks Chocolate powder 2 tbs"
+        }
+      ]
+    },
+    {
+      "heading": "Malt Mug Cake",
+      "items": [
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Anda (Egg)",
+          "note": null,
+          "raw": "Anda (Egg) 1"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Makhan (Butter) melted",
+          "note": "(unsalted)",
+          "raw": "Makhan (Butter) melted 1 tbs (unsalted)"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Vanilla essence",
+          "note": null,
+          "raw": "Vanilla essence ½ tsp"
+        },
+        {
+          "quantity": 2.5,
+          "unit": "tbsp",
+          "item": "Caster sugar",
+          "note": null,
+          "raw": "Caster sugar 2 & ½ tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "pinch",
+          "item": "Namak (Salt)",
+          "note": null,
+          "raw": "Namak (Salt) 1 pinch"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Baking powder",
+          "note": null,
+          "raw": "Baking powder ¼ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Maida (All-purpose flour) sifted",
+          "note": null,
+          "raw": "Maida (All-purpose flour) sifted 1 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Horlicks Classic malt powder",
+          "note": null,
+          "raw": "Horlicks Classic malt powder 2 tbs"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In mug,add egg,butter,vanilla essence,caster sugar,all-purpose flour,baking powder,salt,horlicks chocolate powder and mix well until smooth.",
+      "romanUrdu": "Mug mein anda,makhan,vanilla essence,caster sugar,maida,baking powder,namak aur horlicks chocolate powder dal dein aur smooth hunay tak ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Microwave for 1:30 minutes (medium high).",
+      "romanUrdu": "1:30 minutes kliya microwave ker lein (medium high)."
+    },
+    {
+      "instruction": "Garnish with vanilla ice cream,chocolate syrup & serve.",
+      "romanUrdu": "Vanilla ice cream aur chocolate syrup sa garnish ker ka serve karein."
+    },
+    {
+      "instruction": "In mug,add egg,butter,vanilla essence,caster sugar,salt,baking powder,all-purpose flour,horlicks classic malt powder and mix well until smooth.",
+      "romanUrdu": "Mug mein anda,makhan,vanilla essence,caster sugar,namak,baking powder,maida aur horlicks classic malt powder dal dein aur smooth hunay tak ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Microwave for 1:30 minutes (medium high).",
+      "romanUrdu": "1:30 minutes kliya microwave ker lein (medium high)."
+    },
+    {
+      "instruction": "Garnish with whipped cream,cherry,wafer & serve.",
+      "romanUrdu": "Whipped cream,cherry aur wafer sa garnish ker ka serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/04/Mug-cake-Recipe-by-Food-fusion-3.jpg?v=1587765132",
+  "ogDescription": "After many requests here is a quick and easy Mug cake recipe for you all. Be creative with your toppings and enjoy with family. #HappyCookingToyou #HorlicksPakistan",
+  "scrapedAt": "2026-08-01T14:40:29Z"
+}

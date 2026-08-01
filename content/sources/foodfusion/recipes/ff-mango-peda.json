@@ -1,0 +1,121 @@
+{
+  "wpId": 18661,
+  "slug": "mango-peda",
+  "id": "ff-mango-peda",
+  "title": "Mango Peda",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/mango-peda/",
+  "date": "2021-06-17T10:43:19",
+  "modified": "2021-06-25T02:54:57",
+  "classList": [
+    "post-18661",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1milk",
+    "recipe_category-1desserts-2",
+    "recipe_category-desi-desserts",
+    "recipe_category-desserts",
+    "recipe_category-dish-type",
+    "recipe_category-1desserts",
+    "recipe_category-occasions",
+    "recipe_category-birthday",
+    "recipe_category-national-holidays",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_category-summer",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "desserts",
+  "imageUrl": "https://media.foodfusion.com/2021/06/Mango-Pera-Recipe-by-Food-fusion-3.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Aam (Mangoes) cubes",
+          "note": "medium",
+          "raw": "Aam (Mangoes) cubes 2-3 medium"
+        },
+        {
+          "quantity": 4.0,
+          "unit": "tbsp",
+          "item": "Sugar",
+          "note": "or to taste",
+          "raw": "Sugar 4-5 tbs or to taste"
+        },
+        {
+          "quantity": 2.5,
+          "unit": "cup",
+          "item": "Milk powder",
+          "note": null,
+          "raw": "Milk powder 2 & ½ Cups"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Elaichi powder (Cardamom powder)",
+          "note": null,
+          "raw": "Elaichi powder (Cardamom powder) ½ tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Ghee",
+          "note": null,
+          "raw": "Ghee 2 tbs"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Badam (Almonds) chopped",
+          "note": null,
+          "raw": "Badam (Almonds) chopped"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Pista (Pistachios) sliced",
+          "note": null,
+          "raw": "Pista (Pistachios) sliced"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In a blender jug,add mangoes & blend to puree mangoes.",
+      "romanUrdu": "Blender jug mein aam dal dein aur blend ker ka mango puree tayyar ker lein."
+    },
+    {
+      "instruction": "In a wok,add mango puree,sugar,mix well & cook on medium flame for 3-4 minutes.",
+      "romanUrdu": "Karahi mein mango puree aur cheeni dal ker ache tarhan mix karein aur darmiyani ancch per 3-4 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add milk powder,cardamom powder,mix well & cook on low flame for 2 minutes.",
+      "romanUrdu": "Milk powder aur elaichi powder dal ker ache tarhan mix karein aur halki ancch per 2 minute kliya paka lein."
+    },
+    {
+      "instruction": "Add ghee,mix continuously & cook on low flame until it leaves the sides of the pot (12-15 minutes).",
+      "romanUrdu": "Ghee dal ker musalsal mix kertay rahein aur halki ancch per pot ki sides chornay tak paka lein (12-15 minutes)."
+    },
+    {
+      "instruction": "Bring it to room temperature.",
+      "romanUrdu": "Room temperature per la ayein."
+    },
+    {
+      "instruction": "Take a small quantity of mixture (40g) & make a smooth round ball with the help of your finger pressing in the middle of the ball and place almonds & pistachios in the center,press slightly (makes 12-14) & serve!",
+      "romanUrdu": "Mixture ki small quantity lein (40g) aur smooth round ball bana lein aur ball ka center mein finger ki madad sa press ker lein,badam aur pista dal ker slightly press ker lein (makes 12-14) & serve karein!"
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2021/06/Mango-Pera-Recipe-by-Food-fusion-3.jpg?v=1623904690",
+  "ogDescription": "Everyone loved this mango peda recipe. A must try recipe this Mango Season. #HappyCookingToYou #FoodFusion #MangoWeek",
+  "scrapedAt": "2026-08-01T14:42:51Z"
+}

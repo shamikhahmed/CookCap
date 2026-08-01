@@ -1,0 +1,220 @@
+{
+  "wpId": 4150,
+  "slug": "malka-daal",
+  "id": "ff-malka-daal",
+  "title": "Malka Daal",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/malka-daal/",
+  "date": "2017-10-18T16:42:58",
+  "modified": "2017-10-18T16:44:08",
+  "classList": [
+    "post-4150",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "tag-daal",
+    "tag-eggs",
+    "tag-ghee",
+    "tag-lentils",
+    "tag-oil",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-dish-type",
+    "recipe_category-1-daal",
+    "recipe_category-eggs-2",
+    "recipe_category-everyday-cooking",
+    "recipe_category-lunch-dinner",
+    "recipe_category-daal",
+    "recipe_category-seasonal",
+    "recipe_category-ramzan1",
+    "recipe_category-summer"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2017/10/ID-R00451-4-Malka-Daal.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 0.5,
+          "unit": "kg",
+          "item": "Kali masoor daal (Black lentil gram)",
+          "note": "(washed)",
+          "raw": "Kali masoor daal (Black lentil gram) ½ kg (washed)"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "l",
+          "item": "Pani (Water)",
+          "note": null,
+          "raw": "Pani (Water) 1 litre"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Lehsan paste (Garlic paste)",
+          "note": null,
+          "raw": "Lehsan paste (Garlic paste) 1 & ½ tsp"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Adrak paste (Ginger paste)",
+          "note": null,
+          "raw": "Adrak paste (Ginger paste) 1 & ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Zeera powder (Cumin powder)",
+          "note": null,
+          "raw": "Zeera powder (Cumin powder) 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Garam masala powder",
+          "note": null,
+          "raw": "Garam masala powder ½ tsp"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chili powder) 1 & ½ tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldee powder (Turmeric powder) 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Dahi (Yogurt) grinded",
+          "note": null,
+          "raw": "Dahi (Yogurt) grinded ½ Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Oil",
+          "note": null,
+          "raw": "Oil ½ Cup"
+        },
+        {
+          "quantity": 4.0,
+          "unit": "",
+          "item": "Anday (Eggs) boiled",
+          "note": null,
+          "raw": "Anday (Eggs) boiled 4"
+        }
+      ]
+    },
+    {
+      "heading": "Tadka",
+      "items": [
+        {
+          "quantity": 0.75,
+          "unit": "cup",
+          "item": "Oil",
+          "note": null,
+          "raw": "Oil ¾ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pyaz (Onion) sliced",
+          "note": "small",
+          "raw": "Pyaz (Onion) sliced 1 small"
+        },
+        {
+          "quantity": 5.0,
+          "unit": "",
+          "item": "Sabut lal mirch (Whole red chilies)",
+          "note": null,
+          "raw": "Sabut lal mirch (Whole red chilies) 5-6"
+        },
+        {
+          "quantity": 4.0,
+          "unit": "",
+          "item": "Lehsan (Garlic) cloves",
+          "note": null,
+          "raw": "Lehsan (Garlic) cloves 4-5"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Zeera (Cumin seeds)",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) 1 & ½ tsp"
+        },
+        {
+          "quantity": 8.0,
+          "unit": "",
+          "item": "Curry pata (Curry leaves)",
+          "note": null,
+          "raw": "Curry pata (Curry leaves) 8-10"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Garam masala powder",
+          "note": null,
+          "raw": "Garam masala powder ½ tsp"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In pot,add black lentil gram,water,garlic paste,ginger paste,cumin seeds,garam masala powder,red chili powder,salt and turmeric powder,bring it to boil and mix well,cover and cook on low flame for 30 minutes or until tender.",
+      "romanUrdu": "Pot mein kali masoor daal,pani,lehsan paste,adrak paste,zeera,garam masala powder,lal mirch powder, namak aur haldee powder dal ker ubal lein phir ache tarhan mix karein aur dhak ker halki ancch per 30 minutes ya gul janay tak paka lein."
+    },
+    {
+      "instruction": "Add yogurt,mix and mash well with the help of masher.",
+      "romanUrdu": "Dahi dal ker ache tarhan mix karein aur masher ki madad sa ache tarhan mash ker lein."
+    },
+    {
+      "instruction": "Cook on low flame for 8-10 minutes and set aside.",
+      "romanUrdu": "Halki ancch per 8-10 minutes kliya paka lein phir side per rakh dein."
+    },
+    {
+      "instruction": "In frying pan,add oil and fry boiled eggs until golden brown,set aside and cut into two halves.",
+      "romanUrdu": "Frying pan mein oil aur boiled anday dal ker golden brown fry ker lein phir side per rakh ker do hisson mein cut ker lein."
+    },
+    {
+      "instruction": "In frying pan,add oil,onion and fry until translucent.",
+      "romanUrdu": "Frying pan mein oil aur pyaz dal dein aur translucent hunay tak fry ker lein."
+    },
+    {
+      "instruction": "Add whole red chilies,garlic and mix well.",
+      "romanUrdu": "Sabut lal mirch aur lehsan dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add cumin seeds,curry leaves and mix well.",
+      "romanUrdu": "Zeera aur curry pata dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add tadka on cooked black lentil gram,garnish with fried eggs and sprinkle garam masala powder & serve.",
+      "romanUrdu": "Tadka ko cooked kali masoor daal per dal dein,fried anday sa garnish karein & garam masala chirak ker serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2017/10/ID-R00451-4-Malka-Daal.jpg?v=1587765825",
+  "ogDescription": "An unusually tasty daal recipe (Sabut masoor daal) that you will always treasure. We put a little twist of our in it, watch the video to find out. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:42:45Z"
+}

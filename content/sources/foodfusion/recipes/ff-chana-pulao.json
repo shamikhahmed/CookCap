@@ -1,0 +1,253 @@
+{
+  "wpId": 7419,
+  "slug": "chana-pulao",
+  "id": "ff-chana-pulao",
+  "title": "Chana Pulao",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/chana-pulao/",
+  "date": "2018-09-15T17:35:34",
+  "modified": "2018-09-15T19:00:22",
+  "classList": [
+    "post-7419",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "tag-rice",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-rice",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-dish-type",
+    "recipe_category-biryani",
+    "recipe_category-everyday-cooking",
+    "recipe_category-rice",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2018/09/Chanay-ka-Pulao-Recipe-by-Food-fusion-2.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 2.0,
+          "unit": "pc",
+          "item": "Jaifil (Nutmeg)",
+          "note": null,
+          "raw": "Jaifil (Nutmeg) 2 small pieces"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Javatri (Mace)",
+          "note": null,
+          "raw": "Javatri (Mace) 2-3"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Sabut kali mirch (Black peppercorns)",
+          "note": null,
+          "raw": "Sabut kali mirch (Black peppercorns) ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Badi elaichi (Black cardamom)",
+          "note": null,
+          "raw": "Badi elaichi (Black cardamom) 1"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "inch",
+          "item": "Adrak (Ginger)",
+          "note": "piece",
+          "raw": "Adrak (Ginger) 1 inch piece"
+        },
+        {
+          "quantity": 6.0,
+          "unit": "cloves",
+          "item": "Lehsan (Garlic)",
+          "note": null,
+          "raw": "Lehsan (Garlic) 6-7 cloves"
+        },
+        {
+          "quantity": 12.0,
+          "unit": "",
+          "item": "Hari mirch (Green chilies)",
+          "note": null,
+          "raw": "Hari mirch (Green chilies) 12-13"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) 2 tbs or as required"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil ½ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pyaz (Onion) sliced",
+          "note": "medium",
+          "raw": "Pyaz (Onion) sliced 1 medium"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Zeera (Cumin seeds)",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) 1 tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Darchini (Cinnamon sticks)",
+          "note": null,
+          "raw": "Darchini (Cinnamon sticks) 2-3"
+        },
+        {
+          "quantity": 12.0,
+          "unit": "",
+          "item": "Sabut kali mirch (Black peppercorns)",
+          "note": null,
+          "raw": "Sabut kali mirch (Black peppercorns) 12-14"
+        },
+        {
+          "quantity": 4.0,
+          "unit": "",
+          "item": "Laung (Cloves)",
+          "note": null,
+          "raw": "Laung (Cloves) 4-5"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Hari elaichi (Green cardamom)",
+          "note": null,
+          "raw": "Hari elaichi (Green cardamom) 3-4"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 & ½ tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chili powder) 1 tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Dahi (Yogurt) whisked",
+          "note": null,
+          "raw": "Dahi (Yogurt) whisked ½ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Chicken stock cube",
+          "note": null,
+          "raw": "Chicken stock cube 1"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Podina (Mint leaves) chopped",
+          "note": null,
+          "raw": "Podina (Mint leaves) chopped ½ Cup"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) 2-3 Cups or as required"
+        },
+        {
+          "quantity": 250.0,
+          "unit": "",
+          "item": "Chanay (Chickpeas) boiled",
+          "note": "gms",
+          "raw": "Chanay (Chickpeas) boiled 250 gms"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "kg",
+          "item": "Chawal (Rice) basmati",
+          "note": "(soaked)",
+          "raw": "Chawal (Rice) basmati ½ kg (soaked)"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In spice mixer,add nutmeg,mace,black peppercorns,black cardamom and grind well.",
+      "romanUrdu": "Spice mixer mein jaifil,javatri,sabut kali mirch aur badi elaichi dal ker ache tarhan grind karein."
+    },
+    {
+      "instruction": "Add ginger,garlic,green chilies,water and grind to make a paste & set aside.",
+      "romanUrdu": "Adrak,lehsan,hari mirch aur pani dal dein aur grind ker ka paste tayyar ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "In pot,add cooking oil,onion and fry until light golden.",
+      "romanUrdu": "Pot mein cooking oil aur pyaz dal dein aur light golden hunay tak fry ker lein."
+    },
+    {
+      "instruction": "Add cumin seeds,cinnamon sticks,black peppercorns,cloves,green cardamom and mix.",
+      "romanUrdu": "Zeera,darchini,sabut kali mirch,laung aur hari elaichi dal ker mix karein."
+    },
+    {
+      "instruction": "Now add grinded paste and mix well.",
+      "romanUrdu": "Ab grinded paste shamil karein aur ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add salt,red chili powder and mix well for 2 minutes.",
+      "romanUrdu": "Namak aur lal mirch powder dal ker 2 minutes kliya ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add yogurt and mix well.",
+      "romanUrdu": "Dahi shamil karein aur ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add chicken stock cube,mint leaves and mix well.",
+      "romanUrdu": "Chicken stock cube aur podina dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add water,mix well and bring it to boil.",
+      "romanUrdu": "Pani dal dein aur ubal anay dein."
+    },
+    {
+      "instruction": "Add chickpeas and rice,mix gently and bring it to boil.",
+      "romanUrdu": "Chanay aur chawal dal ker gently mix ker lein aur ubal anay dein."
+    },
+    {
+      "instruction": "Cook on medium high flame until water is reduced (8-10 minutes).",
+      "romanUrdu": "Darmiyani tez ancch per pani reduce ho janay tak paka lein (8-10 minutes)."
+    },
+    {
+      "instruction": "Cover and steam cook on low flame for 5-8 minutes & serve!",
+      "romanUrdu": "Dhak dein aur halki ancch per 5-8 minutes kliya steam cook ker lein & serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/09/Chanay-ka-Pulao-Recipe-by-Food-fusion-2.jpg?v=1587764554",
+  "ogDescription": "A quick easy and simple Channa Pulao recipe for you. Make it and share your experience in comments below #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:43:56Z"
+}

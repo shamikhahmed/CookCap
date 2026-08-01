@@ -1,0 +1,258 @@
+{
+  "wpId": 4358,
+  "slug": "fish-tikka",
+  "id": "ff-fish-tikka",
+  "title": "Fish Tikka",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/fish-tikka/",
+  "date": "2017-11-07T18:09:42",
+  "modified": "2017-11-12T16:44:04",
+  "classList": [
+    "post-4358",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "tag-fish",
+    "tag-meat",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-fish",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-bbqgrilling",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-dish-type",
+    "recipe_category-fried-items",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-sea-food",
+    "recipe_category-lunch-dinner",
+    "recipe_category-national-holidays",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_category-winter",
+    "recipe_behind_camera-sameen-moiz"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2017/11/ID-R00464-Fish-Tikka-5.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chili powder) 1 tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Dhania powder (Coriander powder)",
+          "note": null,
+          "raw": "Dhania powder (Coriander powder) 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Garam masala powder",
+          "note": null,
+          "raw": "Garam masala powder ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Zeera (Cumin seeds) crushed",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) crushed 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tsp or to taste"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Zarda ka rang (Yellow food color)",
+          "note": "or as required",
+          "raw": "Zarda ka rang (Yellow food color) ¼ tsp or as required"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Lemon juice",
+          "note": null,
+          "raw": "Lemon juice 2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) 1 tbs"
+        },
+        {
+          "quantity": 500.0,
+          "unit": "",
+          "item": "Machli (Fish) boneless cubes",
+          "note": "gms",
+          "raw": "Machli (Fish) boneless cubes 500 gms"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Lemon slices (optional)",
+          "note": null,
+          "raw": "Lemon slices (optional)"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Oil",
+          "note": null,
+          "raw": "Oil 2 tbs"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Koyla (Charcoal) for smoke",
+          "note": null,
+          "raw": "Koyla (Charcoal) for smoke"
+        }
+      ]
+    },
+    {
+      "heading": "Fish Tikka with Gravy",
+      "items": [
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Oil",
+          "note": null,
+          "raw": "Oil ¼ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) 1 tbs"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Tamatar (Tomatoes) chopped",
+          "note": "medium",
+          "raw": "Tamatar (Tomatoes) chopped 3 medium"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Lal mirch (Red chili) crushed",
+          "note": "or to taste",
+          "raw": "Lal mirch (Red chili) crushed ½ tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Safed mirch powder (White pepper powder)",
+          "note": null,
+          "raw": "Safed mirch powder (White pepper powder) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Kali mirch powder (Black pepper powder)",
+          "note": null,
+          "raw": "Kali mirch powder (Black pepper powder) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Dhania (Coriander seeds) crushed",
+          "note": null,
+          "raw": "Dhania (Coriander seeds) crushed ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Zeera (Cumin seeds) crushed",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) crushed ½ tsp"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Adrak (Ginger) julienne",
+          "note": null,
+          "raw": "Adrak (Ginger) julienne"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Hari mirch (Green chilies) julienne",
+          "note": null,
+          "raw": "Hari mirch (Green chilies) julienne"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In bowl,add red chili powder,coriander powder,garam masala powder,cumin seeds,salt,yellow food color,lemon juice,ginger garlic paste and mix well.",
+      "romanUrdu": "Bowl mein lal mirch powder,dhania powder,garam masala powder,zeera,namak,zarda ka rang,lemon juice aur adrak lehsan paste dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "In bowl,add fish boneless cubes and prepared paste,mix well and marinate for 30 minutes.",
+      "romanUrdu": "Bowl mein fish boneless cubes aur tayyar paste dal ker ache tarhan mix karein aur 30 minutes kliya matinate ker lein."
+    },
+    {
+      "instruction": "Thread lemon slices and marinated fish cubes on skewers.",
+      "romanUrdu": "Lemon slices aur marinated machli ko skewers per laga lein."
+    },
+    {
+      "instruction": "In grill pan,add oil and fry on low flame until done.",
+      "romanUrdu": "Grill pan mein oil dal dein aur fish ko pak janay tak halki ancch per fry ker lein."
+    },
+    {
+      "instruction": "Switch off the flame and give a charcoal smoke for 2 minutes & set aside.",
+      "romanUrdu": "Chulha bund ker dein aur 2 minutes kliya koyla ka dhuwan dein & side per rakh dein."
+    },
+    {
+      "instruction": "In wok,add oil,ginger garlic paste and mix well.",
+      "romanUrdu": "Karhai mein oil aur adrak lehsan paste dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add tomatoes,mix well and cook for 2 minutes.",
+      "romanUrdu": "Tamatar dal ker ache tarhan mix karein aur 2 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add salt,red chili crushed,white pepper powder,black pepper powder,coriander powder,cumin seeds and mix well,cook until tomatoes are soft.",
+      "romanUrdu": "Namak,lal mirch crushed,safed mirch powder,kali mirch powder,dhania powder aur zeera dal ker ache tarhan mix karein aur tamatar naram hunay tak paka lein."
+    },
+    {
+      "instruction": "Add grilled fish cubes,ginger and green chilies,cover and simmer for 2 minutes.",
+      "romanUrdu": "Grilled fish cubes,adrak aur hari mirch dal dein aur dhak ker 2 minutes kliya dum per rakh dein."
+    },
+    {
+      "instruction": "Garnish with green chili and ginger & serve.",
+      "romanUrdu": "Hari mirch aur adrak sa granish ker ka serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2017/11/ID-R00464-Fish-Tikka-5.jpg?v=1587765757",
+  "ogDescription": "A perfectly cooked fish tikka. Try this recipe with and without gravy. You will love it both ways. Let us know how it turns out. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:42:13Z"
+}

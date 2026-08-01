@@ -1,0 +1,250 @@
+{
+  "wpId": 6794,
+  "slug": "egg-qorma",
+  "id": "ff-egg-qorma",
+  "title": "Egg Qorma",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/egg-qorma/",
+  "date": "2018-07-03T15:17:10",
+  "modified": "2018-07-04T13:39:07",
+  "classList": [
+    "post-6794",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-eggs",
+    "recipe_category-1tommato",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-dish-type",
+    "recipe_category-salanscurrys",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-egg",
+    "recipe_category-lunch-dinner",
+    "recipe_category-gravys",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2018/06/Egg-Korma-Recipe-by-Food-Fusion-5.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Safeed til (Sesame seeds)",
+          "note": null,
+          "raw": "Safeed til (Sesame seeds) 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Kashkhash (Poppy seeds)",
+          "note": null,
+          "raw": "Kashkhash (Poppy seeds) 1 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Tamatar (Tomatoes) cubes",
+          "note": "medium",
+          "raw": "Tamatar (Tomatoes) cubes 2 medium"
+        },
+        {
+          "quantity": 4.0,
+          "unit": "tbsp",
+          "item": "Cooking oil",
+          "note": "or as required",
+          "raw": "Cooking oil 4 tbs or as required"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pyaz (Onion) sliced",
+          "note": "medium",
+          "raw": "Pyaz (Onion) sliced 1 medium"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Pani (Water)",
+          "note": null,
+          "raw": "Pani (Water) 1-2 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Aloo (Potatoes) peeled & cubes",
+          "note": "medium",
+          "raw": "Aloo (Potatoes) peeled & cubes 2-3 medium"
+        },
+        {
+          "quantity": 6.0,
+          "unit": "",
+          "item": "Anday (Eggs) boiled",
+          "note": null,
+          "raw": "Anday (Eggs) boiled 6"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Tez paat (Bay leaves)",
+          "note": null,
+          "raw": "Tez paat (Bay leaves) 2"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Zeera (Cumin seeds)",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) 1 tsp"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Laung (Cloves)",
+          "note": null,
+          "raw": "Laung (Cloves) 3-4"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Hari elaichi (Green cardamom)",
+          "note": null,
+          "raw": "Hari elaichi (Green cardamom) 3"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Hari mirch (Green chilies)",
+          "note": null,
+          "raw": "Hari mirch (Green chilies) 2-3"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chili powder) 1 tsp or to taste"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tbsp",
+          "item": "Dhania powder (Coriander powder)",
+          "note": null,
+          "raw": "Dhania powder (Coriander powder) 1 & ½ tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) 1 Cup or as required"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Garam masala powder",
+          "note": null,
+          "raw": "Garam masala powder ½ tsp"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Podina (Mint leaves) chopped",
+          "note": null,
+          "raw": "Podina (Mint leaves) chopped"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In frying pan,add sesame seeds,poppy seed and roast until fragrant & set aside.",
+      "romanUrdu": "Frying pan mein safeed til aur kashkhash dal dein aur khushbu anay tak roast ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "In the same frying pan,add tomatoes and roast for 2-3 minutes & set aside.",
+      "romanUrdu": "Us he frying pan mein tamatar dal dein aur 2-3 minutes kliya roast karein & side per rakh dein."
+    },
+    {
+      "instruction": "In pot,add cooking oil,onion and fry until golden brown & set aside.",
+      "romanUrdu": "Pot mein cooing oil aur pyaz dal ker golden brown hunay tak fry ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "In grinder,add fried onion,roasted tomatoes,roasted sesame & poppy seeds and grind well.",
+      "romanUrdu": "Grinder mein fried pyaz,roasted tamatar aur roasted safeed til aur kashkhash dal ker ache tarhan grind ker lein."
+    },
+    {
+      "instruction": "Add water and grind to make a paste & set aside.",
+      "romanUrdu": "Pani dal dein aur grind ker ka paste tayyar ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "In the same pot,heat cooking oil,add potatoes and fry until light golden.",
+      "romanUrdu": "Us he pot mein cooking oil garam karein aur aloo dal ker light golden hunay tak fry ker lein."
+    },
+    {
+      "instruction": "Add eggs,fry until light golden and take out for later use.",
+      "romanUrdu": "Anday dal dein aur light golden hunay tak fry karein aur bad mein use kerna kliya bahir nikal lein."
+    },
+    {
+      "instruction": "Add bay leaves,cumin seeds,cloves,green cardamom,green chilies and mix well.",
+      "romanUrdu": "Tez paat,zeera,laung,hari elaichi aur hari mirch dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add ginger garlic paste,mix well and cook for 2 minutes.",
+      "romanUrdu": "Adrak lehsan paste dal ker ache tarhan mix karein aur 2 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Now add grinded paste,mix well and cook for 4-5 minutes.",
+      "romanUrdu": "Ab grinded paste shamil karein aur 4-5 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add red chili powder,coriander powder and salt,mix well and cook for 5 minutes.",
+      "romanUrdu": "Lal mirch powder,dhania powder aur namak dal ker ache tarhan mix karein aur 5 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add water and mix well.",
+      "romanUrdu": "Pani shamil karein aur ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add garam masala powder and mix.",
+      "romanUrdu": "Garam masala powder dal ker mix karein."
+    },
+    {
+      "instruction": "Cover and cook on low flame for 2-3 minutes.",
+      "romanUrdu": "Dhak dein aur halki ancch per 2-3 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Now add boiled & fried eggs and mix gently.",
+      "romanUrdu": "Ab boiled & fried anday dal ker gently mix karein."
+    },
+    {
+      "instruction": "Sprinkle mint leaves & serve.",
+      "romanUrdu": "Podina dal ker mix karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/06/Egg-Korma-Recipe-by-Food-Fusion-5.jpg?v=1587764792",
+  "ogDescription": "Try Egg Korma Today and enjoy with family. #HappyCookingToYouTry Egg Korma Today and enjoy with family. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:40:55Z"
+}

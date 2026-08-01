@@ -1,0 +1,187 @@
+{
+  "wpId": 4460,
+  "slug": "fish-soup",
+  "id": "ff-fish-soup",
+  "title": "Fish Soup",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/fish-soup/",
+  "date": "2017-11-27T21:49:05",
+  "modified": "2018-02-18T07:30:38",
+  "classList": [
+    "post-4460",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "tag-healthy",
+    "tag-healthy-fusion",
+    "recipe_partner-healthy-fusion",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-carrot",
+    "recipe_category-1-fish",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-appetizers-snacks",
+    "recipe_category-dish-type",
+    "recipe_category-soup",
+    "recipe_category-everyday-cooking",
+    "recipe_category-healthy",
+    "recipe_category-ingredient",
+    "recipe_category-sea-food",
+    "recipe_category-lunch-dinner",
+    "recipe_category-seasonal",
+    "recipe_category-winter",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2017/11/ID-R00475-Fish-Soup-3.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 300.0,
+          "unit": "",
+          "item": "Chirchiri machli or Small fish",
+          "note": "gms",
+          "raw": "Chirchiri machli or Small fish 300 gms"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": null,
+          "raw": "Namak (Salt) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldee powder (Turmeric powder) 1 tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Olive oil",
+          "note": null,
+          "raw": "Olive oil 2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pyaz (Onion)",
+          "note": "large",
+          "raw": "Pyaz (Onion) 1 large"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Adrak (Ginger) chopped",
+          "note": null,
+          "raw": "Adrak (Ginger) chopped 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Lehsan (Garlic) chopped",
+          "note": null,
+          "raw": "Lehsan (Garlic) chopped 1 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Tomato paste",
+          "note": null,
+          "raw": "Tomato paste 2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Gajar (Carrot)",
+          "note": "medium",
+          "raw": "Gajar (Carrot) 1 medium"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Bund gobhi (Cabbage)",
+          "note": null,
+          "raw": "Bund gobhi (Cabbage) 1 Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tsp or to taste"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Kali mirch (Black pepper) crushed",
+          "note": "or to taste",
+          "raw": "Kali mirch (Black pepper) crushed 1 & ½ tsp or to taste"
+        },
+        {
+          "quantity": 5.0,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) 5-6 Cups or as required"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Hara pyaz (Green onion)",
+          "note": null,
+          "raw": "Hara pyaz (Green onion) ¼ Cup"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "Clean and remove center bone.",
+      "romanUrdu": "Fish ko saaf ker ka center bone ko nikal lein."
+    },
+    {
+      "instruction": "In small fish,add salt and turmeric powder,mix well and set aside for 30 minutes then wash with tap water.",
+      "romanUrdu": "Chirchiri machli mein namak aur haldee powder dal ker ache tarhan mix karein aur 30 minutes kliya side per rakh dein phir tap water sa wash ker lein."
+    },
+    {
+      "instruction": "In pot,add olive oil,onion and fry until translucent.",
+      "romanUrdu": "Pot mein olive oil aur pyaz dal dein aur translucent hunay tak fry ker lein."
+    },
+    {
+      "instruction": "Add ginger,garlic and mix well.",
+      "romanUrdu": "Adrak aur lehsan dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add tomato paste and cook for 2 minutes.",
+      "romanUrdu": "Tomato paste dal dein aur 2 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add carrots,cabbage,salt and black pepper crushed and mix well.",
+      "romanUrdu": "Gajar,bund gobhi,namak,kali mirch crushed dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add washed fish and mix well.",
+      "romanUrdu": "Washed machli dal dein aur ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add water,mix well and bring it to boil,cover & cook on low flame for approx.1 hour.",
+      "romanUrdu": "Pani shamil ker ka mix karein aur ubal anay ka bad dhak dein & halki ancch per approx. 1 hour kliya paka lein."
+    },
+    {
+      "instruction": "Add green onion,mix well & serve.",
+      "romanUrdu": "Hara pyaz dal ker ache tarhan mix karein & serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2017/11/ID-R00475-Fish-Soup-3.jpg?v=1587765690",
+  "ogDescription": "Fish Soup recipe to warm you up this winter. Add fish to your diet. Its high in important nutrients. It a great source of omega-3 fatty acids and vitamin-D.",
+  "scrapedAt": "2026-08-01T14:40:59Z"
+}

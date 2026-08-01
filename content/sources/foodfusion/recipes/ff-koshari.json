@@ -1,0 +1,278 @@
+{
+  "wpId": 10096,
+  "slug": "koshari",
+  "id": "ff-koshari",
+  "title": "Koshari",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/koshari/",
+  "date": "2019-05-24T13:02:45",
+  "modified": "2019-05-26T04:24:45",
+  "classList": [
+    "post-10096",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-pasta",
+    "recipe_category-1-rice",
+    "recipe_category-lentils-daal",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-1-pastas",
+    "recipe_category-dish-type",
+    "recipe_category-1-daal",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-pasta",
+    "recipe_category-rice",
+    "recipe_category-lunch-dinner",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2019/05/Koshari-Recipe-by-Food-fusion-3.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Zeera powder (Cumin powder)",
+          "note": null,
+          "raw": "Zeera powder (Cumin powder) 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Paprika powder",
+          "note": null,
+          "raw": "Paprika powder 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Jailfil powder (Nutmeg powder)",
+          "note": null,
+          "raw": "Jailfil powder (Nutmeg powder) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tbsp",
+          "item": "Dhania powder (Coriander powder)",
+          "note": null,
+          "raw": "Dhania powder (Coriander powder) ½ tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": null,
+          "raw": "Lal mirch powder (Red chili powder) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Kali mirch (Black pepper) crushed",
+          "note": null,
+          "raw": "Kali mirch (Black pepper) crushed 1 tsp"
+        },
+        {
+          "quantity": 4.0,
+          "unit": "",
+          "item": "Tamatar (Tomatoes) blanched",
+          "note": "medium",
+          "raw": "Tamatar (Tomatoes) blanched 4-5 medium"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil 2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pyaz (Onion) chopped",
+          "note": "medium",
+          "raw": "Pyaz (Onion) chopped 1 medium"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lehsan (Garlic) crushed",
+          "note": null,
+          "raw": "Lehsan (Garlic) crushed 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Darchini (Cinnamon stick)",
+          "note": null,
+          "raw": "Darchini (Cinnamon stick) 1"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Tez paat (Bay leaves)",
+          "note": null,
+          "raw": "Tez paat (Bay leaves) 2"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Sirka (Vinegar)",
+          "note": null,
+          "raw": "Sirka (Vinegar) 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lal mirch (Red chili) crushed",
+          "note": null,
+          "raw": "Lal mirch (Red chili) crushed 1 tsp"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) 3-4 tbs or as required"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil 3 tbs"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "cup",
+          "item": "Chawal (Rice) basmati",
+          "note": "(soaked)",
+          "raw": "Chawal (Rice) basmati 1 & ½ Cups (soaked)"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": null,
+          "raw": "Pani (Water) 2 Cups"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "cup",
+          "item": "Sabut kali masoor daal (Whole black lentil gram)",
+          "note": "(soaked & boiled until done)",
+          "raw": "Sabut kali masoor daal (Whole black lentil gram) 1 & ½ Cups (soaked & boiled until done)"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Macaroni boiled",
+          "note": null,
+          "raw": "Macaroni boiled 1 Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Chanay (Chickpeas) boiled",
+          "note": null,
+          "raw": "Chanay (Chickpeas) boiled 1 Cup"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Prepared tomato sauce",
+          "note": null,
+          "raw": "Prepared tomato sauce"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Pyaz (Onion) fried",
+          "note": null,
+          "raw": "Pyaz (Onion) fried"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In bowl,add cumin powder,paprika powder,nutmeg powder,coriander powder,red chili powder,black pepper crushed,mix well & set aside.",
+      "romanUrdu": "Bowl mein zeera powder,paprika powder,jaifil powder,dhania powder,lal mirch powder aur kali mirch crushed dal ker ache tarhan mix karein & side per rakhd ein."
+    },
+    {
+      "instruction": "In grinder,add tomatoes and grind to make a puree & set aside.",
+      "romanUrdu": "Grinder mein tamatar dal dein aur grind ker ka puree tayyar ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "In saucepan,add cooking oil,onion and sauté until translucent.",
+      "romanUrdu": "Saucepan mein cooking oil aur pyaz dal dein aur translucent hunay tak sauté ker lein."
+    },
+    {
+      "instruction": "Add garlic and mix well.",
+      "romanUrdu": "Lehsan dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Now add 2 tbs of prepared spice mix,salt,cinnamon stick,bay leaves and mix well.",
+      "romanUrdu": "2 tbs tayyar spice mix,namak,darchini aur tez paat dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add tomato puree,mix well and cook for 4-5 minutes.",
+      "romanUrdu": "Tamatar puree dal ker ache tarhan mix karein aur 4-5 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add vinegar,red chili crushed and mix well.",
+      "romanUrdu": "Sirka aur lal mirch crushed dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add water and mix,cover and cook on low flame for 10-15 minutes & set aside.",
+      "romanUrdu": "Pani dal ker mix karein aur dhak ker halki ancch per 10-15 minutes kliya paka lein & side per rakh dein."
+    },
+    {
+      "instruction": "In pot,add cooking oil,rice,mix well and cook for 5 minutes.",
+      "romanUrdu": "Pot mein cooking oil aur chawal dal ker ache tarhan mix karein aur 5 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add remaining spice mix and mix well.",
+      "romanUrdu": "Remaining spice mix dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add water,salt,mix well and bring it to boil and cook on medium flame until water is reduced.",
+      "romanUrdu": "Pani aur namak dal ker mix karein aur ubal anay ka bad dhak dein aur darmiyani ancch per pani reduce ho janay tak paka lein."
+    },
+    {
+      "instruction": "Cover and steam cook on low flame for 5-6 minutes.",
+      "romanUrdu": "Dhak dein aur halki ancch per 5-6 minutes kliya steam cook ker lein."
+    },
+    {
+      "instruction": "In serving plate,add cooked rice,boiled whole black lentil gram,boiled macaroni,boiled chickpeas, prepared tomato sauce,fried onion & serve!",
+      "romanUrdu": "Serving plate mein cooked chawal,boiled sabut kali masoor daal,boiled macaroni,boiled chanay,tayyar tomato sauce aur fried pyaz dal ker serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2019/05/Koshari-Recipe-by-Food-fusion-3.jpg?v=1587763513",
+  "ogDescription": "Just like we love Biryani, Egyptians love koshari, so much so that its Egypt's national dish. This is our little attempt at it and we all loved it too.",
+  "scrapedAt": "2026-08-01T14:40:14Z"
+}

@@ -1,0 +1,453 @@
+{
+  "byType": {
+    "few-steps": 4,
+    "no-taste": 31,
+    "no-texture": 31,
+    "generic-ff-story": 31,
+    "default-nutrition": 31,
+    "default-times": 31,
+    "missing-roman-urdu": 1
+  },
+  "issues": [
+    {
+      "id": "ff-aloo-puri",
+      "title": "Aloo puri",
+      "chapter": "breads",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times",
+        "missing-roman-urdu"
+      ],
+      "n": 6
+    },
+    {
+      "id": "ff-egg-qorma",
+      "title": "Egg Qorma",
+      "chapter": "pakistani",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-qeema-naan",
+      "title": "Qeema Naan",
+      "chapter": "pakistani",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-chana-pulao",
+      "title": "Chana Pulao",
+      "chapter": "pakistani",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-fish-tikka",
+      "title": "Fish Tikka",
+      "chapter": "pakistani",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-aamras-puri",
+      "title": "Aamras Puri",
+      "chapter": "pakistani",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-arvi-gosht",
+      "title": "Arvi Gosht",
+      "chapter": "pakistani",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-fish-tacos",
+      "title": "Fish Tacos",
+      "chapter": "pakistani",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-mini-pizza",
+      "title": "Mini Pizza",
+      "chapter": "pakistani",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-murtabak",
+      "title": "Murtabak",
+      "chapter": "pakistani",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-neza-kabab",
+      "title": "Neza Kabab",
+      "chapter": "pakistani",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-omurice",
+      "title": "OmuRice",
+      "chapter": "pakistani",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-painda",
+      "title": "Painda",
+      "chapter": "pakistani",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-pav-bhaji",
+      "title": "Pav Bhaji",
+      "chapter": "pakistani",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-siri-paye",
+      "title": "Siri Paye",
+      "chapter": "pakistani",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-fish-kofta",
+      "title": "Fish Kofta",
+      "chapter": "pakistani",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-koshari",
+      "title": "Koshari",
+      "chapter": "pakistani",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-saag-gosht",
+      "title": "Saag Gosht",
+      "chapter": "pakistani",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-chap-shoro",
+      "title": "Chap shoro",
+      "chapter": "pakistani",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-mutanjan",
+      "title": "Mutanjan",
+      "chapter": "desserts",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-mango-cake",
+      "title": "Mango Cake",
+      "chapter": "desserts",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-aloo-chop",
+      "title": "Aloo Chop",
+      "chapter": "snacks",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-kala-jamun",
+      "title": "Kala Jamun",
+      "chapter": "desserts",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-katlama",
+      "title": "Katlama",
+      "chapter": "snacks",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-malai-cake",
+      "title": "Malai Cake",
+      "chapter": "desserts",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-mug-cake",
+      "title": "Mug Cake",
+      "chapter": "desserts",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-hash-brown",
+      "title": "Hash Brown",
+      "chapter": "snacks",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-cake-pops",
+      "title": "Cake Pops",
+      "chapter": "desserts",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-talbina",
+      "title": "Talbina",
+      "chapter": "snacks",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-fry-bread",
+      "title": "Fry Bread",
+      "chapter": "breads",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "ff-pakwan",
+      "title": "Pakwan",
+      "chapter": "snacks",
+      "issues": [
+        "no-taste",
+        "no-texture",
+        "generic-ff-story",
+        "default-nutrition",
+        "default-times"
+      ],
+      "n": 5
+    },
+    {
+      "id": "affogato",
+      "title": "Affogato",
+      "chapter": "coffee",
+      "issues": [
+        "few-steps"
+      ],
+      "n": 1
+    },
+    {
+      "id": "golden-latte",
+      "title": "Golden Latte",
+      "chapter": "coffee",
+      "issues": [
+        "few-steps"
+      ],
+      "n": 1
+    },
+    {
+      "id": "espresso-tonic",
+      "title": "Espresso Tonic",
+      "chapter": "coffee",
+      "issues": [
+        "few-steps"
+      ],
+      "n": 1
+    },
+    {
+      "id": "mango-lassi",
+      "title": "Mango Lassi",
+      "chapter": "coffee",
+      "issues": [
+        "few-steps"
+      ],
+      "n": 1
+    }
+  ]
+}

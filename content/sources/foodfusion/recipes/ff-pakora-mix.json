@@ -1,0 +1,110 @@
+{
+  "wpId": 6101,
+  "slug": "pakora-mix",
+  "id": "ff-pakora-mix",
+  "title": "Pakora Mix",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/pakora-mix/",
+  "date": "2018-05-06T15:31:52",
+  "modified": "2018-05-06T19:15:49",
+  "classList": [
+    "post-6101",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-ramazan",
+    "recipe_category-2iftar",
+    "recipe_category-appetizers-snacks",
+    "recipe_category-dish-type",
+    "recipe_category-fried-items",
+    "recipe_category-everyday-cooking",
+    "recipe_category-homemade",
+    "recipe_category-ramzan",
+    "recipe_category-iftar",
+    "recipe_category-seasonal",
+    "recipe_category-ramzan1",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "snacks",
+  "imageUrl": "https://media.foodfusion.com/2018/05/Pakora-Mix-Recipe-by-Food-fusion-1.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 2.0,
+          "unit": "cup",
+          "item": "Besan (Gram flour) sifted",
+          "note": null,
+          "raw": "Besan (Gram flour) sifted 2 Cups"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Ajwain (Carom seeds)",
+          "note": null,
+          "raw": "Ajwain (Carom seeds) ½ tsp"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Dhania (Coriander seeds) crushed",
+          "note": null,
+          "raw": "Dhania (Coriander seeds) crushed 1 & ½ tsp"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Zeera powder (Cumin powder)",
+          "note": null,
+          "raw": "Zeera powder (Cumin powder) 1 & ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": "(optional)",
+          "raw": "Haldee powder (Turmeric powder) ½ tsp (optional)"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": null,
+          "raw": "Lal mirch powder (Red chili powder) 1 & ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Baking soda",
+          "note": null,
+          "raw": "Baking soda ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In bowl,add gram flour,carom seeds,coriander seeds,cumin powder,turmeric powder,red chili powder, baking soda,salt and mix well.",
+      "romanUrdu": "Bowl mein besan,ajwain,dhania,zeera powder,haldee powder,lal mirch powder,baking soda aur namak dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Can be store in air tight container for up to 1 month at cool & dry place.",
+      "romanUrdu": "Air tight jar mein dal ker 1 month tak cool & dry place mein store ker saktay han."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/05/Pakora-Mix-Recipe-by-Food-fusion-1.jpg?v=1587765068",
+  "ogDescription": "We all make pakoras in ramzan but here is something that will speed things up in the kitchen in this hot summer. Make this in advance and you will have Pakoras in just 15 min. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:43:05Z"
+}

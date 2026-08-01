@@ -1,0 +1,373 @@
+{
+  "wpId": 7004,
+  "slug": "siri-paye",
+  "id": "ff-siri-paye",
+  "title": "Siri Paye",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/siri-paye/",
+  "date": "2018-08-22T09:20:11",
+  "modified": "2018-08-22T09:20:33",
+  "classList": [
+    "post-7004",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-mutton",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-breakfast-meal",
+    "recipe_category-breakfast",
+    "recipe_category-desi-breakfast",
+    "recipe_category-dish-type",
+    "recipe_category-salanscurrys",
+    "recipe_category-everyday-cooking",
+    "recipe_category-lunch-dinner",
+    "recipe_category-bakra-eid",
+    "recipe_category-seasonal",
+    "recipe_category-bakra-eid1"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2018/07/Siri-Paya-Recipe-by-Food-fusion-4.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 0.75,
+          "unit": "cup",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil ¾ Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "kg",
+          "item": "Mutton mix boti",
+          "note": null,
+          "raw": "Mutton mix boti ½ kg"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Tez paat (Bay leaves)",
+          "note": null,
+          "raw": "Tez paat (Bay leaves) 2"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Badi elaichi (Black cardamom)",
+          "note": null,
+          "raw": "Badi elaichi (Black cardamom) 3"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Darchini (Cinnamon sticks)",
+          "note": null,
+          "raw": "Darchini (Cinnamon sticks) 2"
+        },
+        {
+          "quantity": 4.0,
+          "unit": "",
+          "item": "Laung (Cloves)",
+          "note": null,
+          "raw": "Laung (Cloves) 4-5"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Sabut kali mirch (Black peppercorns)",
+          "note": null,
+          "raw": "Sabut kali mirch (Black peppercorns) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Zeera (Cumin seeds)",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pyaz (Onion) sliced",
+          "note": "large",
+          "raw": "Pyaz (Onion) sliced 1 large"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "kg",
+          "item": "Paya (Mutton trotters)",
+          "note": null,
+          "raw": "Paya (Mutton trotters) ½ kg"
+        },
+        {
+          "quantity": 750.0,
+          "unit": "",
+          "item": "Siri (Mutton head)",
+          "note": "gms",
+          "raw": "Siri (Mutton head) 750 gms"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) 3 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tbs or to taste"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Dhania powder (Coriander powder)",
+          "note": null,
+          "raw": "Dhania powder (Coriander powder) 2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lal mirch (Red chili) crushed",
+          "note": null,
+          "raw": "Lal mirch (Red chili) crushed 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Kashmiri lal mirch (Kashmiri red chili) powder",
+          "note": null,
+          "raw": "Kashmiri lal mirch (Kashmiri red chili) powder 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "l",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) 1 litre or as required"
+        },
+        {
+          "quantity": 4.0,
+          "unit": "tbsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil 4-5 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Tez paat (Bay leaves)",
+          "note": null,
+          "raw": "Tez paat (Bay leaves) 2"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Zeera (Cumin seeds)",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Badi elaichi (Black cardamom)",
+          "note": null,
+          "raw": "Badi elaichi (Black cardamom) 1"
+        },
+        {
+          "quantity": 6.0,
+          "unit": "",
+          "item": "Laung (Cloves)",
+          "note": null,
+          "raw": "Laung (Cloves) 6-7"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Darchini (Cinnamon sticks)",
+          "note": null,
+          "raw": "Darchini (Cinnamon sticks) 3"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) 2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pyaz (Onion) chopped",
+          "note": "large",
+          "raw": "Pyaz (Onion) chopped 1 large"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "cup",
+          "item": "Dahi (Yogurt) whisked",
+          "note": null,
+          "raw": "Dahi (Yogurt) whisked 2 Cups"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chili powder) 1 tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Kashmiri lal mirch (Kashmiri red chili) powder",
+          "note": null,
+          "raw": "Kashmiri lal mirch (Kashmiri red chili) powder 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldee powder (Turmeric powder) ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Garam masala powder",
+          "note": null,
+          "raw": "Garam masala powder 1 tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) 2-3 Cups or as required"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Adrak (Ginger) julienne",
+          "note": null,
+          "raw": "Adrak (Ginger) julienne"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Hari mirch (Green chilies) chopped",
+          "note": null,
+          "raw": "Hari mirch (Green chilies) chopped"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) chopped"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In pot,add cooking oil,mutton mix boti and mix well until changes color and fry for 4-5 minutes then take out in a bowl.",
+      "romanUrdu": "Pot mein cooking oil aur mutton mix boti dal dein aur rang tabdeel hunay tak ache tarhan mix karein aur 4-5 minutes kliya fry ker lein phir bowl mein nikla lein."
+    },
+    {
+      "instruction": "Add bay leaves,black cardamom,cinnamon sticks,cloves,black peppercorns,cumin seeds and mix well.",
+      "romanUrdu": "Tez paat,badi elaichi,darchini,laung,sabut kali mirch aur zeera dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add onion and fry until light brown.",
+      "romanUrdu": "Pyaz dal dein aur light brown hunay tak fry ker lein."
+    },
+    {
+      "instruction": "Add mutton trotters and mix well until changes color.",
+      "romanUrdu": "Mutton paya dal dein aur rang tabdeel hunay tak ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add mutton head and fry for 4-5 minutes.",
+      "romanUrdu": "Siri shamil karein aur 4-5 minutes kliya fry ker lein."
+    },
+    {
+      "instruction": "Add ginger garlic paste,salt,coriander powder,red chili crushed,kashmiri red chili powder and mix well for 4-5 minutes.",
+      "romanUrdu": "Adrak lehsan paste,namak,dhania powder,lal mirch crushed aur kashmiri lal mirch powder dal ker 4-5 minutes kliya ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add water and mix well,cover and cook on low flame for 1 hour.",
+      "romanUrdu": "Pani dal ker mix karein aur dhak ker halki ancch per 1 hour kliya paka lein."
+    },
+    {
+      "instruction": "Add fried mutton mix boti and mix well,cover and cook on low flame until meat is tender (approx. 1 hour) then cook on high flame until water is reduced.",
+      "romanUrdu": "Fried mutton mix boti dal ker ache tarhan mix karein aur dhak ker halki anchh per ghost gul janay tak paka lein (approx. 1 hour) phir tez ancch per pani reduce ho janay tak paka lein."
+    },
+    {
+      "instruction": "In wok,add cooking oil,bay leaves,cumin seeds and mix well.",
+      "romanUrdu": "Karhai mein cooking oil,tez paat aur zeera dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add black cardamom,cloves,cinnamon sticks and mix well.",
+      "romanUrdu": "Badi elaichi,laung aur darchini dal ker mix karein."
+    },
+    {
+      "instruction": "Add ginger garlic paste and mix well.",
+      "romanUrdu": "Adrak lehsan paste dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add onion and fry until translucent.",
+      "romanUrdu": "Pyaz dal ker translucent hunay tak fry ker lein."
+    },
+    {
+      "instruction": "Add yogurt and mix well.",
+      "romanUrdu": "Dahi dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add salt,red chili powder,kashmiri red chili powder and mix well.",
+      "romanUrdu": "Namak,lal mirch powder aur kashmiri lal mirch powder dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add turmeric powder,mix well and cook until oil separates (8-10 minutes).",
+      "romanUrdu": "Haldee powder dal ker ache tarhan mix karein aur oil alag hunay tak paka lein (8-10 minutes)."
+    },
+    {
+      "instruction": "Now add yogurt mixture into cooked siri paye mixture,mix well and cook for 8-10 minutes.",
+      "romanUrdu": "Ab cooked siri paya ka mixture mein dahi wala mixture dal ker ache tarhan mix karein aur 8-10 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add garam masala powder and mix well.",
+      "romanUrdu": "Garam masala powder dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add water,mix well and cook until desired consistency.",
+      "romanUrdu": "Pani shamil karein aur ache tarhan mix ker ka desired consistency anay tak paka lein."
+    },
+    {
+      "instruction": "Remove & discard bay leaves and black cardamoms.",
+      "romanUrdu": "Tez paat aur badi elaichi nikla lein."
+    },
+    {
+      "instruction": "Garnish with ginger,green chilies,fresh coriander & serve.",
+      "romanUrdu": "Adrak,hari mirch aur hara dhania sa garnish ker ka serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/07/Siri-Paya-Recipe-by-Food-fusion-4.jpg?v=1587764724",
+  "ogDescription": "Another must try Eid Recipe for you. Make Siri Paye this Eid and Enjoy. #HappyCookingToyou",
+  "scrapedAt": "2026-08-01T14:41:16Z"
+}

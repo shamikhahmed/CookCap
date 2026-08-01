@@ -1,0 +1,229 @@
+{
+  "wpId": 22714,
+  "slug": "kimchi",
+  "id": "ff-kimchi",
+  "title": "How To make easy Kimchi at home – Korean Kimchi Recipe",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/kimchi/",
+  "date": "2022-09-27T09:34:37",
+  "modified": "2022-09-28T10:48:59",
+  "classList": [
+    "post-22714",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-vegetable",
+    "recipe_category-1-carrot",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-dish-type",
+    "recipe_category-1-vegetable",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-vegetables",
+    "recipe_category-occasions",
+    "recipe_category-birthday",
+    "recipe_category-national-holidays",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2022/08/YT5.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Water",
+          "note": null,
+          "raw": "Water 1 Cup"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tbsp",
+          "item": "Chawal ka attta (Rice flour)",
+          "note": null,
+          "raw": "Chawal ka attta (Rice flour) 1 & ½ tbs"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tbsp",
+          "item": "Brown sugar powdered",
+          "note": null,
+          "raw": "Brown sugar powdered 1 & ½ tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Pyaz (Onion)",
+          "note": "medium",
+          "raw": "Pyaz (Onion) 2 medium"
+        },
+        {
+          "quantity": 15.0,
+          "unit": "",
+          "item": "Lehsan (Garlic) cloves",
+          "note": null,
+          "raw": "Lehsan (Garlic) cloves 15-16"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Adrak (Ginger)",
+          "note": "-inch piece",
+          "raw": "Adrak (Ginger) 2-inch piece"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Lal mirch powder (Red chilli powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chilli powder) ½ Cup or to taste"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 & ½ tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Paprika powder",
+          "note": "(optional)",
+          "raw": "Paprika powder 1 tbs (optional)"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Fish sauce",
+          "note": null,
+          "raw": "Fish sauce ¼ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "kg",
+          "item": "Napa cabbage/Chinese cabbage",
+          "note": null,
+          "raw": "Napa cabbage/Chinese cabbage 1 kg"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Water",
+          "note": null,
+          "raw": "Water 1 Cup"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Namak (Salt)",
+          "note": null,
+          "raw": "Namak (Salt) ¼ Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Chives chopped",
+          "note": null,
+          "raw": "Chives chopped ½ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Gajar (Carrot) julienne",
+          "note": null,
+          "raw": "Gajar (Carrot) julienne 1 Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Mooli (Radish) julienne",
+          "note": null,
+          "raw": "Mooli (Radish) julienne 1 Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Hara pyaz (Spring onion) chopped",
+          "note": null,
+          "raw": "Hara pyaz (Spring onion) chopped ½ Cup"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In a saucepan,add water,rice flour & whisk well.",
+      "romanUrdu": "Saucepan mein pani aur chawal ka atta dal ker ache tarhan whisk ker lein."
+    },
+    {
+      "instruction": "Turn on the flame & cook on low flame until it thickens.",
+      "romanUrdu": "Chulha on karein aur halki ancch per garha ho janay tak paka lein."
+    },
+    {
+      "instruction": "Add brown sugar,mix well & cook for 1-2 minutes.",
+      "romanUrdu": "Brown sugar dal ker ache tarhan mix karein aur 1-2 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Let it cool.",
+      "romanUrdu": "Thanda ker lein."
+    },
+    {
+      "instruction": "In a chopper,add onion,garlic,ginger & chop well.",
+      "romanUrdu": "Chopper mein pyaz,lehsan aur adrak dal ker ache tarhan chop ker lein."
+    },
+    {
+      "instruction": "Take out in a bowl,add cooked rice flour mixture,red chilli powder,salt,paprika powder,fish sauce,mix until well combined & set aside.",
+      "romanUrdu": "Bowl mein nikal lein,cooked rice flour mixture,lal mirch powder,namak,paprika powder & fish sauce dal ker ache tarhan mix ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "Cut napa cabbage lengthwise through the stem into quarters.Cut the stem from each piece then cut each quarter into wide pieces.",
+      "romanUrdu": "Napa cabbage ko lengthwise cut ker lein phir quarters mein cut ker ka wide pieces mein cut ker lein."
+    },
+    {
+      "instruction": "In a bowl,add napa cabbage,water,salt,mix well & let it brine for 3-4 hours (flip sides in between).",
+      "romanUrdu": "Bowl mein napa cabbage,pani aur namak dal ker ache tarhan mix ker lein aur 2-3 hours brinr hunay kliya chor dein aur bech nech mein sides ko flip kertay rahein."
+    },
+    {
+      "instruction": "Rinse cabbage with tap water few times to get rid of salt & let it drain for 30 minutes.",
+      "romanUrdu": "Cabbage ko tap water sa few dafa rinse ker ka 30 minutes kliya drain ker lein."
+    },
+    {
+      "instruction": "In a large bowl,add cabbage,chives carrots,radish,spring onion,prepared spice mixture & mix until well combined.It will have a pungent smell which is normal.",
+      "romanUrdu": "Large bowl mein cabbage,chives,gajar,mooli,hara pyaz aur tayyar spice mixture dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Transfer the kimchi in an airtight container & let it ferment at room temperature for 24 hours.",
+      "romanUrdu": "Kimchi ko airtight container mein transfer ker lein aur room temperature per 24 hours ferment hunay kliya chor dein."
+    },
+    {
+      "instruction": "You may see bubbles inside the container & brine may seep out of the lid.",
+      "romanUrdu": "Container ka ander bubble nazar ayengay."
+    },
+    {
+      "instruction": "Check the kimchi once a day, opening the container & pressing down on the vegetables with a clean spoon to keep them submerged under the brine & refrigerator for 3-4 days & stir in between few times. Kimchi is ready!",
+      "romanUrdu": "Aglay din kimchi ko khol ein aur clean spoon ki madad sa vegetables ko press down ker lein ta ka brine ka ander vegetables submerged ho jayein aur 3-4 din kliya refrigerator ker lein.Kimchi tayyar hai."
+    },
+    {
+      "instruction": "Kimchi can be stored in an airtight container in a refrigerator for up to 2 months.",
+      "romanUrdu": "Kimchi ko 2 months kliya airtight container mein dal ker refrigerate ker saktay han."
+    },
+    {
+      "instruction": "Always use clean spoon each time to extract the kimchi from the container or jar.",
+      "romanUrdu": "Kimchi ko container sa nikalnay kliya hamasha saaf spoon use karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2022/08/YT5.jpg?v=1664272728",
+  "ogDescription": "After so many requests finally a homemade easy kimchi recipe for you. Do let us know how it turns out. This is a traditional side dish of Korea, they",
+  "scrapedAt": "2026-08-01T14:39:48Z"
+}

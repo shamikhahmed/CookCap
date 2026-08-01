@@ -1,0 +1,232 @@
+{
+  "wpId": 6523,
+  "slug": "aloo-chop",
+  "id": "ff-aloo-chop",
+  "title": "Aloo Chop",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/aloo-chop/",
+  "date": "2018-06-03T16:50:06",
+  "modified": "2018-06-04T04:58:15",
+  "classList": [
+    "post-6523",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "tag-cooking-oil",
+    "recipe_category-2iftar",
+    "recipe_category-ramazan",
+    "recipe_category-2ramzan",
+    "recipe_category-appetizers-snacks",
+    "recipe_category-dish-type",
+    "recipe_category-everyday-cooking",
+    "recipe_category-fried-items",
+    "recipe_category-iftar",
+    "recipe_category-occasions",
+    "recipe_category-ramzan",
+    "recipe_category-ramzan1",
+    "recipe_category-seasonal",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "snacks",
+  "imageUrl": "https://media.foodfusion.com/2018/05/Aloo-Pakora-Recipe-by-Food-fusion-2.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 2.0,
+          "unit": "cup",
+          "item": "Besan (Gram flour) sifted",
+          "note": null,
+          "raw": "Besan (Gram flour) sifted 2 Cups"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Ajwain (Carom seeds)",
+          "note": null,
+          "raw": "Ajwain (Carom seeds) ½ tsp"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Dhania (Coriander seeds) crushed",
+          "note": null,
+          "raw": "Dhania (Coriander seeds) crushed 1 & ½ tsp"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Zeera powder (Cumin powder)",
+          "note": null,
+          "raw": "Zeera powder (Cumin powder) 1 & ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": "(optional)",
+          "raw": "Haldee powder (Turmeric powder) ½ tsp (optional)"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": null,
+          "raw": "Lal mirch powder (Red chili powder) 1 & ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Baking soda",
+          "note": null,
+          "raw": "Baking soda ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Lehsan paste (Garlic paste)",
+          "note": null,
+          "raw": "Lehsan paste (Garlic paste) ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) 1 Cup or as required"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Oil",
+          "note": null,
+          "raw": "Oil 2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pyaz (Onion) chopped",
+          "note": "large",
+          "raw": "Pyaz (Onion) chopped 1 large"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Chaat masala",
+          "note": null,
+          "raw": "Chaat masala ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Garam masala powder",
+          "note": null,
+          "raw": "Garam masala powder ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chili powder) ½ tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tsp or to taste"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Aloo (Potato) boiled & mashed",
+          "note": "large",
+          "raw": "Aloo (Potato) boiled & mashed 3 large"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) chopped ½ Cup"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Cooking oil for frying",
+          "note": null,
+          "raw": "Cooking oil for frying"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In bowl,add gram flour,carom seeds,coriander seeds,cumin powder,turmeric powder,red chili powder, baking soda,salt and mix well.",
+      "romanUrdu": "Bowl mein besan,ajwain,dhania,zeera powder,haldee powder,lal mirch powder,baking soda aur namak dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Can be store in air tight container for up to 1 month at cool & dry place.",
+      "romanUrdu": "Air tight jar mein dal ker 1 month tak cool & dry place mein store ker saktay han."
+    },
+    {
+      "instruction": "In bowl,add prepared pakora mix and mix well.",
+      "romanUrdu": "Bowl mein tayyar pakora mix dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add garlic paste and gradually add water,mix well until well combined and let it rest for 30 minutes.",
+      "romanUrdu": "Lehsan paste dal dein aur thora thora ker ka pani shamil karein aur ache tarhan mix ker lein aur 30 minutes kliya rakh dein."
+    },
+    {
+      "instruction": "In frying pan,add oil,onion and fry until light brown.",
+      "romanUrdu": "Frying pan mein oil aur pyaz dal dein aur light brown hunay tak fry ker lein."
+    },
+    {
+      "instruction": "Add ginger garlic paste,chaat masala,garam masala powder,red chili powder,salt and mix well.",
+      "romanUrdu": "Adrak lehsan paste,chaat masala,garam masala powder,lal mirch powder aur namak dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add potato and mix well.",
+      "romanUrdu": "Aloo dal kr ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add fresh coriander and mix well.",
+      "romanUrdu": "Hara dhania dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Let it cool down.",
+      "romanUrdu": "Mixture ko thanda ker lein."
+    },
+    {
+      "instruction": "Grease hands with oil,take a mixture and make a flat round balls and coat in prepared gram flour batter.",
+      "romanUrdu": "Haathon ko oil sa grease karein aur mixture ko lein aur flat round balls bana lein aur tayyar besan ka batter mein ache tarhan coat ker lein."
+    },
+    {
+      "instruction": "In wok,heat cooking oil and fry until golden brown.",
+      "romanUrdu": "Karhai mein oil garam karein aur golden brown hunay tak fry ker lein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/05/Aloo-Pakora-Recipe-by-Food-fusion-2.jpg?v=1587764895",
+  "ogDescription": "Homemade Aloo Chop recipe for you. Enjoy your iftar. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:40:42Z"
+}

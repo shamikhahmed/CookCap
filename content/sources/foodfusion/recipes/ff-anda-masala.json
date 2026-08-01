@@ -1,0 +1,204 @@
+{
+  "wpId": 14949,
+  "slug": "anda-masala",
+  "id": "ff-anda-masala",
+  "title": "Anda Masala",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/anda-masala/",
+  "date": "2020-07-08T16:36:58",
+  "modified": "2020-07-14T08:49:13",
+  "classList": [
+    "post-14949",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-eggs",
+    "recipe_category-vegetable",
+    "recipe_category-1tommato",
+    "recipe_category-1-eggs-1breakfast",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-dish-type",
+    "recipe_category-salanscurrys",
+    "recipe_category-eggs-2",
+    "recipe_category-everyday-cooking",
+    "recipe_category-healthy",
+    "recipe_category-homemade",
+    "recipe_category-egg",
+    "recipe_category-lunch-dinner",
+    "recipe_category-gravys",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2020/06/P4040239.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil 3-4 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pyaz (Onion) chopped",
+          "note": "large",
+          "raw": "Pyaz (Onion) chopped 1 large"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Adrak lehsan (Ginger garlic) crushed",
+          "note": null,
+          "raw": "Adrak lehsan (Ginger garlic) crushed 1 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Tamatar (Tomato) pureed",
+          "note": "medium",
+          "raw": "Tamatar (Tomato) pureed 2 medium"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Hari mirch (Green chilli) chopped",
+          "note": null,
+          "raw": "Hari mirch (Green chilli) chopped 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Kashmiri Lal mirch powder (Kashmiri red chilli powder)",
+          "note": null,
+          "raw": "Kashmiri Lal mirch powder (Kashmiri red chilli powder) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Dhania powder (Coriander powder)",
+          "note": null,
+          "raw": "Dhania powder (Coriander powder) 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Kali mirch powder (Black pepper powder)",
+          "note": null,
+          "raw": "Kali mirch powder (Black pepper powder) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tsp or to taste"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Haldi powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldi powder (Turmeric powder) ¼ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Zeera (Cumin seeds) roasted & crushed",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) roasted & crushed 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Kasuri methi (Dried fenugreek leaves)",
+          "note": null,
+          "raw": "Kasuri methi (Dried fenugreek leaves) 1 tsp"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Water",
+          "note": null,
+          "raw": "Water ¼ cup"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) chopped 2-3 tbs"
+        },
+        {
+          "quantity": 8.0,
+          "unit": "",
+          "item": "Anday (Eggs) Hard boiled cut in slices",
+          "note": null,
+          "raw": "Anday (Eggs) Hard boiled cut in slices 8-9"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Hari mirch (Green chillies) sliced",
+          "note": null,
+          "raw": "Hari mirch (Green chillies) sliced"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) chopped"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In a wok add cooking oil, onion and fry until translucent.",
+      "romanUrdu": "Wok may tel garam karen or piaz daal kar halka fry karen."
+    },
+    {
+      "instruction": "Add ginger garlic and mix well until light golden.",
+      "romanUrdu": "Ginger garlic paste daal kar milayen or light golden honay tak fry karen."
+    },
+    {
+      "instruction": "Add pureed tomato and mix well.",
+      "romanUrdu": "Pureed tamatar daal kar achi tarah milayen."
+    },
+    {
+      "instruction": "Add green chilli and mix well.",
+      "romanUrdu": "Hari mirch daal kar milayen."
+    },
+    {
+      "instruction": "Add kashmiri red chilli/paprika powder, coriander powder, black pepper powder, salt, turmeric powder, cumin seeds, dried fenugreek leaves, mix well and cook for 1-2 minutes.",
+      "romanUrdu": "Kashmiri laal mirch powder, dhania powder, kali mirch powder, namak, haldi powder, zeera powder, kasuri methi daal kar milayen or 1 se 2 minutes tak pakayen."
+    },
+    {
+      "instruction": "Add water, mix well, cover and cook for 2-3 minutes or until oil separates.",
+      "romanUrdu": "Pani daal kar milayen or dhak kar 2 se 3 minutes tak ya tel alag honay tak pakayen."
+    },
+    {
+      "instruction": "Add fresh coriander and mix well.",
+      "romanUrdu": "Hara dhania daal kar milayen."
+    },
+    {
+      "instruction": "Add boiled eggs and mix gently.",
+      "romanUrdu": "Boil anday daal kar namri se milayen."
+    },
+    {
+      "instruction": "Garnish with green chillies, fresh coriander and serve.",
+      "romanUrdu": "Hari mirch or hara dhania daal kar serve karen."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2020/06/P4040239.jpg?v=1592652962",
+  "ogDescription": "Anda Masala, a super easy and must try recipe. #HappyCookingToYou #FoodFusion #EggMasala",
+  "scrapedAt": "2026-08-01T14:43:37Z"
+}

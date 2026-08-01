@@ -1,0 +1,148 @@
+{
+  "wpId": 4745,
+  "slug": "hash-brown",
+  "id": "ff-hash-brown",
+  "title": "Hash Brown",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/hash-brown/",
+  "date": "2017-12-30T13:46:38",
+  "modified": "2017-12-30T13:48:36",
+  "classList": [
+    "post-4745",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-vegetable",
+    "recipe_category-potato",
+    "recipe_category-1-continental",
+    "recipe_category-1-meal-type",
+    "recipe_category-breakfast-meal",
+    "recipe_category-appetizers-snacks",
+    "recipe_category-breakfast",
+    "recipe_category-dish-type",
+    "recipe_category-fried-items",
+    "recipe_category-everyday-cooking",
+    "recipe_category-vegetables",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "snacks",
+  "imageUrl": "https://media.foodfusion.com/2017/12/ID-R00507-Hash-Brown-Recipe-By-Food-Fusion-5.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 0.5,
+          "unit": "kg",
+          "item": "Aloo (Potatoes) peeled",
+          "note": null,
+          "raw": "Aloo (Potatoes) peeled ½ kg"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Ice cold water",
+          "note": null,
+          "raw": "Ice cold water"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Makhan (Butter)",
+          "note": null,
+          "raw": "Makhan (Butter) 2 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Chawal ka atta (Rice flour)",
+          "note": null,
+          "raw": "Chawal ka atta (Rice flour) 2 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chili powder) ½ tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Onion powder",
+          "note": null,
+          "raw": "Onion powder 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Kali mirch powder (Black pepper powder)",
+          "note": null,
+          "raw": "Kali mirch powder (Black pepper powder) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Corn flour",
+          "note": null,
+          "raw": "Corn flour 1 tbs"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Cheddar cheese grated",
+          "note": null,
+          "raw": "Cheddar cheese grated 3 tbs"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Oil for frying",
+          "note": null,
+          "raw": "Oil for frying"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "Grate potatoes with the help of grater.",
+      "romanUrdu": "Aloo ko grater ki madad sa grate ker lein."
+    },
+    {
+      "instruction": "Add grated potatoes in ice cold water for 10 minutes then drain and squeeze out completely with the help of muslin cloth and set aside.",
+      "romanUrdu": "Grated aloo ko thanday pani mein 10 minutes kliya dal dein phir drain ker ka malmal ka kapray mein dal ker mukammal squeeze ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "In wok,add butter and let it melt,add grated & squeeze potatoes,mix well and cook on medium flame for 4-5 minutes & let it cool down.",
+      "romanUrdu": "Karhai mein makhan dal ker melt karein aur grated & squeeze aloo dal ker ache tarhan mix karein aur darmiyani ancch per 4-5 minutes kliya paka lein & thanda ker lein."
+    },
+    {
+      "instruction": "Now add rice flour,red chili powder,salt,onion powder,black pepper powder,corn flour and cheddar cheese,mix well and let it rest for 5 minutes.",
+      "romanUrdu": "Ab is mein chawal ka atta,lal mirch powder,namak,onion powder,kali mirch powder,corn flour aur cheddar cheese dal ker ache tarhan mix karein aur 5 minutes kliya chor dein."
+    },
+    {
+      "instruction": "Grease your hands with oil,take a mixture and make oval shape of equal sizes.",
+      "romanUrdu": "Haathon ko oil sa grease karein aur equal sizes ka oval shapes bana lein."
+    },
+    {
+      "instruction": "In frying pan,heat oil and fry until golden brown.",
+      "romanUrdu": "Frying pan mein oil garam karein aur golden brown hunay tak fry ker lein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2017/12/ID-R00507-Hash-Brown-Recipe-By-Food-Fusion-5.jpg?v=1587765543",
+  "ogDescription": "Make the perfect restaurant quality Hash browns at home. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:42:19Z"
+}

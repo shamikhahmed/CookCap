@@ -1,0 +1,135 @@
+{
+  "wpId": 8859,
+  "slug": "talbina",
+  "id": "ff-talbina",
+  "title": "Talbina",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/talbina/",
+  "date": "2019-02-16T11:08:41",
+  "modified": "2019-12-05T11:10:24",
+  "classList": [
+    "post-8859",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_partner-healthy-fusion",
+    "recipe_category-1milk",
+    "recipe_category-breakfast-meal",
+    "recipe_category-ramazan",
+    "recipe_category-2iftar",
+    "recipe_category-dinner",
+    "recipe_category-sehri",
+    "recipe_category-appetizers-snacks",
+    "recipe_category-breakfast",
+    "recipe_category-desi-breakfast",
+    "recipe_category-healthy",
+    "recipe_category-homemade",
+    "recipe_category-occasions",
+    "recipe_category-2ramzan",
+    "recipe_category-ramzan",
+    "recipe_category-1sehri",
+    "recipe_category-iftar",
+    "recipe_category-seasonal",
+    "recipe_category-ramzan1",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "snacks",
+  "imageUrl": "https://media.foodfusion.com/2019/02/Talbina-recipe-by-food-fusion-1.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 100.0,
+          "unit": "",
+          "item": "Jau (Barley) broken",
+          "note": "gms",
+          "raw": "Jau (Barley) broken 100 gms"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Pani (Water) as required",
+          "note": null,
+          "raw": "Pani (Water) as required"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "l",
+          "item": "Doodh (Milk)",
+          "note": null,
+          "raw": "Doodh (Milk) 1 liter"
+        },
+        {
+          "quantity": 10.0,
+          "unit": "",
+          "item": "Khajore (Dates)",
+          "note": "or as required",
+          "raw": "Khajore (Dates) 10 or as required"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Elaichi powder (Cardamom powder)",
+          "note": null,
+          "raw": "Elaichi powder (Cardamom powder) ½ tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Pista (Pistachio) sliced",
+          "note": null,
+          "raw": "Pista (Pistachio) sliced 2tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Badam (Almonds) sliced",
+          "note": null,
+          "raw": "Badam (Almonds) sliced 2 tbs"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In bowl,add broken barley and wash with water.",
+      "romanUrdu": "Bowl mein broken jau dal dein aur pani sad ho lein."
+    },
+    {
+      "instruction": "Add water and soak for 3-4 hours or overnight then drain the water.",
+      "romanUrdu": "Pani dal dein aur 3-4 hours ya overnight k liya soak kerlein phir drain ker lein."
+    },
+    {
+      "instruction": "In pot,add milk and bring it to boil,add soaked barley and mix well,cover partially and cook on low for 8-10 minutes.",
+      "romanUrdu": "Pot mein doodh dal ker ubal lein, soaked jau dal ker ache tarhan mix karein aur partially dhak ker 8-10 minutes k liya paka lein."
+    },
+    {
+      "instruction": "Deseed and chop dates.",
+      "romanUrdu": "Khajore ka beech nikal ker chop kerlein."
+    },
+    {
+      "instruction": "Add dates,mixwell,cover partially and cook on low flame for 25-30 minutes.",
+      "romanUrdu": "Khajore dal ker ache tarhan mix karein aur partially dhak ker halki ancch per 25-30 minutes k liya paka lein."
+    },
+    {
+      "instruction": "Add cardamom powder and mix well,cover partially and cook for another for 8-10 minutes.",
+      "romanUrdu": "Elaichi powder dal ker ache tarhan mix karein aur partially dhak ker 8-10 minutes k liya paka lein."
+    },
+    {
+      "instruction": "Add pistachio,almonds and mix well.",
+      "romanUrdu": "Pista aur badam dal ker ache tarhan mix kerlein."
+    },
+    {
+      "instruction": "Garnish & serve!",
+      "romanUrdu": "Garnish ker ka serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2019/02/Talbina-recipe-by-food-fusion-1.jpg?v=1587763981",
+  "ogDescription": "Here is one special recipe of Talbeenah (barley porridge) which has been recommended by our beloved Holy Prophet (peace and blessings of Allah be upon",
+  "scrapedAt": "2026-08-01T14:40:23Z"
+}

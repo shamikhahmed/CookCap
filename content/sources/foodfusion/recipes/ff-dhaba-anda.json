@@ -1,0 +1,232 @@
+{
+  "wpId": 3710,
+  "slug": "dhaba-anda",
+  "id": "ff-dhaba-anda",
+  "title": "Dhaba Anda",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/dhaba-anda/",
+  "date": "2017-08-25T18:05:16",
+  "modified": "2017-08-26T02:43:31",
+  "classList": [
+    "post-3710",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "tag-anda",
+    "tag-egg",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-eggs",
+    "recipe_category-1-eggs-1breakfast",
+    "recipe_category-1-meal-type",
+    "recipe_category-breakfast-meal",
+    "recipe_category-ramazan",
+    "recipe_category-sehri",
+    "recipe_category-breakfast",
+    "recipe_category-desi-breakfast",
+    "recipe_category-eggs",
+    "recipe_category-dish-type",
+    "recipe_category-salanscurrys",
+    "recipe_category-eggs-2",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-egg",
+    "recipe_category-ramzan",
+    "recipe_category-1sehri",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2017/08/ID-R00402-1.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Oil",
+          "note": null,
+          "raw": "Oil 1-2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pyaz (Onion) chopped",
+          "note": "small",
+          "raw": "Pyaz (Onion) chopped 1 small"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Tamatar (Tomato) chopped",
+          "note": "small",
+          "raw": "Tamatar (Tomato) chopped 1 small"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Hari mirch (Green chilies) chopped",
+          "note": null,
+          "raw": "Hari mirch (Green chilies) chopped 2"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Zeera (Cumin seeds) roasted & crushed",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) roasted & crushed ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Dhania powder (Coriander powder)",
+          "note": null,
+          "raw": "Dhania powder (Coriander powder) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chili powder) ½ tsp or to taste"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldee powder (Turmeric powder) ¼ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Garam masala powder",
+          "note": null,
+          "raw": "Garam masala powder ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tsp or to taste"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) chopped 2 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Anday (Eggs) boiled",
+          "note": null,
+          "raw": "Anday (Eggs) boiled 2"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": null,
+          "raw": "Pani (Water) ¼ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Makhan (Butter)",
+          "note": null,
+          "raw": "Makhan (Butter) 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Oil",
+          "note": null,
+          "raw": "Oil 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Anda (Egg)",
+          "note": null,
+          "raw": "Anda (Egg) 1"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tbsp",
+          "item": "Makhan (Butter)",
+          "note": null,
+          "raw": "Makhan (Butter) ½ tbs"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": null,
+          "raw": "Lal mirch powder (Red chili powder) ¼ tsp"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Hara dhania (Fresh coriander)",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander)"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In frying pan,add oil,onion,tomato and mix well.",
+      "romanUrdu": "Frying pan mein oil,pyaz aur tamatar dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add green chilies and mix.",
+      "romanUrdu": "Hari mirchein dal ker mix ker lein."
+    },
+    {
+      "instruction": "Add cumin seeds,coriander powder,red chili powder,turmeric powder,garam masala power,salt,mix & mash well.",
+      "romanUrdu": "Zeera,dhania powder,lal mirch powder,haldee powder,garam masala powder aur namak dal ker mix & mash ker lein."
+    },
+    {
+      "instruction": "Add fresh coriander and mix well.",
+      "romanUrdu": "Hara dhania dal ker mix karein."
+    },
+    {
+      "instruction": "Add boiled eggs,mix & mash well until well combined.",
+      "romanUrdu": "Boiled anday,dal ker ache tarhan mix & mash ker lein."
+    },
+    {
+      "instruction": "Add water,mix well and cook for 2 minutes.",
+      "romanUrdu": "Pani dal ker ache tarhan mix karein aur 2 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add butter,mix well and dish out in a serving dish.",
+      "romanUrdu": "Makhan dal ker mix ker lein aur serving dish mein nikal lein."
+    },
+    {
+      "instruction": "In small frying pan,add oil and egg and half fry it.",
+      "romanUrdu": "Chotay frying pan mein oil aur anda dal ker half fry (kacha paka anda) ker lein."
+    },
+    {
+      "instruction": "Add this half fry egg over cooked masala egg and mix well.",
+      "romanUrdu": "Half fry egg ko cooked masala anda ka upper dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "In small frying pan,add butter,red chili powder and mix well,pour over cooked masala eggs.",
+      "romanUrdu": "Chotay frying pan mein makhan aur lal mirch powder dal ker ache tarhan mix karein aur cooked masala anday ka upper dal dein."
+    },
+    {
+      "instruction": "Add fresh coriander and serve.",
+      "romanUrdu": "Hara dhania dal ker serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2017/08/ID-R00402-1.jpg?v=1587765980",
+  "ogDescription": "Sometimes you just want to have a typical dhaba style Anda for breakfast. Try our Dhaba Anda recipe and you will love it. #HappyCookingToYou.",
+  "scrapedAt": "2026-08-01T14:41:55Z"
+}

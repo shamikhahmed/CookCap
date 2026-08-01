@@ -1,0 +1,278 @@
+{
+  "wpId": 13596,
+  "slug": "murtabak",
+  "id": "ff-murtabak",
+  "title": "Murtabak",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/murtabak/",
+  "date": "2020-03-16T09:53:14",
+  "modified": "2020-03-18T03:16:35",
+  "classList": [
+    "post-13596",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-eggs",
+    "recipe_category-1tommato",
+    "recipe_category-flour-atta",
+    "recipe_category-1-eggs-1breakfast",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-chicken-bbq",
+    "recipe_category-eggs",
+    "recipe_category-dish-type",
+    "recipe_category-1parathas",
+    "recipe_category-fried-items",
+    "recipe_category-eggs-2",
+    "recipe_category-ingredient",
+    "recipe_category-chicken",
+    "recipe_category-egg",
+    "recipe_category-lunch-dinner",
+    "recipe_category-occasions",
+    "recipe_category-birthday",
+    "recipe_category-national-holidays",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2020/03/Murtabak-Recipe-by-Food-fusion-2.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 3.0,
+          "unit": "cup",
+          "item": "Maida (All-purpose flour) sifted",
+          "note": null,
+          "raw": "Maida (All-purpose flour) sifted 3 Cups"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 & ½ tsp or to taste"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Ghee melted",
+          "note": null,
+          "raw": "Ghee melted 2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Anda (Egg)",
+          "note": null,
+          "raw": "Anda (Egg) 1"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "cup",
+          "item": "Water",
+          "note": "or as required",
+          "raw": "Water 1 & ½ Cup or as required"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil 2 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Pyaz (Onion) chopped",
+          "note": "medium",
+          "raw": "Pyaz (Onion) chopped 2 medium"
+        },
+        {
+          "quantity": 500.0,
+          "unit": "g",
+          "item": "Chicken qeema (Mince)",
+          "note": null,
+          "raw": "Chicken qeema (Mince) 500g"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) 1 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldee powder (Turmeric powder) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chilli powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chilli powder) 1 tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Lal mirch (Red chilli) crushed",
+          "note": null,
+          "raw": "Lal mirch (Red chilli) crushed ½ tsp"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Zeera (Cumin seeds) roasted & crushed",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) roasted & crushed 1 & ½ tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Hari mirch (Green chillies) chopped",
+          "note": null,
+          "raw": "Hari mirch (Green chillies) chopped 2-3"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Water",
+          "note": "or as required",
+          "raw": "Water ½ Cup or as required"
+        },
+        {
+          "quantity": 5.0,
+          "unit": "",
+          "item": "Anday (Eggs)",
+          "note": null,
+          "raw": "Anday (Eggs) 5"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Kali mirch powder (Black pepper powder)",
+          "note": null,
+          "raw": "Kali mirch powder (Black pepper powder) 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Tamatar (Tomato) deseeded & chopped",
+          "note": "medium",
+          "raw": "Tamatar (Tomato) deseeded & chopped 1 medium"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Hara pyaz (Green onion) chopped",
+          "note": null,
+          "raw": "Hara pyaz (Green onion) chopped 1 Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) chopped ½ Cup"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Ghee melted",
+          "note": null,
+          "raw": "Ghee melted"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In a bowl,add all-purpose flour,salt,ghee,egg and mix well.",
+      "romanUrdu": "Bowl mein maida,namak,ghee aur anda dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Gradually add water and knead until dough is formed,grease with melted ghee,cover & let it rest for 35-40 minutes.",
+      "romanUrdu": "Thora thora ker ka pani shamil karein aur ghond ker dough tayyar ker lein,melted ghee sa grease karein aur dhak ker 35-40 minutes kliya rakh dein."
+    },
+    {
+      "instruction": "In a wok,add cooking oil,onion and saute until translucent.",
+      "romanUrdu": "Karhai mein cooking oil aur pyaz dal dein aur translucent hunay tak saute ker lein."
+    },
+    {
+      "instruction": "Add chicken mince & mix well until it changes color.",
+      "romanUrdu": "Chicken qeema dal ker rang tabdeel hunay tak ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add ginger garlic paste and mix well.",
+      "romanUrdu": "Adrak lehsan paste dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add turmeric powder,salt,red chilli powder,red chilli crushed,cumin seeds,green chillies,mix well and cook for 2-3 minutes.",
+      "romanUrdu": "Haldee powder,namak,lal mirch powder,lal mirch crushed,zeera aur hari mirch dal ker ache tarhan mix karein aur 2-3 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add water and mix well,cover & cook on low flame for 8-10 minutes then cook on high flame until dries up & let it cool.",
+      "romanUrdu": "Pani dal ker ache tarhan mix karein aur dhak ker halki ancch per 8-10 minutes kliya paka lein phir tez ancch per sukh janay tak paka lein & thanda ker lein."
+    },
+    {
+      "instruction": "In a bowl,add eggs,black pepper powder,salt and whisk well.",
+      "romanUrdu": "Bowl mein anda,kali mirch powder aur namak dal ker ache tarhan whisk ker lein."
+    },
+    {
+      "instruction": "Add tomato,green onion,fresh coriander & mix well.",
+      "romanUrdu": "Tamatar,hara pyaz aur hara dhania dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Now add cooked chicken mince,mix well and set aside.",
+      "romanUrdu": "Ab cooked chicken qeema shamil karein aur ache tarhan mix ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "Grease hands with melted ghee and knead dough again for 8-10 minutes.",
+      "romanUrdu": "Haathon ko melted ghee sa grease karein aur dough ko dubara 8-10 minutes kliya ghond lein."
+    },
+    {
+      "instruction": "Take a small dough (100g),make a ball and apply melted ghee and roll out with the help of rolling pin.",
+      "romanUrdu": "Chota dough (100g) lein aur ball bana lein,melted ghee laga ker rolling pin ki madad sa bail lein."
+    },
+    {
+      "instruction": "Add chicken & egg mixture in the center of dough & fold all the sides (makes 8).",
+      "romanUrdu": "Chicken & egg mixture dal ker tamam sides ko fold ker lein (makes 8)."
+    },
+    {
+      "instruction": "On girddle,place paratha,brush melted ghee & fry on medium flame from all sides until golden brown.",
+      "romanUrdu": "Tawa per paratha rakh ker melted ghee laga lein aur tamam sides sa darmiyani ancch per golden brown hunay tak ghee mein fry ker lein."
+    },
+    {
+      "instruction": "Cut into desired pieces & serve!",
+      "romanUrdu": "Desired pieces mein cut ker ka serve karein!"
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2020/03/Murtabak-Recipe-by-Food-fusion-2.jpg?v=1587762416",
+  "ogDescription": "Another addition to your breakfast recipe collection. Murtabak recipe in Food Fusion Style. #HappyCookingToYou #FoodFusion",
+  "scrapedAt": "2026-08-01T14:40:32Z"
+}

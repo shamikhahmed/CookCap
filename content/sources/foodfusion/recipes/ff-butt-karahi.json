@@ -1,0 +1,196 @@
+{
+  "wpId": 13782,
+  "slug": "butt-karahi",
+  "id": "ff-butt-karahi",
+  "title": "Butt Karahi",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/butt-karahi/",
+  "date": "2020-05-01T12:27:02",
+  "modified": "2020-05-01T22:22:19",
+  "classList": [
+    "post-13782",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_brand-gaviscon",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1tommato",
+    "recipe_category-yogurt",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-chicken-bbq",
+    "recipe_category-dish-type",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-chicken",
+    "recipe_category-lunch-dinner",
+    "recipe_category-gravys",
+    "recipe_category-occasions",
+    "recipe_category-birthday",
+    "recipe_category-national-holidays",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2020/03/Butt-Karhai-Recipe-by-Food-fusion-4.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Zeera (Cumin seeds) roasted",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) roasted 1 tbs"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tbsp",
+          "item": "Sabut dhania (Coriander seeds) roasted",
+          "note": null,
+          "raw": "Sabut dhania (Coriander seeds) roasted 1 & ½ tbs"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Pyaz (Onion) sliced",
+          "note": "medium",
+          "raw": "Pyaz (Onion) sliced 3 medium"
+        },
+        {
+          "quantity": 4.0,
+          "unit": "",
+          "item": "Tamatar (Tomatoes) cubes",
+          "note": "medium",
+          "raw": "Tamatar (Tomatoes) cubes 4-5 medium"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "kg",
+          "item": "Desi murghi (Chicken)",
+          "note": null,
+          "raw": "Desi murghi (Chicken) 1 kg"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Adrak (Ginger) crushed",
+          "note": null,
+          "raw": "Adrak (Ginger) crushed 1 tbs"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tbsp",
+          "item": "Lehsan (Garlic) crushed",
+          "note": null,
+          "raw": "Lehsan (Garlic) crushed 1 & ½ tbs"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 & ½ tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tbsp",
+          "item": "Kali mirch powder (Black pepper powder)",
+          "note": null,
+          "raw": "Kali mirch powder (Black pepper powder) ½ tbs"
+        },
+        {
+          "quantity": 4.0,
+          "unit": "cup",
+          "item": "Water",
+          "note": null,
+          "raw": "Water 4 Cups"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Dahi (Yogurt) whisked",
+          "note": null,
+          "raw": "Dahi (Yogurt) whisked ½ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Cooking oil",
+          "note": "/4 Cup",
+          "raw": "Cooking oil 1/4 Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tbsp",
+          "item": "Lal mirch (Red chilli) crushed",
+          "note": null,
+          "raw": "Lal mirch (Red chilli) crushed ½ tbs"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Hari mirch (Green chillies) slit",
+          "note": null,
+          "raw": "Hari mirch (Green chillies) slit 3-4"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) chopped"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Adrak (Ginger) julienne",
+          "note": null,
+          "raw": "Adrak (Ginger) julienne"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Desi ghee",
+          "note": "(optional)",
+          "raw": "Desi ghee 1 tbs (optional)"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In mortal & pestle,add cumin seeds,coriander seeds,crush coarsely & set aside.",
+      "romanUrdu": "Mortal & pestle mein zeera aur sabit dhania dal ker coarsely crush ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "In a cooker,add onion,tomatoes,desi chicken,ginger,garlic,salt,black pepper powder,1/2 tbs of crushed cumin & coriander seeds,water,mix well & bring it to boil,cover and pressure cook for 15 minutes then transfer it to a wok and cook on high flame until water is reduced (approx. 4-5 minutes).",
+      "romanUrdu": "Cooker mein pyaz,tamatar,desi murghi,adrak,lehsan,namak,kali mirch powder,1/2 tbs crushed & sabut dhania aur pani dal ker ache tarhan mix karein aur ubal anay ka bad dhak dein aur 15 minutes kliya pressure cook ker lein phir karhai mein dal dein aur tez ancch per pani kum ho janay tak paka lein (approx. 4-5 minutes)."
+    },
+    {
+      "instruction": "Add yogurt and mix well.",
+      "romanUrdu": "Dahi dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add cooking oil,remaining quantity of crushed cumin & coriander seeds,red chilli crushed,mix well and cook on high flame until oil separates (2-3 minutes).",
+      "romanUrdu": "Cooking oil,baqi bacha huwa crushed zeera & sabut dhania aur lal mirch crushed dal ker ache tarhan mix karein aur tezn ancch per oil alag ho janay tak paka lein (2-3 minutes)."
+    },
+    {
+      "instruction": "Add green chillies and mix well.",
+      "romanUrdu": "Hari mirch dal ker mix ker lein."
+    },
+    {
+      "instruction": "Garnish with fresh coriander,ginger,desi ghee & serve!",
+      "romanUrdu": "Hara dhania,adrak aur desi ghee sa garnish ker ka serve karein!"
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2020/03/Butt-Karhai-Recipe-by-Food-fusion-4.jpg?v=1587762295",
+  "ogDescription": "One of the most requested dishes so finally here is Butt karahi recipe. Make it and enjoy with family, go easy on the chilies and oil to avoid heartburn.",
+  "scrapedAt": "2026-08-01T14:43:46Z"
+}

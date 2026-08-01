@@ -1,0 +1,186 @@
+{
+  "wpId": 11310,
+  "slug": "cabbage-fry",
+  "id": "ff-cabbage-fry",
+  "title": "Cabbage Fry",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/cabbage-fry/",
+  "date": "2019-07-20T11:28:37",
+  "modified": "2019-10-12T12:37:05",
+  "classList": [
+    "post-11310",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-vegetable",
+    "recipe_category-kari",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-dish-type",
+    "recipe_category-1-vegetable",
+    "recipe_category-everyday-cooking",
+    "recipe_category-vegetables",
+    "recipe_category-lunch-dinner",
+    "recipe_category-sabzi-vegetable",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2019/07/Cabbage-Fry-Recipe-by-food-fusion-9.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 3.0,
+          "unit": "cup",
+          "item": "Bund gobhi (Cabbage) shredded",
+          "note": null,
+          "raw": "Bund gobhi (Cabbage) shredded 3 Cups"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Kary (Raw mango) grated",
+          "note": null,
+          "raw": "Kary (Raw mango) grated 1 Cup"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Hari mirch (Green chilli) chopped",
+          "note": null,
+          "raw": "Hari mirch (Green chilli) chopped 2-3"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pyaz (onion) chopped",
+          "note": "medium",
+          "raw": "Pyaz (onion) chopped 1 medium"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) chopped 2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chili powder) 1 tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldee powder (Turmeric powder) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tbsp",
+          "item": "Dhania powder (Coriander powder)",
+          "note": null,
+          "raw": "Dhania powder (Coriander powder) ½ tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 2.5,
+          "unit": "tbsp",
+          "item": "Baisan (Gram flour)",
+          "note": null,
+          "raw": "Baisan (Gram flour) 2 & ½ tbs"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil 3-4 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Lehsan (Garlic) chopped",
+          "note": null,
+          "raw": "Lehsan (Garlic) chopped 1 tbs"
+        },
+        {
+          "quantity": 5.0,
+          "unit": "",
+          "item": "Sabut lal mirch (Button red chillies)",
+          "note": null,
+          "raw": "Sabut lal mirch (Button red chillies) 5-6"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Zeera (Cumin seeds)",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) 1 tbs"
+        },
+        {
+          "quantity": 15.0,
+          "unit": "",
+          "item": "Kari pata (Curry leaves)",
+          "note": null,
+          "raw": "Kari pata (Curry leaves) 15-20"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) chopped"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In bowl,add cabbage,raw mango,green chillies,onion,fresh coriander and mix well.",
+      "romanUrdu": "Bowl mein bund gobhi,kary,hari mirch,pyaz aur hara dhania dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add red chili powder,turmeric powder,coriander powder,salt,gram flour,mix well & set aside.",
+      "romanUrdu": "Lal mirch powder,haldee powder,dhania powder,namak aur baisan dal ker ache tarhan mix karein & side per rakh dein."
+    },
+    {
+      "instruction": "In wok,add cooking oil,garlic,button red chillies and mix.",
+      "romanUrdu": "Karhai mein cooking oil,lehsan aur sabut lal mirch dal ker mix karein."
+    },
+    {
+      "instruction": "Add cumin seeds,curry leaves and mix well.",
+      "romanUrdu": "Zeera aur kari pata dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Now add cabbage mixture and mix well.",
+      "romanUrdu": "Ab bund gobhi mixture dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Cover and cook on low flame for 8-10 minutes.",
+      "romanUrdu": "Dhak dein aur halki ancch per 8-10 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Garnish with fresh coriander & serve!",
+      "romanUrdu": "Hara dhania sa garnish ker ka serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2019/07/Cabbage-Fry-Recipe-by-food-fusion-9.jpg?v=1587763346",
+  "ogDescription": "Cabbage fry a quick and simple dish with an unusually great taste. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:43:49Z"
+}

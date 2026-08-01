@@ -1,0 +1,206 @@
+{
+  "wpId": 16763,
+  "slug": "malai-cake",
+  "id": "ff-malai-cake",
+  "title": "Malai Cake",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/malai-cake/",
+  "date": "2020-12-18T10:27:00",
+  "modified": "2020-12-21T15:36:01",
+  "classList": [
+    "post-16763",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_brand-olpers-dairy-cream",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-flour-atta",
+    "recipe_category-1milk",
+    "recipe_category-cream",
+    "recipe_category-yogurt",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-1baking",
+    "recipe_category-baking",
+    "recipe_category-baked-cakes",
+    "recipe_category-desserts",
+    "recipe_category-dish-type",
+    "recipe_category-1desserts",
+    "recipe_category-baked",
+    "recipe_category-ingredient",
+    "recipe_category-lunch-dinner",
+    "recipe_category-baked-lunch-dinner",
+    "recipe_category-occasions",
+    "recipe_category-birthday",
+    "recipe_category-national-holidays",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "desserts",
+  "imageUrl": "https://media.foodfusion.com/2020/12/For-Web.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": "Prepare Milk Malai Syrup",
+      "items": [
+        {
+          "quantity": 3.0,
+          "unit": "cup",
+          "item": "Doodh (Milk)",
+          "note": null,
+          "raw": "Doodh (Milk) 3 Cups"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Elaichi powder (Cardamom powder)",
+          "note": null,
+          "raw": "Elaichi powder (Cardamom powder) 1 tsp"
+        },
+        {
+          "quantity": 0.75,
+          "unit": "cup",
+          "item": "Condensed milk",
+          "note": null,
+          "raw": "Condensed milk ¾ Cup"
+        },
+        {
+          "quantity": 200.0,
+          "unit": "ml",
+          "item": "Olper’s dairy cream",
+          "note": "(room temperature)",
+          "raw": "Olper’s dairy cream 200ml (room temperature)"
+        }
+      ]
+    },
+    {
+      "heading": "Prepare Cake",
+      "items": [
+        {
+          "quantity": 5.0,
+          "unit": "",
+          "item": "Anday (Eggs)",
+          "note": null,
+          "raw": "Anday (Eggs) 5"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Bareek cheeni (Caster sugar)",
+          "note": "/4 Cup or to taste",
+          "raw": "Bareek cheeni (Caster sugar) 3/4 Cup or to taste"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tsp",
+          "item": "Vanilla essence",
+          "note": null,
+          "raw": "Vanilla essence 2 tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tsp",
+          "item": "Baking powder",
+          "note": null,
+          "raw": "Baking powder 2 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil ½ Cup"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Soji (Semolina)",
+          "note": null,
+          "raw": "Soji (Semolina) 3 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Maida (All-purpose flour) sifted",
+          "note": null,
+          "raw": "Maida (All-purpose flour) sifted 1 Cup"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Pista (Pistachios) sliced",
+          "note": null,
+          "raw": "Pista (Pistachios) sliced"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Badam (Almonds) sliced",
+          "note": null,
+          "raw": "Badam (Almonds) sliced"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In a wok,add milk & bring it to boil.",
+      "romanUrdu": "Karahi mein doodh dal ker ubal lein."
+    },
+    {
+      "instruction": "Add cardamom powder and condensed milk,mix well & cook on medium flame until it reduces to half quantity and keep mixing in between.",
+      "romanUrdu": "Elaichi powder aur condensed milk dal ker ache tarhan mix karein aur darmiyani ancch per adhe quantity reh janay tak paka lein aur bech bech mein chamcha chalatay rahein."
+    },
+    {
+      "instruction": "On low flame,add olper’s cream,whisk well and cook until it slightly thickens (approx. 2-3 minutes) & let it cool.",
+      "romanUrdu": "Chulha halka karein aur olper’s cream dal ker ache tarhan whisk ker lein aur slightly garha ho janay tak paka lein (approx. 2-3 minutes) & thanda ker lein."
+    },
+    {
+      "instruction": "In bowl,add eggs,caster sugar and beat well (approx. 2-3 minutes).",
+      "romanUrdu": "Bowl mein anday aur bareek cheeni dal ker ache tarhan beat ker lein (approx. 3 minutes)."
+    },
+    {
+      "instruction": "Add vanilla essence,baking powder,cooking oil and beat for 2 minutes.",
+      "romanUrdu": "Vanilla essence,baking powder aur cooking oil dal dein aur 2 minute kliya beat karein."
+    },
+    {
+      "instruction": "Add semolina,all-purpose flour and beat again.",
+      "romanUrdu": "Soji aur maida dal dein aur dubara beat ker lein."
+    },
+    {
+      "instruction": "Grease baking dish with cooking oil and pour prepared batter.",
+      "romanUrdu": "Baking dish ko cooking oil sa grease karein aur tayyar batter dal dein."
+    },
+    {
+      "instruction": "Bake in preheated oven at 170 C for 30-35 minutes.",
+      "romanUrdu": "Preheated oven mein 170 C per 30-35 minutes kliya bake ker lein."
+    },
+    {
+      "instruction": "Take out cake from oven & let it cool completely.",
+      "romanUrdu": "Cake ko oven sa nikal lein aur thanda ker lein."
+    },
+    {
+      "instruction": "Using a wooden skewer,poke holes all over the top of the cake.",
+      "romanUrdu": "Wooden skewer ki madad sa cake per holes ker lein."
+    },
+    {
+      "instruction": "Slowly pour prepared milk malai syrup over the top of the cake,filling holes.",
+      "romanUrdu": "Tayyar milk malai syrup ko cake ka upper dal dein aur holes ko fill ker lein."
+    },
+    {
+      "instruction": "Refrigerate until chilled.",
+      "romanUrdu": "Thanda hunay tak refrigerate ker lein."
+    },
+    {
+      "instruction": "Garnish with pistachios,almonds & serve!",
+      "romanUrdu": "Pista aur badam sa garbish ker ka serve karein!"
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2020/12/For-Web.jpg?v=1608296981",
+  "ogDescription": "Presenting you with the perfect tea-time companion, the moist and creamy Malai cake made by yours truly, using Olper's Dairy cream that adds more richness",
+  "scrapedAt": "2026-08-01T14:42:38Z"
+}

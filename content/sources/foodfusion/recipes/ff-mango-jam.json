@@ -1,0 +1,105 @@
+{
+  "wpId": 3400,
+  "slug": "mango-jam",
+  "id": "ff-mango-jam",
+  "title": "Mango Jam",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/mango-jam/",
+  "date": "2017-08-04T16:50:29",
+  "modified": "2017-08-06T16:38:59",
+  "classList": [
+    "post-3400",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "tag-fruit",
+    "tag-mango",
+    "tag-sugar",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-meal-type",
+    "recipe_category-breakfast-meal",
+    "recipe_category-1desserts-2",
+    "recipe_category-breakfast",
+    "recipe_category-dish-type",
+    "recipe_category-kids-menu",
+    "recipe_category-everyday-cooking",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "desserts",
+  "imageUrl": "https://media.foodfusion.com/2017/08/ID-R00387-2.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Aam (Mangoes) cubes",
+          "note": "large",
+          "raw": "Aam (Mangoes) cubes 2-3 large"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Cheeni (Sugar)",
+          "note": null,
+          "raw": "Cheeni (Sugar) 1 Cup"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": null,
+          "raw": "Pani (Water) ¼ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lemon zest",
+          "note": null,
+          "raw": "Lemon zest 1 tsp"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tbsp",
+          "item": "Lemon juice",
+          "note": null,
+          "raw": "Lemon juice 1 & ½ tbs"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In blender,add mangoes and blend until pureed & set aside.",
+      "romanUrdu": "Blender mein aam dal dein aur blend ker ka puree tayyar ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "In saucepan,add sugar,water and mix well on low flame until sugar dissolves (don’t cover cook the mixture).",
+      "romanUrdu": "Saucepan mein cheeni aur pani dal ker halki ancch per cheeni ghul janay tak ache tarhan mix ker lein (mixture ko ziyada nahi pakana hai)."
+    },
+    {
+      "instruction": "Add mango puree and mix well.",
+      "romanUrdu": "Mango puree dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add lemon zest,mix well and cook for 2-3 minutes.",
+      "romanUrdu": "Lemon zest dal ker ache tarhan mix karein aur 2-3 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add lemon juice and mix well until thickens (approx. 15 minutes) and check by plate technique method.",
+      "romanUrdu": "Lemon juice dal dein aur garha hunay tak ache tarhan mix kertay rahein (approx. 15 minutes) & plate technique method sa check ker lein."
+    },
+    {
+      "instruction": "Let it cool and store in a dry & clean airtight jar for up to 2 weeks in refrigerator.",
+      "romanUrdu": "Thanda ker lein aur dry & clean airtight jar mein dal ker 2 weeks kliya refrigerate mein store ker saktay han."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2017/08/ID-R00387-2.jpg?v=1587766108",
+  "ogDescription": "Make your own Mango Jam at home with this recipe. Let the kids enjoy . #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:41:09Z"
+}

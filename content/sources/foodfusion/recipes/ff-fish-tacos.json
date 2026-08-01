@@ -1,0 +1,307 @@
+{
+  "wpId": 16281,
+  "slug": "fish-tacos",
+  "id": "ff-fish-tacos",
+  "title": "Fish Tacos",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/fish-tacos/",
+  "date": "2020-09-29T09:37:37",
+  "modified": "2020-10-05T04:03:12",
+  "classList": [
+    "post-16281",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-vegetable",
+    "recipe_category-1tommato",
+    "recipe_category-1-fish",
+    "recipe_category-flour-atta",
+    "recipe_category-1milk",
+    "recipe_category-cream",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-1baking",
+    "recipe_category-baking",
+    "recipe_category-dish-type",
+    "recipe_category-baked",
+    "recipe_category-everyday-cooking",
+    "recipe_category-healthy",
+    "recipe_category-ingredient",
+    "recipe_category-lunch-dinner",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2020/09/Fish-Taco-Recipe-by-food-fusion-5.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": "Prepare Taco Shells",
+      "items": [
+        {
+          "quantity": 2.0,
+          "unit": "cup",
+          "item": "Makai ka atta (Cornmeal) sifted",
+          "note": null,
+          "raw": "Makai ka atta (Cornmeal) sifted 2 Cups"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Maida (All-purpose flour) sifted",
+          "note": null,
+          "raw": "Maida (All-purpose flour) sifted 1 Cup"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": null,
+          "raw": "Namak (Salt) 1 & ½ tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil 2 tbs"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "cup",
+          "item": "Water warm",
+          "note": "or as required",
+          "raw": "Water warm 1 & ½ Cup or as required"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil ½ tsp"
+        }
+      ]
+    },
+    {
+      "heading": "Prepare Fish Filling",
+      "items": [
+        {
+          "quantity": 0.5,
+          "unit": "kg",
+          "item": "Yellow fish boneless cubes",
+          "note": null,
+          "raw": "Yellow fish boneless cubes ½ kg"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Zeera powder (Cumin powder)",
+          "note": null,
+          "raw": "Zeera powder (Cumin powder) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chilli powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chilli powder) 1 tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Kali mirch powder (Black pepper powder)",
+          "note": null,
+          "raw": "Kali mirch powder (Black pepper powder) 1 tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Lemon juice",
+          "note": null,
+          "raw": "Lemon juice 2 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil 2-3 tbs"
+        }
+      ]
+    },
+    {
+      "heading": "Sour cream",
+      "items": [
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Cream",
+          "note": null,
+          "raw": "Cream 1 Cup"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Lemon juice",
+          "note": null,
+          "raw": "Lemon juice 2 tbs"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tbsp",
+          "item": "Doodh (Milk)",
+          "note": null,
+          "raw": "Doodh (Milk) 1 & ½ tbs"
+        }
+      ]
+    },
+    {
+      "heading": "Assembling",
+      "items": [
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Taco shell",
+          "note": null,
+          "raw": "Taco shell"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Iceberg lettuce",
+          "note": null,
+          "raw": "Iceberg lettuce"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Red bell pepper julienne",
+          "note": null,
+          "raw": "Red bell pepper julienne"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Shimla mirch (Capsicum) julienne",
+          "note": null,
+          "raw": "Shimla mirch (Capsicum) julienne"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Pyaz (Onion) julienne",
+          "note": null,
+          "raw": "Pyaz (Onion) julienne"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Tamatar (Tomatoes) julienne",
+          "note": null,
+          "raw": "Tamatar (Tomatoes) julienne"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Jalapenos",
+          "note": null,
+          "raw": "Jalapenos"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Paprika powder to sprinkle",
+          "note": null,
+          "raw": "Paprika powder to sprinkle"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In a bowl,add cornmeal,all-purpose flour,salt & mix well.",
+      "romanUrdu": "Bowl mein makai ka atta,maida aur namak dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add cooking oil & mix well.",
+      "romanUrdu": "Cooking oil shamil karein aur mix ker lein."
+    },
+    {
+      "instruction": "Gradually add warm water & knead until medium soft dough is formed,cover & let it rest for 10-15 minutes.",
+      "romanUrdu": "Thora thora ker ka neem garam pani shamil karein aur ghond ker medium soft dough tayyar ker lein aur dhak ker 10-15 minutes kliya rakh dein."
+    },
+    {
+      "instruction": "Dust dry flour & knead dough again,grease hands with oil & knead dough again.",
+      "romanUrdu": "Atta chirak dein aur dough ko dubara ghond lein,haath ko oil sa grease karein aur dough ko dubara ghomd lein."
+    },
+    {
+      "instruction": "Take a small dough & make a ball,dust dry flour & roll out with the help of rolling pin and prick with fork (makes 15).",
+      "romanUrdu": "Chota dough la ker ball lein aur atta chirak ker rolling pin ki madad sa bail lein phir fork sa prick ker lein (makes 15)."
+    },
+    {
+      "instruction": "Option no. 1: Baking",
+      "romanUrdu": "Option no. 1: Baking"
+    },
+    {
+      "instruction": "Now place the taco tortillas on oven grill and bake in preheated oven at 180 C for 10 minutes.",
+      "romanUrdu": "Ab taco tortilla ko oven rack per rakh dein aur preheated oven mein 180 C per 10 minutes kliya bake ker lein."
+    },
+    {
+      "instruction": "After baking,let it cool.",
+      "romanUrdu": "Baking ka bad thanda ker lein."
+    },
+    {
+      "instruction": "Option no. 2: Without Baking",
+      "romanUrdu": "Option no. 2: Without Baking"
+    },
+    {
+      "instruction": "On griddle,add cooking oil and spread it.",
+      "romanUrdu": "Tawa per cooking oil dal ker pheela lein."
+    },
+    {
+      "instruction": "Place rolled dough and cook from both sides until light brown.",
+      "romanUrdu": "Rolled dough rakh dein aur dono sides sa light brown hunay tak paka lein."
+    },
+    {
+      "instruction": "Fold taco in half & hold and cook for 30 seconds.",
+      "romanUrdu": "Taco ko half fold ker ka hold ker lein aur 30 seconds kliya paka lein."
+    },
+    {
+      "instruction": "In a bowl,add fish boneless cubes,cumin powder,red chilli powder,salt,black pepper powder and lemon juice,mix well and marinate for 15 minutes.",
+      "romanUrdu": "Bowl mein fish boneless cubes,zeera powder,lal mirch powder,namak,kali mirch powder aur lemon juice dal ker ache tarhan mix karein aur 15 minutes kliya marinate ker lein."
+    },
+    {
+      "instruction": "In a frying pan,add cooking oil and cook marinated fish for 3-4 minutes or until dries up & set aside.",
+      "romanUrdu": "Frying pan mein cooking oil dal dein aur marinated fish ko 3-4 minutes ya pani sukh janay tak paka lein & side per rakh dein."
+    },
+    {
+      "instruction": "In a bowl,add cream,lemon juice & whisk well.",
+      "romanUrdu": "Bowl mein cream aur lemon juice dal ker ache tarhan whisk karein."
+    },
+    {
+      "instruction": "Add milk,whisk well and rest it for 15 minutes.Sour cream is ready!",
+      "romanUrdu": "Doodh dal ker ache tarhan whisk ker lein aur 15 minutes kliya chor dein.Sour cream tayyar hai!"
+    },
+    {
+      "instruction": "To assemble tacos,add iceberg lettuce,cooked fish chunks,red bell pepper,capsicum,onion,tomatoes,",
+      "romanUrdu": "Taco shell mein iceberg lettuce,cooked fish chunks,red bell pepper,shimla mirch,pyaz,tamatar, jalapenos,tayyar sour cream aur paprika powder dal ker serve karein!"
+    },
+    {
+      "instruction": "jalapenos,prepared sour cream,sprinkle paprika powder & serve!",
+      "romanUrdu": null
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2020/09/Fish-Taco-Recipe-by-food-fusion-5.jpg?v=1600317443",
+  "ogDescription": "These Fish tacos are just WOW do give this recipe a try. #HappyCookingToYou #FoodFusion",
+  "scrapedAt": "2026-08-01T14:42:09Z"
+}

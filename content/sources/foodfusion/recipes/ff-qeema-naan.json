@@ -1,0 +1,289 @@
+{
+  "wpId": 4082,
+  "slug": "qeema-naan",
+  "id": "ff-qeema-naan",
+  "title": "Qeema Naan",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/qeema-naan/",
+  "date": "2017-10-13T15:52:55",
+  "modified": "2017-10-14T02:34:45",
+  "classList": [
+    "post-4082",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "tag-beef",
+    "tag-flour",
+    "tag-maida",
+    "tag-meat",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-flour-atta",
+    "recipe_category-1milk",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-1baking",
+    "recipe_category-1-others",
+    "recipe_category-ramazan",
+    "recipe_category-dinner",
+    "recipe_category-appetizers-snacks",
+    "recipe_category-breakfast",
+    "recipe_category-parathas",
+    "recipe_category-dish-type",
+    "recipe_category-1parathas",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-beef",
+    "recipe_category-egg",
+    "recipe_category-lunch-dinner",
+    "recipe_category-baked-lunch-dinner",
+    "recipe_category-ramzan",
+    "recipe_category-1sehri",
+    "recipe_category-seasonal",
+    "recipe_category-bakra-eid1",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2017/10/ID-R00436-4-1.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": "Qeema (Mince) Stuffing",
+      "items": [
+        {
+          "quantity": 350.0,
+          "unit": "",
+          "item": "Beef qeema (Beef mince)",
+          "note": "gms",
+          "raw": "Beef qeema (Beef mince) 350 gms"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Zeera (Cumin seeds) crushed",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) crushed 1 tsp"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Dhania (Coriander seeds) crushed",
+          "note": null,
+          "raw": "Dhania (Coriander seeds) crushed 1 & ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lal mirch (Red chili) crushed",
+          "note": "or to taste",
+          "raw": "Lal mirch (Red chili) crushed 1 tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Garam masala powder",
+          "note": null,
+          "raw": "Garam masala powder ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tsp or to taste"
+        },
+        {
+          "quantity": 7.0,
+          "unit": "",
+          "item": "Hari mirch (Green chilies) chopped",
+          "note": null,
+          "raw": "Hari mirch (Green chilies) chopped 7-8"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pyaz (Onion) chopped",
+          "note": "medium",
+          "raw": "Pyaz (Onion) chopped 1 medium"
+        },
+        {
+          "quantity": 4.0,
+          "unit": "cloves",
+          "item": "Lehsan (Garlic) chopped",
+          "note": null,
+          "raw": "Lehsan (Garlic) chopped 4 cloves"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) chopped ½ Cup"
+        }
+      ]
+    },
+    {
+      "heading": "Dough",
+      "items": [
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Doodh (Milk) warm",
+          "note": null,
+          "raw": "Doodh (Milk) warm ¼ Cup"
+        },
+        {
+          "quantity": 0.75,
+          "unit": "cup",
+          "item": "Pani (Water) warm",
+          "note": null,
+          "raw": "Pani (Water) warm ¾ Cup"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "cup",
+          "item": "Maida (All-purpose flour)",
+          "note": null,
+          "raw": "Maida (All-purpose flour) 2 Cups"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Cheeni (Sugar)",
+          "note": null,
+          "raw": "Cheeni (Sugar) 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Baking powder",
+          "note": null,
+          "raw": "Baking powder ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Khameer (Instant yeast)",
+          "note": null,
+          "raw": "Khameer (Instant yeast) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": null,
+          "raw": "Namak (Salt) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Oil",
+          "note": null,
+          "raw": "Oil 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Anda (Egg)",
+          "note": null,
+          "raw": "Anda (Egg) 1"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Doodh (Milk)",
+          "note": null,
+          "raw": "Doodh (Milk)"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Til (Sesame seeds)",
+          "note": null,
+          "raw": "Til (Sesame seeds)"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Makhan (Butter)",
+          "note": null,
+          "raw": "Makhan (Butter)"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In chopper,add beef mince and chop well.",
+      "romanUrdu": "Chopper mein qeema dal ker ache tarhan chop ker lein."
+    },
+    {
+      "instruction": "In bowl,add beef mince,ginger garlic paste,cumin seeds,coriander seeds,red chili crushed,garam masala powder,salt,green chilies,onion,garlic,fresh coriander,mix well and set aside.",
+      "romanUrdu": "Bowl mein beef qeema,adrak lehsan paste,zeera,dhania,lal mirch crushed,garam masala powder, namak,hari mirch,pyaz,lehsan aur hara dhania dal ker ache tarhan mix karein aur side per rakh dein."
+    },
+    {
+      "instruction": "In small jug,add milk,water and mix well.",
+      "romanUrdu": "Chotay jug mein doodh aur pani dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "In bowl,add all-purpose flour,sugar,baking powder,instant yeast,salt and mix well.",
+      "romanUrdu": "Bowl mein maida,cheeni,baking powder,khameer aur namak dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add oil and egg,mix well.",
+      "romanUrdu": "Oil aur anda shamil karein aur ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Gradually add milk+ water,mix well and knead until soft dough is formed.",
+      "romanUrdu": "Thora thora ker ka doodh+pani dal ker ache tarhan mix karein aur ghond ker naram dough tayyar ker lein."
+    },
+    {
+      "instruction": "Cover and let it rest for 1 & ½ hours.",
+      "romanUrdu": "Dhak ker 1 & ½ hours kliya rakh dein."
+    },
+    {
+      "instruction": "Knead dough again,sprinkle all-purpose flour and knead until smooth.",
+      "romanUrdu": "Dough ko dubara ghond lein,maida chirak lein aur smooth hunay tak ghond lein."
+    },
+    {
+      "instruction": "Divide dough into 3 equal pieces.",
+      "romanUrdu": "Dough ko 3 equal pieces mein divide ker lein."
+    },
+    {
+      "instruction": "Take a small dough,make a ball and flatten the ball with the help of the hands.",
+      "romanUrdu": "Chota dough lein aur ball bana lein aur haathon ki madad sa ball ko flat ker lein."
+    },
+    {
+      "instruction": "Add mince stuffing in the center and pull the edges up,seal and shape again into a ball.",
+      "romanUrdu": "Qeema stuffing rakh dein aur edges ko pull ker ka seal ker lein aur dubara ball ki shape bana lein."
+    },
+    {
+      "instruction": "Sprinkle all-purpose flour and roll out with the help of rolling pin.",
+      "romanUrdu": "Maida chirak dein aur rolling pin ki madad sa bail lein."
+    },
+    {
+      "instruction": "Brush the top with milk,sprinkle sesame seeds and add marks with the help of the hands.",
+      "romanUrdu": "Naan ka upper doodh laga ker til chirak dein aur haathon ki madad sa marks laga lein."
+    },
+    {
+      "instruction": "Now transfer the naan to the foiled baking tray and bake in preheated at 180 C for 30-35 minutes.",
+      "romanUrdu": "Ab naan ko foiled baking tray per rakh dein aur preheated oven mein 180 C per 30-35 minutes kliya bake ker lein."
+    },
+    {
+      "instruction": "After baking,brush the top with butter and cut into four pieces and serve.",
+      "romanUrdu": "Baking ka bad naan ka upper makhan laga aur aur 4 pieces mein cut ker ka serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2017/10/ID-R00436-4-1.jpg?v=1587765838",
+  "ogDescription": "A must try Homemade Qeema Naan Recipe for you today. Make it, eat it, share it and enjoy it. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:43:11Z"
+}

@@ -1,0 +1,247 @@
+{
+  "wpId": 3225,
+  "slug": "shola",
+  "id": "ff-shola",
+  "title": "Shola",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/shola/",
+  "date": "2017-07-22T18:15:16",
+  "modified": "2017-07-24T01:52:33",
+  "classList": [
+    "post-3225",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "tag-meat",
+    "tag-rice",
+    "recipe_brand-shan",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-rice",
+    "recipe_category-lentils-daal",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-ramazan",
+    "recipe_category-dinner",
+    "recipe_category-dish-type",
+    "recipe_category-salanscurrys",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-beef",
+    "recipe_category-rice",
+    "recipe_category-lunch-dinner",
+    "recipe_category-gravys",
+    "recipe_behind_camera-maria-mubeen"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2017/07/P2080536.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Oil/Melted ghee",
+          "note": null,
+          "raw": "Oil/Melted ghee ½ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pyaz (Onion) sliced",
+          "note": "medium",
+          "raw": "Pyaz (Onion) sliced 1 medium"
+        },
+        {
+          "quantity": 250.0,
+          "unit": "g",
+          "item": "Beef qeema (Beef Mince)",
+          "note": null,
+          "raw": "Beef qeema (Beef Mince) 250 gm"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Garam masala powder",
+          "note": null,
+          "raw": "Garam masala powder 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Dhania powder (Coriander powder)",
+          "note": null,
+          "raw": "Dhania powder (Coriander powder) 1 tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chili powder) 2 tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldee powder (Turmeric powder) ½ tsp"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Dahi (Yogurt)",
+          "note": null,
+          "raw": "Dahi (Yogurt) ¼ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Palak (Spinach) finely chopped",
+          "note": null,
+          "raw": "Palak (Spinach) finely chopped 1 Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Soya (Dill)",
+          "note": null,
+          "raw": "Soya (Dill) 1 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Hari methi (Fresh fenugreek leaves)",
+          "note": null,
+          "raw": "Hari methi (Fresh fenugreek leaves) 2 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Hari moong daal (Green gram)",
+          "note": "(soaked for 30 minutes)",
+          "raw": "Hari moong daal (Green gram) ½ Cup (soaked for 30 minutes)"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Chawal (Rice) basmati",
+          "note": "(soaked for 30 minutes)",
+          "raw": "Chawal (Rice) basmati 1 Cup (soaked for 30 minutes)"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 2 tsp or to taste"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": null,
+          "raw": "Pani (Water) 3 Cups"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Desi ghee (melted)",
+          "note": null,
+          "raw": "Desi ghee (melted) 1-2 tbs"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Pyaz (Onion) fried",
+          "note": null,
+          "raw": "Pyaz (Onion) fried"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Hari mirch (Green chili)",
+          "note": null,
+          "raw": "Hari mirch (Green chili)"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Adrak (Ginger) Julienne",
+          "note": null,
+          "raw": "Adrak (Ginger) Julienne"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Hara dhania (Fresh coriander)",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander)"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Lemon juice",
+          "note": null,
+          "raw": "Lemon juice"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "Add beef mince,ginger garlic paste and mix well until mince changes color.",
+      "romanUrdu": "Pot mein oil/melted ghee aur pyaz dal ker light brown fry ker lein."
+    },
+    {
+      "instruction": "Add garam masala powder,coriander powder,red chili powder,turmeric powder,mix well and cook for 5 minutes.",
+      "romanUrdu": "Beef qeema aur adrak lehsan paste dal ker qeema ka rang tabdeel hunay taka paka lein."
+    },
+    {
+      "instruction": "Add yogurt,spinach,dill,fresh fenugreek leaves,mix well and cook for 3 minutes.",
+      "romanUrdu": "Garam masala powder,dhania powder,lal mirch powder aur haldee powder dal ker ache tarhan mix ker lein aur 5 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add green gram,rice and mix well.",
+      "romanUrdu": "Dahi,palak,soya aur hari meethi dal ker ache tarhan mix karein aur 3 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add salt and mix well.",
+      "romanUrdu": "Hari moong daal aur chawal dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add water,mix and bring it to boil,cover and cook on low flame for 30-40 minutes.",
+      "romanUrdu": "Namak dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Keep mixing & mashing in between,add more water if required,cover and cook for another 10 minutes, mash and cook until desired consistency is achieved.",
+      "romanUrdu": "Pail dal ker mix karein aur ubal anay ka bad dhak dein aur halki ancch per 30-40 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Garnish with desi ghee melted,fried onion,green chili,ginger,fresh coriander and lemon juice.",
+      "romanUrdu": "Bech bech mein mix & mash kertay rahen,agar zaroorat ho tou mazeed pani daldein aur mazeed 10 minutes kliya paka lein,mash ker lein aur desired consistency anay tak paka lein."
+    },
+    {
+      "instruction": "Desi ghee metled,fried pyaz,hari mirch,adrak,hara dhania aur lemon juice sa garnish karein.",
+      "romanUrdu": null
+    },
+    {
+      "instruction": "Garam serve karein.",
+      "romanUrdu": null
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2017/07/P2080536.jpg?v=1587766150",
+  "ogDescription": "\"Shola\", traditionally made with leftovers but we gave it our own special twist. #HappyCookingToYou. Be creative with what you put in it.",
+  "scrapedAt": "2026-08-01T14:39:45Z"
+}

@@ -1,0 +1,218 @@
+{
+  "wpId": 6965,
+  "slug": "jali-kabab",
+  "id": "ff-jali-kabab",
+  "title": "Jali Kabab",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/jali-kabab/",
+  "date": "2018-08-10T15:12:26",
+  "modified": "2019-08-08T23:21:21",
+  "classList": [
+    "post-6965",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "tag-beef",
+    "tag-cooking-oil",
+    "tag-meat",
+    "tag-spices",
+    "recipe_brand-shan",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-dish-type",
+    "recipe_category-kababs",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-beef",
+    "recipe_category-lunch-dinner",
+    "recipe_category-occasions",
+    "recipe_category-bakra-eid",
+    "recipe_category-seasonal",
+    "recipe_category-bakra-eid1",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2018/07/Jali-Kabab-Recipe-by-Food-fusion-2.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 0.5,
+          "unit": "kg",
+          "item": "Qeema (Mince) mutton/beef",
+          "note": null,
+          "raw": "Qeema (Mince) mutton/beef ½ kg"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Dahi (Yogurt) hanged",
+          "note": null,
+          "raw": "Dahi (Yogurt) hanged 2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Tomato ketchup",
+          "note": null,
+          "raw": "Tomato ketchup 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Adrak lehsan (Ginger garlic) crushed",
+          "note": null,
+          "raw": "Adrak lehsan (Ginger garlic) crushed 1 tbs"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Hari mirch (Green chilies) chopped",
+          "note": null,
+          "raw": "Hari mirch (Green chilies) chopped 3-4"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Pyaz (Onion) fried",
+          "note": null,
+          "raw": "Pyaz (Onion) fried 2-3 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Kacha papita (Raw papaya) paste",
+          "note": null,
+          "raw": "Kacha papita (Raw papaya) paste 2 tbs"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chili powder) 1 & ½ tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Garam masala powder",
+          "note": null,
+          "raw": "Garam masala powder 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Kala zeera (Caraway seed) powdered",
+          "note": null,
+          "raw": "Kala zeera (Caraway seed) powdered ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Dhania powder (Coriander powder)",
+          "note": null,
+          "raw": "Dhania powder (Coriander powder) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) chopped 2-3 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Podina (Mint leaves) chopped",
+          "note": null,
+          "raw": "Podina (Mint leaves) chopped 2-3 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Bread slices",
+          "note": null,
+          "raw": "Bread slices 2"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Doodh (Milk)",
+          "note": null,
+          "raw": "Doodh (Milk) ½ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Bread crumbs",
+          "note": "or as required",
+          "raw": "Bread crumbs 1 Cup or as required"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Anday (Eggs) whisked",
+          "note": null,
+          "raw": "Anday (Eggs) whisked 2-3"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Cooking oil for frying",
+          "note": null,
+          "raw": "Cooking oil for frying"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In bowl,add mince,yogurt,tomato ketchup,ginger garlic,green chilies,fried onion,raw papaya paste, red chili powder,garam masala powder,caraway seeds powder,coriander powder,salt,fresh coriander and mint leaves.",
+      "romanUrdu": "Bowl mein qeema,dahi,tomato ketchup,adrak lehsan,hari mirch,fried pyaz,kacha papita paste,lal mirch powder,garam masala powder,kala zeera powder,dhania powder,namak,hara dhania aur podina dal dein."
+    },
+    {
+      "instruction": "In bowl,add bread slices and milk,press & squeeze it.",
+      "romanUrdu": "Bowl mein bread slices aur doodh dal dein & squeeze ker lein."
+    },
+    {
+      "instruction": "Now add milk soaked bread slices in mince mixture and mix well.",
+      "romanUrdu": "Add doodh mein soaked bread slices ko qeema ka mixture mein dal dein aur ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Cover and let it marinate for 1 hour.",
+      "romanUrdu": "Dhak dein aur 1 hour kliya marinate ker lein."
+    },
+    {
+      "instruction": "Grease hands with oil,take a mixture and make kababs of equal sizes (makes 18).",
+      "romanUrdu": "Haathon ko oil sa grease karein aur mixture ko la ker equal sizes ka kabab bana lein (makes 18)."
+    },
+    {
+      "instruction": "After coating with breadcrumbs,can be stored for up to 3 weeks in freezer.",
+      "romanUrdu": "Breadcrumbs sa coating kerna ka bad 3 weeks kliya freezer mein store ker saktay han."
+    },
+    {
+      "instruction": "Coat kababs in breadcrumbs then dip into beaten eggs.",
+      "romanUrdu": "Kababs ko breadcrumbs mein coat karein phir pheetay hoye anday mein dip ker lein."
+    },
+    {
+      "instruction": "In wok,heat cooking oil and fry kabab on low flame from both sides until golden brown while pouring whisked eggs on each side of kababs.",
+      "romanUrdu": "Karhai mein cooking oil garam karein aur halki ancch per kabab ko dono sides sa golden brown hunay tak fry ker lein aur pheetay huway anday ko kabab ki dono sides per daltey rahein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/07/Jali-Kabab-Recipe-by-Food-fusion-2.jpg?v=1587764743",
+  "ogDescription": "A tempting new Jali Kabab Recipe for you. Make and freeze them for later. #HappyCookingToYou #ShanSpices Bakra Eid Special",
+  "scrapedAt": "2026-08-01T14:42:26Z"
+}

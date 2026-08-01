@@ -1,0 +1,330 @@
+{
+  "wpId": 13179,
+  "slug": "daal-kadhi",
+  "id": "ff-daal-kadhi",
+  "title": "Daal Kadhi",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/daal-kadhi/",
+  "date": "2020-10-11T11:08:00",
+  "modified": "2020-10-14T04:09:24",
+  "classList": [
+    "post-13179",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_brand-nestle-milk-pak-yogurt",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-lentils-daal",
+    "recipe_category-yogurt",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-dish-type",
+    "recipe_category-salanscurrys",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-lunch-dinner",
+    "recipe_category-gravys",
+    "recipe_category-occasions",
+    "recipe_category-national-holidays",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2020/01/Daal-kadhi-Recipe-by-Food-fusion-3.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 300.0,
+          "unit": "g",
+          "item": "Mong daal (Yellow lentil)",
+          "note": "(soaked for 1 hour)",
+          "raw": "Mong daal (Yellow lentil) 300g (soaked for 1 hour)"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Water",
+          "note": "or as required",
+          "raw": "Water ½ Cup or as required"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pyaz (Onion) sliced",
+          "note": "medium",
+          "raw": "Pyaz (Onion) sliced 1 medium"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Lehsan (Garlic) cloves",
+          "note": null,
+          "raw": "Lehsan (Garlic) cloves 3-4"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "inch",
+          "item": "Adrak (Ginger)",
+          "note": "piece",
+          "raw": "Adrak (Ginger) 1 inch piece"
+        },
+        {
+          "quantity": 6.0,
+          "unit": "",
+          "item": "Kary pata (Curry leaves)",
+          "note": null,
+          "raw": "Kary pata (Curry leaves) 6-7"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tbsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tbs or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tbsp",
+          "item": "Lal mirch powder (Red chilli powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chilli powder) ½ tbs or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tbsp",
+          "item": "Zeera (Cumin seeds)",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) ½ tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldee powder (Turmeric powder) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Garam masala powder",
+          "note": null,
+          "raw": "Garam masala powder 1 tsp"
+        },
+        {
+          "quantity": 500.0,
+          "unit": "g",
+          "item": "Dahi (Yogurt)",
+          "note": null,
+          "raw": "Dahi (Yogurt) 500g"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Hari mirch (Green chilli)",
+          "note": null,
+          "raw": "Hari mirch (Green chilli) 1-2"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "l",
+          "item": "Water",
+          "note": null,
+          "raw": "Water ½ litre"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tbsp",
+          "item": "Zeera (Cumin seeds)",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) ½ tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldee powder (Turmeric powder) ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chilli powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chilli powder) 1 tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Podina (Mint leaves) chopped",
+          "note": null,
+          "raw": "Podina (Mint leaves) chopped 1-2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) chopped 1-2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) 1 tsp"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Cooking oil for frying",
+          "note": null,
+          "raw": "Cooking oil for frying"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "l",
+          "item": "Water",
+          "note": null,
+          "raw": "Water 1 & ½ litre"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Ajwain (Carom seeds)",
+          "note": null,
+          "raw": "Ajwain (Carom seeds) ¼ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lal mirch (Red chilli) crushed",
+          "note": null,
+          "raw": "Lal mirch (Red chilli) crushed 1 tsp"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Tatri (Citric acid)",
+          "note": null,
+          "raw": "Tatri (Citric acid) ¼ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Ghee",
+          "note": null,
+          "raw": "Ghee 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) chopped 1-2 tbs"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil 3-4 tbs"
+        },
+        {
+          "quantity": 7.0,
+          "unit": "",
+          "item": "Sabut lal mirch (Red chilli buttons)",
+          "note": null,
+          "raw": "Sabut lal mirch (Red chilli buttons) 7-8"
+        },
+        {
+          "quantity": 6.0,
+          "unit": "cloves",
+          "item": "Lehsan (Garlic) sliced",
+          "note": null,
+          "raw": "Lehsan (Garlic) sliced 6-7 cloves"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Zeera (Cumin seeds)",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) 1 tbs"
+        },
+        {
+          "quantity": 8.0,
+          "unit": "",
+          "item": "Kary pata (Curry leaves)",
+          "note": null,
+          "raw": "Kary pata (Curry leaves) 8-10"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In grinder,add yellow lentil,water,grind well & take out half quantity in a bowl & reserve for later use.",
+      "romanUrdu": "Grinder mein mong daal aur pani dal ker ache tarhan grind ker lein & half quantity bowl mein nikal lein aur bad mein use kernay kliya side per rakh dein."
+    },
+    {
+      "instruction": "Add onion,garlic,ginger,curry leaves,salt,red chilli powder,cumin seeds,turmeric powder, garam masala powder,yogurt,green chilli,water and blend well.",
+      "romanUrdu": "Pyaz,lehsan,adrak,kary pata,namak,lal mirch powder,zeera,haldee powder,garam masala powder,dahi,hari mirch aur pani dal ker ache tarhan blend ker lein."
+    },
+    {
+      "instruction": "Take reserved lentil mixture and mix well continuously for 4-5 minutes.",
+      "romanUrdu": "Reserved daal mixture ko 4-5 minutes kliya musalsal mix kertay rahien."
+    },
+    {
+      "instruction": "Add cumin seeds,turmeric powder,red chilli powder,salt,mint leaves,fresh coriander,ginger garlic paste and mix well.",
+      "romanUrdu": "Zeera,haldee powder,lal mirch powder,namak,podina,hara dhania aur adrak lehsan paste dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "In a wok,heat cooking oil and fry pakora on medium low flame until golden brown.",
+      "romanUrdu": "Karhai mein cooking oil garam karein aur phulkiyon ko darmiyani halki ancch per golden brown hunay tak fry ker lein."
+    },
+    {
+      "instruction": "In a pot,add blended lentil mixture,water,carom seeds,red chilli crushed,citric acid,ghee and mix well.",
+      "romanUrdu": "Pot mein blended daal mixture,pani,ajwain,lal mirch crushed,tatri aur ghee dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Turn on the flama,add fresh coriander and mix well,bring it to boil,keep mixing in between and cook on medium low flame until curry thickens (30-40 minutes).",
+      "romanUrdu": "Chulha on karein aur hara dhania dal ker ache tarhan mix karein aur ubal anay ka bech bech mein mix kertay rahein aur darmiyani halki ancch per kadhi garhi ho janay tak paka lein (30-40 minutes)."
+    },
+    {
+      "instruction": "Cover partially and cook on low flame until oil separates.",
+      "romanUrdu": "Partillay dhak dein aur halki ancch per oil alag hunay tak paka lein."
+    },
+    {
+      "instruction": "Now add fried pakora and mix well,cover partially & cook on low flame for 8-10 minutes.",
+      "romanUrdu": "Ab fried pakora dal ker ache tarhan mix karein aur partially dhak ker halki ancch per 8-10 minutes kliya paka lein."
+    },
+    {
+      "instruction": "In frying pan,add cooking oil,button red chillies,garlic and mix well.",
+      "romanUrdu": "Frying pan mein cooking oil,sabut lal mirch aur lehsan dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add cumin seeds,curry leaves,mix well and fry until golden brown.",
+      "romanUrdu": "Zeera aur kary pata dal ker ache tarhan mix karein aur golden brown hunay tak fry ker lein."
+    },
+    {
+      "instruction": "Now add tadka in kadhi,mix well & serve!",
+      "romanUrdu": "Ab kadhi mein tadka dal ker ache tarhan mix ker lein & serve karein!"
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2020/01/Daal-kadhi-Recipe-by-Food-fusion-3.jpg?v=1587762637",
+  "ogDescription": "Mouth watering Daal Kadhi recipe for you Today. #HappyCookingToYou #WohiRiwayatiMaza #HarBaarZaiqaydaar #Nestle",
+  "scrapedAt": "2026-08-01T14:41:52Z"
+}

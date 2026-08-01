@@ -1,0 +1,176 @@
+{
+  "wpId": 16791,
+  "slug": "gur-papri",
+  "id": "ff-gur-papri",
+  "title": "Gur Papri",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/gur-papri/",
+  "date": "2020-11-27T10:23:24",
+  "modified": "2020-12-04T04:05:00",
+  "classList": [
+    "post-16791",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-desi-desserts",
+    "recipe_category-everyday-cooking",
+    "recipe_category-homemade",
+    "recipe_category-ingredient",
+    "recipe_category-lunch-dinner",
+    "recipe_category-occasions",
+    "recipe_category-national-holidays",
+    "recipe_category-seasonal",
+    "recipe_category-winter",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2020/11/Gur-papri-Recipe-by-Food-fusion-2.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Ghee",
+          "note": null,
+          "raw": "Ghee 2 tbs"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Gond katira (Edible gum)",
+          "note": null,
+          "raw": "Gond katira (Edible gum) ¼ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Ghee",
+          "note": null,
+          "raw": "Ghee 1 Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Atta (Wheat flour) sifted",
+          "note": null,
+          "raw": "Atta (Wheat flour) sifted 1 Cup"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "cup",
+          "item": "Gur (Jaggery)",
+          "note": null,
+          "raw": "Gur (Jaggery) 1 & ½ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Elaichi powder (Cardamom powder)",
+          "note": null,
+          "raw": "Elaichi powder (Cardamom powder) 1 tsp"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Khopra (Desiccated coconut)",
+          "note": null,
+          "raw": "Khopra (Desiccated coconut) 3-4 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Badam (Almonds) chopped",
+          "note": null,
+          "raw": "Badam (Almonds) chopped 2-3 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Kaju (Cashew nuts) chopped",
+          "note": null,
+          "raw": "Kaju (Cashew nuts) chopped 2-3 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Pista (Pistachio) chopped",
+          "note": null,
+          "raw": "Pista (Pistachio) chopped 2-3 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Ghee",
+          "note": null,
+          "raw": "Ghee 2 tbs"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In a wok,add ghee & let it melt.",
+      "romanUrdu": "Karahi mein ghee dal ker melt ker lein."
+    },
+    {
+      "instruction": "Add edible gum,mix well & fry on low flame until it puffs up (approx.2-3 minutes),set aside & let it cool.",
+      "romanUrdu": "Gond katira dal ker ache mix tarhan mix karein aur halki ancch per puff hunay tak fry ker lein & side per rakh ker thanda ker lein."
+    },
+    {
+      "instruction": "In the same wok,add ghee & let it melt.",
+      "romanUrdu": "Us he karahi mein ghee dal ker melt ker lein."
+    },
+    {
+      "instruction": "Gradually add wheat flour,mix well & cook on low flame until its fragrant and turns golden brown (12-15 minutes) & stir continuously.",
+      "romanUrdu": "Thora thora ker ka atta shamil karein aur halki ancch per khushbu aur golden brown color ajanay tak paka lein (12-15 minutes) aur musalsal mix kertay rahein."
+    },
+    {
+      "instruction": "Turn off the flame,add jaggery & mix well.",
+      "romanUrdu": "Chulha bund ker dein aur gur dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Turn on the flame and mix well until jaggery melts (3-4 minutes).",
+      "romanUrdu": "Chulha on karein aur gur melt hunay tak ache tarhan mix ker lein (3-4 minutes)."
+    },
+    {
+      "instruction": "Add cardamom powder,crush fried edible gum with the help of hands and add it in wok.",
+      "romanUrdu": "Elaichi powder dal dein aur fried gond ko haathon ki madad sa crush ker lein aur karahi mein dal dein."
+    },
+    {
+      "instruction": "Add desiccated coconut,almonds,cashew nuts,pistachios & mix well.",
+      "romanUrdu": "Khopra,badam,kaju aur pista dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add ghee & mix well.",
+      "romanUrdu": "Ghee dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "On a greased baking tray,add gur mixture,spread evenly and press gently.",
+      "romanUrdu": "Greased baking tray per gur ka mixture dal ker evenly pheela lein aur gently press ker lein."
+    },
+    {
+      "instruction": "Let it cool for 10 minutes.",
+      "romanUrdu": "10 minute kliya thanda ker lein."
+    },
+    {
+      "instruction": "Cut into desired pieces and let it set for 4 hours & serve!",
+      "romanUrdu": "Desired pieces mein cut ker lein aur 4 hours set hunay kliya chor dein & serve karein!"
+    },
+    {
+      "instruction": "Can be stored in an airtight container for up to 1 month.",
+      "romanUrdu": "1 month tak air container mein dal ker store ker saktay han."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2020/11/Gur-papri-Recipe-by-Food-fusion-2.jpg?v=1605788019",
+  "ogDescription": "Winter special Gur Papdi Recipe for you today. #HappyCookingToYou #FoodFusion",
+  "scrapedAt": "2026-08-01T14:41:06Z"
+}

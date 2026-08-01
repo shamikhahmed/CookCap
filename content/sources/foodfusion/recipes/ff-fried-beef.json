@@ -1,0 +1,159 @@
+{
+  "wpId": 3675,
+  "slug": "fried-beef",
+  "id": "ff-fried-beef",
+  "title": "Fried Beef",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/fried-beef/",
+  "date": "2017-08-21T21:12:32",
+  "modified": "2017-08-23T11:15:17",
+  "classList": [
+    "post-3675",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "tag-beef",
+    "tag-meat",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-ramazan",
+    "recipe_category-dinner",
+    "recipe_category-bbq",
+    "recipe_category-beef-bbq",
+    "recipe_category-dish-type",
+    "recipe_category-salanscurrys",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-beef",
+    "recipe_category-lunch-dinner",
+    "recipe_category-gravys",
+    "recipe_category-occasions",
+    "recipe_category-bakra-eid",
+    "recipe_category-seasonal",
+    "recipe_category-bakra-eid1",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2017/08/ID-R00400-1.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 0.5,
+          "unit": "kg",
+          "item": "Beef boneless undercut",
+          "note": null,
+          "raw": "Beef boneless undercut ½ kg"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chili powder) 1 tbs or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": "/2 tsp",
+          "raw": "Haldee powder (Turmeric powder) 1/2 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Kacha papita (Raw papaya) paste",
+          "note": null,
+          "raw": "Kacha papita (Raw papaya) paste 1 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) 2 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": null,
+          "raw": "Pani (Water) 2-3 Cups"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Oil",
+          "note": null,
+          "raw": "Oil ¼ Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Kali mirch (Black pepper) crushed",
+          "note": null,
+          "raw": "Kali mirch (Black pepper) crushed ½ tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) chopped 2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Hari mirch (Green chili) chopped",
+          "note": null,
+          "raw": "Hari mirch (Green chili) chopped 1-2"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Lemon juice",
+          "note": null,
+          "raw": "Lemon juice 2 tbs"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In wok,add beef bonless undercut,salt,red chili powder,turmeric powder,raw papaya paste and ginger garlic paste,mix well & marinate for 1 hour.",
+      "romanUrdu": "Karhai mein beef boneless undercut,namak,lal mirch powder,haldee powder,kacha papita aur adrak lehsan paste dal ker ache tarhan mix karein aur 1 hour kliya marinate ker lein."
+    },
+    {
+      "instruction": "In marinated beef,add water and bring it to boil,cover & cook on low flame until meat is done (Approx. 45 minutes).",
+      "romanUrdu": "Marinated beef mein pani dal dein aur ubal anay ka bad dhak dein aur halki ancch per ghost gul janay tak paka lein (Approx. 45 minutes)."
+    },
+    {
+      "instruction": "Add oil,mix well and cook until oil separates.",
+      "romanUrdu": "Oil dal ker ache tarhan mix karein aur oil alag hunay tak paka lein."
+    },
+    {
+      "instruction": "Add black pepper crushed and mix well.",
+      "romanUrdu": "Kali mirch crushed dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add fresh coriander,green chili and lemon juice,cover & simmer for 2 minutes.",
+      "romanUrdu": "Hara dhania,hari mirch aur lemon juice dal ker dhak dein aur 2 minutes kliya dum per rakh dein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2017/08/ID-R00400-1.jpg?v=1587765995",
+  "ogDescription": "Make tantalizing Fried beef this Eid and enjoy with Family. #HappyCookingToyou",
+  "scrapedAt": "2026-08-01T14:42:16Z"
+}

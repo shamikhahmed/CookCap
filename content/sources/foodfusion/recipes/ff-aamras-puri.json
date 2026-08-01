@@ -1,0 +1,265 @@
+{
+  "wpId": 18506,
+  "slug": "aamras-puri",
+  "id": "ff-aamras-puri",
+  "title": "Aamras Puri",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/aamras-puri/",
+  "date": "2021-06-05T09:42:00",
+  "modified": "2021-06-13T00:38:14",
+  "classList": [
+    "post-18506",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-flour-atta",
+    "recipe_category-1milk",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-dish-type",
+    "recipe_category-fried-items",
+    "recipe_category-lunch-dinner",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_category-summer",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2021/05/Aam-ras-Puri-Recipe-by-Food-fusion-1.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": "Prepare Aam ras",
+      "items": [
+        {
+          "quantity": 500.0,
+          "unit": "g",
+          "item": "Aam (Mangoes) cubes",
+          "note": null,
+          "raw": "Aam (Mangoes) cubes 500g"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Sugar",
+          "note": null,
+          "raw": "Sugar 3 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Elaichi powder (Cardamom powder)",
+          "note": null,
+          "raw": "Elaichi powder (Cardamom powder) ½ tsp"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Doodh (Milk)",
+          "note": null,
+          "raw": "Doodh (Milk) ¼ Cup"
+        }
+      ]
+    },
+    {
+      "heading": "Prepare Puri",
+      "items": [
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Mong daal (Yellow lentil)",
+          "note": "(soaked for 2 hours)",
+          "raw": "Mong daal (Yellow lentil) ½ Cup (soaked for 2 hours)"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tsp or to taste"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Water",
+          "note": "/3 Cup",
+          "raw": "Water 2/3 Cup"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Hari mirch (Green chillies) chopped",
+          "note": null,
+          "raw": "Hari mirch (Green chillies) chopped 3-4"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Hara dhania (Fresh coriander) handful",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) handful"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil 1 tbs"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Ajwain (Carom seeds)",
+          "note": null,
+          "raw": "Ajwain (Carom seeds) ¼ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Zeera (Cumin seeds) roasted & crushed",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) roasted & crushed ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Sabut dhania (Coriander seeds) crushed",
+          "note": null,
+          "raw": "Sabut dhania (Coriander seeds) crushed ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Haldi powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldi powder (Turmeric powder) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chilli powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chilli powder) ½ tsp or to taste"
+        },
+        {
+          "quantity": 2.5,
+          "unit": "cup",
+          "item": "Maida (All-purpose flour) sifted",
+          "note": null,
+          "raw": "Maida (All-purpose flour) sifted 2 & ½ Cups"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Sooji (Semolina)",
+          "note": null,
+          "raw": "Sooji (Semolina) 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Ghee",
+          "note": null,
+          "raw": "Ghee 2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Water",
+          "note": "or as required",
+          "raw": "Water 1 Cup or as required"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Cooking oil for frying",
+          "note": null,
+          "raw": "Cooking oil for frying"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In a blender jug,add mangoes,sugar,cardamom powder and milk,blend to make puree & refrigerate until serve.",
+      "romanUrdu": "Blender jug mein aam,cheeni,elaichi powder aur doodh dal dein aur ache tarhan blend ker ka puree tayyar ker lein & serve kernay tak refrigerate ker lein."
+    },
+    {
+      "instruction": "In a saucepan,add yellow lentil,salt,water,mix well & bring it to boil.",
+      "romanUrdu": "Saucepan mein moong daal,namak aur pani dal ker ache tarhan mix karein aur ubal anay dein."
+    },
+    {
+      "instruction": "Remove scum,cover & cook on low flame until tender & dries up (approx. 14-15 minutes).",
+      "romanUrdu": "Scum ko nikal lein aur dhak ker halki ancch per daal gul janay aur sukh janay tak paka lein (approx. 14-15 minutes)."
+    },
+    {
+      "instruction": "Let it cool.",
+      "romanUrdu": "Thanda ker lein."
+    },
+    {
+      "instruction": "In chopper,add boiled lentil,green chillies,fresh coriander,chop coarsely & set aside.",
+      "romanUrdu": "Chopper mein boiled daal,hari mirchein aur hara dhania dal ker coarsely chop ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "In a frying pan,add cooking oil,carom seeds,cumin seeds,coriander seeds & mix well.",
+      "romanUrdu": "Frying pan mein cooking oil,ajwain,zeera aur sabut dhania dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add ginger garlic paste,turmeric powder,red chilli powder & mix well.",
+      "romanUrdu": "Adrak lehsan paste,haldi powder aur lal mirch powder dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Now add chopped lentil mixture and mix well,cook for a minute & set aside.",
+      "romanUrdu": "Ab chopped daal mixture dal ker ache tarhan mix karein aur ek minute kliya paka lein & side per rakh dein."
+    },
+    {
+      "instruction": "In a bowl,add all-purpose flour,semolina,salt,ghee & mix well until crumbled.",
+      "romanUrdu": "Bowl mein maida,soji,namak aur ghee dal dein aur crumble hunay tak ache tarhan mix karein."
+    },
+    {
+      "instruction": "Gradually add water & knead until dough is formed,cover & let it rest for 25-30 minutes.",
+      "romanUrdu": "Thora thora ker ka pani shamil karein aur ghond ker dough tayyar ker lein aur dhak ker 25-30 minutes kliya rakh dein."
+    },
+    {
+      "instruction": "Grease hands with oil and knead dough again until smooth.",
+      "romanUrdu": "Haathon ko oil sa grease karein aur dough ko smooth hunay tak dubara ghond lein."
+    },
+    {
+      "instruction": "Take a small dough (50g),make a ball & spread with the help of hands.",
+      "romanUrdu": "Chota dough lein (50g),ball bana lein aur haathon ki madad sa pheela lein."
+    },
+    {
+      "instruction": "Add small quantity (2 tsp) of lentil mixture in the center of the dough then gather all the edges,pinch and seal to make a ball,pinch,press gently & roll out with the help of rolling pin (makes 11-12).",
+      "romanUrdu": "Daal mixture ki small quantity (2 tsp) ko dough ka center mein dal dein aur edges ko gather ker lein,pinch aur seal ker ka ball bana lein,gently press karein aur rolling pin ki madad sa bail lein (makes 11-12)."
+    },
+    {
+      "instruction": "In a wok,heat cooking oil & fry puri on low flame from both sides until golden & crispy while frying gently press so that it may puffs up.",
+      "romanUrdu": "Karahi mein cooking oil garam karein aur halki ancch per dono sides sa golden & crispy hunay tak fry ker lein aur frying kertay hoye gently press kertay rahein tak puri phool jaye."
+    },
+    {
+      "instruction": "Serve puris with aam ras.",
+      "romanUrdu": "Puris ko aam ras ka saath serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2021/05/Aam-ras-Puri-Recipe-by-Food-fusion-1.jpg?v=1622521031",
+  "ogDescription": "This mango season try Aamras puri and share with friends and family. #HappyCookingToYou #FoodFusion",
+  "scrapedAt": "2026-08-01T14:43:31Z"
+}

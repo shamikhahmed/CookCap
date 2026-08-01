@@ -1,0 +1,243 @@
+{
+  "wpId": 12163,
+  "slug": "chap-shoro",
+  "id": "ff-chap-shoro",
+  "title": "Chap shoro",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/chap-shoro/",
+  "date": "2019-09-16T09:51:17",
+  "modified": "2019-10-12T11:11:16",
+  "classList": [
+    "post-12163",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1tommato",
+    "recipe_category-flour-atta",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-1-parathas",
+    "recipe_category-parathas",
+    "recipe_category-dish-type",
+    "recipe_category-1parathas",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-chicken",
+    "recipe_category-lunch-dinner",
+    "recipe_category-occasions",
+    "recipe_category-national-holidays",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2019/09/Chapshoro-Recipe-by-Food-fusion-3.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 2.5,
+          "unit": "cup",
+          "item": "Chakki ka atta (Whole wheat flour) sifted",
+          "note": null,
+          "raw": "Chakki ka atta (Whole wheat flour) sifted 2 & ½ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": null,
+          "raw": "Namak (Salt) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) 1 Cup or as required"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Apricot or Walnut oil",
+          "note": null,
+          "raw": "Apricot or Walnut oil 2 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Pyaz (Onion) chopped",
+          "note": null,
+          "raw": "Pyaz (Onion) chopped ½ Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "kg",
+          "item": "Chicken qeema (Mince)",
+          "note": null,
+          "raw": "Chicken qeema (Mince) ½ kg"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tbsp",
+          "item": "Zeera (Cumin seeds) roasted & crushed",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) roasted & crushed ½ tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Kali mirch (Black pepper) crushed",
+          "note": null,
+          "raw": "Kali mirch (Black pepper) crushed 1 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Tamatar (Tomato) chopped",
+          "note": null,
+          "raw": "Tamatar (Tomato) chopped ½ Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) ½ Cup or as required"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Pani (Water)",
+          "note": null,
+          "raw": "Pani (Water) 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "pinch",
+          "item": "Zafran (Saffron)",
+          "note": null,
+          "raw": "Zafran (Saffron) 1 pinch"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Pyaz (Onion) chopped",
+          "note": null,
+          "raw": "Pyaz (Onion) chopped 1 Cup"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Hara dhania & Podina (Fresh coriander & Mint leaves) chopped",
+          "note": null,
+          "raw": "Hara dhania & Podina (Fresh coriander & Mint leaves) chopped 2-3 tbs"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Apricot or Walnut oil for frying or cooking oil of your choice",
+          "note": null,
+          "raw": "Apricot or Walnut oil for frying or cooking oil of your choice"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In bowl,add add wheat flour,salt and mix.",
+      "romanUrdu": "Bowl mein chakki ka atta aur namak dal ker mix karein."
+    },
+    {
+      "instruction": "Gradually add water and knead until dough is formed,cover and let it rest for 15 minutes.",
+      "romanUrdu": "Thora thora ker ka pani shamil karein aur ghond ker dough tayyar ker lein,dhak dein aur 15 minutes kliya rakh dein."
+    },
+    {
+      "instruction": "In frying pan,add apricot or walnut oil,onion and sauté until translucent.",
+      "romanUrdu": "Frying pan mein apricot or walnut oil aur pyaz dal dein aur translucent hunay tak sauté ker lein."
+    },
+    {
+      "instruction": "Add chicken mince and mix well until changes color.",
+      "romanUrdu": "Chicken qeema dal ker rang tabdeel hunay tak ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add ginger garlic paste and mix well for 2 minutes.",
+      "romanUrdu": "Adrak lehsan paste dal ker 2 minutes kliya ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add salt,cumin seeds,black pepper crushed and mix well.",
+      "romanUrdu": "Namak,zeera aur kali mirch crushed dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add tomato and mix well.",
+      "romanUrdu": "Tamatar dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add water and mix well,cover and cook on medium flame for 8-10 minutes.",
+      "romanUrdu": "Pani dal ker ache tarhan mix karein aur dhak ker darmiyani anacch per 8-10 minutes kliya paka lein."
+    },
+    {
+      "instruction": "In water,add saffron strands and mix well.",
+      "romanUrdu": "Pani mein zafran dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add dissolve saffron and mix well.",
+      "romanUrdu": "Dissolve zafran dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add onion,fresh coriander & mint leaves and mix well for 1-2 minutes.",
+      "romanUrdu": "Pyaz,hara dhania & podina dal ker 1-2 minutes kliya ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Let it cool.",
+      "romanUrdu": "Thanda ker lein."
+    },
+    {
+      "instruction": "Knead dough again,grease hands with oil,take a small dough and make a ball,sprinkle flour and roll out with the help of rolling pin.",
+      "romanUrdu": "Dough ko dubara ghond lein,haath ok oil sa grease karein aur chota dough la ker ball bana lein,atta chirak dein aur rolling pin ki madad sa bail lein."
+    },
+    {
+      "instruction": "Sprinkle flour,fold & set aside.",
+      "romanUrdu": "Atta chirak dein aur fold ker ka side per rakh dein."
+    },
+    {
+      "instruction": "Roll out another dough with the help of rolling pin.",
+      "romanUrdu": "Ek aur dough ko rolling pin ki madad sa bail lein."
+    },
+    {
+      "instruction": "Add cooked chicken filling and spread evenly.",
+      "romanUrdu": "Cooked chicken filling dal ker pheela lein."
+    },
+    {
+      "instruction": "Place rolled dough and prick with skewer,fold and seal the edges (makes 3).",
+      "romanUrdu": "Rolled dough rakh ker skewer sa prick ker lein aur edges ko fold ker ka seal ker lein (makes 3)."
+    },
+    {
+      "instruction": "Heat griddle and cooked rolled dough from both sides then fry in apricot or walnut oil & serve!",
+      "romanUrdu": "Tawa garam karein aur rolled dough ko dono sides sa paka lein phir apricot or walnut oil mein fry ker lein & serve karein!"
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2019/09/Chapshoro-Recipe-by-Food-fusion-3.jpg?v=1587763130",
+  "ogDescription": "Chap shoro, a famous traditional dish of Hunza, Gilgit Baltistan. We learned about it from the locals and now bring you the Food Fusion version of Chap",
+  "scrapedAt": "2026-08-01T14:41:49Z"
+}

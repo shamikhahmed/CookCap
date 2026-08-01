@@ -1,0 +1,242 @@
+{
+  "wpId": 8207,
+  "slug": "carrot-cake",
+  "id": "ff-carrot-cake",
+  "title": "Carrot Cake",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/carrot-cake/",
+  "date": "2018-12-24T18:29:40",
+  "modified": "2018-12-26T14:59:03",
+  "classList": [
+    "post-8207",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-eggs",
+    "recipe_category-vegetable",
+    "recipe_category-1-carrot",
+    "recipe_category-flour-atta",
+    "recipe_category-cheese",
+    "recipe_category-1baking",
+    "recipe_category-baked-desserts",
+    "recipe_category-1desserts-2",
+    "recipe_category-1-baked",
+    "recipe_category-baking",
+    "recipe_category-baked-cakes",
+    "recipe_category-desserts",
+    "recipe_category-seasonal",
+    "recipe_category-winter",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "desserts",
+  "imageUrl": "https://media.foodfusion.com/2018/12/Carrot-cake-Recipe-by-Food-fusion-2.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 2.0,
+          "unit": "cup",
+          "item": "Maida (All-purpose flour) sifted",
+          "note": null,
+          "raw": "Maida (All-purpose flour) sifted 2 Cups"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "cup",
+          "item": "Bareek cheeni (Caster sugar)",
+          "note": null,
+          "raw": "Bareek cheeni (Caster sugar) 1 & ½ Cups"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Jaifil powder (Nutmeg powder)",
+          "note": null,
+          "raw": "Jaifil powder (Nutmeg powder) ¼ tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tsp",
+          "item": "Darchini powder (Cinnamon powder)",
+          "note": null,
+          "raw": "Darchini powder (Cinnamon powder) 2 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": null,
+          "raw": "Namak (Salt) ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Baking soda",
+          "note": null,
+          "raw": "Baking soda 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Neem garam doodh (Lukewarm milk)",
+          "note": null,
+          "raw": "Neem garam doodh (Lukewarm milk) ½ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Lemon juice",
+          "note": null,
+          "raw": "Lemon juice 1 tbs"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Anday (Eggs)",
+          "note": "(room temperature)",
+          "raw": "Anday (Eggs) 3 (room temperature)"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Vegetable oil",
+          "note": null,
+          "raw": "Vegetable oil 1 Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Vanilla essence",
+          "note": null,
+          "raw": "Vanilla essence 1 tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "cup",
+          "item": "Gajar (Carrots) grated",
+          "note": null,
+          "raw": "Gajar (Carrots) grated 2 Cups"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Akhrot (Walnuts) chopped",
+          "note": null,
+          "raw": "Akhrot (Walnuts) chopped 1 Cup"
+        }
+      ]
+    },
+    {
+      "heading": "Frosting",
+      "items": [
+        {
+          "quantity": 120.0,
+          "unit": "",
+          "item": "Makhan (Butter)",
+          "note": "gms (room temperature)",
+          "raw": "Makhan (Butter) 120 gms (room temperature)"
+        },
+        {
+          "quantity": 220.0,
+          "unit": "",
+          "item": "Cream cheese",
+          "note": "gms (room temperature)",
+          "raw": "Cream cheese 220 gms (room temperature)"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Vanilla essence",
+          "note": null,
+          "raw": "Vanilla essence 1 tsp"
+        },
+        {
+          "quantity": 250.0,
+          "unit": "",
+          "item": "Icing sugar",
+          "note": "gms",
+          "raw": "Icing sugar 250 gms"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In bowl,add all-purpose flour,caster sugar,nutmeg powder,cinnamon powder,salt,baking soda,mix well and set aside.",
+      "romanUrdu": "Bowl mein maida,bareek cheeni,jaifil powder,darchini powder,namak aur baking soda dal ker ache tarhan mix ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "In lukewarm milk,add lemon juice,mix well and let it rest for few minutes.Butter milk is ready & set aside.",
+      "romanUrdu": "Neem garam doodh mein lemon juice dal ker ache tarhan mix ker lein aur kuch dair kliya chor dein.Butter milk tayyar hai & side per rakh dein."
+    },
+    {
+      "instruction": "In bowl,add eggs and beat well.",
+      "romanUrdu": "Bowl mein anday dal ker ache tarhan beat ker lein."
+    },
+    {
+      "instruction": "Add vegetable oil,prepared butter milk,vanilla essence and beat again.",
+      "romanUrdu": "Vegetable oil,tayyar butter milk aur vanilla essence dal ker dubara beat ker lein."
+    },
+    {
+      "instruction": "Gradually add dry flour mixture and beat until well combined (don't over beat).",
+      "romanUrdu": "Thora thora ker ka dry maida ka mixture dal dein aur combine hunay tak beat kertay rahein (don't over beat)."
+    },
+    {
+      "instruction": "Add carrots,walnuts and fold gently with the help of the spatula.",
+      "romanUrdu": "Gajar aur akhrot dal dein aur spatula ki madad sa gently fold ker lein."
+    },
+    {
+      "instruction": "Grease 8” inch baking pan with cooking oil,place butter paper and pour cake batter in prepared baking pan.",
+      "romanUrdu": "8” inch baking pan ko cooking oil sa grease ker ka butter paper laga lein aur tayyar cake batter dal dein."
+    },
+    {
+      "instruction": "Bake in preheated oven at 180 C for 40-50 minutes or until the cake pulls away from the side of the pans and a toothpick inserted in the center of the cakes comes out clean.",
+      "romanUrdu": "Preheated oven mein 180 C per 40-50 minutes kliya bake ker lein."
+    },
+    {
+      "instruction": "Remove the cake from the oven and run a knife around the edges to loosen them from the sides of the pan.",
+      "romanUrdu": "Cake ko oven sa nikal lein aur cake ki sides per knife dal ker ghooma lein ta ka pan ki sides lose ho jayein."
+    },
+    {
+      "instruction": "Transfer the cake to the wire rack and let it cool.",
+      "romanUrdu": "Cake ko wire rack per rakh dein aur thanda ker lein."
+    },
+    {
+      "instruction": "In bowl,add butter and beat until fluffy.",
+      "romanUrdu": "Bowl mein makhan dal dein aur fluffy hunay tak beat ker lein."
+    },
+    {
+      "instruction": "Add cream cheese and beat until smooth.",
+      "romanUrdu": "Cream cheese dal dein aur smooth hunay tak beat ker lein."
+    },
+    {
+      "instruction": "Add vanilla essence and icing sugar,beat again and refrigerate until use.",
+      "romanUrdu": "Vanilla essence aur icing sugar dal ker dubara beat ker lein aur istamal kernay tak refrigerate ker lein."
+    },
+    {
+      "instruction": "With the help of the cake knife,horizontally cut two layers of cake.",
+      "romanUrdu": "Cake knife ki madad sa cake ko do horizontally layers mein cut ker lein."
+    },
+    {
+      "instruction": "On cake tray,place cake layer and apply frosting.",
+      "romanUrdu": "Cake tray per cake ki layer rakh dein aur frosting laga lein."
+    },
+    {
+      "instruction": "Place another cake layer and cover the cake with cream cheese frosting & chopped walnuts.",
+      "romanUrdu": "Cake ki dosri layer rakh dein aur cake ko cream cheese frosting aur chopped akhrot sa cover ker lein."
+    },
+    {
+      "instruction": "Decorate & serve.",
+      "romanUrdu": "Decorate ker ka serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/12/Carrot-cake-Recipe-by-Food-fusion-2.jpg?v=1587764198",
+  "ogDescription": "The holiday season special. A perfect Carrot Cake recipe for to turn your holidays in a festive occasion. Those who have not tried it, would probably",
+  "scrapedAt": "2026-08-01T14:43:52Z"
+}

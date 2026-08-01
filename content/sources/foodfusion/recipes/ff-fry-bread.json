@@ -1,0 +1,130 @@
+{
+  "wpId": 6806,
+  "slug": "fry-bread",
+  "id": "ff-fry-bread",
+  "title": "Fry Bread",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/fry-bread/",
+  "date": "2018-07-25T11:25:26",
+  "modified": "2018-07-25T11:25:26",
+  "classList": [
+    "post-6806",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-flour-atta",
+    "recipe_category-1-continental",
+    "recipe_category-1-meal-type",
+    "recipe_category-breakfast-meal",
+    "recipe_category-1-breads",
+    "recipe_category-breakfast",
+    "recipe_category-desi-breakfast",
+    "recipe_category-parathas",
+    "recipe_category-dish-type",
+    "recipe_category-1breads",
+    "recipe_category-1parathas",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-ramzan",
+    "recipe_category-1sehri",
+    "recipe_category-seasonal",
+    "recipe_category-ramzan1",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "breads",
+  "imageUrl": "https://media.foodfusion.com/2018/06/Fry-Bread-Recipe-by-Food-fusion-2.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 2.0,
+          "unit": "cup",
+          "item": "Maida (All-purpose flour) sifted",
+          "note": null,
+          "raw": "Maida (All-purpose flour) sifted 2 Cups"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tbsp",
+          "item": "Bareek cheeni (Caster sugar)",
+          "note": null,
+          "raw": "Bareek cheeni (Caster sugar) 1 & ½ tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": null,
+          "raw": "Namak (Salt) ½ tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tsp",
+          "item": "Baking powder",
+          "note": null,
+          "raw": "Baking powder 2 tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Oil",
+          "note": null,
+          "raw": "Oil 2 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Pani (Water) lukewarm",
+          "note": "or as required",
+          "raw": "Pani (Water) lukewarm ½ Cup or as required"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Cooking oil for frying",
+          "note": null,
+          "raw": "Cooking oil for frying"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In bowl,add all-purpose flour,caster sugar,salt,baking powder and mix well.",
+      "romanUrdu": "Bowl mein maida,bareek cheeni,namak aur baking powder dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add oil and mix.",
+      "romanUrdu": "Oil dal ker mix ker lein."
+    },
+    {
+      "instruction": "Gradually add lukewarm water and knead until dough is formed,cover and let it rest for 1 hour.",
+      "romanUrdu": "Thora thora ker ka neem garam pani shamil karein aur ghond ker dough tayyar ker lein aur dhak ker 1 hour kliya rakh dein."
+    },
+    {
+      "instruction": "Add oil and knead dough again.",
+      "romanUrdu": "Oil dal ker dubara ghond lein."
+    },
+    {
+      "instruction": "Take a small dough and make a ball,sprinkle dry flour and rolled out with the help of rolling pin.",
+      "romanUrdu": "Chota dough lein aur ball bana lein,maida chirak ker rolling pin ki madad sa bail lein."
+    },
+    {
+      "instruction": "Prick with fork (makes 6-8).",
+      "romanUrdu": "Fork ki madad sa prick ker lein (makes 6-8)."
+    },
+    {
+      "instruction": "In frying pan,add heat cooking oil and fry dough from both sides until golden brown.",
+      "romanUrdu": "Frying pan mein cooking oil garam karein aur dough ko dono sides sa golden brown hunay tak fry ker lein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/06/Fry-Bread-Recipe-by-Food-fusion-2.jpg?v=1587764791",
+  "ogDescription": "Delicious fry bread recipe. Serve with your favorite topping. Perfect for breakfast or brunch. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:41:02Z"
+}

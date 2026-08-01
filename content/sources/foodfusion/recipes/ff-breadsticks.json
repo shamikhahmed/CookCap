@@ -1,0 +1,190 @@
+{
+  "wpId": 8060,
+  "slug": "breadsticks",
+  "id": "ff-breadsticks",
+  "title": "BreadSticks",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/breadsticks/",
+  "date": "2018-12-12T19:07:32",
+  "modified": "2018-12-12T19:07:32",
+  "classList": [
+    "post-8060",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-eggs",
+    "recipe_category-flour-atta",
+    "recipe_category-1milk",
+    "recipe_category-1-meal-type",
+    "recipe_category-dish-type",
+    "recipe_category-1breads",
+    "recipe_category-eggs-2",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-egg",
+    "recipe_category-lunch-dinner",
+    "recipe_category-baked-lunch-dinner",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_category-winter",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2018/12/Breadsticks-Recipe-By-food-fusion-5.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Neem garam doodh (Lukewarm milk)",
+          "note": null,
+          "raw": "Neem garam doodh (Lukewarm milk) 1 Cup"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tbsp",
+          "item": "Cheeni (Sugar)",
+          "note": null,
+          "raw": "Cheeni (Sugar) 1 & ½ tbs"
+        },
+        {
+          "quantity": 2.5,
+          "unit": "tsp",
+          "item": "Khameer (Instant yeast)",
+          "note": null,
+          "raw": "Khameer (Instant yeast) 2 & ½ tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "cup",
+          "item": "Maida (All-purpose flour) sifted",
+          "note": null,
+          "raw": "Maida (All-purpose flour) sifted 2 Cups"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Dry milk powder",
+          "note": null,
+          "raw": "Dry milk powder 3 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": null,
+          "raw": "Namak (Salt) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) ½ Cup or as required"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil 2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Maida (All-purpose flour)",
+          "note": null,
+          "raw": "Maida (All-purpose flour) 1-2 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Anday ki safeedi (Egg white)",
+          "note": null,
+          "raw": "Anday ki safeedi (Egg white) 1"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Pani (Water)",
+          "note": null,
+          "raw": "Pani (Water) 1-2 tbs"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Safed til (Sesame seed) to sprinkle",
+          "note": null,
+          "raw": "Safed til (Sesame seed) to sprinkle"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In lukewarm milk,add sugar,instant yeast and mix well,cover and let it rest for 10 minutes.",
+      "romanUrdu": "Neem garam doodh mein cheeni aur khameer dal ker ache tarhan mix karein aur dhak ker 10 minutes kliya rakh dein."
+    },
+    {
+      "instruction": "In bowl,add all-purpose flour,dry milk powder,salt and mix well.",
+      "romanUrdu": "Bowl mein maida,dry milk powder aur namak dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add dissolve yeast mixture and mix well.",
+      "romanUrdu": "Dissolve khameer ka mixture dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Gradually add water and mix well.",
+      "romanUrdu": "Thora thora ker ka pani shamil karein aur ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add cooking oil and knead well.",
+      "romanUrdu": "Cooking oil dal ker ache tarhan ghond lein."
+    },
+    {
+      "instruction": "Add all-purpose flour and knead until smooth dough is formed.",
+      "romanUrdu": "Maida dal dein aur ghond ker smooth dough tayyar ker lein."
+    },
+    {
+      "instruction": "Add cooking oil and knead again,cover and let it rest for 1 hour or until double in size (warm place).",
+      "romanUrdu": "Cooking oil dal ker dubara ghond lein aur dhak ker 1 hour ya size double hunay tak garam jagha per rakh dein."
+    },
+    {
+      "instruction": "Knead dough again then divide dough into 14-15 strips (7 inches) and shape each into a uniform roll or long breadsticks.",
+      "romanUrdu": "Dough ko dubara ghond ker 14-15 strips( 7 inches) mein divide ker lein aur her strips ko uniform roll ya long breadstick ki shape bana lein."
+    },
+    {
+      "instruction": "On baking tray,lined with butter paper,place prepared bread sticks.",
+      "romanUrdu": "Baking tray per butter paper laga ker tayyar breadsticks rakh dein."
+    },
+    {
+      "instruction": "In egg white,add water and mix well.",
+      "romanUrdu": "Anday ki safeedi mein pani dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Brush breadsticks with egg white+water and sprinkle sesame seeds.",
+      "romanUrdu": "Breadsticks per brush ki madad sa anday ki safeedi+pani laga lein aur safed til chirak dein."
+    },
+    {
+      "instruction": "Bake in preheated oven at 180 C for 18-20 minutes.",
+      "romanUrdu": "Preheated oven mein 180 C per 18-20 minutes kliya bake ker lein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/12/Breadsticks-Recipe-By-food-fusion-5.jpg?v=1587764259",
+  "ogDescription": "Make and store bread sticks, they go well with soups or you can give them to kids for on the go munching #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:43:43Z"
+}

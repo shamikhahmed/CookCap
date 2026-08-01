@@ -1,0 +1,636 @@
+{
+  "wpId": 33240,
+  "slug": "fish-mandi",
+  "id": "ff-fish-mandi",
+  "title": "Fish Mandi",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/fish-mandi/",
+  "date": "2026-01-05T13:00:00",
+  "modified": "2026-01-06T12:48:16",
+  "classList": [
+    "post-33240",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-fish",
+    "recipe_category-1-rice",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-bbqgrilling",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-ramazan",
+    "recipe_category-2iftar",
+    "recipe_category-dinner",
+    "recipe_category-rice",
+    "recipe_category-sea-food",
+    "recipe_category-lunch-dinner",
+    "recipe_category-occasions",
+    "recipe_category-1-festivals",
+    "recipe_category-winter",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2026/01/fish-mandi.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Recent",
+          "note": null,
+          "raw": "Recent"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Viewed",
+          "note": null,
+          "raw": "Viewed"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Favourite",
+          "note": null,
+          "raw": "Favourite"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Kachori Platter",
+          "note": null,
+          "raw": "Desi food--> Kachori Platter"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Special Chatkhara Biryani",
+          "note": null,
+          "raw": "Desi food--> Special Chatkhara Biryani"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Payyoli Chicken Fry",
+          "note": null,
+          "raw": "Desi food--> Payyoli Chicken Fry"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Moist Mango Loaf /Tea Cake",
+          "note": null,
+          "raw": "Desi food--> Moist Mango Loaf /Tea Cake"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Aloo Tikka Masala",
+          "note": null,
+          "raw": "Desi food--> Aloo Tikka Masala"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Pakora Kadhi Chawal",
+          "note": null,
+          "raw": "Desi food--> Pakora Kadhi Chawal"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Fruit Sago Kulfi Delight",
+          "note": null,
+          "raw": "Desi food--> Fruit Sago Kulfi Delight"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Chicken Masala Galawati Qeema",
+          "note": null,
+          "raw": "Desi food--> Chicken Masala Galawati Qeema"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Sticky Toffee Pudding",
+          "note": null,
+          "raw": "Desi food--> Sticky Toffee Pudding"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Creamy Garlic Chicken Fettuccine Pasta",
+          "note": null,
+          "raw": "Desi food--> Creamy Garlic Chicken Fettuccine Pasta"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Pakora Kadhi",
+          "note": null,
+          "raw": "Desi food--> Pakora Kadhi"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Kofta (Meat balls/ Koftay)",
+          "note": null,
+          "raw": "Desi food--> Kofta (Meat balls/ Koftay)"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Chicken Samosa",
+          "note": null,
+          "raw": "Desi food--> Chicken Samosa"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Chicken Lasagne",
+          "note": null,
+          "raw": "Desi food--> Chicken Lasagne"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Chicken Masala Biryani (Street Style)",
+          "note": null,
+          "raw": "Desi food--> Chicken Masala Biryani (Street Style)"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Shami Kabab",
+          "note": null,
+          "raw": "Desi food--> Shami Kabab"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Beef Seekh Kabab",
+          "note": null,
+          "raw": "Desi food--> Beef Seekh Kabab"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Kashmiri Chai (Pink Tea)",
+          "note": null,
+          "raw": "Desi food--> Kashmiri Chai (Pink Tea)"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Daal with Zeera Chawal and Talli hui Mirchein",
+          "note": null,
+          "raw": "Desi food--> Daal with Zeera Chawal and Talli hui Mirchein"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Singaporean Rice",
+          "note": null,
+          "raw": "Desi food--> Singaporean Rice"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Crispy Chicken Burger",
+          "note": null,
+          "raw": "Desi food--> Crispy Chicken Burger"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Fried Beef",
+          "note": null,
+          "raw": "Desi food--> Fried Beef"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Chicken Sticks",
+          "note": null,
+          "raw": "Desi food--> Chicken Sticks"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Grilled Pizza Sandwich",
+          "note": null,
+          "raw": "Desi food--> Grilled Pizza Sandwich"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Shami Kabab",
+          "note": null,
+          "raw": "Desi food--> Shami Kabab"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Kofta (Meat balls/ Koftay)",
+          "note": null,
+          "raw": "Desi food--> Kofta (Meat balls/ Koftay)"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Daleem (Mutton/Beef)",
+          "note": null,
+          "raw": "Desi food--> Daleem (Mutton/Beef)"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Rasmalai recipe with milk powder",
+          "note": null,
+          "raw": "Desi food--> Rasmalai recipe with milk powder"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Pizza Without Oven",
+          "note": null,
+          "raw": "Desi food--> Pizza Without Oven"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Desi food--> Club Sandwich",
+          "note": null,
+          "raw": "Desi food--> Club Sandwich"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Healthy Fusion",
+          "note": null,
+          "raw": "Healthy Fusion"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Home",
+          "note": null,
+          "raw": "Home"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Recipes",
+          "note": null,
+          "raw": "Recipes"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Contact Us",
+          "note": null,
+          "raw": "Contact Us"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "About Us",
+          "note": null,
+          "raw": "About Us"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Privacy Policy",
+          "note": null,
+          "raw": "Privacy Policy"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Facebook",
+          "note": null,
+          "raw": "Facebook"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Twitter",
+          "note": null,
+          "raw": "Twitter"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "YouTube",
+          "note": null,
+          "raw": "YouTube"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Instagram",
+          "note": null,
+          "raw": "Instagram"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Play Store",
+          "note": null,
+          "raw": "Play Store"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "App Store",
+          "note": null,
+          "raw": "App Store"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Privacy Policy",
+          "note": null,
+          "raw": "Privacy Policy"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "Prepare Mandi Spice Mix:",
+      "romanUrdu": "Prepare Mandi Spice Mix:"
+    },
+    {
+      "instruction": "-Sabut dhania (Coriander seeds) 1 tbs",
+      "romanUrdu": "-Sabut dhania (Coriander seeds) 1 tbs"
+    },
+    {
+      "instruction": "-Zeera (Cumin seeds) 1 tbs",
+      "romanUrdu": "-Zeera (Cumin seeds) 1 tbs"
+    },
+    {
+      "instruction": "-Sabut kali mirch (Black peppercorns) 1 tsp",
+      "romanUrdu": "-Sabut kali mirch (Black peppercorns) 1 tsp"
+    },
+    {
+      "instruction": "-Hari elaichi (Green cardamom) 5-6",
+      "romanUrdu": "-Hari elaichi (Green cardamom) 5-6"
+    },
+    {
+      "instruction": "-Badiyan ka phool (Star anise) 1",
+      "romanUrdu": "-Badiyan ka phool (Star anise) 1"
+    },
+    {
+      "instruction": "-Laung (Cloves) 5",
+      "romanUrdu": "-Laung (Cloves) 5"
+    },
+    {
+      "instruction": "-Saunf (Fennel seeds) ½ tsp",
+      "romanUrdu": "-Saunf (Fennel seeds) ½ tsp"
+    },
+    {
+      "instruction": "-Dried lemon 1 small",
+      "romanUrdu": "-Dried lemon 1 small"
+    },
+    {
+      "instruction": "-Darchini (Cinnamon sticks) 2",
+      "romanUrdu": "-Darchini (Cinnamon sticks) 2"
+    },
+    {
+      "instruction": "-Tez patta (Bay leaves) 2",
+      "romanUrdu": "-Tez patta (Bay leaves) 2"
+    },
+    {
+      "instruction": "-Iodized Himalayan pink salt 1 tsp or to taste",
+      "romanUrdu": "-Iodized Himalayan pink salt 1 tsp or to taste"
+    },
+    {
+      "instruction": "-Haldi powder (Turmeric powder) ½ tsp",
+      "romanUrdu": "-Haldi powder (Turmeric powder) ½ tsp"
+    },
+    {
+      "instruction": "-Kashmiri lal mirch powder (Kashmiri red chilli powder) 1 tsp",
+      "romanUrdu": "-Kashmiri lal mirch powder (Kashmiri red chilli powder) 1 tsp"
+    },
+    {
+      "instruction": "Prepare Fish:",
+      "romanUrdu": "Prepare Fish:"
+    },
+    {
+      "instruction": "-Iodized Himalayan pink salt 1 tsp or to taste",
+      "romanUrdu": "-Iodized Himalayan pink salt 1 tsp or to taste"
+    },
+    {
+      "instruction": "-Lal mirch powder (Red chilli powder) ½ tsp or to taste",
+      "romanUrdu": "-Lal mirch powder (Red chilli powder) ½ tsp or to taste"
+    },
+    {
+      "instruction": "-Haldi powder (Turmeric powder) ¼ tsp",
+      "romanUrdu": "-Haldi powder (Turmeric powder) ¼ tsp"
+    },
+    {
+      "instruction": "-Kashmiri lal mirch powder (Kashmiri red chilli powder) ½ tsp",
+      "romanUrdu": "-Kashmiri lal mirch powder (Kashmiri red chilli powder) ½ tsp"
+    },
+    {
+      "instruction": "-Adrak Lehsan paste (Ginger garlic paste) 1 tsp",
+      "romanUrdu": "-Adrak Lehsan paste (Ginger garlic paste) 1 tsp"
+    },
+    {
+      "instruction": "-Lemon juice 2-3 tbs",
+      "romanUrdu": "-Lemon juice 2-3 tbs"
+    },
+    {
+      "instruction": "-Cooking oil 1 & ½ tbs",
+      "romanUrdu": "-Cooking oil 1 & ½ tbs"
+    },
+    {
+      "instruction": "-Surmai Fish (King Fish) 750g",
+      "romanUrdu": "-Surmai Fish (King Fish) 750g"
+    },
+    {
+      "instruction": "Prepare Mandi Sauce:",
+      "romanUrdu": "Prepare Mandi Sauce:"
+    },
+    {
+      "instruction": "-Tamatar (Tomatoes) 2 medium",
+      "romanUrdu": "-Tamatar (Tomatoes) 2 medium"
+    },
+    {
+      "instruction": "-Hara dhania (Fresh coriander) chopped with stems handful",
+      "romanUrdu": "-Hara dhania (Fresh coriander) chopped with stems handful"
+    },
+    {
+      "instruction": "-Lehsan (Garlic) 5 cloves",
+      "romanUrdu": "-Lehsan (Garlic) 5 cloves"
+    },
+    {
+      "instruction": "-Hari mirch (Green chillies) 3-4",
+      "romanUrdu": "-Hari mirch (Green chillies) 3-4"
+    },
+    {
+      "instruction": "-Sabut dhania (Coriander seeds) ½ tsp",
+      "romanUrdu": "-Sabut dhania (Coriander seeds) ½ tsp"
+    },
+    {
+      "instruction": "-Iodized Himalayan pink salt ½ tsp or to taste",
+      "romanUrdu": "-Iodized Himalayan pink salt ½ tsp or to taste"
+    },
+    {
+      "instruction": "-Lemon juice 1 & ½ tbs",
+      "romanUrdu": "-Lemon juice 1 & ½ tbs"
+    },
+    {
+      "instruction": "Prepare Mandi Rice:",
+      "romanUrdu": "Prepare Mandi Rice:"
+    },
+    {
+      "instruction": "-Cooking oil ½ Cup",
+      "romanUrdu": "-Cooking oil ½ Cup"
+    },
+    {
+      "instruction": "-Badam (Almonds) halved 12-15",
+      "romanUrdu": "-Badam (Almonds) halved 12-15"
+    },
+    {
+      "instruction": "-Pyaz (Onion) finely chopped 1 medium",
+      "romanUrdu": "-Pyaz (Onion) finely chopped 1 medium"
+    },
+    {
+      "instruction": "-Adrak lehsan paste (Ginger garlic paste) 1 tbs",
+      "romanUrdu": "-Adrak lehsan paste (Ginger garlic paste) 1 tbs"
+    },
+    {
+      "instruction": "-Tamatar (Tomatoes) pureed 2 large",
+      "romanUrdu": "-Tamatar (Tomatoes) pureed 2 large"
+    },
+    {
+      "instruction": "-Dried lemon 1",
+      "romanUrdu": "-Dried lemon 1"
+    },
+    {
+      "instruction": "-Water 4-5 Cups",
+      "romanUrdu": "-Water 4-5 Cups"
+    },
+    {
+      "instruction": "-Chawal (Rice) 600g",
+      "romanUrdu": "-Chawal (Rice) 600g"
+    },
+    {
+      "instruction": "-Iodized Himalayan pink salt 1 tsp or to taste",
+      "romanUrdu": "-Iodized Himalayan pink salt 1 tsp or to taste"
+    },
+    {
+      "instruction": "-Chicken Stock cube 1",
+      "romanUrdu": "-Chicken Stock cube 1"
+    },
+    {
+      "instruction": "-Lemon (Sliced) as required",
+      "romanUrdu": "-Lemon (Sliced) as required"
+    },
+    {
+      "instruction": "-Koyla (Charcoal) 1 piece",
+      "romanUrdu": "-Koyla (Charcoal) 1 piece"
+    },
+    {
+      "instruction": "Prepare Mandi Spice Mix:",
+      "romanUrdu": "Prepare Mandi Spice Mix:"
+    },
+    {
+      "instruction": "-In a tarka pan, add coriander, cumin, black peppercorns, green cardamom, star anise, cloves, fennel seeds, dried lemon, cinnamon sticks, bay leaves, & dry roast on low flame until fragrant.",
+      "romanUrdu": "-Ek tarka pan mein coriander, cumin, black peppercorns, green cardamom, star anise, cloves, fennel seeds, dried lemon, cinnamon sticks, bay leaves dalein aur halki aanch par khushboo aane tak dry roast karen."
+    },
+    {
+      "instruction": "-Let it cool down & transfer it to a spice grinder.",
+      "romanUrdu": "-Thanda hone den, phir spice grinder mein transfer karen."
+    },
+    {
+      "instruction": "-Add red chilli powder, pink salt, turmeric powder, kashmiri red chilli powder, grind well, mandi spice mix is ready, set aside.",
+      "romanUrdu": "-Red chilli powder, pink salt, turmeric powder, Kashmiri red chilli powder dalein, achi tarah grind karen. Mandi spice mix tayyar hai, side par rakh den."
+    },
+    {
+      "instruction": "Prepare Fish:",
+      "romanUrdu": "Prepare Fish:"
+    },
+    {
+      "instruction": "-In a flat dish, add (1 tbs) mandi spice mix (reserve for later use), pink salt, red chilli powder, turmeric powder, kashmiri red chilli powder, ginger garlic paste, lemon juice, cooking oil, whisk until well combined.",
+      "romanUrdu": "-Ek flat dish mein (1 tbs) mandi spice mix dalein (baqi baad ke liye reserve karen), pink salt, red chilli powder, turmeric powder, Kashmiri red chilli powder, ginger garlic paste, lemon juice, cooking oil dalein aur achi tarah whisk karen."
+    },
+    {
+      "instruction": "-Add Surmai fish pieces & apply marinade, cover with aluminium foil & marinate for 30 minutes.",
+      "romanUrdu": "-Surmai fish pieces dalein aur marinade achi tarah apply karen."
+    },
+    {
+      "instruction": "-After 30 minutes place marinated fish in a preheated oven & bake for 15-20 minutes at 200 °C then remove foil & bake for 12-15 minutes at 200 °C.",
+      "romanUrdu": "-Aluminium foil se cover karen aur 30 minutes ke liye marinate karen."
+    },
+    {
+      "instruction": "Prepare Mandi Sauce:",
+      "romanUrdu": "-30 minutes baad marinated fish ko preheated oven mein rakh den aur 200°C par 15–20 minutes bake karen, phir foil remove karen aur dobara 200°C par 12–15 minutes bake karen."
+    },
+    {
+      "instruction": "-In a blending jar, add tomatoes, fresh coriander, garlic, green chillies, coriander, seeds, pink salt, lemon juice, & blend well.",
+      "romanUrdu": "Prepare Mandi Sauce:"
+    },
+    {
+      "instruction": "-Mandi sauce is ready, set aside.",
+      "romanUrdu": "-Ek blending jar mein tomatoes, fresh coriander, garlic, green chillies, coriander seeds, pink salt, lemon juice dalein aur achi tarah blend karen."
+    },
+    {
+      "instruction": "Prepare Mandi Rice:",
+      "romanUrdu": "-Mandi sauce tayyar hai, side par rakh den."
+    },
+    {
+      "instruction": "-In a cooking pot, add cooking oil, heat it, add almonds, fry on medium flame for 1 minute or until golden, take out & set aside.",
+      "romanUrdu": "Prepare Mandi Rice:"
+    },
+    {
+      "instruction": "-In the same cooking oil, add onion, fry on medium flame for 2 minutes, add ginger garlic paste, tomato puree, mix well.",
+      "romanUrdu": "-Ek cooking pot mein cooking oil dalein, garam karen, almonds dalein aur medium flame par 1 minute ya golden hone tak fry karen, phir nikal kar side par rakh den."
+    },
+    {
+      "instruction": "-Add reserved mandi spice mix, dried lemon, mix well, cook on medium flame until oil separates.",
+      "romanUrdu": "-Usi oil mein onion dalein aur medium flame par 2 minutes fry karen."
+    },
+    {
+      "instruction": "-Add water, mix well & bring it to boil, add soaked rice, pink salt, chicken cube, mix well, cook on high flame for 4-5 minutes.",
+      "romanUrdu": "-Ginger garlic paste dalein, phir tomato puree dalein aur mix karen."
+    },
+    {
+      "instruction": "-Add fried almonds, cover & steam cook for 10-15 minutes with a heat diffuser plate.",
+      "romanUrdu": "-Reserved mandi spice mix aur dried lemon dalein, mix karen aur medium flame par oil separate hone tak cook karen."
+    },
+    {
+      "instruction": "-In a serving platter, add mandi rice, baked fish, garnish with lemon slices, give a coal smoke & serve with prepared mandi sauce & salad!",
+      "romanUrdu": "-Water dalein, mix karen aur boil aane den."
+    },
+    {
+      "instruction": "-Soaked rice, pink salt aur chicken cube dalein, mix karen aur high flame par 4–5 minutes cook karen.",
+      "romanUrdu": null
+    },
+    {
+      "instruction": "-Fried almonds dalein, cover karen aur heat diffuser plate ke sath 10–15 minutes steam cook karen.",
+      "romanUrdu": null
+    },
+    {
+      "instruction": "-Serving platter mein mandi rice dalein, upar baked fish rakh den.",
+      "romanUrdu": null
+    },
+    {
+      "instruction": "-Lemon slices se garnish karen, coal smoke den aur tayyar mandi sauce aur salad ke sath serve karen.",
+      "romanUrdu": null
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2026/01/fish-mandi.jpg?v=1767685688",
+  "ogDescription": "Tender baked fish paired with flavorful mandi rice and a smoky touch, best enjoyed with mandi sauce and salad.#FoodFusion #HappyCookingToYou #mandi",
+  "scrapedAt": "2026-08-01T14:42:06Z"
+}

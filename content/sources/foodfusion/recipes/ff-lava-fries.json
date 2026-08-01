@@ -1,0 +1,312 @@
+{
+  "wpId": 12779,
+  "slug": "lava-fries",
+  "id": "ff-lava-fries",
+  "title": "Lava Fries",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/lava-fries/",
+  "date": "2019-12-02T09:25:00",
+  "modified": "2020-05-14T15:14:43",
+  "classList": [
+    "post-12779",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-vegetable",
+    "recipe_category-potato",
+    "recipe_category-flour-atta",
+    "recipe_category-1milk",
+    "recipe_category-cheese",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-appetizers-snacks",
+    "recipe_category-dish-type",
+    "recipe_category-fried-items",
+    "recipe_category-ingredient",
+    "recipe_category-vegetables",
+    "recipe_category-lunch-dinner",
+    "recipe_category-occasions",
+    "recipe_category-birthday",
+    "recipe_category-national-holidays",
+    "recipe_category-seasonal",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2019/11/Lava-Fries-Recipe-By-food-fusion-4.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": "Cheese Sauce",
+      "items": [
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Makhan (Butter)",
+          "note": null,
+          "raw": "Makhan (Butter) 2 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Maida (All-purpose flour) sifted",
+          "note": null,
+          "raw": "Maida (All-purpose flour) sifted 2 tbs"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "cup",
+          "item": "Doodh (Milk)",
+          "note": null,
+          "raw": "Doodh (Milk) 1 & ½ Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Cheddar cheese",
+          "note": null,
+          "raw": "Cheddar cheese ½ Cup"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Burger cheese slices",
+          "note": null,
+          "raw": "Burger cheese slices 2-3"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Namak (Salt)",
+          "note": "/4 tsp or to taste",
+          "raw": "Namak (Salt) 1/4 tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Chicken powder",
+          "note": "(optional)",
+          "raw": "Chicken powder ½ tsp (optional)"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Paprika powder",
+          "note": null,
+          "raw": "Paprika powder 1 tsp"
+        }
+      ]
+    },
+    {
+      "heading": "Chicken Stuffing",
+      "items": [
+        {
+          "quantity": 0.5,
+          "unit": "kg",
+          "item": "Chicken boiled & shredded",
+          "note": null,
+          "raw": "Chicken boiled & shredded ½ kg"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Mayonnaise",
+          "note": "/4 Cup",
+          "raw": "Mayonnaise 1/4 Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Tomato ketchup",
+          "note": "/4 Cup",
+          "raw": "Tomato ketchup 1/4 Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Onion powder",
+          "note": null,
+          "raw": "Onion powder 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chilli powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chilli powder) ½ tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lehsan powder (Garlic powder)",
+          "note": null,
+          "raw": "Lehsan powder (Garlic powder) 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Dried oregano",
+          "note": null,
+          "raw": "Dried oregano ½ tsp"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "cup",
+          "item": "Maida (All-purpose flour) sifted",
+          "note": null,
+          "raw": "Maida (All-purpose flour) sifted 1 & ½ Cup"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Paprika powder",
+          "note": null,
+          "raw": "Paprika powder 1 & ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Chaat masala",
+          "note": null,
+          "raw": "Chaat masala ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lehsan powder (Garlic powder)",
+          "note": null,
+          "raw": "Lehsan powder (Garlic powder) 1 tsp"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Iced cold water as required",
+          "note": null,
+          "raw": "Iced cold water as required"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "kg",
+          "item": "Aloo (Potatoes) Cut in fries",
+          "note": null,
+          "raw": "Aloo (Potatoes) Cut in fries 1 kg"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Cooking oil for frying",
+          "note": null,
+          "raw": "Cooking oil for frying"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Tamatar (Tomato) cubes",
+          "note": null,
+          "raw": "Tamatar (Tomato) cubes"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Hara pyaz (Green onion) leaves",
+          "note": null,
+          "raw": "Hara pyaz (Green onion) leaves"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Pyaz (Onion) chopped",
+          "note": null,
+          "raw": "Pyaz (Onion) chopped"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Tomato ketchup",
+          "note": null,
+          "raw": "Tomato ketchup"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Chaat masala",
+          "note": null,
+          "raw": "Chaat masala"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Hara pyaz (Green onion)",
+          "note": null,
+          "raw": "Hara pyaz (Green onion)"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In saucepan,add butter and let it melt.",
+      "romanUrdu": "Saucepan mein makhan dal ker melt karein."
+    },
+    {
+      "instruction": "Add all-purpose flour and whisk well.",
+      "romanUrdu": "Maida dal ker ache tarhan whisk ker lein."
+    },
+    {
+      "instruction": "Add milk and whisk well.",
+      "romanUrdu": "Doodh shamil karein aur ache tarhan whisk ker lein."
+    },
+    {
+      "instruction": "Add cheddar cheese, burger cheese slices,salt,chicken powder,paprika powder,whisk well and cook until sauce is thick (approx. 2-3 minutes) & set aside.",
+      "romanUrdu": "Cheddar cheese, burger cheese slices,namak,chicken powder aur paprika powder dal ker ache tarhan whisk karein aur sauce garha ho janay tak paka lein (approx. 2-3 minutes) & side per rakh dein."
+    },
+    {
+      "instruction": "In bowl,add boiled & shredded chicken,mayonnaise,tomato ketchup,onion powder,red chilli powder, salt,garlic powder,dried oregano,mix well & set aside.",
+      "romanUrdu": "Bowl mein boiled & shredded chicken,mayonnaise,tomato ketchup,onion powder,lal mirch powder,namak,lehsan powder aur dried oregano dal ker ache tarhan mix ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "In bowl,add all-purpose flour,paprika powder,salt,chaat masala,garlic powder,mix well & set aside.",
+      "romanUrdu": "Bowl mein maida,paprika powder,namak,chaat masala aur lehsan powder dal ker ache tarhan mix karein & side per rakh dein."
+    },
+    {
+      "instruction": "In bowl,add iced cold water,potato fries and soak for 10 minutes then strain and pat dry potato fries with the help of the kitchen towel or paper.",
+      "romanUrdu": "Bowl mein iced cold water aur potato fries dal ker 10 minutes kliya bheego dein phir strain ker ka kitchen towel or paper ki madad sa complete pat dry ker lein."
+    },
+    {
+      "instruction": "Add potato fries in prepared spice mix and coat well.",
+      "romanUrdu": "Tayyar spice mix mein potato fries dal ker ache tarhan coat ker lein."
+    },
+    {
+      "instruction": "In wok,heat cooking oil and fry on medium flame for 4-5 minutes,take out and rest it for 5 minutes and again fry potato fries until light golden & crispy and set aside.",
+      "romanUrdu": "Karhai mein cooking oil garam karein aur potato fries ko darmiyani ancch per 4-5 minutes kliya fry ker lein phir bahir nikal ker 5 minutes kliya rakh dein aur potatao fries ko dubara light golden & crispy hunay tak fry ker lein aur side per rakh dein."
+    },
+    {
+      "instruction": "On serving dish,place inverted glass,add prepared chicken filling and set around the glass,add potato fries then remove glass,add prepared cheese sauce,tomato,green onion leaves and onion.",
+      "romanUrdu": "Serving dish mein glass ulta ker ka rakh dein aur glass ka sides per chicken filling laga lein,potato fries dal ker glass ko nikal lein aur tayyar cheese sauce dal ker upper sa green onion leaves aur pyaz dal dein."
+    },
+    {
+      "instruction": "Drizzle Mayo Mustard sauce and tomato ketchup,add chaat masala,green onion & serve!",
+      "romanUrdu": "Mayo Mustard sauce aur tomato ketchup drizzle karein,chaat masala aur hara pyaz dal ker serve karein!"
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2019/11/Lava-Fries-Recipe-By-food-fusion-4.jpg?v=1587762833",
+  "ogDescription": "This amazing lava fries recipe will have anyone drooling. Perfect for any gathering or occasion. Make it, share it, and love it. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:42:35Z"
+}

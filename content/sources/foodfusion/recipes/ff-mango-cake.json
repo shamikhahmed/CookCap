@@ -1,0 +1,252 @@
+{
+  "wpId": 18556,
+  "slug": "mango-cake",
+  "id": "ff-mango-cake",
+  "title": "Mango Cake",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/mango-cake/",
+  "date": "2021-06-22T09:35:42",
+  "modified": "2022-06-01T11:18:59",
+  "classList": [
+    "post-18556",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-eggs",
+    "recipe_category-flour-atta",
+    "recipe_category-cream",
+    "recipe_category-yogurt",
+    "recipe_category-1baking",
+    "recipe_category-baked-desserts",
+    "recipe_category-1desserts-2",
+    "recipe_category-1-baked",
+    "recipe_category-baking",
+    "recipe_category-baked-cakes",
+    "recipe_category-dish-type",
+    "recipe_category-cakes",
+    "recipe_category-eggs-2",
+    "recipe_category-lunch-dinner",
+    "recipe_category-baked-lunch-dinner",
+    "recipe_category-occasions",
+    "recipe_category-birthday",
+    "recipe_category-national-holidays",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_category-summer",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "desserts",
+  "imageUrl": "https://media.foodfusion.com/2021/06/Mango-cake-Recipe-by-Food-fusion-3.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": "Prepare Cake",
+      "items": [
+        {
+          "quantity": 2.5,
+          "unit": "cup",
+          "item": "Maida (All-purpose flour) sifted",
+          "note": null,
+          "raw": "Maida (All-purpose flour) sifted 2 & ½ Cups"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": null,
+          "raw": "Namak (Salt) ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Baking soda",
+          "note": null,
+          "raw": "Baking soda 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Baking powder",
+          "note": null,
+          "raw": "Baking powder 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Doodh (Milk)",
+          "note": null,
+          "raw": "Doodh (Milk) ½ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Sirka (Vinegar)",
+          "note": null,
+          "raw": "Sirka (Vinegar) 1 tsp"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Anday (Eggs)",
+          "note": null,
+          "raw": "Anday (Eggs) 3"
+        },
+        {
+          "quantity": 0.75,
+          "unit": "cup",
+          "item": "Dahi (Yogurt) whisked",
+          "note": null,
+          "raw": "Dahi (Yogurt) whisked ¾ Cup"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Mango puree",
+          "note": null,
+          "raw": "Mango puree ¼ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Vanilla essence",
+          "note": null,
+          "raw": "Vanilla essence 1 tsp"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "cup",
+          "item": "Bareek cheeni (Caster sugar)",
+          "note": null,
+          "raw": "Bareek cheeni (Caster sugar) 1 & ½ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil 1 Cup"
+        }
+      ]
+    },
+    {
+      "heading": "Mango Frosting",
+      "items": [
+        {
+          "quantity": 400.0,
+          "unit": "ml",
+          "item": "Whipping cream",
+          "note": null,
+          "raw": "Whipping cream 400ml"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Vanilla essence",
+          "note": null,
+          "raw": "Vanilla essence 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Sugar powdered",
+          "note": null,
+          "raw": "Sugar powdered ½ Cup"
+        },
+        {
+          "quantity": 5.0,
+          "unit": "",
+          "item": "Yellow food color",
+          "note": "drops or as required",
+          "raw": "Yellow food color 5-6 drops or as required"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Mango puree",
+          "note": "or as required",
+          "raw": "Mango puree 2 tbs or as required"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Aam (Mango) cubes",
+          "note": null,
+          "raw": "Aam (Mango) cubes"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In a bowl,add all-purpose flour,salt,baking soda,baking powder,mix well & set aside.",
+      "romanUrdu": "Bowl mein maida,namak,baking soda aur baking powder dal ker ache tarhan mix karein & side per rakh dein."
+    },
+    {
+      "instruction": "Grease 9” baking pan with cooking oil,place butter paper the again grease with oil & set aside.",
+      "romanUrdu": "9” inch baking pan ko cooking oil sa grease karein aur butter paper laga ker dubara oil sa grease ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "In milk,add vinegar,mix well & rest for 5 minutes.Buttermilk is ready!",
+      "romanUrdu": "Doodh mein sirka dal ker ache tarhan mix karein aur 5 minute kliya chor dein.Buttermilk tayyar hai."
+    },
+    {
+      "instruction": "In a bowl,add eggs & beat until fluffy.",
+      "romanUrdu": "Bowl mein anday dal dein aur fluffy hunay tak beat ker lein."
+    },
+    {
+      "instruction": "Add yogurt,mango puree,prepared buttermilk,vanilla essence,caster sugar,cooking oil & beat well.",
+      "romanUrdu": "Dahi,mango puree,tayyar buttermilk,vanilla essence,bareek cheeni aur cooking oil dal ker ache tarhan beat ker lein."
+    },
+    {
+      "instruction": "Gradually add dry ingredients & beat well.",
+      "romanUrdu": "Thora thora ker ka dry ingredients shamil karein aur ache tarhan beat ker lein."
+    },
+    {
+      "instruction": "On greased baking pan,add prepared batter & bake in preheated oven at 170C for 35 minutes.",
+      "romanUrdu": "Greased baking pan mein tayyar batter dal dein aur preheated oven mein 170C per 35 minutes kliya bake ker lein."
+    },
+    {
+      "instruction": "Take out from the oven & let it cool then remove butter paper.",
+      "romanUrdu": "Oven sa nikal ker thanda ker lein phir butter paper nikal lein."
+    },
+    {
+      "instruction": "In a bowl,add whipping cream & beat well.",
+      "romanUrdu": "Bowl mein whipping cream dal ker ache tarhan beat ker lein."
+    },
+    {
+      "instruction": "Add vanilla essence,powdered sugar & beat until soft peaks form.",
+      "romanUrdu": "Vanilla essence aur powdered sugar dal ker soft peaks form hunay tak beat ker lein."
+    },
+    {
+      "instruction": "Add yellow food color and beat again,transfer to a piping bag & refrigerate until use.",
+      "romanUrdu": "Yellow food color dal ker dubara beat ker lein aur piping bag mein dal ker use kernay tak refrigerate ker lein."
+    },
+    {
+      "instruction": "Trim a thin layer from the top of sponge cake with a serrated knife and then horizontally cut a layer of cake.",
+      "romanUrdu": "Sponge cake ki top layer ko serrated knife kki madad sa trim karein aur horizontally cake ki layer cut ker lein."
+    },
+    {
+      "instruction": "On base of sponge cake,add & spread mango puree,prepared mango frosting,mango cubes,mango frosting & place top layer of cake over it & press gently.",
+      "romanUrdu": "Sponge cake ki base per mango puree aur mango frosting dal ker pheela lein aur mango cubes dal dein,mango frosting dal ker upper sa cake ki top layer rakh ker gently press ker lein."
+    },
+    {
+      "instruction": "Add & spread mango frosting and frost the outside of the cake with mango frosting.",
+      "romanUrdu": "Mango frosting dal dein aur puray cake per mango frosting laga lein."
+    },
+    {
+      "instruction": "Decorate cake with mango frosting & mango cubes",
+      "romanUrdu": "Mango frosting aur mango cubes sa decorate ker lein."
+    },
+    {
+      "instruction": "Cut into slices & serve!",
+      "romanUrdu": "Slices mein cut ker ka serve karein!"
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2021/06/Mango-cake-Recipe-by-Food-fusion-3.jpg?v=1624001048",
+  "ogDescription": "An amazing Mango Cake recipe for you. #HappyCookingToYou #FoodFusion #OlpersCream",
+  "scrapedAt": "2026-08-01T14:42:48Z"
+}

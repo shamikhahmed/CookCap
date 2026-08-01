@@ -1,0 +1,252 @@
+{
+  "wpId": 7959,
+  "slug": "saag-gosht",
+  "id": "ff-saag-gosht",
+  "title": "Saag Gosht",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/saag-gosht/",
+  "date": "2018-12-04T18:53:05",
+  "modified": "2018-12-04T18:53:05",
+  "classList": [
+    "post-7959",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-1-meal-type",
+    "recipe_category-1tommato",
+    "recipe_category-beef",
+    "recipe_category-dish-type",
+    "recipe_category-ingredient",
+    "recipe_category-lunch-dinner",
+    "recipe_category-seasonal",
+    "recipe_category-vegetables",
+    "recipe_category-winter",
+    "recipe_behind_camera-shahnazshahid"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2018/11/Sarson-ka-saag-gosht-Recipe-by-Food-fusion-3.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 2.0,
+          "unit": "l",
+          "item": "Pani (Water)",
+          "note": null,
+          "raw": "Pani (Water) 2-3 litres"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "kg",
+          "item": "Sarson ka saag (Fresh mustard leaves)",
+          "note": null,
+          "raw": "Sarson ka saag (Fresh mustard leaves) 2 kg"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Hari mirch (Green chilies)",
+          "note": null,
+          "raw": "Hari mirch (Green chilies) 3"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Sarson ka tail (Mustard oil)",
+          "note": null,
+          "raw": "Sarson ka tail (Mustard oil) 1 Cup"
+        },
+        {
+          "quantity": 8.0,
+          "unit": "",
+          "item": "Laung (Cloves)",
+          "note": null,
+          "raw": "Laung (Cloves) 8-10"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Darchini (Cinnamon sticks)",
+          "note": null,
+          "raw": "Darchini (Cinnamon sticks) 2"
+        },
+        {
+          "quantity": 10.0,
+          "unit": "",
+          "item": "Sabut kali mirch (Whole black pepper)",
+          "note": null,
+          "raw": "Sabut kali mirch (Whole black pepper) 10-12"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Hari elaichi (Green cardamom)",
+          "note": null,
+          "raw": "Hari elaichi (Green cardamom) 2"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Badi elaichi (Black cardamom)",
+          "note": null,
+          "raw": "Badi elaichi (Black cardamom) 1"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Zeera (Cumin seeds)",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "kg",
+          "item": "Beef boneless cubes",
+          "note": null,
+          "raw": "Beef boneless cubes ½ kg"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pyaz (Onion) sliced",
+          "note": "large",
+          "raw": "Pyaz (Onion) sliced 1 large"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tbsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) 1 & ½ tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Dhania powder (Coriander powder)",
+          "note": null,
+          "raw": "Dhania powder (Coriander powder) 1 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldee powder (Turmeric powder) ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chili powder) 1 tbs or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) 1 Cup or as required"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Tamatar (Tomatoes) chopped",
+          "note": "medium",
+          "raw": "Tamatar (Tomatoes) chopped 3-4 medium"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Hara lehsan (Green garlic) chopped",
+          "note": null,
+          "raw": "Hara lehsan (Green garlic) chopped"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Hari mirch (Green chili) chopped",
+          "note": null,
+          "raw": "Hari mirch (Green chili) chopped"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) chopped"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "Clean all the fresh mustard leaves and wash them thoroughly.",
+      "romanUrdu": "Sarson ka saag ko ache tarhan pani sa dho lein."
+    },
+    {
+      "instruction": "In pot,add water and bring it to boil.",
+      "romanUrdu": "Pot mein pani dal ker ubal lein."
+    },
+    {
+      "instruction": "Add fresh mustard leaves,green chilies,mix and bring it to boil,cover and boil on medium low flame for 4-5 hours (grind if desired) & set aside.",
+      "romanUrdu": "Sarson ka saag aur hari mirch dal ker mix karein aur ubal anay dein phir dhak ker halki darmiyani ancch per 4-5 hours kliya boil ker lein (agar zaroorat ho tou grind ker lein) & side per rakh dein."
+    },
+    {
+      "instruction": "In pot,add mustard oil,cloves,cinnamon sticks,whole black pepper,green cardamom,black cardamom, cumin seeds and mix well.",
+      "romanUrdu": "Pot mein sarson ka tail,laung,darchini,sabut kali mirch,hari elaichi,badi elaichi aur zeera dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add beef boneless cubes and mix well until changes color.",
+      "romanUrdu": "Beef boneless cubes dal dein aur rang tabdeel hunay tak ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add onion,mix well and cook for 10-12 minutes.",
+      "romanUrdu": "Pyaz dal ker ache tarhan mix karein aur 10-12 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add ginger garlic paste and mix well for 2 minutes.",
+      "romanUrdu": "Adrak lehsan paste dal ker 2 minutes kliya ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add coriander powder,turmeric powder,red chili powder,salt,mix well and cook for 5 minutes.",
+      "romanUrdu": "Dhania powder,haldee powder,lal mirch powder aur namak dal ker ache tarhan mix ker lein aur 5 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add water,mix well and bring it to boil,cover and cook on low flame for 25-30 minutes or until meat is tender.",
+      "romanUrdu": "Pani dal ker mix karein aur ubal anay ka bad dhak dein aur halki ancch per 25-30 minutes ya gosht gul janay tak paka lein."
+    },
+    {
+      "instruction": "Add tomatoes and mix well,cover and cook until tomatoes are soft and oil separates.",
+      "romanUrdu": "Tamatar dal ker ache tarhan mix karein aur dhak ker tamatar naram hunay aur oil alag hunay tak paka lein."
+    },
+    {
+      "instruction": "Now add boiled fresh mustard leaves,mix well and cook for 8-10 minutes.",
+      "romanUrdu": "Ab boiled sarson ka saag dal ker ache tarhan mix karein aur 8-10 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add green garlic,green chili,fresh coriander and mix well.",
+      "romanUrdu": "Hara lehsan,hari mirch aur hara dhania dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Garnish with green chili,green garlic & serve!",
+      "romanUrdu": "Hari mirch aur hara lehsan sa garnish ker ka serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/11/Sarson-ka-saag-gosht-Recipe-by-Food-fusion-3.jpg?v=1587764307",
+  "ogDescription": "Enjoy Saag Gosht in typical Sindhi style, serve it with chawal ka chilla (Rice chilla) and enjoy your winter. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:43:14Z"
+}

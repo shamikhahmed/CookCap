@@ -1,0 +1,704 @@
+@import 'tailwindcss';
+
+/*
+  ────────────────────────────────────────────────────────────────────────
+  GRIMOIRE — Design System
+  Tailwind v4 CSS-first tokens. Everything the product looks like flows from
+  this @theme block: change a value here, the whole app follows.
+  ────────────────────────────────────────────────────────────────────────
+*/
+
+@theme {
+  /* ── Typography ──────────────────────────────────────────────────────
+     Two families: a high-contrast serif for editorial "cookbook" voice,
+     and a humanist sans for UI chrome. Loaded via next/font in layout. */
+  --font-serif: var(--font-fraunces), 'Iowan Old Style', Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Modular type scale (1.25 major third), fluid via clamp. */
+  --text-caption: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: clamp(1.5rem, 1.2rem + 1.4vw, 1.9rem);
+  --text-3xl: clamp(1.9rem, 1.4rem + 2.2vw, 2.6rem);
+  --text-display: clamp(2.6rem, 1.8rem + 3.6vw, 4.2rem);
+
+  /* ── Color — Light (parchment) ───────────────────────────────────────
+     Warm paper, ink, and a single restrained accent (saffron/ember). */
+  --color-paper: #f4ece0;
+  --color-paper-raised: #faf5ec;
+  --color-paper-sunk: #ece1d1;
+  --color-ink: #2a2320;
+  --color-ink-soft: #5b5048;
+  --color-ink-faint: #8b7d70;
+  --color-line: #d8c9b6;
+  --color-accent: #b4531f;
+  --color-accent-soft: #d98a4e;
+  --color-gold: #b08d46;
+  --color-leather: #5a2e22;
+  --color-leather-dark: #3d1d15;
+
+  /* Semantic feedback */
+  --color-success: #5a7a4a;
+  --color-warning: #b07a2a;
+  --color-danger: #a33a2a;
+
+  /* ── Spacing scale (8pt base, plus half-steps) ───────────────────────*/
+  --spacing: 0.25rem;
+
+  /* ── Radius ──────────────────────────────────────────────────────────*/
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-full: 999px;
+
+  /* ── Elevation — soft, warm, multi-layer shadows (never pure black) ──*/
+  --shadow-sm: 0 1px 2px rgba(61, 29, 21, 0.08), 0 1px 1px rgba(61, 29, 21, 0.06);
+  --shadow-md: 0 4px 12px rgba(61, 29, 21, 0.1), 0 2px 4px rgba(61, 29, 21, 0.06);
+  --shadow-lg: 0 12px 32px rgba(61, 29, 21, 0.14), 0 4px 8px rgba(61, 29, 21, 0.08);
+  --shadow-book: 0 30px 60px -12px rgba(30, 12, 8, 0.55), 0 18px 36px -18px rgba(30, 12, 8, 0.4);
+
+  /* ── Motion — one language of easing + duration ─────────────────────*/
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 160ms;
+  --dur-base: 280ms;
+  --dur-slow: 520ms;
+  --dur-book: 1100ms;
+
+  /* ── Breakpoints ─────────────────────────────────────────────────────*/
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+}
+
+/* ── Dark (candlelit study) ────────────────────────────────────────────*/
+@layer base {
+  :root[data-theme='dark'] {
+    --color-paper: #211c19;
+    --color-paper-raised: #2b2521;
+    --color-paper-sunk: #1a1512;
+    --color-ink: #ece3d8;
+    --color-ink-soft: #b8ab9d;
+    --color-ink-faint: #8a7d6f;
+    --color-line: #3d332c;
+    --color-accent: #e08a4a;
+    --color-accent-soft: #eaa66d;
+    --color-gold: #c9a860;
+    --color-leather: #43221a;
+    --color-leather-dark: #2a1410;
+    --shadow-book: 0 30px 70px -12px rgba(0, 0, 0, 0.8), 0 18px 36px -18px rgba(0, 0, 0, 0.6);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+      --color-paper: #211c19;
+      --color-paper-raised: #2b2521;
+      --color-paper-sunk: #1a1512;
+      --color-ink: #ece3d8;
+      --color-ink-soft: #b8ab9d;
+      --color-ink-faint: #8a7d6f;
+      --color-line: #3d332c;
+      --color-accent: #e08a4a;
+      --color-accent-soft: #eaa66d;
+      --color-gold: #c9a860;
+      --color-leather: #43221a;
+      --color-leather-dark: #2a1410;
+      --shadow-book: 0 30px 70px -12px rgba(0, 0, 0, 0.8), 0 18px 36px -18px rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-paper-sunk);
+    background-image:
+      radial-gradient(ellipse 120% 80% at 50% -10%, rgba(176, 141, 70, 0.14), transparent 55%),
+      radial-gradient(ellipse 60% 50% at 100% 100%, rgba(90, 46, 34, 0.08), transparent 45%),
+      radial-gradient(ellipse 50% 40% at 0% 80%, rgba(180, 83, 31, 0.06), transparent 40%),
+      linear-gradient(180deg, color-mix(in srgb, var(--color-paper-sunk) 92%, #c4b49a), var(--color-paper-sunk));
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  ::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-leather-dark);
+  }
+
+  /* Scroll works; bar never shows — book page, not browser chrome. */
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  *::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+  [data-leaf-scroll] {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  [data-leaf-scroll]::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: var(--radius-xs);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ── Reusable material textures ────────────────────────────────────────*/
+@layer components {
+  /* Paper grain: layered noise + subtle vignette, GPU-cheap (no images). */
+  .paper-grain {
+    position: relative;
+    background-color: var(--color-paper);
+    background-image:
+      radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.35), transparent 40%),
+      radial-gradient(circle at 85% 90%, rgba(120, 90, 60, 0.06), transparent 45%);
+  }
+  .paper-grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+
+  /* Leather cover: deep grain + edge sheen. */
+  .leather {
+    background-color: var(--color-leather);
+    background-image:
+      radial-gradient(circle at 30% 20%, rgba(255, 200, 150, 0.12), transparent 55%),
+      radial-gradient(circle at 70% 80%, rgba(0, 0, 0, 0.35), transparent 60%),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.25));
+  }
+  .leather::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='l'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.02' numOctaves='4'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23l)'/%3E%3C/svg%3E");
+  }
+
+  .gold-foil {
+    color: var(--color-gold);
+    background: linear-gradient(105deg, #8a6a2e 0%, #e9cf86 40%, #b08d46 55%, #f4e2a8 70%, #8a6a2e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+/* ── Cover reveal (CSS, never JS-gated) ────────────────────────────────*/
+@keyframes cover-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes cover-hint {
+  0%,
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+@keyframes foil-sweep {
+  0% {
+    background-position: -140% 0;
+  }
+  100% {
+    background-position: 240% 0;
+  }
+}
+.cover-rise {
+  animation: cover-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.cover-hint {
+  animation: cover-hint 2.4s ease forwards;
+}
+.foil-sweep {
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 240, 200, 0.14) 50%,
+    transparent 60%
+  );
+  background-size: 250% 100%;
+  animation: foil-sweep 2.6s ease 0.5s 1 both;
+}
+
+/* Handwritten margin notes */
+.note-hand {
+  font-family: var(--font-caveat), ui-serif, Georgia, serif;
+  font-size: 1.35rem;
+  line-height: 1.55;
+}
+
+/* ── Fat cookbook edge + interleaved chapter tabs ──────────────────────*/
+.book-page-stack {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.book-page-stack span {
+  position: absolute;
+  left: 8px;
+  border-radius: 1.15rem;
+  background: var(--color-paper);
+  border: 1px solid color-mix(in srgb, var(--color-line) 50%, transparent);
+}
+.book-page-stack span:nth-child(1) {
+  top: 6px;
+  bottom: 6px;
+  right: -7px;
+  opacity: 0.95;
+}
+.book-page-stack span:nth-child(2) {
+  top: 11px;
+  bottom: 11px;
+  right: -13px;
+  opacity: 0.88;
+  background: color-mix(in srgb, var(--color-paper) 90%, #c9b79a);
+}
+.book-page-stack span:nth-child(3) {
+  top: 16px;
+  bottom: 16px;
+  right: -19px;
+  opacity: 0.8;
+  background: color-mix(in srgb, var(--color-paper) 82%, #b8a482);
+}
+.book-page-stack span:nth-child(4) {
+  top: 21px;
+  bottom: 21px;
+  right: -25px;
+  opacity: 0.72;
+  background: color-mix(in srgb, var(--color-paper) 74%, #a89470);
+  box-shadow: 3px 2px 10px rgba(40, 20, 10, 0.2);
+}
+
+/* The thick right block — viewed slightly in perspective */
+.book-edge {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 100%;
+  /* Width is driven from the reading position (set inline): a thick block of
+     unread pages at the start, thinning toward the back cover. */
+  width: var(--edge-w, 5.75rem);
+  margin-left: -6px;
+  z-index: 8;
+  pointer-events: none;
+  transform: perspective(1100px) rotateY(-8deg);
+  transform-origin: left center;
+  transition: width 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .book-edge {
+    transition: none;
+  }
+}
+
+.book-edge__block {
+  position: absolute;
+  inset: 0;
+  border-radius: 0 9px 9px 0;
+  overflow: hidden;
+  box-shadow:
+    1px 0 0 rgba(60, 40, 20, 0.35),
+    8px 6px 20px rgba(40, 20, 10, 0.28);
+}
+
+.book-edge__pages {
+  position: absolute;
+  inset: 0;
+  /* Dense horizontal page edges — classic thick-book side view */
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #fff9f0 0px,
+      #fff9f0 1.2px,
+      #efe4d0 1.2px,
+      #efe4d0 2.2px,
+      #d4c2a4 2.2px,
+      #d4c2a4 3px
+    );
+}
+
+.book-edge__pages::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 7px;
+  width: 18px;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 248, 235, 0.2) 50%,
+    rgba(40, 22, 10, 0.06)
+  );
+}
+
+.book-edge__shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(40, 22, 10, 0.38) 0%,
+      rgba(40, 22, 10, 0.08) 18%,
+      transparent 42%,
+      rgba(255, 250, 240, 0.25) 78%,
+      rgba(40, 22, 10, 0.12) 100%
+    ),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.12), transparent 8%, transparent 92%, rgba(0, 0, 0, 0.14));
+  pointer-events: none;
+}
+
+/* Outer leather binding lip */
+.book-edge__lip {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 7px;
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-leather) 70%, #2a1810),
+      var(--color-leather) 40%,
+      color-mix(in srgb, var(--color-leather) 75%, #5a3a28)
+    );
+  box-shadow:
+    inset 2px 0 3px rgba(0, 0, 0, 0.35),
+    inset -1px 0 1px rgba(255, 200, 140, 0.15);
+  border-radius: 0 9px 9px 0;
+}
+
+.book-edge__bevel {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.book-edge__tabs {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+}
+
+.sticker-tab {
+  --sticker: #4f7a4a;
+  --elev: 0;
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: stretch;
+  height: 1.65rem;
+  width: 4.4rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transform-origin: left center;
+  filter: drop-shadow(-1px 2px 4px rgba(30, 15, 8, 0.35));
+}
+@media (min-width: 640px) {
+  .sticker-tab {
+    height: 1.75rem;
+    width: 4.75rem;
+  }
+}
+
+.sticker-tab.elev-0 {
+  filter: drop-shadow(-1px 2px 3px rgba(30, 15, 8, 0.28));
+}
+.sticker-tab.elev-1 {
+  filter: drop-shadow(-2px 3px 5px rgba(30, 15, 8, 0.34));
+}
+.sticker-tab.elev-2 {
+  filter: drop-shadow(-3px 5px 8px rgba(30, 15, 8, 0.4));
+}
+.sticker-tab.elev-3 {
+  filter: drop-shadow(-4px 7px 12px rgba(30, 15, 8, 0.48));
+}
+
+.book-edge--tablet {
+  transform: perspective(1000px) rotateY(-6deg);
+}
+/* Touch target ≥44px on tablet (rail is used with fingers there). */
+.book-edge--tablet .sticker-tab {
+  height: 2.75rem;
+}
+
+/* Chapters already read recess into the block — slightly dimmer, less lit. */
+.sticker-tab--recessed .sticker-face {
+  filter: brightness(0.9) saturate(0.85);
+}
+
+.journal-sheet {
+  background:
+    linear-gradient(180deg, var(--color-paper-raised), var(--color-paper)),
+    radial-gradient(ellipse at 20% 0%, rgba(176, 141, 70, 0.08), transparent 50%);
+  border-left: 1px solid var(--color-line);
+}
+
+.journal-desk {
+  position: relative;
+}
+.journal-desk::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+.journal-desk > * {
+  position: relative;
+  z-index: 1;
+}
+.journal-stage {
+  /* desk lamp vignette */
+  mask-image: radial-gradient(ellipse 95% 90% at 50% 45%, #000 55%, transparent 100%);
+}
+
+/* Tiny paper lips above/below tab — reads as sandwiched in the stack */
+.sticker-slit {
+  position: absolute;
+  left: -4px;
+  width: 22px;
+  height: 2px;
+  pointer-events: none;
+  z-index: 0;
+  background: #f3eadc;
+  box-shadow: 0 0.5px 0 rgba(90, 70, 40, 0.2);
+  opacity: 0.9;
+}
+.sticker-slit--top {
+  top: -2px;
+}
+.sticker-slit--bot {
+  bottom: -2px;
+}
+
+/* Stem buried in the page stack */
+.sticker-stem {
+  position: absolute;
+  left: -10px;
+  top: 20%;
+  bottom: 20%;
+  width: 14px;
+  border-radius: 1px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--sticker) 40%, #1a1008),
+    color-mix(in srgb, var(--sticker) 70%, transparent)
+  );
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.sticker-face {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.45rem 0 0.55rem;
+  border-radius: 2px 10px 10px 2px;
+  background:
+    linear-gradient(
+      105deg,
+      color-mix(in srgb, var(--sticker) 82%, #120a06) 0%,
+      var(--sticker) 45%,
+      color-mix(in srgb, var(--sticker) 78%, #fff) 100%
+    );
+  border: 1px solid color-mix(in srgb, var(--sticker) 50%, #1a1008);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    inset -5px 0 8px rgba(0, 0, 0, 0.14);
+}
+.sticker-label {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+@media (min-width: 640px) {
+  .sticker-label {
+    font-size: 0.64rem;
+  }
+}
+
+.sticker-pin {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  margin-top: -2.5px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #f0e6d0, #8a7050 70%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.sticker-chip {
+  --sticker: #4f7a4a;
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0.75rem 0.85rem 0.75rem 1.1rem;
+  border-radius: 4px 12px 12px 4px;
+  background: linear-gradient(
+    105deg,
+    color-mix(in srgb, var(--sticker) 88%, #1a1008),
+    var(--sticker) 45%,
+    color-mix(in srgb, var(--sticker) 80%, white)
+  );
+  box-shadow: -2px 3px 8px rgba(40, 20, 10, 0.22);
+}
+.sticker-chip .sticker-tape {
+  left: 0;
+  width: 12px;
+}
+
+.sticker-fab {
+  display: grid;
+  place-items: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  height: 2.75rem;
+  padding: 0 0.65rem;
+  border-radius: 3px 10px 10px 3px;
+  background: linear-gradient(105deg, #6a4030, #a06040);
+  box-shadow: -2px 3px 8px rgba(40, 20, 10, 0.35);
+  transform: rotate(2deg);
+}
+
+.sticker-tape {
+  position: absolute;
+  left: -2px;
+  top: 18%;
+  bottom: 18%;
+  width: 8px;
+  border-radius: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 248, 220, 0.15),
+    rgba(255, 245, 200, 0.55) 40%,
+    rgba(230, 210, 150, 0.35)
+  );
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.jia-story::first-letter {
+  float: left;
+  margin: 0.1em 0.12em 0 0;
+  font-size: 2.6em;
+  line-height: 0.8;
+  font-style: normal;
+  font-weight: 650;
+  color: var(--color-leather);
+}
+
+/* Print the focused recipe only (data-print-root), not a 2P sibling leaf. */
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  article[data-print-root],
+  article[data-print-root] * {
+    visibility: visible !important;
+  }
+  article[data-print-root] {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: white !important;
+    color: #111 !important;
+    padding: 1.5cm !important;
+  }
+  article[data-print-root] .relative.aspect-\[16\/10\] {
+    max-height: 6cm !important;
+  }
+  .print\:hidden {
+    display: none !important;
+  }
+  header,
+  footer,
+  nav,
+  [role='dialog'],
+  .bookmark-rail,
+  .WarmLeafPool,
+  [aria-hidden='true'] {
+    display: none !important;
+  }
+}

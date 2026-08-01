@@ -1,0 +1,152 @@
+{
+  "wpId": 7911,
+  "slug": "cake-pops",
+  "id": "ff-cake-pops",
+  "title": "Cake Pops",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/cake-pops/",
+  "date": "2018-11-29T13:57:42",
+  "modified": "2019-12-05T12:09:35",
+  "classList": [
+    "post-7911",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_partner-food-fusion-kids",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-cream",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-1baking",
+    "recipe_category-1desserts-2",
+    "recipe_category-dish-type",
+    "recipe_category-1desserts",
+    "recipe_category-cakes",
+    "recipe_category-kids-menu",
+    "recipe_category-everyday-cooking",
+    "recipe_category-occasions",
+    "recipe_category-birthday",
+    "recipe_category-national-holidays",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_behind_camera-hareem-farooqi"
+  ],
+  "chapter": "desserts",
+  "imageUrl": "https://media.foodfusion.com/2018/11/Cake-pops-Recipe-by-Food-fusion-2.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": "For Vanilla Buttercream Frosting",
+      "items": [
+        {
+          "quantity": 100.0,
+          "unit": "",
+          "item": "Makhan (Butter) unsalted",
+          "note": "gms (room temperature)",
+          "raw": "Makhan (Butter) unsalted 100 gms (room temperature)"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Vanilla essence",
+          "note": null,
+          "raw": "Vanilla essence ½ tsp"
+        },
+        {
+          "quantity": 0.75,
+          "unit": "cup",
+          "item": "Icing sugar",
+          "note": null,
+          "raw": "Icing sugar ¾ Cup"
+        },
+        {
+          "quantity": 350.0,
+          "unit": "",
+          "item": "Cake pieces (leftover)",
+          "note": "gms",
+          "raw": "Cake pieces (leftover) 350 gms"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Prepared butter cream frosting",
+          "note": "or as required",
+          "raw": "Prepared butter cream frosting 3-4 tbs or as required"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Pani (Water) as required",
+          "note": null,
+          "raw": "Pani (Water) as required"
+        },
+        {
+          "quantity": 200.0,
+          "unit": "",
+          "item": "Cooking chocolate",
+          "note": "gms",
+          "raw": "Cooking chocolate 200 gms"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Multi sprinkle",
+          "note": null,
+          "raw": "Multi sprinkle"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In bowl,add butter and beat until fluffy.",
+      "romanUrdu": "Bowl mein makhan dal dein aur fluffy hunay tak beat ker lein."
+    },
+    {
+      "instruction": "Add vanilla essence,icing sugar and beat until well combined & refrigerate until use.",
+      "romanUrdu": "Vanilla essence aur icing sugar dal ker ache tarhan beat ker lein & istamal hunay tak refrigerate ker lein."
+    },
+    {
+      "instruction": "Crumble the cake pieces into fine crumbs with your hands in a bowl.",
+      "romanUrdu": "Bowl mein cake pieces dal ker haath ki madad sa ache tarhan crumble ker lein."
+    },
+    {
+      "instruction": "Mix in about 3-4 tbs of prepared butter cream frosting and mix until well combined.",
+      "romanUrdu": "3-4 tbs tayyar butter cream frosting dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Take a mixture and smush the mixture in your hand to pack tightly into a ball and roll it into nicely shaped balls (makes 10-12).",
+      "romanUrdu": "Mixture ko haath mein la ker ache tarhan pack ker lein aur balls tayyar ker lein (makes 10-12)."
+    },
+    {
+      "instruction": "In double boiler,add water and bring it to boil.",
+      "romanUrdu": "Double boiler mein pani dal dein aur ubal anay dein."
+    },
+    {
+      "instruction": "Place bowl,add cooking chocolate and mix well until smooth and remove from heat.",
+      "romanUrdu": "Bowl rakh dein aur cooking chocolate dal ker smooth hunay tak melt ker lein aur chulhay sa hata lein."
+    },
+    {
+      "instruction": "Now dip your cake pop stick into melted cooking chocolate and quickly stick it into a cake pop and refrigerate for 30 minutes.",
+      "romanUrdu": "Ab cake pop sticks ko melted cooking chocolate mein dip karein aur foran cake pops mein laga lein aur 30 minutes kliya refrigerate ker lein."
+    },
+    {
+      "instruction": "Dip your cake pop sticks into melted cooking chocolate and coat evenly.",
+      "romanUrdu": "Cake pop sticks ko melted cooking chocolate mein dip ker ka evenly coat ker lein."
+    },
+    {
+      "instruction": "Let the coating drip off.",
+      "romanUrdu": "Multi sprinkles sar garnish ker lein aur thanda ker ka serve karein."
+    },
+    {
+      "instruction": "Garnish with multi sprinkle and chill until set & serve!",
+      "romanUrdu": null
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/11/Cake-pops-Recipe-by-Food-fusion-2.jpg?v=1587764338",
+  "ogDescription": "Here is a weekend treat for your kids (Cake pops). Give it a try and enjoy your time in the kitchen with the little ones. #HappyParentingToYou",
+  "scrapedAt": "2026-08-01T14:40:52Z"
+}

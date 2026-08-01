@@ -1,0 +1,237 @@
+{
+  "wpId": 6756,
+  "slug": "beef-chili",
+  "id": "ff-beef-chili",
+  "title": "Beef Chili",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/beef-chili/",
+  "date": "2018-08-31T19:29:10",
+  "modified": "2018-08-31T20:33:13",
+  "classList": [
+    "post-6756",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-eggs",
+    "recipe_category-vegetable",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-beef",
+    "recipe_category-lunch-dinner",
+    "recipe_category-chinese",
+    "recipe_category-occasions",
+    "recipe_category-bakra-eid",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_category-bakra-eid1",
+    "recipe_behind_camera-samsonwilson"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2018/06/Beef-Chili-Recipe-by-Food-Fusion-1.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 0.5,
+          "unit": "kg",
+          "item": "Beef undercut",
+          "note": null,
+          "raw": "Beef undercut ½ kg"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "",
+          "item": "Anda (Egg) beaten",
+          "note": null,
+          "raw": "Anda (Egg) beaten ½"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Corn flour",
+          "note": null,
+          "raw": "Corn flour 1 tbs"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ¼ tsp or to taste"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Safed mirch powder (White pepper powder)",
+          "note": "or to taste",
+          "raw": "Safed mirch powder (White pepper powder) ¼ tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Soy sauce",
+          "note": null,
+          "raw": "Soy sauce 1 tsp"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Cooking oil for frying",
+          "note": null,
+          "raw": "Cooking oil for frying"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil 1-2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lehsan (Garlic) chopped",
+          "note": null,
+          "raw": "Lehsan (Garlic) chopped 1 tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Oyster sauce",
+          "note": null,
+          "raw": "Oyster sauce 2 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Hot sauce",
+          "note": null,
+          "raw": "Hot sauce 2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Tabasco sauce",
+          "note": null,
+          "raw": "Tabasco sauce 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Soy sauce",
+          "note": null,
+          "raw": "Soy sauce 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pyaz (Onion) julienne",
+          "note": "medium",
+          "raw": "Pyaz (Onion) julienne 1 medium"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Hara pyaz (Green onion) white part julienne",
+          "note": null,
+          "raw": "Hara pyaz (Green onion) white part julienne 1 Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Hara pyaz (Green onion) leaves julienne",
+          "note": null,
+          "raw": "Hara pyaz (Green onion) leaves julienne 1 Cup"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Adrak (Ginger) julienne",
+          "note": null,
+          "raw": "Adrak (Ginger) julienne 2-3 tbs"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Hari mirch (Green chilies) julienne",
+          "note": null,
+          "raw": "Hari mirch (Green chilies) julienne 3-4"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ¼ tsp or to taste"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tsp",
+          "item": "Cheeni (Sugar)",
+          "note": null,
+          "raw": "Cheeni (Sugar) 2 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Safed mirch powder (White pepper powder)",
+          "note": "or to taste",
+          "raw": "Safed mirch powder (White pepper powder) ½ tsp or to taste"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "Cut beef undercut into thin strips & set aside.",
+      "romanUrdu": "Beef undercut ko thin strips mein cut ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "In bowl,add egg,corn flour,salt,white pepper powder,soy sauce and whisk well.",
+      "romanUrdu": "Bowl mein anda,corn flour,namak,safed mirch powder aur soy sauce dal ker ache tarhan whisk ker lein."
+    },
+    {
+      "instruction": "Add beef slices,mix well and marinate for 15 minutes.",
+      "romanUrdu": "Beef slices dal ker ache tarhan mix karein aur 15 minutes kliya marinate ker lein."
+    },
+    {
+      "instruction": "In wok,heat cooking oil and fry marinated beef until light golden (4-5 minutes) & set aside.",
+      "romanUrdu": "Karhai mein cooking oil garam karein aur marinated beef ko light golden hunay tak fry ker lein (4-5 minutes) & side per rakh dein."
+    },
+    {
+      "instruction": "In wok,add cooking oil,garlic and mix.",
+      "romanUrdu": "Karhai mein cooking oil aur lehsan dal ker mix karein."
+    },
+    {
+      "instruction": "Add oyster sauce,hot sauce and mix well.",
+      "romanUrdu": "Oyster sauce aur hot sauce dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add tabasco sauce,soy sauce and mix well.",
+      "romanUrdu": "Tabasco sauce aur soy sauce dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Now add fried beef and mix.",
+      "romanUrdu": "Ab fried beef dal ker mix ker lein."
+    },
+    {
+      "instruction": "Add onion,green onion white part,green onion leaves,ginger,green chilies and give it a good mix.",
+      "romanUrdu": "Pyaz,hara pyaz white part,hara pyaz leaves,adark aur hari mirch dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add salt,sugar,white pepper powder and mix well & serve!",
+      "romanUrdu": "Namak,cheeni aur safed mirch powder dal ker ache tarhan mix karein & serve karein!"
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/06/Beef-Chili-Recipe-by-Food-Fusion-1.jpg?v=1587764811",
+  "ogDescription": "The perfect restaurant quality beef chili recipe for you today. Now make it at home and enjoy. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:41:46Z"
+}

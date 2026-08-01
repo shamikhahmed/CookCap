@@ -1,0 +1,147 @@
+{
+  "wpId": 8445,
+  "slug": "aloo-puri",
+  "id": "ff-aloo-puri",
+  "title": "Aloo puri",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/aloo-puri/",
+  "date": "2019-01-16T17:43:41",
+  "modified": "2019-01-21T02:59:03",
+  "classList": [
+    "post-8445",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_brand-sufi",
+    "recipe_category-potato",
+    "recipe_category-flour-atta",
+    "recipe_category-1-meal-type",
+    "recipe_category-breakfast-meal",
+    "recipe_category-1-parathas",
+    "recipe_category-ramazan",
+    "recipe_category-2iftar",
+    "recipe_category-sehri",
+    "recipe_category-dish-type",
+    "recipe_category-fried-items",
+    "recipe_category-everyday-cooking",
+    "recipe_category-occasions",
+    "recipe_category-2ramzan",
+    "recipe_category-ramzan",
+    "recipe_category-1sehri",
+    "recipe_category-iftar",
+    "recipe_category-seasonal",
+    "recipe_category-ramzan1"
+  ],
+  "chapter": "breads",
+  "imageUrl": "https://media.foodfusion.com/2019/01/Aloo-puri-recipe-by-food-fusion3.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Aalo (Potato) boiled 200gms",
+          "note": null,
+          "raw": "Aalo (Potato) boiled 200gms"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "cup",
+          "item": "Maida (All-purpose flour)",
+          "note": null,
+          "raw": "Maida (All-purpose flour) 2 cups"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Sufi cooking oil",
+          "note": null,
+          "raw": "Sufi cooking oil 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Zeera (Cumin) roasted and crushed",
+          "note": null,
+          "raw": "Zeera (Cumin) roasted and crushed 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": null,
+          "raw": "Namak (Salt) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lal mirch (Red chili) powder",
+          "note": null,
+          "raw": "Lal mirch (Red chili) powder 1 tsp"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Turmeric (Haldee) powder",
+          "note": null,
+          "raw": "Turmeric (Haldee) powder ¼ tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Hara dhania (Fresh coriander)",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) 2 tbs"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Water",
+          "note": "or as required",
+          "raw": "Water ¼ cup or as required"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Sufi cooking oil as required",
+          "note": null,
+          "raw": "Sufi cooking oil as required"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In a bowl add boiled potatoes and mash them. The potatoes must be on room temperature.",
+      "romanUrdu": "Aek bowl main room temperature boiled aloo len aur unko mash karlen."
+    },
+    {
+      "instruction": "In the mashed potatoes add all-purpose flour, sufi cooking oil, roasted and crushed cumin, salt, red chili powder, turmeric powder and fresh coriander and kneed the puri dough while gradually adding water until firm dough is formed. Leave to rest for 15 minutes.",
+      "romanUrdu": "Ab mashed alu main maida, sufi cooking oil, roasted and crushed zeera, namak, lal mirch powder, haldee powder aur hara dhaniya aur thore se pani se dough bana len."
+    },
+    {
+      "instruction": "Grease dough with oil, cover the bowl with lid and leave the dough to rest for a few minutes.",
+      "romanUrdu": "Ab dough ko oil laga kar bowl ko lid se cover karke 15 minutes rest kar len."
+    },
+    {
+      "instruction": "Make small dough balls and rest for maximum 4-5 minutes and then roll them out. Make sure to keep the puri thicker from the center or it would not puff up.",
+      "romanUrdu": "Dough balls bana len aur unko 5 minutes rest karke poori roll out kar len. Poori ko centers se thick rakhen jese wo asani se puff up hojaye."
+    },
+    {
+      "instruction": "Now deep fry the puris in properly heated oil and while frying gently press them so that they may puff up.",
+      "romanUrdu": "Ab inko garam sufi cooking oil main deep fry kar len aur fry karte hue ladle se press karte rahen jese wo puff up hojayen."
+    },
+    {
+      "instruction": "Serve with your choice of sauces.",
+      "romanUrdu": "Apni pasand ki chatni k sath serve Karen."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2019/01/Aloo-puri-recipe-by-food-fusion3.jpg?v=1587764111",
+  "ogDescription": "Simply amazing aloo puri recipe to satisfy your cravings. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:40:45Z"
+}

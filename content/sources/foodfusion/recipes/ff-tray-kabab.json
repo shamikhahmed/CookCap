@@ -1,0 +1,169 @@
+{
+  "wpId": 4979,
+  "slug": "tray-kabab",
+  "id": "ff-tray-kabab",
+  "title": "Tray Kabab",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/tray-kabab/",
+  "date": "2018-01-16T15:13:08",
+  "modified": "2018-01-26T19:37:06",
+  "classList": [
+    "post-4979",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "tag-beef",
+    "tag-meat",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-mutton",
+    "recipe_category-1tommato",
+    "recipe_category-1baking",
+    "recipe_category-1-others",
+    "recipe_category-dish-type",
+    "recipe_category-kababs",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-beef",
+    "recipe_category-mutton",
+    "recipe_category-lunch-dinner",
+    "recipe_category-baked-lunch-dinner",
+    "recipe_category-occasions",
+    "recipe_category-2ramzan",
+    "recipe_category-bakra-eid",
+    "recipe_category-ramzan",
+    "recipe_category-iftar",
+    "recipe_category-seasonal",
+    "recipe_category-bakra-eid1",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2018/01/ID-R00526-Tray-kabab-recipe-by-food-fusion-3.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Kashmiri lal mirch (Kashmiri red chilies) soaked",
+          "note": null,
+          "raw": "Kashmiri lal mirch (Kashmiri red chilies) soaked 3-4"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Pyaz (Onion)",
+          "note": "medium",
+          "raw": "Pyaz (Onion) 2 medium"
+        },
+        {
+          "quantity": 5.0,
+          "unit": "",
+          "item": "Lehsan (Garlic) cloves",
+          "note": null,
+          "raw": "Lehsan (Garlic) cloves 5-6"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Hara pyaz (Green onion)",
+          "note": null,
+          "raw": "Hara pyaz (Green onion) ½ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "bunch",
+          "item": "Hara dhania (Fresh coriander)",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) 1 bunch"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Qeema (Mince) Beef or Mutton with fat",
+          "note": "/2 kg",
+          "raw": "Qeema (Mince) Beef or Mutton with fat 1/2 kg"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lal mirch (Red chili) crushed",
+          "note": null,
+          "raw": "Lal mirch (Red chili) crushed 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Kali mirch powder (Black pepper powder)",
+          "note": null,
+          "raw": "Kali mirch powder (Black pepper powder) 1 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Tomato paste",
+          "note": null,
+          "raw": "Tomato paste 2 tbs"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Tamatar (Tomatoes) slices",
+          "note": null,
+          "raw": "Tamatar (Tomatoes) slices"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Hari mirch (Green chilies) slices",
+          "note": null,
+          "raw": "Hari mirch (Green chilies) slices"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In chopper,add kashmiri red chilies,onion,garlic,green onion and fresh coriander,chop well & set aside.",
+      "romanUrdu": "Chopper mein kashmiri lal mirch,pyaz,lehsan,hara pyaz aur hara dhania dal ker ache tarhan chop ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "With the help of the cleaver,chop mince well.",
+      "romanUrdu": "Cleaver ki madad sa qeema ko ache tarhan chop ker lein."
+    },
+    {
+      "instruction": "Now add chopped onion mixture,mix & chop well with the help of the cleaver.",
+      "romanUrdu": "Ab chopped pyaz mixture dal dein aur cleaver ki madad sa ache tarhan mix & chop ker lein."
+    },
+    {
+      "instruction": "Add salt,red chili crushed,black pepper powder and tomato paste,mix and chop until well combined.",
+      "romanUrdu": "Namak,lal mirch crushed,kali mirch powder aur tomato paste dal dein aur ache tarhan mix aur chop ker lein."
+    },
+    {
+      "instruction": "Put the mixture in a baking tray and spread evenly then cut into desired pieces.",
+      "romanUrdu": "Baking tray per mixture dal ker pheela lein aur desired pieces mein cut ker lein."
+    },
+    {
+      "instruction": "Add tomato and green chili slices.",
+      "romanUrdu": "Tamatar aur hari mirch slices laga lein."
+    },
+    {
+      "instruction": "Bake at 200 C for 45-50 minutes (turn on grill after 20 minutes).",
+      "romanUrdu": "Preheated oven mein 200 per 45-50 minutes kliya bake ker lein (20 minutes ka bad grill on ker lein)."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/01/ID-R00526-Tray-kabab-recipe-by-food-fusion-3.jpg?v=1587765491",
+  "ogDescription": "A unique and tasty Tray Kabab recipe with our little touch of fusion. Blasting with flavor and texture. Tray Kebabs are probably one of the most famous Kebabs in Turkey. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:43:24Z"
+}

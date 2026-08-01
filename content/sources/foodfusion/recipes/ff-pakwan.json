@@ -1,0 +1,114 @@
+{
+  "wpId": 7399,
+  "slug": "pakwan",
+  "id": "ff-pakwan",
+  "title": "Pakwan",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/pakwan/",
+  "date": "2018-09-13T19:28:12",
+  "modified": "2018-09-15T19:21:13",
+  "classList": [
+    "post-7399",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-flour-atta",
+    "recipe_category-1-meal-type",
+    "recipe_category-breakfast-meal",
+    "recipe_category-ramazan",
+    "recipe_category-sehri",
+    "recipe_category-breakfast",
+    "recipe_category-desi-breakfast",
+    "recipe_category-everyday-cooking",
+    "recipe_category-occasions",
+    "recipe_category-2ramzan",
+    "recipe_category-ramzan",
+    "recipe_category-iftar",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "snacks",
+  "imageUrl": "https://media.foodfusion.com/2018/09/Pakwan-recipe-by-Food-fusion-3.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 2.0,
+          "unit": "cup",
+          "item": "Maida (All-purpose flour) sifted",
+          "note": null,
+          "raw": "Maida (All-purpose flour) sifted 2 Cups"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Sooji (Semolina)",
+          "note": null,
+          "raw": "Sooji (Semolina) 2 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Ghee",
+          "note": null,
+          "raw": "Ghee 2 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": null,
+          "raw": "Namak (Salt) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) ½ Cup or as required"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Cooking oil for frying",
+          "note": null,
+          "raw": "Cooking oil for frying"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In bowl,add all-purpose flour,semolina,ghee,salt and mix well.",
+      "romanUrdu": "Bowl mein maida,sooji,ghee aur namak dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Gradually add water and knead until firm dough is formed.",
+      "romanUrdu": "Thora thora ker ka pani shamil karein aur ghond ker firm dough tayyar ker lein."
+    },
+    {
+      "instruction": "Cover and let it rest for 15-20 minutes.",
+      "romanUrdu": "Dhak ker 15-20 minutes kliya rakh dein."
+    },
+    {
+      "instruction": "Grease hand with oil and knead dough again until smooth.",
+      "romanUrdu": "Haath ko oil sa grease karein aur dough ko smooth hunay tak dubara ghond lein."
+    },
+    {
+      "instruction": "Take a small dough and make a ball,sprinkle flour and roll out dough with the help of rolling pin & prick with fork (makes 7-8).",
+      "romanUrdu": "Chota dough lein aur ball bana lein,maida chirak ker rolling pin ki madad sa dough ko bail lein aur fork ki madad sa prick karein (makes 7-8)."
+    },
+    {
+      "instruction": "In wok,heat cooking oil and fry until golden & crispy.",
+      "romanUrdu": "Karhai mein cooking oil garam karein aur golden & crispy hunay tak fry ker lein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/09/Pakwan-recipe-by-Food-fusion-3.jpg?v=1587764562",
+  "ogDescription": "Home made Pakwan recipe. have it with halwa or have it with daal. #HappyCookingToYou #Daal #Pakwan",
+  "scrapedAt": "2026-08-01T14:39:57Z"
+}

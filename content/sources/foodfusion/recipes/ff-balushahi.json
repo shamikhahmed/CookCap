@@ -1,0 +1,204 @@
+{
+  "wpId": 5301,
+  "slug": "balushahi",
+  "id": "ff-balushahi",
+  "title": "Balushahi",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/balushahi/",
+  "date": "2018-02-20T19:19:39",
+  "modified": "2018-02-20T23:38:37",
+  "classList": [
+    "post-5301",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-flour-atta",
+    "recipe_category-yogurt",
+    "recipe_category-1-meal-type",
+    "recipe_category-1desserts-2",
+    "recipe_category-desi-desserts",
+    "recipe_category-desserts",
+    "recipe_category-dish-type",
+    "recipe_category-1desserts",
+    "recipe_category-everyday-cooking",
+    "recipe_category-lunch-dinner",
+    "recipe_category-occasions",
+    "recipe_category-bakra-eid",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_category-bakra-eid1",
+    "recipe_category-eid1",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2018/02/ID-R00563-Bhalushahi-recipe-by-food-fusion-4.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": "Prepare Sugar Surup (Sheera)",
+      "items": [
+        {
+          "quantity": 2.0,
+          "unit": "cup",
+          "item": "Cheeni (Sugar)",
+          "note": "or to taste",
+          "raw": "Cheeni (Sugar) 2 Cups or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": null,
+          "raw": "Pani (Water) 1 Cup"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Lemon juice few drops",
+          "note": null,
+          "raw": "Lemon juice few drops"
+        }
+      ]
+    },
+    {
+      "heading": "Prepare Dough",
+      "items": [
+        {
+          "quantity": 1.5,
+          "unit": "cup",
+          "item": "Maida (All-purpose flour) sifted",
+          "note": null,
+          "raw": "Maida (All-purpose flour) sifted 1 & ½ Cups"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Baking soda",
+          "note": null,
+          "raw": "Baking soda ¼ tsp"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Jaifil powder (Nutmeg powder)",
+          "note": null,
+          "raw": "Jaifil powder (Nutmeg powder) ¼ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Elaichi powder (Cardamom powder)",
+          "note": null,
+          "raw": "Elaichi powder (Cardamom powder) ½ tsp"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": null,
+          "raw": "Namak (Salt) ¼ tsp"
+        },
+        {
+          "quantity": 2.5,
+          "unit": "tbsp",
+          "item": "Ghee melted",
+          "note": null,
+          "raw": "Ghee melted 2 & ½ tbs"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Dahi (Yogurt) whisked",
+          "note": "(room temperature)",
+          "raw": "Dahi (Yogurt) whisked 3 tbs (room temperature)"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) ¼ Cup or as required"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Ghee for frying",
+          "note": null,
+          "raw": "Ghee for frying"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Pista (Pistachio) for garnishing",
+          "note": null,
+          "raw": "Pista (Pistachio) for garnishing"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In saucepan,add sugar and water,mix well and cook on low flame until sugar is dissolved and continue cook until syrup becomes thick.",
+      "romanUrdu": "Saucepan mein cheeni aur pani dal ker ache tarhan mix karein aur halki ancch per cheeni dissolves ho janay aur sheera garha hunay tak paka lein."
+    },
+    {
+      "instruction": "Add lemon juice,mix well & set aside.",
+      "romanUrdu": "Lemon juice dal ker ache tarhan mix karein & side per rakh dein."
+    },
+    {
+      "instruction": "Sugar syrup (sheera) is ready!",
+      "romanUrdu": "Sheera (sugar syrup) tayyar hai!"
+    },
+    {
+      "instruction": "In bowl,place sifter,add all-purpose flour,baking soda and sift together.",
+      "romanUrdu": "Bowl mein sifter rakh dein,maida aur baking soda dal ker ek saath sift ker lein."
+    },
+    {
+      "instruction": "Add nutmeg powder,cardamom powder,salt and mix well.",
+      "romanUrdu": "Jaifil powder,elaichi powder aur namak dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add ghee and mix well.",
+      "romanUrdu": "Ghee dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add yogurt and mix well until crumbled.",
+      "romanUrdu": "Dahi shamil karein aur crumbled hunay tak ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Gradually add water and mix until combined (don’t over knead),cover and let it rest for 15 minutes.",
+      "romanUrdu": "Thora thora ker ka pani shamil karein aur ache tarhan mix ker lein (don’t over knead) aur dhak ker 15 minutes kliya rakh dein."
+    },
+    {
+      "instruction": "Grease hands and working surface with oil and flatten the dough & roll it.",
+      "romanUrdu": "Haathon aur working surface ko oil sa grease karein aur dough ko flat ker lein phir roll ker lein."
+    },
+    {
+      "instruction": "Cut the dough with the help of the cutter.",
+      "romanUrdu": "Cutter ki madad sa dough ko cut ker lein."
+    },
+    {
+      "instruction": "Take a small dough,make a ball and with the help of the thumb press from the center.",
+      "romanUrdu": "Chota dough lein aur ball bana lein aur thumb ki madad sa center ko press ker lein."
+    },
+    {
+      "instruction": "In wok,add ghee and let it melt,fry dough on low flame for 20-25 minutes.",
+      "romanUrdu": "Karhai mein ghee garam karein aur dough ko halki ancch per 20-25 minutes kliya fry ker lein."
+    },
+    {
+      "instruction": "After frying,add bhalo shahi in warm sugar syrup (sheera) and leave them for 10-15 minutes and take out in a serving plate.",
+      "romanUrdu": "Frying ka bad bhalo shahi ko warm sheera mein 10-15 minutes kliya dal dein aur serving plate mein nikal lein."
+    },
+    {
+      "instruction": "Garnish with pistachio & serve.",
+      "romanUrdu": "Pista sa garnish ker ka serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/02/ID-R00563-Bhalushahi-recipe-by-food-fusion-4.jpg?v=1587765368",
+  "ogDescription": "The perfect Homemade Balushahi recipe for you. Make it and impress everyone. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:40:48Z"
+}

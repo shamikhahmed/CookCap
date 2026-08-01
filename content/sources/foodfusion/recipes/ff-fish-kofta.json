@@ -1,0 +1,293 @@
+{
+  "wpId": 7315,
+  "slug": "fish-kofta",
+  "id": "ff-fish-kofta",
+  "title": "Fish Kofta",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/fish-kofta/",
+  "date": "2018-09-12T19:03:13",
+  "modified": "2018-09-15T19:43:38",
+  "classList": [
+    "post-7315",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "tag-fish",
+    "tag-meat",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-fish",
+    "recipe_category-1-meal-type",
+    "recipe_category-dish-type",
+    "recipe_category-salanscurrys",
+    "recipe_category-ingredient",
+    "recipe_category-sea-food",
+    "recipe_category-lunch-dinner",
+    "recipe_category-gravys",
+    "recipe_category-seasonal",
+    "recipe_category-winter",
+    "recipe_behind_camera-shahnazshahid"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2018/09/Fish-Kofta-Recipe-by-Food-fusion-5.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Boiling water as required",
+          "note": null,
+          "raw": "Boiling water as required"
+        },
+        {
+          "quantity": 500.0,
+          "unit": "",
+          "item": "Fresh water fish",
+          "note": "gms",
+          "raw": "Fresh water fish 500 gms"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Pyaz (Onion) chopped",
+          "note": null,
+          "raw": "Pyaz (Onion) chopped ¼ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Hari mirch (Green chilies) chopped",
+          "note": null,
+          "raw": "Hari mirch (Green chilies) chopped 1-2"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Baisan (Gram flour) roasted",
+          "note": null,
+          "raw": "Baisan (Gram flour) roasted 2 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chili powder) ½ tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldee powder (Turmeric powder) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tbsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) ½ tbs"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Ajwain (Carom seeds)",
+          "note": null,
+          "raw": "Ajwain (Carom seeds) ¼ tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) chopped 2-3 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Anda (Egg)",
+          "note": null,
+          "raw": "Anda (Egg) 1"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Cooking oil for frying",
+          "note": null,
+          "raw": "Cooking oil for frying"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil 2 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Hari elaichi (Green cardamom)",
+          "note": null,
+          "raw": "Hari elaichi (Green cardamom) 2"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Laung (Cloves)",
+          "note": null,
+          "raw": "Laung (Cloves) 2-3"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Darchini (Cinnamon stick)",
+          "note": null,
+          "raw": "Darchini (Cinnamon stick) 2"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pyaz (Onion) grinded",
+          "note": "large",
+          "raw": "Pyaz (Onion) grinded 1 large"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Tamatar (Tomatoes) grinded",
+          "note": "large",
+          "raw": "Tamatar (Tomatoes) grinded 2-3 large"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldee powder (Turmeric powder) ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chili powder) 1 tsp or to taste"
+        },
+        {
+          "quantity": 8.0,
+          "unit": "",
+          "item": "Badam (Almonds) grinded",
+          "note": "with 1 tbs water",
+          "raw": "Badam (Almonds) grinded 8-10 with 1-2 tbs water"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": "or",
+          "raw": "Pani (Water) 1 & ½ Cups or"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Hari mirch (Green chilies) chopped",
+          "note": null,
+          "raw": "Hari mirch (Green chilies) chopped 1-2"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) chopped"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In boiling water,place strainer,add fresh water fish and boil for 3-4 minutes then strain & let it cool.",
+      "romanUrdu": "Boiling pan mein strainer rakh dein aur machi dal ker 3-4 miutes kliya boil ker lein phir strain ker ka thanda ker lein."
+    },
+    {
+      "instruction": "Remove fish bones & set aside the remaining fish meat in a bowl.",
+      "romanUrdu": "Fish bones ko nikal lein aur ek bowl mein machli ka meat ko dal dein."
+    },
+    {
+      "instruction": "Add onion,green chili,gram flour,salt,red chili powder,turmeric powder,ginger garlic paste,carom seeds, fresh coriander,egg and mix until well combined.",
+      "romanUrdu": "Pyaz,hari mirch,baisan,namak,lal mirch powder,haldee powder,adrak lehsan paste,ajwain,hara dhania aur anda dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Take a mixture and makes fish koftay of equal sizes (makes 12).",
+      "romanUrdu": "Mixture ko lein aur ek jaisay sizes ka fish ka koftay tayyar ker lein (makes 12)."
+    },
+    {
+      "instruction": "In wok,heat cooking oil and fry koftay and fry until golden.",
+      "romanUrdu": "Karhai mein cooking oil garam karein aur fish kofton ko golden hunay tak fry ker lein."
+    },
+    {
+      "instruction": "In pot,add cooking oil,green cardamom,cloves,cinnamon sticks and mix.",
+      "romanUrdu": "Pot mein cooking oil,hari elaichi,laung aur darchini dal ker mix ker lein."
+    },
+    {
+      "instruction": "Add onion,mix well and cook until light brown.",
+      "romanUrdu": "Pyaz dal ker ache tarhan mix karein aur light brown hunay tak fry ker lein."
+    },
+    {
+      "instruction": "Add tomatoes and mix well.",
+      "romanUrdu": "Tamatar dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add ginger garlic paste and mix well.",
+      "romanUrdu": "Adrak lehsan paste dal ker mix karein."
+    },
+    {
+      "instruction": "Add salt,turmeric powder,red chili powder and mix well for 2-3 minutes.",
+      "romanUrdu": "Namak,haldee powder aur lal mirch powder dal ker 2-3 minutes kliya ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add grinded almond and mix well.",
+      "romanUrdu": "Grinded badam dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add water,mix well and bring it to boil.",
+      "romanUrdu": "Pani shamil karein aur ubal anay dein."
+    },
+    {
+      "instruction": "Now add fried fish koftay and mix gently.",
+      "romanUrdu": "Fried fish ka koftay dal ker gently mix ker lein."
+    },
+    {
+      "instruction": "Add green chili and fresh coriander,cover and cook on low flame for 2-3 minutes & serve!",
+      "romanUrdu": "Hari mirch aur hara dhania dal ker dhak dein aur halki ancch per 2-3 minutes kliya paka lein aur serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/09/Fish-Kofta-Recipe-by-Food-fusion-5.jpg?v=1587764594",
+  "ogDescription": "Make the perfect Fish Kofta at home and impress everyone. #HappyCookingToYou #Fish #FoodFusion",
+  "scrapedAt": "2026-08-01T14:42:02Z"
+}

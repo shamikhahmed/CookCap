@@ -1,0 +1,322 @@
+{
+  "wpId": 4927,
+  "slug": "mini-pizza",
+  "id": "ff-mini-pizza",
+  "title": "Mini Pizza",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/mini-pizza/",
+  "date": "2018-01-09T17:22:38",
+  "modified": "2018-04-19T21:01:55",
+  "classList": [
+    "post-4927",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "tag-food-fusion-kids",
+    "recipe_partner-food-fusion-kids",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-vegetable",
+    "recipe_category-flour-atta",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-1baking",
+    "recipe_category-1-pizzas",
+    "recipe_category-appetizers-snacks",
+    "recipe_category-dish-type",
+    "recipe_category-pizzas",
+    "recipe_category-baked",
+    "recipe_category-kids-menu",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-chicken",
+    "recipe_category-vegetables",
+    "recipe_category-lunch-dinner",
+    "recipe_category-pizza",
+    "recipe_category-occasions",
+    "recipe_category-birthday",
+    "recipe_category-national-holidays",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_category-eid1",
+    "recipe_category-summer",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2018/01/ID-R00519-Mini-Pizza-Recipe-By-Food-Fusion-Kids-5.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": "Prepare Pizza Dough",
+      "items": [
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Khameer (Instant yeast)",
+          "note": null,
+          "raw": "Khameer (Instant yeast) 1 & ½ tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tsp",
+          "item": "Cheeni (Sugar)",
+          "note": null,
+          "raw": "Cheeni (Sugar) 2 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Pani (Water) warm",
+          "note": null,
+          "raw": "Pani (Water) warm 1 Cup"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "cup",
+          "item": "Maida (All-purpose flour)",
+          "note": null,
+          "raw": "Maida (All-purpose flour) 3 Cups"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": null,
+          "raw": "Namak (Salt) ½ tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Oil",
+          "note": null,
+          "raw": "Oil 2 tbs"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Pani (Water) warm",
+          "note": "or as required",
+          "raw": "Pani (Water) warm ¼ Cup or as required"
+        }
+      ]
+    },
+    {
+      "heading": "Prepare Chicken",
+      "items": [
+        {
+          "quantity": 1.5,
+          "unit": "cup",
+          "item": "Chicken boneless cubes",
+          "note": null,
+          "raw": "Chicken boneless cubes 1 & ½ Cups"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Dahi (Yogurt) whisked",
+          "note": null,
+          "raw": "Dahi (Yogurt) whisked 2-3 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Lemon juice",
+          "note": null,
+          "raw": "Lemon juice 1 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chili powder) ½ tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Dhania powder (Coriander powder)",
+          "note": null,
+          "raw": "Dhania powder (Coriander powder) 1 tsp"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Garam masala powder",
+          "note": null,
+          "raw": "Garam masala powder ¼ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldee powder (Turmeric powder) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Kali mirch powder (Black pepper powder)",
+          "note": null,
+          "raw": "Kali mirch powder (Black pepper powder) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tsp or to taste"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Oil",
+          "note": null,
+          "raw": "Oil 2 tbs"
+        }
+      ]
+    },
+    {
+      "heading": "Assembling",
+      "items": [
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Pizza sauce",
+          "note": null,
+          "raw": "Pizza sauce"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Cooked chicken",
+          "note": null,
+          "raw": "Cooked chicken"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Pyaz (Onion) slices",
+          "note": null,
+          "raw": "Pyaz (Onion) slices"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Cheddar cheese grated",
+          "note": null,
+          "raw": "Cheddar cheese grated"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Shimla mirch (Capsicum) slices",
+          "note": null,
+          "raw": "Shimla mirch (Capsicum) slices"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Mozzarella cheese gated",
+          "note": null,
+          "raw": "Mozzarella cheese gated"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Black olives",
+          "note": null,
+          "raw": "Black olives"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Dried oregano",
+          "note": null,
+          "raw": "Dried oregano"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In small jug,add instant yeast,sugar,warm water and mix well,cover and let it rest for 15 minutes.",
+      "romanUrdu": "Chotay jug mein khameer,cheeni aur neem garam pani dal ker ache tarhan mix karein aur dhak ker 15 minutes kliya rakh dein."
+    },
+    {
+      "instruction": "In all-purpose flour,add salt,oil and mix well.",
+      "romanUrdu": "Maida mein namak aur oil dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Now add yeast mixture and mix well.",
+      "romanUrdu": "Ab khameer ka mixture dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Gradually add warm water and knead until dough is formed,cover and let it rest for 2-3 hours.",
+      "romanUrdu": "Thora thora ker ka neem garam pani shamil karein aur ghond ker dough tayyar ker lein aur dhak ker 2-3 hours kliya rakh dein."
+    },
+    {
+      "instruction": "Grease your hands with oil and knead dough again until smooth.Dough is ready.",
+      "romanUrdu": "Haathon ko oil sa grease karein aur dough ko smooth hunay tak dubara ghond lein.Dough tayyar hai."
+    },
+    {
+      "instruction": "In chicken boneless cubes,add yogurt,ginger garlic paste,lemon juice,red chili powder,coriander powder,garam masala powder,turmeric powder,black pepper powder and salt,mix well and marinate for 30 minutes.",
+      "romanUrdu": "Chicken boneless mein dahi,adrak lehsan paste,lemon juice,lal mirch powder,dhania powder,garam masala powder,haldee powder,kali mirch powder aur namak dal ker ache tarhan mix karein aur 30 minutes kliya marinate ker lein."
+    },
+    {
+      "instruction": "In frying pan,add oil and marinated chicken and mix well.",
+      "romanUrdu": "Frying pan mein oil aur marinated chicken dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Cover and cook on low flame for 8-10 minutes then cook on high flame until its dry.",
+      "romanUrdu": "Dhak dein aur halki ancch per 8-10 minutes kliya paka lein phir tez ancch per pani sukh janay tak paka lein."
+    },
+    {
+      "instruction": "You can use leftover chicken or chicken chunks.",
+      "romanUrdu": "Leftover chicken or chcekn chunks bhi use ker saktay han."
+    },
+    {
+      "instruction": "Take a small dough and make a ball,on pizza tray,spinkle flour and press to make a flat dough and prick with fork.",
+      "romanUrdu": "Chota dough lein aur ball bana lein,pizza pan mein maida chirak dein aur dough ko press ker ka flat ker lein aur fork ki madad sa prick ker lein."
+    },
+    {
+      "instruction": "Spread pizza sauce,add cooked chicken,onion,cheddar cheese,capsicum,mozzarella cheese,black olives and dried oregano.",
+      "romanUrdu": "Pizza sauce dal ker pheela lein,cooked chicken,pyaz,cheddar cheese,shimla mirch,mozzarella cheese, black olives aur dried oregano dal dein."
+    },
+    {
+      "instruction": "Cover and can be freeze for up to 1 week then thaw before baking (makes 6-7 mini pizzas).",
+      "romanUrdu": "Dhak dein aur 1 week kliya freeze ker saktay han phir thaw ker ka bake karein (makes 6-7 mini pizzas)."
+    },
+    {
+      "instruction": "Option no.1: Without Oven:",
+      "romanUrdu": "Option no.1: Without Oven:"
+    },
+    {
+      "instruction": "In pot,add 1 pack of salt and preheat it for 10 minutes.",
+      "romanUrdu": "Pot mein 1 pack namak dal dein aur 10 minutes kliya preheat ker lein."
+    },
+    {
+      "instruction": "Place pizza,cover and let it cook on medium low flame for 15-20 minutes or until cheese melts.",
+      "romanUrdu": "Pizza rakh dein aur dhak ker halki darmiyani ancch per 15-20 minutes ya cheese melt hunay tak paka lein."
+    },
+    {
+      "instruction": "Option no.2: Baking in Oven:",
+      "romanUrdu": "Option no.2: Baking in Oven:"
+    },
+    {
+      "instruction": "Bake in preheated oven at 180 C for 20-25 minutes.",
+      "romanUrdu": "Preheated oven mein 180 C per 20-25 minutes kliya bake ker lein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/01/ID-R00519-Mini-Pizza-Recipe-By-Food-Fusion-Kids-5.jpg?v=1587765509",
+  "ogDescription": "There is nothing like satisfaction of homemade food. Try this Mini Pizza Recipe for your kids. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:42:57Z"
+}

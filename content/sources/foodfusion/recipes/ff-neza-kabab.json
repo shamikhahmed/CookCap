@@ -1,0 +1,324 @@
+{
+  "wpId": 3862,
+  "slug": "neza-kabab",
+  "id": "ff-neza-kabab",
+  "title": "Neza Kabab",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/neza-kabab/",
+  "date": "2017-10-04T17:56:54",
+  "modified": "2017-10-08T20:09:01",
+  "classList": [
+    "post-3862",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "tag-beef",
+    "tag-cream",
+    "tag-meat",
+    "tag-yogurt",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-cream",
+    "recipe_category-yogurt",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-ramazan",
+    "recipe_category-2iftar",
+    "recipe_category-dinner",
+    "recipe_category-bbq",
+    "recipe_category-bbq-kababs",
+    "recipe_category-dish-type",
+    "recipe_category-kababs",
+    "recipe_category-salanscurrys",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-beef",
+    "recipe_category-lunch-dinner",
+    "recipe_category-gravys",
+    "recipe_category-occasions",
+    "recipe_category-bakra-eid",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_category-bakra-eid1",
+    "recipe_category-eid1",
+    "recipe_behind_camera-uzma-fakhar"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2017/09/ID-R00419-4.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": "Kebabs",
+      "items": [
+        {
+          "quantity": 0.5,
+          "unit": "kg",
+          "item": "Beef qeema (Beef mince)",
+          "note": null,
+          "raw": "Beef qeema (Beef mince) ½ kg"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldee powder (Turmeric powder) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chili powder) 1 tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tsp",
+          "item": "Lehsan (Garlic) chopped",
+          "note": null,
+          "raw": "Lehsan (Garlic) chopped 2 tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tsp",
+          "item": "Adrak (Ginger) chopped",
+          "note": null,
+          "raw": "Adrak (Ginger) chopped 2 tsp"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Pyaz (Onion) chopped",
+          "note": null,
+          "raw": "Pyaz (Onion) chopped 3 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Hari mirch (Green chili)",
+          "note": null,
+          "raw": "Hari mirch (Green chili) ½ tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) chopped 2 tbs"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tsp",
+          "item": "Makhan (Butter)",
+          "note": null,
+          "raw": "Makhan (Butter) 3 tsp"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Oil for frying",
+          "note": null,
+          "raw": "Oil for frying"
+        }
+      ]
+    },
+    {
+      "heading": "Curry",
+      "items": [
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Hari mirch (Green chilies)",
+          "note": null,
+          "raw": "Hari mirch (Green chilies) 2"
+        },
+        {
+          "quantity": 4.0,
+          "unit": "tbsp",
+          "item": "Dahi (Yogurt)",
+          "note": null,
+          "raw": "Dahi (Yogurt) 4 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Hara dhania (Fresh coriander)",
+          "note": null,
+          "raw": "Hara dhania (Fresh coriander) 1 Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Podina (Mint leaves)",
+          "note": null,
+          "raw": "Podina (Mint leaves) ½ Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Oil",
+          "note": null,
+          "raw": "Oil ½ Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Adrak (Ginger) chopped",
+          "note": null,
+          "raw": "Adrak (Ginger) chopped ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Lehsan (Garlic) chopped",
+          "note": null,
+          "raw": "Lehsan (Garlic) chopped 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Zeera (Cumin seeds) crushed",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) crushed 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Hari mirch (Green chilies) julienne",
+          "note": null,
+          "raw": "Hari mirch (Green chilies) julienne 1"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "inch",
+          "item": "Adrak (Ginger) julienne",
+          "note": "piece",
+          "raw": "Adrak (Ginger) julienne ½ inch piece"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Pyaz (Onion) grinded",
+          "note": null,
+          "raw": "Pyaz (Onion) grinded ½ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Dahi (Yogurt) whisked",
+          "note": null,
+          "raw": "Dahi (Yogurt) whisked 1 Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) 1 tbs or as required"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) 3 tbs or as required"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Koyla (Charcoal) for smoke",
+          "note": null,
+          "raw": "Koyla (Charcoal) for smoke"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Cream for garnishing",
+          "note": null,
+          "raw": "Cream for garnishing"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In beef mince,add turmeric powder,red chili powder,salt,garlic,ginger,onion,green chili,fresh coriander, butter and mix well,cover and let it marinate for 15-20 minutes in freezer.",
+      "romanUrdu": "Beef qeema mein haldee powder,lal mirch powder,namak,lehsan,adrak,pyaz,hari mirch,hara dhania aur makhan dal ker ache tarhan mix karein aur dhak ker 15-20 minutes kliya freezer mein rakh dein."
+    },
+    {
+      "instruction": "Take a mixture and make 15 kebabs of equal sizes.",
+      "romanUrdu": "Mixture ka ek jaisay size ka 15 kebabs bana lein."
+    },
+    {
+      "instruction": "In frying pan,heat oil and fry kebabs until brown & set aside.",
+      "romanUrdu": "Frying pan mein oil garam karein aur kebab ko brown hunay tak fry ker lein aur side per rakh dein."
+    },
+    {
+      "instruction": "In blender,add green chilies,yogurt,fresh coriander and mint leaves,blend to form a paste and set aside.",
+      "romanUrdu": "Blender mein hari mirchein,dahi,hara dhania aur podina dal dein aur blend ker ka paste tayyar ker lein aur side per rakh dein."
+    },
+    {
+      "instruction": "In pot,add oil,ginger garlic,cumin seeds and mix well.",
+      "romanUrdu": "Pot mein oil,adrak,lehsan aur zeera dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add green chili,ginger and mix well.",
+      "romanUrdu": "Hari mirch aur adrak dal ker mix ker lein."
+    },
+    {
+      "instruction": "Add onion,mix well and cook for 2 minutes.",
+      "romanUrdu": "Pyaz dal ker ache tarhan mix karein aur 2 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add salt,mix well and cook until light brown.",
+      "romanUrdu": "Namak dal ker mix karein aur light brown hunay tak paka lein."
+    },
+    {
+      "instruction": "Add yogurt,mix well and cook on high flame for 4-5 minutes.",
+      "romanUrdu": "Dahi dal ker ache tarhan mix karein aur tez ancch per 4-5 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add blended green paste and mix well.",
+      "romanUrdu": "Blended green paste dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add water,mix well and cook for 2-3 minutes.",
+      "romanUrdu": "Pani dal ker mix karein aur 2-3 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add fried kebabs and stir gently.",
+      "romanUrdu": "Fried kebabs dal ker gently stir ker lein."
+    },
+    {
+      "instruction": "Add water and mix,cover and cook for 2-3 minutes.",
+      "romanUrdu": "Pani dal ker mix karein aur dhak ker 2-3 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Give a coal smoke for 2 minutes.",
+      "romanUrdu": "2 minutes kliya koyla ka dhuwan dein."
+    },
+    {
+      "instruction": "Garnish with cream & serve.",
+      "romanUrdu": "Cream sa garnish ker ka serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2017/09/ID-R00419-4.jpg?v=1587765866",
+  "ogDescription": "Amazing Neza kebab recipe. It will surely leave your mouth watering and craving for more. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:43:02Z"
+}

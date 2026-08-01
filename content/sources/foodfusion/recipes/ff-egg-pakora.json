@@ -1,0 +1,223 @@
+{
+  "wpId": 13066,
+  "slug": "egg-pakora",
+  "id": "ff-egg-pakora",
+  "title": "Egg Pakora",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/egg-pakora/",
+  "date": "2020-04-30T21:30:00",
+  "modified": "2020-05-03T16:47:47",
+  "classList": [
+    "post-13066",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-eggs",
+    "recipe_category-flour-atta",
+    "recipe_category-1-eggs-1breakfast",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-dish-type",
+    "recipe_category-fried-items",
+    "recipe_category-eggs-2",
+    "recipe_category-everyday-cooking",
+    "recipe_category-egg",
+    "recipe_category-lunch-dinner",
+    "recipe_category-occasions",
+    "recipe_category-national-holidays",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2020/01/Egg-pakora-Recipe-by-Food-fusion-1.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 6.0,
+          "unit": "",
+          "item": "Anday (Eggs)",
+          "note": "boiled",
+          "raw": "Anday (Eggs) 6 boiled"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Kali mirch (Black pepper) powder",
+          "note": null,
+          "raw": "Kali mirch (Black pepper) powder ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Hari mirch (Green chilli) crushed",
+          "note": null,
+          "raw": "Hari mirch (Green chilli) crushed 1 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Cheddar cheese grated",
+          "note": null,
+          "raw": "Cheddar cheese grated ½ Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Mozzarella cheese grated",
+          "note": null,
+          "raw": "Mozzarella cheese grated ½ Cup"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "cup",
+          "item": "Baisan (Gram flour) sifted",
+          "note": null,
+          "raw": "Baisan (Gram flour) sifted 1 & ½ Cup"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Lal mirch powder (Red chilli powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chilli powder) 1 & ½ tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Zeera (Cumin seeds) roasted & crushed",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) roasted & crushed 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Baking soda",
+          "note": null,
+          "raw": "Baking soda ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldee powder (Turmeric powder) ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Chaat masala",
+          "note": null,
+          "raw": "Chaat masala 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Garam masala powder",
+          "note": null,
+          "raw": "Garam masala powder ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Ajwain (Carom seeds)",
+          "note": null,
+          "raw": "Ajwain (Carom seeds) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "pinch",
+          "item": "Yellow food color",
+          "note": null,
+          "raw": "Yellow food color 1 pinch"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Adrak lehsan paste (Ginger garlic paste)",
+          "note": null,
+          "raw": "Adrak lehsan paste (Ginger garlic paste) 1 & ½ tsp"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Water",
+          "note": "/4 Cup or as required",
+          "raw": "Water 3/4 Cup or as required"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Cooking oil for frying",
+          "note": null,
+          "raw": "Cooking oil for frying"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Chaat masala",
+          "note": null,
+          "raw": "Chaat masala"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In a bowl,add eggs & mash well.",
+      "romanUrdu": "Bowl mein anday dal ker ache tarhan mash ker lein."
+    },
+    {
+      "instruction": "Add salt,black pepper powder,green chilli,cheddar cheese,mozzarella cheese,mash well & set aside.",
+      "romanUrdu": "Namak,kali mirch powder,hari mirch,cheddar cheese aur mozzarella cheese dal ker ache tarhan mash karein & side per rakh dein."
+    },
+    {
+      "instruction": "In a bowl,add gram flour,red chilli powder,salt,cumin seeds,baking soda,turmeric powder,chaat masala, garam masala powder,carom seeds,yellow food color and ginger garlic paste.",
+      "romanUrdu": "Bowl mein baisan,lal mirch powder,namak,zeera,baking soda,halee powder,chaat masala,garam masala powder,ajwain,yellow food color aur adrak lehsan paste dal dein."
+    },
+    {
+      "instruction": "Gradually add water and whisk well until thick batter is formed.",
+      "romanUrdu": "Thora thora ker pani shamil karein aur thick batter bannay tak ache tarhan whisk ker lein."
+    },
+    {
+      "instruction": "Cover & let it rest for 15 minutes.",
+      "romanUrdu": "Dhak dein aur 15 minutes kliya rakh dein."
+    },
+    {
+      "instruction": "Take a mixture and make balls of equal sizes then dip into prepared batter.",
+      "romanUrdu": "Mixture ko lein aur ek jaisay sizes ki balls tayyar ker lein phir tayyar batter mein dip ker lein."
+    },
+    {
+      "instruction": "In a wok,add cooking oil,heat it and fry egg pakora on medium flame until golden brown.",
+      "romanUrdu": "Karhai mein cooking oil dal ker garam karein aur egg pakora ko darmiyani ancch per golden brown hunay tak fry ker lein."
+    },
+    {
+      "instruction": "Sprinkle chaat masala & serve with green chutney.",
+      "romanUrdu": "Chaat masala dal ker hari chutney ka saath serve karein!"
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2020/01/Egg-pakora-Recipe-by-Food-fusion-1.jpg?v=1587762699",
+  "ogDescription": "Mouth watering egg pakora recipe by food fusion #HappyCookingToYou #RamzanRecipe",
+  "scrapedAt": "2026-08-01T14:41:58Z"
+}

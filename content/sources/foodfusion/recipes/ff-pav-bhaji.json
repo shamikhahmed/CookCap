@@ -1,0 +1,362 @@
+{
+  "wpId": 7766,
+  "slug": "pav-bhaji",
+  "id": "ff-pav-bhaji",
+  "title": "Pav Bhaji",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/pav-bhaji/",
+  "date": "2018-11-24T12:18:47",
+  "modified": "2018-11-24T12:24:55",
+  "classList": [
+    "post-7766",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-vegetable",
+    "recipe_category-potato",
+    "recipe_category-1tommato",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-dish-type",
+    "recipe_category-1-vegetable",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-vegetables",
+    "recipe_category-lunch-dinner",
+    "recipe_category-gravys",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2018/10/Pav-Bhaji-Recipe-by-Food-fusion-4.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": "Pao bhaji Masala",
+      "items": [
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Badiyan ka phool (Star anise)",
+          "note": null,
+          "raw": "Badiyan ka phool (Star anise) 1"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Badi elaichi (Black cardamom)",
+          "note": null,
+          "raw": "Badi elaichi (Black cardamom) 1"
+        },
+        {
+          "quantity": 8.0,
+          "unit": "",
+          "item": "Laung (Cloves)",
+          "note": null,
+          "raw": "Laung (Cloves) 8-10"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Darchini (Cinnamon stick)",
+          "note": null,
+          "raw": "Darchini (Cinnamon stick) 1"
+        },
+        {
+          "quantity": 5.0,
+          "unit": "",
+          "item": "Sabut lal mirch (Button red chilies)",
+          "note": null,
+          "raw": "Sabut lal mirch (Button red chilies) 5-6"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Sabut kali mirch (Black peppercorns)",
+          "note": null,
+          "raw": "Sabut kali mirch (Black peppercorns) 1 tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Sabut dhania (Coriander seeds)",
+          "note": null,
+          "raw": "Sabut dhania (Coriander seeds) 2 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Zeera (Cumin seeds)",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) 2 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tbsp",
+          "item": "Saunf (Fennels seeds)",
+          "note": null,
+          "raw": "Saunf (Fennels seeds) ½ tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "pc",
+          "item": "Jaifil (Nutmeg)",
+          "note": null,
+          "raw": "Jaifil (Nutmeg) ½ piece"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "pc",
+          "item": "Javatri (Mace)",
+          "note": null,
+          "raw": "Javatri (Mace) 1 piece"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tsp",
+          "item": "Kala namak (Black salt)",
+          "note": null,
+          "raw": "Kala namak (Black salt) 2 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldee powder (Turmeric powder) 1 tsp"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tbsp",
+          "item": "Aamchor powder (Dried mango powder)",
+          "note": null,
+          "raw": "Aamchor powder (Dried mango powder) 1 & ½ tbs"
+        },
+        {
+          "quantity": 6.0,
+          "unit": "cloves",
+          "item": "Lehsan (Garlic)",
+          "note": null,
+          "raw": "Lehsan (Garlic) 6-7 cloves"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "inch",
+          "item": "Adrak (Ginger)",
+          "note": "piece",
+          "raw": "Adrak (Ginger) 1 inch piece"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Kashmiri lal mirch (Kashmiri red chilies) soaked",
+          "note": null,
+          "raw": "Kashmiri lal mirch (Kashmiri red chilies) soaked 2"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) 2 tbs or as required"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Phool gobhi (Cauliflower) chopped",
+          "note": null,
+          "raw": "Phool gobhi (Cauliflower) chopped ½ Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Matar (Peas)",
+          "note": null,
+          "raw": "Matar (Peas) ½ Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Shimla mirch (Capsicum) chopped",
+          "note": null,
+          "raw": "Shimla mirch (Capsicum) chopped ½ Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Gajar (Carrots) chopped",
+          "note": null,
+          "raw": "Gajar (Carrots) chopped ½ Cup"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Tamatar (Tomatoes) chopped",
+          "note": "medium",
+          "raw": "Tamatar (Tomatoes) chopped 3 medium"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) 1 & ½ Cups or as required"
+        },
+        {
+          "quantity": 250.0,
+          "unit": "",
+          "item": "Aloo (Potatoes) boiled & cubes",
+          "note": "gms",
+          "raw": "Aloo (Potatoes) boiled & cubes 250 gms"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 tsp or to taste"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Prepared pao bhaji spice mix to taste",
+          "note": null,
+          "raw": "Prepared pao bhaji spice mix to taste"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Makhan (Butter)",
+          "note": null,
+          "raw": "Makhan (Butter) 2 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil 1 tbs"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Makhan (Butter)",
+          "note": null,
+          "raw": "Makhan (Butter) 3-4 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Zeera (Cumin seeds)",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pyaz (Onion) chopped",
+          "note": "medium",
+          "raw": "Pyaz (Onion) chopped 1 medium"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Prepared pao bhaji spice mix or to taste",
+          "note": null,
+          "raw": "Prepared pao bhaji spice mix or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Kasuri meethi (Dried fenugreek leaves)",
+          "note": null,
+          "raw": "Kasuri meethi (Dried fenugreek leaves) 1 tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Lemon juice",
+          "note": null,
+          "raw": "Lemon juice 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Makhan (Butter)",
+          "note": null,
+          "raw": "Makhan (Butter) 1 tbs"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In frying pan,add star anise,black cardamom,cloves,cinnamon stick,button red chilies,black peppercorns,coriander seeds,cumin seeds,fennel seeds,nutmeg,mace and roast until fragrant & let it cool.",
+      "romanUrdu": "Frying pan mein badiyan ka phool,badi elaichi,laung,darchini,sabut lal mirch,sabut kali mirch,sabut dhania,zeera,saunf,jaifil aur javatri dal dein aur khushbu anay tak roast ker lein & thanda ker lein."
+    },
+    {
+      "instruction": "In spice mixer,add roasted spices and grind well.",
+      "romanUrdu": "Spice mixer mein roasted spices dal dein aur ache tarhan grind ker lein."
+    },
+    {
+      "instruction": "Add black salt,turmeric powder,dried mango powder,grind until coarse powder.Pao bhaji Spice mix is ready!",
+      "romanUrdu": "Kala namak,haldee powder aur aamchor powder dal dein aur grind ker ka course powder tayyar ker lein.Pao bhaji spice mix tayyar hai!"
+    },
+    {
+      "instruction": "In spice mixer,add garlic,ginger,Kashmiri red chilies,water,grind to make a paste & set aside.",
+      "romanUrdu": "Spice mixer mein lehsan,adark,Kashmiri lal mirch aur pani dal dein aur grind ker ka paste bana lein & side per rakh dein."
+    },
+    {
+      "instruction": "In pot,add cauliflower,peas,capsicum,carrot,tomatoes and water,mix well and bring it to boil,cover and cook on medium low flame for 15-20 minutes.",
+      "romanUrdu": "Pot mein phool ghobi,matar,shimla mirch,gajar,tamatar aur pai dal ker ache tarha mix karein aur ubal anay dein,dhak dein aur halki darmiyani ancch per 15-20 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add potatoes,salt,prepared pao bhaji spice mix,grinded chili paste and mash well with the help of the masher.",
+      "romanUrdu": "Aloo,namak,tayyar pao bhaji spice mix aur grinded chili paste dal dein aur ache tarhan masher ki madad sa mash ker lein."
+    },
+    {
+      "instruction": "Add butter,mash again and cook for 5 minutes and take out in a bowl & set aside.",
+      "romanUrdu": "Makhan dal ker dubara mash ker lein aur 5 minutes kliya paka lein aur bowl mein nikal ke side per rakh dein."
+    },
+    {
+      "instruction": "In the same pot,add cooking oil,butter and let it melt.",
+      "romanUrdu": "Us he pot mein cooking oil aur makhan dal ker melt ker lein."
+    },
+    {
+      "instruction": "Add cumin seeds,onion,mix well and sauté until translucent.",
+      "romanUrdu": "Zeera aur pyaz dal ker ache tarhan mix karein aur translucent hunay tak sauté ker lein."
+    },
+    {
+      "instruction": "Add remaining grinded chili paste and mix well.",
+      "romanUrdu": "Baqi bacha huwa grinded chili paste dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add prepared pao bhaji spice mix and mix well.",
+      "romanUrdu": "Tayyar pao bhaji spice mix dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add cooked & mashed vegetables and mix well.",
+      "romanUrdu": "Cooked & mashed vegetables ko shamil karein aur ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add dried fenugreek leaves,lemon juice and mix well.",
+      "romanUrdu": "Kasuri meethi aur lemon juice dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add butter,cover and cook on low flame for 2-3 minutes.",
+      "romanUrdu": "Makhan dal ker dhak dein aur 2-3 minutes kliya halki ancch per paka lein."
+    },
+    {
+      "instruction": "Garnish with onion,green chili,butter,lemon slices & serve!",
+      "romanUrdu": "Pyaz,hari mirch,makhan aur lemon slices sa garnish ker ka serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/10/Pav-Bhaji-Recipe-by-Food-fusion-4.jpg?v=1587764398",
+  "ogDescription": "Here is our version of Pav Bahaji, make them with soft and smooth pav buns and enjoy delicious street food wherever you are. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:41:13Z"
+}

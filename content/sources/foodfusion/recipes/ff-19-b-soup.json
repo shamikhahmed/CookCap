@@ -1,0 +1,228 @@
+{
+  "wpId": 13136,
+  "slug": "19-b-soup",
+  "id": "ff-19-b-soup",
+  "title": "19-B Soup",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/19-b-soup/",
+  "date": "2020-01-13T16:42:00",
+  "modified": "2020-01-14T03:09:26",
+  "classList": [
+    "post-13136",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-eggs",
+    "recipe_category-vegetable",
+    "recipe_category-1-carrot",
+    "recipe_category-1-eggs-1breakfast",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-eggs",
+    "recipe_category-dish-type",
+    "recipe_category-soup",
+    "recipe_category-eggs-2",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-chicken",
+    "recipe_category-sea-food",
+    "recipe_category-lunch-dinner",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_category-winter",
+    "recipe_behind_camera-hina-khursheed"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2020/01/19-B-Soup-Recipe-by-Food-fusion-5.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil 2-3 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Adrak (Ginger) chopped",
+          "note": null,
+          "raw": "Adrak (Ginger) chopped 1 tbs"
+        },
+        {
+          "quantity": 250.0,
+          "unit": "g",
+          "item": "Chicken strips",
+          "note": null,
+          "raw": "Chicken strips 250g"
+        },
+        {
+          "quantity": 250.0,
+          "unit": "g",
+          "item": "Prawns",
+          "note": "deveined",
+          "raw": "Prawns 250g deveined"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Mushrooms sliced",
+          "note": null,
+          "raw": "Mushrooms sliced 1 Cup"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tsp",
+          "item": "Kali mirch powder (Black pepper powder)",
+          "note": null,
+          "raw": "Kali mirch powder (Black pepper powder) 2 tsp"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ¼ tsp or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Chicken stock cube",
+          "note": null,
+          "raw": "Chicken stock cube 1"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Sirka (Vinegar)",
+          "note": null,
+          "raw": "Sirka (Vinegar) 2 tbs"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Soy sauce",
+          "note": null,
+          "raw": "Soy sauce 3 tbs"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Chilli sauce",
+          "note": null,
+          "raw": "Chilli sauce 3 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Oyster sauce",
+          "note": null,
+          "raw": "Oyster sauce 1 tbs"
+        },
+        {
+          "quantity": 7.0,
+          "unit": "cup",
+          "item": "Yakhni (Chicken stock)",
+          "note": null,
+          "raw": "Yakhni (Chicken stock) 7-8 Cups"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Gajar (Carrot) julienne",
+          "note": null,
+          "raw": "Gajar (Carrot) julienne ½ Cup"
+        },
+        {
+          "quantity": 0.75,
+          "unit": "cup",
+          "item": "Cornflour",
+          "note": null,
+          "raw": "Cornflour ¾ Cup"
+        },
+        {
+          "quantity": 0.25,
+          "unit": "cup",
+          "item": "Water",
+          "note": "or as required",
+          "raw": "Water ¼ Cup or as required"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Anday ki safedi (Egg white)",
+          "note": null,
+          "raw": "Anday ki safedi (Egg white) 2"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Hara pyaz (Green onion) leaves",
+          "note": null,
+          "raw": "Hara pyaz (Green onion) leaves ½ Cup"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In a pot,add cooking oil,ginger and mix well.",
+      "romanUrdu": "Pot mein cooking oil aur adrak dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add chicken and mix well until changes color.",
+      "romanUrdu": "Chicken dal ker rang tabdeel hunay tak ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add prawns,mushrooms,mix well and cook for 2-3 minutes.",
+      "romanUrdu": "Prawns aur mushrooms dal ker ache tarhan mix karein aur 2-3 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add black pepper powder,salt,chicken stock cube,vinegar,soy sauce,chilli sauce,oyster sauce and mix well.",
+      "romanUrdu": "Kali mirch powder,namak,chicken stock cube,sirka,soy sauce,chilli sauce aur oyster sauce dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add chicken stock,mix well and bring it to boil.",
+      "romanUrdu": "Yakhni dal ker ache tarhan mix karein aur ubal anay dein."
+    },
+    {
+      "instruction": "Add carrots & mix well.",
+      "romanUrdu": "Gajar dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "In cornflour,add water and whisk well.",
+      "romanUrdu": "Cornflour mein pani dal ker ache tarhan whisk ker lein."
+    },
+    {
+      "instruction": "Gradually add dissolve cornflour and cook until desired consistency & keep mixing in between.",
+      "romanUrdu": "Thora thora ker ka dissolve cornflour shamil karein aur desired consistency anay tak paka lein aur bech bech mein mix kertay rahein."
+    },
+    {
+      "instruction": "In a bowl,add eggs white and whisk well until fluffy.",
+      "romanUrdu": "Bowl mein anday ki safedi dal ker fluffy hunay tak ache tarhan whisk karein."
+    },
+    {
+      "instruction": "Add gradually and stir gently.",
+      "romanUrdu": "Thora thora ker ka shamil karein aur gently mix ker lein."
+    },
+    {
+      "instruction": "Add green onion leaves & mix well.",
+      "romanUrdu": "Hara pyaz dal ker mix ker lein."
+    },
+    {
+      "instruction": "Garnish with green onions leaves & serve hot!",
+      "romanUrdu": "Hara pyaz sa garnish ker ka garam serve karein!"
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2020/01/19-B-Soup-Recipe-by-Food-fusion-5.jpg?v=1587762659",
+  "ogDescription": "Just the thing you should make in this cold weather. 19 B Soup recipe! If you don't have prawns then just replace with chicken. You will love the taste",
+  "scrapedAt": "2026-08-01T14:40:39Z"
+}

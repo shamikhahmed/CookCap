@@ -1,0 +1,197 @@
+{
+  "wpId": 3298,
+  "slug": "katlama",
+  "id": "ff-katlama",
+  "title": "Katlama",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/katlama/",
+  "date": "2017-08-17T15:17:34",
+  "modified": "2017-08-18T02:38:50",
+  "classList": [
+    "post-3298",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "tag-cooking-oil",
+    "tag-flour",
+    "tag-fried-item",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-eggs",
+    "recipe_category-flour-atta",
+    "recipe_category-lentils-daal",
+    "recipe_category-1-meal-type",
+    "recipe_category-ramazan",
+    "recipe_category-2iftar",
+    "recipe_category-sehri",
+    "recipe_category-appetizers-snacks",
+    "recipe_category-breakfast",
+    "recipe_category-desi-breakfast",
+    "recipe_category-dish-type",
+    "recipe_category-1parathas",
+    "recipe_category-fried-items",
+    "recipe_category-everyday-cooking",
+    "recipe_category-occasions",
+    "recipe_category-2ramzan",
+    "recipe_category-ramzan",
+    "recipe_category-iftar",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "snacks",
+  "imageUrl": "https://media.foodfusion.com/2017/07/ID-R00385-1.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": "Dough",
+      "items": [
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Maida (All-purpose flour)",
+          "note": null,
+          "raw": "Maida (All-purpose flour) 1 Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Atta (Wheat flour)",
+          "note": null,
+          "raw": "Atta (Wheat flour) 1 Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": null,
+          "raw": "Namak (Salt) ½ tsp"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Oil",
+          "note": null,
+          "raw": "Oil 2 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) ½ Cup or as required"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Anda (Egg)",
+          "note": null,
+          "raw": "Anda (Egg) 1"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Baisan (Gram flour)",
+          "note": null,
+          "raw": "Baisan (Gram flour) 1 Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Lal mirch powder (Red chili powder)",
+          "note": null,
+          "raw": "Lal mirch powder (Red chili powder) 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Zeera (Cumin seeds) roasted & crushed",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) roasted & crushed 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Dhania (Coriander seeds) crushed",
+          "note": null,
+          "raw": "Dhania (Coriander seeds) crushed 1 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) ½ tsp or to taste"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Zarda ka rang (Yellow food color)",
+          "note": null,
+          "raw": "Zarda ka rang (Yellow food color) ½ tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": "or as required",
+          "raw": "Pani (Water) ½ Cup or as required"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Anardana (Dried pomegranate seeds)",
+          "note": null,
+          "raw": "Anardana (Dried pomegranate seeds) 1 tbs"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Hari moong daal (Green gram) soaked",
+          "note": null,
+          "raw": "Hari moong daal (Green gram) soaked ½ Cup"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Oil for frying",
+          "note": null,
+          "raw": "Oil for frying"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In bowl,add all-purpose flour,wheat flour,salt and oil.",
+      "romanUrdu": "Bowl mein maida,atta,namak aur oil dal dein."
+    },
+    {
+      "instruction": "Gradually add water and knead well to form a dough,cover & let it rest for 30 minutes.",
+      "romanUrdu": "Thora thora ker ka pani shamil karein aur ghond ker dough tayyar ker lein,dhak ker 30 minutes kliya rakh dein."
+    },
+    {
+      "instruction": "In bowl,add egg and whisk it,add gram flour,red chili powder,cumin seeds,coriander seeds,salt,yellow food color,water and mix well.",
+      "romanUrdu": "Bowl mein anda dal ker whisk ker lein,baisan,lal mirch powder,zeera,dhania,namak,zadra ka rang aur pani dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Gradually add water and mix well to make a thick paste.",
+      "romanUrdu": "Thora thora ker ka pani shamil karein aur mix ker ka garha paste tayyar ker lein."
+    },
+    {
+      "instruction": "Grease your hands with oil and knead dough again,take a small dough,make a ball and sprinkle flour and roll out dough with the help of rolling pin.",
+      "romanUrdu": "Haathon ko oil sa grease karein aur chota dough la ker ball bana lein,atta chirak dein aur dough ko rolling pin ki madad sa bail lein."
+    },
+    {
+      "instruction": "Spread prepared paste,sprinkle dried pomegranate seeds and green gram.",
+      "romanUrdu": "Prepared paste ko dal ker pheela lein,anardana aur hari moong daal dal dein."
+    },
+    {
+      "instruction": "In wok,heat oil and fry until golden brown.",
+      "romanUrdu": "Karhai mein oil garam karein aur golden brown hunay tak fry ker lein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2017/07/ID-R00385-1.jpg?v=1587766008",
+  "ogDescription": "Katlama is Lahore's most wanted street food which is also famous all over the world. Let's make it at home like we do and you will love it. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:40:10Z"
+}

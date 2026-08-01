@@ -1,0 +1,109 @@
+{
+  "wpId": 13798,
+  "slug": "mishti-doi",
+  "id": "ff-mishti-doi",
+  "title": "Mishti Doi",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/mishti-doi/",
+  "date": "2020-04-26T13:35:00",
+  "modified": "2020-06-29T15:18:37",
+  "classList": [
+    "post-13798",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1milk",
+    "recipe_category-yogurt",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-1desserts-2",
+    "recipe_category-desi-desserts",
+    "recipe_category-desserts",
+    "recipe_category-dish-type",
+    "recipe_category-1desserts",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-lunch-dinner",
+    "recipe_category-occasions",
+    "recipe_category-birthday",
+    "recipe_category-national-holidays",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2020/03/Mishti-doi-Recipe-by-Food-fusion-1.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 1.5,
+          "unit": "l",
+          "item": "Doodh (Milk)",
+          "note": "(full fat)",
+          "raw": "Doodh (Milk) 1 & ½ litre (full fat)"
+        },
+        {
+          "quantity": 4.0,
+          "unit": "tbsp",
+          "item": "Gur (Jaggery) grated",
+          "note": null,
+          "raw": "Gur (Jaggery) grated 4-5 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Dahi (Yogurt) whisked",
+          "note": null,
+          "raw": "Dahi (Yogurt) whisked 1-2 tsp"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Water as required",
+          "note": null,
+          "raw": "Water as required"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In a pot,add milk and bring it to boil then cook on flame low until reduced to half (20-25 minutes) and stir occasionally.",
+      "romanUrdu": "Pot mein doodh dal ker ubal lein phir halki ancch per adha reh janay tak paka lein (20-25 minutes) aur becb bech mein chamcha chalatay rahein."
+    },
+    {
+      "instruction": "Remove from heat,add jaggery and mix well until jaggery is dissolved.",
+      "romanUrdu": "Chulhay sa hata lein aur gur dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Let it cool until lukewarm.",
+      "romanUrdu": "Neem garam hunay tak thanda ker lein."
+    },
+    {
+      "instruction": "Transfer milk in clay pot,add 1-2 tsp of yogurt in each cup,mix well and cover with aluminum foil.",
+      "romanUrdu": "Doodh ko clay pot mein dal dein aur her cup mein 1-2 tsp dahi dal ker ache tarhan mix karein aur aluminum foil sa dhak dein."
+    },
+    {
+      "instruction": "In a pot,add water and bring it to boil,place steam rack and prepared clay pots,cover and steam cook on low flame for 20-25 minutes.",
+      "romanUrdu": "Pot mein pani dal ker ubal lein,steam rack rakh ker tayyar clay bowls rakh dein aur dhak ker halki ancch per 20-25 minutes kliya steam cook ker lein."
+    },
+    {
+      "instruction": "Let it cool and chill in refrigerator & serve!",
+      "romanUrdu": "Thanda karein aur refrigerator mein thanda ker lein & serve karein!"
+    },
+    {
+      "instruction": "Let it rest for 8 hours or overnight at room temperature & serve!",
+      "romanUrdu": "8 hours ya overnight kliya room temperature per chor dein & serve karein!"
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2020/03/Mishti-doi-Recipe-by-Food-fusion-1.jpg?v=1587762282",
+  "ogDescription": "A traditional Jaggary (Gur) sweetened yogurt, Mishti Doi / Dahi recipe. #HappyCookingToYou #FoodFusion",
+  "scrapedAt": "2026-08-01T14:42:59Z"
+}

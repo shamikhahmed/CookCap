@@ -1,0 +1,218 @@
+{
+  "wpId": 12314,
+  "slug": "malpura",
+  "id": "ff-malpura",
+  "title": "Malpura",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/malpura/",
+  "date": "2019-10-23T11:00:24",
+  "modified": "2019-10-26T06:17:41",
+  "classList": [
+    "post-12314",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-1-eggs",
+    "recipe_category-flour-atta",
+    "recipe_category-1milk",
+    "recipe_category-1-eggs-1breakfast",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-baked-desserts",
+    "recipe_category-1desserts-2",
+    "recipe_category-desi-desserts",
+    "recipe_category-desserts",
+    "recipe_category-dish-type",
+    "recipe_category-1desserts",
+    "recipe_category-fried-items",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-egg",
+    "recipe_category-lunch-dinner",
+    "recipe_category-occasions",
+    "recipe_category-birthday",
+    "recipe_category-national-holidays",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_behind_camera-kanwal-mohsin"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2019/09/Malpura-Recipe-by-Food-fusion-2-1.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Cheeni (Sugar)",
+          "note": null,
+          "raw": "Cheeni (Sugar) 1 Cup"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Pani (Water)",
+          "note": null,
+          "raw": "Pani (Water) ½ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "pinch",
+          "item": "Elaichi powder (Cardamom powder)",
+          "note": null,
+          "raw": "Elaichi powder (Cardamom powder) 1 pinch"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Lemon juice",
+          "note": "drops",
+          "raw": "Lemon juice 2-3 drops"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "cup",
+          "item": "Doodh (Milk) lukewarm",
+          "note": null,
+          "raw": "Doodh (Milk) lukewarm 1 Cup"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Cheeni (Sugar)",
+          "note": null,
+          "raw": "Cheeni (Sugar) 2 tbs"
+        },
+        {
+          "quantity": 2.5,
+          "unit": "tbsp",
+          "item": "Sooji (Semolina)",
+          "note": null,
+          "raw": "Sooji (Semolina) 2 & ½ tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "pinch",
+          "item": "Elaichi powder (Cardamom powder)",
+          "note": null,
+          "raw": "Elaichi powder (Cardamom powder) 1 pinch"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "cup",
+          "item": "Maida (All-purpose flour) sifted",
+          "note": null,
+          "raw": "Maida (All-purpose flour) sifted 1 & ½ Cup"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Anday (Eggs)",
+          "note": null,
+          "raw": "Anday (Eggs) 2"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Doodh (Milk) lukewarm",
+          "note": null,
+          "raw": "Doodh (Milk) lukewarm ½ Cup"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Yellow food color",
+          "note": "drops",
+          "raw": "Yellow food color 2 drops"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "pinch",
+          "item": "Baking soda",
+          "note": null,
+          "raw": "Baking soda 1 pinch"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "tbsp",
+          "item": "Cooking oil",
+          "note": null,
+          "raw": "Cooking oil 3-4 tbs"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Cream",
+          "note": null,
+          "raw": "Cream"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Almonds & Pistachio chopped",
+          "note": null,
+          "raw": "Almonds & Pistachio chopped"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In frying pan,add sugar and water,mix well and cook until sugar is dissolved.",
+      "romanUrdu": "Frying pan mein cheeni aur pani dal ker ache tarhan mix karein aur cheeni ghul janay tak paka lein."
+    },
+    {
+      "instruction": "Add cardamom powder,lemon juice,mix well & set aside.",
+      "romanUrdu": "Elaichi powder aur lemon juice dal ker ache tarhan mix karein & side per rakh dein."
+    },
+    {
+      "instruction": "In bowl,add lukewarm milk,sugar and whisk well.",
+      "romanUrdu": "Bowl mein neem garam pani aur cheeni dal ker ache tarhan whisk ker lein."
+    },
+    {
+      "instruction": "Add semolina and whisk again.",
+      "romanUrdu": "Sooji dal ker dubara whisk ker lein."
+    },
+    {
+      "instruction": "Add cardamom powder,gradually add all-purpose flour and whisk until well combined.",
+      "romanUrdu": "Elaichi powder aur thora thora ker ka maida shamil kertay jayein aur ache tarhan whisk ker lein."
+    },
+    {
+      "instruction": "dd eggs and whisk again.",
+      "romanUrdu": "Anday dal ker dubara whisk karein."
+    },
+    {
+      "instruction": "Gradually add lukewarm milk and whisk until smooth batter is formed.",
+      "romanUrdu": "Thora thora ker ka neem garam doodh shamil karein aur smooth batter bannay tak ache tarhan whisk ker lein."
+    },
+    {
+      "instruction": "Add yellow food color and whisk well,cover and rest it for 1 hour.",
+      "romanUrdu": "Yellow food color dal ker ache tarhan whisk karein aur dhak ker 1 hour kliya rakh dein."
+    },
+    {
+      "instruction": "Add baking soda and whisk again.",
+      "romanUrdu": "Baking soda dal ker dubara whisk ker lein."
+    },
+    {
+      "instruction": "In frying pan,add cooking oil and pour prepared batter (approx. ½ cup) and fry from both sides until golden brown.",
+      "romanUrdu": "Frying pan mein cooking oil aur tayyar batter (approx. ½ cup) dal dein aur dono sides sa golden brown hunay tak fry ker lein."
+    },
+    {
+      "instruction": "In sugar syrup,add prepared malpuras and soak for 10 minutes.",
+      "romanUrdu": "Sheeray mein tayyar malpuras dal ker 10 minutes kliya chor dein."
+    },
+    {
+      "instruction": "Garnish with cream,almonds and pistachios & serve!",
+      "romanUrdu": "Cream aur badam & pista sa garnish ker ka serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2019/09/Malpura-Recipe-by-Food-fusion-2-1.jpg?v=1587763037",
+  "ogDescription": "So many Malpura recipes out there but here is a reliable one from Food Fusion give it a try. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:40:17Z"
+}

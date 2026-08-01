@@ -1,0 +1,125 @@
+{
+  "wpId": 7725,
+  "slug": "malai-ladu",
+  "id": "ff-malai-ladu",
+  "title": "Malai Ladu",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/malai-ladu/",
+  "date": "2018-11-03T12:00:45",
+  "modified": "2018-11-03T12:01:08",
+  "classList": [
+    "post-7725",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-cream",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-1desserts-2",
+    "recipe_category-desi-desserts",
+    "recipe_category-dish-type",
+    "recipe_category-ingredient",
+    "recipe_category-lunch-dinner",
+    "recipe_category-occasions",
+    "recipe_category-bakra-eid",
+    "recipe_category-ramzan",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_category-bakra-eid1",
+    "recipe_category-eid1",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2018/10/Malai-ladu-Recipe-by-Foof-fusion-2.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 2.0,
+          "unit": "cup",
+          "item": "Khoya crumbled",
+          "note": null,
+          "raw": "Khoya crumbled 2 Cups"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Cream",
+          "note": null,
+          "raw": "Cream ½ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Elaichi powder (Cardamom powder)",
+          "note": null,
+          "raw": "Elaichi powder (Cardamom powder) 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Cheeni (Sugar) powdered",
+          "note": "or to taste",
+          "raw": "Cheeni (Sugar) powdered ½ Cup or to taste"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Kaju (Cashew nuts) chopped",
+          "note": null,
+          "raw": "Kaju (Cashew nuts) chopped 1 tbs"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tbsp",
+          "item": "Pista (Pistachio) chopped",
+          "note": null,
+          "raw": "Pista (Pistachio) chopped 1 tbs"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In bowl,add khoya and mix well until smooth & set aside.",
+      "romanUrdu": "Bowl mein khoya dal dein aur smooth hunay tak ache tarhan mix ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "In non-stick wok,add cream and cook on low flame for 2 minutes.",
+      "romanUrdu": "Non-stick karhai mein cream dal dein aur halki ancch per 2 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add khoya and cook on low flame for 15 minutes or until it leave the sides of the wok and mix well continuously.",
+      "romanUrdu": "Khoya dal dein aur halki ancch per 15 minutes ya karhai ki sides chornay tak paka lein aur musalsal mix kertay rahein."
+    },
+    {
+      "instruction": "Let it cool down completely.",
+      "romanUrdu": "Thanda ker lein."
+    },
+    {
+      "instruction": "Add cardamom powder,sugar and mix until well combined.",
+      "romanUrdu": "Elaichi powder aur cheeni dal ker ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Add cashew nuts,pistachio and give it a good mix & refrigerate for 15 minutes.",
+      "romanUrdu": "Kaju aur pista dal ker mix karein aur 15 minutes kliya refrigerate ker lein."
+    },
+    {
+      "instruction": "Grease hands with oil,take a mixture make ladu of equal sizes.",
+      "romanUrdu": "Haathon ko oil sa grease karein aur mixture ko la ker ek jaisay sizes ka ladu tayyar ker lein."
+    },
+    {
+      "instruction": "Garnish with pistachio & serve!",
+      "romanUrdu": "Pista sa garnish ker ka serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2018/10/Malai-ladu-Recipe-by-Foof-fusion-2.jpg?v=1587764423",
+  "ogDescription": "Here you go Malai Ladoo recipe for your sweet cravings. Just like what you buy from the halwai. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:42:41Z"
+}

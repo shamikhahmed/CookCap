@@ -1,0 +1,283 @@
+{
+  "wpId": 11527,
+  "slug": "painda",
+  "id": "ff-painda",
+  "title": "Painda",
+  "excerpt": "",
+  "link": "https://foodfusion.com/recipe/painda/",
+  "date": "2019-08-24T10:32:55",
+  "modified": "2019-10-12T11:18:39",
+  "classList": [
+    "post-11527",
+    "recipe",
+    "type-recipe",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry",
+    "recipe_brand-nestle-milk-pak-yogurt",
+    "recipe_category-1-by-ingredient",
+    "recipe_category-potato",
+    "recipe_category-1tommato",
+    "recipe_category-yogurt",
+    "recipe_category-1-meal-type",
+    "recipe_category-1-lunchdinner",
+    "recipe_category-dish-type",
+    "recipe_category-salanscurrys",
+    "recipe_category-everyday-cooking",
+    "recipe_category-ingredient",
+    "recipe_category-chicken",
+    "recipe_category-lunch-dinner",
+    "recipe_category-gravys",
+    "recipe_category-occasions",
+    "recipe_category-national-holidays",
+    "recipe_category-seasonal",
+    "recipe_category-1-festivals",
+    "recipe_behind_camera-seema-hanif"
+  ],
+  "chapter": "pakistani",
+  "imageUrl": "https://media.foodfusion.com/2019/07/Painda-Recipe-by-Food-fusion-3.jpg",
+  "source": "foodfusion",
+  "attribution": "Recipe adapted from Food Fusion (foodfusion.com). Not an official Food Fusion product.",
+  "ingredientGroups": [
+    {
+      "heading": null,
+      "items": [
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Badi elaichi (Black cardamom)",
+          "note": null,
+          "raw": "Badi elaichi (Black cardamom) 2"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Hari elaichi (Green cardamom)",
+          "note": null,
+          "raw": "Hari elaichi (Green cardamom) 3"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tbsp",
+          "item": "Zeera (Cumin seeds)",
+          "note": null,
+          "raw": "Zeera (Cumin seeds) ½ tbs"
+        },
+        {
+          "quantity": 5.0,
+          "unit": "cloves",
+          "item": "Lehsan (Garlic)",
+          "note": null,
+          "raw": "Lehsan (Garlic) 5-6 cloves"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "inch",
+          "item": "Adrak (Ginger)",
+          "note": "piece",
+          "raw": "Adrak (Ginger) 1 inch piece"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Hari mirch (Green chillies)",
+          "note": null,
+          "raw": "Hari mirch (Green chillies) 3-4"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Pani (Water)",
+          "note": "/4 Cup or as required",
+          "raw": "Pani (Water) 1/4 Cup or as required"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tbsp",
+          "item": "Dhania powder (Coriander powder)",
+          "note": null,
+          "raw": "Dhania powder (Coriander powder) 2 tbs"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "tsp",
+          "item": "Kashmiri lal mirch (Kashmiri red chilli) powder",
+          "note": null,
+          "raw": "Kashmiri lal mirch (Kashmiri red chilli) powder 2 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tsp",
+          "item": "Haldee powder (Turmeric powder)",
+          "note": null,
+          "raw": "Haldee powder (Turmeric powder) ½ tsp"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "tsp",
+          "item": "Garam masala powder",
+          "note": null,
+          "raw": "Garam masala powder 1 tsp"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "tbsp",
+          "item": "Lal mirch powder (Red chilli powder)",
+          "note": "or to taste",
+          "raw": "Lal mirch powder (Red chilli powder) ½ tbs or to taste"
+        },
+        {
+          "quantity": 3.0,
+          "unit": "",
+          "item": "Cooking oil",
+          "note": "/4 Cup",
+          "raw": "Cooking oil 3/4 Cup"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Pyaz (Onion) sliced",
+          "note": "medium",
+          "raw": "Pyaz (Onion) sliced 2 medium"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "kg",
+          "item": "Chicken",
+          "note": null,
+          "raw": "Chicken 1 kg"
+        },
+        {
+          "quantity": 1.5,
+          "unit": "tsp",
+          "item": "Namak (Salt)",
+          "note": "or to taste",
+          "raw": "Namak (Salt) 1 & ½ tsp or to taste"
+        },
+        {
+          "quantity": 2.0,
+          "unit": "",
+          "item": "Tamatar (Tomatoes) pureed",
+          "note": "medium",
+          "raw": "Tamatar (Tomatoes) pureed 2 medium"
+        },
+        {
+          "quantity": 0.5,
+          "unit": "cup",
+          "item": "Nestle milkpak yogurt",
+          "note": null,
+          "raw": "Nestle milkpak yogurt ½ Cup"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "l",
+          "item": "Garam pani (Hot water)",
+          "note": "or as required",
+          "raw": "Garam pani (Hot water) 1 litre or as required"
+        },
+        {
+          "quantity": 300.0,
+          "unit": "g",
+          "item": "Aloo (Potatoes) cubes",
+          "note": null,
+          "raw": "Aloo (Potatoes) cubes 300g"
+        },
+        {
+          "quantity": 1.0,
+          "unit": "",
+          "item": "Hara dhania (Fresh coriander) chopped",
+          "note": "/4 Cup",
+          "raw": "Hara dhania (Fresh coriander) chopped 1/4 Cup"
+        },
+        {
+          "quantity": null,
+          "unit": "",
+          "item": "Roti",
+          "note": null,
+          "raw": "Roti"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "instruction": "In spice mixer,add black cardamom,green cardamom,cumin seeds and grind well.",
+      "romanUrdu": "Spice mixer mein badi elaichi,hari elaichi aur zeera dal ker ache tarhan grind ker lein."
+    },
+    {
+      "instruction": "Add garlic,ginger,green chillies,water and grind to make a paste & set aside.",
+      "romanUrdu": "Lehsan,adrak,hari micrh aur pani dal dein aur grind ker ka paste bana lein & side per rakh dein."
+    },
+    {
+      "instruction": "In bowl,add coriander powder,Kashmiri red chilli powder,turmeric powder,garam masala powder,red chilli powder,mix well & set aside.",
+      "romanUrdu": "Bowl mein dhania powder,Kashmiri lal mirch powder,haldee powder,garam masala powder aur lal mirch powder dal ker ache tarhan mix ker lein & side per rakh dein."
+    },
+    {
+      "instruction": "In pot,add cooking oil,onion and fry until light golden.",
+      "romanUrdu": "Pot mein cooking oil aur pyaz dal dein aur light golden hunay tak fry ker lein."
+    },
+    {
+      "instruction": "Add chicken and mix well.",
+      "romanUrdu": "Chicken dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Add salt and mix well until changes color.",
+      "romanUrdu": "Namak dal dein aur rang tabdeel hunay tak ache tarhan mix ker lein."
+    },
+    {
+      "instruction": "Now add spices & chilli paste,mix well and cook for 2-3 minutes.",
+      "romanUrdu": "Ab spices & chilli paste dal ker ache tarhan mix karein aur 2-3 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Add pureed tomatoes,mix well and cook on high flame for 6-8 minutes.",
+      "romanUrdu": "Pureed tamatar dal ker ache tarhan mix karein aur tez ancch per 6-8 minutes kliya paka lein."
+    },
+    {
+      "instruction": "In bowl,add yogurt and whisk well.",
+      "romanUrdu": "Bowl mein dahi dal ker ache tarhan whisk ker lein."
+    },
+    {
+      "instruction": "In pot,add yogurt and mix well.",
+      "romanUrdu": "Pot mein dahi dal ker ache tarhan mix karein."
+    },
+    {
+      "instruction": "Now add prepared spice mix,mix well and cook until oil separates.",
+      "romanUrdu": "Ab tayyar spice mix dal ker ache tarhan mix karein aur oil alag hunay tak paka lein."
+    },
+    {
+      "instruction": "Add hot water,mix and bring it to boil.",
+      "romanUrdu": "Garam pani dal ker mix karein aur ubal anay dein."
+    },
+    {
+      "instruction": "Add potatoes and mix.",
+      "romanUrdu": "Aloo dal ker mix ker lein."
+    },
+    {
+      "instruction": "Cover partially and cook on low flame for 12-15 minutes.",
+      "romanUrdu": "Partially dhak dein aur halki ancch per 12-15 minutes kliya paka lein."
+    },
+    {
+      "instruction": "Switch off the flame,cover and let it rest for 5 minutes.",
+      "romanUrdu": "Chulha bund ker dein aur dhak ker 5 minutes kliya rakh dein."
+    },
+    {
+      "instruction": "Take out tarri (oil) and add it in fresh coriander.",
+      "romanUrdu": "Tarri nikal lein aur hara dhania mein dal dein."
+    },
+    {
+      "instruction": "In serving bowl,add roti,gravy and mix.",
+      "romanUrdu": "Serving bowl mein roti aur gravy dal ker mix karein."
+    },
+    {
+      "instruction": "Add chicken pieces and pour tarri.",
+      "romanUrdu": "Chicken pieces rakh ker upper sa tarri dal dein."
+    },
+    {
+      "instruction": "Garnish with onion rings,tomato,lemon slices & serve!",
+      "romanUrdu": "Pyaz rings,tamatar aur lemon slices sa garish ker ke serve karein."
+    }
+  ],
+  "ogImage": "https://media.foodfusion.com/2019/07/Painda-Recipe-by-Food-fusion-3.jpg?v=1587763264",
+  "ogDescription": "A traditional dish in our signature way. Make painda today and enjoy. #HappyCookingToYou",
+  "scrapedAt": "2026-08-01T14:39:54Z"
+}

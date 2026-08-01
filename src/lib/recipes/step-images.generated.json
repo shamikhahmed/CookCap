@@ -1,0 +1,212 @@
+{
+  "simple-bread": [
+    "/recipes/steps/simple-bread-1.webp",
+    "/recipes/steps/simple-bread-2.webp"
+  ],
+  "cinnamon-sugar-bun": [
+    "/recipes/steps/cinnamon-sugar-bun-1.webp",
+    "/recipes/steps/cinnamon-sugar-bun-2.webp"
+  ],
+  "cinnamon-rolls": [
+    "/recipes/steps/cinnamon-rolls-1.webp",
+    "/recipes/steps/cinnamon-rolls-2.webp"
+  ],
+  "simple-tea-cake": [
+    "/recipes/steps/simple-tea-cake-1.webp",
+    "/recipes/steps/simple-tea-cake-2.webp"
+  ],
+  "vanilla-cake": [
+    "/recipes/steps/vanilla-cake-1.webp",
+    "/recipes/steps/vanilla-cake-2.webp",
+    "/recipes/steps/vanilla-cake-3.webp"
+  ],
+  "chocolate-cake": [
+    "/recipes/steps/chocolate-cake-1.webp",
+    "/recipes/steps/chocolate-cake-2.webp"
+  ],
+  "saadi-biryani-chicken": [
+    "/recipes/steps/saadi-biryani-chicken-1.webp",
+    "/recipes/steps/saadi-biryani-chicken-2.webp",
+    "/recipes/steps/saadi-biryani-chicken-3.webp"
+  ],
+  "sindhi-biryani-chicken": [
+    "/recipes/steps/sindhi-biryani-chicken-1.webp",
+    "/recipes/steps/sindhi-biryani-chicken-2.webp"
+  ],
+  "zaffarani-biryani-chicken": [
+    "/recipes/steps/zaffarani-biryani-chicken-1.webp",
+    "/recipes/steps/zaffarani-biryani-chicken-2.webp"
+  ],
+  "saadi-biryani-mutton": [
+    "/recipes/steps/saadi-biryani-mutton-1.webp",
+    "/recipes/steps/saadi-biryani-mutton-2.webp",
+    "/recipes/steps/saadi-biryani-mutton-3.webp"
+  ],
+  "sindhi-biryani-mutton": [
+    "/recipes/steps/sindhi-biryani-mutton-1.webp",
+    "/recipes/steps/sindhi-biryani-mutton-2.webp",
+    "/recipes/steps/sindhi-biryani-mutton-3.webp"
+  ],
+  "zaffarani-biryani-mutton": [
+    "/recipes/steps/zaffarani-biryani-mutton-1.webp",
+    "/recipes/steps/zaffarani-biryani-mutton-2.webp"
+  ],
+  "saadi-biryani-beef": [
+    "/recipes/steps/saadi-biryani-beef-1.webp",
+    "/recipes/steps/saadi-biryani-beef-2.webp"
+  ],
+  "sindhi-biryani-beef": [
+    "/recipes/steps/sindhi-biryani-beef-1.webp",
+    "/recipes/steps/sindhi-biryani-beef-2.webp",
+    "/recipes/steps/sindhi-biryani-beef-3.webp"
+  ],
+  "zaffarani-biryani-beef": [
+    "/recipes/steps/zaffarani-biryani-beef-1.webp",
+    "/recipes/steps/zaffarani-biryani-beef-2.webp"
+  ],
+  "karahi-chicken": [
+    "/recipes/steps/karahi-chicken-1.webp",
+    "/recipes/steps/karahi-chicken-2.webp"
+  ],
+  "karahi-mutton": [
+    "/recipes/steps/karahi-mutton-1.webp",
+    "/recipes/steps/karahi-mutton-2.webp",
+    "/recipes/steps/karahi-mutton-3.webp"
+  ],
+  "handi-chicken": [
+    "/recipes/steps/handi-chicken-1.webp",
+    "/recipes/steps/handi-chicken-2.webp",
+    "/recipes/steps/handi-chicken-3.webp"
+  ],
+  "handi-mutton": [
+    "/recipes/steps/handi-mutton-1.webp",
+    "/recipes/steps/handi-mutton-2.webp",
+    "/recipes/steps/handi-mutton-3.webp"
+  ],
+  "cheese-handi-chicken": [
+    "/recipes/steps/cheese-handi-chicken-1.webp",
+    "/recipes/steps/cheese-handi-chicken-2.webp",
+    "/recipes/steps/cheese-handi-chicken-3.webp"
+  ],
+  "green-handi-chicken": [
+    "/recipes/steps/green-handi-chicken-1.webp",
+    "/recipes/steps/green-handi-chicken-2.webp",
+    "/recipes/steps/green-handi-chicken-3.webp"
+  ],
+  "qorma-chicken": [
+    "/recipes/steps/qorma-chicken-1.webp",
+    "/recipes/steps/qorma-chicken-2.webp",
+    "/recipes/steps/qorma-chicken-3.webp"
+  ],
+  "qorma-mutton": [
+    "/recipes/steps/qorma-mutton-1.webp",
+    "/recipes/steps/qorma-mutton-2.webp",
+    "/recipes/steps/qorma-mutton-3.webp"
+  ],
+  "badami-qorma-chicken": [
+    "/recipes/steps/badami-qorma-chicken-1.webp",
+    "/recipes/steps/badami-qorma-chicken-2.webp",
+    "/recipes/steps/badami-qorma-chicken-3.webp"
+  ],
+  "badami-qorma-mutton": [
+    "/recipes/steps/badami-qorma-mutton-1.webp",
+    "/recipes/steps/badami-qorma-mutton-2.webp",
+    "/recipes/steps/badami-qorma-mutton-3.webp"
+  ],
+  "lasagna-chicken": [
+    "/recipes/steps/lasagna-chicken-1.webp",
+    "/recipes/steps/lasagna-chicken-2.webp",
+    "/recipes/steps/lasagna-chicken-3.webp"
+  ],
+  "lasagna-beef": [
+    "/recipes/steps/lasagna-beef-1.webp",
+    "/recipes/steps/lasagna-beef-2.webp",
+    "/recipes/steps/lasagna-beef-3.webp"
+  ],
+  "alfredo-pasta": [
+    "/recipes/steps/alfredo-pasta-1.webp",
+    "/recipes/steps/alfredo-pasta-2.webp"
+  ],
+  "rigatoni-pasta": [
+    "/recipes/steps/rigatoni-pasta-1.webp",
+    "/recipes/steps/rigatoni-pasta-2.webp",
+    "/recipes/steps/rigatoni-pasta-3.webp"
+  ],
+  "desi-chinese": [
+    "/recipes/steps/desi-chinese-1.webp",
+    "/recipes/steps/desi-chinese-2.webp",
+    "/recipes/steps/desi-chinese-3.webp"
+  ],
+  "iced-caramel-latte": [
+    "/recipes/steps/iced-caramel-latte-1.webp",
+    "/recipes/steps/iced-caramel-latte-2.webp",
+    "/recipes/steps/iced-caramel-latte-3.webp"
+  ],
+  "iced-mocha-latte": [
+    "/recipes/steps/iced-mocha-latte-1.webp",
+    "/recipes/steps/iced-mocha-latte-2.webp",
+    "/recipes/steps/iced-mocha-latte-3.webp"
+  ],
+  "iced-spanish-latte": [
+    "/recipes/steps/iced-spanish-latte-1.webp",
+    "/recipes/steps/iced-spanish-latte-2.webp",
+    "/recipes/steps/iced-spanish-latte-3.webp"
+  ],
+  "iced-mocha-orange-latte": [
+    "/recipes/steps/iced-mocha-orange-latte-1.webp",
+    "/recipes/steps/iced-mocha-orange-latte-2.webp",
+    "/recipes/steps/iced-mocha-orange-latte-3.webp"
+  ],
+  "iced-blueberry-latte": [
+    "/recipes/steps/iced-blueberry-latte-1.webp",
+    "/recipes/steps/iced-blueberry-latte-2.webp",
+    "/recipes/steps/iced-blueberry-latte-3.webp"
+  ],
+  "iced-strawberry-latte": [
+    "/recipes/steps/iced-strawberry-latte-1.webp",
+    "/recipes/steps/iced-strawberry-latte-2.webp"
+  ],
+  "strawberry-oreo-latte": [
+    "/recipes/steps/strawberry-oreo-latte-1.webp",
+    "/recipes/steps/strawberry-oreo-latte-2.webp",
+    "/recipes/steps/strawberry-oreo-latte-3.webp"
+  ],
+  "cookies-cream-latte": [
+    "/recipes/steps/cookies-cream-latte-1.webp",
+    "/recipes/steps/cookies-cream-latte-2.webp",
+    "/recipes/steps/cookies-cream-latte-3.webp"
+  ],
+  "oreo-custard-crunch": [
+    "/recipes/steps/oreo-custard-crunch-1.webp",
+    "/recipes/steps/oreo-custard-crunch-2.webp",
+    "/recipes/steps/oreo-custard-crunch-3.webp"
+  ],
+  "brownies-cupcakes": [
+    "/recipes/steps/brownies-cupcakes-1.webp",
+    "/recipes/steps/brownies-cupcakes-2.webp"
+  ],
+  "triple-choc-brownies": [
+    "/recipes/steps/triple-choc-brownies-1.webp",
+    "/recipes/steps/triple-choc-brownies-2.webp"
+  ],
+  "choc-chip-cookies": [
+    "/recipes/steps/choc-chip-cookies-1.webp",
+    "/recipes/steps/choc-chip-cookies-2.webp",
+    "/recipes/steps/choc-chip-cookies-3.webp"
+  ],
+  "double-choc-cookies": [
+    "/recipes/steps/double-choc-cookies-1.webp",
+    "/recipes/steps/double-choc-cookies-2.webp",
+    "/recipes/steps/double-choc-cookies-3.webp"
+  ],
+  "kfc-chicken": [
+    "/recipes/steps/kfc-chicken-1.webp",
+    "/recipes/steps/kfc-chicken-2.webp",
+    "/recipes/steps/kfc-chicken-3.webp"
+  ],
+  "kfc-spicy-chicken": [
+    "/recipes/steps/kfc-spicy-chicken-1.webp",
+    "/recipes/steps/kfc-spicy-chicken-2.webp",
+    "/recipes/steps/kfc-spicy-chicken-3.webp"
+  ]
+}
