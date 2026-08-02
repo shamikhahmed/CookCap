@@ -48,9 +48,9 @@
   --color-paper: #f6f1e7;
   --color-paper-raised: #fbf7ee;
   --color-paper-sunk: #ece4d5;
-  --color-ink: #2c2622;
-  --color-ink-soft: #5c5248;
-  --color-ink-faint: #8a7d6e;
+  --color-ink: #1f1814;
+  --color-ink-soft: #3d342c;
+  --color-ink-faint: #5c4f42;
   --color-line: #e2d8c6;
   --color-accent: #c2683c;
   --color-accent-soft: #d98a4e;
@@ -106,9 +106,9 @@
     --color-paper: #f6f1e7;
     --color-paper-raised: #fbf7ee;
     --color-paper-sunk: #ece4d5;
-    --color-ink: #2c2622;
-    --color-ink-soft: #5c5248;
-    --color-ink-faint: #8a7d6e;
+    --color-ink: #1f1814;
+    --color-ink-soft: #3d342c;
+    --color-ink-faint: #5c4f42;
     --color-line: #e2d8c6;
     --color-accent: #c2683c;
     --color-accent-soft: #d98a4e;
@@ -126,9 +126,9 @@
     --color-paper: #2a2320;
     --color-paper-raised: #322a25;
     --color-paper-sunk: #201a16;
-    --color-ink: #f0e7db;
-    --color-ink-soft: #c4b6a6;
-    --color-ink-faint: #93867a;
+    --color-ink: #f7f0e6;
+    --color-ink-soft: #ddd0c0;
+    --color-ink-faint: #c4b4a2;
     --color-line: #40352d;
     --color-accent: #e6934f;
     --color-accent-soft: #eaa66d;
@@ -146,9 +146,9 @@
     --color-paper: #f6f1e7;
     --color-paper-raised: #fbf7ee;
     --color-paper-sunk: #ece4d5;
-    --color-ink: #2c2622;
-    --color-ink-soft: #5c5248;
-    --color-ink-faint: #8a7d6e;
+    --color-ink: #1f1814;
+    --color-ink-soft: #3d342c;
+    --color-ink-faint: #5c4f42;
     --color-line: #e2d8c6;
     --color-accent: #c2683c;
     --color-gold: #b8934e;
@@ -165,9 +165,9 @@
     --color-paper: #f3ecdb;
     --color-paper-raised: #f9f3e6;
     --color-paper-sunk: #e8dcc6;
-    --color-ink: #33291f;
-    --color-ink-soft: #63564a;
-    --color-ink-faint: #94826d;
+    --color-ink: #1f1814;
+    --color-ink-soft: #3d342c;
+    --color-ink-faint: #5c4f42;
     --color-line: #ded1b8;
     --color-accent: #b5622c;
     --color-accent-soft: #d98a4e;
@@ -185,9 +185,9 @@
     --color-paper: #faf7f2;
     --color-paper-raised: #ffffff;
     --color-paper-sunk: #f0ebe3;
-    --color-ink: #1e1b17;
-    --color-ink-soft: #55504a;
-    --color-ink-faint: #8b8580;
+    --color-ink: #14110e;
+    --color-ink-soft: #3a3530;
+    --color-ink-faint: #5a544c;
     --color-line: #e9e3da;
     --color-accent: #d06a3a;
     --color-accent-soft: #e08a5a;
@@ -203,9 +203,9 @@
     --color-paper: #1e1b17;
     --color-paper-raised: #2a2622;
     --color-paper-sunk: #151310;
-    --color-ink: #f5f1ea;
-    --color-ink-soft: #b8b2a8;
-    --color-ink-faint: #8a857c;
+    --color-ink: #f7f0e6;
+    --color-ink-soft: #ddd4c8;
+    --color-ink-faint: #c2b8ac;
     --color-line: #3a3530;
     --color-accent: #e07a4a;
     --color-gold: #c9a860;
@@ -223,9 +223,9 @@
     --color-paper: #2a2320;
     --color-paper-raised: #322a25;
     --color-paper-sunk: #201a16;
-    --color-ink: #f0e7db;
-    --color-ink-soft: #c4b6a6;
-    --color-ink-faint: #93867a;
+    --color-ink: #f7f0e6;
+    --color-ink-soft: #ddd0c0;
+    --color-ink-faint: #c4b4a2;
     --color-line: #40352d;
     --color-accent: #e6934f;
     --color-gold: #d3b26b;
@@ -239,9 +239,9 @@
       --color-paper: #2a2320;
       --color-paper-raised: #322a25;
       --color-paper-sunk: #201a16;
-      --color-ink: #f0e7db;
-      --color-ink-soft: #c4b6a6;
-      --color-ink-faint: #93867a;
+      --color-ink: #f7f0e6;
+      --color-ink-soft: #ddd0c0;
+      --color-ink-faint: #c4b4a2;
       --color-line: #40352d;
       --color-accent: #e6934f;
       --color-accent-soft: #eaa66d;
@@ -1073,10 +1073,10 @@
 .paper-tab__label {
   font-family: var(--font-serif);
   font-size: 0.58rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.02em;
   line-height: 1.1;
-  color: color-mix(in srgb, var(--sticker) 55%, var(--color-ink));
+  color: color-mix(in srgb, var(--sticker) 30%, var(--color-ink));
   white-space: nowrap;
 }
 .paper-tab.is-active {
@@ -1087,7 +1087,7 @@
   border-left-width: 3px;
 }
 .paper-tab.is-active .paper-tab__label {
-  color: color-mix(in srgb, var(--sticker) 40%, var(--color-ink));
+  color: var(--color-ink);
 }
 .paper-tab-rail.is-peeling .paper-tab {
   animation: paper-tab-peel 320ms var(--ease-out-soft, cubic-bezier(0.22, 1, 0.36, 1)) both;
@@ -1123,9 +1123,9 @@
   display: block;
   font-family: var(--font-sans);
   font-size: 0.62rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0;
-  color: color-mix(in srgb, var(--color-ink-faint) 80%, var(--dr-wood-dark));
+  color: color-mix(in srgb, var(--color-ink-soft) 75%, var(--dr-wood-dark));
 }
 @media (prefers-reduced-motion: reduce) {
   .paper-tab {
@@ -1412,8 +1412,8 @@
       var(--dr-wood-mid) 78%,
       color-mix(in srgb, var(--dr-wood-dark) 70%, var(--dr-wood-mid)) 100%
     ),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.38'/%3E%3C/svg%3E");
-  background-blend-mode: multiply, normal, soft-light;
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.22'/%3E%3C/svg%3E");
+  background-blend-mode: normal, normal, soft-light;
 }
 @media (max-width: 639px) {
   .dresser-scene {
@@ -1430,10 +1430,18 @@
 .dresser-scrim {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 50% 8%, color-mix(in srgb, var(--color-accent) 26%, transparent), transparent 52%),
-    linear-gradient(180deg, transparent 40%, color-mix(in srgb, var(--desk, #ebe4d4) 30%, #000) 100%);
+  /* Soft lamp only — no heavy bottom vignette (was killing chrome contrast) */
+  background: radial-gradient(
+    ellipse at 50% 10%,
+    color-mix(in srgb, var(--color-accent) 18%, transparent),
+    transparent 55%
+  );
   pointer-events: none;
+}
+.dresser-chrome {
+  background: color-mix(in srgb, var(--color-paper-raised) 94%, #fff);
+  color: #1a120e;
+  box-shadow: 0 1px 4px color-mix(in srgb, #000 16%, transparent);
 }
 .dresser-stage {
   position: relative;
@@ -1597,6 +1605,15 @@
   opacity: 1;
   padding: 1rem 1rem 1.15rem;
   margin-bottom: 0.15rem;
+  /* Always-light parchment card — readable on every skin (incl. candlelit) */
+  --dr-card: #fbf7ee;
+  --dr-card-deep: #efe4d0;
+  border-radius: 0.45rem;
+  background: linear-gradient(180deg, var(--dr-card) 0%, var(--dr-card-deep) 100%);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, #fff 55%, transparent),
+    0 2px 10px color-mix(in srgb, #000 28%, transparent);
+  color: #1a120e;
 }
 .dresser-drawer__front {
   position: relative;
@@ -1631,43 +1648,42 @@
     inset 0 -1px 1px color-mix(in srgb, #000 30%, transparent);
 }
 
-/* Carved letterpress question */
+/* Carved letterpress question — on parchment liner */
 .dresser-carve {
   margin: 0;
   font-family: var(--font-serif);
   font-size: 1.15rem;
   font-weight: 600;
   line-height: 1.3;
-  color: color-mix(in srgb, var(--dr-wood-dark) 55%, #1a1008);
-  text-shadow:
-    0 1px 0 color-mix(in srgb, #fff 38%, transparent),
-    0 -1px 1px color-mix(in srgb, #000 40%, transparent);
+  color: #1a120e;
+  text-shadow: 0 1px 0 color-mix(in srgb, #fff 65%, transparent);
 }
 .dresser-carve-preview {
   margin: 0.55rem 0 0;
   font-family: var(--font-serif);
   font-size: 1.65rem;
   font-style: italic;
-  color: color-mix(in srgb, var(--dr-wood-dark) 40%, #1a1008);
-  text-shadow: 0 1px 0 color-mix(in srgb, #fff 30%, transparent);
+  color: #1f1814;
+  text-shadow: 0 1px 0 color-mix(in srgb, #fff 55%, transparent);
 }
 .dresser-carve-preview span {
-  color: color-mix(in srgb, var(--dr-wood-dark) 55%, transparent);
+  color: #3d2e22;
   font-style: normal;
   font-size: 0.85em;
 }
 .dresser-carve-sub {
   margin: 0.35rem 0 0;
   font-size: 0.8rem;
-  color: color-mix(in srgb, var(--dr-wood-dark) 50%, #3a2a18);
+  color: #3d342c;
 }
 .dresser-slot-label {
   display: block;
   margin-top: 0.85rem;
   font-size: 0.75rem;
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--dr-wood-dark) 45%, #2a1c10);
+  color: #2e241c;
 }
 .dresser-slot {
   margin-top: 0.4rem;
@@ -1685,10 +1701,14 @@
   border: none;
   border-radius: 0.35rem;
   padding: 0.55rem 0.85rem;
-  background: color-mix(in srgb, var(--color-paper-raised) 92%, #f5ecd8);
-  color: var(--color-ink);
+  background: #fffaf3;
+  color: #1a120e;
   box-shadow: inset 0 2px 5px color-mix(in srgb, #000 14%, transparent);
   font-size: 1rem;
+}
+.dresser-slot input::placeholder {
+  color: #5c4f42;
+  opacity: 1;
 }
 .dresser-slot input:focus {
   outline: 2px solid color-mix(in srgb, var(--color-accent) 70%, transparent);
@@ -1714,8 +1734,9 @@
   min-height: 2.75rem;
   background: transparent;
   border: none;
-  color: color-mix(in srgb, var(--dr-wood-dark) 55%, #4a3828);
+  color: #2e241c;
   font-size: 0.875rem;
+  font-weight: 600;
 }
 .dresser-tag {
   display: flex;
@@ -1725,20 +1746,19 @@
   text-align: left;
   border-radius: 0.4rem;
   padding: 0.55rem 0.75rem;
-  border: 1px solid color-mix(in srgb, var(--dr-brass) 55%, var(--dr-wood-dark));
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--dr-wood) 85%, #fff), var(--dr-wood-mid));
+  border: 1px solid color-mix(in srgb, var(--dr-brass) 55%, #5c4030);
+  background: linear-gradient(180deg, #fffaf2, #f0e4d0);
   box-shadow:
-    inset 0 1px 0 color-mix(in srgb, #fff 25%, transparent),
+    inset 0 1px 0 color-mix(in srgb, #fff 40%, transparent),
     0 2px 5px color-mix(in srgb, #000 22%, transparent);
 }
 .dresser-tag__label {
   font-weight: 600;
-  color: color-mix(in srgb, var(--dr-wood-dark) 35%, #1a1008);
+  color: #1a120e;
 }
 .dresser-tag__blurb {
   font-size: 0.7rem;
-  color: color-mix(in srgb, var(--dr-wood-dark) 50%, #3a2a18);
+  color: #3d342c;
 }
 .dresser-tag:disabled {
   opacity: 0.5;

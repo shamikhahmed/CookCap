@@ -194,17 +194,15 @@ export function DresserOnboarding({
         >
           <div className="dresser-scrim" aria-hidden />
 
-          <header className="relative z-20 flex items-center justify-between gap-3 px-5 pb-1 pt-[max(0.75rem,env(safe-area-inset-top))]">
-            <p className="font-serif text-sm font-semibold italic text-[color:var(--color-ink)]">
-              {PRODUCT_NAME}
-            </p>
-            <p className="text-[0.65rem] tabular-nums text-[color:var(--color-ink-faint)]" aria-live="polite">
+          <header className="dresser-chrome relative z-20 mx-3 mt-[max(0.5rem,env(safe-area-inset-top))] flex items-center justify-between gap-3 rounded-xl px-4 py-2">
+            <p className="font-serif text-sm font-semibold italic">{PRODUCT_NAME}</p>
+            <p className="text-[0.75rem] font-semibold tabular-nums" aria-live="polite">
               {progressLabel}
             </p>
             <button
               type="button"
               onClick={setupLater}
-              className="min-h-11 rounded-lg px-2 text-xs text-[color:var(--color-ink-faint)]"
+              className="min-h-11 rounded-lg px-2 text-xs font-semibold underline-offset-2 hover:underline"
             >
               Set up later
             </button>
@@ -429,7 +427,7 @@ export function DresserOnboarding({
                 type="button"
                 disabled={animating}
                 onClick={goBack}
-                className="relative z-20 mt-3 min-h-11 text-sm text-[color:var(--color-ink-faint)]"
+                className="dresser-chrome relative z-20 mt-3 min-h-11 rounded-full px-5 text-sm font-semibold"
               >
                 ← Back
               </button>

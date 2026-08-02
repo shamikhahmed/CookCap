@@ -1,8 +1,8 @@
-# CookCap v2.4.2 — QA Matrix
+# CookCap v2.4.3 — QA Matrix
 
 **Columns:** screen · element · expected · actual · pass/fail  
 **Scope:** phone 390 · iPad 768/834 · desktop 1280/1920 · skins · light/dark · reduced-motion  
-**Live URL:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v21`
+**Live URL:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v22`
 
 > Prove chrome by **DOM geometry**; 3D by anti-2d gate; recipes by `gate:recipes`; keyboard by typing full name on phone. Re-check live after each push — gallery ≠ live proof.
 

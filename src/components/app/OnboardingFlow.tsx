@@ -85,7 +85,10 @@ export function OnboardingFlow({
             <p className="font-serif text-sm font-semibold italic text-[color:var(--color-ink)]">
               {PRODUCT_NAME}
             </p>
-            <p className="text-[0.65rem] tabular-nums text-[color:var(--color-ink-faint)]" aria-live="polite">
+            <p
+              className="text-[0.7rem] font-medium tabular-nums text-[color:var(--color-ink-soft)]"
+              aria-live="polite"
+            >
               {progressLabel}
             </p>
           </header>
@@ -112,7 +115,7 @@ export function OnboardingFlow({
                 <button
                   type="button"
                   onClick={setupLater}
-                  className="mt-2 min-h-11 w-full rounded-xl px-4 py-2 text-sm text-[color:var(--color-ink-faint)]"
+                  className="mt-2 min-h-11 w-full rounded-xl px-4 py-2 text-sm font-semibold text-[color:var(--color-ink-soft)]"
                 >
                   Set up later
                 </button>
@@ -129,7 +132,7 @@ export function OnboardingFlow({
                   aria-live="polite"
                 >
                   {previewName || 'Your name'}{' '}
-                  <span className="text-[color:var(--color-ink-faint)]">Cooks</span>
+                  <span className="text-[color:var(--color-ink-soft)]">Cooks</span>
                 </p>
                 <label className="mt-6 block text-sm text-[color:var(--color-ink-soft)]" htmlFor="onboard-name">
                   Your name
@@ -205,7 +208,11 @@ export function OnboardingFlow({
                 >
                   Create profile
                 </button>
-                <button type="button" onClick={skipProfile} className="mt-2 min-h-11 w-full text-sm text-[color:var(--color-ink-faint)]">
+                <button
+                  type="button"
+                  onClick={skipProfile}
+                  className="mt-2 min-h-11 w-full text-sm font-semibold text-[color:var(--color-ink-soft)]"
+                >
                   Skip
                 </button>
               </div>
@@ -226,11 +233,15 @@ export function OnboardingFlow({
                       className="flex min-h-11 w-full flex-col rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-4 py-3 text-left hover:border-[color:var(--color-accent)]"
                     >
                       <span className="font-medium text-[color:var(--color-ink)]">{m.label}</span>
-                      <span className="text-xs text-[color:var(--color-ink-faint)]">{m.blurb}</span>
+                      <span className="text-xs text-[color:var(--color-ink-soft)]">{m.blurb}</span>
                     </button>
                   ))}
                 </div>
-                <button type="button" onClick={skipMode} className="mt-3 min-h-11 w-full text-sm text-[color:var(--color-ink-faint)]">
+                <button
+                  type="button"
+                  onClick={skipMode}
+                  className="mt-3 min-h-11 w-full text-sm font-semibold text-[color:var(--color-ink-soft)]"
+                >
                   Skip — open my book
                 </button>
               </div>
@@ -246,7 +257,7 @@ export function OnboardingFlow({
                 <p id={titleId} className="font-serif text-3xl font-semibold italic text-[color:var(--color-ink)]">
                   {previewName || 'Our Family'} Cooks
                 </p>
-                <p className="mt-2 text-sm text-[color:var(--color-ink-faint)]">Opening your book…</p>
+                <p className="mt-2 text-sm text-[color:var(--color-ink-soft)]">Opening your book…</p>
               </motion.div>
             )}
 
@@ -254,7 +265,7 @@ export function OnboardingFlow({
               <button
                 type="button"
                 onClick={goBack}
-                className="mt-4 min-h-11 self-start text-sm text-[color:var(--color-ink-faint)]"
+                className="mt-4 min-h-11 self-start text-sm font-semibold text-[color:var(--color-ink)]"
               >
                 ← Back
               </button>

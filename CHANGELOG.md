@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.4.3 — 2026-08-03
+
+### Fix
+- **Contrast pass:** darker ink / brighter dark-skin ink across all skins
+- Dresser: parchment card in open drawers; carve/labels/skip readable
+- Dresser + Simple onboard chrome (step, Set up later, Back) stronger weight/ink
+- Paper tab labels/subs higher contrast
+
+### Chore
+- SW → `cookcap-v22`; docs + gallery regen
+
 ## 2.4.2 — 2026-08-03
 
 ### Fix

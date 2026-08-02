@@ -1,6 +1,6 @@
-# CookCap v2.4.2 — Performance Budgets
+# CookCap v2.4.3 — Performance Budgets
 
-**Version:** 2.4.2 · **SW:** `cookcap-v21` · **Deploy:** GitHub Pages `/CookCap/`  
+**Version:** 2.4.3 · **SW:** `cookcap-v22` · **Deploy:** GitHub Pages `/CookCap/`  
 **Catalog:** **215** recipes · family editorial only
 
 ---
