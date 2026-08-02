@@ -1,31 +1,25 @@
 # CookCap — Screen gallery
 
-Version **1.5.1**. Regen: `npm run gallery` (dev on `:3000`).
+Version **2.0.0**. Regen: `GALLERY_URL=http://localhost:3456 npm run gallery` (static `out/` preferred).
 
 ## Desktop (1440×900)
 
 | # | Screen | File |
 |---|--------|------|
-| 00 | Name gate | [desktop/00-name-gate.png](./desktop/00-name-gate.png) |
-| 01 | Cover (`Jia Cooks`) | [desktop/01-cover.png](./desktop/01-cover.png) |
-| 02 | Title | [desktop/02-title.png](./desktop/02-title.png) |
-| 03 | Kitchen friends | [desktop/03-friends.png](./desktop/03-friends.png) |
-| 04 | Contents | [desktop/04-contents.png](./desktop/04-contents.png) |
-| 05 | Recipe | [desktop/05-recipe.png](./desktop/05-recipe.png) |
-| 06 | Cook mode | [desktop/06-cook-mode.png](./desktop/06-cook-mode.png) |
-| 07 | Search | [desktop/07-search.png](./desktop/07-search.png) |
-| 08 | Shopping | [desktop/08-shopping.png](./desktop/08-shopping.png) |
-| 09 | Meal planner | [desktop/09-meal-planner.png](./desktop/09-meal-planner.png) |
-| 10 | Recipe dark | [desktop/10-recipe-dark.png](./desktop/10-recipe-dark.png) |
-| 11 | Chapter | [desktop/11-chapter.png](./desktop/11-chapter.png) |
+| 00–12 | Core book + tabs | `desktop/00`…`12` |
+| 13 | Mode chooser | [desktop/13-mode-chooser.png](./desktop/13-mode-chooser.png) |
+| 14 | Profiles | [desktop/14-profiles.png](./desktop/14-profiles.png) |
+| 15 | Calendar | [desktop/15-calendar.png](./desktop/15-calendar.png) |
+| 16 | Pantry & budget | [desktop/16-pantry.png](./desktop/16-pantry.png) |
+| 17 | Recipe (My Plate) | [desktop/17-recipe-plate.png](./desktop/17-recipe-plate.png) |
 
 ## Mobile (390×844)
 
-Same set + `12-tabs-sheet.png`. Phone = full-bleed leaf; **Tabs** in footer → sheet. See `mobile/`.
+Same set under `mobile/`.
 
 ## Regen
 
 ```bash
-npm run dev
-npm run gallery
+npm run build && npx serve out -l 3456
+GALLERY_URL=http://localhost:3456 npm run gallery
 ```

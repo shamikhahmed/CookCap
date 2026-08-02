@@ -1,23 +1,16 @@
 # CookCap — Handover
 
-Heirloom family cookbook PWA (Cap family). Version **1.5.1**.
+Heirloom family cookbook PWA (Cap family). Version **2.0.0**.
 
 ## Live
 
 https://shamikhahmed.github.io/CookCap/
 
-Same model as PulseCap / VaultCap: Next `output: 'export'` + Actions Pages.
-`NEXT_PUBLIC_BASE_PATH=/CookCap` on CI only.
-
-## Critical gotcha (v1.5.1)
-
-`next/image` with `unoptimized` does **not** auto-prefix `basePath`. All recipe /
-step / preload asset URLs must go through `withBase()` or they 404 on Pages
-(looked like “no photos”). SW `cookcap-v2`.
+Next `output: 'export'` + Actions Pages. `NEXT_PUBLIC_BASE_PATH=/CookCap` on CI.
 
 ## Stack
 
-Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB · SW `cookcap-v2`
+Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v3 · SW `cookcap-v3`
 
 ## Run
 
@@ -25,24 +18,27 @@ Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB · SW
 cd "/Users/shamikhahmed/CookBook Website"
 npm install && npm run dev
 npm run typecheck && npm run build
-npm run gallery   # needs :3000
+npm run gallery   # prefer static: npm run build && npx serve out -l 3456; GALLERY_URL=http://localhost:3456 npm run gallery
 ```
 
-## Mobile
+## Lenses (additive — Reader = pure book)
 
-Phone = full-bleed reader leaf (Apple Books style). Desktop = leather case + fat
-fore-edge tabs. Phone Tabs = footer control → sheet (no floating FAB).
+| Mode | What |
+|------|------|
+| Reader | Default. No badges/tracking |
+| My Plate | Fit badges, For You leaf, log, healthier |
+| Mother | Cook-for multi + allergen flags |
+| Budget | Cost estimates + weekly budget + pantry |
+| Quick / Beginner / Dawat / Ramadan / Toddler / health lenses / Couple | Scoring presets |
 
-## Name → book
+Profiles + diary + pantry = device-local IndexedDB. Migration v2→v3 keeps favorites/notes/ratings/meal-plan.
 
-`NameGate` → `{Name} Cooks`. Product chrome = **CookCap**. ··· → Change book name.
+## Gotchas
 
-## Roadmap honesty
+- `unoptimized` Image needs `withBase()` on Pages
+- Phone = full-bleed leaf; Tabs in footer
+- Switching mode adds/removes For You leaf → page indices shift (expected)
 
-`MASTER_PROMPT.md` + `docs/plan-profiles-modes.md` describe profiles/modes/
-nutrition/calendar. **Not shipped.** Only Phase 0 stabilize (this release) is done.
+## Key paths
 
-## Key files
-
-`withBase` · `RecipeImage` · `images.ts` · `Shell` · `Book` · `BookmarkRail` ·
-`.github/workflows/pages.yml` · `docs/gallery/`
+`src/lib/profiles/*` · `src/lib/modes/*` · `src/lib/cost/*` · `src/components/profiles/*` · `ForYouLeaf` · `enrich.ts` · `data-goal.ts`

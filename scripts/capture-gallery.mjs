@@ -82,7 +82,13 @@ async function captureSet(page, folder) {
   await settle(page, 400);
   await shot(page, `${folder}/00-name-gate.png`);
   await page.getByLabel('Your name').fill('Jia');
-  await page.getByRole('button', { name: 'Open my book' }).click();
+  await page.getByRole('button', { name: 'Continue' }).click();
+  await page.getByRole('heading', { name: /Who eats/i }).waitFor({ state: 'visible', timeout: 8000 });
+  await settle(page, 300);
+  await page.getByRole('button', { name: 'Skip', exact: true }).click();
+  await page.getByRole('heading', { name: /Pick a mode/i }).waitFor({ state: 'visible', timeout: 8000 });
+  await settle(page, 300);
+  await page.getByRole('button', { name: /Skip — open my book/i }).click();
   await waitFooterPage(page, 1);
   await shot(page, `${folder}/01-cover.png`);
 
@@ -192,7 +198,51 @@ async function captureSet(page, folder) {
     await page.getByText(/Chapters|Pakistani/i).first().waitFor({ state: 'visible', timeout: 8000 });
     await settle(page, 400);
     await shot(page, `${folder}/12-tabs-sheet.png`);
+    await page.keyboard.press('Escape');
+    await settle(page, 300);
   }
+
+  // CookCap lenses (v2)
+  await page.evaluate(() => {
+    localStorage.setItem('cookcap-mode', 'plate');
+    localStorage.setItem('cookcap-owner', 'Jia');
+  });
+  await page.goto(`${BASE}/?for=Jia`, { waitUntil: 'domcontentloaded' });
+  await waitFooterReady(page, 60000);
+  await settle(page, 600);
+
+  await page.getByRole('button', { name: /^Mode —/ }).click();
+  await page.getByRole('heading', { name: 'Choose a mode' }).waitFor({ state: 'visible', timeout: 8000 });
+  await settle(page, 400);
+  await shot(page, `${folder}/13-mode-chooser.png`);
+  await page.keyboard.press('Escape');
+  await settle(page, 300);
+
+  await page.getByRole('button', { name: /Profiles|Open profiles/i }).first().click({ force: true });
+  await settle(page, 500);
+  await shot(page, `${folder}/14-profiles.png`);
+  await page.keyboard.press('Escape');
+  await settle(page, 300);
+
+  await openMore(page);
+  await page.getByRole('button', { name: 'Calendar', exact: true }).click({ force: true });
+  await settle(page, 500);
+  await shot(page, `${folder}/15-calendar.png`);
+  await page.keyboard.press('Escape');
+  await settle(page, 300);
+
+  await openMore(page);
+  await page.getByRole('button', { name: /Pantry/i }).click({ force: true });
+  await settle(page, 500);
+  await shot(page, `${folder}/16-pantry.png`);
+  await page.keyboard.press('Escape');
+  await settle(page, 300);
+
+  await page.goto(`${BASE}/?recipe=${RECIPE}&for=Jia`, { waitUntil: 'domcontentloaded' });
+  await waitFooterReady(page, 60000);
+  await page.evaluate(() => document.querySelector('[data-leaf-scroll]')?.scrollTo(0, 0));
+  await settle(page, 600);
+  await shot(page, `${folder}/17-recipe-plate.png`);
 }
 
 async function main() {

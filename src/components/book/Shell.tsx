@@ -13,8 +13,13 @@ import { InstallBanner } from '@/components/app/InstallBanner';
 import { AssetPreloader } from '@/components/app/AssetPreloader';
 import { NameGate } from '@/components/app/NameGate';
 import { useApp } from '@/components/app/AppStore';
+import { ProfilesDrawer } from '@/components/profiles/ProfilesDrawer';
+import { ModeChooser } from '@/components/profiles/ModeChooser';
+import { CalendarDrawer } from '@/components/profiles/CalendarDrawer';
+import { PantryDrawer } from '@/components/profiles/PantryDrawer';
 import { Icon } from '@/components/ui/Icon';
 import { PRODUCT_NAME } from '@/lib/edition';
+import { getMode } from '@/lib/modes/registry';
 
 /**
  * Application frame — Claude chrome: slim top bar, book + ribbon rail,
@@ -36,6 +41,10 @@ function Frame() {
   const [importOpen, setImportOpen] = useState(false);
   const [planOpen, setPlanOpen] = useState(false);
   const [renameOpen, setRenameOpen] = useState(false);
+  const [profilesOpen, setProfilesOpen] = useState(false);
+  const [modeOpen, setModeOpen] = useState(false);
+  const [calendarOpen, setCalendarOpen] = useState(false);
+  const [pantryOpen, setPantryOpen] = useState(false);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -58,6 +67,10 @@ function Frame() {
         onImport={() => setImportOpen(true)}
         onPlan={() => setPlanOpen(true)}
         onRename={() => setRenameOpen(true)}
+        onProfiles={() => setProfilesOpen(true)}
+        onMode={() => setModeOpen(true)}
+        onCalendar={() => setCalendarOpen(true)}
+        onPantry={() => setPantryOpen(true)}
       />
 
       <main className="journal-stage relative flex min-h-0 flex-1 items-center justify-center overflow-hidden px-0 pt-0 sm:overflow-visible sm:px-6 sm:pr-36 sm:pt-1 md:pr-40 lg:pr-48">
@@ -85,6 +98,10 @@ function Frame() {
         onShop={() => setShopOpen(true)}
       />
       <ImportModal open={importOpen} onClose={() => setImportOpen(false)} />
+      <ProfilesDrawer open={profilesOpen} onClose={() => setProfilesOpen(false)} />
+      <ModeChooser open={modeOpen} onClose={() => setModeOpen(false)} />
+      <CalendarDrawer open={calendarOpen} onClose={() => setCalendarOpen(false)} />
+      <PantryDrawer open={pantryOpen} onClose={() => setPantryOpen(false)} />
       <InstallBanner />
       <AssetPreloader />
       <NameGate
@@ -107,6 +124,10 @@ function TopBar({
   onImport,
   onPlan,
   onRename,
+  onProfiles,
+  onMode,
+  onCalendar,
+  onPantry,
 }: {
   onSearch: () => void;
   onFavorites: () => void;
@@ -114,6 +135,10 @@ function TopBar({
   onImport: () => void;
   onPlan: () => void;
   onRename: () => void;
+  onProfiles: () => void;
+  onMode: () => void;
+  onCalendar: () => void;
+  onPantry: () => void;
 }) {
   const {
     theme,
@@ -122,11 +147,15 @@ function TopBar({
     soundOn,
     setSoundOn,
     shoppingCount,
+    mode,
+    activeProfile,
   } = useApp();
   const dark = theme === 'dark';
   const reduce = useReducedMotion();
   const [more, setMore] = useState(false);
   const moreRef = useRef<HTMLDivElement>(null);
+  const modeDef = getMode(mode);
+  const modeLetter = modeDef.label.trim().charAt(0).toUpperCase() || 'R';
 
   useEffect(() => {
     if (!more) return;
@@ -138,7 +167,7 @@ function TopBar({
   }, [more]);
 
   return (
-    <header className="relative z-30 flex shrink-0 items-center justify-between gap-2 px-3 py-2 sm:px-6 sm:py-2.5">
+    <header className="relative z-50 flex shrink-0 items-center justify-between gap-2 px-3 py-2 sm:px-6 sm:py-2.5">
       <div className="flex min-w-0 items-center gap-2 text-[color:var(--color-ink)]">
         <Icon name="book" size={20} />
         <div className="min-w-0 leading-tight">
@@ -154,6 +183,34 @@ function TopBar({
         </div>
       </div>
       <div className="flex shrink-0 items-center gap-0.5 sm:gap-1">
+        {mode !== 'reader' && (
+          <button
+            type="button"
+            onClick={onProfiles}
+            aria-label={
+              activeProfile
+                ? `Profiles — ${activeProfile.name}`
+                : 'Open profiles'
+            }
+            title={activeProfile?.name ?? 'Profiles'}
+            className="grid size-8 place-items-center rounded-full text-[0.7rem] font-semibold text-white transition-transform active:scale-90 sm:size-9"
+            style={{
+              background: activeProfile?.color ?? 'var(--color-accent)',
+            }}
+          >
+            {(activeProfile?.name?.trim().charAt(0) ?? '?').toUpperCase()}
+          </button>
+        )}
+        <button
+          type="button"
+          onClick={onMode}
+          aria-label={`Mode — ${modeDef.label}`}
+          title={modeDef.label}
+          className="grid size-8 place-items-center rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)] text-[0.7rem] font-semibold text-[color:var(--color-ink-soft)] transition-transform hover:border-[color:var(--color-accent)] active:scale-90 sm:size-9"
+          style={{ color: modeDef.color }}
+        >
+          {modeLetter}
+        </button>
         <IconBtn label="Search recipes" onClick={onSearch}>
           <Icon name="search" size={20} />
         </IconBtn>
@@ -182,7 +239,7 @@ function TopBar({
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -4 }}
                 transition={{ duration: reduce ? 0 : 0.15 }}
-                className="absolute right-0 top-full z-50 mt-1 min-w-[11rem] overflow-hidden rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] py-1 shadow-[var(--shadow-lg)]"
+                className="absolute right-0 top-full z-[100] mt-1 min-w-[11rem] overflow-hidden rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] py-1 shadow-[var(--shadow-lg)]"
               >
                 <span className="sm:hidden">
                   <MenuItem
@@ -223,6 +280,39 @@ function TopBar({
                     setMore(false);
                   }}
                 />
+                <MenuItem
+                  label="Profiles"
+                  onClick={() => {
+                    onProfiles();
+                    setMore(false);
+                  }}
+                />
+                <MenuItem
+                  label="Mode"
+                  onClick={() => {
+                    onMode();
+                    setMore(false);
+                  }}
+                />
+                <MenuItem
+                  label="Calendar"
+                  onClick={() => {
+                    onCalendar();
+                    setMore(false);
+                  }}
+                />
+                <MenuItem
+                  label="Pantry & budget"
+                  onClick={() => {
+                    onPantry();
+                    setMore(false);
+                  }}
+                />
+                {mode === 'mother' && (
+                  <p className="px-3.5 py-1.5 text-[0.7rem] leading-snug text-[color:var(--color-ink-faint)]">
+                    Cooking-for list lives in Profiles.
+                  </p>
+                )}
                 <MenuItem
                   label="Import WhatsApp recipe"
                   onClick={() => {

@@ -1,20 +1,20 @@
 # CookCap — Presentation
 
-**v1.5.1** · https://shamikhahmed.github.io/CookCap/
+**v2.0.0** · https://shamikhahmed.github.io/CookCap/
 
 ## Pitch
 
-CookCap opens like a hardcover. Name the book. Flip offline. No account.
+CookCap opens like a hardcover. Name the book. Flip offline. Optional lenses for goals, family cooking, budget — never required.
 
 ## Demo
 
-1. Enter name → cover `{Name} Cooks`
-2. Flip / Tabs → recipe → Cook mode
-3. Search → Shopping / This week
+1. Name → cover
+2. (Optional) profile + My Plate
+3. Flip → For You / recipe fit badge → Log this → Calendar
+4. ··· → Mode → Reader restores pure book
 
 ## Status
 
-Reader + meal planner + shopping shipped. Profiles/modes/nutrition calendar from
-`MASTER_PROMPT.md` **not** shipped (planned).
+Phases 0–12 shipped (local profiles/modes/diary/pantry/cost). Cloud sync still out of scope.
 
 Gallery: [docs/gallery/README.md](./docs/gallery/README.md)

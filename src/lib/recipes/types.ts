@@ -107,4 +107,28 @@ export interface Recipe {
   related?: string[];
   /** Deterministic art seed → generated SVG hero (offline fallback if no photo). */
   heroSeed: number;
+  /** True when macros were hand-checked; UI should hint "estimated" when false/absent. */
+  macrosVerified?: boolean;
+  dietTags?: (
+    | 'vegetarian'
+    | 'vegan'
+    | 'high-protein'
+    | 'low-cal'
+    | 'gluten-free'
+    | 'low-carb'
+    | 'breakfast'
+    | 'budget'
+  )[];
+  healthierSwaps?: {
+    from: string;
+    to: string;
+    deltaKcal?: number;
+    deltaProtein?: number;
+    note?: string;
+  }[];
+  /** Estimated cost per serving in PKR. */
+  estCostPerServing?: number;
+  costTier?: 'budget' | 'mid' | 'splurge';
+  pantryStaple?: boolean;
+  servesCrowd?: boolean;
 }

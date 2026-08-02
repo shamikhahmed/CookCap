@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.0.0 — 2026-08-02
+
+### Profiles, modes, nutrition & calendar (phases 1–12)
+- **Profiles** — IndexedDB household eaters (biometrics → Mifflin–St Jeor targets); TopBar switcher; manage drawer; optional NameGate steps
+- **Modes (data presets)** — Reader (default, untouched book), My Plate, Mother, Budget, Quick, Beginner, Dawat, Ramadan, Toddler, diabetic/heart/fiber lenses, Couple — `ModeDef` registry + recommender
+- **My Plate** — fit badges, **For You** leaf after Contents, estimated-macros hint
+- **Make it healthier** — swap engine + before/after macros; curated swaps on 28 flagships
+- **Log + Calendar** — log meals offline; month rings; planned vs eaten; streaks
+- **Mother Mode** — cooking-for multi-select + allergen flags for selected eaters
+- **Budget / Pantry** — PKR cost estimates, weekly grocery budget, pantry inventory + cook-from-what-you-have
+- **+32 goal recipes** (`goal-*`) with `macrosVerified: true` (breakfast / high-protein / light / budget)
+- SW → `cookcap-v3`; docs + gallery updated
+
+### Honest labels
+- Macros/costs = estimates unless `macrosVerified`; health modes carry “not medical advice”
+- Reader mode stays the pure book when lenses ignored
+
+
 ## 1.5.1 — 2026-08-02
 
 ### Fix (mobile + GitHub Pages)

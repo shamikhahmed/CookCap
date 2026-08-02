@@ -1,14 +1,13 @@
 # CookCap — MASTER BUILD PROMPT (self-continuing)
 
-> **Honesty gate 2026-08-02 (v1.5.1):** Phase **0 stabilize** is what shipped —
-> Pages `withBase` photos, mobile full-bleed reader, flip touch, docs/gallery.
-> Phases **1–12** (profiles / modes / nutrition / calendar) are **NOT built**.
-> Do not mark them done. Product name = **CookCap**; book title = `{Name} Cooks`.
+> **Honesty gate 2026-08-02 (v2.0.0):** Phases **0–12 shipped** — stabilize +
+> profiles/modes/nutrition/calendar/pantry/budget/goal recipes + docs/gallery.
+> Phase **13 cloud sync** optional / not built. Product = **CookCap**.
 
 Paste this whole file into Cursor as the standing instruction. Working dir =
 `/Users/shamikhahmed/CookBook Website`. Stack: Next.js 15 (App Router) · React 19 ·
 TypeScript strict · Tailwind v4 · Motion · IndexedDB · Service Worker (PWA).
-Current **v1.5.1**, ~186 recipes, offline-first, no accounts. Live:
+Current **v2.0.0**, ~218+ recipes, offline-first, no accounts. Live:
 https://shamikhahmed.github.io/CookCap/
 
 Companion specs (read them, they are authoritative for scope):

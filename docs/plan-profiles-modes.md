@@ -1,12 +1,12 @@
 # Jia Cooks / CookCap — Plan: Profiles, Modes, Nutrition & Calendar
 
-> **Status 2026-08-02:** Product renamed **CookCap** (v1.5.1). Phase **0**
-> stabilize shipped (Pages photos, mobile full-bleed, flip touch). Phases **1–12**
-> below are **not implemented** yet — do not treat as done.
+> **Status 2026-08-02:** Product **CookCap** **v2.0.0**. Phases **0–12 shipped**
+> (profiles, modes, nutrition, calendar, pantry, budget, goal recipes, docs/gallery).
+> Cloud sync (opt phase 13) still out of scope.
 
 Hand this to Cursor. It is a **plan first**, then a build brief. Working dir =
 this repo. Stack: Next.js 15 · React 19 · TS strict · Tailwind v4 · Motion ·
-IndexedDB · SW. Current **v1.5.1**. Offline-first, no accounts.
+IndexedDB · SW. Current **v2.0.0**. Offline-first, no accounts.
 
 The book/reader experience is finished and must stay intact. Everything below is
 **additive** — a lens on top of the book, never a replacement. If a user ignores

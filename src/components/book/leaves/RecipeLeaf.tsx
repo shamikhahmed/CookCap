@@ -11,7 +11,11 @@ import { stepImageFor } from '@/lib/recipes/stepImages';
 import { useApp } from '@/components/app/AppStore';
 import { useBook } from '@/components/book/BookController';
 import { CookingMode } from '@/components/book/CookingMode';
+import { FitBadge } from '@/components/profiles/FitBadge';
+import { LogMealDialog } from '@/components/profiles/LogMealDialog';
 import { Icon } from '@/components/ui/Icon';
+import { formatCost, estCostPkr } from '@/lib/cost/ingredient-cost';
+import { applyHealthier } from '@/lib/profiles/nutrition';
 import * as store from '@/lib/db/store';
 import type { Recipe } from '@/lib/recipes/types';
 
@@ -35,8 +39,20 @@ export function RecipeLeaf({ recipeId, passive = false }: { recipeId: string; pa
 
 function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: boolean }) {
   const chapter = CHAPTER_MAP[recipe.chapter] ?? CHAPTER_MAP.pakistani!;
-  const { isFavorite, toggleFavorite, markViewed, allRecipes, refreshShoppingCount, edition } =
-    useApp();
+  const {
+    isFavorite,
+    toggleFavorite,
+    markViewed,
+    allRecipes,
+    refreshShoppingCount,
+    edition,
+    mode,
+    healthierOn,
+    setHealthierOn,
+    cookingForIds,
+    profiles,
+    currency,
+  } = useApp();
   const { goToRecipe } = useBook();
   const fav = isFavorite(recipe.id);
   const isTip = recipe.chapter === 'tips';
@@ -48,9 +64,43 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
   const [cooking, setCooking] = useState(false);
   const [shopFlash, setShopFlash] = useState(false);
   const [shareFlash, setShareFlash] = useState(false);
+  const [logOpen, setLogOpen] = useState(false);
   const factor = servings / recipe.servings;
   const related = relatedFor(recipe, 4, allRecipes);
   const noteTimer = useRef<number | null>(null);
+
+  const healthierMacros =
+    healthierOn && mode !== 'reader'
+      ? applyHealthier(recipe.nutrition)
+      : null;
+  const displayNutrition = healthierMacros
+    ? {
+        ...recipe.nutrition,
+        calories: healthierMacros.calories,
+        protein: healthierMacros.protein,
+        carbs: healthierMacros.carbs,
+        fat: healthierMacros.fat,
+      }
+    : recipe.nutrition;
+  const healthierPreview =
+    mode !== 'reader' ? applyHealthier(recipe.nutrition) : null;
+
+  const motherAllergenHits =
+    mode === 'mother' && cookingForIds.length > 0
+      ? cookingForIds.flatMap((id) => {
+          const p = profiles.find((x) => x.id === id);
+          if (!p?.avoid?.length || !recipe.allergens?.length) return [];
+          const hits = recipe.allergens.filter((a) =>
+            p.avoid.some((av) => av.toLowerCase() === a.toLowerCase()),
+          );
+          return hits.length
+            ? [{ name: p.name, allergens: hits }]
+            : [];
+        })
+      : [];
+
+  const recipeCost =
+    mode === 'budget' ? formatCost(estCostPkr(recipe), currency) : null;
 
   useEffect(() => {
     if (passive) return;
@@ -135,6 +185,9 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
         <p className="font-serif text-lg italic text-[color:var(--color-ink-soft)] text-balance">
           {recipe.tagline}
         </p>
+        <div className="mt-3">
+          <FitBadge recipe={recipe} />
+        </div>
 
         {/* ── A note from Jia ────────────────────────────────*/}
         {recipe.story && (
@@ -202,38 +255,117 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
           </div>
         )}
 
+        {motherAllergenHits.length > 0 && (
+          <div
+            className="mt-3 rounded-md border-l-4 p-3 text-sm text-[color:var(--color-ink-soft)]"
+            style={{
+              background:
+                'color-mix(in srgb, var(--color-danger) 10%, var(--color-paper))',
+              borderColor: 'var(--color-danger)',
+            }}
+            role="alert"
+          >
+            <div className="mb-1 font-semibold text-[color:var(--color-ink)]">
+              Allergen watch
+            </div>
+            <ul className="space-y-0.5">
+              {motherAllergenHits.map((hit) => (
+                <li key={hit.name}>
+                  {hit.name} avoids {hit.allergens.join(', ')} — this recipe
+                  contains them.
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {/* ── Meta strip ─────────────────────────────────────*/}
         <dl className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
           <Meta icon="clock" label="Prep" value={`${recipe.prepMin}m`} />
           <Meta icon="flame" label="Cook" value={`${recipe.cookMin}m`} />
           <Meta icon="gauge" label="Level" value={DIFF_LABEL[recipe.difficulty]} />
           {!isTip && (
-            <Meta icon="flame-cal" label="Cal" value={`${recipe.nutrition.calories}`} />
+            <Meta
+              icon="flame-cal"
+              label="Cal"
+              value={`${displayNutrition.calories}`}
+            />
           )}
         </dl>
+        {recipeCost && (
+          <p className="mt-2 text-xs text-[color:var(--color-ink-faint)]">
+            Est. ingredients ~ {recipeCost}
+          </p>
+        )}
 
         {/* Macros up front — family card glance */}
         {!isTip && (
-          <div className="mt-3 grid grid-cols-3 gap-2">
-            {(
-              [
-                ['Protein', `${recipe.nutrition.protein}g`],
-                ['Carbs', `${recipe.nutrition.carbs}g`],
-                ['Fat', `${recipe.nutrition.fat}g`],
-              ] as const
-            ).map(([k, v]) => (
-              <div
-                key={k}
-                className="rounded-lg border border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)]/60 px-2 py-2 text-center"
-              >
-                <div className="font-serif text-base font-semibold tabular-nums text-[color:var(--color-ink)]">
-                  {v}
+          <>
+            <div className="mt-3 grid grid-cols-3 gap-2">
+              {(
+                [
+                  ['Protein', `${displayNutrition.protein}g`],
+                  ['Carbs', `${displayNutrition.carbs}g`],
+                  ['Fat', `${displayNutrition.fat}g`],
+                ] as const
+              ).map(([k, v]) => (
+                <div
+                  key={k}
+                  className="rounded-lg border border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)]/60 px-2 py-2 text-center"
+                >
+                  <div className="font-serif text-base font-semibold tabular-nums text-[color:var(--color-ink)]">
+                    {v}
+                  </div>
+                  <div className="text-[0.65rem] uppercase tracking-wide text-[color:var(--color-ink-faint)]">
+                    {k}
+                  </div>
                 </div>
-                <div className="text-[0.65rem] uppercase tracking-wide text-[color:var(--color-ink-faint)]">
-                  {k}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            {!recipe.macrosVerified && (
+              <p className="mt-1.5 text-[0.7rem] text-[color:var(--color-ink-faint)]">
+                Estimated macros
+              </p>
+            )}
+          </>
+        )}
+
+        {mode !== 'reader' && !isTip && healthierPreview && (
+          <div className="mt-4 rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)]/50 px-3 py-3">
+            <label className="flex cursor-pointer items-center justify-between gap-3">
+              <span className="text-sm font-medium text-[color:var(--color-ink)]">
+                Make it healthier
+              </span>
+              <input
+                type="checkbox"
+                checked={healthierOn}
+                onChange={(e) => setHealthierOn(e.target.checked)}
+                className="size-4 accent-[color:var(--color-accent)]"
+              />
+            </label>
+            {healthierOn && (
+              <p className="mt-2 text-xs tabular-nums text-[color:var(--color-ink-soft)]">
+                {recipe.nutrition.calories} → {healthierPreview.calories} kcal ·{' '}
+                {recipe.nutrition.protein}g → {healthierPreview.protein}g protein
+              </p>
+            )}
+          </div>
+        )}
+
+        {mode !== 'reader' && !isTip && (
+          <div className="mt-3">
+            <button
+              type="button"
+              onClick={() => setLogOpen(true)}
+              className="rounded-full bg-[color:var(--color-accent)] px-4 py-2 text-sm font-semibold text-white transition-transform active:scale-95"
+            >
+              Log this
+            </button>
+            <LogMealDialog
+              open={logOpen}
+              onClose={() => setLogOpen(false)}
+              recipeId={recipe.id}
+            />
           </div>
         )}
 
@@ -433,16 +565,18 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
           <Section title="Nutrition" accent={chapter.tab}>
             <p className="mb-2 text-xs text-[color:var(--color-ink-faint)]">
               Per serving, kitchen estimate — family cooking, not a lab label.
+              {!recipe.macrosVerified && ' · Estimated macros.'}
+              {healthierOn && mode !== 'reader' && ' · Healthier swaps applied.'}
             </p>
             <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
               {(
                 [
-                  ['Cal', recipe.nutrition.calories],
-                  ['Protein', `${recipe.nutrition.protein}g`],
-                  ['Carbs', `${recipe.nutrition.carbs}g`],
-                  ['Fat', `${recipe.nutrition.fat}g`],
-                  ['Fiber', `${recipe.nutrition.fiber}g`],
-                  ['Sugar', `${recipe.nutrition.sugar}g`],
+                  ['Cal', displayNutrition.calories],
+                  ['Protein', `${displayNutrition.protein}g`],
+                  ['Carbs', `${displayNutrition.carbs}g`],
+                  ['Fat', `${displayNutrition.fat}g`],
+                  ['Fiber', `${displayNutrition.fiber}g`],
+                  ['Sugar', `${displayNutrition.sugar}g`],
                 ] as const
               ).map(([k, v]) => (
                 <div

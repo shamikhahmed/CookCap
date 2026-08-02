@@ -1,12 +1,13 @@
 'use client';
 
 import { openDB, type DBSchema, type IDBPDatabase } from 'idb';
+import type { DiaryEntry, PantryItem, Profile } from '@/lib/profiles/types';
 import type { Recipe } from '@/lib/recipes/types';
 
 /**
- * Offline-first user data. Favorites, notes, ratings, history, shopping, and
- * custom recipes live in IndexedDB — fully usable with no network / no account.
- * `collections` store exists for a future curated-lists UI (API unused in UI).
+ * Offline-first user data. Favorites, notes, ratings, history, shopping,
+ * custom recipes, profiles, diary, and pantry live in IndexedDB — fully
+ * usable with no network / no account.
  */
 
 interface CookbookDB extends DBSchema {
@@ -23,11 +24,18 @@ interface CookbookDB extends DBSchema {
     value: { key: string; item: string; qty: string; checked: boolean; recipeId?: string };
   };
   customs: { key: string; value: Recipe };
+  profiles: { key: string; value: Profile };
+  diary: {
+    key: string;
+    value: DiaryEntry;
+    indexes: { date: string; profileId: string };
+  };
+  pantry: { key: string; value: PantryItem };
   meta: { key: string; value: unknown };
 }
 
 const DB_NAME = 'jia-cooks';
-const DB_VERSION = 2;
+const DB_VERSION = 3;
 
 let dbp: Promise<IDBPDatabase<CookbookDB>> | null = null;
 
@@ -50,6 +58,19 @@ function db() {
         }
         if (oldVersion < 2 && !d.objectStoreNames.contains('customs')) {
           d.createObjectStore('customs', { keyPath: 'id' });
+        }
+        if (oldVersion < 3) {
+          if (!d.objectStoreNames.contains('profiles')) {
+            d.createObjectStore('profiles', { keyPath: 'id' });
+          }
+          if (!d.objectStoreNames.contains('diary')) {
+            const diary = d.createObjectStore('diary', { keyPath: 'id' });
+            diary.createIndex('date', 'date');
+            diary.createIndex('profileId', 'profileId');
+          }
+          if (!d.objectStoreNames.contains('pantry')) {
+            d.createObjectStore('pantry', { keyPath: 'id' });
+          }
         }
       },
     });
@@ -141,7 +162,6 @@ export async function addIngredientsToShopping(
     const norm = name.toLowerCase();
     const existing = all.find((r) => r.item.toLowerCase() === norm);
     if (existing) {
-      // Merge quantities when the same ingredient lands twice.
       const qty =
         existing.qty && it.qty && existing.qty !== it.qty
           ? `${existing.qty} + ${it.qty}`
@@ -175,4 +195,40 @@ export async function saveCustomRecipe(r: Recipe): Promise<void> {
 }
 export async function deleteCustomRecipe(id: string): Promise<void> {
   await (await db()).delete('customs', id);
+}
+
+/* ── Profiles ──────────────────────────────────────────────────────────*/
+export async function listProfiles(): Promise<Profile[]> {
+  return (await db()).getAll('profiles');
+}
+export async function putProfile(p: Profile): Promise<void> {
+  await (await db()).put('profiles', p);
+}
+export async function deleteProfile(id: string): Promise<void> {
+  await (await db()).delete('profiles', id);
+}
+
+/* ── Diary ─────────────────────────────────────────────────────────────*/
+export async function listDiary(): Promise<DiaryEntry[]> {
+  return (await db()).getAll('diary');
+}
+export async function putDiary(entry: DiaryEntry): Promise<void> {
+  await (await db()).put('diary', entry);
+}
+export async function deleteDiary(id: string): Promise<void> {
+  await (await db()).delete('diary', id);
+}
+export async function diaryByDate(date: string): Promise<DiaryEntry[]> {
+  return (await db()).getAllFromIndex('diary', 'date', date);
+}
+
+/* ── Pantry ────────────────────────────────────────────────────────────*/
+export async function listPantry(): Promise<PantryItem[]> {
+  return (await db()).getAll('pantry');
+}
+export async function putPantry(item: PantryItem): Promise<void> {
+  await (await db()).put('pantry', item);
+}
+export async function deletePantry(id: string): Promise<void> {
+  await (await db()).delete('pantry', id);
 }

@@ -1,5 +1,6 @@
 import { CHAPTERS } from '@/lib/recipes/chapters';
 import { RECIPES, recipesByChapter as staticByChapter } from '@/lib/recipes/data';
+import { enrichRecipe } from '@/lib/recipes/enrich';
 import type { ChapterId, Recipe } from '@/lib/recipes/types';
 
 /**
@@ -12,10 +13,11 @@ export type Leaf =
   | { kind: 'title' }
   | { kind: 'friends' }
   | { kind: 'contents' }
+  | { kind: 'foryou' }
   | { kind: 'chapter'; chapter: ChapterId }
   | { kind: 'recipe'; recipeId: string; chapter: ChapterId };
 
-export function buildLeaves(extra: Recipe[] = []): {
+export function buildLeaves(extra: Recipe[] = [], includeForYou = false): {
   leaves: Leaf[];
   chapterStart: Record<string, number>;
   allRecipes: Recipe[];
@@ -23,7 +25,7 @@ export function buildLeaves(extra: Recipe[] = []): {
 } {
   const bundledIds = new Set(RECIPES.map((r) => r.id));
   const customs = extra.filter((r) => !bundledIds.has(r.id));
-  const allRecipes = [...RECIPES, ...customs];
+  const allRecipes = [...RECIPES, ...customs].map(enrichRecipe);
   const recipeMap = Object.fromEntries(allRecipes.map((r) => [r.id, r])) as Record<string, Recipe>;
 
   const byChapter = (id: string) => allRecipes.filter((r) => r.chapter === id);
@@ -34,6 +36,7 @@ export function buildLeaves(extra: Recipe[] = []): {
     { kind: 'friends' },
     { kind: 'contents' },
   ];
+  if (includeForYou) leaves.push({ kind: 'foryou' });
   const chapterStart: Record<string, number> = {};
 
   for (const chapter of CHAPTERS) {

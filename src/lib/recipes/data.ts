@@ -2,11 +2,13 @@ import type { Recipe } from './types';
 import { EXTRA_RECIPES } from './data-extra';
 import { FILL_RECIPES } from './data-fill';
 import { FOODFUSION_RECIPES } from './data-foodfusion';
+import { GOAL_RECIPES } from './data-goal';
 
 /**
  * The cookbook's recipes. Flagship entries below are fully editorial; the
  * growing collection in `data-extra.ts` / `data-fill.ts` uses a compact builder.
  * `data-foodfusion.ts` = cleaned English adaptations (no promo/login/Urdu dump).
+ * `data-goal.ts` = breakfast / high-protein / light / budget goal recipes.
  * Heroes fall back to procedural art (`hero.ts`) until photos are added.
  */
 export const RECIPES: Recipe[] = [
@@ -678,6 +680,7 @@ export const RECIPES: Recipe[] = [
   ...EXTRA_RECIPES,
   ...FILL_RECIPES,
   ...FOODFUSION_RECIPES,
+  ...GOAL_RECIPES,
 ];
 
 export const RECIPE_MAP = Object.fromEntries(RECIPES.map((r) => [r.id, r])) as Record<
