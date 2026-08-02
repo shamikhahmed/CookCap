@@ -1,6 +1,6 @@
 # CookCap — Handover
 
-Heirloom family cookbook PWA (Cap family). Version **2.2.7**.
+Heirloom family cookbook PWA (Cap family). Version **2.2.8**.
 
 ## Live
 
@@ -10,7 +10,7 @@ Next `output: 'export'` + Actions Pages. `NEXT_PUBLIC_BASE_PATH=/CookCap` on CI.
 
 ## Stack
 
-Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v3 · SW `cookcap-v13`
+Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v3 · SW `cookcap-v14`
 
 ## Run
 
@@ -30,9 +30,11 @@ npm run gallery   # prefer: npm run build && python3 -m http.server 3456 --direc
 
 ## Dresser
 
-- v3: 3D pull-out drawers (`translateZ` + body `rotateX`); question letterpress-carved; brass paper slot
-- `useDialogA11y` holds `onClose` in ref — never pass inline `() => …` for focus stability (still safe if you do)
-- Reveal: `db-rise` → `db-turn` → `db-settle` → FLIP onto `.book-frame`
+- **World:** dressing table onboarding → book lifts out → lands on same wooden table → paper tabs stuck beside book
+- v3 drawers: 3D pull-out (`translateZ` + body `rotateX`); question letterpress-carved; brass paper slot
+- `useDialogA11y` holds `onClose` in ref — never pass inline `() => …` for focus stability
+- Reveal Part 2 timeline → FLIP onto `.book-frame` → `cookcap-tabs-peel` → complete at 2760ms
+- Gate: `npm run gate:anti-2d`
 
 ## Lenses (additive — Reader = pure book)
 

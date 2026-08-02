@@ -38,6 +38,7 @@ export function DresserOnboarding({
   const [bookPhase, setBookPhase] = useState<'hidden' | 'rise' | 'turn' | 'settle' | 'handoff' | 'done'>(
     'hidden',
   );
+  const [recede, setRecede] = useState(false);
   const [handoffStyle, setHandoffStyle] = useState<CSSProperties | undefined>();
   const prevStep = useRef<OnboardStep | null>(null);
   const bookRef = useRef<HTMLDivElement>(null);
@@ -74,6 +75,7 @@ export function DresserOnboarding({
     if (step === 'welcome') {
       setDrawerOpen(null);
       setBookPhase('hidden');
+      setRecede(false);
       prevStep.current = step;
       return;
     }
@@ -99,21 +101,37 @@ export function DresserOnboarding({
     return () => window.clearTimeout(openT);
   }, [step, open, muted]);
 
-  /** Reveal timeline → FLIP onto .book-frame → complete */
+  /** Reveal → table timeline (plan-dresser-world Part 2 §A). t=0 at reveal step. */
   useEffect(() => {
     if (step !== 'reveal' || !open) return;
     if (reduce) {
       const t = window.setTimeout(() => completeReveal(), 200);
       return () => window.clearTimeout(t);
     }
-    setBookPhase('rise');
+
+    // t=0–140: reveal drawer already opening via step effect (--dr-z)
+    setBookPhase('hidden');
+    setRecede(false);
     setHandoffStyle(undefined);
-    const t1 = window.setTimeout(() => setBookPhase('turn'), 700);
-    const t2 = window.setTimeout(() => {
-      setBookPhase('settle');
+
+    const timers: number[] = [];
+    const later = (ms: number, fn: () => void) => {
+      timers.push(window.setTimeout(fn, ms));
+    };
+
+    // t=140: book rises from drawer mouth
+    later(140, () => setBookPhase('rise'));
+    // t=1040: turn to face
+    later(1040, () => setBookPhase('turn'));
+    // t=1400: dresser sinks into table + wood stamp
+    later(1400, () => {
+      setRecede(true);
       playBookStamp(muted);
-    }, 1400);
-    const tHandoff = window.setTimeout(() => {
+    });
+    // t=1740: descend onto table (settle + contact shadow)
+    later(1740, () => setBookPhase('settle'));
+    // t=2100: FLIP onto .book-frame
+    later(2100, () => {
       const frame = document.querySelector('.book-frame');
       const rising = bookRef.current;
       if (frame instanceof HTMLElement && rising) {
@@ -129,18 +147,23 @@ export function DresserOnboarding({
       } else {
         setBookPhase('done');
       }
-    }, 2100);
-    const t3 = window.setTimeout(() => {
+    });
+    // t=2360: crossfade out + signal paper-tab peel
+    later(2360, () => {
       setBookPhase('done');
       setHandoffStyle((s) => (s ? { ...s, opacity: 0 } : s));
-    }, 2360);
-    const tDone = window.setTimeout(() => completeReveal(), 2360 + 260);
+      try {
+        sessionStorage.setItem('cookcap-tabs-peel', '1');
+      } catch {
+        /* private */
+      }
+      window.dispatchEvent(new Event('cookcap-tabs-peel'));
+    });
+    // t=2760: reading world live
+    later(2760, () => completeReveal());
+
     return () => {
-      window.clearTimeout(t1);
-      window.clearTimeout(t2);
-      window.clearTimeout(tHandoff);
-      window.clearTimeout(t3);
-      window.clearTimeout(tDone);
+      for (const id of timers) window.clearTimeout(id);
     };
   }, [step, open, muted, completeReveal, reduce]);
 
@@ -227,7 +250,7 @@ export function DresserOnboarding({
 
               {/* Dresser body — true 3D pull-out drawers */}
               <div
-                className={`dresser-body ${step === 'reveal' && bookPhase !== 'hidden' ? 'dresser-body--recede' : ''}`}
+                className={`dresser-body ${recede ? 'dresser-body--recede' : ''}`}
                 aria-hidden={step === 'welcome'}
               >
                 {(['name', 'profile', 'mode', 'reveal'] as DrawerId[]).map((id) => {
@@ -383,6 +406,7 @@ export function DresserOnboarding({
                   className={`dresser-book dresser-book--${bookPhase}`}
                   style={handoffStyle}
                 >
+                  <div className="dresser-book__shadow" aria-hidden />
                   <div className="dresser-book__cover leather flex flex-col items-center justify-center text-center">
                     <p className="gold-foil text-[0.55rem] uppercase tracking-[0.3em] opacity-80">
                       A Family Cookbook

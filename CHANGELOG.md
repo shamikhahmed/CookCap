@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.2.8 — 2026-08-02
+
+### Feat (Dresser World)
+- **Wooden reading table** — `.journal-desk` uses skin `--dr-wood*` grain + plank seams + lamp pool; book rests on `.book-table` with live `.book-contact-shadow`
+- **Paper tabs on wood** — shipped chapter nav (`data-tabs=paper`); phone sheet = wood strip; legacy cloth/index/top/pills kept in code only
+- **Reveal → table timeline** (Part 2 §A) — drawer `translateZ→150`, book rise/turn/settle, dresser sinks (`translateY 60` / `rotateX 22`), FLIP handoff, paper-tab peel stagger 40ms; done at **2760ms**
+- Onboarding dresser scene wood == reading table wood
+- Anti-2D gate: `npm run gate:anti-2d` (perspective / matrix3d / translateZ / walls / contact-shadow / preserve-3d)
+
+### Chore
+- Gallery regen (paper tabs, wooden desk, dresser stills); docs sync
+- SW → `cookcap-v14`
+
 ## 2.2.7 — 2026-08-02
 
 ### Fix (onboarding keyboard)

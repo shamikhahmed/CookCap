@@ -10,9 +10,8 @@ import { favoritesLabel } from '@/lib/edition';
 import { useBook } from './BookController';
 
 /**
- * Fat cookbook edge + chapter tabs at real 3D depths —
- * some tabs sit above neighbors, some tuck under (z + shadow + peek).
- * Style driven by Appearance `tabStyle` / data-tabs.
+ * Chapter nav — paper tabs on the wooden table (shipped default),
+ * plus legacy cloth / index / top / pills paths.
  */
 
 const TILT: Record<string, number> = {
@@ -97,6 +96,28 @@ export function TopChapterBar() {
   );
 }
 
+function PaperSheetTabs({ onPick }: { onPick: (id: string) => void }) {
+  const { tabs, locked, turning, favLabel } = useChapterTabs();
+  return (
+    <div className="paper-sheet-tabs flex flex-col gap-1.5">
+      {tabs.map(({ c, active }) => (
+        <button
+          key={c.id}
+          type="button"
+          disabled={locked || turning}
+          aria-current={active ? 'page' : undefined}
+          onClick={() => onPick(c.id)}
+          className={`paper-tab paper-tab--sheet disabled:opacity-40${active ? ' is-active' : ''}`}
+          style={{ '--sticker': c.tab } as CSSProperties}
+        >
+          <span className="paper-tab__label">{tabLabel(c.id, c.title, favLabel)}</span>
+          <span className="paper-tab__sub">{c.subtitle}</span>
+        </button>
+      ))}
+    </div>
+  );
+}
+
 function SheetChips({
   tabStyle,
   onPick,
@@ -105,6 +126,10 @@ function SheetChips({
   onPick: (id: string) => void;
 }) {
   const { tabs, locked, turning, favLabel } = useChapterTabs();
+
+  if (tabStyle === 'paper') {
+    return <PaperSheetTabs onPick={onPick} />;
+  }
 
   if (tabStyle === 'index' || tabStyle === 'top') {
     return (
@@ -162,6 +187,88 @@ function SheetChips({
   );
 }
 
+function PaperTabRail({ tablet }: { tablet: boolean }) {
+  const { tabs, goToChapter, locked, turning, favLabel } = useChapterTabs();
+  const reduce = useReducedMotion();
+  const n = tabs.length;
+  const spring = reduce ? { duration: 0 } : { type: 'spring' as const, stiffness: 420, damping: 32 };
+  const [peeling, setPeeling] = useState(false);
+
+  useEffect(() => {
+    let clearT: number | undefined;
+    const startPeel = () => {
+      if (reduce) return;
+      setPeeling(true);
+      if (clearT) window.clearTimeout(clearT);
+      clearT = window.setTimeout(() => setPeeling(false), 320 + n * 40 + 80);
+    };
+    try {
+      if (sessionStorage.getItem('cookcap-tabs-peel') === '1') {
+        sessionStorage.removeItem('cookcap-tabs-peel');
+        startPeel();
+      }
+    } catch {
+      /* private */
+    }
+    const onPeel = () => startPeel();
+    window.addEventListener('cookcap-tabs-peel', onPeel);
+    return () => {
+      window.removeEventListener('cookcap-tabs-peel', onPeel);
+      if (clearT) window.clearTimeout(clearT);
+    };
+  }, [n, reduce]);
+
+  return (
+    <aside
+      className={`paper-tab-rail pointer-events-none${tablet ? ' paper-tab-rail--tablet' : ''}${
+        peeling ? ' is-peeling' : ''
+      }`}
+    >
+      <nav aria-label="Chapter tabs" className="paper-tab-rail__nav pointer-events-auto">
+        {tabs.map(({ c, active, i }) => {
+          const label = tabLabel(c.id, c.title, favLabel);
+          const topPct = 2 + (i / Math.max(n - 1, 1)) * 88;
+          return (
+            <motion.button
+              key={c.id}
+              type="button"
+              onClick={() => goToChapter(c.id)}
+              disabled={locked || turning}
+              aria-current={active ? 'page' : undefined}
+              title={`${c.title} — ${c.subtitle}`}
+              onPointerDown={(e) => e.stopPropagation()}
+              initial={false}
+              animate={{
+                x: active ? 6 : 0,
+                y: active ? -2 : 0,
+                scale: active ? 1.04 : 1,
+              }}
+              whileHover={
+                locked || turning || reduce
+                  ? undefined
+                  : { x: 10, y: -3, scale: active ? 1.06 : 1.03 }
+              }
+              whileTap={locked || turning || reduce ? undefined : { scale: 0.98, y: 1 }}
+              transition={spring}
+              className={`paper-tab disabled:opacity-40${active ? ' is-active' : ''}`}
+              style={
+                {
+                  '--sticker': c.tab,
+                  '--tab-i': i,
+                  top: `${topPct}%`,
+                  zIndex: active ? 40 : 10 + i,
+                } as CSSProperties
+              }
+            >
+              <span className="paper-tab__label">{label}</span>
+            </motion.button>
+          );
+        })}
+      </nav>
+    </aside>
+  );
+}
+
 export function BookmarkRail() {
   const { tabStyle } = useAppearance();
   const { tabs, goToChapter, locked, turning, index, leaves, chapterStart, favLabel } = useChapterTabs();
@@ -197,6 +304,7 @@ export function BookmarkRail() {
   }, []);
 
   if (narrow) {
+    const woodSheet = tabStyle === 'paper';
     return (
       <AnimatePresence>
         {sheetOpen && (
@@ -222,7 +330,9 @@ export function BookmarkRail() {
               animate={{ x: 0 }}
               exit={{ x: 48 }}
               transition={motionReduce(reduce)}
-              className="journal-sheet relative flex h-full w-[min(18rem,90vw)] flex-col gap-2 overflow-y-auto p-5 shadow-[var(--shadow-lg)]"
+              className={`journal-sheet relative flex h-full w-[min(18rem,90vw)] flex-col gap-2 overflow-y-auto p-5 shadow-[var(--shadow-lg)]${
+                woodSheet ? ' journal-sheet--wood' : ''
+              }`}
             >
               <p
                 id="chapter-sheet-title"
@@ -231,7 +341,9 @@ export function BookmarkRail() {
                 Chapter tabs
               </p>
               <p className="mb-3 text-xs leading-relaxed text-[color:var(--color-ink-faint)]">
-                Tap a flag — pages flip toward that chapter.
+                {woodSheet
+                  ? 'Paper tabs stuck to the table — tap to flip toward that chapter.'
+                  : 'Tap a flag — pages flip toward that chapter.'}
               </p>
               <SheetChips
                 tabStyle={tabStyle}
@@ -245,6 +357,10 @@ export function BookmarkRail() {
         )}
       </AnimatePresence>
     );
+  }
+
+  if (tabStyle === 'paper') {
+    return <PaperTabRail tablet={tablet} />;
   }
 
   // Top style: rail hidden (CSS + skip render)
@@ -315,9 +431,8 @@ export function BookmarkRail() {
           const near = 1 - dist;
 
           const topPct = 2.2 + (i / Math.max(n - 1, 1)) * 84;
-          // Cloth/pills: even left edge (no jagged marginLeft); depth via x spring only.
           const tuck = 0;
-              const out = depthOn
+          const out = depthOn
             ? active
               ? 76
               : (ahead ? 18 : 10) + near * 38

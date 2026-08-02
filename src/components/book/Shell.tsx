@@ -113,8 +113,11 @@ function Frame() {
         <TopChapterBar />
         {/* Pure CSS grounding — size from vh on first paint (no parent-% / resize). */}
         <div className="book-stage">
-          <div className="book-frame">
-            <Book />
+          <div className="book-table">
+            <div className="book-contact-shadow" aria-hidden />
+            <div className="book-frame">
+              <Book />
+            </div>
           </div>
         </div>
       </main>
@@ -462,7 +465,7 @@ function BottomBar() {
       <button
         type="button"
         className="min-h-11 rounded-full px-3 py-2.5 font-serif text-[0.7rem] font-semibold text-[color:var(--color-ink-soft)] hover:bg-[color:var(--color-paper-sunk)] sm:hidden disabled:opacity-30"
-        aria-label="Open chapter stickers"
+        aria-label="Open chapter tabs"
         disabled={busy}
         onClick={() => window.dispatchEvent(new Event('cookcap-open-chapters'))}
       >

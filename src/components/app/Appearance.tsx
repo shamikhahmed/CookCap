@@ -16,7 +16,8 @@ import { useDialogA11y, motionReduce } from '@/lib/a11y/dialog';
 import { Icon } from '@/components/ui/Icon';
 
 export type Skin = 'editorial' | 'candlelit' | 'lightbook' | 'modern';
-export type TabStyle = 'cloth' | 'index' | 'top' | 'pills';
+/** `paper` = shipped world nav. Legacy styles kept for localStorage / code paths. */
+export type TabStyle = 'paper' | 'cloth' | 'index' | 'top' | 'pills';
 export type ReadMode = 'flip' | 'fast';
 
 interface AppearanceState {
@@ -33,7 +34,9 @@ const TABS_KEY = 'cookcap-tabs';
 const READ_KEY = 'cookcap-readmode';
 
 const SKINS: Skin[] = ['editorial', 'candlelit', 'lightbook', 'modern'];
-const TABS: TabStyle[] = ['cloth', 'index', 'top', 'pills'];
+/** Shipped picker — paper tabs on wood only. */
+const TABS: TabStyle[] = ['paper'];
+const ALL_TABS: TabStyle[] = ['paper', 'cloth', 'index', 'top', 'pills'];
 const READS: ReadMode[] = ['flip', 'fast'];
 
 const SKIN_META: Record<Skin, { label: string; swatch: string; desk: string }> = {
@@ -44,6 +47,7 @@ const SKIN_META: Record<Skin, { label: string; swatch: string; desk: string }> =
 };
 
 const TAB_META: Record<TabStyle, string> = {
+  paper: 'Paper tabs on wood',
   cloth: 'Cloth Tabs',
   index: 'Side Index',
   top: 'Top Segmented',
@@ -54,7 +58,7 @@ function isSkin(v: string | null): v is Skin {
   return !!v && (SKINS as string[]).includes(v);
 }
 function isTabs(v: string | null): v is TabStyle {
-  return !!v && (TABS as string[]).includes(v);
+  return !!v && (ALL_TABS as string[]).includes(v);
 }
 function isRead(v: string | null): v is ReadMode {
   return !!v && (READS as string[]).includes(v);
@@ -71,7 +75,7 @@ const Ctx = createContext<AppearanceState | null>(null);
 
 export function AppearanceProvider({ children }: { children: ReactNode }) {
   const [skin, setSkinState] = useState<Skin>('editorial');
-  const [tabStyle, setTabStyleState] = useState<TabStyle>('cloth');
+  const [tabStyle, setTabStyleState] = useState<TabStyle>('paper');
   const [readMode, setReadModeState] = useState<ReadMode>('flip');
 
   useEffect(() => {
@@ -80,14 +84,15 @@ export function AppearanceProvider({ children }: { children: ReactNode }) {
       const t = localStorage.getItem(TABS_KEY);
       const r = localStorage.getItem(READ_KEY);
       const skinV = isSkin(s) ? s : 'editorial';
-      const tabsV = isTabs(t) ? t : 'cloth';
+      // World default = paper; keep legacy LS values so old code paths still work.
+      const tabsV = isTabs(t) ? t : 'paper';
       const readV = isRead(r) ? r : 'flip';
       setSkinState(skinV);
       setTabStyleState(tabsV);
       setReadModeState(readV);
       applyAppearance(skinV, tabsV, readV);
     } catch {
-      applyAppearance('editorial', 'cloth', 'flip');
+      applyAppearance('editorial', 'paper', 'flip');
     }
   }, []);
 
@@ -280,6 +285,9 @@ export function AppearanceButton() {
                         );
                       })}
                     </div>
+                    <p className="mt-2 text-[0.7rem] leading-snug text-[color:var(--color-ink-faint)]">
+                      Index tabs stuck to the wooden table beside the book.
+                    </p>
                   </section>
 
                   <section>

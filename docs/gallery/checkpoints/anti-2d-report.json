@@ -1,0 +1,70 @@
+{
+  "at": "2026-08-02T14:28:15.216Z",
+  "base": "http://127.0.0.1:3456",
+  "failed": 0,
+  "results": [
+    {
+      "id": "R1 contact-shadow element",
+      "pass": true,
+      "detail": "shadow 391×80px"
+    },
+    {
+      "id": "R2 book-table wrapper",
+      "pass": true,
+      "detail": "table=true frame=true"
+    },
+    {
+      "id": "R3 paper tabs on table",
+      "pass": true,
+      "detail": "data-tabs=paper tabs=11"
+    },
+    {
+      "id": "R4 wood token on desk",
+      "pass": true,
+      "detail": "--dr-wood=color-mix(in srgb,#f6f1e7 55%,#c4a06a)"
+    },
+    {
+      "id": "1 scene perspective > 0",
+      "pass": true,
+      "detail": "perspective=1200px"
+    },
+    {
+      "id": "2 dresser body matrix3d (not flat matrix)",
+      "pass": true,
+      "detail": "matrix3d(1, 0, 0, 0, 0, 0.961262, 0.275637, 0, 0, -0.275637, 0.961262, 0, 0, 0, "
+    },
+    {
+      "id": "3 open drawer non-zero translateZ",
+      "pass": true,
+      "detail": "open=true tz=150.00 tf=matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 10, 150, 1)"
+    },
+    {
+      "id": "4 walls behind front in Z (front tz > back tz)",
+      "pass": true,
+      "detail": "frontTz=0.00 backTz=-72.00"
+    },
+    {
+      "id": "6 reveal book preserve-3d (when mounted)",
+      "pass": true,
+      "detail": "not mounted yet (ok pre-reveal)"
+    }
+  ],
+  "dresserMeasured": {
+    "scenePersp": "1200px",
+    "bodyTf": "matrix3d(1, 0, 0, 0, 0, 0.961262, 0.275637, 0, 0, -0.275637, 0.961262, 0, 0, 0, 0, 1)",
+    "openTf": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 10, 150, 1)",
+    "frontTf": "none",
+    "backTf": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -72, 1)",
+    "bookStyle": null,
+    "hasOpen": true,
+    "openTz": 150,
+    "frontTz": 0,
+    "backTz": -72,
+    "bodyIs3d": true,
+    "openIs3d": true
+  },
+  "screenshots": [
+    "/Users/shamikhahmed/CookBook Website/docs/gallery/checkpoints/p1-wooden-table-paper-tabs.png",
+    "/Users/shamikhahmed/CookBook Website/docs/gallery/checkpoints/p1-dresser-open-3d.png"
+  ]
+}

@@ -24,7 +24,7 @@ Log from a recipe with **Log this**. Calendar shows planned vs eaten. Pantry mat
 
 ## Appearance
 
-Palette icon in the top bar → **Theme** (Editorial Cream default, Candlelit, Light Book, Modern), **Chapter tabs** (Cloth default, Side Index, Top Segmented, Classic Pills), **Reading** (Flip / Fast). Choices save on this device.
+Palette icon in the top bar → **Theme** (Editorial Cream default, Candlelit, Light Book, Modern), **Chapter tabs** (Paper tabs on wood — stuck beside the book), **Reading** (Flip / Fast). Choices save on this device.
 
 ## About & data
 

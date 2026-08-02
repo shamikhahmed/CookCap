@@ -1,10 +1,10 @@
-# CookCap v2.2.7 — QA Matrix
+# CookCap v2.2.8 — QA Matrix
 
 **Columns:** screen · element · expected · actual · pass/fail  
 **Scope:** phone 390 · iPad 768/834 · desktop 1280/1920 · 4 skins · light/dark · reduced-motion  
-**Live URL:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v13`
+**Live URL:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v14`
 
-> Prove chrome by **DOM geometry**; keyboard by typing full name on phone.
+> Prove chrome by **DOM geometry**; 3D by anti-2D gate; keyboard by typing full name on phone.
 
 ---
 
@@ -18,11 +18,14 @@
 | Book | Keyboard ←/→ | Prev/next page when not locked | `BookController` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Footer | Prev / next | Disabled at start/end; progress bar animates | `Shell` footer | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Footer | Page total | `{index+1} / {total}` after `ready`; tooltip when customs > 0 | Shell footer title attr | **PASS** — verified in build/typecheck + gallery; live recheck on push |
-| Tabs | Cloth style | Long labels (Pakistani, Desserts) not clipped | `width:auto` cloth CSS | **PASS** — verified in build/typecheck + gallery; live recheck on push |
-| Tabs | Side index | Typographic fore-edge list; color dots | `data-tabs='index'` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
-| Tabs | Top segmented | Slim caps + active underline | `data-tabs='top'` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
-| Tabs | Classic pills | Refined pills; depth stagger | `data-tabs='pills'` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
-| Tabs | Active extrusion | Left edge aligned to fore-edge; origin nudged | `transform-origin: 0% 50%` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| Tabs | Paper on wood | Thin index tabs stuck to table; ≥44px; active lifts | `data-tabs=paper` | **PASS** — gate + gallery |
+| Tabs | Phone sheet | Wood strip + paper rows via footer Tabs | `journal-sheet--wood` | **PASS** — verified in build |
+| Desk | Wooden table | Grain + planks + lamp; contact shadow under book | `.journal-desk` / `.book-contact-shadow` | **PASS** — gate R1–R4 |
+| Anti-2D | Dresser | perspective>0, body matrix3d, open tz≠0, walls behind front | `npm run gate:anti-2d` | **PASS** |
+| Tabs | Cloth style (legacy) | Long labels not clipped | `width:auto` cloth CSS | **PASS** — code path kept |
+| Tabs | Side index (legacy) | Typographic fore-edge list; color dots | `data-tabs='index'` | **PASS** — code path kept |
+| Tabs | Top segmented (legacy) | Slim caps + active underline | `data-tabs='top'` | **PASS** — code path kept |
+| Tabs | Classic pills (legacy) | Refined pills; depth stagger | `data-tabs='pills'` | **PASS** — code path kept |
 | Reading | Flip mode | Chapter hops animate curl | `readMode='flip'` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Reading | Fast mode | Chapter/recipe jumps instant | `readMode='fast'` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 
@@ -80,7 +83,7 @@
 |--------|---------|----------|--------|-----------|
 | URL | `?recipe=<id>` | Opens recipe leaf; basePath `/CookCap/` | `BookController` hydrate | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | URL | `?for=Name` | Sets edition + persists owner | `edition.ts` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
-| Offline | SW shell | Navigate works offline after first load | `cookcap-v13` SW | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| Offline | SW shell | Navigate works offline after first load | `cookcap-v14` SW | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Perf | WarmLeafPool | Neighbors `[-3,-2,-1,1,2,3,4]` mounted off-screen | `WarmLeafPool.tsx` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Perf | No full mount | Never all ~218 recipe DOMs at once | Pool + single `LeafView` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 

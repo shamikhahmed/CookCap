@@ -327,7 +327,7 @@ async function captureBookChrome(page, folder) {
   await waitFooterPage(page, 5);
   await shot(page, `${folder}/11-chapter.png`);
 
-  const tabs = page.getByRole('button', { name: 'Open chapter stickers' });
+  const tabs = page.getByRole('button', { name: 'Open chapter tabs' });
   if (await tabs.isVisible().catch(() => false)) {
     await tabs.click();
     await page.getByText(/Chapters|Pakistani/i).first().waitFor({ state: 'visible', timeout: 8000 });
@@ -397,7 +397,7 @@ async function captureSet(page, folder) {
 
 async function captureAppearanceMatrix(page, folder) {
   const skins = ['editorial', 'candlelit', 'lightbook', 'modern'];
-  const tabStyles = ['cloth', 'index', 'top', 'pills'];
+  const tabStyles = ['paper', 'cloth', 'index', 'top', 'pills'];
   mkdirSync(join(OUT, folder, 'appearance'), { recursive: true });
 
   for (const skin of skins) {
@@ -434,13 +434,13 @@ async function captureAppearanceMatrix(page, folder) {
   await page.evaluate((name) => {
     localStorage.clear();
     localStorage.setItem('cookcap-skin', 'editorial');
-    localStorage.setItem('cookcap-tabs', 'cloth');
+    localStorage.setItem('cookcap-tabs', 'paper');
     localStorage.setItem('cookcap-readmode', 'flip');
     localStorage.setItem('cookcap-theme', 'light');
     localStorage.setItem('cookcap-owner', name);
     localStorage.setItem('cookcap-onboarded', '1');
     document.documentElement.setAttribute('data-skin', 'editorial');
-    document.documentElement.setAttribute('data-tabs', 'cloth');
+    document.documentElement.setAttribute('data-tabs', 'paper');
     document.documentElement.setAttribute('data-theme', 'light');
   }, DEMO);
   await page.goto(`${BASE}/?for=${encodeURIComponent(DEMO)}`, { waitUntil: 'domcontentloaded' });
@@ -454,7 +454,7 @@ async function captureAppearanceMatrix(page, folder) {
 
 /** All 4 tab styles × 2 skins — for owner pick (do not change default). */
 async function captureTabOptions(page, folder) {
-  const styles = ['cloth', 'index', 'top', 'pills'];
+  const styles = ['paper', 'cloth', 'index', 'top', 'pills'];
   const skins = ['editorial', 'candlelit'];
   mkdirSync(join(OUT, folder, 'tabs'), { recursive: true });
 

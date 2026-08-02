@@ -1,6 +1,6 @@
 {
   "name": "cookcap",
-  "version": "2.2.7",
+  "version": "2.2.8",
   "private": true,
   "description": "CookCap — heirloom family cookbook Progressive Web App (Cap family).",
   "scripts": {
@@ -13,6 +13,7 @@
     "rematch:steps": "node scripts/rematch-step-images.mjs",
     "rematch:heroes": "node scripts/rematch-heroes.mjs",
     "gallery": "node scripts/capture-gallery.mjs",
+    "gate:anti-2d": "node scripts/assert-anti-2d.mjs",
     "pages:build": "NEXT_PUBLIC_BASE_PATH=/CookCap next build"
   },
   "dependencies": {
