@@ -1,6 +1,6 @@
 # CookCap — Handover
 
-Heirloom family cookbook PWA (Cap family). Version **2.2.2**.
+Heirloom family cookbook PWA (Cap family). Version **2.2.3**.
 
 ## Live
 
@@ -10,7 +10,7 @@ Next `output: 'export'` + Actions Pages. `NEXT_PUBLIC_BASE_PATH=/CookCap` on CI.
 
 ## Stack
 
-Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v3 · SW `cookcap-v8`
+Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v3 · SW `cookcap-v9`
 
 ## Run
 

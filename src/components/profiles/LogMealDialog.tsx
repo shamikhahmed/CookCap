@@ -109,22 +109,22 @@ export function LogMealDialog({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={motionReduce(reduce)}
-          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 p-0 backdrop-blur-sm sm:items-center sm:p-4"
           onClick={onClose}
         >
           <motion.aside
             ref={panelRef}
-            initial={{ y: '100%' }}
-            animate={{ y: 0 }}
-            exit={{ y: '100%' }}
+            initial={reduce ? false : { y: 28, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={reduce ? undefined : { y: 16, opacity: 0 }}
             transition={motionReduce(reduce)}
             onClick={(e) => e.stopPropagation()}
-            className="absolute bottom-0 left-0 right-0 mx-auto flex max-h-[88dvh] w-full max-w-md flex-col rounded-t-2xl bg-[color:var(--color-paper-raised)] shadow-[var(--shadow-lg)] sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 sm:rounded-2xl"
+            className="flex max-h-[min(88dvh,36rem)] w-full max-w-md flex-col overflow-hidden rounded-t-2xl bg-[color:var(--color-paper-raised)] shadow-[var(--shadow-lg)] sm:rounded-2xl"
             role="dialog"
             aria-modal="true"
             aria-labelledby="log-meal-title"
           >
-            <header className="flex items-center justify-between border-b border-[color:var(--color-line)] px-5 py-4">
+            <header className="flex shrink-0 items-center justify-between border-b border-[color:var(--color-line)] px-5 py-4">
               <div className="min-w-0">
                 <h2
                   id="log-meal-title"
@@ -238,7 +238,7 @@ export function LogMealDialog({
               )}
             </div>
 
-            <footer className="border-t border-[color:var(--color-line)] px-5 py-3">
+            <footer className="shrink-0 border-t border-[color:var(--color-line)] px-5 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
               <button
                 type="button"
                 disabled={saving || !recipe || !profileId}

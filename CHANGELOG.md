@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.2.3 — 2026-08-02
+
+### Fix (modal overflow)
+- **Mode chooser / centered sheets** — Motion `y` no longer fights Tailwind `-translate-y-1/2`; flex-center backdrop + scrollable body so last modes (e.g. Couple / Just-me) stay visible
+- Same pattern: Calendar, Meal planner, Log meal
+- SW → `cookcap-v9`
+
 ## 2.2.2 — 2026-08-02
 
 ### Fix (PWA update)

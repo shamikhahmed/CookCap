@@ -168,22 +168,22 @@ export function CalendarDrawer({ open, onClose }: { open: boolean; onClose: () =
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={motionReduce(reduce)}
-          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 p-0 backdrop-blur-sm sm:items-center sm:p-4"
           onClick={onClose}
         >
           <motion.aside
             ref={panelRef}
-            initial={{ y: '100%' }}
-            animate={{ y: 0 }}
-            exit={{ y: '100%' }}
+            initial={reduce ? false : { y: 28, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={reduce ? undefined : { y: 16, opacity: 0 }}
             transition={motionReduce(reduce)}
             onClick={(e) => e.stopPropagation()}
-            className="absolute bottom-0 left-0 right-0 mx-auto flex max-h-[90dvh] w-full max-w-lg flex-col rounded-t-2xl bg-[color:var(--color-paper-raised)] shadow-[var(--shadow-lg)] sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 sm:rounded-2xl"
+            className="flex max-h-[min(90dvh,44rem)] w-full max-w-lg flex-col overflow-hidden rounded-t-2xl bg-[color:var(--color-paper-raised)] shadow-[var(--shadow-lg)] sm:rounded-2xl"
             role="dialog"
             aria-modal="true"
             aria-labelledby="calendar-drawer-title"
           >
-            <header className="flex items-center justify-between border-b border-[color:var(--color-line)] px-5 py-4">
+            <header className="flex shrink-0 items-center justify-between border-b border-[color:var(--color-line)] px-5 py-4">
               <div>
                 <h2
                   id="calendar-drawer-title"
@@ -205,7 +205,7 @@ export function CalendarDrawer({ open, onClose }: { open: boolean; onClose: () =
               </button>
             </header>
 
-            <div className="min-h-0 flex-1 space-y-4 overflow-y-auto px-5 py-4">
+            <div className="min-h-0 flex-1 space-y-4 overflow-y-auto px-5 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
               {/* Today summary */}
               <section className="rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)]/55 p-3">
                 <p className="text-[0.65rem] uppercase tracking-[0.3em] text-[color:var(--color-accent)]">
