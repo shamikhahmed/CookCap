@@ -73,6 +73,170 @@ async function setDarkMode(page, dark) {
   await settle(page, 300);
 }
 
+/** All cooking lenses from src/lib/modes/registry.ts — keep in sync. */
+const ALL_MODES = [
+  'reader',
+  'plate',
+  'mother',
+  'budget',
+  'quick',
+  'beginner',
+  'dawat',
+  'ramadan',
+  'toddler',
+  'diabetic',
+  'heart',
+  'fiber',
+  'couple',
+];
+
+async function scrollLeaf(page, ratio) {
+  await page.evaluate((r) => {
+    const el = document.querySelector('[data-leaf-scroll]');
+    if (!el) return;
+    const max = Math.max(0, el.scrollHeight - el.clientHeight);
+    el.scrollTo({ top: max * r, behavior: 'instant' });
+  }, ratio);
+  await settle(page, 350);
+}
+
+async function scrollDialog(page, ratio) {
+  await page.evaluate((r) => {
+    const el =
+      document.querySelector('[role="dialog"] [data-scroll]') ||
+      document.querySelector('[role="dialog"] .overflow-y-auto') ||
+      document.querySelector('[role="dialog"]');
+    if (!el) return;
+    const max = Math.max(0, el.scrollHeight - el.clientHeight);
+    el.scrollTo({ top: max * r, behavior: 'instant' });
+  }, ratio);
+  await settle(page, 350);
+}
+
+async function seedOwner(page, extras = {}) {
+  await page.evaluate(
+    ({ name, extras }) => {
+      localStorage.setItem('cookcap-owner', name);
+      localStorage.setItem('cookcap-onboarded', '1');
+      localStorage.setItem('cookcap-theme', 'light');
+      for (const [k, v] of Object.entries(extras)) localStorage.setItem(k, v);
+    },
+    { name: DEMO, extras },
+  );
+}
+
+/** Recipe / contents / chapter / mode-chooser scroll depths. */
+async function captureScrollables(page, folder) {
+  mkdirSync(join(OUT, folder, 'scroll'), { recursive: true });
+  console.log(`  scrollables (${folder})…`);
+
+  await seedOwner(page);
+  await page.goto(`${BASE}/?recipe=${RECIPE}&for=${encodeURIComponent(DEMO)}`, {
+    waitUntil: 'domcontentloaded',
+    timeout: 60000,
+  });
+  await waitFooterReady(page, 60000);
+  await page.waitForFunction(
+    () =>
+      [...document.querySelectorAll('button')].some(
+        (b) => (b.textContent || '').trim() === 'Cook mode' && b.offsetParent !== null,
+      ),
+    null,
+    { timeout: 60000 },
+  );
+  await settle(page, 600);
+
+  await scrollLeaf(page, 0);
+  await shot(page, `${folder}/scroll/recipe-top.png`);
+  await scrollLeaf(page, 0.45);
+  await shot(page, `${folder}/scroll/recipe-mid.png`);
+  await scrollLeaf(page, 1);
+  await shot(page, `${folder}/scroll/recipe-end.png`);
+
+  // Contents page
+  await page.evaluate(() => localStorage.setItem('cookcap-pos', '3'));
+  await page.goto(`${BASE}/?for=${encodeURIComponent(DEMO)}`, { waitUntil: 'domcontentloaded' });
+  await waitFooterPage(page, 4);
+  await scrollLeaf(page, 0);
+  await shot(page, `${folder}/scroll/contents-top.png`);
+  await scrollLeaf(page, 1);
+  await shot(page, `${folder}/scroll/contents-end.png`);
+
+  // Big chapter divider (Desserts — largest tab)
+  const dessertTab = page.locator('.paper-tab', { hasText: 'Desserts' }).first();
+  if (await dessertTab.count()) {
+    await dessertTab.click({ force: true });
+    await settle(page, 700);
+  } else {
+    await page.getByRole('button', { name: /Desserts/i }).first().click({ force: true }).catch(() => {});
+    await settle(page, 700);
+  }
+  await scrollLeaf(page, 0);
+  await shot(page, `${folder}/scroll/chapter-top.png`);
+  await scrollLeaf(page, 0.5);
+  await shot(page, `${folder}/scroll/chapter-mid.png`);
+  await scrollLeaf(page, 1);
+  await shot(page, `${folder}/scroll/chapter-end.png`);
+
+  // Mode chooser — top + scrolled (13 modes)
+  await page.getByRole('button', { name: /^Mode —/ }).click();
+  await page.getByRole('heading', { name: 'Choose a mode' }).waitFor({ state: 'visible', timeout: 8000 });
+  await settle(page, 400);
+  await scrollDialog(page, 0);
+  await shot(page, `${folder}/scroll/mode-chooser-top.png`);
+  await scrollDialog(page, 1);
+  await shot(page, `${folder}/scroll/mode-chooser-end.png`);
+  await page.keyboard.press('Escape');
+  await settle(page, 300);
+
+  // Search overlay scroll
+  await page.getByRole('button', { name: 'Search recipes' }).click();
+  await page.getByPlaceholder(/Search recipes/i).waitFor({ state: 'visible', timeout: 8000 });
+  await page.getByPlaceholder(/Search recipes/i).fill('chicken');
+  await settle(page, 500);
+  await scrollDialog(page, 0);
+  await shot(page, `${folder}/scroll/search-top.png`);
+  await scrollDialog(page, 1);
+  await shot(page, `${folder}/scroll/search-end.png`);
+  await page.keyboard.press('Escape');
+  await settle(page, 300);
+}
+
+/** One recipe shot per cooking mode / lens. */
+async function captureEveryMode(page, folder) {
+  mkdirSync(join(OUT, folder, 'modes'), { recursive: true });
+  console.log(`  modes × ${ALL_MODES.length} (${folder})…`);
+
+  for (const modeId of ALL_MODES) {
+    await seedOwner(page, { 'cookcap-mode': modeId });
+    await page.goto(`${BASE}/?recipe=${RECIPE}&for=${encodeURIComponent(DEMO)}`, {
+      waitUntil: 'domcontentloaded',
+      timeout: 60000,
+    });
+    await waitFooterReady(page, 60000);
+    await page.waitForFunction(
+      () =>
+        [...document.querySelectorAll('button')].some(
+          (b) => (b.textContent || '').trim() === 'Cook mode' && b.offsetParent !== null,
+        ),
+      null,
+      { timeout: 60000 },
+    );
+    await scrollLeaf(page, 0);
+    await settle(page, 450);
+    await shot(page, `${folder}/modes/${modeId}-recipe.png`);
+
+    // Mid-scroll for modes that add chrome below the fold (cost / macros / healthier)
+    if (['plate', 'budget', 'mother', 'diabetic'].includes(modeId)) {
+      await scrollLeaf(page, 0.35);
+      await shot(page, `${folder}/modes/${modeId}-recipe-scroll.png`);
+    }
+  }
+
+  // Reset to reader for later shots
+  await seedOwner(page, { 'cookcap-mode': 'reader' });
+}
+
 async function clearForFirstRun(page) {
   await page.goto(BASE, { waitUntil: 'domcontentloaded' });
   await page.evaluate(() => {
@@ -393,6 +557,8 @@ async function captureBookChrome(page, folder) {
 async function captureSet(page, folder) {
   await captureSimpleOnboarding(page, folder);
   await captureBookChrome(page, folder);
+  await captureScrollables(page, folder);
+  await captureEveryMode(page, folder);
 }
 
 async function captureAppearanceMatrix(page, folder) {
