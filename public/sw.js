@@ -1,22 +1,23 @@
 /*
-  Jia Cooks service worker — offline-first (jia-v7).
+  CookCap service worker — offline-first (cookcap-v1).
 
-  - Precache shell + icons on install.
-  - Navigations: network-first → cached `/`.
-  - `/_next`, fonts, icons, recipes: stale-while-revalidate.
-  - Client may postMessage CACHE_URLS to warm hashed assets after first paint.
+  Works under GitHub Pages project path (/CookCap/) by deriving BASE from the
+  script URL. Local/static export root uses BASE ''.
 */
-const VERSION = 'jia-v7';
+const VERSION = 'cookcap-v1';
 const SHELL = `${VERSION}-shell`;
 const ASSETS = `${VERSION}-assets`;
+const BASE = new URL('./', self.location.href).pathname.replace(/\/$/, '');
+const root = (p) => `${BASE}${p.startsWith('/') ? p : `/${p}`}`;
+
 const SHELL_URLS = [
-  '/',
-  '/offline.html',
-  '/manifest.webmanifest',
-  '/icons/icon.svg',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png',
-  '/icons/maskable-512.png',
+  root('/'),
+  root('/offline.html'),
+  root('/manifest.webmanifest'),
+  root('/icons/icon.svg'),
+  root('/icons/icon-192.png'),
+  root('/icons/icon-512.png'),
+  root('/icons/maskable-512.png'),
 ];
 
 self.addEventListener('install', (event) => {
@@ -64,21 +65,27 @@ self.addEventListener('fetch', (event) => {
       fetch(request)
         .then((res) => {
           const copy = res.clone();
-          caches.open(SHELL).then((c) => c.put('/', copy));
+          caches.open(SHELL).then((c) => c.put(root('/'), copy));
           return res;
         })
         .catch(() =>
-          caches.match('/').then((r) => r || caches.match('/offline.html') || caches.match(request)),
+          caches
+            .match(root('/'))
+            .then((r) => r || caches.match(root('/offline.html')) || caches.match(request)),
         ),
     );
     return;
   }
 
+  const path = url.pathname;
   if (
-    url.pathname.startsWith('/_next/') ||
-    url.pathname.startsWith('/icons/') ||
-    url.pathname.startsWith('/recipes/') ||
-    /\.(?:woff2?|png|jpe?g|webp|avif|svg|webmanifest|js|css)$/.test(url.pathname)
+    path.includes('/_next/') ||
+    path.includes('/icons/') ||
+    path.includes('/recipes/') ||
+    path.endsWith('.webp') ||
+    path.endsWith('.png') ||
+    path.endsWith('.svg') ||
+    path.endsWith('.woff2')
   ) {
     event.respondWith(
       caches.open(ASSETS).then(async (cache) => {
@@ -92,18 +99,5 @@ self.addEventListener('fetch', (event) => {
         return cached || network;
       }),
     );
-    return;
   }
-
-  event.respondWith(
-    caches.open(ASSETS).then(async (cache) => {
-      try {
-        const res = await fetch(request);
-        if (res.ok) cache.put(request, res.clone());
-        return res;
-      } catch {
-        return (await cache.match(request)) || Response.error();
-      }
-    }),
-  );
 });

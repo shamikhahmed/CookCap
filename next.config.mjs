@@ -1,50 +1,27 @@
 /**
- * Next.js configuration.
+ * Next.js configuration — static export for GitHub Pages (same model as other Caps).
  *
- * - `reactStrictMode` surfaces side-effect bugs early.
- * - Security + PWA headers are set here so the service worker and manifest
- *   are served with the correct caching/scope semantics.
- * - Images use the default loader; all cookbook art is bundled locally as SVG
- *   so the app stays fully offline-capable with zero external requests.
+ * Local: `npm run dev` (no basePath).
+ * Pages: `NEXT_PUBLIC_BASE_PATH=/CookCap npm run build` → `out/`.
  */
 import { fileURLToPath } from 'node:url';
 import { dirname } from 'node:path';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
+/** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   reactStrictMode: true,
   poweredByHeader: false,
+  basePath: basePath || undefined,
+  assetPrefix: basePath || undefined,
   // Pin the tracing root — the machine has a stray parent lockfile that Next
   // would otherwise infer as the workspace root.
   outputFileTracingRoot: dirname(fileURLToPath(import.meta.url)),
   images: {
+    unoptimized: true,
     qualities: [75, 82],
-  },
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          { key: 'X-Content-Type-Options', value: 'nosniff' },
-          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
-          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
-          {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()',
-          },
-        ],
-      },
-      {
-        source: '/sw.js',
-        headers: [
-          { key: 'Cache-Control', value: 'no-cache, no-store, must-revalidate' },
-          { key: 'Service-Worker-Allowed', value: '/' },
-        ],
-      },
-      {
-        source: '/manifest.webmanifest',
-        headers: [{ key: 'Cache-Control', value: 'public, max-age=3600' }],
-      },
-    ];
   },
 };
 

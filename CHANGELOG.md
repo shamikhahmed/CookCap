@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.5.0 — 2026-08-02
+
+### Rebrand
+- Product name → **CookCap** (Cap family)
+- First-run **name gate** → book title `{Name} Cooks`; ··· → Change book name
+- Share links use `?for=Name`; migrates legacy `jia-edition` / theme keys
+
+### Hosting
+- Next `output: 'export'` + GitHub Pages workflow (same model as PulseCap/VaultCap)
+- SW `cookcap-v1` basePath-aware for `/CookCap/`
+- Live target: https://shamikhahmed.github.io/CookCap/
+
+### Docs
+- README / HANDOVER / USER_GUIDE / PRESENTATION / gallery synced; `npm run gallery` includes name gate
+
 ## 1.4.1 — 2026-08-01
 
 ### Fix
@@ -10,6 +25,10 @@
 - Dead 2P/`spread` API removed from AppStore + BookController
 - RecipeImage pulse skeleton while decode
 - Lint clean
+
+### Docs
+- `PRESENTATION.md` + `docs/gallery/` screen gallery (desktop + mobile); `npm run gallery`
+- README / HANDOVER / depth prompt synced to 1.4.1; GitHub repo public
 
 ## 1.4.0 — 2026-08-01
 

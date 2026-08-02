@@ -11,8 +11,10 @@ import { SearchOverlay } from '@/components/search/SearchOverlay';
 import { ImportModal } from '@/components/app/ImportModal';
 import { InstallBanner } from '@/components/app/InstallBanner';
 import { AssetPreloader } from '@/components/app/AssetPreloader';
+import { NameGate } from '@/components/app/NameGate';
 import { useApp } from '@/components/app/AppStore';
 import { Icon } from '@/components/ui/Icon';
+import { PRODUCT_NAME } from '@/lib/edition';
 
 /**
  * Application frame — Claude chrome: slim top bar, book + ribbon rail,
@@ -27,11 +29,13 @@ export function Shell() {
 }
 
 function Frame() {
+  const { needsName, setOwnerName } = useApp();
   const [searchOpen, setSearchOpen] = useState(false);
   const [favOpen, setFavOpen] = useState(false);
   const [shopOpen, setShopOpen] = useState(false);
   const [importOpen, setImportOpen] = useState(false);
   const [planOpen, setPlanOpen] = useState(false);
+  const [renameOpen, setRenameOpen] = useState(false);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -53,6 +57,7 @@ function Frame() {
         onShop={() => setShopOpen(true)}
         onImport={() => setImportOpen(true)}
         onPlan={() => setPlanOpen(true)}
+        onRename={() => setRenameOpen(true)}
       />
 
       <main className="journal-stage relative flex min-h-0 flex-1 items-center justify-center overflow-visible px-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-1 sm:px-6 sm:pr-36 md:pr-40 lg:pr-48">
@@ -81,6 +86,15 @@ function Frame() {
       <ImportModal open={importOpen} onClose={() => setImportOpen(false)} />
       <InstallBanner />
       <AssetPreloader />
+      <NameGate
+        open={needsName || renameOpen}
+        dismissible={renameOpen && !needsName}
+        onDismiss={() => setRenameOpen(false)}
+        onSubmit={(name) => {
+          setOwnerName(name);
+          setRenameOpen(false);
+        }}
+      />
     </div>
   );
 }
@@ -91,12 +105,14 @@ function TopBar({
   onShop,
   onImport,
   onPlan,
+  onRename,
 }: {
   onSearch: () => void;
   onFavorites: () => void;
   onShop: () => void;
   onImport: () => void;
   onPlan: () => void;
+  onRename: () => void;
 }) {
   const {
     theme,
@@ -124,12 +140,17 @@ function TopBar({
     <header className="flex shrink-0 items-center justify-between px-4 py-2.5 sm:px-6">
       <div className="flex min-w-0 items-center gap-2 text-[color:var(--color-ink)]">
         <Icon name="book" size={20} />
-        <span
-          suppressHydrationWarning
-          className="truncate font-serif text-lg font-semibold italic tracking-tight"
-        >
-          {edition.bookTitle}
-        </span>
+        <div className="min-w-0 leading-tight">
+          <span className="block truncate font-serif text-lg font-semibold italic tracking-tight">
+            {PRODUCT_NAME}
+          </span>
+          <span
+            suppressHydrationWarning
+            className="block truncate text-[10px] uppercase tracking-[0.2em] text-[color:var(--color-ink-faint)]"
+          >
+            {edition.bookTitle}
+          </span>
+        </div>
       </div>
       <div className="flex items-center gap-1">
         <IconBtn label="Search recipes" onClick={onSearch}>
@@ -187,6 +208,13 @@ function TopBar({
                   label="Import WhatsApp recipe"
                   onClick={() => {
                     onImport();
+                    setMore(false);
+                  }}
+                />
+                <MenuItem
+                  label="Change book name"
+                  onClick={() => {
+                    onRename();
                     setMore(false);
                   }}
                 />

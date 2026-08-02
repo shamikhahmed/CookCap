@@ -24,24 +24,24 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: 'Jia Cooks — A Family Cookbook',
+  title: 'CookCap — A Family Cookbook',
   description:
-    'Jia’s living family cookbook — an interactive storybook of recipes, memories, and kitchen friends that opens like a real hardcover you can keep forever.',
-  applicationName: 'Jia Cooks',
+    'CookCap — an interactive heirloom cookbook PWA. Name your book, flip pages, cook offline, keep family recipes forever.',
+  applicationName: 'CookCap',
   manifest: '/manifest.webmanifest',
-  appleWebApp: { capable: true, statusBarStyle: 'black-translucent', title: 'Jia Cooks' },
+  appleWebApp: { capable: true, statusBarStyle: 'black-translucent', title: 'CookCap' },
   formatDetection: { telephone: false },
-  metadataBase: new URL('https://jia-cooks.local'),
+  metadataBase: new URL('https://shamikhahmed.github.io/CookCap'),
   openGraph: {
-    title: 'Jia Cooks — A Family Cookbook',
+    title: 'CookCap — A Family Cookbook',
     description:
       'An interactive heirloom cookbook PWA — flip pages, cook offline, keep family recipes forever.',
     type: 'website',
-    siteName: 'Jia Cooks',
+    siteName: 'CookCap',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jia Cooks',
+    title: 'CookCap',
     description: 'A private heirloom cookbook that opens like a real hardcover.',
   },
   robots: { index: false, follow: false },
@@ -64,7 +64,7 @@ export const viewport: Viewport = {
   viewportFit: 'cover',
 };
 
-const themeInit = `(function(){try{var t=localStorage.getItem('jia-theme')||localStorage.getItem('grimoire-theme');if(t&&t!=='system')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`;
+const themeInit = `(function(){try{var t=localStorage.getItem('cookcap-theme')||localStorage.getItem('jia-theme')||localStorage.getItem('grimoire-theme');if(t&&t!=='system')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

@@ -74,11 +74,11 @@ export function InstallBanner() {
         <p className="min-w-0 flex-1 text-sm text-[color:var(--color-ink-soft)]">
           {showIos && !deferred ? (
             <>
-              Install Jia Cooks: tap <strong>Share</strong>, then{' '}
+              Install CookCap: tap <strong>Share</strong>, then{' '}
               <strong>Add to Home Screen</strong>.
             </>
           ) : (
-            <>Install Jia Cooks on your home screen for offline cooking.</>
+            <>Install CookCap on your home screen for offline cooking.</>
           )}
         </p>
         <div className="flex shrink-0 gap-2">

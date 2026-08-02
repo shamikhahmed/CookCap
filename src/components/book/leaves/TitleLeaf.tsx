@@ -1,17 +1,21 @@
 'use client';
 
+import { useApp } from '@/components/app/AppStore';
+
 /**
- * The title page — the first spread after the cover opens. Hand-lettered feel
- * for "Jia Cooks", framed by cozy kitchen doodles (herbs, flour, a whisk, a
- * little flower, a pinned recipe note). CSS-animated so it always paints.
+ * Title page after the cover — personalized "{Name} Cooks" + kitchen doodles.
  */
 export function TitleLeaf() {
+  const { edition } = useApp();
+  const parts = edition.bookTitle.split(/\s+/);
+  const nameLine = parts.slice(0, -1).join(' ') || edition.ownerName;
+  const cooksLine = parts[parts.length - 1] || 'Cooks';
+
   return (
     <div
       data-tap-advance
       className="paper-grain relative flex h-full w-full cursor-pointer flex-col items-center justify-center overflow-hidden px-8 text-center"
     >
-      {/* Scattered doodles */}
       <Doodle className="left-6 top-10 rotate-[-8deg]" name="sprig" />
       <Doodle className="right-7 top-12 rotate-[10deg]" name="flower" />
       <Doodle className="left-10 bottom-16 rotate-[6deg]" name="whisk" />
@@ -20,12 +24,15 @@ export function TitleLeaf() {
 
       <div className="cover-rise relative z-10">
         <p className="mb-3 font-serif text-sm uppercase tracking-[0.5em] text-[color:var(--color-ink-faint)]">
-          A Family Cookbook
+          {edition.coverEyebrow}
         </p>
-        <h1 className="font-serif text-[clamp(3rem,12vw,5.5rem)] font-black italic leading-[0.9] tracking-tight text-[color:var(--color-ink)]">
-          Jia
+        <h1
+          className="font-serif text-[clamp(3rem,12vw,5.5rem)] font-black italic leading-[0.9] tracking-tight text-[color:var(--color-ink)]"
+          suppressHydrationWarning
+        >
+          {nameLine}
           <br />
-          <span className="text-[color:var(--color-accent)]">Cooks</span>
+          <span className="text-[color:var(--color-accent)]">{cooksLine}</span>
         </h1>
         <div className="mx-auto my-6 flex items-center justify-center gap-3 text-[color:var(--color-gold)]">
           <span className="h-px w-10 bg-current" />
@@ -37,8 +44,11 @@ export function TitleLeaf() {
         <p className="mx-auto max-w-xs font-serif text-lg italic text-[color:var(--color-ink-soft)] text-balance">
           Recipes, stories, and a little mess — written down so they’re never lost.
         </p>
-        <p className="mt-6 font-serif text-base text-[color:var(--color-ink-faint)]">
-          — with love, Jia
+        <p
+          className="mt-6 font-serif text-base text-[color:var(--color-ink-faint)]"
+          suppressHydrationWarning
+        >
+          — with love, {edition.ownerName}
         </p>
       </div>
     </div>
@@ -78,17 +88,18 @@ function Doodle({ name, className = '' }: { name: string; className?: string }) 
     ),
     flour: (
       <g fill="none" stroke={stroke} strokeWidth="1.4">
-        <path d="M12 12h16l-2 22H14Z" />
-        <path d="M12 12c0-3 3-5 8-5s8 2 8 5" />
-        <path d="M17 20c1 1 2 1 3 0M22 25c1 1 2 1 3 0" />
+        <ellipse cx="18" cy="22" rx="10" ry="6" />
+        <path d="M10 20c2-6 14-6 16 0M12 18c1-4 11-4 12 0" />
       </g>
     ),
   };
   return (
-    <span className={`pointer-events-none absolute z-0 opacity-50 ${className}`} aria-hidden>
-      <svg width="40" height="44" viewBox="0 0 40 44">
-        {paths[name]}
-      </svg>
-    </span>
+    <svg
+      className={`pointer-events-none absolute h-10 w-10 opacity-50 ${className}`}
+      viewBox="0 0 36 40"
+      aria-hidden
+    >
+      {paths[name]}
+    </svg>
   );
 }

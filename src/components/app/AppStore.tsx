@@ -10,13 +10,16 @@ import {
   type ReactNode,
 } from 'react';
 import * as store from '@/lib/db/store';
-import { resolveEdition, listEditions, type Edition } from '@/lib/edition';
+import {
+  defaultEdition,
+  resolveEdition,
+  writeStoredOwner,
+  type Edition,
+} from '@/lib/edition';
 import { buildLeaves, type Leaf } from '@/lib/book/pages';
 import type { Recipe } from '@/lib/recipes/types';
 
 type Theme = 'light' | 'dark' | 'system';
-
-const DEFAULT_EDITION = listEditions()[0]!;
 
 interface AppState {
   theme: Theme;
@@ -27,8 +30,11 @@ interface AppState {
   recent: string[];
   markViewed: (id: string) => void;
   ready: boolean;
-  /** True after client resolves edition from localStorage — cover waits on this. */
+  /** True after client resolves owner name from storage / query. */
   editionReady: boolean;
+  /** True until the user has named their book. */
+  needsName: boolean;
+  setOwnerName: (name: string) => void;
   soundOn: boolean;
   setSoundOn: (v: boolean) => void;
   edition: Edition;
@@ -46,8 +52,8 @@ interface AppState {
 
 const Ctx = createContext<AppState | null>(null);
 
-const THEME_KEY = 'jia-theme';
-const SOUND_KEY = 'jia-sound';
+const THEME_KEY = 'cookcap-theme';
+const SOUND_KEY = 'cookcap-sound';
 
 function applyTheme(theme: Theme) {
   const root = document.documentElement;
@@ -61,21 +67,31 @@ export function AppStore({ children }: { children: ReactNode }) {
   const [recent, setRecent] = useState<string[]>([]);
   const [ready, setReady] = useState(false);
   const [soundOn, setSoundOnState] = useState(false);
-  const [edition, setEdition] = useState<Edition>(DEFAULT_EDITION);
+  const [edition, setEdition] = useState<Edition>(defaultEdition);
   const [editionReady, setEditionReady] = useState(false);
+  const [needsName, setNeedsName] = useState(false);
   const [customs, setCustoms] = useState<Recipe[]>([]);
   const [shoppingCount, setShoppingCount] = useState(0);
 
   useEffect(() => {
     const savedTheme =
       (localStorage.getItem(THEME_KEY) as Theme) ||
+      (localStorage.getItem('jia-theme') as Theme) ||
       (localStorage.getItem('grimoire-theme') as Theme) ||
       'system';
     setThemeState(savedTheme);
     applyTheme(savedTheme);
-    setSoundOnState(localStorage.getItem(SOUND_KEY) === '1');
-    localStorage.removeItem('jia-spread');
-    setEdition(resolveEdition());
+    setSoundOnState(
+      localStorage.getItem(SOUND_KEY) === '1' || localStorage.getItem('jia-sound') === '1',
+    );
+
+    const resolved = resolveEdition();
+    if (resolved) {
+      setEdition(resolved);
+      setNeedsName(false);
+    } else {
+      setNeedsName(true);
+    }
     setEditionReady(true);
 
     Promise.all([
@@ -107,6 +123,12 @@ export function AppStore({ children }: { children: ReactNode }) {
     localStorage.setItem(SOUND_KEY, v ? '1' : '0');
   }, []);
 
+  const setOwnerName = useCallback((name: string) => {
+    const next = writeStoredOwner(name);
+    setEdition(next);
+    setNeedsName(false);
+  }, []);
+
   const toggleFavorite = useCallback((id: string) => {
     setFavorites((prev) => {
       const next = new Set(prev);
@@ -134,7 +156,7 @@ export function AppStore({ children }: { children: ReactNode }) {
 
   const removeCustom = useCallback(async (id: string) => {
     await store.deleteCustomRecipe(id);
-    setCustoms((prev) => prev.filter((x) => x.id !== id));
+    setCustoms((prev) => prev.filter((r) => r.id !== id));
   }, []);
 
   const refreshShoppingCount = useCallback(() => {
@@ -155,6 +177,8 @@ export function AppStore({ children }: { children: ReactNode }) {
       markViewed,
       ready,
       editionReady,
+      needsName,
+      setOwnerName,
       soundOn,
       setSoundOn,
       edition,
@@ -178,6 +202,8 @@ export function AppStore({ children }: { children: ReactNode }) {
       markViewed,
       ready,
       editionReady,
+      needsName,
+      setOwnerName,
       soundOn,
       setSoundOn,
       edition,

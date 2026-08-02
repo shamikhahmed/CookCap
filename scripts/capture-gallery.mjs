@@ -1,0 +1,220 @@
+#!/usr/bin/env node
+/**
+ * Capture Jia Cooks screen gallery (desktop + mobile).
+ * Requires: `npm run dev` on :3000 + Playwright Chromium.
+ *
+ *   npm run gallery
+ */
+import { chromium } from 'playwright';
+import { mkdirSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+const OUT = join(ROOT, 'docs', 'gallery');
+const BASE = process.env.GALLERY_URL || 'http://localhost:3000';
+const RECIPE = process.env.GALLERY_RECIPE || 'butter-chicken';
+
+mkdirSync(join(OUT, 'desktop'), { recursive: true });
+mkdirSync(join(OUT, 'mobile'), { recursive: true });
+
+async function settle(page, ms = 450) {
+  await page.waitForTimeout(ms);
+}
+
+async function shot(page, rel) {
+  const path = join(OUT, rel);
+  await page.screenshot({ path, type: 'png', animations: 'disabled' });
+  console.log('  ✓', rel);
+}
+
+async function waitFooterReady(page, timeout = 20000) {
+  await page.waitForFunction(
+    () => {
+      const t = document.querySelector('footer')?.innerText || '';
+      return /\d+\s*\/\s*\d+/.test(t);
+    },
+    null,
+    { timeout },
+  );
+}
+
+async function waitFooterPage(page, n, timeout = 20000) {
+  await page.waitForFunction(
+    (want) => {
+      const t = document.querySelector('footer')?.innerText || '';
+      const m = t.match(/(\d+)\s*\/\s*(\d+)/);
+      return m && Number(m[1]) === want;
+    },
+    n,
+    { timeout },
+  );
+  await settle(page, 350);
+}
+
+async function nextPage(page) {
+  await page.getByRole('button', { name: 'Next page' }).click();
+  await settle(page, 500);
+}
+
+async function openMore(page) {
+  await page.getByRole('button', { name: 'More', exact: true }).click();
+  await settle(page, 350);
+}
+
+async function captureSet(page, folder) {
+  // First-run name gate
+  await page.goto(BASE, { waitUntil: 'domcontentloaded' });
+  await page.evaluate(() => {
+    localStorage.clear();
+    localStorage.setItem('cookcap-theme', 'light');
+  });
+  await page.reload({ waitUntil: 'domcontentloaded' });
+  await page.getByLabel('Your name').waitFor({ state: 'visible', timeout: 15000 });
+  await settle(page, 400);
+  await shot(page, `${folder}/00-name-gate.png`);
+  await page.getByLabel('Your name').fill('Jia');
+  await page.getByRole('button', { name: 'Open my book' }).click();
+  await waitFooterPage(page, 1);
+  await shot(page, `${folder}/01-cover.png`);
+
+  await nextPage(page);
+  await waitFooterPage(page, 2);
+  await shot(page, `${folder}/02-title.png`);
+
+  await nextPage(page);
+  await waitFooterPage(page, 3);
+  await shot(page, `${folder}/03-friends.png`);
+
+  await nextPage(page);
+  await waitFooterPage(page, 4);
+  await shot(page, `${folder}/04-contents.png`);
+
+  // Recipe deep link (before chapter — mobile is flaky after long flip chains)
+  await page.goto(`${BASE}/?recipe=${RECIPE}&for=Jia`, {
+    waitUntil: 'domcontentloaded',
+    timeout: 60000,
+  });
+  await page.waitForFunction(
+    () =>
+      [...document.querySelectorAll('button')].some((b) =>
+        (b.textContent || '').includes('Cook mode'),
+      ),
+    null,
+    { timeout: 60000 },
+  );
+  const cookBtn = page
+    .getByRole('button', { name: 'Cook mode' })
+    .filter({ visible: true })
+    .first();
+  await cookBtn.scrollIntoViewIfNeeded();
+  await settle(page, 700);
+  await shot(page, `${folder}/05-recipe.png`);
+
+  await cookBtn.click();
+  await page.getByRole('button', { name: 'Exit cooking mode' }).waitFor({
+    state: 'visible',
+    timeout: 15000,
+  });
+  await settle(page, 450);
+  await shot(page, `${folder}/06-cook-mode.png`);
+  await page.keyboard.press('Escape');
+  await settle(page, 350);
+
+  await page.getByRole('button', { name: 'Search recipes' }).click();
+  await page.getByPlaceholder(/Search recipes/i).waitFor({ state: 'visible', timeout: 8000 });
+  await settle(page, 350);
+  await shot(page, `${folder}/07-search.png`);
+
+  // Quick actions from search (avoids More menu z-index under journal-stage)
+  await page.getByRole('button', { name: /^Shopping$/ }).click();
+  await page.locator('#shopping-drawer-title').waitFor({ state: 'visible', timeout: 8000 });
+  await settle(page, 400);
+  await shot(page, `${folder}/08-shopping.png`);
+  await page.keyboard.press('Escape');
+  await settle(page, 300);
+
+  await page.getByRole('button', { name: 'Search recipes' }).click();
+  await page.getByPlaceholder(/Search recipes/i).waitFor({ state: 'visible', timeout: 8000 });
+  await page.getByRole('button', { name: /^This week$/ }).click();
+  await page.locator('#meal-planner-title').waitFor({ state: 'visible', timeout: 8000 });
+  await settle(page, 400);
+  await shot(page, `${folder}/09-meal-planner.png`);
+  await page.keyboard.press('Escape');
+  await settle(page, 300);
+
+  await page.getByRole('button', { name: 'Switch to dark mode' }).click();
+  await settle(page, 400);
+  await page.goto(`${BASE}/?recipe=${RECIPE}&for=Jia`, {
+    waitUntil: 'domcontentloaded',
+    timeout: 60000,
+  });
+  await page.waitForFunction(
+    () =>
+      [...document.querySelectorAll('button')].some((b) =>
+        (b.textContent || '').includes('Cook mode'),
+      ),
+    null,
+    { timeout: 60000 },
+  );
+  await settle(page, 600);
+  await shot(page, `${folder}/10-recipe-dark.png`);
+  await page.getByRole('button', { name: 'Switch to light mode' }).click().catch(() => {});
+
+  // Chapter opener
+  await page.evaluate(() => localStorage.setItem('cookcap-pos', '4'));
+  await page.goto(`${BASE}/?for=Jia`, { waitUntil: 'domcontentloaded' });
+  await waitFooterPage(page, 5);
+  await shot(page, `${folder}/11-chapter.png`);
+
+  const tabs = page.getByRole('button', { name: 'Open chapter stickers' });
+  if (await tabs.isVisible().catch(() => false)) {
+    await tabs.click();
+    await page.getByText(/Chapters|Pakistani/i).first().waitFor({ state: 'visible', timeout: 8000 });
+    await settle(page, 400);
+    await shot(page, `${folder}/12-tabs-sheet.png`);
+  }
+}
+
+async function main() {
+  console.log(`Gallery → ${OUT}`);
+  console.log(`Base URL ${BASE} · recipe ${RECIPE}`);
+
+  const browser = await chromium.launch({ headless: true });
+
+  {
+    const context = await browser.newContext({
+      viewport: { width: 1440, height: 900 },
+      deviceScaleFactor: 1,
+      colorScheme: 'light',
+      reducedMotion: 'reduce',
+    });
+    const page = await context.newPage();
+    console.log('Desktop…');
+    await captureSet(page, 'desktop');
+    await context.close();
+  }
+
+  {
+    const context = await browser.newContext({
+      viewport: { width: 390, height: 844 },
+      deviceScaleFactor: 2,
+      isMobile: true,
+      hasTouch: true,
+      colorScheme: 'light',
+      reducedMotion: 'reduce',
+    });
+    const page = await context.newPage();
+    console.log('Mobile…');
+    await captureSet(page, 'mobile');
+    await context.close();
+  }
+
+  await browser.close();
+  console.log('Done.');
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

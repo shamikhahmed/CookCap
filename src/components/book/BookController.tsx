@@ -42,7 +42,7 @@ interface BookState {
 }
 
 const Ctx = createContext<BookState | null>(null);
-const POS_KEY = 'jia-pos';
+const POS_KEY = 'cookcap-pos';
 
 export function BookController({ children }: { children: ReactNode }) {
   const { leaves, chapterStart, soundOn } = useApp();
@@ -87,7 +87,11 @@ export function BookController({ children }: { children: ReactNode }) {
       return;
     }
 
-    const saved = Number(localStorage.getItem(POS_KEY) ?? localStorage.getItem('grimoire-pos'));
+    const saved = Number(
+      localStorage.getItem(POS_KEY) ??
+        localStorage.getItem('jia-pos') ??
+        localStorage.getItem('grimoire-pos'),
+    );
     if (Number.isFinite(saved) && saved > 0 && saved < leaves.length) setIndex(saved);
     setHydrated(true);
   }, [leaves, hydrated]);

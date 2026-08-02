@@ -1,4 +1,4 @@
-# Claude Code prompt — Jia Cooks 3D book depth & bookmark realism
+# Claude Code prompt — CookCap 3D book depth & bookmark realism
 
 Copy everything below the line into Claude Code (working directory = this repo).
 
@@ -6,14 +6,15 @@ Copy everything below the line into Claude Code (working directory = this repo).
 
 ## Mission
 
-You are polishing **Jia Cooks**, a private heirloom cookbook PWA at `/Users/shamikhahmed/CookBook Website` (Next.js 15 App Router, React 19, Tailwind v4, Motion).
+You are polishing **CookCap**, a Cap-family heirloom cookbook PWA at `/Users/shamikhahmed/CookBook Website` (Next.js 15 App Router, React 19, Tailwind v4, Motion). Product chrome = CookCap; book title = `{Name} Cooks` from NameGate.
 
 **Goal:** Make the physical book feel like a real thick cookbook — deeper fore-edge, believable laminated chapter tabs at different page depths, stronger page-curl presence — **without** breaking flip physics, mobile sheet tabs, warm leaf pool, asset preload, or IndexedDB state.
 
 Read first (do not invent architecture):
 
 - `~/Capricorn-Brain/01 Projects/Jia-Cooks.md`
-- `HANDOVER.md`, `CHANGELOG.md`, `VERSION` (currently **1.3.2**)
+- `HANDOVER.md`, `CHANGELOG.md`, `VERSION` (currently **1.4.1**)
+- `PRESENTATION.md`, `docs/gallery/README.md` (regen via `npm run gallery`)
 - `src/components/book/Book.tsx`
 - `src/components/book/BookController.tsx`
 - `src/components/book/BookmarkRail.tsx`
