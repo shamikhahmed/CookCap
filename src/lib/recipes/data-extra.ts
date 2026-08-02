@@ -1609,10 +1609,7 @@ function biryani(style: 'saadi' | 'sindhi' | 'zaffarani', meat: 'chicken' | 'mut
         'Parboil the rice to 70% — it finishes cooking in the steam.',
         'Seal the lid with foil or dough so no steam escapes during dum.',
       ],
-      related: [
-        `${style === 'saadi' ? 'sindhi' : 'saadi'}-biryani-${meat}`,
-        meat === 'chicken' ? 'qorma-chicken' : meat === 'mutton' ? 'qorma-mutton' : 'nihari-beef',
-      ],
+      related: ['saadi', 'sindhi', 'saadi', 'chicken', 'qorma-chicken', 'mutton', 'qorma-mutton', 'nihari-beef'],
       seed,
     }),
   ];

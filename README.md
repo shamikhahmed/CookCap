@@ -7,7 +7,7 @@ Cap-family offline-first cookbook PWA. Name your book → **`{Name} Cooks`**.
 ## Features
 
 - Hardcover flip book + cook mode + search + shopping + meal planner
-- **~956 recipes** — family editorial + TheMealDB (hero photo ships with each dish)
+- **~838 recipes** — family editorial + TheMealDB (hero photo ships with each dish); no pork
 - Balanced chapters (no tab > ~20%); breakfast / vegetarian / world / european tabs
 - **Optional lenses:** profiles, My Plate / Mother / Budget / more modes, meal diary + calendar, pantry, PKR cost estimates
 - Reader mode = pure book (ignore lenses → same heirloom experience)

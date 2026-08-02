@@ -4,7 +4,7 @@
 
 ## Pitch
 
-CookCap opens like a hardcover on a wooden table. Name the book in a 3D dresser. Flip ~956 recipes offline — each with one honest hero photo. Paper pages, wood frame. Optional lenses — never required.
+CookCap opens like a hardcover on a wooden table. Name the book in a 3D dresser. Flip ~838 recipes offline — each with one honest hero photo. Paper pages, wood frame. Optional lenses — never required.
 
 ## Demo
 

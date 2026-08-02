@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.3.1 — 2026-08-02
+
+### Fix
+- **Removed all pork** (bacon, ham, chorizo, sausage, prosciutto, etc.) — **118** dishes out; catalog **838**
+- Heroes + `images.generated.json` scrubbed; `related` links cleaned
+- `import:mealdb` skips pork category / ingredients going forward
+- Log: `docs/pork-removal.json`
+
 ## 2.3.0 — 2026-08-02
 
 ### Fix (chapter rebalance)

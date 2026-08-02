@@ -1,0 +1,479 @@
+{
+  "at": "2026-08-02T17:42:21.009Z",
+  "count": 118,
+  "removed": [
+    {
+      "id": "mdb-53156",
+      "title": "Arroz al horno (baked rice)"
+    },
+    {
+      "id": "mdb-53496",
+      "title": "Bai Sach Chrouk – Grilled Pork with Rice"
+    },
+    {
+      "id": "mdb-53242",
+      "title": "Barbecue pork buns"
+    },
+    {
+      "id": "mdb-52995",
+      "title": "BBQ Pork Sloppy Joes"
+    },
+    {
+      "id": "mdb-52848",
+      "title": "Bean & Sausage Hotpot"
+    },
+    {
+      "id": "mdb-53468",
+      "title": "Belgian Stoemp"
+    },
+    {
+      "id": "mdb-53018",
+      "title": "Bigos (Hunters Stew)"
+    },
+    {
+      "id": "mdb-53300",
+      "title": "Bigos (Polish hunter's stew)"
+    },
+    {
+      "id": "mdb-53482",
+      "title": "Black bean & meat stew - feijoada"
+    },
+    {
+      "id": "mdb-53036",
+      "title": "Boxty Breakfast"
+    },
+    {
+      "id": "mdb-52913",
+      "title": "Brie wrapped in prosciutto & brioche"
+    },
+    {
+      "id": "mdb-53190",
+      "title": "Bryndzové Halušky"
+    },
+    {
+      "id": "mdb-52885",
+      "title": "Bubble & Squeak"
+    },
+    {
+      "id": "mdb-53418",
+      "title": "Cambodian Stir-fried Morning Glory with Pork, Fermented Soybeans, and Garlic"
+    },
+    {
+      "id": "mdb-53330",
+      "title": "Cassava pizza"
+    },
+    {
+      "id": "mdb-53055",
+      "title": "Cevapi Sausages"
+    },
+    {
+      "id": "mdb-53161",
+      "title": "Chicken & chorizo rice pot"
+    },
+    {
+      "id": "mdb-52875",
+      "title": "Chicken Ham and Leek Pie"
+    },
+    {
+      "id": "mdb-53549",
+      "title": "Chicken Salad With Mushrooms and Bacon"
+    },
+    {
+      "id": "mdb-53166",
+      "title": "Chickpea, chorizo & spinach stew"
+    },
+    {
+      "id": "mdb-53514",
+      "title": "Chilean Empanada"
+    },
+    {
+      "id": "mdb-53319",
+      "title": "Chivito sandwich"
+    },
+    {
+      "id": "mdb-53063",
+      "title": "Chivito uruguayo"
+    },
+    {
+      "id": "mdb-53136",
+      "title": "Choripán"
+    },
+    {
+      "id": "mdb-53168",
+      "title": "Chorizo & chickpea soup"
+    },
+    {
+      "id": "mdb-53157",
+      "title": "Chorizo & soft-boiled egg salad"
+    },
+    {
+      "id": "mdb-53185",
+      "title": "Chorizo & tomato salad"
+    },
+    {
+      "id": "mdb-53159",
+      "title": "Chorizo, potato & cheese omelette"
+    },
+    {
+      "id": "mdb-53528",
+      "title": "Chuletas de Cerdo a la Criolla (Pork Chops in Creole Sauce)"
+    },
+    {
+      "id": "mdb-53154",
+      "title": "Clam, chorizo & white bean stew"
+    },
+    {
+      "id": "mdb-53343",
+      "title": "Classic Tourtière"
+    },
+    {
+      "id": "mdb-53037",
+      "title": "Coddled pork with cider"
+    },
+    {
+      "id": "mdb-52999",
+      "title": "Crispy Sausages and Greens"
+    },
+    {
+      "id": "mdb-53547",
+      "title": "Cuban Sandwich"
+    },
+    {
+      "id": "mdb-53188",
+      "title": "Fašírky"
+    },
+    {
+      "id": "mdb-53464",
+      "title": "Flemish Hutsepot"
+    },
+    {
+      "id": "mdb-53553",
+      "title": "Frikadeller - Danish Meatballs"
+    },
+    {
+      "id": "mdb-53179",
+      "title": "Ham croquetas"
+    },
+    {
+      "id": "mdb-53035",
+      "title": "Ham hock colcannon"
+    },
+    {
+      "id": "mdb-52954",
+      "title": "Hot and Sour Soup"
+    },
+    {
+      "id": "mdb-53145",
+      "title": "Jamon & wild garlic croquetas"
+    },
+    {
+      "id": "mdb-53034",
+      "title": "Japanese Katsudon"
+    },
+    {
+      "id": "mdb-53502",
+      "title": "Khmer Banh Xeo – Cambodian Savory Pancake"
+    },
+    {
+      "id": "mdb-53427",
+      "title": "Lao Naem Khao"
+    },
+    {
+      "id": "mdb-53554",
+      "title": "Open-faced Sandwich With Potato"
+    },
+    {
+      "id": "mdb-53152",
+      "title": "Pan-fried hake, white bean & chorizo broth"
+    },
+    {
+      "id": "mdb-53301",
+      "title": "Pork & sauerkraut goulash"
+    },
+    {
+      "id": "mdb-52847",
+      "title": "Pork Cassoulet"
+    },
+    {
+      "id": "mdb-53306",
+      "title": "Pork rib bortsch"
+    },
+    {
+      "id": "mdb-53044",
+      "title": "Portuguese barbecued pork (Febras assadas)"
+    },
+    {
+      "id": "mdb-53499",
+      "title": "Prahok Ktis – Pork and Coconut Dip"
+    },
+    {
+      "id": "mdb-53124",
+      "title": "Raspeballer (Norwegian Potato Dumplings)"
+    },
+    {
+      "id": "mdb-53227",
+      "title": "Rice paper dumplings"
+    },
+    {
+      "id": "mdb-52783",
+      "title": "Rigatoni with fennel sausage sauce"
+    },
+    {
+      "id": "mdb-53315",
+      "title": "Rosemary braised red cabbage with kabanos"
+    },
+    {
+      "id": "sausage-pasta",
+      "title": "Sausage Ragu Pasta"
+    },
+    {
+      "id": "mdb-52994",
+      "title": "Skillet Apple Pork Chops with Roasted Sweet Potatoes & Zucchini"
+    },
+    {
+      "id": "mdb-53432",
+      "title": "Slow-cooked, Wadadli-spiced Cubano pork belly"
+    },
+    {
+      "id": "mdb-53302",
+      "title": "Slow-roasted ham with lemon, garlic & sage"
+    },
+    {
+      "id": "mdb-52982",
+      "title": "Spaghetti alla Carbonara"
+    },
+    {
+      "id": "mdb-53177",
+      "title": "Spaghetti with Spanish flavours"
+    },
+    {
+      "id": "mdb-53181",
+      "title": "Spanish beans with chicken & chorizo"
+    },
+    {
+      "id": "mdb-53183",
+      "title": "Spanish meatballs with clams, chorizo & squid"
+    },
+    {
+      "id": "mdb-53176",
+      "title": "Spanish tomato bread with jamón Serrano"
+    },
+    {
+      "id": "mdb-53102",
+      "title": "Squid, chickpea & chorizo salad"
+    },
+    {
+      "id": "mdb-52980",
+      "title": "Stamppot"
+    },
+    {
+      "id": "mdb-52949",
+      "title": "Sweet and Sour Pork"
+    },
+    {
+      "id": "mdb-53197",
+      "title": "Thai pork & peanut curry"
+    },
+    {
+      "id": "mdb-53444",
+      "title": "Tirolean Dumplings"
+    },
+    {
+      "id": "mdb-52822",
+      "title": "Toad In The Hole"
+    },
+    {
+      "id": "mdb-53032",
+      "title": "Tonkatsu pork"
+    },
+    {
+      "id": "mdb-53318",
+      "title": "Torta de fiambre"
+    },
+    {
+      "id": "mdb-52926",
+      "title": "Tourtiere"
+    },
+    {
+      "id": "mdb-53416",
+      "title": "Trinxat (Potato, Cabbage and Bacon Hash)"
+    },
+    {
+      "id": "mdb-52828",
+      "title": "Vietnamese Grilled Pork (bun-thit-nuong)"
+    },
+    {
+      "id": "mdb-53237",
+      "title": "Vietnamese pork salad"
+    },
+    {
+      "id": "mdb-53235",
+      "title": "Vietnamese-style caramel pork"
+    },
+    {
+      "id": "mdb-53106",
+      "title": "Warm roast asparagus salad"
+    },
+    {
+      "id": "mdb-53294",
+      "title": "Zapiekanki"
+    },
+    {
+      "id": "mdb-53373",
+      "title": "Air Fryer Egg Rolls"
+    },
+    {
+      "id": "mdb-53389",
+      "title": "Apple Potato Mash (Hete bliksem)"
+    },
+    {
+      "id": "mdb-53133",
+      "title": "Asado"
+    },
+    {
+      "id": "mdb-52878",
+      "title": "Beef and Oyster pie"
+    },
+    {
+      "id": "mdb-52904",
+      "title": "Beef Bourguignon"
+    },
+    {
+      "id": "mdb-52803",
+      "title": "Beef Wellington"
+    },
+    {
+      "id": "mdb-53463",
+      "title": "Belgian Meatballs in Liège Syrup Sauce"
+    },
+    {
+      "id": "mdb-52826",
+      "title": "Braised Beef Chilli"
+    },
+    {
+      "id": "mdb-52965",
+      "title": "Breakfast Potatoes"
+    },
+    {
+      "id": "mdb-53361",
+      "title": "Callaloo and SaltFish"
+    },
+    {
+      "id": "mdb-52939",
+      "title": "Callaloo Jamaican Style"
+    },
+    {
+      "id": "mdb-52934",
+      "title": "Chicken Basquaise"
+    },
+    {
+      "id": "mdb-53455",
+      "title": "Chicken Liver Pate Recipe"
+    },
+    {
+      "id": "mdb-52840",
+      "title": "Clam chowder"
+    },
+    {
+      "id": "mdb-52832",
+      "title": "Coq au vin"
+    },
+    {
+      "id": "mdb-53058",
+      "title": "Croatian Bean Stew"
+    },
+    {
+      "id": "mdb-53143",
+      "title": "Easy Spanish chicken"
+    },
+    {
+      "id": "mdb-53073",
+      "title": "Eggplant Adobo"
+    },
+    {
+      "id": "mdb-52895",
+      "title": "English Breakfast"
+    },
+    {
+      "id": "mdb-53021",
+      "title": "Golabki (cabbage roll)"
+    },
+    {
+      "id": "mdb-53125",
+      "title": "Karbonader (Lean Beef Patties) with Caramelized Onions"
+    },
+    {
+      "id": "mdb-52978",
+      "title": "Kumpir"
+    },
+    {
+      "id": "mdb-52987",
+      "title": "Lasagna Sandwiches"
+    },
+    {
+      "id": "mdb-52844",
+      "title": "Lasagne"
+    },
+    {
+      "id": "mdb-53467",
+      "title": "Liegeoise Salad"
+    },
+    {
+      "id": "mdb-53146",
+      "title": "Locro"
+    },
+    {
+      "id": "mdb-53086",
+      "title": "Migas"
+    },
+    {
+      "id": "mdb-53336",
+      "title": "Molasses Baked Beans"
+    },
+    {
+      "id": "mdb-53038",
+      "title": "Mustard champ"
+    },
+    {
+      "id": "mdb-53151",
+      "title": "Paella"
+    },
+    {
+      "id": "mdb-52780",
+      "title": "Potato Gratin with Chicken"
+    },
+    {
+      "id": "mdb-53081",
+      "title": "Potato Salad (Olivier Salad)"
+    },
+    {
+      "id": "mdb-53443",
+      "title": "Satee"
+    },
+    {
+      "id": "mdb-53167",
+      "title": "Seafood rice"
+    },
+    {
+      "id": "mdb-53368",
+      "title": "Singapore Noodles with Shrimp"
+    },
+    {
+      "id": "mdb-52981",
+      "title": "Snert (Dutch Split Pea Soup)"
+    },
+    {
+      "id": "mdb-53184",
+      "title": "Spanish rice & prawn one-pot"
+    },
+    {
+      "id": "mdb-53203",
+      "title": "Thai rice noodle salad"
+    },
+    {
+      "id": "mdb-53057",
+      "title": "Traditional Croatian Goulash"
+    }
+  ],
+  "note": "Removed pork/bacon/ham/chorizo/sausage dishes; restored dough-metaphor false positives (Challah, pastéis, lefse, etc.)."
+}

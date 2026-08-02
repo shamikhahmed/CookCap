@@ -79,6 +79,19 @@ function mapImportedChapter({ category, cuisine, title, tags = [] }) {
   return 'meals';
 }
 
+
+const PORK_CAT = /^(pork)$/i;
+const PORK_TEXT = /\b(?:pork|bacon|pancetta|prosciutto|chorizo|gammon|\bham\b|parma\s*ham|salami|pepperoni|guanciale|jam[oó]n|sausage|sausages|lardons?)\b/i;
+
+function isPorkMeal(meal) {
+  const cat = (meal.strCategory || '').trim();
+  if (PORK_CAT.test(cat)) return true;
+  const blob = [meal.strMeal, meal.strTags, meal.strIngredient1, meal.strIngredient2, meal.strIngredient3, meal.strIngredient4, meal.strIngredient5]
+    .filter(Boolean)
+    .join(' ');
+  return PORK_TEXT.test(blob);
+}
+
 function mapChapter(meal) {
   const category = (meal.strCategory || '').trim().toLowerCase();
   const area = (meal.strArea || '').trim().toLowerCase();
