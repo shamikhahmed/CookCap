@@ -5,10 +5,11 @@ import { useApp } from '@/components/app/AppStore';
 import { useBook } from '@/components/book/BookController';
 import { withBase } from '@/lib/base-path';
 import type { Leaf } from '@/lib/book/pages';
+import { getImage } from '@/lib/recipes/images';
 
 /**
- * Keep flips cold-start-free without decoding all 956 heroes on the main thread.
- * - SW gets full URL list (cache only — no decode)
+ * Keep flips cold-start-free without decoding the whole catalog on the main thread.
+ * - SW gets hero URLs that exist in the image manifest (skip missing → no 404 spam)
  * - Browser decode window tracks the reader (±WINDOW around index)
  */
 
@@ -52,6 +53,7 @@ function warmServiceWorker(urls: string[]) {
 
 function heroUrlsForLeaf(leaf: Leaf | undefined): string[] {
   if (!leaf || leaf.kind !== 'recipe') return [];
+  if (!getImage(leaf.recipeId)) return [];
   return [withBase(`/recipes/${leaf.recipeId}.webp`), withBase(`/recipes/${leaf.recipeId}@sm.webp`)];
 }
 
@@ -69,6 +71,7 @@ export function AssetPreloader() {
     const urls: string[] = [];
     for (const r of allRecipes) {
       if (r.chapter === 'tips') continue;
+      if (!getImage(r.id)) continue;
       urls.push(withBase(`/recipes/${r.id}.webp`), withBase(`/recipes/${r.id}@sm.webp`));
     }
     const ric = (

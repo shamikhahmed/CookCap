@@ -58,5 +58,26 @@ export function leafOfRecipe(recipeId: string, leaves: Leaf[] = LEAVES): number 
   return leaves.findIndex((l) => l.kind === 'recipe' && l.recipeId === recipeId);
 }
 
+export function remapLeafIndex(prev: Leaf[], index: number, next: Leaf[]): number {
+  const leaf = prev[index];
+  if (!leaf) return Math.max(0, Math.min(index, next.length - 1));
+  if (leaf.kind === 'recipe') {
+    const t = next.findIndex((l) => l.kind === 'recipe' && l.recipeId === leaf.recipeId);
+    if (t >= 0) return t;
+  } else if (leaf.kind === 'chapter') {
+    const t = next.findIndex((l) => l.kind === 'chapter' && l.chapter === leaf.chapter);
+    if (t >= 0) return t;
+  } else if (leaf.kind === 'foryou') {
+    const t = next.findIndex((l) => l.kind === 'foryou');
+    if (t >= 0) return t;
+    const c = next.findIndex((l) => l.kind === 'contents');
+    return c >= 0 ? c : 0;
+  } else {
+    const t = next.findIndex((l) => l.kind === leaf.kind);
+    if (t >= 0) return t;
+  }
+  return Math.max(0, Math.min(index, next.length - 1));
+}
+
 /** @deprecated prefer catalog — kept for static call sites during transition */
 export const recipesByChapter = staticByChapter;

@@ -7,6 +7,8 @@ export interface SearchFilters {
   maxTime?: number;
   maxCalories?: number;
   cuisine?: string;
+  /** Exact user rating 1–5 (device-local IndexedDB stars). */
+  stars?: 1 | 2 | 3 | 4 | 5;
 }
 
 /** Precomputed fields so each query skips string joins over 900+ recipes. */
@@ -17,8 +19,9 @@ type IndexedRecipe = {
   ingredients: string;
 };
 
-let INDEX: IndexedRecipe[] | null = null;
-let INDEX_POOL: Recipe[] | null = null;
+let BUNDLED_INDEX: IndexedRecipe[] | null = null;
+let EXTRA_INDEX: IndexedRecipe[] | null = null;
+let EXTRA_POOL: Recipe[] | null = null;
 
 function buildIndex(pool: Recipe[]): IndexedRecipe[] {
   return pool.map((recipe) => ({
@@ -36,13 +39,13 @@ function buildIndex(pool: Recipe[]): IndexedRecipe[] {
 
 function getIndex(pool: Recipe[]): IndexedRecipe[] {
   if (pool === RECIPES) {
-    if (!INDEX) INDEX = buildIndex(RECIPES);
-    return INDEX;
+    if (!BUNDLED_INDEX) BUNDLED_INDEX = buildIndex(RECIPES);
+    return BUNDLED_INDEX;
   }
-  if (pool === INDEX_POOL && INDEX) return INDEX;
-  INDEX_POOL = pool;
-  INDEX = buildIndex(pool);
-  return INDEX;
+  if (pool === EXTRA_POOL && EXTRA_INDEX) return EXTRA_INDEX;
+  EXTRA_POOL = pool;
+  EXTRA_INDEX = buildIndex(pool);
+  return EXTRA_INDEX;
 }
 
 function scoreIndexed(entry: IndexedRecipe, q: string): number {
@@ -70,6 +73,7 @@ export function searchRecipes(
   query: string,
   filters: SearchFilters = {},
   pool: Recipe[] = RECIPES,
+  ratings: Record<string, number> = {},
 ): Recipe[] {
   const q = query.trim().toLowerCase();
   const index = getIndex(pool);
@@ -78,9 +82,16 @@ export function searchRecipes(
     (!filters.difficulty || r.difficulty === filters.difficulty) &&
     (!filters.maxTime || r.prepMin + r.cookMin <= filters.maxTime) &&
     (!filters.maxCalories || r.nutrition.calories <= filters.maxCalories) &&
-    (!filters.cuisine || r.cuisine === filters.cuisine);
+    (!filters.cuisine || r.cuisine === filters.cuisine) &&
+    (!filters.stars || ratings[r.id] === filters.stars);
 
-  if (!q) return pool.filter(pass);
+  if (!q) {
+    const hit = pool.filter(pass);
+    if (filters.stars) {
+      return hit.sort((a, b) => a.title.localeCompare(b.title));
+    }
+    return hit;
+  }
 
   return index
     .map((entry) => ({ recipe: entry.recipe, s: scoreIndexed(entry, q) }))

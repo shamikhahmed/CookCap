@@ -38,7 +38,9 @@ export function MealPlannerDrawer({
       setQ('');
       return;
     }
-    void getMeta<Plan>('meal-plan').then((p) => setPlan(p ?? {}));
+    void getMeta<Plan>('meal-plan')
+      .then((p) => setPlan(p ?? {}))
+      .catch(() => setPlan({}));
   }, [open]);
 
   const closeHandler = useCallback(() => {

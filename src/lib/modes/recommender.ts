@@ -147,7 +147,17 @@ export function scoreRecipe(
   }
 
   if (boost.lowSodium) {
-    score += boost.lowSodium * 0.3;
+    const hay = recipe.ingredients
+      .flatMap((g) => g.items.map((i) => i.item))
+      .join(' ')
+      .toLowerCase();
+    const salty = /(soy sauce|fish sauce|salt\b|msg|bouillon|stock cube|bacon|cured)/.test(hay);
+    if (!salty) {
+      score += boost.lowSodium;
+      reasons.push('lighter on salty ingredients');
+    } else {
+      score -= boost.lowSodium * 0.4;
+    }
   }
 
   if (def.maxMinutes != null && minutes > def.maxMinutes) {

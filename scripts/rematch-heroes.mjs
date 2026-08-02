@@ -1,6 +1,6 @@
 /**
  * Force-rematch hero photos that are wrong (steak-for-chai, dessert-for-latte, etc).
- * Prefer MealDB scored hits → direct Unsplash → Foodish category last.
+ * Prefer direct Unsplash → Foodish category last.
  * Run: node scripts/rematch-heroes.mjs
  */
 import sharp from 'sharp';
@@ -12,7 +12,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const outDir = join(root, 'public', 'recipes');
 const jsonOut = join(root, 'src', 'lib', 'recipes', 'images.generated.json');
 
-/** Explicit photo URLs for dishes MealDB/Foodish can't name. */
+/** Explicit photo URLs for dishes Foodish can't name. */
 const DIRECT = {
   'masala-chai': {
     url: 'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=1600&q=80',
@@ -60,9 +60,9 @@ const DIRECT = {
     src: 'Unsplash',
   },
   'omelette-dinner': {
-    url: 'https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg',
-    name: 'Bread omelette',
-    src: 'TheMealDB',
+    url: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1600&q=80',
+    name: 'Omelette',
+    src: 'Unsplash',
   },
   'mango-lassi': {
     url: 'https://images.unsplash.com/photo-1527661591475-527312dd65f5?auto=format&fit=crop&w=1600&q=80',
@@ -70,95 +70,51 @@ const DIRECT = {
     src: 'Unsplash',
   },
   'nihari-beef': {
-    url: 'https://www.themealdb.com/images/media/meals/1529444830.jpg',
-    name: 'Massaman Beef Curry (stand-in for nihari)',
-    src: 'TheMealDB',
+    url: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1600&q=80',
+    name: 'Beef curry (stand-in for nihari)',
+    src: 'Unsplash',
   },
 };
 
-/** Better MealDB search terms + preferred meal names. */
-const SEARCH = {
-  'alfredo-pasta': ['Fettuccine Alfredo', 'Carbonara', 'Pasta'],
-  'nihari-beef': ['Massaman', 'Beef', 'Rendang'],
-  'gulab-jamun': ['Gulab', 'Jalebi', 'Dessert'],
-  'qorma-chicken': ['Chicken korma', 'Korma', 'Butter chicken'],
-  'qorma-mutton': ['Lamb Tagine', 'Lamb', 'Korma'],
-  'karahi-mutton': ['Lamb Rogan josh', 'Lamb', 'Karahi'],
-  'handi-mutton': ['Lamb Tagine', 'Butter chicken'],
-  'badami-qorma-chicken': ['Chicken korma', 'Butter chicken'],
-  'badami-qorma-mutton': ['Lamb Tagine', 'Korma'],
-  'saadi-biryani-mutton': ['Lamb Biryani', 'Biryani'],
-  'sindhi-biryani-mutton': ['Lamb Biryani', 'Biryani'],
-  'zaffarani-biryani-mutton': ['Lamb Biryani', 'Biryani'],
-  'saadi-biryani-beef': ['Beef Biryani', 'Biryani', 'Beef'],
-  'sindhi-biryani-beef': ['Beef Biryani', 'Biryani'],
-  'zaffarani-biryani-beef': ['Beef Biryani', 'Biryani'],
-  kheer: ['Rice pudding', 'Kheer'],
-  balushahi: ['Jalebi', 'Dessert'],
-  paratha: ['Roti', 'Chapati', 'Naan'],
-  roti: ['Roti', 'Chapati'],
-  bagel: ['Bagel', 'Bread'],
-  baguette: ['Bread'],
-  ciabatta: ['Focaccia', 'Bread'],
-  'cacio-e-pepe': ['Carbonara', 'Pasta'],
-  'aglio-olio': ['Spaghetti', 'Pasta'],
-  minestrone: ['Minestrone', 'Soup'],
-  'pesto-gnocchi': ['Gnocchi', 'Pasta'],
-  'sheet-pan-salmon': ['Salmon', 'Fish'],
-  'veggie-curry': ['Vegetarian Curry', 'Dal fry'],
-  'omelette-dinner': ['Omlette', 'Egg'],
-  'triple-choc-brownies': ['Chocolate Gateau', 'Brownie', 'Chocolate'],
-  'double-choc-cookies': ['Peanut Butter Cookies', 'Cookie'],
-  'oreo-custard-crunch': ['Chocolate Gateau', 'Dessert'],
-  'tiramisu-cups': ['Tiramisu'],
-  tiramisu: ['Tiramisu'],
-  'pakistani-stew': ['Beef stew', 'Beef'],
-  'kfc-spicy-chicken': ['Kentucky Fried Chicken', 'Fried Chicken'],
-};
-
-function tokens(s) {
-  return s
-    .toLowerCase()
-    .replace(/[^a-z0-9\s]/g, ' ')
-    .split(/\s+/)
-    .filter((t) => t.length > 2 && !['the', 'and', 'with', 'for'].includes(t));
-}
-
-function scoreMeal(mealName, id, title) {
-  const mt = tokens(mealName);
-  const want = new Set([...tokens(id.replace(/-/g, ' ')), ...tokens(title)]);
-  let hit = 0;
-  for (const t of mt) if (want.has(t)) hit++;
-  // Penalize steak/meat when looking for chai/tea/latte
-  const drink = /chai|latte|coffee|tea|brew|espresso|affogato|lassi|patti/.test(`${id} ${title}`);
-  if (drink && /steak|beef|pork|chicken|lamb|fish|pie|soup/.test(mealName.toLowerCase())) return -10;
-  return hit;
-}
-
-async function findMealDb(terms, id, title) {
-  let best = null;
-  let bestScore = 0;
-  for (const term of terms) {
-    try {
-      const res = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/search.php?s=${encodeURIComponent(term)}`,
-      );
-      const data = await res.json();
-      for (const meal of data.meals || []) {
-        if (!meal.strMealThumb) continue;
-        const sc = scoreMeal(meal.strMeal, id, title);
-        if (sc > bestScore) {
-          bestScore = sc;
-          best = { url: `${meal.strMealThumb}/large`, name: meal.strMeal, src: 'TheMealDB', score: sc };
-        }
-      }
-    } catch {
-      /* next */
-    }
-  }
-  if (best && best.score >= 1) return best;
-  return null;
-}
+/** Ids that should prefer a Foodish category rematch when credit is wrong. */
+const FOODISH_IDS = new Set([
+  'alfredo-pasta',
+  'nihari-beef',
+  'gulab-jamun',
+  'qorma-chicken',
+  'qorma-mutton',
+  'karahi-mutton',
+  'handi-mutton',
+  'badami-qorma-chicken',
+  'badami-qorma-mutton',
+  'saadi-biryani-mutton',
+  'sindhi-biryani-mutton',
+  'zaffarani-biryani-mutton',
+  'saadi-biryani-beef',
+  'sindhi-biryani-beef',
+  'zaffarani-biryani-beef',
+  'kheer',
+  'balushahi',
+  'paratha',
+  'roti',
+  'bagel',
+  'baguette',
+  'ciabatta',
+  'cacio-e-pepe',
+  'aglio-olio',
+  'minestrone',
+  'pesto-gnocchi',
+  'sheet-pan-salmon',
+  'veggie-curry',
+  'omelette-dinner',
+  'triple-choc-brownies',
+  'double-choc-cookies',
+  'oreo-custard-crunch',
+  'tiramisu-cups',
+  'tiramisu',
+  'pakistani-stew',
+  'kfc-spicy-chicken',
+]);
 
 async function findFoodish(id, title) {
   const hay = `${id} ${title}`.toLowerCase();
@@ -195,14 +151,14 @@ async function findFoodish(id, title) {
 function needsRematch(id, entry) {
   if (!entry) return true;
   if (DIRECT[id]) return true;
-  if (SEARCH[id]) return true;
+  if (FOODISH_IDS.has(id)) return true;
   const m = (entry.matched || '').toLowerCase();
   const c = entry.credit || '';
   if (id.includes('chai') && m.includes('steak')) return true;
   if (id.includes('nihari') && m.includes('pho')) return true;
   if (/latte|chai|coffee|espresso|affogato|brew|lassi|patti|karak/.test(id) && c === 'Foodish')
     return true;
-  if (c === 'Foodish' && SEARCH[id]) return true;
+  if (c === 'Foodish' && FOODISH_IDS.has(id)) return true;
   return false;
 }
 
@@ -282,13 +238,6 @@ async function main() {
     const title = recipes.get(id) || id.replace(/-/g, ' ');
     try {
       let hit = DIRECT[id] || null;
-      if (!hit) {
-        const terms = SEARCH[id] || [
-          title.replace(/[()]/g, '').trim(),
-          title.split(' ').slice(-2).join(' '),
-        ];
-        hit = await findMealDb(terms, id, title);
-      }
       if (!hit) hit = await findFoodish(id, title);
       if (!hit) {
         console.warn(`✗ ${id}: no source`);

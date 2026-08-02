@@ -24,11 +24,12 @@ const CAT_ORDER = ['Produce', 'Proteins', 'Dairy', 'Pantry', 'Other'] as const;
 
 function categoryFor(item: string): (typeof CAT_ORDER)[number] {
   const t = item.toLowerCase();
-  if (/chicken|beef|mutton|lamb|meat|fish|prawn|shrimp|egg|keema|tikka/.test(t))
+  if (/green bean|runner bean|french bean|string bean|haricot vert/.test(t)) return 'Produce';
+  if (/chicken|beef|mutton|lamb|meat|fish|prawn|shrimp|egg|keema|tikka|\bbeans?\b/.test(t))
     return 'Proteins';
   if (/milk|cream|butter|cheese|yogurt|yoghurt|ghee|paneer|khoya/.test(t)) return 'Dairy';
   if (
-    /onion|tomato|garlic|ginger|chili|chilli|pepper|herb|cilantro|coriander|mint|potato|carrot|spinach|leaf|lemon|lime|cucumber|cabbage|peas|beans|fruit|berry/.test(
+    /onion|tomato|garlic|ginger|chili|chilli|pepper|herb|cilantro|coriander|mint|potato|carrot|spinach|leaf|lemon|lime|cucumber|cabbage|peas|fruit|berry/.test(
       t,
     )
   )

@@ -53,7 +53,9 @@ export function ServiceWorker() {
             reg.waiting.postMessage({ type: 'SKIP_WAITING' });
           }
         })
-        .catch(() => void 0);
+        .catch((e) => {
+          console.warn('[CookCap] Service worker registration failed:', e);
+        });
 
     if (document.readyState === 'complete') register();
     else window.addEventListener('load', register, { once: true });

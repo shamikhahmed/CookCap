@@ -8,15 +8,18 @@ import { Icon, type IconName } from '@/components/ui/Icon';
 import { ideasForToday } from '@/lib/recipes/ideas';
 import { favoritesLabel } from '@/lib/edition';
 
-/** Table of contents + today’s kitchen ideas. */
+/** Table of contents + today’s kitchen ideas — one scroll, no stuck hero. */
 export function ContentsLeaf() {
   const { goToChapter, goToRecipe } = useBook();
   const { allRecipes, edition } = useApp();
   const ideas = ideasForToday(allRecipes);
 
   return (
-    <div className="paper-grain flex h-full w-full flex-col px-[7%] py-[8%]">
-      <header className="mb-5 shrink-0">
+    <div
+      data-leaf-scroll
+      className="paper-grain flex h-full w-full flex-col overflow-y-auto overscroll-contain px-[7%] py-[6%]"
+    >
+      <header className="mb-4 shrink-0">
         <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--color-ink-faint)]">
           Contents
         </p>
@@ -26,28 +29,34 @@ export function ContentsLeaf() {
         <div className="mt-3 h-px w-full bg-[color:var(--color-line)]" />
       </header>
 
-      {/* Tonight / today ideas */}
-      <section className="mb-5 shrink-0 rounded-xl border border-[color:var(--color-line)]/80 bg-[color:var(--color-paper-sunk)]/55 p-3 sm:p-4">
-        <p className="text-[0.65rem] uppercase tracking-[0.35em] text-[color:var(--color-accent)]">
-          Today’s kitchen
-        </p>
-        <p className="mt-1 font-serif text-lg text-[color:var(--color-ink)]">What shall we cook?</p>
-        <ul className="mt-3 space-y-2">
+      {/* Tonight / today ideas — compact; scrolls away with chapters */}
+      <section className="mb-4 shrink-0 rounded-xl border border-[color:var(--color-line)]/80 bg-[color:var(--color-paper-sunk)]/55 px-3 py-2.5 sm:px-4 sm:py-3">
+        <div className="flex items-baseline justify-between gap-2">
+          <p className="text-[0.65rem] uppercase tracking-[0.35em] text-[color:var(--color-accent)]">
+            Today’s kitchen
+          </p>
+          <p className="hidden font-serif text-sm text-[color:var(--color-ink-faint)] sm:block">
+            What shall we cook?
+          </p>
+        </div>
+        <ul className="mt-2 divide-y divide-[color:var(--color-line)]/60">
           {ideas.map((idea) => (
             <li key={idea.recipe.id}>
               <button
                 type="button"
                 onClick={() => goToRecipe(idea.recipe.id)}
-                className="group flex w-full items-start gap-3 rounded-lg px-2 py-1.5 text-left transition-colors hover:bg-[color:var(--color-paper-raised)]"
+                className="group flex w-full items-center gap-2.5 py-2 text-left transition-colors first:pt-1.5 last:pb-1 hover:bg-[color:var(--color-paper-raised)]/80"
               >
-                <span className="mt-0.5 w-16 shrink-0 text-[0.65rem] font-medium uppercase tracking-wide text-[color:var(--color-ink-faint)]">
+                <span className="w-14 shrink-0 text-[0.6rem] font-medium uppercase tracking-wide text-[color:var(--color-ink-faint)] sm:w-16">
                   {idea.eyebrow}
                 </span>
                 <span className="min-w-0 flex-1">
-                  <span className="block font-serif text-base text-[color:var(--color-ink)] group-hover:text-[color:var(--color-accent)]">
+                  <span className="block truncate font-serif text-[0.95rem] text-[color:var(--color-ink)] group-hover:text-[color:var(--color-accent)] sm:text-base">
                     {idea.recipe.title}
                   </span>
-                  <span className="block text-xs text-[color:var(--color-ink-faint)]">{idea.why}</span>
+                  <span className="mt-0.5 hidden truncate text-xs text-[color:var(--color-ink-faint)] sm:block">
+                    {idea.why}
+                  </span>
                 </span>
               </button>
             </li>
@@ -55,10 +64,7 @@ export function ContentsLeaf() {
         </ul>
       </section>
 
-      <ul
-        data-leaf-scroll
-        className="grid min-h-0 flex-1 auto-rows-min grid-cols-1 gap-x-8 gap-y-1 overflow-y-auto overscroll-contain sm:grid-cols-2"
-      >
+      <ul className="grid auto-rows-min grid-cols-1 gap-x-8 gap-y-0.5 pb-4 sm:grid-cols-2">
         {CHAPTERS.map((c, i) => {
           const count = allRecipes.filter((r) => r.chapter === c.id).length;
           return (
@@ -69,8 +75,9 @@ export function ContentsLeaf() {
               transition={{ delay: 0.04 * i, duration: 0.35 }}
             >
               <button
+                type="button"
                 onClick={() => goToChapter(c.id)}
-                className="group flex w-full items-center gap-3 rounded-md py-2 text-left transition-colors hover:bg-[color:var(--color-paper-sunk)]"
+                className="group flex w-full items-center gap-3 rounded-md py-2.5 text-left transition-colors hover:bg-[color:var(--color-paper-sunk)] sm:py-2"
               >
                 <span
                   className="grid size-9 shrink-0 place-items-center rounded-full"

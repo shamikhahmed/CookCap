@@ -1,5 +1,35 @@
 # Changelog
 
+## 2.4.1 — 2026-08-02
+
+### Fix (reliability)
+- IndexedDB boot surfaces dismissible `storageError` banner (no silent empty book)
+- Mode ↔ leaf remapping via `remapLeafIndex` (For You insert no longer shifts wrong page)
+- Heart/Toddler `lowSodium` uses ingredient heuristic (no fake unconditional boost)
+- Export includes `mealPlan`; profile delete cascades diary rows
+- Scrub orphan / `mdb-*` favorites on load
+- Search index cache split (bundled vs customs pool)
+- Appearance forces shipped `paper` tabs if legacy LS value
+- Import save errors shown; meal planner meta load `.catch`; SW register `console.warn`
+- Shopping: green beans → Produce; AssetPreloader skips missing heroes
+- Dresser Escape confirms before skip; Contents = one scroll (kitchen not stuck)
+- CI: `typecheck` + `gate:recipes` + `gate:anti-2d` before Pages build
+
+### Feat
+- Search filter chips ★5…★1 (device-local ratings)
+
+### Chore
+- SW → `cookcap-v20`; docs + gallery regen
+
+## 2.4.0 — 2026-08-02
+
+### Feat
+- **TheMealDB removed** — catalog back to family editorial only (**215** recipes)
+- Deleted `data-themealdb.ts`, `mdb-*.webp` heroes, import/rebalance/audit MealDB scripts
+- Dropped empty MealDB-only tabs: european / world / breakfast / vegetarian
+- Hero rematch / fetch scripts no longer call themealdb.com
+- SW → `cookcap-v19`
+
 ## 2.3.2 — 2026-08-02
 
 ### Fix

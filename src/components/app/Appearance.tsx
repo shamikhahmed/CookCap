@@ -84,8 +84,14 @@ export function AppearanceProvider({ children }: { children: ReactNode }) {
       const t = localStorage.getItem(TABS_KEY);
       const r = localStorage.getItem(READ_KEY);
       const skinV = isSkin(s) ? s : 'editorial';
-      // World default = paper; keep legacy LS values so old code paths still work.
-      const tabsV = isTabs(t) ? t : 'paper';
+      const tabsV = isTabs(t) && (TABS as TabStyle[]).includes(t) ? t : 'paper';
+      if (tabsV === 'paper' && t !== 'paper') {
+        try {
+          localStorage.setItem(TABS_KEY, 'paper');
+        } catch {
+          /* private */
+        }
+      }
       const readV = isRead(r) ? r : 'flip';
       setSkinState(skinV);
       setTabStyleState(tabsV);

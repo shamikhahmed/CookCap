@@ -12,7 +12,7 @@ import {
 } from 'react';
 import { useApp } from '@/components/app/AppStore';
 import { useAppearance } from '@/components/app/Appearance';
-import { leafOfRecipe, type Leaf } from '@/lib/book/pages';
+import { leafOfRecipe, remapLeafIndex, type Leaf } from '@/lib/book/pages';
 import { playPageFlip } from '@/lib/sound/flip';
 
 /**
@@ -60,6 +60,7 @@ export function BookController({ children }: { children: ReactNode }) {
   const lockedRef = useRef(false);
   const indexRef = useRef(0);
   const hopTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const leavesRef = useRef(leaves);
   lockedRef.current = locked;
   indexRef.current = index;
 
@@ -104,9 +105,15 @@ export function BookController({ children }: { children: ReactNode }) {
   }, [index, hydrated]);
 
   useEffect(() => {
-    if (!hydrated) return;
-    setIndex((i) => Math.max(0, Math.min(leaves.length - 1, i)));
-  }, [leaves.length, hydrated]);
+    if (!hydrated) {
+      leavesRef.current = leaves;
+      return;
+    }
+    const prev = leavesRef.current;
+    leavesRef.current = leaves;
+    if (prev === leaves) return;
+    setIndex((i) => remapLeafIndex(prev, i, leaves));
+  }, [leaves, hydrated]);
 
   const clamp = useCallback(
     (i: number) => Math.max(0, Math.min(leaves.length - 1, i)),

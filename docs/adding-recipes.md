@@ -13,9 +13,9 @@ updates automatically from that object. You never touch layout code.
 `src/lib/recipes/data-extra.ts` or `src/lib/recipes/data-fill.ts` (both are
 spread into `RECIPES` automatically).
 
-**TheMealDB bulk** — `npm run import:mealdb` → `data-themealdb.ts` + bundled
-`mdb-<id>.webp` heroes (photo ships with the dish). Spread into `RECIPES` in
-`data.ts`.
+**WhatsApp paste** — in-app Import modal (device-local customs; macros unverified).
+
+Do **not** import TheMealDB — removed in v2.4.0.
 
 ```ts
 {

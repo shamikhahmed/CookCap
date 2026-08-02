@@ -1,6 +1,6 @@
 # CookCap — Handover
 
-Heirloom family cookbook PWA (Cap family). Version **2.3.2**.
+Heirloom family cookbook PWA (Cap family). Version **2.4.1**.
 
 ## Live
 
@@ -10,16 +10,16 @@ Next `output: 'export'` + Actions Pages. `NEXT_PUBLIC_BASE_PATH=/CookCap` on CI.
 
 ## Stack
 
-Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v3 · SW `cookcap-v18`
+Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v3 · SW `cookcap-v20`
 
 ## Run
 
 ```bash
 cd "/Users/shamikhahmed/CookBook Website"
 npm install && npm run dev
-npm run typecheck && npm run build
-npm run gate:recipes && npm run rebalance:mealdb && npm run audit:photos
-npm run gallery   # prefer: npm run build && python3 -m http.server 3456 --directory out; GALLERY_URL=http://127.0.0.1:3456/CookCap npm run gallery
+npm run typecheck && npm run gate:recipes && npm run gate:anti-2d
+npm run build
+npm run gallery   # prefer: npm run pages:build && python3 -m http.server 3456 --directory out; GALLERY_URL=http://127.0.0.1:3456/CookCap npm run gallery
 ```
 
 ## Chrome / safe areas
@@ -32,16 +32,16 @@ npm run gallery   # prefer: npm run build && python3 -m http.server 3456 --direc
 ## Dresser
 
 - **World:** dressing table onboarding → book lifts out → lands on same wooden table → paper tabs stuck beside book
-- v3 drawers: 3D pull-out (`translateZ` + body `rotateX`); question letterpress-carved; brass paper slot
-- Reveal Part 2 timeline → FLIP → paper-tab peel → complete at 2760ms
-- Gates: `npm run gate:anti-2d` · `npm run gate:recipes` (782 recipes)
+- Escape during dresser confirms before skip
+- Gates: `npm run gate:anti-2d` · `npm run gate:recipes` (215 recipes) — also CI-enforced
 
 ## Recipes
 
 - One hero only (no step photos)
-- TheMealDB import: `npm run import:mealdb` → `data-themealdb.ts` + bundled thumbs
-- Chapter map: `chapterMap.ts` — cuisine / type / dietary; **meals = fallback**; tabs include breakfast / vegetarian / world / european
-- First-load JS ~818 kB with full catalog — WarmLeafPool ≤9 DOM; chapter lists ≤24 rows
+- Family editorial catalog only — **no TheMealDB**
+- Chapters: pakistani / chinese / italian / desserts / coffee / breads / baking / snacks / meals / favorites / tips
+- WarmLeafPool ≤9 DOM; chapter lists ≤24 rows
+- Contents leaf = single scroll (Today’s kitchen + chapters)
 
 ## Lenses (additive — Reader = pure book)
 
@@ -53,16 +53,17 @@ npm run gallery   # prefer: npm run build && python3 -m http.server 3456 --direc
 | Budget | Cost estimates + weekly budget + pantry |
 | Quick / Beginner / Dawat / Ramadan / Toddler / health lenses / Couple | Scoring presets |
 
-Profiles + diary + pantry = device-local IndexedDB. Migration v2→v3 keeps favorites/notes/ratings/meal-plan.
+Profiles + diary + pantry = device-local IndexedDB. Migration v2→v3 keeps favorites/notes/ratings/meal-plan. Export includes meal plan. Profile delete cascades diary.
 
 ## Gotchas
 
 - `unoptimized` Image needs `withBase()` on Pages
 - Phone = full-bleed leaf; Tabs in footer
-- Switching mode adds/removes For You leaf → page indices shift (expected)
+- Switching mode remaps leaf index (`remapLeafIndex`) — still expect For You to appear/disappear
 - First-run: Dresser unless `prefers-reduced-motion` or `hardwareConcurrency ≤ 4` → Simple
 - Desk z: never reintroduce `.journal-desk > * { z-index: 1 }` (kills Appearance clicks)
+- Shipped tabs = `paper` only (legacy LS cloth/index/top/pills forced back to paper)
 
 ## Key paths
 
-`src/components/app/DresserOnboarding.tsx` · `OnboardingFlow.tsx` · `onboarding/useOnboardingSteps.ts` · `src/lib/profiles/*` · `src/lib/modes/*` · `src/lib/cost/*` · `src/components/profiles/*` · `ForYouLeaf` · `enrich.ts` · `data-goal.ts`
+`src/components/app/DresserOnboarding.tsx` · `OnboardingFlow.tsx` · `onboarding/useOnboardingSteps.ts` · `src/lib/profiles/*` · `src/lib/modes/*` · `src/lib/cost/*` · `src/components/profiles/*` · `ForYouLeaf` · `enrich.ts` · `data-goal.ts` · `src/lib/book/pages.ts` (`remapLeafIndex`)

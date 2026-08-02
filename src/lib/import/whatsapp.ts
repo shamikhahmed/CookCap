@@ -83,6 +83,7 @@ export function parseWhatsAppRecipe(raw: string, chapter: ChapterId = 'meals'): 
     cookMin: 30,
     servings: 4,
     nutrition: { calories: 0, protein: 0, carbs: 0, fat: 0, fiber: 0, sugar: 0 },
+    macrosVerified: false,
     tags: ['imported', 'custom'],
     ingredients: [
       {

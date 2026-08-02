@@ -37,10 +37,12 @@ export function ImportModal({ open, onClose }: { open: boolean; onClose: () => v
   const [chapter, setChapter] = useState<ChapterId>('meals');
   const [preview, setPreview] = useState<Recipe | null>(null);
   const [saving, setSaving] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
   const close = useCallback(() => {
     setPreview(null);
+    setError(null);
     onClose();
   }, [onClose]);
 
@@ -60,6 +62,7 @@ export function ImportModal({ open, onClose }: { open: boolean; onClose: () => v
   const save = async () => {
     if (!preview) return;
     setSaving(true);
+    setError(null);
     try {
       const recipe = { ...preview, chapter };
       await addCustom(recipe);
@@ -67,6 +70,8 @@ export function ImportModal({ open, onClose }: { open: boolean; onClose: () => v
       setRaw('');
       setPreview(null);
       onClose();
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Could not save recipe.');
     } finally {
       setSaving(false);
     }
@@ -153,6 +158,11 @@ export function ImportModal({ open, onClose }: { open: boolean; onClose: () => v
                     {counts.ings} ingredients · {counts.steps} steps
                   </p>
                 </div>
+              )}
+              {error && (
+                <p className="text-sm text-[color:var(--color-danger,#b33)]" role="alert">
+                  {error}
+                </p>
               )}
             </div>
 

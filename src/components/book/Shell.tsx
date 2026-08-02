@@ -44,7 +44,7 @@ export function Shell() {
 }
 
 function Frame() {
-  const { needsName, setOwnerName } = useApp();
+  const { needsName, setOwnerName, storageError, dismissStorageError } = useApp();
   const [searchOpen, setSearchOpen] = useState(false);
   const [favOpen, setFavOpen] = useState(false);
   const [shopOpen, setShopOpen] = useState(false);
@@ -95,6 +95,23 @@ function Frame() {
 
   return (
     <div className="journal-desk flex h-[100dvh] flex-col">
+      {storageError && (
+        <div
+          role="alert"
+          className="relative z-[55] shrink-0 border-b border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-4 py-2 pt-[max(0.5rem,env(safe-area-inset-top))]"
+        >
+          <div className="mx-auto flex max-w-lg items-center gap-3">
+            <p className="min-w-0 flex-1 text-sm text-[color:var(--color-ink-soft)]">{storageError}</p>
+            <button
+              type="button"
+              onClick={dismissStorageError}
+              className="shrink-0 rounded-lg px-3 py-1.5 text-sm text-[color:var(--color-ink-faint)] hover:bg-[color:var(--color-paper-sunk)]"
+            >
+              Dismiss
+            </button>
+          </div>
+        </div>
+      )}
       <TopBar
         onSearch={() => setSearchOpen(true)}
         onFavorites={() => setFavOpen(true)}

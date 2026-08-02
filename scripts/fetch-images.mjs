@@ -1,6 +1,6 @@
 /**
  * Fetch hero photos for every recipe that lacks one.
- * Sources: TheMealDB (free) → loremflickr fallback.
+ * Sources: Foodish category API (no TheMealDB).
  * Run: node scripts/fetch-images.mjs
  */
 import sharp from 'sharp';
@@ -11,44 +11,6 @@ import { dirname, join } from 'node:path';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const outDir = join(root, 'public', 'recipes');
 const jsonOut = join(root, 'src', 'lib', 'recipes', 'images.generated.json');
-
-/** Hand-tuned search terms for known mismatches / sparse MealDB coverage. */
-const OVERRIDES = {
-  'buttermilk-pancakes': ['Pancakes'],
-  shakshuka: ['Shakshuka'],
-  'roast-chicken': ['Roast chicken', 'Chicken Handi'],
-  'risotto-milanese': ['Risotto', 'Mushroom risotto'],
-  'chana-masala': ['Chickpea', 'Dal fry', 'Chana'],
-  tiramisu: ['Tiramisu'],
-  'masala-chai': ['Chai', 'Tea'],
-  'kung-pao-tofu': ['Tofu', 'Kung Po', 'Stir fry'],
-  'green-shakverdi-salad': ['Salad', 'Greek Salad'],
-  'sourdough-focaccia': ['Focaccia', 'Bread'],
-  'caprese-orzo': ['Pasta salad', 'Caprese'],
-  'halloumi-wrap': ['Kebab', 'Wrap'],
-  'saadi-biryani-chicken': ['Biryani', 'Chicken Biryani'],
-  'sindhi-biryani-chicken': ['Biryani'],
-  'zaffarani-biryani-chicken': ['Biryani'],
-  'karahi-chicken': ['Karahi', 'Chicken curry'],
-  'handi-chicken': ['Chicken Handi', 'Butter chicken'],
-  'qorma-chicken': ['Korma', 'Chicken korma'],
-  'nihari-beef': ['Beef', 'Nihari'],
-  'chocolate-cake': ['Chocolate Cake'],
-  'vanilla-cake': ['Vanilla Cake', 'Cake'],
-  'cinnamon-rolls': ['Cinnamon rolls', 'Sticky toffee pudding'],
-  'gulab-jamun': ['Gulab jamun', 'Jalebi'],
-  kheer: ['Rice pudding', 'Kheer'],
-  'alfredo-pasta': ['Carbonara', 'Pasta'],
-  'lasagna-beef': ['Lasagne'],
-  'egg-fried-rice': ['Egg Fried Rice', 'Fried Rice'],
-  'desi-chinese': ['Sweet and Sour', 'Stir fry'],
-  'iced-caramel-latte': ['Latte', 'Coffee'],
-  'kfc-chicken': ['Fried Chicken', 'Chicken'],
-  naan: ['Naan', 'Roti'],
-  'simple-bread': ['Bread'],
-  'jia-sunday-biryani': ['Biryani'],
-  'jia-cake': ['Chocolate Cake'],
-};
 
 async function discoverRecipes() {
 const files = [
@@ -86,22 +48,6 @@ const files = [
   return map;
 }
 
-async function findMealDb(terms) {
-  for (const term of terms) {
-    try {
-      const res = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/search.php?s=${encodeURIComponent(term)}`,
-      );
-      const data = await res.json();
-      const meal = data.meals?.find((m) => m.strMealThumb);
-      if (meal) return { url: `${meal.strMealThumb}/large`, name: meal.strMeal, src: 'TheMealDB' };
-    } catch {
-      /* next */
-    }
-  }
-  return null;
-}
-
 async function findFoodish(id, title) {
   const hay = `${id} ${title}`.toLowerCase();
   const cats = [
@@ -124,7 +70,7 @@ async function findFoodish(id, title) {
       break;
     }
   }
-  // Drinks have no Foodish category — skip (caller uses MealDB / Unsplash rematch).
+  // Drinks have no Foodish category — skip (use rematch:heroes Unsplash directs).
   if (/latte|chai|coffee|espresso|affogato|brew|lassi|patti|karak|tonic/.test(hay)) return null;
   if (/bread|bun|naan|roti|paratha|bagel|baguette|focaccia|brioche|ciabatta|pita|roll/.test(hay))
     cat = 'dosa';
@@ -138,19 +84,6 @@ async function findFoodish(id, title) {
     /* ignore */
   }
   return null;
-}
-
-function hash(s) {
-  let h = 0;
-  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
-  return Math.abs(h);
-}
-
-function termsFor(id, title) {
-  if (OVERRIDES[id]) return OVERRIDES[id];
-  const clean = title.replace(/[()]/g, '').replace(/\s+/g, ' ').trim();
-  const parts = clean.split(' ');
-  return [clean, parts.slice(-2).join(' '), parts[0]].filter(Boolean);
 }
 
 async function exists(path) {
@@ -185,16 +118,13 @@ async function main() {
       continue;
     }
 
-    const terms = termsFor(id, title);
     // Tips chapter = procedural art (photos of random food look wrong)
     if (id.startsWith('tip-')) {
       skip++;
       continue;
     }
 
-    // MealDB first (named dishes); Foodish category only as last resort
-    let hit = await findMealDb(terms);
-    if (!hit) hit = await findFoodish(id, title);
+    const hit = await findFoodish(id, title);
     if (!hit) {
       console.warn(`✗ ${id}: no source`);
       fail++;

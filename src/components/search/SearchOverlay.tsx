@@ -11,8 +11,10 @@ import { RECIPE_MAP } from '@/lib/recipes/data';
 import { Icon } from '@/components/ui/Icon';
 import { useDialogA11y } from '@/lib/a11y/dialog';
 import { favoritesLabel } from '@/lib/edition';
+import * as store from '@/lib/db/store';
 
 const RECENT_KEY = 'jia-recent-search';
+const STAR_LEVELS = [5, 4, 3, 2, 1] as const;
 
 /** Raycast / macOS Spotlight–style search. ⌘K from Shell. */
 export function SearchOverlay({
@@ -32,6 +34,7 @@ export function SearchOverlay({
   const [q, setQ] = useState('');
   const [debouncedQ, setDebouncedQ] = useState('');
   const [filters, setFilters] = useState<SearchFilters>({});
+  const [ratings, setRatings] = useState<Record<string, number>>({});
   const [recentSearches, setRecentSearches] = useState<string[]>([]);
   const [cursor, setCursor] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -53,6 +56,10 @@ export function SearchOverlay({
     } catch {
       setRecentSearches([]);
     }
+    store
+      .getAllRatings()
+      .then(setRatings)
+      .catch(() => setRatings({}));
     requestAnimationFrame(() => inputRef.current?.focus());
   }, [open]);
 
@@ -62,9 +69,17 @@ export function SearchOverlay({
   }, [q]);
 
   const results = useMemo(
-    () => searchRecipes(debouncedQ, filters, allRecipes).slice(0, 24),
-    [debouncedQ, filters, allRecipes],
+    () => searchRecipes(debouncedQ, filters, allRecipes, ratings).slice(0, 24),
+    [debouncedQ, filters, allRecipes, ratings],
   );
+
+  const ratingCounts = useMemo(() => {
+    const counts: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+    for (const stars of Object.values(ratings)) {
+      if (stars >= 1 && stars <= 5) counts[stars]! += 1;
+    }
+    return counts;
+  }, [ratings]);
 
   const suggestions = useMemo(() => {
     const fromHearts = Array.from(favorites)
@@ -89,7 +104,7 @@ export function SearchOverlay({
 
   useEffect(() => {
     setCursor(0);
-  }, [debouncedQ, filters.difficulty, filters.maxTime]);
+  }, [debouncedQ, filters.difficulty, filters.maxTime, filters.stars]);
 
   useEffect(() => {
     const el = listRef.current?.querySelector(`[data-idx="${cursor}"]`) as HTMLElement | null;
@@ -185,6 +200,38 @@ export function SearchOverlay({
               >
                 ≤ 30 min
               </Chip>
+              <span
+                className="mx-0.5 hidden h-5 w-px self-center bg-[color:var(--color-line)] sm:block"
+                aria-hidden
+              />
+              {STAR_LEVELS.map((n) => {
+                const count = ratingCounts[n] ?? 0;
+                return (
+                  <Chip
+                    key={n}
+                    active={filters.stars === n}
+                    onClick={() =>
+                      setFilters((f) => ({
+                        ...f,
+                        stars: f.stars === n ? undefined : n,
+                      }))
+                    }
+                    title={
+                      count
+                        ? `${count} recipe${count === 1 ? '' : 's'} rated ${n}★`
+                        : `No recipes rated ${n}★ yet`
+                    }
+                  >
+                    <span className="inline-flex items-center gap-0.5">
+                      <Icon name={filters.stars === n ? 'star-filled' : 'star'} size={12} />
+                      {n}
+                      {count > 0 && (
+                        <span className="opacity-70">·{count}</span>
+                      )}
+                    </span>
+                  </Chip>
+                );
+              })}
               {!q && recentSearches.slice(0, 3).map((s) => (
                 <button
                   key={s}
@@ -263,9 +310,11 @@ export function SearchOverlay({
                       : 'No recipes match these filters.'}
                   </p>
                   <p className="text-xs">
-                    {hasFilters
-                      ? 'Try clearing Easy / ≤ 30 min, or search a different ingredient.'
-                      : 'Try another spelling, a cuisine, or an ingredient name.'}
+                    {filters.stars
+                      ? `No recipes rated ${filters.stars}★ yet. Open a dish and tap the stars under the method.`
+                      : hasFilters
+                        ? 'Try clearing Easy / ≤ 30 min / stars, or search a different ingredient.'
+                        : 'Try another spelling, a cuisine, or an ingredient name.'}
                   </p>
                 </li>
               )}
@@ -301,6 +350,7 @@ export function SearchOverlay({
                             r.chapter === 'favorites' ? favoritesLabel(edition) : c.title,
                             `${r.prepMin + r.cookMin} min`,
                             DIFF_LABEL[r.difficulty],
+                            ratings[r.id] ? `${ratings[r.id]}★` : null,
                           ]
                             .filter(Boolean)
                             .join(' · ')}
@@ -334,15 +384,19 @@ function Chip({
   active,
   onClick,
   children,
+  title,
 }: {
   active: boolean;
   onClick: () => void;
   children: React.ReactNode;
+  title?: string;
 }) {
   return (
     <button
+      type="button"
       onClick={onClick}
       aria-pressed={active}
+      title={title}
       className="rounded-md border px-2.5 py-1 text-xs transition-colors"
       style={{
         borderColor: active ? 'var(--color-accent)' : 'var(--color-line)',

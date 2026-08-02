@@ -18,6 +18,7 @@ import {
 } from '@/lib/edition';
 import { AppearanceProvider } from '@/components/app/Appearance';
 import { buildLeaves, type Leaf } from '@/lib/book/pages';
+import { RECIPES } from '@/lib/recipes/data';
 import type { Recipe } from '@/lib/recipes/types';
 import type {
   DiaryEntry,
@@ -89,6 +90,8 @@ interface AppState {
   setCurrency: (c: Currency) => void;
   healthierOn: boolean;
   setHealthierOn: (v: boolean) => void;
+  storageError: string | null;
+  dismissStorageError: () => void;
 }
 
 const Ctx = createContext<AppState | null>(null);
@@ -129,6 +132,7 @@ export function AppStore({ children }: { children: ReactNode }) {
   const [weeklyBudgetPkr, setWeeklyBudgetState] = useState(5000);
   const [currency, setCurrencyState] = useState<Currency>('PKR');
   const [healthierOn, setHealthierOnState] = useState(false);
+  const [storageError, setStorageError] = useState<string | null>(null);
 
   useEffect(() => {
     const savedTheme =
@@ -176,8 +180,10 @@ export function AppStore({ children }: { children: ReactNode }) {
       store.listDiary(),
       store.listPantry(),
     ])
-      .then(([f, r, c, shop, profs, diaryRows, pantryRows]) => {
-        setFavorites(new Set(f));
+      .then(async ([, r, c, shop, profs, diaryRows, pantryRows]) => {
+        const keepIds = new Set([...RECIPES.map((recipe) => recipe.id), ...c.map((recipe) => recipe.id)]);
+        const cleaned = await store.scrubOrphanFavorites(keepIds);
+        setFavorites(new Set(cleaned));
         setRecent(r);
         setCustoms(c);
         setShoppingCount(shop.filter((s) => !s.checked).length);
@@ -186,7 +192,10 @@ export function AppStore({ children }: { children: ReactNode }) {
         setPantry(pantryRows);
         if (!savedActive && profs[0]) setActiveProfileIdState(profs[0].id);
       })
-      .catch(() => void 0)
+      .catch((e) => {
+        console.error('[CookCap] Failed to load saved data:', e);
+        setStorageError('Could not load saved cookbook data on this device.');
+      })
       .finally(() => setReady(true));
   }, []);
 
@@ -245,14 +254,27 @@ export function AppStore({ children }: { children: ReactNode }) {
     localStorage.setItem(HEALTHIER_KEY, v ? '1' : '0');
   }, []);
 
+  const dismissStorageError = useCallback(() => setStorageError(null), []);
+
   const toggleFavorite = useCallback((id: string) => {
+    let wasOn = false;
     setFavorites((prev) => {
+      wasOn = prev.has(id);
       const next = new Set(prev);
       if (next.has(id)) next.delete(id);
       else next.add(id);
       return next;
     });
-    store.toggleFavorite(id).catch(() => void 0);
+    store.toggleFavorite(id).catch((e) => {
+      console.error('[CookCap] toggleFavorite failed:', e);
+      setFavorites((prev) => {
+        const next = new Set(prev);
+        if (wasOn) next.add(id);
+        else next.delete(id);
+        return next;
+      });
+      setStorageError('Could not save favorite on this device.');
+    });
   }, []);
 
   const markViewed = useCallback((id: string) => {
@@ -296,7 +318,9 @@ export function AppStore({ children }: { children: ReactNode }) {
 
   const removeProfile = useCallback(async (id: string) => {
     await store.deleteProfile(id);
+    await store.deleteDiaryForProfile(id);
     setProfiles((prev) => prev.filter((p) => p.id !== id));
+    setDiary((prev) => prev.filter((d) => d.profileId !== id));
     setCookingForIdsState((prev) => prev.filter((x) => x !== id));
     setActiveProfileIdState((cur) => (cur === id ? null : cur));
   }, []);
@@ -389,6 +413,8 @@ export function AppStore({ children }: { children: ReactNode }) {
       setCurrency,
       healthierOn,
       setHealthierOn,
+      storageError,
+      dismissStorageError,
     }),
     [
       theme,
@@ -432,6 +458,8 @@ export function AppStore({ children }: { children: ReactNode }) {
       setCurrency,
       healthierOn,
       setHealthierOn,
+      storageError,
+      dismissStorageError,
     ],
   );
 

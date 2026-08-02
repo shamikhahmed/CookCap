@@ -93,6 +93,19 @@ export async function toggleFavorite(id: string): Promise<boolean> {
   await d.put('favorites', { id, addedAt: Date.now() });
   return true;
 }
+export async function scrubOrphanFavorites(keepIds: Set<string>): Promise<string[]> {
+  const d = await db();
+  const all = await d.getAll('favorites');
+  const kept: typeof all = [];
+  for (const f of all) {
+    if (keepIds.has(f.id) && !f.id.startsWith('mdb-')) {
+      kept.push(f);
+    } else {
+      await d.delete('favorites', f.id);
+    }
+  }
+  return kept.sort((a, b) => b.addedAt - a.addedAt).map((f) => f.id);
+}
 
 /* ── History ───────────────────────────────────────────────────────────*/
 export async function recordView(id: string): Promise<void> {
@@ -120,6 +133,15 @@ export async function getRating(id: string): Promise<number> {
 }
 export async function setRating(id: string, stars: number): Promise<void> {
   await (await db()).put('ratings', { id, stars });
+}
+/** id → 1–5 stars. Unrated recipes omitted. */
+export async function getAllRatings(): Promise<Record<string, number>> {
+  const rows = await (await db()).getAll('ratings');
+  const out: Record<string, number> = {};
+  for (const r of rows) {
+    if (r.stars >= 1 && r.stars <= 5) out[r.id] = r.stars;
+  }
+  return out;
 }
 
 /* ── Collections ───────────────────────────────────────────────────────*/
@@ -218,6 +240,13 @@ export async function putDiary(entry: DiaryEntry): Promise<void> {
 export async function deleteDiary(id: string): Promise<void> {
   await (await db()).delete('diary', id);
 }
+export async function deleteDiaryForProfile(profileId: string): Promise<void> {
+  const d = await db();
+  const all = await d.getAll('diary');
+  await Promise.all(
+    all.filter((e) => e.profileId === profileId).map((e) => d.delete('diary', e.id)),
+  );
+}
 export async function diaryByDate(date: string): Promise<DiaryEntry[]> {
   return (await db()).getAllFromIndex('diary', 'date', date);
 }
@@ -268,5 +297,6 @@ export async function exportUserSnapshot() {
     profiles: await d.getAll('profiles'),
     diary: await d.getAll('diary'),
     pantry: await d.getAll('pantry'),
+    mealPlan: await getMeta('meal-plan'),
   };
 }

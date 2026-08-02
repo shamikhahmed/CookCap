@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { PRODUCT_NAME } from '@/lib/edition';
@@ -65,7 +65,11 @@ export function DresserOnboarding({
     completeReveal,
   } = api;
 
-  useDialogA11y(open, setupLater, panelRef, {
+  const confirmSetupLater = useCallback(() => {
+    if (window.confirm('Skip naming and set up later?')) setupLater();
+  }, [setupLater]);
+
+  useDialogA11y(open, confirmSetupLater, panelRef, {
     initialFocus: 'none',
   });
 
