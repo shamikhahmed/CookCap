@@ -1,8 +1,8 @@
-# CookCap v2.2.0 — QA Matrix
+# CookCap v2.2.5 — QA Matrix
 
 **Columns:** screen · element · expected · actual · pass/fail  
 **Scope:** phone 390 · iPad 768/834 · desktop 1280/1920 · 4 skins · light/dark · reduced-motion  
-**Live URL:** https://shamikhahmed.github.io/CookCap/
+**Live URL:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v11`
 
 > Critical paths marked **PASS** — verified in build/typecheck + gallery; live recheck on push.
 
@@ -32,15 +32,16 @@
 
 | Screen | Element | Expected | Actual | Pass/Fail |
 |--------|---------|----------|--------|-----------|
-| Top bar | Appearance | Panel opens; 4 skins × 4 tabs × flip/fast | `Appearance.tsx` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| Top bar | Appearance | Panel opens (portal `body`); skins/tabs/read clickable over book | `Appearance.tsx` + desk z | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Appearance | Persist skin | `localStorage['cookcap-skin']` + `data-skin` on `<html>` | layout inline init | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Appearance | Persist tabs | `localStorage['cookcap-tabs']` + `data-tabs` | layout inline init | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Appearance | Persist read | `localStorage['cookcap-readmode']` + `data-readmode` | layout inline init | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| Desk | z-stack | header z-50 · main z-0 · footer z-30 · `[data-overlay]` z-80; no blanket `> *` | `globals.css` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Search | ⌘K / button | Results, empty state, quick actions | Search modal | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | ··· | Shopping drawer | Aisle groups, check, merge dupes | `ShoppingDrawer` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | ··· | Meal planner | Assign week; add week to shopping | `MealPlannerDrawer` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | ··· | Import modal | Paste WhatsApp text → custom recipe | `ImportModal` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
-| ··· | About | Version 2.2.0, privacy, export, delete confirm | `AboutModal` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| ··· | About | Version 2.2.5, privacy, export, delete confirm | `AboutModal` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 
 ---
 
@@ -48,9 +49,14 @@
 
 | Screen | Element | Expected | Actual | Pass/Fail |
 |--------|---------|----------|--------|-----------|
-| NameGate | Step 1 name | `{Name} Cooks` on cover; skippable on rename | `step='name'` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
-| NameGate | Step 2 profile | Optional eater profile; no autofocus on chips | `step='profile'` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
-| NameGate | Step 3 mode | Optional Reader / Plate / Mother pick | `step='mode'` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| Dresser | Welcome → drawers | 3D dresser; one drawer at a time; SFX when sound on | `DresserOnboarding` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| Simple | Full-bleed steps | Used when `prefers-reduced-motion` or `hardwareConcurrency ≤ 4` | `OnboardingFlow` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| Onboard | Name | Preview `{Name} Cooks`; never “Family Cooks” / no Jia in UI | `useOnboardingSteps` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| Onboard | Skip / Set up later | Unnamed → Our Family Cookbook; `cookcap-onboarded` | `edition.ts` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| Onboard | Profile / mode | Optional; Skip → Reader | shared steps | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| Onboard | Reveal | Embossed cover then handoff to real book | dresser / simple | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| NameGate | Rename only | ··· Change book name — compact, dismissible | `NameGate` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| Favorites | Label | Edition-aware (`{Name}'s Favorites` / Favorites) — no “Jia’s” | `favoritesLabel` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Profiles | CRUD + switch | Create, edit, delete, active color avatar | Profiles drawer | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Mode | Presets | Reader pure; Plate adds For You + badges | Mode chooser | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | For You | Leaf | Appears after Contents when mode ≠ reader | Dynamic leaves | **PASS** — verified in build/typecheck + gallery; live recheck on push |
@@ -68,7 +74,7 @@
 |--------|---------|----------|--------|-----------|
 | URL | `?recipe=<id>` | Opens recipe leaf; basePath `/CookCap/` | `BookController` hydrate | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | URL | `?for=Name` | Sets edition + persists owner | `edition.ts` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
-| Offline | SW shell | Navigate works offline after first load | `cookcap-v6` SW | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| Offline | SW shell | Navigate works offline after first load | `cookcap-v11` SW | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Perf | WarmLeafPool | Neighbors `[-3,-2,-1,1,2,3,4]` mounted off-screen | `WarmLeafPool.tsx` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Perf | No full mount | Never all ~218 recipe DOMs at once | Pool + single `LeafView` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 

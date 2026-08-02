@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 /**
- * Capture Jia Cooks screen gallery (desktop + mobile).
- * Requires: `npm run dev` on :3000 + Playwright Chromium.
+ * Capture CookCap screen gallery (desktop + mobile).
+ * Requires static `out/` or `npm run dev` + Playwright Chromium.
  *
- *   npm run gallery
+ *   npm run build && npx serve out -l 3456
+ *   GALLERY_URL=http://127.0.0.1:3456 npm run gallery
  */
 import { chromium } from 'playwright';
 import { mkdirSync } from 'node:fs';
@@ -14,6 +15,8 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, 'docs', 'gallery');
 const BASE = process.env.GALLERY_URL || 'http://localhost:3000';
 const RECIPE = process.env.GALLERY_RECIPE || 'butter-chicken';
+/** Demo edition — not a hard-coded product name */
+const DEMO = 'Ayesha';
 
 mkdirSync(join(OUT, 'desktop'), { recursive: true });
 mkdirSync(join(OUT, 'mobile'), { recursive: true });
@@ -70,32 +73,132 @@ async function setDarkMode(page, dark) {
   await settle(page, 300);
 }
 
-async function captureSet(page, folder) {
-  // First-run name gate
+async function clearForFirstRun(page) {
   await page.goto(BASE, { waitUntil: 'domcontentloaded' });
   await page.evaluate(() => {
     localStorage.clear();
     localStorage.setItem('cookcap-theme', 'light');
   });
   await page.reload({ waitUntil: 'domcontentloaded' });
+  // Shell delays first-run portal ~480ms after needsName
+  await settle(page, 700);
+}
+
+/** Simple / reduced-motion onboarding (gallery default context uses reduce). */
+async function captureSimpleOnboarding(page, folder) {
+  await clearForFirstRun(page);
   await page.getByRole('heading', { name: /living family cookbook/i }).waitFor({
     state: 'visible',
     timeout: 15000,
   });
   await settle(page, 400);
   await shot(page, `${folder}/00-welcome.png`);
+
   await page.getByRole('button', { name: 'Begin', exact: true }).click();
   await page.getByLabel('Your name').waitFor({ state: 'visible', timeout: 8000 });
   await settle(page, 350);
   await shot(page, `${folder}/00b-name-gate.png`);
-  await page.getByLabel('Your name').fill('Jia');
+
+  await page.getByLabel('Your name').fill(DEMO);
   await page.getByRole('button', { name: 'Continue' }).click();
   await page.getByRole('heading', { name: /Who eats/i }).waitFor({ state: 'visible', timeout: 8000 });
   await settle(page, 300);
+  await shot(page, `${folder}/00c-profile.png`);
+
   await page.getByRole('button', { name: 'Skip', exact: true }).click();
-  await page.getByRole('heading', { name: /Pick a mode/i }).waitFor({ state: 'visible', timeout: 8000 });
+  await page.getByRole('heading', { name: /How do you like to cook/i }).waitFor({
+    state: 'visible',
+    timeout: 8000,
+  });
   await settle(page, 300);
+  await shot(page, `${folder}/00d-mode.png`);
+
   await page.getByRole('button', { name: /Skip — open my book/i }).click();
+  // Brief reveal flash then book
+  await settle(page, 250);
+  await shot(page, `${folder}/00e-reveal.png`).catch(() => {});
+  await waitFooterPage(page, 1);
+  await shot(page, `${folder}/01-cover.png`);
+}
+
+/**
+ * Dresser path — needs no reduced-motion + hardwareConcurrency > 4.
+ * Call from a context created with reducedMotion: 'no-preference'.
+ */
+async function captureDresserOnboarding(page, folder) {
+  mkdirSync(join(OUT, folder, 'dresser'), { recursive: true });
+  await page.addInitScript(() => {
+    try {
+      Object.defineProperty(navigator, 'hardwareConcurrency', {
+        configurable: true,
+        get: () => 8,
+      });
+    } catch {
+      /* ignore */
+    }
+  });
+
+  await clearForFirstRun(page);
+  await page.getByRole('heading', { name: /living family cookbook/i }).waitFor({
+    state: 'visible',
+    timeout: 15000,
+  });
+  // Confirm dresser (plate on dresser), not simple full-bleed alone
+  await page.locator('.dresser-scene').waitFor({ state: 'visible', timeout: 8000 });
+  await settle(page, 500);
+  await shot(page, `${folder}/dresser/00-welcome.png`);
+
+  await page.getByRole('button', { name: 'Begin', exact: true }).click();
+  await page.locator('#dresser-name').waitFor({ state: 'visible', timeout: 10000 });
+  await settle(page, 500);
+  await shot(page, `${folder}/dresser/00b-name.png`);
+
+  await page.locator('#dresser-name').fill(DEMO);
+  // Playwright pointer click flaky on velvet cards — DOM click is reliable
+  await page.locator('.dresser-card').getByRole('button', { name: 'Continue' }).evaluate((el) =>
+    /** @type {HTMLElement} */ (el).click(),
+  );
+  await page.getByRole('heading', { name: /Who eats/i }).waitFor({ state: 'visible', timeout: 15000 });
+  await settle(page, 700);
+  await shot(page, `${folder}/dresser/00c-profile.png`);
+
+  await page
+    .locator('.dresser-card button')
+    .filter({ hasText: /^Skip$/ })
+    .evaluate((el) => /** @type {HTMLElement} */ (el).click());
+  await settle(page, 500);
+  await page.getByRole('heading', { name: /How do you like to cook/i }).waitFor({
+    state: 'visible',
+    timeout: 15000,
+  });
+  await settle(page, 500);
+  await shot(page, `${folder}/dresser/00d-mode.png`);
+
+  await page
+    .locator('.dresser-card button')
+    .filter({ hasText: /Skip — open my book/ })
+    .evaluate((el) => /** @type {HTMLElement} */ (el).click());
+  await settle(page, 400);
+  // Rise → settle window (~700–1400ms); capture mid-reveal
+  await page.locator('.dresser-book').waitFor({ state: 'visible', timeout: 8000 });
+  await settle(page, 900);
+  await shot(page, `${folder}/dresser/00e-reveal.png`);
+
+  await waitFooterPage(page, 1, 30000);
+  await shot(page, `${folder}/dresser/01-cover-handoff.png`);
+}
+
+async function captureBookChrome(page, folder) {
+  // Assumes already past onboarding with DEMO owner (or set owner)
+  await page.evaluate((name) => {
+    localStorage.setItem('cookcap-owner', name);
+    localStorage.setItem('cookcap-onboarded', '1');
+    localStorage.setItem('cookcap-theme', 'light');
+  }, DEMO);
+
+  await page.goto(`${BASE}/?for=${encodeURIComponent(DEMO)}`, {
+    waitUntil: 'domcontentloaded',
+  });
   await waitFooterPage(page, 1);
   await shot(page, `${folder}/01-cover.png`);
 
@@ -111,13 +214,11 @@ async function captureSet(page, folder) {
   await waitFooterPage(page, 4);
   await shot(page, `${folder}/04-contents.png`);
 
-  // Recipe deep link (before chapter — mobile is flaky after long flip chains)
-  await page.goto(`${BASE}/?recipe=${RECIPE}&for=Jia`, {
+  await page.goto(`${BASE}/?recipe=${RECIPE}&for=${encodeURIComponent(DEMO)}`, {
     waitUntil: 'domcontentloaded',
     timeout: 60000,
   });
   await waitFooterReady(page, 60000);
-  // WarmLeafPool keeps neighbor recipes in DOM — wait for active leaf cook CTA
   await page.waitForFunction(
     () => {
       const cook = [...document.querySelectorAll('button')].find(
@@ -155,7 +256,6 @@ async function captureSet(page, folder) {
   await settle(page, 350);
   await shot(page, `${folder}/07-search.png`);
 
-  // Quick actions from search (avoids More menu z-index under journal-stage)
   await page.getByRole('button', { name: /^Shopping$/ }).click();
   await page.locator('#shopping-drawer-title').waitFor({ state: 'visible', timeout: 8000 });
   await settle(page, 400);
@@ -173,7 +273,7 @@ async function captureSet(page, folder) {
   await settle(page, 300);
 
   await setDarkMode(page, true);
-  await page.goto(`${BASE}/?recipe=${RECIPE}&for=Jia`, {
+  await page.goto(`${BASE}/?recipe=${RECIPE}&for=${encodeURIComponent(DEMO)}`, {
     waitUntil: 'domcontentloaded',
     timeout: 60000,
   });
@@ -193,9 +293,10 @@ async function captureSet(page, folder) {
   await shot(page, `${folder}/10-recipe-dark.png`);
   await setDarkMode(page, false);
 
-  // Chapter opener
   await page.evaluate(() => localStorage.setItem('cookcap-pos', '4'));
-  await page.goto(`${BASE}/?for=Jia`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${BASE}/?for=${encodeURIComponent(DEMO)}`, {
+    waitUntil: 'domcontentloaded',
+  });
   await waitFooterPage(page, 5);
   await shot(page, `${folder}/11-chapter.png`);
 
@@ -209,12 +310,13 @@ async function captureSet(page, folder) {
     await settle(page, 300);
   }
 
-  // CookCap lenses (v2)
-  await page.evaluate(() => {
+  await page.evaluate((name) => {
     localStorage.setItem('cookcap-mode', 'plate');
-    localStorage.setItem('cookcap-owner', 'Jia');
+    localStorage.setItem('cookcap-owner', name);
+  }, DEMO);
+  await page.goto(`${BASE}/?for=${encodeURIComponent(DEMO)}`, {
+    waitUntil: 'domcontentloaded',
   });
-  await page.goto(`${BASE}/?for=Jia`, { waitUntil: 'domcontentloaded' });
   await waitFooterReady(page, 60000);
   await settle(page, 600);
 
@@ -245,11 +347,25 @@ async function captureSet(page, folder) {
   await page.keyboard.press('Escape');
   await settle(page, 300);
 
-  await page.goto(`${BASE}/?recipe=${RECIPE}&for=Jia`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${BASE}/?recipe=${RECIPE}&for=${encodeURIComponent(DEMO)}`, {
+    waitUntil: 'domcontentloaded',
+  });
   await waitFooterReady(page, 60000);
   await page.evaluate(() => document.querySelector('[data-leaf-scroll]')?.scrollTo(0, 0));
   await settle(page, 600);
   await shot(page, `${folder}/17-recipe-plate.png`);
+
+  // Appearance panel (clickable after desk z-fix)
+  await page.getByRole('button', { name: 'Appearance' }).click();
+  await page.getByRole('heading', { name: 'Appearance' }).waitFor({ state: 'visible', timeout: 8000 });
+  await settle(page, 400);
+  await shot(page, `${folder}/18-appearance.png`);
+  await page.keyboard.press('Escape');
+}
+
+async function captureSet(page, folder) {
+  await captureSimpleOnboarding(page, folder);
+  await captureBookChrome(page, folder);
 }
 
 async function captureAppearanceMatrix(page, folder) {
@@ -261,42 +377,46 @@ async function captureAppearanceMatrix(page, folder) {
     for (const tabs of tabStyles) {
       await page.goto(BASE, { waitUntil: 'domcontentloaded', timeout: 60000 });
       await page.evaluate(
-        ({ skin, tabs }) => {
+        ({ skin, tabs, name }) => {
           localStorage.clear();
           localStorage.setItem('cookcap-skin', skin);
           localStorage.setItem('cookcap-tabs', tabs);
           localStorage.setItem('cookcap-readmode', 'flip');
           localStorage.setItem('cookcap-theme', 'light');
-          localStorage.setItem('cookcap-owner', 'Jia');
+          localStorage.setItem('cookcap-owner', name);
+          localStorage.setItem('cookcap-onboarded', '1');
           localStorage.setItem('cookcap-pos', '0');
           document.documentElement.setAttribute('data-skin', skin);
           document.documentElement.setAttribute('data-tabs', tabs);
           document.documentElement.setAttribute('data-readmode', 'flip');
           document.documentElement.setAttribute('data-theme', 'light');
         },
-        { skin, tabs },
+        { skin, tabs, name: DEMO },
       );
-      await page.goto(`${BASE}/?for=Jia`, { waitUntil: 'domcontentloaded', timeout: 60000 });
+      await page.goto(`${BASE}/?for=${encodeURIComponent(DEMO)}`, {
+        waitUntil: 'domcontentloaded',
+        timeout: 60000,
+      });
       await waitFooterReady(page, 60000);
       await settle(page, 600);
       await shot(page, `${folder}/appearance/${skin}-${tabs}-cover.png`);
     }
   }
 
-  // Appearance panel open (editorial + cloth)
   await page.goto(BASE, { waitUntil: 'domcontentloaded' });
-  await page.evaluate(() => {
+  await page.evaluate((name) => {
     localStorage.clear();
     localStorage.setItem('cookcap-skin', 'editorial');
     localStorage.setItem('cookcap-tabs', 'cloth');
     localStorage.setItem('cookcap-readmode', 'flip');
     localStorage.setItem('cookcap-theme', 'light');
-    localStorage.setItem('cookcap-owner', 'Jia');
+    localStorage.setItem('cookcap-owner', name);
+    localStorage.setItem('cookcap-onboarded', '1');
     document.documentElement.setAttribute('data-skin', 'editorial');
     document.documentElement.setAttribute('data-tabs', 'cloth');
     document.documentElement.setAttribute('data-theme', 'light');
-  });
-  await page.goto(`${BASE}/?for=Jia`, { waitUntil: 'domcontentloaded' });
+  }, DEMO);
+  await page.goto(`${BASE}/?for=${encodeURIComponent(DEMO)}`, { waitUntil: 'domcontentloaded' });
   await waitFooterReady(page, 60000);
   await page.getByRole('button', { name: 'Appearance' }).click();
   await page.getByRole('heading', { name: 'Appearance' }).waitFor({ state: 'visible', timeout: 8000 });
@@ -307,12 +427,13 @@ async function captureAppearanceMatrix(page, folder) {
 
 async function main() {
   console.log(`Gallery → ${OUT}`);
-  console.log(`Base URL ${BASE} · recipe ${RECIPE}`);
+  console.log(`Base URL ${BASE} · recipe ${RECIPE} · demo ${DEMO}`);
 
   const only = (process.env.GALLERY_DEVICE || 'all').toLowerCase();
   const browser = await chromium.launch({ headless: true });
 
   if (only === 'all' || only === 'desktop') {
+    // Simple path (reduce) + book chrome
     const context = await browser.newContext({
       viewport: { width: 1440, height: 900 },
       deviceScaleFactor: 1,
@@ -320,11 +441,23 @@ async function main() {
       reducedMotion: 'reduce',
     });
     const page = await context.newPage();
-    console.log('Desktop…');
+    console.log('Desktop (simple onboard + chrome)…');
     await captureSet(page, 'desktop');
     console.log('Desktop appearance matrix…');
     await captureAppearanceMatrix(page, 'desktop');
     await context.close();
+
+    // Dresser stills
+    const dresserCtx = await browser.newContext({
+      viewport: { width: 1440, height: 900 },
+      deviceScaleFactor: 1,
+      colorScheme: 'light',
+      reducedMotion: 'no-preference',
+    });
+    const dresserPage = await dresserCtx.newPage();
+    console.log('Desktop dresser…');
+    await captureDresserOnboarding(dresserPage, 'desktop');
+    await dresserCtx.close();
   }
 
   if (only === 'all' || only === 'mobile') {
@@ -337,11 +470,24 @@ async function main() {
       reducedMotion: 'reduce',
     });
     const page = await context.newPage();
-    console.log('Mobile…');
+    console.log('Mobile (simple onboard + chrome)…');
     await captureSet(page, 'mobile');
     console.log('Mobile appearance matrix…');
     await captureAppearanceMatrix(page, 'mobile');
     await context.close();
+
+    const dresserCtx = await browser.newContext({
+      viewport: { width: 390, height: 844 },
+      deviceScaleFactor: 2,
+      isMobile: true,
+      hasTouch: true,
+      colorScheme: 'light',
+      reducedMotion: 'no-preference',
+    });
+    const dresserPage = await dresserCtx.newPage();
+    console.log('Mobile dresser…');
+    await captureDresserOnboarding(dresserPage, 'mobile');
+    await dresserCtx.close();
   }
 
   await browser.close();

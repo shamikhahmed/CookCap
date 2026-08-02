@@ -18,7 +18,7 @@ Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v3 ·
 cd "/Users/shamikhahmed/CookBook Website"
 npm install && npm run dev
 npm run typecheck && npm run build
-npm run gallery   # prefer static: npm run build && npx serve out -l 3456; GALLERY_URL=http://localhost:3456 npm run gallery
+npm run gallery   # prefer: npm run build && python3 -m http.server 3456 --directory out; GALLERY_URL=http://127.0.0.1:3456 npm run gallery
 ```
 
 ## Lenses (additive — Reader = pure book)
@@ -38,7 +38,9 @@ Profiles + diary + pantry = device-local IndexedDB. Migration v2→v3 keeps favo
 - `unoptimized` Image needs `withBase()` on Pages
 - Phone = full-bleed leaf; Tabs in footer
 - Switching mode adds/removes For You leaf → page indices shift (expected)
+- First-run: Dresser unless `prefers-reduced-motion` or `hardwareConcurrency ≤ 4` → Simple
+- Desk z: never reintroduce `.journal-desk > * { z-index: 1 }` (kills Appearance clicks)
 
 ## Key paths
 
-`src/lib/profiles/*` · `src/lib/modes/*` · `src/lib/cost/*` · `src/components/profiles/*` · `ForYouLeaf` · `enrich.ts` · `data-goal.ts`
+`src/components/app/DresserOnboarding.tsx` · `OnboardingFlow.tsx` · `onboarding/useOnboardingSteps.ts` · `src/lib/profiles/*` · `src/lib/modes/*` · `src/lib/cost/*` · `src/components/profiles/*` · `ForYouLeaf` · `enrich.ts` · `data-goal.ts`

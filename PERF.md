@@ -1,6 +1,6 @@
-# CookCap v2.2.0 — Performance Budgets
+# CookCap v2.2.5 — Performance Budgets
 
-**Version:** 2.2.0 · **SW:** `cookcap-v6` · **Deploy:** GitHub Pages `/CookCap/`
+**Version:** 2.2.5 · **SW:** `cookcap-v11` · **Deploy:** GitHub Pages `/CookCap/`
 
 ---
 
@@ -9,9 +9,10 @@
 | Metric | Budget | Rationale |
 |--------|--------|-----------|
 | Cold-start splash | Real load + **~280 ms min** polish | Mark must read; not a fake timer — `Splash.tsx` waits for `ready` ∧ `editionReady`, then `max(0, 280 − elapsed)`; **0 ms** under `prefers-reduced-motion` |
-| First Load JS | **~318 kB** (shared) | v2.2.0 Next production build; book + Motion + profiles stack; monitor regressions |
+| First Load JS | **~328 kB** (shared) | v2.2.5 Next production build; book + Motion + dresser/onboard; monitor regressions |
 | Recipe DOM mount | **≤7 neighbors** off-screen | `WarmLeafPool` offsets `[-3,-2,-1,1,2,3,4]` — never all ~218 leaves |
 | Page flip | One curl at a time; **280 ms** base duration token | `--dur-base: 280ms`; instant under reduced-motion |
+| Onboarding | Dresser reveal ≤ **~2.4 s** then handoff; Simple reveal ≤ **400 ms** | `DresserOnboarding` / `OnboardingFlow`; Simple path under reduce |
 | Lighthouse desktop (prior live) | **96 / 100 / 96 / 63** | Perf / A11y / BP / SEO — SEO 63 = intentional `noindex` private book |
 | Lighthouse mobile | Re-run after ship | Prior reports in `docs/lighthouse-mobile.report.json` |
 | Runtime network | **Zero external origins** | Privacy promise; same-origin + cache only |
@@ -111,7 +112,7 @@ Accept SEO <100 while `robots: noindex` remains.
 | Best Practices | 96 | HTTPS, no deprecated APIs |
 | SEO | 63 | **Intentional** — private family book, `noindex` |
 
-Re-run after v2.2.0 push; update this table if scores shift >3 points.
+Re-run after v2.2.5 push; update this table if scores shift >3 points.
 
 ---
 

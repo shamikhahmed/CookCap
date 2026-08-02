@@ -4,8 +4,8 @@
 
 https://shamikhahmed.github.io/CookCap/
 
-1. Enter your name → cover becomes **YourName Cooks**.
-2. Optional: add who eats from the book + pick a mode (or skip → Reader).
+1. First visit: **Begin** on the dresser (or calm full-screen steps if you prefer reduced motion). Name the book → cover becomes **YourName Cooks**. Skip anytime → **Our Family Cookbook** (never “Family Cooks”).
+2. Optional: who eats + how you cook (or skip → Reader).
 3. Flip / Tabs. Phone: **Tabs** in footer.
 
 ## Modes (··· → Mode)
@@ -36,4 +36,4 @@ Macros and costs are **estimates** unless marked verified. Health modes are **no
 
 ## Tips
 
-Install to home screen for offline. ··· → Change book name. Clearing site data wipes local favorites / shopping / profiles / diary on that device.
+Install to home screen for offline. ··· → Change book name (compact rename). Clearing site data wipes local favorites / shopping / profiles / diary on that device.

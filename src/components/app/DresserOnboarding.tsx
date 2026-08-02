@@ -1,10 +1,9 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { PRODUCT_NAME } from '@/lib/edition';
-import { sanitizeOwnerName } from '@/lib/edition';
 import { PRODUCT_TAGLINE } from '@/lib/version';
 import { useDialogA11y } from '@/lib/a11y/dialog';
 import { playBookStamp, playDrawerClose, playDrawerOpen } from '@/lib/sound/dresser';
@@ -37,6 +36,7 @@ export function DresserOnboarding({
   const [drawerOpen, setDrawerOpen] = useState<DrawerId | null>(null);
   const [animating, setAnimating] = useState(false);
   const [bookPhase, setBookPhase] = useState<'hidden' | 'rise' | 'turn' | 'settle' | 'done'>('hidden');
+  const prevStep = useRef<OnboardStep | null>(null);
 
   const {
     step,
@@ -64,22 +64,34 @@ export function DresserOnboarding({
     initialFocus: step === 'name' || step === 'profile' ? 'first' : 'none',
   });
 
-  /** Sync drawer open state to step with timed open SFX */
+  /** Step owns drawers: close prior → open next (SFX when sound on). */
   useEffect(() => {
     if (!open) return;
     if (step === 'welcome') {
       setDrawerOpen(null);
       setBookPhase('hidden');
+      prevStep.current = step;
       return;
     }
     const id = DRAWER_FOR_STEP[step];
     if (!id) return;
+
+    const switching = prevStep.current !== null && prevStep.current !== step;
+    prevStep.current = step;
     setAnimating(true);
-    const openT = window.setTimeout(() => {
+
+    let openT = 0;
+    const closeMs = switching ? 320 : 0;
+    if (switching) {
+      playDrawerClose(muted);
+      setDrawerOpen(null);
+    }
+    openT = window.setTimeout(() => {
       setDrawerOpen(id);
       playDrawerOpen(muted);
       setAnimating(false);
-    }, 80);
+    }, closeMs + 80);
+
     return () => window.clearTimeout(openT);
   }, [step, open, muted]);
 
@@ -102,20 +114,6 @@ export function DresserOnboarding({
       window.clearTimeout(t3);
     };
   }, [step, open, muted, completeReveal]);
-
-  const closeThen = useCallback(
-    (next: () => void) => {
-      if (animating) return;
-      setAnimating(true);
-      playDrawerClose(muted);
-      setDrawerOpen(null);
-      window.setTimeout(() => {
-        next();
-        setAnimating(false);
-      }, 380 + 80);
-    },
-    [animating, muted],
-  );
 
   if (!open || typeof document === 'undefined') return null;
 
@@ -166,9 +164,9 @@ export function DresserOnboarding({
           </div>
 
           <div className="relative z-10 flex flex-1 flex-col items-center justify-end px-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:justify-center">
-            <div className="dresser-stage" aria-hidden={step !== 'welcome'}>
-              {/* Lamp */}
-              <div className="dresser-lamp" />
+            <div className="dresser-stage">
+              {/* Lamp + drawers = decoration only */}
+              <div className="dresser-lamp" aria-hidden />
 
               {/* Welcome plate on top */}
               {step === 'welcome' && (
@@ -244,13 +242,7 @@ export function DresserOnboarding({
                       onKeyDown={(e) => {
                         if (e.key === 'Enter') {
                           e.preventDefault();
-                          if (!sanitizeOwnerName(ownerName)) {
-                            api.setError('Enter a first name (or nickname).');
-                            return;
-                          }
-                          closeThen(() => {
-                            submitName();
-                          });
+                          submitName();
                         }
                       }}
                       placeholder="e.g. Ayesha"
@@ -264,15 +256,7 @@ export function DresserOnboarding({
                     <button
                       type="button"
                       disabled={animating}
-                      onClick={() => {
-                        if (!sanitizeOwnerName(ownerName)) {
-                          api.setError('Enter a first name (or nickname).');
-                          return;
-                        }
-                        closeThen(() => {
-                          submitName();
-                        });
-                      }}
+                      onClick={() => submitName()}
                       className="mt-4 min-h-11 w-full rounded-xl bg-[color:var(--color-accent)] px-4 py-3 font-medium text-white"
                     >
                       Continue
@@ -305,11 +289,7 @@ export function DresserOnboarding({
                     <button
                       type="button"
                       disabled={busy || animating}
-                      onClick={() =>
-                        closeThen(() => {
-                          void createProfile();
-                        })
-                      }
+                      onClick={() => void createProfile()}
                       className="mt-4 min-h-11 w-full rounded-xl bg-[color:var(--color-accent)] px-4 py-3 font-medium text-white"
                     >
                       Create profile
@@ -317,7 +297,7 @@ export function DresserOnboarding({
                     <button
                       type="button"
                       disabled={animating}
-                      onClick={() => closeThen(skipProfile)}
+                      onClick={skipProfile}
                       className="mt-2 min-h-11 w-full text-sm text-[color:var(--color-ink-faint)]"
                     >
                       Skip
@@ -333,7 +313,7 @@ export function DresserOnboarding({
                           key={m.id}
                           type="button"
                           disabled={animating}
-                          onClick={() => closeThen(() => pickMode(m.id))}
+                          onClick={() => pickMode(m.id)}
                           className="flex min-h-11 w-full flex-col rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3 py-2.5 text-left"
                         >
                           <span className="font-medium text-[color:var(--color-ink)]">{m.label}</span>
@@ -344,7 +324,7 @@ export function DresserOnboarding({
                     <button
                       type="button"
                       disabled={animating}
-                      onClick={() => closeThen(skipMode)}
+                      onClick={skipMode}
                       className="mt-3 min-h-11 w-full text-sm text-[color:var(--color-ink-faint)]"
                     >
                       Skip — open my book
@@ -371,7 +351,7 @@ export function DresserOnboarding({
               <button
                 type="button"
                 disabled={animating}
-                onClick={() => closeThen(goBack)}
+                onClick={goBack}
                 className="relative z-20 mt-3 min-h-11 text-sm text-[color:var(--color-ink-faint)]"
               >
                 ← Back

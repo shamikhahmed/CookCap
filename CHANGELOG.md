@@ -9,6 +9,8 @@
 - **Jia wipe** — Favorites / story / tabs / recipe titles edition-aware; no user-facing Jia
 - ModeChooser single disclaimer; drawer backdrop = Escape handler; Appearance portals to `body`
 - SW → `cookcap-v11`
+- Docs + gallery regenerated (Simple + Dresser stills; demo edition Ayesha)
+- Dresser: step-driven drawers (no closeThen lock); interactive cards not under `aria-hidden`
 
 ## 2.2.4 — 2026-08-02
 
