@@ -1,6 +1,6 @@
 # CookCap — Presentation
 
-**v2.4.4** · https://shamikhahmed.github.io/CookCap/
+**v2.4.5** · https://shamikhahmed.github.io/CookCap/
 
 ## Pitch
 
@@ -15,7 +15,7 @@ CookCap opens like a hardcover on a wooden table. Name the book in a 3D dresser.
 
 ## Status
 
-**v2.4.4** = hero honesty + lock · SW `cookcap-v23`.  
+**v2.4.5** = product-standard IA menu + 44px targets + smoke gate · SW `cookcap-v24`.  
 Prior: **v2.4.0** TheMealDB purged; family catalog only.
 
 Gallery: [docs/gallery/README.md](./docs/gallery/README.md)

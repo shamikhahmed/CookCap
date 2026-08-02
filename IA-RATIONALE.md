@@ -1,6 +1,7 @@
-# CookCap v2.2.5 — Information Architecture Rationale
+# CookCap v2.4.5 — Information Architecture Rationale
 
-**Principle:** every surface has exactly one job. No duplicate homes for the same task.
+**Principle:** every surface has exactly one job. No duplicate homes for the same task.  
+**Ordering law:** most-used / daily tools at top → rarely used middle → identity rename late → legal last.
 
 ---
 
@@ -13,47 +14,34 @@
 | **Book leaves** | Read recipes, chapters, For You (when lens on) | Shopping, profiles CRUD |
 | **Top bar** | Global wayfinding + mode/profile affordances | Deep editing |
 | **Appearance panel** | Skin, tab style, reading mode (portal over desk) | Data export, legal |
-| **Search (⌘K)** | Find recipes + quick actions | Profile setup |
+| **Search (⌘K)** | Find recipes + ★ rating filters + quick actions | Profile setup |
 | **Drawers** (favorites, shopping, planner, import) | One workflow each | Cross-drawer settings |
 | **Dresser / Simple onboard** | First-run identity + optional profile/mode | Ongoing profile management |
 | **NameGate** | Rename only (··· Change book name) | First-run ceremony |
 | **Profiles drawer** | Create / edit / delete / switch eaters | Mode preset definitions |
 | **Mode chooser** | Lens preset (Reader, Plate, Mother, …) | Biometric entry |
 | **Calendar / Pantry** | Diary rings + inventory / budget | Recipe authoring |
-| **About modal** | Version, privacy, export, delete | Appearance tweaks |
+| **About modal** | Version, privacy, export, wipe | Appearance tweaks |
 
 ---
 
-## Settings & ··· menu order
+## ··· overflow menu (v2.4.5 — matches code)
 
-Mature ordering: **identity & daily tools at top → appearance → accessibility notes → privacy → legal at bottom.**
-
-### Top bar (always visible, ≤1 tap)
-
-1. **CookCap wordmark + kitchen line** — app brand + `{Name}'s Kitchen` identity
-2. **Profile avatar** (when mode ≠ reader) — switch active eater
-3. **Mode badge** — switch lens
-4. **Search** — find anything
-5. **Appearance** — skin / tabs / reading mode
-6. **Favorites** (desktop) · **Theme toggle** (when skin supports it)
-7. **··· More**
-
-### ··· overflow menu
-
-| Order | Item | Group |
-|-------|------|-------|
-| 1 | Favorites & history *(phone)* | Identity / daily |
-| 2 | Light / dark mode *(phone)* | Appearance |
-| 3 | Page sound on/off | General |
-| 4 | Shopping list | Core tool |
-| 5 | This week's meals | Core tool |
+| Order | Item | Why |
+|-------|------|-----|
+| 1–2 | Favorites · Theme *(phone only)* | Daily / appearance when not in top bar |
+| 3 | Page sound | General preference |
+| 4 | Shopping list | Core weekly tool |
+| 5 | This week’s meals | Core weekly tool |
 | 6 | Profiles | Lens setup |
 | 7 | Mode | Lens setup |
 | 8 | Calendar | Lens tool |
 | 9 | Pantry & budget | Lens tool |
-| 10 | Import recipe | Authoring |
-| 11 | Change book name | Identity |
-| 12 | About & data | Legal / privacy last |
+| 10 | Import WhatsApp recipe | Authoring |
+| 11 | Change book name | Identity (rare) |
+| 12 | About & data | Legal / privacy **last** |
+
+**Why rename is late:** first-timers need shopping/planner faster than renaming; About stays bottom for destructive wipe discoverability without accidental taps mid-list.
 
 ---
 
@@ -61,18 +49,31 @@ Mature ordering: **identity & daily tools at top → appearance → accessibilit
 
 | Path | When | Surface |
 |------|------|---------|
-| **Dresser** | Default (motion OK, cores > 4) | 3D drawers + reveal book |
-| **Simple** | `prefers-reduced-motion` or low cores | Full-bleed calm cards |
-| **Rename** | Owner already set | Compact `NameGate` only |
+| **Dresser** | Default (motion OK; or `cookcap-force-dresser`) | 3D drawers + reveal |
+| **Simple** | `prefers-reduced-motion` or ≤4 cores | Calm cards |
+| **Rename** | Owner already set | Compact `NameGate` |
 
-Shared state: `useOnboardingSteps` → persist owner + `cookcap-onboarded`. Skip / Set up later → unnamed edition (**Our Family Cookbook**).
-
----
-
-## Non-goals (do not invent surfaces)
-
-No second "set up your profile" home outside first-run + Profiles drawer. Mode presets live only in Mode chooser. Favorites label is edition-aware — no hard-coded person name in chrome.
+Skip / Set up later → unnamed edition (**Our Family Cookbook**).
 
 ---
 
-*IA locked for v2.2.5 ship. Changes require updating this doc + `USER_GUIDE.md`.*
+## Discoverability (≤2 taps)
+
+| Need | Path |
+|------|------|
+| Find a recipe | Search icon or ⌘K |
+| Flip pages | Footer / keys / drag |
+| Chapters | Paper tabs or footer Tabs (phone) |
+| Shopping | ··· → Shopping |
+| Appearance | Top-bar Appearance |
+| Export / wipe | ··· → About & data |
+
+---
+
+## Non-goals
+
+No second “set up profile” home. No dashboard chrome. No accounts. Reader stays pure book.
+
+---
+
+*Update this file whenever ··· order or surface ownership changes.*

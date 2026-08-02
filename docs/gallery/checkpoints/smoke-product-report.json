@@ -1,0 +1,42 @@
+{
+  "at": "2026-08-02T22:43:53.002Z",
+  "base": "http://127.0.0.1:3456/CookCap",
+  "failed": 0,
+  "results": [
+    {
+      "id": "S1 footer page chrome",
+      "pass": true,
+      "detail": "1 / 247"
+    },
+    {
+      "id": "S2 book-frame",
+      "pass": true,
+      "detail": "count=1"
+    },
+    {
+      "id": "S3 header search ≥44px",
+      "pass": true,
+      "detail": "44×44"
+    },
+    {
+      "id": "S4 IA: shopping before rename",
+      "pass": true,
+      "detail": "shop@1 rename@8 → Page sound on | Shopping list | This week’s meals | Profiles | Mode | Calendar | Pantry & budget | Import WhatsApp recipe | Change book name | About & data"
+    },
+    {
+      "id": "S5 IA: about last",
+      "pass": true,
+      "detail": "about@9 of 10 → Page sound on | Shopping list | This week’s meals | Profiles | Mode | Calendar | Pantry & budget | Import WhatsApp recipe | Change book name | About & data"
+    },
+    {
+      "id": "S6 phone search ≥44px",
+      "pass": true,
+      "detail": "44×44"
+    },
+    {
+      "id": "S7 no third-party runtime fetch",
+      "pass": true,
+      "detail": "none"
+    }
+  ]
+}

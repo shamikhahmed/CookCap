@@ -1,38 +1,63 @@
-# CookCap v2.4.4 — QA Matrix
+# CookCap v2.4.5 — QA Matrix
 
-**Columns:** screen · element · expected · actual · pass/fail  
-**Scope:** phone 390 · iPad 768/834 · desktop 1280/1920 · skins · light/dark · reduced-motion  
-**Live URL:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v23`
+**Live:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v24`  
+**Evidence dirs:** `docs/gallery/checkpoints/`
 
-> Prove chrome by **DOM geometry**; 3D by anti-2d gate; recipes by `gate:recipes`; keyboard by typing full name on phone. Re-check live after each push — gallery ≠ live proof.
-
----
-
-## Book & navigation
-
-| Screen | Element | Expected | Pass/Fail |
-|--------|---------|----------|-----------|
-| Splash | Launch mark | Dissolves when ready + editionReady | VERIFY live |
-| Contents | Today’s kitchen + chapters | **One** scroll; kitchen not stuck | VERIFY |
-| Mode toggle | Leaf index | Same recipe/chapter after For You insert | VERIFY |
-| Search | ★5…★1 chips | Filter by local ratings; empty copy if none | VERIFY |
-| Favorites | mdb-* orphans | Scrubbed on load | VERIFY |
-| Export | JSON | Includes `mealPlan` | VERIFY |
-| Profile delete | Diary | Rows for profile removed | VERIFY |
-| IDB fail | Banner | storageError dismissible | VERIFY (simulate) |
-| Dresser Escape | Confirm | Confirm before skip | VERIFY |
-| CI | Gates | typecheck + gate:recipes + gate:anti-2d | **PASS** in workflow |
+> Prove by gates + smoke against served `out/`. Gallery ≠ live alone.
 
 ---
 
-## Gates (local / CI)
+## Automated gates (this pass)
+
+| Check | Expected | Actual | Pass |
+|-------|----------|--------|------|
+| `npm run typecheck` | 0 errors | clean | **PASS** |
+| `npm run lint` | 0 warnings | clean | **PASS** |
+| `npm run gate:recipes` | 215 recipes linked | 215 / 5 files | **PASS** |
+| `npm run gate:anti-2d` | 3D + wood + paper tabs | GATE PASS | **PASS** |
+| `npm run smoke:product` | S1–S7 | SMOKE PASS | **PASS** |
+| `npm run measure:perf` | mountedLeaves ≤12 | mountedLeaves=5 | **PASS** |
+| CI Pages | build+deploy | workflow | VERIFY after push |
+
+### Smoke detail (`smoke-product-report.json`)
+
+| ID | Expected | Result |
+|----|----------|--------|
+| S1 | Footer `n / total` | PASS |
+| S2 | `.book-frame` present | PASS |
+| S3 | Search control ≥44×44 | PASS 44×44 |
+| S4 | Shopping before Change book name | PASS |
+| S5 | About & data last in ··· menu | PASS |
+| S6 | Phone Search ≥44×44 | PASS |
+| S7 | No third-party runtime fetch | PASS none |
+
+---
+
+## Manual / persona (spot)
+
+| Persona | Flow | Status |
+|---------|------|--------|
+| First-timer | Splash → dresser/simple → cover → flip | VERIFY on device after SW update |
+| Power user | ⌘K ★ filter · mode switch · planner | VERIFY |
+| Reduced-motion | Simple onboard, no dresser SFX | VERIFY (`prefers-reduced-motion`) |
+| Offline | Load once, kill network, read/fav | VERIFY |
+
+---
+
+## Appendix skips
+
+| Appendix | Status |
+|----------|--------|
+| E Auth | SKIP — no accounts |
+| I Push notifications | SKIP — none |
+| J i18n/RTL | SKIP — English UI |
+
+---
 
 ```bash
-npm run typecheck
-npm run gate:recipes   # 215 recipes
-npm run gate:anti-2d
+NEXT_PUBLIC_BASE_PATH=/CookCap npm run build
+# serve out under /CookCap
+GATE_URL=… npm run gate:anti-2d
+GATE_URL=… npm run smoke:product
+npm run measure:perf
 ```
-
----
-
-*Do not rubber-stamp PASS without live DOM or gate output.*

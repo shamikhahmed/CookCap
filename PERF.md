@@ -1,53 +1,34 @@
-# CookCap v2.4.4 — Performance Budgets
+# CookCap v2.4.5 — Performance Budgets
 
-**Version:** 2.4.4 · **SW:** `cookcap-v23` · **Deploy:** GitHub Pages `/CookCap/`  
-**Catalog:** **215** recipes · family editorial only
-
----
-
-## Budgets
-
-| Metric | Budget | Status |
-|--------|--------|--------|
-| Recipe DOM mount | **≤12** `data-leaf-scroll` | WarmLeafPool (1 active + 2 full prefetch + shells) |
-| Never mount all recipes | Hard | WarmLeafPool + deferred recipe body |
-| Chapter list rows | **≤24** + “and N more” | `ChapterLeaf.tsx` |
-| Search | Indexed haystack + **120 ms** debounce + star filters | `search.ts` / `SearchOverlay` |
-| Longtask (real device) | **≤50 ms** on flip / hop / search | Target; verify on phone GPU |
-| Asset warm | SW manifest heroes only + decode **±12** | Skip missing files |
-| Anti-2D + linkage | Must PASS (CI) | `gate:anti-2d` · `gate:recipes` |
+**Version:** 2.4.5 · **SW:** `cookcap-v24` · **Deploy:** GitHub Pages `/CookCap/`  
+**Catalog:** **215** recipes
 
 ---
 
-## Architecture guards (do not regress)
+## Budgets + measured
 
-### WarmLeafPool
+| Metric | Budget | Measured (this pass) | Status |
+|--------|--------|----------------------|--------|
+| First Load JS (route `/`) | monitor | **328 kB** shared+page | OK |
+| Recipe DOM mount | **≤12** `data-leaf-scroll` | **5** (`measure:perf`) | **PASS** |
+| Never mount all recipes | Hard | WarmLeafPool | **PASS** |
+| Chapter list rows | **≤24** + more | ChapterLeaf | OK |
+| Search debounce | **120 ms** | search.ts | OK |
+| Longtask flip (headless) | advisory ≤50 / soft ≤170 | 61–152 ms Motion curl | Advisory |
+| Longtask flip (real device) | **≤50 ms** | verify phone GPU | Target |
+| Anti-2D + linkage + smoke | Must PASS | CI | Required |
+
+---
+
+## Architecture guards
 
 ```ts
 const FULL_OFFSETS = [-1, 1];
 const SHELL_OFFSETS = [-3, -2, 2, 3, 4];
 ```
 
-### Mode ↔ index
-
-`remapLeafIndex(prev, index, next)` when leaves change (For You insert/remove).
-
-### AssetPreloader
-
-- Service worker: queue hero URLs present in `images.generated.json` only
-- Main thread: decode ±12 around current index
-
----
-
-## Measure
+`remapLeafIndex` on mode/leaves change. AssetPreloader skips missing heroes.
 
 ```bash
-NEXT_PUBLIC_BASE_PATH=/CookCap npm run build
-npm run measure:perf
+npm run measure:perf   # hard fail if mountedLeaves > 12
 ```
-
-Hard fail = `mountedLeaves > 12`.
-
----
-
-*Perf is a guardrail, not a vanity metric. Regressions block ship.*

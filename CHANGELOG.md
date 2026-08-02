@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.4.5 — 2026-08-03
+
+### Fix / Product-standard
+- ··· menu order matches IA (shopping/tools before rename; About last)
+- Header controls ≥44px (IconBtn / profile / mode)
+- Menu items `role=menuitem` + `min-h-11`; More menu `role=menu`
+- `smoke:product` gate (IA order, hit targets, no third-party fetch) in CI
+
+### Docs
+- Refresh AUDIT / IA-RATIONALE / QA-MATRIX / PERF for v2.4.5
+
+### Chore
+- SW → `cookcap-v24`
+
 ## 2.4.4 — 2026-08-03
 
 ### Fix

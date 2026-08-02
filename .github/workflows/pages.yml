@@ -39,6 +39,7 @@ jobs:
             sleep 1
           done
           GATE_URL=http://127.0.0.1:3456/CookCap npm run gate:anti-2d
+          GATE_URL=http://127.0.0.1:3456/CookCap npm run smoke:product
           kill "$(cat /tmp/gate-server.pid)" || true
       - uses: actions/upload-pages-artifact@v3
         with:

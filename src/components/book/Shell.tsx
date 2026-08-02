@@ -277,7 +277,7 @@ function TopBar({
                 : 'Open profiles'
             }
             title={activeProfile?.name ?? 'Profiles'}
-            className="grid size-8 place-items-center rounded-full text-[0.7rem] font-semibold text-white transition-transform active:scale-90 sm:size-9"
+            className="grid size-11 place-items-center rounded-full text-[0.7rem] font-semibold text-white transition-transform active:scale-90"
             style={{
               background: activeProfile?.color ?? 'var(--color-accent)',
             }}
@@ -290,7 +290,7 @@ function TopBar({
           onClick={onMode}
           aria-label={`Mode — ${modeDef.label}`}
           title={modeDef.label}
-          className="grid size-8 place-items-center rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)] text-[0.7rem] font-semibold text-[color:var(--color-ink-soft)] transition-transform hover:border-[color:var(--color-accent)] active:scale-90 sm:size-9"
+          className="grid size-11 place-items-center rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)] text-[0.7rem] font-semibold text-[color:var(--color-ink-soft)] transition-transform hover:border-[color:var(--color-accent)] active:scale-90"
           style={{ color: modeDef.color }}
         >
           {modeLetter}
@@ -322,12 +322,15 @@ function TopBar({
           <AnimatePresence>
             {more && (
               <motion.div
+                role="menu"
+                aria-label="More actions"
                 initial={{ opacity: 0, y: -4 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -4 }}
                 transition={{ duration: reduce ? 0 : 0.15 }}
                 className="absolute right-0 top-full z-[100] mt-1 min-w-[11rem] overflow-hidden rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] py-1 shadow-[var(--shadow-lg)]"
               >
+                {/* Order = IA-RATIONALE: daily tools → lens → authoring → identity → sound → legal */}
                 <span className="sm:hidden">
                   <MenuItem
                     label="Favorites & history"
@@ -347,23 +350,9 @@ function TopBar({
                   )}
                 </span>
                 <MenuItem
-                  label="Change book name"
+                  label={soundOn ? 'Mute page sound' : 'Page sound on'}
                   onClick={() => {
-                    onRename();
-                    setMore(false);
-                  }}
-                />
-                <MenuItem
-                  label="Profiles"
-                  onClick={() => {
-                    onProfiles();
-                    setMore(false);
-                  }}
-                />
-                <MenuItem
-                  label="Mode"
-                  onClick={() => {
-                    onMode();
+                    setSoundOn(!soundOn);
                     setMore(false);
                   }}
                 />
@@ -384,6 +373,20 @@ function TopBar({
                   }}
                 />
                 <MenuItem
+                  label="Profiles"
+                  onClick={() => {
+                    onProfiles();
+                    setMore(false);
+                  }}
+                />
+                <MenuItem
+                  label="Mode"
+                  onClick={() => {
+                    onMode();
+                    setMore(false);
+                  }}
+                />
+                <MenuItem
                   label="Calendar"
                   onClick={() => {
                     onCalendar();
@@ -398,7 +401,7 @@ function TopBar({
                   }}
                 />
                 {mode === 'mother' && (
-                  <p className="px-3.5 py-1.5 text-[0.7rem] leading-snug text-[color:var(--color-ink-faint)]">
+                  <p className="px-3.5 py-1.5 text-[0.7rem] leading-snug text-[color:var(--color-ink-soft)]">
                     Cooking-for list lives in Profiles.
                   </p>
                 )}
@@ -410,9 +413,9 @@ function TopBar({
                   }}
                 />
                 <MenuItem
-                  label={soundOn ? 'Mute page sound' : 'Page sound on'}
+                  label="Change book name"
                   onClick={() => {
-                    setSoundOn(!soundOn);
+                    onRename();
                     setMore(false);
                   }}
                 />
@@ -436,8 +439,9 @@ function MenuItem({ label, onClick }: { label: string; onClick: () => void }) {
   return (
     <button
       type="button"
+      role="menuitem"
       onClick={onClick}
-      className="block w-full px-3.5 py-2 text-left text-sm text-[color:var(--color-ink-soft)] hover:bg-[color:var(--color-paper-sunk)] hover:text-[color:var(--color-ink)]"
+      className="block min-h-11 w-full px-3.5 py-2.5 text-left text-sm font-medium text-[color:var(--color-ink)] hover:bg-[color:var(--color-paper-sunk)]"
     >
       {label}
     </button>
@@ -520,7 +524,7 @@ function IconBtn({
       aria-label={label}
       aria-expanded={ariaExpanded}
       title={label}
-      className="grid size-10 place-items-center rounded-full text-[color:var(--color-ink-soft)] transition-all hover:bg-[color:var(--color-paper-sunk)] hover:text-[color:var(--color-ink)] active:scale-90 disabled:pointer-events-none disabled:opacity-30"
+      className="grid size-11 place-items-center rounded-full text-[color:var(--color-ink-soft)] transition-all hover:bg-[color:var(--color-paper-sunk)] hover:text-[color:var(--color-ink)] active:scale-90 disabled:pointer-events-none disabled:opacity-30"
     >
       {children}
     </button>
