@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { useApp } from '@/components/app/AppStore';
 import { useDialogA11y } from '@/lib/a11y/dialog';
@@ -43,16 +43,11 @@ export function NameGate({
   const [error, setError] = useState('');
   const [profileError, setProfileError] = useState('');
 
-  const fieldStep = step === 'name' || step === 'profile';
+  const handleClose = useCallback(() => {
+    if (dismissible) onDismiss?.();
+  }, [dismissible, onDismiss]);
 
-  useDialogA11y(
-    open,
-    () => {
-      if (dismissible) onDismiss?.();
-    },
-    panelRef,
-    { initialFocus: fieldStep ? 'first' : 'none' },
-  );
+  useDialogA11y(open, handleClose, panelRef, { initialFocus: 'none' });
 
   useEffect(() => {
     if (!open) return;

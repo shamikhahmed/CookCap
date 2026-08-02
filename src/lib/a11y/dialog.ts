@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, type RefObject } from 'react';
+import { useEffect, useLayoutEffect, useRef, type RefObject } from 'react';
 
 const FOCUSABLE =
   'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
@@ -8,6 +8,9 @@ const FOCUSABLE =
 /**
  * Dialog a11y: lock body scroll, focus first control, Tab-trap inside panel,
  * Escape → onClose, restore focus to opener on unmount.
+ *
+ * `onClose` is held in a ref so callers can pass inline lambdas without
+ * re-running the effect (which would re-steal focus and dismiss mobile keyboards).
  */
 export function useDialogA11y(
   open: boolean,
@@ -16,7 +19,12 @@ export function useDialogA11y(
   opts?: { initialFocus?: 'first' | 'none' },
 ) {
   const openerRef = useRef<HTMLElement | null>(null);
+  const onCloseRef = useRef(onClose);
   const initial = opts?.initialFocus ?? 'first';
+
+  useLayoutEffect(() => {
+    onCloseRef.current = onClose;
+  });
 
   useEffect(() => {
     if (!open) return;
@@ -37,7 +45,7 @@ export function useDialogA11y(
       if (e.key === 'Escape') {
         e.preventDefault();
         e.stopPropagation();
-        onClose();
+        onCloseRef.current();
         return;
       }
       if (e.key !== 'Tab' || !panel) return;
@@ -75,7 +83,7 @@ export function useDialogA11y(
         }
       }
     };
-  }, [open, onClose, panelRef, initial]);
+  }, [open, panelRef, initial]);
 }
 
 export function motionReduce(reduce: boolean | null) {

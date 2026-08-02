@@ -64,8 +64,8 @@ export function DresserOnboarding({
     completeReveal,
   } = api;
 
-  useDialogA11y(open, () => setupLater(), panelRef, {
-    initialFocus: step === 'name' || step === 'profile' ? 'first' : 'none',
+  useDialogA11y(open, setupLater, panelRef, {
+    initialFocus: 'none',
   });
 
   /** Step owns drawers: close prior → open next (SFX when sound on). */
@@ -85,7 +85,7 @@ export function DresserOnboarding({
     setAnimating(true);
 
     let openT = 0;
-    const closeMs = switching ? 320 : 0;
+    const closeMs = switching ? 380 + 120 : 0;
     if (switching) {
       playDrawerClose(muted);
       setDrawerOpen(null);
@@ -94,7 +94,7 @@ export function DresserOnboarding({
       setDrawerOpen(id);
       playDrawerOpen(muted);
       setAnimating(false);
-    }, closeMs + 80);
+    }, closeMs + (switching ? 0 : 80));
 
     return () => window.clearTimeout(openT);
   }, [step, open, muted]);
@@ -225,9 +225,10 @@ export function DresserOnboarding({
                 </motion.div>
               )}
 
-              {/* Dresser body — each drawer opens to reveal its question INSIDE. */}
+              {/* Dresser body — true 3D pull-out drawers */}
               <div
                 className={`dresser-body ${step === 'reveal' && bookPhase !== 'hidden' ? 'dresser-body--recede' : ''}`}
+                aria-hidden={step === 'welcome'}
               >
                 {(['name', 'profile', 'mode', 'reveal'] as DrawerId[]).map((id) => {
                   const isOpen = drawerOpen === id;
@@ -237,35 +238,45 @@ export function DresserOnboarding({
                       key={id}
                       className={`dresser-drawer ${isOpen ? 'is-open' : ''} ${isReveal ? 'dresser-drawer--deep' : ''}`}
                     >
-                      <div className="dresser-drawer__interior">
+                      {/* Decorative 3D box faces */}
+                      <div className="dresser-drawer__box" aria-hidden>
+                        <span className="dresser-drawer__wall dresser-drawer__wall--left" />
+                        <span className="dresser-drawer__wall dresser-drawer__wall--right" />
+                        <span className="dresser-drawer__wall dresser-drawer__wall--back" />
+                        <span className="dresser-drawer__floor" />
+                      </div>
+
+                      {/* Interactive content — counter-rotated to face reader */}
+                      <div className={`dresser-drawer__content ${isOpen ? 'is-visible' : ''}`}>
                         {isOpen && id === 'name' && step === 'name' && (
                           <>
-                            <h2 id={titleId} className="font-serif text-lg font-semibold text-[color:var(--color-ink)]">
+                            <h2 id={titleId} className="dresser-carve">
                               What should we call this cookbook?
                             </h2>
-                            <p className="mt-2 font-serif text-2xl italic text-[color:var(--color-ink)]" aria-live="polite">
+                            <p className="dresser-carve-preview" aria-live="polite">
                               {previewName || 'Your name'}{' '}
-                              <span className="text-[color:var(--color-ink-faint)]">Cooks</span>
+                              <span>Cooks</span>
                             </p>
-                            <label className="mt-4 block text-sm text-[color:var(--color-ink-soft)]" htmlFor="dresser-name">
+                            <label className="dresser-slot-label" htmlFor="dresser-name">
                               Your name
                             </label>
-                            <input
-                              id="dresser-name"
-                              type="text"
-                              autoFocus
-                              maxLength={40}
-                              value={ownerName}
-                              onChange={(e) => setOwnerName(e.target.value)}
-                              onKeyDown={(e) => {
-                                if (e.key === 'Enter') {
-                                  e.preventDefault();
-                                  submitName();
-                                }
-                              }}
-                              placeholder="e.g. Ayesha"
-                              className="mt-1.5 min-h-11 w-full rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3.5 py-2.5"
-                            />
+                            <div className="dresser-slot">
+                              <input
+                                id="dresser-name"
+                                type="text"
+                                autoFocus
+                                maxLength={40}
+                                value={ownerName}
+                                onChange={(e) => setOwnerName(e.target.value)}
+                                onKeyDown={(e) => {
+                                  if (e.key === 'Enter') {
+                                    e.preventDefault();
+                                    submitName();
+                                  }
+                                }}
+                                placeholder="e.g. Ayesha"
+                              />
+                            </div>
                             {error && (
                               <p className="mt-2 text-sm text-[color:var(--color-danger,#b33)]" role="alert">
                                 {error}
@@ -275,7 +286,7 @@ export function DresserOnboarding({
                               type="button"
                               disabled={animating}
                               onClick={() => submitName()}
-                              className="mt-4 min-h-11 w-full rounded-xl bg-[color:var(--color-accent)] px-4 py-3 font-medium text-white"
+                              className="dresser-wood-btn mt-4"
                             >
                               Continue
                             </button>
@@ -284,24 +295,24 @@ export function DresserOnboarding({
 
                         {isOpen && id === 'profile' && step === 'profile' && (
                           <>
-                            <h2 id={titleId} className="font-serif text-lg font-semibold text-[color:var(--color-ink)]">
+                            <h2 id={titleId} className="dresser-carve">
                               Who eats from this book?
                             </h2>
-                            <p className="mt-1 text-sm text-[color:var(--color-ink-soft)]">
-                              Optional — plate goals and allergen flags.
-                            </p>
-                            <label className="mt-4 block text-sm" htmlFor="dresser-profile">
+                            <p className="dresser-carve-sub">Optional — plate goals and allergen flags.</p>
+                            <label className="dresser-slot-label" htmlFor="dresser-profile">
                               Name
                             </label>
-                            <input
-                              id="dresser-profile"
-                              type="text"
-                              maxLength={40}
-                              value={profileName}
-                              onChange={(e) => setProfileName(e.target.value)}
-                              placeholder="e.g. Ayesha"
-                              className="mt-1.5 min-h-11 w-full rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3.5 py-2.5"
-                            />
+                            <div className="dresser-slot">
+                              <input
+                                id="dresser-profile"
+                                type="text"
+                                autoFocus
+                                maxLength={40}
+                                value={profileName}
+                                onChange={(e) => setProfileName(e.target.value)}
+                                placeholder="e.g. Ayesha"
+                              />
+                            </div>
                             {profileError && (
                               <p className="mt-2 text-sm text-[color:var(--color-danger,#b33)]" role="alert">
                                 {profileError}
@@ -311,7 +322,7 @@ export function DresserOnboarding({
                               type="button"
                               disabled={busy || animating}
                               onClick={() => void createProfile()}
-                              className="mt-4 min-h-11 w-full rounded-xl bg-[color:var(--color-accent)] px-4 py-3 font-medium text-white"
+                              className="dresser-wood-btn mt-4"
                             >
                               Create profile
                             </button>
@@ -319,7 +330,7 @@ export function DresserOnboarding({
                               type="button"
                               disabled={animating}
                               onClick={skipProfile}
-                              className="mt-2 min-h-11 w-full text-sm text-[color:var(--color-ink-faint)]"
+                              className="dresser-skip mt-2"
                             >
                               Skip
                             </button>
@@ -328,7 +339,7 @@ export function DresserOnboarding({
 
                         {isOpen && id === 'mode' && step === 'mode' && (
                           <>
-                            <h2 id={titleId} className="font-serif text-lg font-semibold text-[color:var(--color-ink)]">
+                            <h2 id={titleId} className="dresser-carve">
                               How do you like to cook?
                             </h2>
                             <div className="mt-3 space-y-2">
@@ -338,10 +349,10 @@ export function DresserOnboarding({
                                   type="button"
                                   disabled={animating}
                                   onClick={() => pickMode(m.id)}
-                                  className="flex min-h-11 w-full flex-col rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3 py-2.5 text-left"
+                                  className="dresser-tag"
                                 >
-                                  <span className="font-medium text-[color:var(--color-ink)]">{m.label}</span>
-                                  <span className="text-xs text-[color:var(--color-ink-faint)]">{m.blurb}</span>
+                                  <span className="dresser-tag__label">{m.label}</span>
+                                  <span className="dresser-tag__blurb">{m.blurb}</span>
                                 </button>
                               ))}
                             </div>
@@ -349,13 +360,14 @@ export function DresserOnboarding({
                               type="button"
                               disabled={animating}
                               onClick={skipMode}
-                              className="mt-3 min-h-11 w-full text-sm text-[color:var(--color-ink-faint)]"
+                              className="dresser-skip mt-3"
                             >
                               Skip — open my book
                             </button>
                           </>
                         )}
                       </div>
+
                       <div className="dresser-drawer__front" aria-hidden>
                         <span className="dresser-handle" />
                       </div>

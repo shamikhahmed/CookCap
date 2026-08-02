@@ -43,12 +43,7 @@ export function OnboardingFlow({
     completeReveal,
   } = api;
 
-  useDialogA11y(
-    open,
-    () => setupLater(),
-    panelRef,
-    { initialFocus: step === 'name' || step === 'profile' ? 'first' : 'none' },
-  );
+  useDialogA11y(open, setupLater, panelRef, { initialFocus: 'none' });
 
   useEffect(() => {
     if (step === 'reveal') {
