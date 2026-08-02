@@ -88,7 +88,7 @@
 |--------|---------|----------|--------|-----------|
 | URL | `?recipe=<id>` | Opens recipe leaf; basePath `/CookCap/` | `BookController` hydrate | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | URL | `?for=Name` | Sets edition + persists owner | `edition.ts` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
-| Offline | SW shell | Navigate works offline after first load | `cookcap-v15` SW | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| Offline | SW shell | Navigate works offline after first load | `cookcap-v16` SW | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Recipe | No step photos | Method text + timers only; one hero | `RecipeLeaf` | **PASS** |
 | Recipes | Count + linkage | ≥500 honest; 0 dup ids; related resolve | `gate:recipes` → 956 | **PASS** |
 | Perf | WarmLeafPool | Neighbors `[-3,-2,-1,1,2,3,4]` mounted off-screen | `WarmLeafPool.tsx` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
