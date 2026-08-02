@@ -4,11 +4,13 @@ import { useCallback, useEffect, useRef, useState, type CSSProperties } from 're
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { CHAPTERS } from '@/lib/recipes/chapters';
 import { motionReduce, useDialogA11y } from '@/lib/a11y/dialog';
+import { useAppearance, type TabStyle } from '@/components/app/Appearance';
 import { useBook } from './BookController';
 
 /**
  * Fat cookbook edge + chapter tabs at real 3D depths —
  * some tabs sit above neighbors, some tuck under (z + shadow + peek).
+ * Style driven by Appearance `tabStyle` / data-tabs.
  */
 
 const TILT: Record<string, number> = {
@@ -39,12 +41,122 @@ const STICKER: Record<string, string> = {
   tips: 'Tips',
 };
 
-export function BookmarkRail() {
+function useChapterTabs() {
   const { index, goToChapter, locked, leaves, chapterStart, turning } = useBook();
-  const reduce = useReducedMotion();
   const currentLeaf = leaves[index];
   const activeChapter =
     currentLeaf && 'chapter' in currentLeaf ? currentLeaf.chapter : null;
+  const tabs = CHAPTERS.map((c, i) => {
+    const active = c.id === activeChapter;
+    const started = index >= (chapterStart[c.id] ?? Infinity);
+    return { c, active, started, i };
+  });
+  return { tabs, goToChapter, locked, turning, index, leaves, chapterStart };
+}
+
+/** Slim segmented control when data-tabs=top (desktop + tablet). */
+export function TopChapterBar() {
+  const { tabStyle } = useAppearance();
+  const { tabs, goToChapter, locked, turning } = useChapterTabs();
+  const [narrow, setNarrow] = useState(true);
+
+  useEffect(() => {
+    const phone = window.matchMedia('(max-width: 639px)');
+    const apply = () => setNarrow(phone.matches);
+    apply();
+    phone.addEventListener('change', apply);
+    return () => phone.removeEventListener('change', apply);
+  }, []);
+
+  if (tabStyle !== 'top' || narrow) return null;
+
+  return (
+    <nav aria-label="Chapters" className="chapter-top shrink-0 px-2 sm:px-0">
+      {tabs.map(({ c, active }) => (
+        <button
+          key={c.id}
+          type="button"
+          className="chapter-top__btn"
+          disabled={locked || turning}
+          aria-current={active ? 'page' : undefined}
+          onClick={() => goToChapter(c.id)}
+        >
+          {STICKER[c.id] ?? c.title}
+        </button>
+      ))}
+    </nav>
+  );
+}
+
+function SheetChips({
+  tabStyle,
+  onPick,
+}: {
+  tabStyle: TabStyle;
+  onPick: (id: string) => void;
+}) {
+  const { tabs, locked, turning } = useChapterTabs();
+
+  if (tabStyle === 'index' || tabStyle === 'top') {
+    return (
+      <div className="flex flex-col">
+        {tabs.map(({ c, active }) => (
+          <button
+            key={c.id}
+            type="button"
+            disabled={locked || turning}
+            aria-current={active ? 'page' : undefined}
+            onClick={() => onPick(c.id)}
+            className="chapter-index__row disabled:opacity-40"
+            style={{ '--sticker': c.tab } as CSSProperties}
+          >
+            <span className="chapter-index__dot" aria-hidden />
+            <span>
+              {STICKER[c.id] ?? c.title}
+              <span className="mt-0.5 block text-[0.65rem] font-sans font-normal tracking-normal text-[color:var(--color-ink-faint)]">
+                {c.subtitle}
+              </span>
+            </span>
+          </button>
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <>
+      {tabs.map(({ c, active }) => (
+        <button
+          key={c.id}
+          type="button"
+          disabled={locked || turning}
+          aria-current={active ? 'page' : undefined}
+          onClick={() => onPick(c.id)}
+          className="sticker-chip text-left disabled:opacity-40"
+          style={
+            {
+              '--sticker': c.tab,
+              transform: `rotate(${TILT[c.id] ?? 0}deg)`,
+              outline: active
+                ? '2px solid color-mix(in srgb, var(--color-ink) 35%, transparent)'
+                : undefined,
+            } as CSSProperties
+          }
+        >
+          <span className="font-serif text-sm font-semibold text-white">
+            {STICKER[c.id] ?? c.title}
+          </span>
+          <span className="mt-0.5 block text-[0.65rem] text-white/80">{c.subtitle}</span>
+        </button>
+      ))}
+    </>
+  );
+}
+
+export function BookmarkRail() {
+  const { tabStyle } = useAppearance();
+  const { tabs, goToChapter, locked, turning, index, leaves, chapterStart } = useChapterTabs();
+  const reduce = useReducedMotion();
   const [sheetOpen, setSheetOpen] = useState(false);
   const [narrow, setNarrow] = useState(false);
   const [tablet, setTablet] = useState(false);
@@ -74,12 +186,6 @@ export function BookmarkRail() {
     window.addEventListener('cookcap-open-chapters', open);
     return () => window.removeEventListener('cookcap-open-chapters', open);
   }, []);
-
-  const tabs = CHAPTERS.map((c, i) => {
-    const active = c.id === activeChapter;
-    const started = index >= (chapterStart[c.id] ?? Infinity);
-    return { c, active, started, i };
-  });
 
   if (narrow) {
     return (
@@ -118,33 +224,13 @@ export function BookmarkRail() {
               <p className="mb-3 text-xs leading-relaxed text-[color:var(--color-ink-faint)]">
                 Tap a flag — pages flip toward that chapter.
               </p>
-              {tabs.map(({ c, active }) => (
-                <button
-                  key={c.id}
-                  type="button"
-                  disabled={locked || turning}
-                  aria-current={active ? 'page' : undefined}
-                  onClick={() => {
-                    goToChapter(c.id);
-                    closeSheet();
-                  }}
-                  className="sticker-chip text-left disabled:opacity-40"
-                  style={
-                    {
-                      '--sticker': c.tab,
-                      transform: `rotate(${TILT[c.id] ?? 0}deg)`,
-                      outline: active
-                        ? '2px solid color-mix(in srgb, var(--color-ink) 35%, transparent)'
-                        : undefined,
-                    } as CSSProperties
-                  }
-                >
-                  <span className="font-serif text-sm font-semibold text-white">
-                    {STICKER[c.id] ?? c.title}
-                  </span>
-                  <span className="mt-0.5 block text-[0.65rem] text-white/80">{c.subtitle}</span>
-                </button>
-              ))}
+              <SheetChips
+                tabStyle={tabStyle}
+                onPick={(id) => {
+                  goToChapter(id);
+                  closeSheet();
+                }}
+              />
             </motion.nav>
           </motion.div>
         )}
@@ -152,15 +238,49 @@ export function BookmarkRail() {
     );
   }
 
+  // Top style: rail hidden (CSS + skip render)
+  if (tabStyle === 'top') return null;
+
   const n = tabs.length;
-  // Reading position, 0 (cover) → 1 (last leaf). Tabs sit at different depths
-  // relative to where you are: the chapter you're reading extrudes; chapters
-  // already read recess into the read block; chapters ahead tuck deeper into
-  // the remaining stack. The fore-edge itself thins as fewer pages remain.
   const total = Math.max(leaves.length - 1, 1);
   const cur = index / total;
-  const edgeW = (2.9 + (1 - cur) * 3.4).toFixed(2); // rem — thick at start, thin near the end
+  const edgeW = (2.9 + (1 - cur) * 3.4).toFixed(2);
   const spring = reduce ? { duration: 0 } : { type: 'spring' as const, stiffness: 380, damping: 28 };
+  const depthOn = tabStyle === 'cloth' || tabStyle === 'pills';
+
+  if (tabStyle === 'index') {
+    return (
+      <aside
+        className={`book-edge pointer-events-none${tablet ? ' book-edge--tablet' : ''}`}
+        style={{ '--edge-w': '0.55rem' } as CSSProperties}
+      >
+        <div className="book-edge__block" aria-hidden>
+          <div className="book-edge__pages" />
+          <div className="book-edge__shade" />
+          <div className="book-edge__lip" />
+          <div className="book-edge__bevel" />
+        </div>
+        <nav aria-label="Chapter index" className="chapter-index pointer-events-auto">
+          {tabs.map(({ c, active }) => (
+            <button
+              key={c.id}
+              type="button"
+              disabled={locked || turning}
+              aria-current={active ? 'page' : undefined}
+              title={`${c.title} — ${c.subtitle}`}
+              onClick={() => goToChapter(c.id)}
+              onPointerDown={(e) => e.stopPropagation()}
+              className="chapter-index__row disabled:opacity-40"
+              style={{ '--sticker': c.tab } as CSSProperties}
+            >
+              <span className="chapter-index__dot" aria-hidden />
+              {STICKER[c.id] ?? c.title}
+            </button>
+          ))}
+        </nav>
+      </aside>
+    );
+  }
 
   return (
     <aside
@@ -177,22 +297,27 @@ export function BookmarkRail() {
 
       <nav aria-label="Chapter stickers" className="book-edge__tabs" style={{ perspective: 600 }}>
         {tabs.map(({ c, active, i }) => {
-          const tilt = TILT[c.id] ?? 0;
+          const tilt = depthOn ? (TILT[c.id] ?? 0) : 0;
           const label = STICKER[c.id] ?? c.title;
           const startI = chapterStart[c.id] ?? 0;
-          const p = startI / total; // where this chapter begins in the block
-          const ahead = p >= cur - 0.001; // upcoming vs already read
+          const p = startI / total;
+          const ahead = p >= cur - 0.001;
           const dist = Math.min(1, Math.abs(p - cur) * 1.5);
-          const near = 1 - dist; // 1 = right at the current reading depth
+          const near = 1 - dist;
 
           const topPct = 2.2 + (i / Math.max(n - 1, 1)) * 84;
-          // Deeper chapters tuck further into the block; read chapters sit shallow.
-          const tuck = ahead ? 6 + dist * 30 : 3 + dist * 12;
-          // Extrusion: active pokes out most; nearer-to-now chapters poke out more.
-          const out = active ? 78 : (ahead ? 16 : 8) + near * 42;
+          // Cloth/pills: even left edge (no jagged marginLeft); depth via x spring only.
+          const tuck = 0;
+              const out = depthOn
+            ? active
+              ? 72
+              : (ahead ? 14 : 6) + near * 38
+            : active
+              ? 64
+              : 40;
           const elev = active ? 3 : near > 0.66 ? 2 : near > 0.33 ? 1 : 0;
           const z = active ? 60 : 12 + Math.round(near * 26) + (ahead ? 3 : 0);
-          const yLift = active ? -6 : -(elev * 2);
+          const yLift = depthOn ? (active ? -6 : -(elev * 2)) : 0;
           const op = active ? 1 : ahead ? 0.95 : 0.78;
 
           return (

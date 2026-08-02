@@ -66,13 +66,16 @@ export const viewport: Viewport = {
   viewportFit: 'cover',
 };
 
-const themeInit = `(function(){try{var t=localStorage.getItem('cookcap-theme')||localStorage.getItem('jia-theme')||localStorage.getItem('grimoire-theme');if(t&&t!=='system')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`;
+const themeInit = `(function(){try{var d=document.documentElement;var t=localStorage.getItem('cookcap-theme')||localStorage.getItem('jia-theme')||localStorage.getItem('grimoire-theme');if(t&&t!=='system')d.setAttribute('data-theme',t);var s=localStorage.getItem('cookcap-skin')||'editorial';d.setAttribute('data-skin',s);var tabs=localStorage.getItem('cookcap-tabs')||'cloth';d.setAttribute('data-tabs',tabs);var r=localStorage.getItem('cookcap-readmode')||'flip';d.setAttribute('data-readmode',r);}catch(e){}})();`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
       className={`${fraunces.variable} ${inter.variable} ${caveat.variable}`}
+      data-skin="editorial"
+      data-tabs="cloth"
+      data-readmode="flip"
       suppressHydrationWarning
     >
       <head>

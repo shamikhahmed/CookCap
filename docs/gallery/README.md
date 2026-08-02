@@ -1,25 +1,30 @@
 # CookCap — Screen gallery
 
-Version **2.0.0**. Regen: `GALLERY_URL=http://localhost:3456 npm run gallery` (static `out/` preferred).
+Version **2.2.0**. Regen: `GALLERY_URL=http://127.0.0.1:3456 npm run gallery` (static `out/` preferred).
 
 ## Desktop (1440×900)
 
 | # | Screen | File |
 |---|--------|------|
-| 00–12 | Core book + tabs | `desktop/00`…`12` |
-| 13 | Mode chooser | [desktop/13-mode-chooser.png](./desktop/13-mode-chooser.png) |
-| 14 | Profiles | [desktop/14-profiles.png](./desktop/14-profiles.png) |
-| 15 | Calendar | [desktop/15-calendar.png](./desktop/15-calendar.png) |
-| 16 | Pantry & budget | [desktop/16-pantry.png](./desktop/16-pantry.png) |
-| 17 | Recipe (My Plate) | [desktop/17-recipe-plate.png](./desktop/17-recipe-plate.png) |
+| 00 | Welcome value | `desktop/00-welcome.png` |
+| 00b | Name gate | `desktop/00b-name-gate.png` |
+| 01–12 | Core book + tabs | `desktop/01`…`12` |
+| 13–17 | Modes / profiles / calendar / pantry / plate | `desktop/13`…`17` |
+
+## Appearance matrix
+
+`desktop/appearance/{skin}-{tabs}-cover.png` + `panel.png`  
+Skins: editorial · candlelit · lightbook · modern  
+Tabs: cloth · index · top · pills
 
 ## Mobile (390×844)
 
-Same set under `mobile/`.
+Same under `mobile/`.
 
 ## Regen
 
 ```bash
-npm run build && npx serve out -l 3456
-GALLERY_URL=http://localhost:3456 npm run gallery
+npm run build && python3 -m http.server 3456 --directory out
+GALLERY_URL=http://127.0.0.1:3456 npm run gallery
+# or device-only: GALLERY_DEVICE=desktop|mobile
 ```

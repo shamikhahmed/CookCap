@@ -1,5 +1,28 @@
 # Changelog
 
+## 2.2.0 — 2026-08-02
+
+### Final ship (punch list + system screens)
+- **Cloth tabs** — `width:auto` so labels (“Pakistani”…) no longer clip; origin nudged
+- **Linen cover** — light skins (Editorial / Light Book / Modern-light) use cream cover, not muddy leather
+- **Splash** — quiet CookCap mark until store ready (~real load + 280ms polish)
+- **Welcome** — NameGate step 0: living family cookbook value prop before name
+- **About & data** — ··· → About: version, privacy, licenses, export JSON, delete-all (confirm)
+- **IA** — ··· ordered identity → tools → sound → About last; Appearance stays top-bar
+- Docs: `AUDIT.md`, `IA-RATIONALE.md`, `QA-MATRIX.md`, `PERF.md`; SW → `cookcap-v6`
+
+## 2.1.0 — 2026-08-02
+
+### Appearance system (beautify plan)
+- **Skins** — Editorial Cream (default), Candlelit, Light Book, Modern via `data-skin` CSS tokens
+- **Chapter tabs** — Cloth (default), Side Index, Top Segmented, Classic Pills via `data-tabs`
+- **Reading mode** — Flip (default) vs Fast chapter/recipe jumps
+- **Appearance panel** — palette button → live skin/tabs/read; persists `cookcap-skin|tabs|readmode`
+- **Brand hierarchy** — header `CookCap` + `— {NAME}'S KITCHEN`; cover personal title + tiny CookCap foil; never "Family Cooks"
+- **Desktop grounding** — taller book (`clamp(560–820)`), lamp pool, contact shadow, ultrawide cap 1400px
+- **First-run** — book paints first, then warm welcome card over blurred desk
+- SW → `cookcap-v5`; gallery appearance matrix `{skin}-{tabs}-cover.png`
+
 ## 2.0.1 — 2026-08-02
 
 ### Honesty + audit

@@ -38,7 +38,8 @@ export type IconName =
   | 'book'
   | 'bookmark'
   | 'sun-toggle'
-  | 'moon-toggle';
+  | 'moon-toggle'
+  | 'palette';
 
 const P: Record<IconName, string> = {
   sunrise: 'M3 18h18M6 18a6 6 0 0 1 12 0M12 3v3M5 9l2 1M19 9l-2 1',
@@ -75,6 +76,8 @@ const P: Record<IconName, string> = {
   bookmark: 'M7 3h10v18l-5-4-5 4V3Z',
   'sun-toggle': 'M12 4v2M12 18v2M4 12h2M18 12h2M6 6l1.5 1.5M18 6l-1.5 1.5M6 18l1.5-1.5M18 18l-1.5-1.5M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z',
   'moon-toggle': 'M20 14.5A8 8 0 0 1 9.5 4 7 7 0 1 0 20 14.5Z',
+  palette:
+    'M12 3a9 9 0 0 0 0 18c.8 0 1.2-.5 1.2-1.1 0-.4-.2-.8-.4-1.1-.3-.4-.5-.9-.5-1.4A2.4 2.4 0 0 1 14.7 15H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8ZM7.5 11.5a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4ZM10 7.8a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4ZM14 7.8a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4ZM16.5 11.5a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z',
 };
 
 const FILLED: Partial<Record<IconName, boolean>> = {

@@ -658,7 +658,7 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
             onClick={async () => {
               const params = new URLSearchParams();
               params.set('recipe', recipe.id);
-              params.set('for', edition.ownerName);
+              if (edition.named && edition.ownerName) params.set('for', edition.ownerName);
               const url = `${window.location.origin}${window.location.pathname}?${params}`;
               try {
                 if (navigator.share) {

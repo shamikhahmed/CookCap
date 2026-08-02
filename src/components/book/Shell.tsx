@@ -12,14 +12,22 @@ import { ImportModal } from '@/components/app/ImportModal';
 import { InstallBanner } from '@/components/app/InstallBanner';
 import { AssetPreloader } from '@/components/app/AssetPreloader';
 import { NameGate } from '@/components/app/NameGate';
+import { Splash } from '@/components/app/Splash';
+import { AboutModal } from '@/components/app/AboutModal';
 import { useApp } from '@/components/app/AppStore';
+import {
+  AppearanceButton,
+  skinSupportsThemeToggle,
+  useAppearance,
+} from '@/components/app/Appearance';
 import { ProfilesDrawer } from '@/components/profiles/ProfilesDrawer';
 import { ModeChooser } from '@/components/profiles/ModeChooser';
 import { CalendarDrawer } from '@/components/profiles/CalendarDrawer';
 import { PantryDrawer } from '@/components/profiles/PantryDrawer';
 import { Icon } from '@/components/ui/Icon';
-import { PRODUCT_NAME } from '@/lib/edition';
+import { PRODUCT_NAME, kitchenLine } from '@/lib/edition';
 import { getMode } from '@/lib/modes/registry';
+import { TopChapterBar } from './BookmarkRail';
 
 /**
  * Application frame — Claude chrome: slim top bar, book + ribbon rail,
@@ -45,6 +53,18 @@ function Frame() {
   const [modeOpen, setModeOpen] = useState(false);
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [pantryOpen, setPantryOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  /** First-run: book paints first, then warm welcome card. */
+  const [welcomeReady, setWelcomeReady] = useState(false);
+
+  useEffect(() => {
+    if (!needsName) {
+      setWelcomeReady(false);
+      return;
+    }
+    const t = window.setTimeout(() => setWelcomeReady(true), 480);
+    return () => window.clearTimeout(t);
+  }, [needsName]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -71,12 +91,14 @@ function Frame() {
         onMode={() => setModeOpen(true)}
         onCalendar={() => setCalendarOpen(true)}
         onPantry={() => setPantryOpen(true)}
+        onAbout={() => setAboutOpen(true)}
       />
 
-      <main className="journal-stage relative flex min-h-0 flex-1 items-center justify-center overflow-hidden px-0 pt-0 sm:overflow-visible sm:px-6 sm:pr-36 sm:pt-1 md:pr-40 lg:pr-48">
-        <div className="book-stage relative mx-auto flex h-full min-h-0 w-full max-w-full items-center justify-center sm:max-w-[min(720px,calc(100%-9rem))] sm:py-2">
-          {/* Phone: full-bleed page (Apple Books). Desktop: aspect-locked hardcover. */}
-          <div className="book-frame relative h-full w-full min-w-0 sm:aspect-[5/7] sm:h-[min(100%,calc(100dvh-7.5rem))] sm:w-auto sm:max-w-full">
+      <main className="journal-stage relative flex min-h-0 flex-1 flex-col items-center justify-center overflow-hidden px-0 pt-0 sm:overflow-visible sm:px-6 sm:pr-44 sm:pt-1 md:pr-48 lg:pr-56">
+        <TopChapterBar />
+        <div className="book-stage relative mx-auto flex min-h-0 w-full max-w-full flex-1 items-center justify-center sm:max-w-[min(720px,calc(100%-9rem))] sm:py-2">
+          {/* Phone: full-bleed page. Desktop: grounded hardcover, height-clamped. */}
+          <div className="book-frame relative h-full w-full min-w-0 sm:aspect-[5/7] sm:h-[clamp(560px,82vh,820px)] sm:max-h-[calc(100dvh-7.5rem)] sm:w-auto sm:max-w-full">
             <Book />
           </div>
         </div>
@@ -102,10 +124,12 @@ function Frame() {
       <ModeChooser open={modeOpen} onClose={() => setModeOpen(false)} />
       <CalendarDrawer open={calendarOpen} onClose={() => setCalendarOpen(false)} />
       <PantryDrawer open={pantryOpen} onClose={() => setPantryOpen(false)} />
+      <AboutModal open={aboutOpen} onClose={() => setAboutOpen(false)} />
       <InstallBanner />
       <AssetPreloader />
+      <Splash />
       <NameGate
-        open={needsName || renameOpen}
+        open={(needsName && welcomeReady) || renameOpen}
         dismissible={renameOpen && !needsName}
         onDismiss={() => setRenameOpen(false)}
         onSubmit={(name) => {
@@ -128,6 +152,7 @@ function TopBar({
   onMode,
   onCalendar,
   onPantry,
+  onAbout,
 }: {
   onSearch: () => void;
   onFavorites: () => void;
@@ -139,6 +164,7 @@ function TopBar({
   onMode: () => void;
   onCalendar: () => void;
   onPantry: () => void;
+  onAbout: () => void;
 }) {
   const {
     theme,
@@ -150,7 +176,10 @@ function TopBar({
     mode,
     activeProfile,
   } = useApp();
+  const { skin } = useAppearance();
   const dark = theme === 'dark';
+  const showThemeToggle = skinSupportsThemeToggle(skin);
+  const kitchen = kitchenLine(edition);
   const reduce = useReducedMotion();
   const [more, setMore] = useState(false);
   const moreRef = useRef<HTMLDivElement>(null);
@@ -174,12 +203,14 @@ function TopBar({
           <span className="block truncate font-serif text-base font-semibold italic tracking-tight sm:text-lg">
             {PRODUCT_NAME}
           </span>
-          <span
-            suppressHydrationWarning
-            className="block truncate text-[9px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)] sm:text-[10px] sm:tracking-[0.2em]"
-          >
-            {edition.bookTitle}
-          </span>
+          {kitchen && (
+            <span
+              suppressHydrationWarning
+              className="block truncate text-[9px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)] sm:text-[10px] sm:tracking-[0.2em]"
+            >
+              {kitchen}
+            </span>
+          )}
         </div>
       </div>
       <div className="flex shrink-0 items-center gap-0.5 sm:gap-1">
@@ -214,16 +245,19 @@ function TopBar({
         <IconBtn label="Search recipes" onClick={onSearch}>
           <Icon name="search" size={20} />
         </IconBtn>
+        <AppearanceButton />
         <span className="hidden sm:contents">
           <IconBtn label="Favorites and history" onClick={onFavorites}>
             <Icon name="bookmark" size={20} />
           </IconBtn>
-          <IconBtn
-            label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
-            onClick={() => setTheme(dark ? 'light' : 'dark')}
-          >
-            <Icon name={dark ? 'sun-toggle' : 'moon-toggle'} size={20} />
-          </IconBtn>
+          {showThemeToggle && (
+            <IconBtn
+              label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
+              onClick={() => setTheme(dark ? 'light' : 'dark')}
+            >
+              <Icon name={dark ? 'sun-toggle' : 'moon-toggle'} size={20} />
+            </IconBtn>
+          )}
         </span>
 
         <div className="relative" ref={moreRef}>
@@ -249,18 +283,34 @@ function TopBar({
                       setMore(false);
                     }}
                   />
-                  <MenuItem
-                    label={dark ? 'Light mode' : 'Dark mode'}
-                    onClick={() => {
-                      setTheme(dark ? 'light' : 'dark');
-                      setMore(false);
-                    }}
-                  />
+                  {showThemeToggle && (
+                    <MenuItem
+                      label={dark ? 'Light mode' : 'Dark mode'}
+                      onClick={() => {
+                        setTheme(dark ? 'light' : 'dark');
+                        setMore(false);
+                      }}
+                    />
+                  )}
                 </span>
                 <MenuItem
-                  label={soundOn ? 'Mute page sound' : 'Page sound on'}
+                  label="Change book name"
                   onClick={() => {
-                    setSoundOn(!soundOn);
+                    onRename();
+                    setMore(false);
+                  }}
+                />
+                <MenuItem
+                  label="Profiles"
+                  onClick={() => {
+                    onProfiles();
+                    setMore(false);
+                  }}
+                />
+                <MenuItem
+                  label="Mode"
+                  onClick={() => {
+                    onMode();
                     setMore(false);
                   }}
                 />
@@ -277,20 +327,6 @@ function TopBar({
                   label="This week’s meals"
                   onClick={() => {
                     onPlan();
-                    setMore(false);
-                  }}
-                />
-                <MenuItem
-                  label="Profiles"
-                  onClick={() => {
-                    onProfiles();
-                    setMore(false);
-                  }}
-                />
-                <MenuItem
-                  label="Mode"
-                  onClick={() => {
-                    onMode();
                     setMore(false);
                   }}
                 />
@@ -321,9 +357,16 @@ function TopBar({
                   }}
                 />
                 <MenuItem
-                  label="Change book name"
+                  label={soundOn ? 'Mute page sound' : 'Page sound on'}
                   onClick={() => {
-                    onRename();
+                    setSoundOn(!soundOn);
+                    setMore(false);
+                  }}
+                />
+                <MenuItem
+                  label="About & data"
+                  onClick={() => {
+                    onAbout();
                     setMore(false);
                   }}
                 />
@@ -378,8 +421,8 @@ function BottomBar() {
         className="min-w-12 text-center text-[11px] tabular-nums text-[color:var(--color-ink-faint)] sm:min-w-14 sm:text-xs"
         title={
           extras > 0
-            ? `Includes ${extras} imported custom recipes (this device only)`
-            : 'Page in this edition of the book'
+            ? `This edition: ${total} pages (includes ${extras} imported recipe${extras === 1 ? '' : 's'} on this device). Modes that add a For You leaf also change the total.`
+            : 'Page in this edition of the book. Total can grow with imported recipes or a For You leaf.'
         }
         aria-live="polite"
       >

@@ -11,12 +11,13 @@ import {
   type ReactNode,
 } from 'react';
 import { useApp } from '@/components/app/AppStore';
+import { useAppearance } from '@/components/app/Appearance';
 import { leafOfRecipe, type Leaf } from '@/lib/book/pages';
 import { playPageFlip } from '@/lib/sound/flip';
 
 /**
  * Reader position. Single-page steps; chapter jumps can flip 1–2 pages
- * toward the target so stickers feel like real book tabs.
+ * toward the target so stickers feel like real book tabs (unless readMode=fast).
  */
 
 interface BookState {
@@ -46,6 +47,7 @@ const POS_KEY = 'cookcap-pos';
 
 export function BookController({ children }: { children: ReactNode }) {
   const { leaves, chapterStart, soundOn } = useApp();
+  const { readMode } = useAppearance();
   const step = 1;
 
   const [index, setIndex] = useState(0);
@@ -151,9 +153,16 @@ export function BookController({ children }: { children: ReactNode }) {
 
       if (hopTimer.current) clearTimeout(hopTimer.current);
 
+      // Fast mode: cut instantly; neighbor flips still animate elsewhere.
+      if (readMode === 'fast') {
+        setAnimateJump(false);
+        setIndex(target);
+        playPageFlip(!soundOn);
+        return;
+      }
+
       const delta = target - from;
       const sign = delta > 0 ? 1 : -1;
-      // Far hop: flip 1–2 pages toward chapter, then land with a curl.
       const hops = Math.abs(delta) > 10 ? 2 : Math.abs(delta) > 1 ? 1 : 0;
 
       playPageFlip(!soundOn);
@@ -169,7 +178,6 @@ export function BookController({ children }: { children: ReactNode }) {
         return;
       }
 
-      // Two-beat flip: mid page, then destination.
       const mid = clamp(from + sign * Math.min(3, Math.abs(delta) - 1));
       setIndex(mid);
       hopTimer.current = setTimeout(() => {
@@ -179,7 +187,7 @@ export function BookController({ children }: { children: ReactNode }) {
         setIndex(target);
       }, 520);
     },
-    [chapterStart, clamp, soundOn],
+    [chapterStart, clamp, soundOn, readMode],
   );
 
   const goToRecipe = useCallback(
@@ -191,13 +199,18 @@ export function BookController({ children }: { children: ReactNode }) {
         const target = clamp(t);
         const from = indexRef.current;
         setTurning(false);
-        // Short recipe hops get a curl; long ones stay snappy.
+        if (readMode === 'fast') {
+          setAnimateJump(false);
+          setIndex(target);
+          if (Math.abs(target - from) > 0) playPageFlip(!soundOn);
+          return;
+        }
         setAnimateJump(Math.abs(target - from) > 0 && Math.abs(target - from) <= 4);
         setIndex(target);
         if (Math.abs(target - from) > 0) playPageFlip(!soundOn);
       }
     },
-    [leaves, clamp, setTurning, soundOn],
+    [leaves, clamp, setTurning, soundOn, readMode],
   );
 
   const value = useMemo<BookState>(

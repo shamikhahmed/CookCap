@@ -7,9 +7,11 @@ import { useApp } from '@/components/app/AppStore';
  */
 export function TitleLeaf() {
   const { edition } = useApp();
-  const parts = edition.bookTitle.split(/\s+/);
-  const nameLine = parts.slice(0, -1).join(' ') || edition.ownerName;
-  const cooksLine = parts[parts.length - 1] || 'Cooks';
+  const nameLine = edition.coverLine1;
+  const cooksLine = edition.coverLine2;
+  const loveLine = edition.named
+    ? `— with love, ${edition.ownerName}`
+    : '— with love, from our kitchen';
 
   return (
     <div
@@ -27,7 +29,7 @@ export function TitleLeaf() {
           {edition.coverEyebrow}
         </p>
         <h1
-          className="font-serif text-[clamp(3rem,12vw,5.5rem)] font-black italic leading-[0.9] tracking-tight text-[color:var(--color-ink)]"
+          className="text-balance font-serif text-[clamp(3rem,12vw,5.5rem)] font-black italic leading-[0.9] tracking-tight text-[color:var(--color-ink)]"
           suppressHydrationWarning
         >
           {nameLine}
@@ -48,7 +50,7 @@ export function TitleLeaf() {
           className="mt-6 font-serif text-base text-[color:var(--color-ink-faint)]"
           suppressHydrationWarning
         >
-          — with love, {edition.ownerName}
+          {loveLine}
         </p>
       </div>
     </div>

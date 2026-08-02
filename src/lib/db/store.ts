@@ -232,3 +232,41 @@ export async function putPantry(item: PantryItem): Promise<void> {
 export async function deletePantry(id: string): Promise<void> {
   await (await db()).delete('pantry', id);
 }
+
+/** Wipe every user store (export/delete in About). Does not delete the DB schema. */
+export async function clearAllUserData(): Promise<void> {
+  const d = await db();
+  const stores = [
+    'favorites',
+    'history',
+    'notes',
+    'ratings',
+    'collections',
+    'shopping',
+    'customs',
+    'profiles',
+    'diary',
+    'pantry',
+    'meta',
+  ] as const;
+  const tx = d.transaction(stores as unknown as Array<(typeof stores)[number]>, 'readwrite');
+  await Promise.all(stores.map((name) => tx.objectStore(name).clear()));
+  await tx.done;
+}
+
+/** Snapshot for JSON export. */
+export async function exportUserSnapshot() {
+  const d = await db();
+  return {
+    favorites: await d.getAll('favorites'),
+    history: await d.getAll('history'),
+    notes: await d.getAll('notes'),
+    ratings: await d.getAll('ratings'),
+    collections: await d.getAll('collections'),
+    shopping: await d.getAll('shopping'),
+    customs: await d.getAll('customs'),
+    profiles: await d.getAll('profiles'),
+    diary: await d.getAll('diary'),
+    pantry: await d.getAll('pantry'),
+  };
+}

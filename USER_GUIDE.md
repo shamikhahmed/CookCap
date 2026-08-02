@@ -22,6 +22,14 @@ https://shamikhahmed.github.io/CookCap/
 
 Log from a recipe with **Log this**. Calendar shows planned vs eaten. Pantry matches what you can cook now.
 
+## Appearance
+
+Palette icon in the top bar → **Theme** (Editorial Cream default, Candlelit, Light Book, Modern), **Chapter tabs** (Cloth default, Side Index, Top Segmented, Classic Pills), **Reading** (Flip / Fast). Choices save on this device.
+
+## About & data
+
+··· → **About & data** — version, privacy (“stays on your device”), export JSON, delete all local data (confirm).
+
 ## Honesty
 
 Macros and costs are **estimates** unless marked verified. Health modes are **not medical advice**.

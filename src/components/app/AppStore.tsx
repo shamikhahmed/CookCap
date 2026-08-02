@@ -16,6 +16,7 @@ import {
   writeStoredOwner,
   type Edition,
 } from '@/lib/edition';
+import { AppearanceProvider } from '@/components/app/Appearance';
 import { buildLeaves, type Leaf } from '@/lib/book/pages';
 import type { Recipe } from '@/lib/recipes/types';
 import type {
@@ -434,7 +435,11 @@ export function AppStore({ children }: { children: ReactNode }) {
     ],
   );
 
-  return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
+  return (
+    <AppearanceProvider>
+      <Ctx.Provider value={value}>{children}</Ctx.Provider>
+    </AppearanceProvider>
+  );
 }
 
 export function useApp(): AppState {

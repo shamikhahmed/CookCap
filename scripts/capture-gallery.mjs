@@ -8,7 +8,7 @@
 import { chromium } from 'playwright';
 import { mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, 'docs', 'gallery');
@@ -78,9 +78,16 @@ async function captureSet(page, folder) {
     localStorage.setItem('cookcap-theme', 'light');
   });
   await page.reload({ waitUntil: 'domcontentloaded' });
-  await page.getByLabel('Your name').waitFor({ state: 'visible', timeout: 15000 });
+  await page.getByRole('heading', { name: /living family cookbook/i }).waitFor({
+    state: 'visible',
+    timeout: 15000,
+  });
   await settle(page, 400);
-  await shot(page, `${folder}/00-name-gate.png`);
+  await shot(page, `${folder}/00-welcome.png`);
+  await page.getByRole('button', { name: 'Begin', exact: true }).click();
+  await page.getByLabel('Your name').waitFor({ state: 'visible', timeout: 8000 });
+  await settle(page, 350);
+  await shot(page, `${folder}/00b-name-gate.png`);
   await page.getByLabel('Your name').fill('Jia');
   await page.getByRole('button', { name: 'Continue' }).click();
   await page.getByRole('heading', { name: /Who eats/i }).waitFor({ state: 'visible', timeout: 8000 });
@@ -245,13 +252,67 @@ async function captureSet(page, folder) {
   await shot(page, `${folder}/17-recipe-plate.png`);
 }
 
+async function captureAppearanceMatrix(page, folder) {
+  const skins = ['editorial', 'candlelit', 'lightbook', 'modern'];
+  const tabStyles = ['cloth', 'index', 'top', 'pills'];
+  mkdirSync(join(OUT, folder, 'appearance'), { recursive: true });
+
+  for (const skin of skins) {
+    for (const tabs of tabStyles) {
+      await page.goto(BASE, { waitUntil: 'domcontentloaded', timeout: 60000 });
+      await page.evaluate(
+        ({ skin, tabs }) => {
+          localStorage.clear();
+          localStorage.setItem('cookcap-skin', skin);
+          localStorage.setItem('cookcap-tabs', tabs);
+          localStorage.setItem('cookcap-readmode', 'flip');
+          localStorage.setItem('cookcap-theme', 'light');
+          localStorage.setItem('cookcap-owner', 'Jia');
+          localStorage.setItem('cookcap-pos', '0');
+          document.documentElement.setAttribute('data-skin', skin);
+          document.documentElement.setAttribute('data-tabs', tabs);
+          document.documentElement.setAttribute('data-readmode', 'flip');
+          document.documentElement.setAttribute('data-theme', 'light');
+        },
+        { skin, tabs },
+      );
+      await page.goto(`${BASE}/?for=Jia`, { waitUntil: 'domcontentloaded', timeout: 60000 });
+      await waitFooterReady(page, 60000);
+      await settle(page, 600);
+      await shot(page, `${folder}/appearance/${skin}-${tabs}-cover.png`);
+    }
+  }
+
+  // Appearance panel open (editorial + cloth)
+  await page.goto(BASE, { waitUntil: 'domcontentloaded' });
+  await page.evaluate(() => {
+    localStorage.clear();
+    localStorage.setItem('cookcap-skin', 'editorial');
+    localStorage.setItem('cookcap-tabs', 'cloth');
+    localStorage.setItem('cookcap-readmode', 'flip');
+    localStorage.setItem('cookcap-theme', 'light');
+    localStorage.setItem('cookcap-owner', 'Jia');
+    document.documentElement.setAttribute('data-skin', 'editorial');
+    document.documentElement.setAttribute('data-tabs', 'cloth');
+    document.documentElement.setAttribute('data-theme', 'light');
+  });
+  await page.goto(`${BASE}/?for=Jia`, { waitUntil: 'domcontentloaded' });
+  await waitFooterReady(page, 60000);
+  await page.getByRole('button', { name: 'Appearance' }).click();
+  await page.getByRole('heading', { name: 'Appearance' }).waitFor({ state: 'visible', timeout: 8000 });
+  await settle(page, 400);
+  await shot(page, `${folder}/appearance/panel.png`);
+  await page.keyboard.press('Escape');
+}
+
 async function main() {
   console.log(`Gallery → ${OUT}`);
   console.log(`Base URL ${BASE} · recipe ${RECIPE}`);
 
+  const only = (process.env.GALLERY_DEVICE || 'all').toLowerCase();
   const browser = await chromium.launch({ headless: true });
 
-  {
+  if (only === 'all' || only === 'desktop') {
     const context = await browser.newContext({
       viewport: { width: 1440, height: 900 },
       deviceScaleFactor: 1,
@@ -261,10 +322,12 @@ async function main() {
     const page = await context.newPage();
     console.log('Desktop…');
     await captureSet(page, 'desktop');
+    console.log('Desktop appearance matrix…');
+    await captureAppearanceMatrix(page, 'desktop');
     await context.close();
   }
 
-  {
+  if (only === 'all' || only === 'mobile') {
     const context = await browser.newContext({
       viewport: { width: 390, height: 844 },
       deviceScaleFactor: 2,
@@ -276,6 +339,8 @@ async function main() {
     const page = await context.newPage();
     console.log('Mobile…');
     await captureSet(page, 'mobile');
+    console.log('Mobile appearance matrix…');
+    await captureAppearanceMatrix(page, 'mobile');
     await context.close();
   }
 
@@ -283,7 +348,12 @@ async function main() {
   console.log('Done.');
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+const isMain =
+  !!process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+
+if (isMain) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}

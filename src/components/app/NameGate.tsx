@@ -5,10 +5,11 @@ import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { useApp } from '@/components/app/AppStore';
 import { useDialogA11y } from '@/lib/a11y/dialog';
 import { PRODUCT_NAME, sanitizeOwnerName } from '@/lib/edition';
+import { PRODUCT_TAGLINE } from '@/lib/version';
 import { makeProfile } from '@/lib/profiles/types';
 import type { ModeId } from '@/lib/profiles/types';
 
-type Step = 'name' | 'profile' | 'mode';
+type Step = 'welcome' | 'name' | 'profile' | 'mode';
 
 const QUICK_MODES: { id: ModeId; label: string; blurb: string }[] = [
   { id: 'reader', label: 'Reader', blurb: 'Pure book — no scoring.' },
@@ -16,9 +17,11 @@ const QUICK_MODES: { id: ModeId; label: string; blurb: string }[] = [
   { id: 'mother', label: 'Mother', blurb: 'Cook for others safely.' },
 ];
 
+const STEPS_FIRST: Step[] = ['welcome', 'name', 'profile', 'mode'];
+
 /**
- * First-run gate: ask who the cookbook is for → "{Name} Cooks" on the cover.
- * Optional profile + mode steps on first open; rename skips those.
+ * First-run gate: value → name → optional profile → optional mode.
+ * Rename skips welcome/profile/mode. Book paints first; gate is warm card over desk.
  */
 export function NameGate({
   open,
@@ -34,11 +37,13 @@ export function NameGate({
   const reduce = useReducedMotion();
   const panelRef = useRef<HTMLDivElement>(null);
   const { upsertProfile, setMode, setActiveProfileId } = useApp();
-  const [step, setStep] = useState<Step>('name');
+  const [step, setStep] = useState<Step>(dismissible ? 'name' : 'welcome');
   const [value, setValue] = useState('');
   const [profileName, setProfileName] = useState('');
   const [error, setError] = useState('');
   const [profileError, setProfileError] = useState('');
+
+  const fieldStep = step === 'name' || step === 'profile';
 
   useDialogA11y(
     open,
@@ -46,7 +51,7 @@ export function NameGate({
       if (dismissible) onDismiss?.();
     },
     panelRef,
-    { initialFocus: 'first' },
+    { initialFocus: fieldStep ? 'first' : 'none' },
   );
 
   useEffect(() => {
@@ -55,8 +60,8 @@ export function NameGate({
     setProfileName('');
     setError('');
     setProfileError('');
-    setStep('name');
-  }, [open]);
+    setStep(dismissible ? 'name' : 'welcome');
+  }, [open, dismissible]);
 
   if (!open) return null;
 
@@ -70,7 +75,6 @@ export function NameGate({
       onSubmit(name);
       return;
     }
-    // Defer onSubmit so needsName stays true through optional steps.
     setProfileName(name);
     setStep('profile');
   };
@@ -99,36 +103,73 @@ export function NameGate({
   const skipAll = () => completeGate();
 
   const titleId =
-    step === 'name'
-      ? 'name-gate-title'
-      : step === 'profile'
-        ? 'name-gate-profile-title'
-        : 'name-gate-mode-title';
+    step === 'welcome'
+      ? 'name-gate-welcome-title'
+      : step === 'name'
+        ? 'name-gate-title'
+        : step === 'profile'
+          ? 'name-gate-profile-title'
+          : 'name-gate-mode-title';
+
+  const progressIdx = dismissible ? 0 : STEPS_FIRST.indexOf(step);
+  const progressTotal = dismissible ? 1 : STEPS_FIRST.length;
 
   return (
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-[80] flex items-center justify-center bg-black/50 p-4 backdrop-blur-[2px]"
+          className="fixed inset-0 z-[80] flex items-center justify-center bg-[color:var(--desk)]/55 p-4 backdrop-blur-md"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: reduce ? 0 : 0.2 }}
+          transition={{ duration: reduce ? 0 : 0.35 }}
         >
           <motion.div
             ref={panelRef}
             role="dialog"
             aria-modal="true"
             aria-labelledby={titleId}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 16, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 8 }}
-            transition={{ duration: reduce ? 0 : 0.22 }}
+            transition={{ duration: reduce ? 0 : 0.28, ease: [0.22, 1, 0.36, 1] }}
             className="w-full max-w-sm rounded-2xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] p-6 shadow-[var(--shadow-lg)]"
           >
-            <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--color-ink-faint)]">
-              {PRODUCT_NAME}
-            </p>
+            <div className="flex items-center justify-between gap-2">
+              <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--color-ink-faint)]">
+                {PRODUCT_NAME}
+              </p>
+              {!dismissible && (
+                <p
+                  className="text-[10px] tabular-nums text-[color:var(--color-ink-faint)]"
+                  aria-label={`Step ${progressIdx + 1} of ${progressTotal}`}
+                >
+                  {progressIdx + 1}/{progressTotal}
+                </p>
+              )}
+            </div>
+
+            {step === 'welcome' && (
+              <>
+                <h2
+                  id="name-gate-welcome-title"
+                  className="mt-2 font-serif text-2xl font-semibold text-[color:var(--color-ink)] text-balance"
+                >
+                  A living family cookbook
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-[color:var(--color-ink-soft)]">
+                  {PRODUCT_TAGLINE} Flip pages, keep favorites, cook offline — recipes stay on this
+                  device.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setStep('name')}
+                  className="mt-6 w-full rounded-xl bg-[color:var(--color-accent)] px-4 py-2.5 font-medium text-white transition-transform active:scale-[0.98]"
+                >
+                  Begin
+                </button>
+              </>
+            )}
 
             {step === 'name' && (
               <>
@@ -153,6 +194,7 @@ export function NameGate({
                   id="cookcap-owner"
                   type="text"
                   autoComplete="given-name"
+                  autoFocus={!dismissible}
                   maxLength={40}
                   value={value}
                   onChange={(e) => {
@@ -169,7 +211,7 @@ export function NameGate({
                   className="mt-1.5 w-full rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3.5 py-2.5 text-[color:var(--color-ink)] placeholder:text-[color:var(--color-ink-faint)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)]"
                 />
                 {error && (
-                  <p className="mt-2 text-sm text-[color:var(--color-danger, #b33)]" role="alert">
+                  <p className="mt-2 text-sm text-[color:var(--color-danger,#b33)]" role="alert">
                     {error}
                   </p>
                 )}
@@ -228,7 +270,7 @@ export function NameGate({
                   className="mt-1.5 w-full rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3.5 py-2.5 text-[color:var(--color-ink)] placeholder:text-[color:var(--color-ink-faint)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)]"
                 />
                 {profileError && (
-                  <p className="mt-2 text-sm text-[color:var(--color-danger, #b33)]" role="alert">
+                  <p className="mt-2 text-sm text-[color:var(--color-danger,#b33)]" role="alert">
                     {profileError}
                   </p>
                 )}

@@ -25,20 +25,22 @@
   --text-3xl: clamp(1.9rem, 1.4rem + 2.2vw, 2.6rem);
   --text-display: clamp(2.6rem, 1.8rem + 3.6vw, 4.2rem);
 
-  /* ── Color — Light (parchment) ───────────────────────────────────────
-     Warm paper, ink, and a single restrained accent (saffron/ember). */
-  --color-paper: #f4ece0;
-  --color-paper-raised: #faf5ec;
-  --color-paper-sunk: #ece1d1;
-  --color-ink: #2a2320;
-  --color-ink-soft: #5b5048;
-  --color-ink-faint: #8b7d70;
-  --color-line: #d8c9b6;
-  --color-accent: #b4531f;
+  /* ── Color — Editorial Cream default (overridable via data-skin) ─────
+     Warm paper, ink, and a single restrained accent (terracotta). */
+  --color-paper: #f6f1e7;
+  --color-paper-raised: #fbf7ee;
+  --color-paper-sunk: #ece4d5;
+  --color-ink: #2c2622;
+  --color-ink-soft: #5c5248;
+  --color-ink-faint: #8a7d6e;
+  --color-line: #e2d8c6;
+  --color-accent: #c2683c;
   --color-accent-soft: #d98a4e;
-  --color-gold: #b08d46;
+  --color-gold: #b8934e;
   --color-leather: #5a2e22;
   --color-leather-dark: #3d1d15;
+  --desk: #efe7d7;
+  --paper-grain-opacity: 0.35;
 
   /* Semantic feedback */
   --color-success: #5a7a4a;
@@ -60,7 +62,7 @@
   --shadow-sm: 0 1px 2px rgba(61, 29, 21, 0.08), 0 1px 1px rgba(61, 29, 21, 0.06);
   --shadow-md: 0 4px 12px rgba(61, 29, 21, 0.1), 0 2px 4px rgba(61, 29, 21, 0.06);
   --shadow-lg: 0 12px 32px rgba(61, 29, 21, 0.14), 0 4px 8px rgba(61, 29, 21, 0.08);
-  --shadow-book: 0 30px 60px -12px rgba(30, 12, 8, 0.55), 0 18px 36px -18px rgba(30, 12, 8, 0.4);
+  --shadow-book: 0 24px 60px -24px rgba(90, 60, 35, 0.35);
 
   /* ── Motion — one language of easing + duration ─────────────────────*/
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
@@ -78,39 +80,141 @@
   --breakpoint-xl: 80rem;
 }
 
-/* ── Dark (candlelit study) ────────────────────────────────────────────*/
+/* ── Skins (data-skin on <html>) ───────────────────────────────────────*/
 @layer base {
-  :root[data-theme='dark'] {
-    --color-paper: #211c19;
-    --color-paper-raised: #2b2521;
-    --color-paper-sunk: #1a1512;
-    --color-ink: #ece3d8;
-    --color-ink-soft: #b8ab9d;
-    --color-ink-faint: #8a7d6f;
-    --color-line: #3d332c;
-    --color-accent: #e08a4a;
+  /* Editorial Cream — DEFAULT (light, airy). Light-only. */
+  :root,
+  :root[data-skin='editorial'] {
+    --color-paper: #f6f1e7;
+    --color-paper-raised: #fbf7ee;
+    --color-paper-sunk: #ece4d5;
+    --color-ink: #2c2622;
+    --color-ink-soft: #5c5248;
+    --color-ink-faint: #8a7d6e;
+    --color-line: #e2d8c6;
+    --color-accent: #c2683c;
+    --color-accent-soft: #d98a4e;
+    --color-gold: #b8934e;
+    --desk: #efe7d7;
+    --shadow-book: 0 24px 60px -24px rgba(90, 60, 35, 0.35);
+    --paper-grain-opacity: 0.35;
+  }
+
+  /* Candlelit — dark, warm, de-muddied */
+  :root[data-skin='candlelit'] {
+    --color-paper: #2a2320;
+    --color-paper-raised: #322a25;
+    --color-paper-sunk: #201a16;
+    --color-ink: #f0e7db;
+    --color-ink-soft: #c4b6a6;
+    --color-ink-faint: #93867a;
+    --color-line: #40352d;
+    --color-accent: #e6934f;
     --color-accent-soft: #eaa66d;
+    --color-gold: #d3b26b;
+    --color-leather: #5a3428;
+    --color-leather-dark: #3a2218;
+    --desk: #17120f;
+    --shadow-book: 0 34px 70px -22px rgba(0, 0, 0, 0.7);
+    --paper-grain-opacity: 0.5;
+  }
+  :root[data-skin='candlelit'][data-theme='light'] {
+    --color-paper: #f6f1e7;
+    --color-paper-raised: #fbf7ee;
+    --color-paper-sunk: #ece4d5;
+    --color-ink: #2c2622;
+    --color-ink-soft: #5c5248;
+    --color-ink-faint: #8a7d6e;
+    --color-line: #e2d8c6;
+    --color-accent: #c2683c;
+    --color-gold: #b8934e;
+    --desk: #efe7d7;
+    --shadow-book: 0 24px 60px -24px rgba(90, 60, 35, 0.35);
+    --paper-grain-opacity: 0.35;
+  }
+
+  /* Light Book — bright desk, creamier paper */
+  :root[data-skin='lightbook'] {
+    --color-paper: #f3ecdb;
+    --color-paper-raised: #f9f3e6;
+    --color-paper-sunk: #e8dcc6;
+    --color-ink: #33291f;
+    --color-ink-soft: #63564a;
+    --color-ink-faint: #94826d;
+    --color-line: #ded1b8;
+    --color-accent: #b5622c;
+    --color-accent-soft: #d98a4e;
+    --color-gold: #b28a44;
+    --desk: #e7dcc6;
+    --shadow-book: 0 26px 58px -24px rgba(90, 60, 30, 0.4);
+    --paper-grain-opacity: 0.45;
+  }
+
+  /* Modern — clean, flatter */
+  :root[data-skin='modern'] {
+    --color-paper: #faf7f2;
+    --color-paper-raised: #ffffff;
+    --color-paper-sunk: #f0ebe3;
+    --color-ink: #1e1b17;
+    --color-ink-soft: #55504a;
+    --color-ink-faint: #8b8580;
+    --color-line: #e9e3da;
+    --color-accent: #d06a3a;
+    --color-accent-soft: #e08a5a;
+    --color-gold: #b9954f;
+    --desk: #f3efe9;
+    --shadow-book: 0 18px 44px -22px rgba(30, 20, 10, 0.28);
+    --paper-grain-opacity: 0.18;
+  }
+  :root[data-skin='modern'][data-theme='dark'] {
+    --color-paper: #1e1b17;
+    --color-paper-raised: #2a2622;
+    --color-paper-sunk: #151310;
+    --color-ink: #f5f1ea;
+    --color-ink-soft: #b8b2a8;
+    --color-ink-faint: #8a857c;
+    --color-line: #3a3530;
+    --color-accent: #e07a4a;
     --color-gold: #c9a860;
-    --color-leather: #43221a;
-    --color-leather-dark: #2a1410;
-    --shadow-book: 0 30px 70px -12px rgba(0, 0, 0, 0.8), 0 18px 36px -18px rgba(0, 0, 0, 0.6);
+    --desk: #12100e;
+    --shadow-book: 0 18px 44px -22px rgba(0, 0, 0, 0.55);
+    --paper-grain-opacity: 0.22;
+  }
+
+  /* Legacy theme toggle — only when no skin, or candlelit/modern via attrs above */
+  :root:not([data-skin])[data-theme='dark'],
+  :root[data-skin=''][data-theme='dark'] {
+    --color-paper: #2a2320;
+    --color-paper-raised: #322a25;
+    --color-paper-sunk: #201a16;
+    --color-ink: #f0e7db;
+    --color-ink-soft: #c4b6a6;
+    --color-ink-faint: #93867a;
+    --color-line: #40352d;
+    --color-accent: #e6934f;
+    --color-gold: #d3b26b;
+    --desk: #17120f;
+    --shadow-book: 0 34px 70px -22px rgba(0, 0, 0, 0.7);
   }
 
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme='light']) {
-      --color-paper: #211c19;
-      --color-paper-raised: #2b2521;
-      --color-paper-sunk: #1a1512;
-      --color-ink: #ece3d8;
-      --color-ink-soft: #b8ab9d;
-      --color-ink-faint: #8a7d6f;
-      --color-line: #3d332c;
-      --color-accent: #e08a4a;
+    :root:not([data-skin]):not([data-theme='light']),
+    :root[data-skin='candlelit']:not([data-theme='light']) {
+      --color-paper: #2a2320;
+      --color-paper-raised: #322a25;
+      --color-paper-sunk: #201a16;
+      --color-ink: #f0e7db;
+      --color-ink-soft: #c4b6a6;
+      --color-ink-faint: #93867a;
+      --color-line: #40352d;
+      --color-accent: #e6934f;
       --color-accent-soft: #eaa66d;
-      --color-gold: #c9a860;
-      --color-leather: #43221a;
-      --color-leather-dark: #2a1410;
-      --shadow-book: 0 30px 70px -12px rgba(0, 0, 0, 0.8), 0 18px 36px -18px rgba(0, 0, 0, 0.6);
+      --color-gold: #d3b26b;
+      --color-leather: #5a3428;
+      --color-leather-dark: #3a2218;
+      --desk: #17120f;
+      --shadow-book: 0 34px 70px -22px rgba(0, 0, 0, 0.7);
+      --paper-grain-opacity: 0.5;
     }
   }
 
@@ -125,12 +229,11 @@
   }
 
   body {
-    background-color: var(--color-paper-sunk);
+    background-color: var(--desk, var(--color-paper-sunk));
     background-image:
-      radial-gradient(ellipse 120% 80% at 50% -10%, rgba(176, 141, 70, 0.14), transparent 55%),
-      radial-gradient(ellipse 60% 50% at 100% 100%, rgba(90, 46, 34, 0.08), transparent 45%),
-      radial-gradient(ellipse 50% 40% at 0% 80%, rgba(180, 83, 31, 0.06), transparent 40%),
-      linear-gradient(180deg, color-mix(in srgb, var(--color-paper-sunk) 92%, #c4b49a), var(--color-paper-sunk));
+      radial-gradient(ellipse 90% 70% at 50% 42%, color-mix(in srgb, var(--color-paper) 55%, transparent), transparent 70%),
+      radial-gradient(ellipse 120% 80% at 50% -10%, rgba(176, 141, 70, 0.1), transparent 55%),
+      linear-gradient(180deg, color-mix(in srgb, var(--desk, var(--color-paper-sunk)) 92%, #c4b49a), var(--desk, var(--color-paper-sunk)));
     color: var(--color-ink);
     font-family: var(--font-sans);
     overflow: hidden;
@@ -195,7 +298,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.4;
+    opacity: var(--paper-grain-opacity, 0.4);
     mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
   }
@@ -213,9 +316,35 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.5;
+    opacity: var(--paper-grain-opacity, 0.5);
     mix-blend-mode: overlay;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='l'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.02' numOctaves='4'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23l)'/%3E%3C/svg%3E");
+  }
+
+  /* Linen/cream cover for light skins — not heavy dark leather */
+  :root[data-skin='editorial'] .leather,
+  :root[data-skin='lightbook'] .leather,
+  :root[data-skin='modern']:not([data-theme='dark']) .leather,
+  :root:not([data-skin]) .leather {
+    background-color: #e8dcc8;
+    background-image:
+      radial-gradient(circle at 30% 20%, rgba(255, 250, 240, 0.55), transparent 55%),
+      radial-gradient(circle at 70% 80%, rgba(120, 90, 50, 0.12), transparent 60%),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(90, 60, 30, 0.08));
+  }
+  :root[data-skin='editorial'] .leather .cover-hint,
+  :root[data-skin='lightbook'] .leather .cover-hint,
+  :root[data-skin='modern']:not([data-theme='dark']) .leather .cover-hint,
+  :root:not([data-skin]) .leather .cover-hint {
+    color: color-mix(in srgb, var(--color-ink) 55%, var(--color-gold));
+  }
+  :root[data-skin='candlelit'] .leather,
+  :root[data-skin='modern'][data-theme='dark'] .leather {
+    background-color: var(--color-leather);
+    background-image:
+      radial-gradient(circle at 30% 20%, rgba(255, 200, 150, 0.12), transparent 55%),
+      radial-gradient(circle at 70% 80%, rgba(0, 0, 0, 0.35), transparent 60%),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.25));
   }
 
   .gold-foil {
@@ -341,6 +470,12 @@
   transform: perspective(1100px) rotateY(-8deg);
   transform-origin: left center;
   transition: width 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+/* Cloth tabs: less foreshortening so serif labels stay readable */
+:root[data-tabs='cloth'] .book-edge,
+:root:not([data-tabs]) .book-edge {
+  transform: perspective(1100px) rotateY(-3deg);
+  overflow: visible;
 }
 @media (prefers-reduced-motion: reduce) {
   .book-edge {
@@ -498,6 +633,10 @@
 
 .journal-desk {
   position: relative;
+  background: var(--desk, var(--color-paper-sunk));
+  max-width: 1400px;
+  margin-inline: auto;
+  width: 100%;
 }
 .journal-desk::before {
   content: '';
@@ -505,7 +644,7 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  opacity: 0.35;
+  opacity: var(--paper-grain-opacity, 0.35);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
   mix-blend-mode: multiply;
 }
@@ -515,12 +654,38 @@
 }
 .journal-stage {
   /* desk lamp vignette — desktop only (phone is full-bleed reader) */
-  mask-image: radial-gradient(ellipse 95% 90% at 50% 45%, #000 55%, transparent 100%);
+  mask-image: none;
+}
+.journal-stage::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  z-index: 0;
+  width: min(720px, 90%);
+  height: min(820px, 88%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    color-mix(in srgb, var(--color-paper-raised) 70%, transparent) 0%,
+    color-mix(in srgb, var(--desk, var(--color-paper-sunk)) 40%, transparent) 55%,
+    transparent 75%
+  );
+}
+@media (min-width: 640px) {
+  .book-frame {
+    box-shadow: var(--shadow-book), 0 40px 28px -28px rgba(60, 40, 20, 0.28);
+  }
 }
 
 @media (max-width: 639px) {
   .journal-stage {
     mask-image: none;
+  }
+  .journal-stage::before {
+    display: none;
   }
   /* Never show desktop fore-edge / page stack on phones — causes overflow + overlap */
   .book-edge,
@@ -529,9 +694,11 @@
   }
   .book-frame {
     border-radius: 0;
+    box-shadow: none;
   }
   .journal-desk {
     background: var(--color-paper);
+    max-width: none;
   }
 }
 
@@ -640,6 +807,178 @@
 .sticker-chip .sticker-tape {
   left: 0;
   width: 12px;
+}
+
+/* ── Tab styles via data-tabs on <html> ────────────────────────────────*/
+
+/* Cloth Tabs — DEFAULT: muted, no gloss, even edge */
+:root[data-tabs='cloth'] .sticker-tab,
+:root:not([data-tabs]) .sticker-tab {
+  width: fit-content !important;
+  min-width: 5.5rem !important;
+  max-width: none !important;
+  overflow: visible !important;
+  filter: drop-shadow(0 2px 6px rgba(40, 24, 12, 0.18));
+  transform-origin: 0% 50%;
+}
+:root[data-tabs='cloth'] .sticker-face,
+:root:not([data-tabs]) .sticker-face {
+  flex: 0 0 auto !important;
+  width: fit-content !important;
+  min-width: unset !important;
+  padding-inline: 0.65rem !important;
+  overflow: visible !important;
+  border-radius: 2px 8px 8px 2px;
+  background:
+    color-mix(in srgb, var(--sticker) 38%, var(--color-paper)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  background-blend-mode: multiply, multiply;
+  border: 1px solid color-mix(in srgb, var(--sticker) 45%, var(--color-ink));
+  box-shadow: 0 2px 6px rgba(40, 24, 12, 0.18);
+}
+:root[data-tabs='cloth'] .sticker-label,
+:root:not([data-tabs]) .sticker-label {
+  color: color-mix(in srgb, var(--sticker) 72%, #2a1a10);
+  text-shadow: none;
+  white-space: nowrap !important;
+  letter-spacing: 0.01em;
+  overflow: visible !important;
+  font-size: 0.6rem;
+}
+:root[data-tabs='cloth'] .sticker-slit,
+:root[data-tabs='cloth'] .sticker-pin,
+:root[data-tabs='cloth'] .sticker-stem,
+:root:not([data-tabs]) .sticker-slit,
+:root:not([data-tabs]) .sticker-pin,
+:root:not([data-tabs]) .sticker-stem {
+  display: none;
+}
+:root[data-tabs='cloth'] .sticker-chip,
+:root:not([data-tabs]) .sticker-chip {
+  background: color-mix(in srgb, var(--sticker) 38%, var(--color-paper));
+  border: 1px solid color-mix(in srgb, var(--sticker) 45%, var(--color-ink));
+  box-shadow: 0 2px 6px rgba(40, 24, 12, 0.18);
+  border-radius: 6px;
+}
+:root[data-tabs='cloth'] .sticker-chip span,
+:root:not([data-tabs]) .sticker-chip span {
+  color: color-mix(in srgb, var(--sticker) 72%, #2a1a10) !important;
+  text-shadow: none;
+}
+
+/* Classic Pills — refined candy (lower sat, uniform, one shadow) */
+:root[data-tabs='pills'] .sticker-tab {
+  filter: drop-shadow(0 2px 5px rgba(30, 15, 8, 0.28));
+}
+:root[data-tabs='pills'] .sticker-tab.elev-0,
+:root[data-tabs='pills'] .sticker-tab.elev-1,
+:root[data-tabs='pills'] .sticker-tab.elev-2,
+:root[data-tabs='pills'] .sticker-tab.elev-3 {
+  filter: drop-shadow(0 2px 5px rgba(30, 15, 8, 0.28));
+}
+:root[data-tabs='pills'] .sticker-face {
+  border-radius: 2px 10px 10px 2px;
+  background: color-mix(in srgb, var(--sticker) 75%, #fff);
+  border: 1px solid color-mix(in srgb, var(--sticker) 55%, #1a1008);
+  box-shadow: 0 2px 5px rgba(30, 15, 8, 0.22);
+}
+:root[data-tabs='pills'] .sticker-label {
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+:root[data-tabs='pills'] .sticker-slit,
+:root[data-tabs='pills'] .sticker-stem {
+  display: none;
+}
+
+/* Side Index — typographic list, no pills */
+.chapter-index {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  padding: 0.5rem 0.35rem;
+  pointer-events: auto;
+}
+.chapter-index__row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: 100%;
+  padding: 0.35rem 0.25rem;
+  border: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent);
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  color: var(--color-ink);
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+.chapter-index__row:last-child {
+  border-bottom: none;
+}
+.chapter-index__dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--sticker);
+}
+.chapter-index__row[aria-current='page'] {
+  color: var(--color-accent);
+  border-left: 2px solid var(--color-accent);
+  padding-left: 0.35rem;
+  margin-left: -2px;
+}
+:root[data-tabs='index'] .book-edge__block {
+  width: 0.55rem;
+  opacity: 0.55;
+}
+:root[data-tabs='index'] .book-edge {
+  width: 6.5rem;
+}
+
+/* Top Segmented — slim bar; rail hidden via JS when active */
+.chapter-top {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.15rem;
+  overflow-x: auto;
+  max-width: min(720px, 100%);
+  margin-inline: auto;
+  padding: 0.15rem 0.25rem 0.35rem;
+  scrollbar-width: none;
+}
+.chapter-top::-webkit-scrollbar {
+  display: none;
+}
+.chapter-top__btn {
+  flex: 0 0 auto;
+  border: none;
+  background: transparent;
+  padding: 0.35rem 0.55rem;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+.chapter-top__btn[aria-current='page'] {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+:root[data-tabs='top'] .book-edge {
+  display: none !important;
 }
 
 .sticker-fab {
