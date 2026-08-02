@@ -310,8 +310,8 @@ export function BookmarkRail() {
           const tuck = 0;
               const out = depthOn
             ? active
-              ? 72
-              : (ahead ? 14 : 6) + near * 38
+              ? 76
+              : (ahead ? 18 : 10) + near * 38
             : active
               ? 64
               : 40;

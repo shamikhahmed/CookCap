@@ -1,6 +1,6 @@
 # CookCap — Presentation
 
-**v2.2.0** · https://shamikhahmed.github.io/CookCap/
+**v2.2.1** · https://shamikhahmed.github.io/CookCap/
 
 ## Pitch
 

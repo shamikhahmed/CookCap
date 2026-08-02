@@ -96,9 +96,9 @@ function Frame() {
 
       <main className="journal-stage relative flex min-h-0 flex-1 flex-col items-center justify-center overflow-hidden px-0 pt-0 sm:overflow-visible sm:px-6 sm:pr-44 sm:pt-1 md:pr-48 lg:pr-56">
         <TopChapterBar />
-        <div className="book-stage relative mx-auto flex min-h-0 w-full max-w-full flex-1 items-center justify-center sm:max-w-[min(720px,calc(100%-9rem))] sm:py-2">
-          {/* Phone: full-bleed page. Desktop: grounded hardcover, height-clamped. */}
-          <div className="book-frame relative h-full w-full min-w-0 sm:aspect-[5/7] sm:h-[clamp(560px,82vh,820px)] sm:max-h-[calc(100dvh-7.5rem)] sm:w-auto sm:max-w-full">
+        {/* Pure CSS grounding — size from vh on first paint (no parent-% / resize). */}
+        <div className="book-stage">
+          <div className="book-frame">
             <Book />
           </div>
         </div>

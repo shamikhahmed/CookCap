@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.2.1 — 2026-08-02
+
+### Fix (desktop first paint)
+- **Book grounding** — pure CSS `vh` box (`--book-h` + width = h×5/7); no `%` of flex parent. Fresh load at 1280/1440/1920 is big + centered (resize no longer required)
+- Cloth tabs — `left: 6px` nudge off fore-edge seam
+- SW → `cookcap-v7`
+
 ## 2.2.0 — 2026-08-02
 
 ### Final ship (punch list + system screens)
