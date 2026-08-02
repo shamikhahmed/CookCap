@@ -1,0 +1,452 @@
+{
+  "at": "2026-08-02T11:53:26.734Z",
+  "dry": false,
+  "ok": 34,
+  "skip": 0,
+  "fail": 0,
+  "nomatch": 0,
+  "report": [
+    {
+      "id": "simple-tea-cake",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:moist-mango-loaf-tea-cake",
+        "title": "Moist Mango Loaf /Tea Cake",
+        "slug": "moist-mango-loaf-tea-cake",
+        "link": "https://foodfusion.com/recipe/moist-mango-loaf-tea-cake/",
+        "imageUrl": "https://media.foodfusion.com/2026/07/Moist-Mango-Loaf-Tea-Cake-2.jpg"
+      },
+      "recipeTitle": "Simple Tea Cake"
+    },
+    {
+      "id": "iced-mocha-latte",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:dark-cocoa-mocha",
+        "title": "Dark Cocoa Mocha",
+        "slug": "dark-cocoa-mocha",
+        "link": "https://foodfusion.com/recipe/dark-cocoa-mocha/",
+        "imageUrl": "https://media.foodfusion.com/2026/04/Dark-Cocoa-Mocha-4.jpg"
+      },
+      "recipeTitle": "Iced Mocha Latte"
+    },
+    {
+      "id": "iced-spanish-latte",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:butterscotch-latte",
+        "title": "Butterscotch Latte",
+        "slug": "butterscotch-latte",
+        "link": "https://foodfusion.com/recipe/butterscotch-latte/",
+        "imageUrl": "https://media.foodfusion.com/2026/02/latte.jpg"
+      },
+      "recipeTitle": "Iced Spanish Latte"
+    },
+    {
+      "id": "iced-mocha-orange-latte",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:dark-cocoa-mocha",
+        "title": "Dark Cocoa Mocha",
+        "slug": "dark-cocoa-mocha",
+        "link": "https://foodfusion.com/recipe/dark-cocoa-mocha/",
+        "imageUrl": "https://media.foodfusion.com/2026/04/Dark-Cocoa-Mocha-4.jpg"
+      },
+      "recipeTitle": "Iced Mocha Orange Latte"
+    },
+    {
+      "id": "iced-blueberry-latte",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:banana-berry-green-tea-smoothie",
+        "title": "Banana Berry Green Tea Smoothie",
+        "slug": "banana-berry-green-tea-smoothie",
+        "link": "https://foodfusion.com/recipe/banana-berry-green-tea-smoothie/",
+        "imageUrl": "https://media.foodfusion.com/2023/08/YT_01-1.jpg"
+      },
+      "recipeTitle": "Iced Blueberry Latte"
+    },
+    {
+      "id": "iced-strawberry-latte",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:strawberry-cloud-foam-latte",
+        "title": "Strawberry Cloud Foam Latte",
+        "slug": "strawberry-cloud-foam-latte",
+        "link": "https://foodfusion.com/recipe/strawberry-cloud-foam-latte/",
+        "imageUrl": "https://media.foodfusion.com/2025/12/Strawberry-Cloud-Foam-Latte-4.jpg"
+      },
+      "recipeTitle": "Iced Strawberry Latte"
+    },
+    {
+      "id": "strawberry-oreo-latte",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:no-bake-oreo-cups-with-oreo-shake",
+        "title": "No-Bake Oreo Cups with Oreo Shake",
+        "slug": "no-bake-oreo-cups-with-oreo-shake",
+        "link": "https://foodfusion.com/recipe/no-bake-oreo-cups-with-oreo-shake/",
+        "imageUrl": "https://media.foodfusion.com/2018/12/Oreo-Shots-Recipe-by-Food-fusion-1.jpg"
+      },
+      "recipeTitle": "Strawberry and Oreo Latte"
+    },
+    {
+      "id": "cookies-cream-latte",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:cookies-cream-parfait",
+        "title": "Cookies & Cream Parfait",
+        "slug": "cookies-cream-parfait",
+        "link": "https://foodfusion.com/recipe/cookies-cream-parfait/",
+        "imageUrl": "https://media.foodfusion.com/2022/05/Grab-1.jpg"
+      },
+      "recipeTitle": "Cookies and Cream Latte"
+    },
+    {
+      "id": "fruit-tart",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:fruit-custard-tart",
+        "title": "Fruit Custard Tart",
+        "slug": "fruit-custard-tart",
+        "link": "https://foodfusion.com/recipe/fruit-custard-tart/",
+        "imageUrl": "https://media.foodfusion.com/2020/05/Fruit-custard-Tart-Recipe-by-Food-fusion-5.jpg"
+      },
+      "recipeTitle": "Fresh Fruit Tart"
+    },
+    {
+      "id": "rice-pudding",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:instant-badam-firni-rice-pudding",
+        "title": "Instant Badam Firni (Rice pudding)",
+        "slug": "instant-badam-firni-rice-pudding",
+        "link": "https://foodfusion.com/recipe/instant-badam-firni-rice-pudding/",
+        "imageUrl": "https://media.foodfusion.com/2017/05/ID-R00132-A.jpg"
+      },
+      "recipeTitle": "Creamy Rice Pudding"
+    },
+    {
+      "id": "panna-cotta",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:strawberry-kheer-panna-cotta",
+        "title": "Strawberry & Kheer Panna Cotta",
+        "slug": "strawberry-kheer-panna-cotta",
+        "link": "https://foodfusion.com/recipe/strawberry-kheer-panna-cotta/",
+        "imageUrl": "https://media.foodfusion.com/2021/04/ID-R01588-Strawberry-pistachio-panna-cotta-kheer.00_00_05_07.Still006.jpg"
+      },
+      "recipeTitle": "Vanilla Panna Cotta"
+    },
+    {
+      "id": "cheesecake",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:no-bake-oreo-chocolate-cheese-cake",
+        "title": "No bake Oreo Chocolate Cheese Cake",
+        "slug": "no-bake-oreo-chocolate-cheese-cake",
+        "link": "https://foodfusion.com/recipe/no-bake-oreo-chocolate-cheese-cake/",
+        "imageUrl": "https://media.foodfusion.com/2021/09/No-bake-Oreo-chocolate-Cheese-Cake-Recipe-by-Food-fusion-3.jpg"
+      },
+      "recipeTitle": "Baked Cheesecake"
+    },
+    {
+      "id": "edamame",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:dahi-tadka-green-beans",
+        "title": "Dahi Tadka Green Beans",
+        "slug": "dahi-tadka-green-beans",
+        "link": "https://foodfusion.com/recipe/dahi-tadka-green-beans/",
+        "imageUrl": "https://media.foodfusion.com/2025/08/3-1.jpg"
+      },
+      "recipeTitle": "Salted Edamame"
+    },
+    {
+      "id": "popcorn",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:caramel-popcorn",
+        "title": "Caramel Popcorn",
+        "slug": "caramel-popcorn",
+        "link": "https://foodfusion.com/recipe/caramel-popcorn/",
+        "imageUrl": "https://media.foodfusion.com/2018/01/ID-R00514-Caramel-Popcon-Recipe-By-Food-Fusion-4.jpg"
+      },
+      "recipeTitle": "Stovetop Popcorn"
+    },
+    {
+      "id": "boiled-chana",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:khattay-pani-wali-chana-chaat",
+        "title": "Khattay Pani wali Chana Chaat",
+        "slug": "khattay-pani-wali-chana-chaat",
+        "link": "https://foodfusion.com/recipe/khattay-pani-wali-chana-chaat/",
+        "imageUrl": "https://media.foodfusion.com/2024/01/a.jpg"
+      },
+      "recipeTitle": "Masala Boiled Chana"
+    },
+    {
+      "id": "chow-mein",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:vegetable-chow-mein",
+        "title": "Vegetable Chow mein",
+        "slug": "vegetable-chow-mein",
+        "link": "https://foodfusion.com/recipe/vegetable-chow-mein/",
+        "imageUrl": "https://media.foodfusion.com/2020/08/Vegetable-chow-mein-Recipe-by-Food-fusion-2.jpg"
+      },
+      "recipeTitle": "Vegetable Chow Mein"
+    },
+    {
+      "id": "dumpling-night",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:butter-chicken-dumplings",
+        "title": "Butter Chicken Dumplings",
+        "slug": "butter-chicken-dumplings",
+        "link": "https://foodfusion.com/recipe/butter-chicken-dumplings/",
+        "imageUrl": "https://media.foodfusion.com/2024/11/YT-03.jpg"
+      },
+      "recipeTitle": "Chicken Dumplings"
+    },
+    {
+      "id": "tea-eggs",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:steamed-egg-squares",
+        "title": "Steamed Egg Squares",
+        "slug": "steamed-egg-squares",
+        "link": "https://foodfusion.com/recipe/steamed-egg-squares/",
+        "imageUrl": "https://media.foodfusion.com/2020/11/Steam-egg-sqaures-Recipe-by-Food-fusion-1.jpg"
+      },
+      "recipeTitle": "Soy Tea Eggs"
+    },
+    {
+      "id": "lettuce-wraps",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:lettuce-wraps",
+        "title": "Lettuce Wraps",
+        "slug": "lettuce-wraps",
+        "link": "https://foodfusion.com/recipe/lettuce-wraps/",
+        "imageUrl": "https://media.foodfusion.com/2017/12/ID-R00498-Lettuce-Wraps-Recipe-By-Healthy-Food-Fusion-5.jpg"
+      },
+      "recipeTitle": "Chicken Lettuce Wraps"
+    },
+    {
+      "id": "samosas",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:authentic-punjabi-samosa",
+        "title": "Authentic Punjabi Samosa",
+        "slug": "authentic-punjabi-samosa",
+        "link": "https://foodfusion.com/recipe/authentic-punjabi-samosa/",
+        "imageUrl": "https://media.foodfusion.com/2025/02/2-2.jpg"
+      },
+      "recipeTitle": "Crispy Samosas"
+    },
+    {
+      "id": "pakoras",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:vegetable-pakora",
+        "title": "Vegetable Pakora",
+        "slug": "vegetable-pakora",
+        "link": "https://foodfusion.com/recipe/vegetable-pakora/",
+        "imageUrl": "https://media.foodfusion.com/2019/04/Vegetable-Pakora-Recipe-by-food-fusion-2.jpg"
+      },
+      "recipeTitle": "Vegetable Pakoras"
+    },
+    {
+      "id": "spring-rolls",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:chicken-65-spring-rolls",
+        "title": "Chicken 65 Spring Rolls",
+        "slug": "chicken-65-spring-rolls",
+        "link": "https://foodfusion.com/recipe/chicken-65-spring-rolls/",
+        "imageUrl": "https://media.foodfusion.com/2026/01/PGH73518-1.jpg"
+      },
+      "recipeTitle": "Crispy Spring Rolls"
+    },
+    {
+      "id": "chicken-stir-fry",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:basil-chicken-stir-fry-pad-kra-pao",
+        "title": "Basil Chicken Stir fry (Pad Kra Pao)",
+        "slug": "basil-chicken-stir-fry-pad-kra-pao",
+        "link": "https://foodfusion.com/recipe/basil-chicken-stir-fry-pad-kra-pao/",
+        "imageUrl": "https://media.foodfusion.com/2025/06/Basil-Chicken-Stirfry-Pad-Kra-Pao-REcipe-by-Food-Fusion-4.jpg"
+      },
+      "recipeTitle": "Quick Chicken Stir-Fry"
+    },
+    {
+      "id": "cornbread",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:makki-ki-roti-recipe",
+        "title": "Makki ki Roti",
+        "slug": "makki-ki-roti-recipe",
+        "link": "https://foodfusion.com/recipe/makki-ki-roti-recipe/",
+        "imageUrl": "https://media.foodfusion.com/2017/05/ID-R00193-1.jpg"
+      },
+      "recipeTitle": "Skillet Cornbread"
+    },
+    {
+      "id": "bruschetta",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:garlic-bread",
+        "title": "Garlic Bread",
+        "slug": "garlic-bread",
+        "link": "https://foodfusion.com/recipe/garlic-bread/",
+        "imageUrl": "https://media.foodfusion.com/2016/09/ID-R00055-5.jpg"
+      },
+      "recipeTitle": "Tomato Bruschetta"
+    },
+    {
+      "id": "shortbread",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:shortbread-cookie-sandwich-with-dulce-de-leche",
+        "title": "Shortbread Cookie Sandwich with Dulce De Leche",
+        "slug": "shortbread-cookie-sandwich-with-dulce-de-leche",
+        "link": "https://foodfusion.com/recipe/shortbread-cookie-sandwich-with-dulce-de-leche/",
+        "imageUrl": "https://media.foodfusion.com/2018/07/Shortbread-cookies-Recipe-by-food-Fusion-1.jpg"
+      },
+      "recipeTitle": "Butter Shortbread"
+    },
+    {
+      "id": "cinnamon-rolls",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:chocolate-cinnamon-rolls-kids",
+        "title": "Chocolate Cinnamon Rolls (Kids)",
+        "slug": "chocolate-cinnamon-rolls-kids",
+        "link": "https://foodfusion.com/recipe/chocolate-cinnamon-rolls-kids/",
+        "imageUrl": "https://media.foodfusion.com/2018/09/Cinnamon-rolls-kids-Recipe-by-Food-fusion-6.jpg"
+      },
+      "recipeTitle": "Cinnamon Rolls"
+    },
+    {
+      "id": "caprese-orzo",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:pasta-salad-restaurant-wala",
+        "title": "Pasta Salad Restaurant Wala",
+        "slug": "pasta-salad-restaurant-wala",
+        "link": "https://foodfusion.com/recipe/pasta-salad-restaurant-wala/",
+        "imageUrl": "https://media.foodfusion.com/2024/04/yt1-1.jpg"
+      },
+      "recipeTitle": "20-Minute Caprese Orzo"
+    },
+    {
+      "id": "chana-masala",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:chana-masala-poori",
+        "title": "Chana Masala & Poori",
+        "slug": "chana-masala-poori",
+        "link": "https://foodfusion.com/recipe/chana-masala-poori/",
+        "imageUrl": "https://media.foodfusion.com/2024/12/Choley-Puri-Recipe-by-Food-Fusion-2.jpg"
+      },
+      "recipeTitle": "Chana Masala"
+    },
+    {
+      "id": "desi-chinese",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:chicken-manchurian",
+        "title": "Chicken Manchurian",
+        "slug": "chicken-manchurian",
+        "link": "https://foodfusion.com/recipe/chicken-manchurian/",
+        "imageUrl": "https://media.foodfusion.com/2025/07/YT_.jpg"
+      },
+      "recipeTitle": "Desi Chinese"
+    },
+    {
+      "id": "sourdough-focaccia",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:focaccia-bread",
+        "title": "Focaccia Bread",
+        "slug": "focaccia-bread",
+        "link": "https://foodfusion.com/recipe/focaccia-bread/",
+        "imageUrl": "https://media.foodfusion.com/2023/02/GRAB-YT-01.jpg"
+      },
+      "recipeTitle": "Rosemary Focaccia"
+    },
+    {
+      "id": "naan",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:cheese-naan-without-yeast-and-egg",
+        "title": "Cheese Naan without Yeast and Egg",
+        "slug": "cheese-naan-without-yeast-and-egg",
+        "link": "https://foodfusion.com/recipe/cheese-naan-without-yeast-and-egg/",
+        "imageUrl": "https://media.foodfusion.com/2021/08/Cheese-Naan-Recipe-by-Food-fusion-1.jpg"
+      },
+      "recipeTitle": "Soft Naan"
+    },
+    {
+      "id": "tip-salt",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:namak-paray-nimki",
+        "title": "Namak Paray & Nimki",
+        "slug": "namak-paray-nimki",
+        "link": "https://foodfusion.com/recipe/namak-paray-nimki/",
+        "imageUrl": "https://media.foodfusion.com/2020/02/Namak-paray-2-ways-Recipe-by-Food-fusion-6-1.jpg"
+      },
+      "recipeTitle": "Salt in Layers"
+    },
+    {
+      "id": "tip-yogurt",
+      "status": "ok",
+      "match": {
+        "score": 100,
+        "query": "slug:street-style-silky-smooth-dahi",
+        "title": "Street Style Silky Smooth Dahi",
+        "slug": "street-style-silky-smooth-dahi",
+        "link": "https://foodfusion.com/recipe/street-style-silky-smooth-dahi/",
+        "imageUrl": "https://media.foodfusion.com/2025/12/Street-Style-Aloo-Tikki-Chaat-4.jpg"
+      },
+      "recipeTitle": "Yogurt That Won’t Split"
+    }
+  ]
+}

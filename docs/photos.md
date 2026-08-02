@@ -39,6 +39,16 @@ Removed **34** mismatched MealDB/Foodish heroes (lattes→tortilla, edamame→ch
 samosas→eggplant, etc.). Kept Foodish desserts that match (`tiramisu`, `balushahi`).
 Audit artifact: `docs/photo-honesty-pass.json`.
 
+### 2026-08-02 fill (FoodFusion)
+
+Filled **34 / 34** from FF catalog via `node scripts/fill-heroes-from-foodfusion.mjs`.
+Credit `FoodFusion` in `images.generated.json`. Report: `docs/ff-hero-fill-report.json`.
+
+Exact / strong matches for most; soft stand-ins where FF has no plate:
+`iced-blueberry-latte`→berry smoothie, `tea-eggs`→steamed egg squares,
+`edamame`→green beans, `bruschetta`→garlic bread, `tip-salt`→namak paray,
+`tip-yogurt`→silky dahi.
+
 Regen curated map:
 
 ```bash

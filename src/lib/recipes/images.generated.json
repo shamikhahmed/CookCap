@@ -1090,5 +1090,311 @@
     "matched": "dessert (Balushai)",
     "w": 1600,
     "h": 1600
+  },
+  "simple-tea-cake": {
+    "blurDataURL": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAABwBACdASoUABQAPu1ur1IppiQiqAgBMB2JbAAu/8ASbD5/uj5A0/iIxfBEgAD9+cd/bgWmHW70+ImREY9kO+7Bu/1RBjn/+72pgz+TksmOU3WhKK/7CUpYxh3LlaKq88dQNvv6iwkD2hj2LDHxHTTPIHTWuKJKbXjk96WYmc/W/82zkoMklDeDk67YUzJk0GnxF51UxWqZ0n/GRz4lC64ehXZ+OuWgNCAAAA==",
+    "credit": "FoodFusion",
+    "matched": "Moist Mango Loaf /Tea Cake",
+    "sourceUrl": "https://foodfusion.com/recipe/moist-mango-loaf-tea-cake/",
+    "imageUrl": "https://media.foodfusion.com/2026/07/Moist-Mango-Loaf-Tea-Cake-2.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "iced-mocha-latte": {
+    "blurDataURL": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAACQBACdASoUABQAPu1usFIppiSiqAgBMB2JYgDI1AvcrW+ZN4qGVuVhnyf/SoAA3ZvOTJqWw0Q3uzJW1QrHs0pzLnLIrHJAPDI4auumAtFJJMJai94jzl3Zna/Qd+xxYJGy/xyYnN4MKFw8QVVaKl5q420TmHoSMTs4vgs63+JXTy0IaLdO2hIrAAA=",
+    "credit": "FoodFusion",
+    "matched": "Dark Cocoa Mocha",
+    "sourceUrl": "https://foodfusion.com/recipe/dark-cocoa-mocha/",
+    "imageUrl": "https://media.foodfusion.com/2026/04/Dark-Cocoa-Mocha-4.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "iced-spanish-latte": {
+    "blurDataURL": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAAAQBQCdASoUABQAPu1sq1EppaOiqAqpMB2JagCdMt8BeGo6NcZfCQPJW9/alZ7ZbZBgAP7KcWFXZZv9LT/3IfCuZauuVer8Vd0X7cc+iwCWUWOgJuEA9A88+z1c7beyk9eJqDUTGU520cZC/hFwCKaGE/K0iG41dubA+mRIExMjWwN9C3UIlU2FAj1AQX9SGhxnAMWuMHIru4xkcAh8htoUVGOxr9ejm2lc3BfC8sreEF2HOMO8ofLvhsXISYE56RAAAA==",
+    "credit": "FoodFusion",
+    "matched": "Butterscotch Latte",
+    "sourceUrl": "https://foodfusion.com/recipe/butterscotch-latte/",
+    "imageUrl": "https://media.foodfusion.com/2026/02/latte.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "iced-mocha-orange-latte": {
+    "blurDataURL": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAACQBACdASoUABQAPu1usFIppiSiqAgBMB2JYgDI1AvcrW+ZN4qGVuVhnyf/SoAA3ZvOTJqWw0Q3uzJW1QrHs0pzLnLIrHJAPDI4auumAtFJJMJai94jzl3Zna/Qd+xxYJGy/xyYnN4MKFw8QVVaKl5q420TmHoSMTs4vgs63+JXTy0IaLdO2hIrAAA=",
+    "credit": "FoodFusion",
+    "matched": "Dark Cocoa Mocha",
+    "sourceUrl": "https://foodfusion.com/recipe/dark-cocoa-mocha/",
+    "imageUrl": "https://media.foodfusion.com/2026/04/Dark-Cocoa-Mocha-4.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "iced-strawberry-latte": {
+    "blurDataURL": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAACwBACdASoUABQAPu1kq06ppaQiKA1RMB2JYwDGfBIl7sexT+QgYABcmmy0Cb4AANvddSoEwGx/j5grWD0h/3ZFyveR7OaDe9m4UaVfHTs3GnAHwgc87nFZMEZXQLD4YCvwMM6wLqKdLfZ6Rxp+U6/nB0GvZnyE9cPT9CBYAZMAAA==",
+    "credit": "FoodFusion",
+    "matched": "Strawberry Cloud Foam Latte",
+    "sourceUrl": "https://foodfusion.com/recipe/strawberry-cloud-foam-latte/",
+    "imageUrl": "https://media.foodfusion.com/2025/12/Strawberry-Cloud-Foam-Latte-4.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "strawberry-oreo-latte": {
+    "blurDataURL": "data:image/webp;base64,UklGRgIBAABXRUJQVlA4IPYAAAAQBgCdASoUABQAPu1srVIppaQiqAgBMB2JbACdMuCvK6ZnvNhEkBedgO6pEu+khscCkqDV37FJ2QAA/tcANxKt2QGiqLputOzXT0SaOH2qu0MRjJMUrQzGmbuJK8P9lcBIRyLz3fjboJ7S/CZ/WjD5VRbfCWHGURanvfkXZcqpvncF/on2j3vhpKE0AZQl7ApkmC07VeOOXtkgReM89mmbb1kNhScFGU2YAqSTAtjjj0a7aPtYMgMJUh8pRPSkFVEh++OIxtxfJQDLBSU7B8pC2j3g9R3srgvg3N+I6Gd7K6pQugzdrvlYVdQuxCQ4+u9KXuscwAA=",
+    "credit": "FoodFusion",
+    "matched": "No-Bake Oreo Cups with Oreo Shake",
+    "sourceUrl": "https://foodfusion.com/recipe/no-bake-oreo-cups-with-oreo-shake/",
+    "imageUrl": "https://media.foodfusion.com/2018/12/Oreo-Shots-Recipe-by-Food-fusion-1.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "cookies-cream-latte": {
+    "blurDataURL": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4INoAAAAwBgCdASoUABQAPu1wsFKppiSiqAgBMB2JYgCxHw7kgI7wMroGCymcMfFtI3FnRMKlusS0k0eZx/4AAPyuLMQObtCCYHx1SnQjm2eEyG+DFszrN+NZCL/pnjY7yj8h5YbQWeJ5at1jv0Lv7wfubV35/gvglo2nJ6dKQzN4uHrTAr+n/F4NHE6kqnH1MGZ5IHX3SjE5kyEvBpjabn7TlwAfRGDX7IpqBp2e2X17SRNlLP4PzIkcFHxJjK+QNxYEwGKwA/qDvMXheU3sJX85sALMfeGYMPeQIAxAAA==",
+    "credit": "FoodFusion",
+    "matched": "Cookies & Cream Parfait",
+    "sourceUrl": "https://foodfusion.com/recipe/cookies-cream-parfait/",
+    "imageUrl": "https://media.foodfusion.com/2022/05/Grab-1.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "fruit-tart": {
+    "blurDataURL": "data:image/webp;base64,UklGRuwAAABXRUJQVlA4IOAAAACwBQCdASoUABQAPu1ur1IppiQiqAgBMB2JbACdMoRwItvKMIE6LCWiM49Rf85ugV2wkaEH20AA/rw8bn0MNoNF3OnHtuHofCmJyr2lIzNbVlALnvhqXkZf/PE7DPEct5XLCWT7qBs1OaORW1FlymPObYme3zTyJDsJLtHw3Ly3gx87L1R9oadWtpnpCI1qX9l/b+gv1D/bJvwvk1f78swr22Yew2YIR+M2mr3pf7kJJjCJqq35FKVfCA67bBjShBY3fqX5COGLxm0wdehknF3bFLEmOLek14sZMXUSg8AAAA==",
+    "credit": "FoodFusion",
+    "matched": "Fruit Custard Tart",
+    "sourceUrl": "https://foodfusion.com/recipe/fruit-custard-tart/",
+    "imageUrl": "https://media.foodfusion.com/2020/05/Fruit-custard-Tart-Recipe-by-Food-fusion-5.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "rice-pudding": {
+    "blurDataURL": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAQBQCdASoUABQAPu1qr1AppaSiqAqpMB2JQBWGaFg4uyFqIVelZvmyPEi2E4039UlAAMlgnGS/oMr5WZypcuAuHWRJ5W1GoSdaJDM4mOl6xg0HLdQ+Hw0uHdqQw7GPvdf5nherllHpmO5bGftwBUA30FSRJom5fOAAAA==",
+    "credit": "FoodFusion",
+    "matched": "Instant Badam Firni (Rice pudding)",
+    "sourceUrl": "https://foodfusion.com/recipe/instant-badam-firni-rice-pudding/",
+    "imageUrl": "https://media.foodfusion.com/2017/05/ID-R00132-A.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "panna-cotta": {
+    "blurDataURL": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAAAQBQCdASoUABQAPu1urlIppiQiqAgBMB2JbACsAYx2cxRfXDFfL432MzBHyGPuZfcAAP6O+p/YydQmfm6nxClaGzgeR2lNGmFO+dZN/2cO6KJubehimINfeTlZeJS70BPVahYSAfAFpsxnCppRJshgIBRS5MXRgXpTGzutOy5BYeXKnbRqCaNotnn8VA1G6IKNgwTsBgGRap4Rm3ReU21rtn4Nmqs1VM8BWk+FH3k8/UjWn+xaH88hMjh9I6QB0ic5a0W9MQf+8mdt3Zrlo2WuwBeB/lP9AAA=",
+    "credit": "FoodFusion",
+    "matched": "Strawberry & Kheer Panna Cotta",
+    "sourceUrl": "https://foodfusion.com/recipe/strawberry-kheer-panna-cotta/",
+    "imageUrl": "https://media.foodfusion.com/2021/04/ID-R01588-Strawberry-pistachio-panna-cotta-kheer.00_00_05_07.Still006.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "cheesecake": {
+    "blurDataURL": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAAAwBQCdASoUABQAPu1ur1IppiQiqAgBMB2JZQAFEB7ihiIYslA28H82QV8g+9zBadboAADifDBu01imKf3BdXnsNeJKo68n/Ejp3eIS7NpvgCxa2hkkOVw+a3kOzsw0t+5To/794kFok/l8KpY/TRM6NeMpYoZFq64/pYk5ofKa11c1t1yO/2Vx7V5Mws1HsFNQ9LY9QH4z5NjOjcBmIeNqy+n/+Ezx5gDbgFkX2m6rbJF0DHcoh71YfwZBlP0UmhPLikpnHINZrX7238ozu+4Dq4yAAA==",
+    "credit": "FoodFusion",
+    "matched": "No bake Oreo Chocolate Cheese Cake",
+    "sourceUrl": "https://foodfusion.com/recipe/no-bake-oreo-chocolate-cheese-cake/",
+    "imageUrl": "https://media.foodfusion.com/2021/09/No-bake-Oreo-chocolate-Cheese-Cake-Recipe-by-Food-fusion-3.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "popcorn": {
+    "blurDataURL": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAACQBQCdASoUABQAPu1urlIppiQiqAgBMB2JaCzAAvnZ3c8RIG0fHKQepqmx5O3nEh7nGNvsAADZc+kLoUildua5cn6yg26DtXuId/DEDKCMotwbu6MV3lmhz1zdm2A/8HwNkkX8D1FLLMsEdV+SW7n1rhJCaou8vgIh3wOJjiOvn56gWTsWSAgOoMePTrLg0uwiSOyJTqqiHzrZIvHjgSHdBW7YuigYYoErY7erxzEDx32anAgOc3EIyh4AVtsAAAA=",
+    "credit": "FoodFusion",
+    "matched": "Caramel Popcorn",
+    "sourceUrl": "https://foodfusion.com/recipe/caramel-popcorn/",
+    "imageUrl": "https://media.foodfusion.com/2018/01/ID-R00514-Caramel-Popcon-Recipe-By-Food-Fusion-4.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "boiled-chana": {
+    "blurDataURL": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAABwBQCdASoUABQAPu1ur1IppiQiqAgBMB2JagCdMySumsAnLQV5q0oUOjEi+7FJp52BwwnwAPi0XXoTvErLmaDAOIL4orx1NkDOFYozi8Wa+a8ag7mxSx2HMmgkOUMk+2rxAAB/AoYRLI8I1pMTfzh2R5U9hnaR9FWfVXRKW8PnumdIfRiMMzA3bgzYZJ6rOlJZ6ucgNoDbxfacMgZ2BCaNpiI1aC9oVFYMqYlB/bqQU6RBKoDN1KNOyTtZE5fLNDxeLN/O9qdYDiZ7eYlKAKD1PDcxKAAA",
+    "credit": "FoodFusion",
+    "matched": "Khattay Pani wali Chana Chaat",
+    "sourceUrl": "https://foodfusion.com/recipe/khattay-pani-wali-chana-chaat/",
+    "imageUrl": "https://media.foodfusion.com/2024/01/a.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "chow-mein": {
+    "blurDataURL": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAAAwBQCdASoUABQAPu1ur1KppiQiqAgBMB2JagCdMxyAKIAAnTW+cmXTuESm7k1rntDgAADKKrbFixbHc4IfIseEw3V3MA3V0snEnOUeHaJLqjjz5P0ncCMNTME5xM93GiuqNU48Gcg9wJ0NycERZQZyt9CGQHrcFaoaPtvYKA70IzT08B8d8gkJkWLuRmB/7SahoEuxCGA5yvwMpmENgR53ob9BQnA/ikxWcnRtHpdRvLzuFfsA+IA4AAA=",
+    "credit": "FoodFusion",
+    "matched": "Vegetable Chow mein",
+    "sourceUrl": "https://foodfusion.com/recipe/vegetable-chow-mein/",
+    "imageUrl": "https://media.foodfusion.com/2020/08/Vegetable-chow-mein-Recipe-by-Food-fusion-2.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "dumpling-night": {
+    "blurDataURL": "data:image/webp;base64,UklGRv4AAABXRUJQVlA4IPIAAADwBQCdASoUABQAPu1urlKppiQiqAgBMB2JbACdMoR+MP30LUAFP+GLqzNXAVdIgWgP6aepNIEI4AD87xpxYiiMo4N+M0ry9Y5s8dU8Jl3nI2M64gs3GLFFZIOIh35DDkjXAsUNMF4Lpb8IWYqKCi+GIvlwhMqvlyP8RCI/pWTQYLkgtgzYb2xdnhRfF1QiYJSGqgwmvSI+qSCkWzGtX/62SKlGXsZlYCBHMgh519/ES5hRb4i4rBPFj6vYRF3ZxIYUAZYHW0yGOQYoHgdpjFrdPQKSxeXrpE2rRJLFGn1/c/yq9ee9b70+GlEo2Sy4XhUAAA==",
+    "credit": "FoodFusion",
+    "matched": "Butter Chicken Dumplings",
+    "sourceUrl": "https://foodfusion.com/recipe/butter-chicken-dumplings/",
+    "imageUrl": "https://media.foodfusion.com/2024/11/YT-03.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "lettuce-wraps": {
+    "blurDataURL": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAADwBQCdASoUABQAPu1ur1KppiQiqAgBMB2JbAC1GoPNTmFuDsmKFtagVM3vYoGIxnYsby1MFBTiAAD2JYbNrNZDgfKUeWexVOm2HYMnolSOq10aHDTmKsYt9UBXT/jKJ1FCX7Qrzjfmz4x6+1Ue0Vewp6a0mMB05Kt2lUdoW8Y2ZskQp7vMAQrvxLtShVpg1gxydMxwbWZjg2FVa/wk9dOzd+1Vc5TyGGrTPxs6tQuwCnZRIUyT2ncGBLVQY1Ug03LPjRtXgzUCTlcYgAA=",
+    "credit": "FoodFusion",
+    "matched": "Lettuce Wraps",
+    "sourceUrl": "https://foodfusion.com/recipe/lettuce-wraps/",
+    "imageUrl": "https://media.foodfusion.com/2017/12/ID-R00498-Lettuce-Wraps-Recipe-By-Healthy-Food-Fusion-5.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "samosas": {
+    "blurDataURL": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAABwBQCdASoUABQAPu1qrVCppaQiqAqpMB2JaACdMuxNJBc1exF5NtRWi+K8rHzo8FKs98yAAP7LtVLggbsAuZ3C6QeR4agvEtj3Y4c6NowgkzvYnGRFo60LaQlcwjbFxYv+4nLpAWSlnSqwcaD6WvUp/1A9tNAU7vlwnxbt2xkB6YBPG2z8Id4Xvs6Iz2ZgVATQrqZiHITA/tmFvyQQSK85B4EZ//UoqAo/cbg+NttdZMcguj3y8AAA",
+    "credit": "FoodFusion",
+    "matched": "Authentic Punjabi Samosa",
+    "sourceUrl": "https://foodfusion.com/recipe/authentic-punjabi-samosa/",
+    "imageUrl": "https://media.foodfusion.com/2025/02/2-2.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "pakoras": {
+    "blurDataURL": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAABQBQCdASoUABQAPu1srlIppaQiqAgBMB2JZgC1GxqAAASuCrvjHvS4MJei66x2pKw9ZyAA/sPfCN33XK42POdiRxbYfpxpFMWCj1IDaHy5mSqbM+yt19llbJhfGnIXCDGQufedr/LCjChFG6n3MjEUxptZKWLkN+mHXLFGvh6kgwOPDxXd+1SAdh/q0fONcoq8arX1U5PBgoUbFGcOCseUHpgvqb7YE+a+SNdgA45kAA==",
+    "credit": "FoodFusion",
+    "matched": "Vegetable Pakora",
+    "sourceUrl": "https://foodfusion.com/recipe/vegetable-pakora/",
+    "imageUrl": "https://media.foodfusion.com/2019/04/Vegetable-Pakora-Recipe-by-food-fusion-2.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "spring-rolls": {
+    "blurDataURL": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAAAQBQCdASoUABQAPu1urlIppiQiqAgBMB2JaACdMoSBXf/i2OxTfcz1kfk0W8tzKXpAAM4LzGKD7KXV2E1rdDt43ASsCkBj9MJyZNnyXGkfaVEVEToX/7qYyZxzuTerL4sGqF5R8gnKb/SFME6W0uKW3I/atwMRBfoe+SJuqqZaD1/ZJtIS2lyt5AkEHqc07V7VHM2Plo0iUqUDKjOPtP77FWrdsyRWnjiUfDtZl1zOk8HwkJfPpzPcN3+GgynPfxdK0sWHR1XfjALOwcA8eQIRamm7M3cNNXPNHO0F6doNpiW+scAAAA==",
+    "credit": "FoodFusion",
+    "matched": "Chicken 65 Spring Rolls",
+    "sourceUrl": "https://foodfusion.com/recipe/chicken-65-spring-rolls/",
+    "imageUrl": "https://media.foodfusion.com/2026/01/PGH73518-1.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "chicken-stir-fry": {
+    "blurDataURL": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAABwBQCdASoUABQAPu1ur1IppiQiqAgBMB2JaACdMzL8rTAAmW8ibl37SOweyNQU47Gy0LwAAP6U/IDu+qD01qIO2s7rAk6nyhZHi+yOISbUwHXHWIvU0ygo3PZ7TfcRfTNHZpR4ocWJU1SFpHkeZVXVYbTfjjRH+FdxvnKM91ZTTUFNFusNW4ikYYWOJQfWYLU4RK2RFfyNdecuSnIHG7wdJ9VZJhFv2O/bZl/NNQCy6XCORTIAAA==",
+    "credit": "FoodFusion",
+    "matched": "Basil Chicken Stir fry (Pad Kra Pao)",
+    "sourceUrl": "https://foodfusion.com/recipe/basil-chicken-stir-fry-pad-kra-pao/",
+    "imageUrl": "https://media.foodfusion.com/2025/06/Basil-Chicken-Stirfry-Pad-Kra-Pao-REcipe-by-Food-Fusion-4.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "cornbread": {
+    "blurDataURL": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAACQBACdASoUABQAPu1oqU+ppiOiKA1RMB2JagC7L9SAypn3RZsfstlesFUw+gAA/ryea2Mm2rAjrnccC2RWDhYZ3s7Rb4ms0jtMxAH22U1+ytMP9IagToY3KNnLpNwJTT8goRhsH7xzCPP3yBgWnooDRUsBQK8JPG3+sGAgprj3PqiQ4qgmu43PGWS18hf8JkKLu6M9/2NLsAXZa94l13rHkZ13QG9r4AA=",
+    "credit": "FoodFusion",
+    "matched": "Makki ki Roti",
+    "sourceUrl": "https://foodfusion.com/recipe/makki-ki-roti-recipe/",
+    "imageUrl": "https://media.foodfusion.com/2017/05/ID-R00193-1.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "shortbread": {
+    "blurDataURL": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAABQBQCdASoUABQAPu1urlIppiQiqAgBMB2JYgC7M2QBgl/nvv7b7IbeOIIYD/9a8Yn1VZAA/uFcfrVdL+PtyWzojzDOcwojvYavy1jzvzGSTVRMJMxHygjyPdUZ7PJ81UffLKDWva87qZ3+GABybGgwCS3/hOkbHlP1MBcr/RIi2g0EHWld95jnXzJVsstpi5+ZKWEU42CIiDBKEzB7nFuJI102aMVFBSKOY6AA",
+    "credit": "FoodFusion",
+    "matched": "Shortbread Cookie Sandwich with Dulce De Leche",
+    "sourceUrl": "https://foodfusion.com/recipe/shortbread-cookie-sandwich-with-dulce-de-leche/",
+    "imageUrl": "https://media.foodfusion.com/2018/07/Shortbread-cookies-Recipe-by-food-Fusion-1.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "cinnamon-rolls": {
+    "blurDataURL": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAACwBQCdASoUABQAPu1srlIppaQiqAgBMB2JbACxDTeJ/qUB3zB6lT4e6IejMHD5gHwj9yqNkeAA/uF0bysAvlu15ViX7NQ+69owo4Q6xE5O7rwr5H3z/9GeO5VWDsBAuks5gXtyCiaoOH/MUlUw+Wl0yphgE6IO2zkheFAsqLMZ0aPuOHKbUZxI89ZF1rTYlaWA+5bjatlneeMQ+Zh096OF+I7P56i0G7wbMwcvbkt+0yss25hmFkthahi4fJlanw17qAAA",
+    "credit": "FoodFusion",
+    "matched": "Chocolate Cinnamon Rolls (Kids)",
+    "sourceUrl": "https://foodfusion.com/recipe/chocolate-cinnamon-rolls-kids/",
+    "imageUrl": "https://media.foodfusion.com/2018/09/Cinnamon-rolls-kids-Recipe-by-Food-fusion-6.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "caprese-orzo": {
+    "blurDataURL": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4INoAAACwBQCdASoUABQAPu1urlKppiQiqAgBMB2JbACdMuN+A8Aa0VhoHE82ZizplBLP3tmliQfeNPAAyZrbVODnzVXke8YlN33ZOj287OmExY+ndUS1JPAEfnlwJdMZx1V2jXFlCt/NG7AWTJQbBnOnMOpv2fxgpOHyOYCd5Wo75hYjp1jje69ecYkmvjyOsDvy5RPWIcXgtmpFRvQMNdsQ5T9IELbazbx+61+AcrPvXB3U4Xm64IsVoQ3SxUrb03beNJrKWZb9Pc0EisScAwEBMRHPa3RERo+QwyAAAA==",
+    "credit": "FoodFusion",
+    "matched": "Pasta Salad Restaurant Wala",
+    "sourceUrl": "https://foodfusion.com/recipe/pasta-salad-restaurant-wala/",
+    "imageUrl": "https://media.foodfusion.com/2024/04/yt1-1.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "chana-masala": {
+    "blurDataURL": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAABQBQCdASoUABQAPu1ur1IppiQiqAgBMB2JZAC7L1yAnm7FCwEol/+n0igxd0BQ2F6Sw+AA+p5xDzjeeh1O+gN7v+g/A/UWs9BIl3bEZ/BgbEC1gSKuQC6p1Wtsz8HHqehP2GGP79iWgeqrlxYwfl+9f6PaXUo0aaZqu+rtePlY58cqWsntq5YGepRNd3Cfr6W77Um/ZlWi7nLvW+KuSSz+f7eRqcfRZzKAQMGbazp41xJ+woUPQLzKIAvHAAAA",
+    "credit": "FoodFusion",
+    "matched": "Chana Masala & Poori",
+    "sourceUrl": "https://foodfusion.com/recipe/chana-masala-poori/",
+    "imageUrl": "https://media.foodfusion.com/2024/12/Choley-Puri-Recipe-by-Food-Fusion-2.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "desi-chinese": {
+    "blurDataURL": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAAAQBgCdASoUABQAPu1urlIppiQiqAgBMB2JbACdMoSBf6q4zop8Ay4fI1jWjZnG2R4rVi5R9JbnTUAA9ph5lxdGjEnHfDRbeVfDwDm5IOG4VXkwRkXoEHK7ra2GCnyI7NldVzBTA3v9WIFwIZW5xRIqXuy5RGcTy7VP2y5/jYDmhDCkMRjdLmvxTzeN2SiNwySsYr7NiZOk1wDgAuDWRRTPjVKM5go2k20asA3ioQTWqU1v/QnWH4LzrHs71oka/CBFBf1ShfPKzbm7WTk5J8+yxmUhbC+nis+CSo0Km97SiYHqeyBSZlmnffiA4oA34AA=",
+    "credit": "FoodFusion",
+    "matched": "Chicken Manchurian",
+    "sourceUrl": "https://foodfusion.com/recipe/chicken-manchurian/",
+    "imageUrl": "https://media.foodfusion.com/2025/07/YT_.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "sourdough-focaccia": {
+    "blurDataURL": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAAAwBQCdASoUABQAPu1ur1IppiQiqAgBMB2JZgCw7YyoUwxa/dX6uxlhj8pr5LfXCpUfAADN+5mR8fz/EtAckr05p8y8KvoQ96poj/z2PN+Wtr2G1kJ4OykuFmiQLQGgqAEf16Uvme5QA+Rui7HwUobFfc/GD2WASLUD5FoYRBICzBIGrfWsQTLmu/bdjPjPLT8xxlkC6kG5S5JShIiq36mkhdUcy2LNlz6/MHsHqcEyCIoi6ssqAAAA",
+    "credit": "FoodFusion",
+    "matched": "Focaccia Bread",
+    "sourceUrl": "https://foodfusion.com/recipe/focaccia-bread/",
+    "imageUrl": "https://media.foodfusion.com/2023/02/GRAB-YT-01.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "naan": {
+    "blurDataURL": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAACQBQCdASoUABQAPu1ur1IppiQiqAgBMB2JbACdMt1zUQaPoAJhgJTWQkzkvRic2C+M6/2WMADN8zcWJilHG0WZlwIPxS5BZMopsoi/peYhkXb2Et39J0sw62KG1t0hVZZw1BV5AlJmCFRdLHyzSl0RsoTJuRbCFMfBEJAgA48ylWGDHwfKOiRMMEue2eK1tr/nXfZX4v5ZPJOugtUIY8LchLeHpGS7FZ/jZiuf1PZG21yFIDkdQeenE2SAAA==",
+    "credit": "FoodFusion",
+    "matched": "Cheese Naan without Yeast and Egg",
+    "sourceUrl": "https://foodfusion.com/recipe/cheese-naan-without-yeast-and-egg/",
+    "imageUrl": "https://media.foodfusion.com/2021/08/Cheese-Naan-Recipe-by-Food-fusion-1.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "iced-blueberry-latte": {
+    "blurDataURL": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAAAQBQCdASoUABQAPu1sqlGppaOiqAqpMB2JbAC1GyNhGAKOpIoiB0Sm1FOLWNcsq47AAP6NJG+8e/1loRmDwJkKZoT5Hdah10KvzN2+Ggg0f2Syg1HzmUDjeoUiHKf2nj9D3CTKq98IOPMb61DNzvREcJfGp5z3Vn8mqYOR9w2XIuYeCi1GSfCXeTR7XanSI5ICWQxkjiBemcgBfugAAA==",
+    "credit": "FoodFusion",
+    "matched": "Banana Berry Green Tea Smoothie",
+    "sourceUrl": "https://foodfusion.com/recipe/banana-berry-green-tea-smoothie/",
+    "imageUrl": "https://media.foodfusion.com/2023/08/YT_01-1.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "edamame": {
+    "blurDataURL": "data:image/webp;base64,UklGRgABAABXRUJQVlA4IPQAAAAwBgCdASoUABQAPu1sq1EppaOiqAqpMB2JbACdMoR9AQz56rTAByYxvIo2cgwQMZ/DLC39gV4OowAAAP3jX4yzMdeNqP3Zxf+r20CYR5neYEeMq6gM4tpIZ7tkjW2Ny/2AStEZBlK0HEj9ZlrGOQNw6tBlvFbIjYmSC6Jx/PUt3Klvzl0pMTxwxBiSjlVZrvJf3dcMvwkeObkt9woNI+T4b9vwhLfumzC4dpN9jDL+YZZTmZ4UKKGt61mtsntKbTgo0S5xB/rpcfRDZDFi0aX7QaOmU7KrD69F74mWpwHI0Yj44Yoe5Hp1i/YTJBnWjxkyvAAA",
+    "credit": "FoodFusion",
+    "matched": "Dahi Tadka Green Beans",
+    "sourceUrl": "https://foodfusion.com/recipe/dahi-tadka-green-beans/",
+    "imageUrl": "https://media.foodfusion.com/2025/08/3-1.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "tea-eggs": {
+    "blurDataURL": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAABwBQCdASoUABQAPu1ur1KppiQiqAgBMB2JagCdMoGv/gHT1o5g1GD2FzXBhRgqnE4W+EfAAPZE7FhbDu9uEzPRhLlvTEeHMhs4KQK8dpuOwLHs8Nzxss3TksPzkwLWWS0/8Tqi4d3e6hCUEfF7b09PTT9GccPRhvnf6cOKUcAYddqBN9ZSODaQmgKfIfTY8V6Ez/05p0LR+Am35n6sWad3bNJW3IMMpgEkyXRtXWpMjDCZXp2ZYgAA",
+    "credit": "FoodFusion",
+    "matched": "Steamed Egg Squares",
+    "sourceUrl": "https://foodfusion.com/recipe/steamed-egg-squares/",
+    "imageUrl": "https://media.foodfusion.com/2020/11/Steam-egg-sqaures-Recipe-by-Food-fusion-1.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "bruschetta": {
+    "blurDataURL": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAAAQBQCdASoUABQAPu1wsFIppiSiqAgBMB2JZgC7MzQ7KBFaprT//fBdxY1U3+g7qSygAP3PD4dR6UqNihzdLXXQgYkrvHqfIcoODPvEc/4tdeizT0zuG3Bif7k9V8+RZ30I1IFAeAG/sq7y2b9teBmJyYt0eIKlLXd0/0BTE1ePSVqFkqPdPJh2ZGO/ppaMn66USUSAtYzXAS3+AAA=",
+    "credit": "FoodFusion",
+    "matched": "Garlic Bread",
+    "sourceUrl": "https://foodfusion.com/recipe/garlic-bread/",
+    "imageUrl": "https://media.foodfusion.com/2016/09/ID-R00055-5.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "tip-salt": {
+    "blurDataURL": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAABwBQCdASoUABQAPu1ur1IppiQiqAgBMB2JbAC7M2iBb3+rkoyBgiBZSew/5tokb+N1hArAAP5HH8CvdUtiHKX3AtrvDg6YzN3SkrWo5It4QYrTG95mxgy0rJgqSQ24FVA6VoeEAS+eBojRicHkwHSJwVrfzg72V1dXMHAGONvYFyCoyCLQf1N8MaBAJEf9X29XZy0pJEHVia4YWzUSTsdcWEYBPx1xEz6GL+F+pXV+/J/NlBomSWg3ck5SOANj2fK+Z2cLb7H1BvmvzSTG0H0Y5BzUwAAA",
+    "credit": "FoodFusion",
+    "matched": "Namak Paray & Nimki",
+    "sourceUrl": "https://foodfusion.com/recipe/namak-paray-nimki/",
+    "imageUrl": "https://media.foodfusion.com/2020/02/Namak-paray-2-ways-Recipe-by-Food-fusion-6-1.jpg",
+    "w": 1600,
+    "h": 1600
+  },
+  "tip-yogurt": {
+    "blurDataURL": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAABQBQCdASoUABQAPu1ur1IppiQiqAgBMB2JZgCsL3Zs/wDpMCVHJe6ibNV1VYLDlfnphmAA/Kx3u/d/e//9/7SJcFe1/fwln1Gou0Ss5ON+Y40SnspFwX2DFSkmF+wKeZoYwQti5FSBAODRfI4L38G9Ht1EEFJG7Ul2aTi6WONHShjObcp2ZSlJoEq6PQ8vQUF0cgqsBi3oVag07CP8Cae2Dl/tv/mcpdP4jbQA",
+    "credit": "FoodFusion",
+    "matched": "Street Style Silky Smooth Dahi",
+    "sourceUrl": "https://foodfusion.com/recipe/street-style-silky-smooth-dahi/",
+    "imageUrl": "https://media.foodfusion.com/2025/12/Street-Style-Aloo-Tikki-Chaat-4.jpg",
+    "w": 1600,
+    "h": 1600
   }
 }

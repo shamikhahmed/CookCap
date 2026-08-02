@@ -1,6 +1,6 @@
 {
   "name": "cookcap",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "private": true,
   "description": "CookCap — heirloom family cookbook Progressive Web App (Cap family).",
   "scripts": {

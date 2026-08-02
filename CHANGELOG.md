@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.2.4 — 2026-08-02
+
+### Fix (photo honesty refill)
+- **34 / 34** honesty-stripped heroes refilled from FoodFusion catalog (`scripts/fill-heroes-from-foodfusion.mjs`)
+- Blur manifest + `@sm` thumbs; credit `FoodFusion`
+- Soft stand-ins only where FF has no exact plate (blueberry latte→berry smoothie, edamame→green beans, etc.)
+- SW → `cookcap-v10`
+
 ## 2.2.3 — 2026-08-02
 
 ### Fix (modal overflow)
