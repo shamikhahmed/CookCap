@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useApp } from '@/components/app/AppStore';
 import { getShopping } from '@/lib/db/store';
-import { estCostPkr, formatCost } from '@/lib/cost/ingredient-cost';
+import { estCostPkr, formatCost, COST_ESTIMATE_HINT } from '@/lib/cost/ingredient-cost';
 
 /** Weekly grocery budget vs estimated shopping-list cost. */
 export function BudgetPanel() {
@@ -67,7 +67,7 @@ export function BudgetPanel() {
               <span className="font-medium text-[color:var(--color-ink)]">
                 {formatCost(shopCost, currency)}
               </span>
-              <span className="text-xs text-[color:var(--color-ink-faint)]"> · estimate</span>
+              <span className="text-xs text-[color:var(--color-ink-faint)]"> · {COST_ESTIMATE_HINT}</span>
             </p>
             <p>
               {remaining != null && remaining >= 0 ? 'Left' : 'Over'}{' '}
@@ -85,8 +85,8 @@ export function BudgetPanel() {
         ) : (
           <p className="text-xs text-[color:var(--color-ink-faint)]">
             {weeklyBudgetPkr > 0
-              ? `${formatCost(weeklyBudgetPkr, currency)} set — add recipe items to shopping for a running estimate.`
-              : 'Set a weekly cap to track grocery spend.'}
+              ? `${formatCost(weeklyBudgetPkr, currency)} set — add recipe items to shopping for a running estimate. ${COST_ESTIMATE_HINT}`
+              : `Set a weekly cap to track grocery spend. ${COST_ESTIMATE_HINT}`}
           </p>
         )}
       </div>

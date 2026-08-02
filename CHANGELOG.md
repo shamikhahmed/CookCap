@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.1 — 2026-08-02
+
+### Honesty + audit
+- **Lighthouse** (live Pages): desktop Perf **96** / A11y **100** / BP **96** / SEO **63** (SEO = intentional `noindex` only). Reports in `docs/lighthouse*`
+- **Photo honesty pass** — stripped 34 wrong-dish stock heroes → generated art fallback; report `docs/photo-honesty-pass.json`
+- **Estimate labels** — cost shows `~Rs` + grocery estimate hint; macros always labeled estimate vs hand-checked; fit badge / healthier / budget copy tightened
+
 ## 2.0.0 — 2026-08-02
 
 ### Profiles, modes, nutrition & calendar (phases 1–12)

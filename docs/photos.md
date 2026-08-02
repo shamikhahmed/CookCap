@@ -27,7 +27,17 @@ Method leaf shows up to 3 dish-correct photos (first / mid / last) when mapped.
 | `public/recipes/steps/<id>-2.webp` | Mid / plated B |
 | `public/recipes/steps/<id>-3.webp` | Finish / plated C |
 
-**Honest rule:** dish must match. Wrong stock → omit key from map + delete files (no photo better than wrong photo).
+## Honest rule
+
+Dish must match. Wrong stock → **omit** from `images.generated.json` + delete
+`public/recipes/<id>.webp` (+ `@sm`) so `RecipeImage` falls back to generated art.
+No photo better than wrong photo.
+
+### 2026-08-02 pass (v2.0.1)
+
+Removed **34** mismatched MealDB/Foodish heroes (lattes→tortilla, edamame→cheesecake,
+samosas→eggplant, etc.). Kept Foodish desserts that match (`tiramisu`, `balushahi`).
+Audit artifact: `docs/photo-honesty-pass.json`.
 
 Regen curated map:
 

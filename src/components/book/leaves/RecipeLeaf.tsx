@@ -294,7 +294,15 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
         </dl>
         {recipeCost && (
           <p className="mt-2 text-xs text-[color:var(--color-ink-faint)]">
-            Est. ingredients ~ {recipeCost}
+            Ingredients {recipeCost}{' '}
+            <span className="opacity-80">(grocery estimate — not a receipt)</span>
+          </p>
+        )}
+        {!isTip && (
+          <p className="mt-1 text-[0.65rem] text-[color:var(--color-ink-faint)]">
+            {recipe.macrosVerified
+              ? 'Macros hand-checked for this edition.'
+              : 'Macros are kitchen estimates — not lab values.'}
           </p>
         )}
 
@@ -347,6 +355,9 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
               <p className="mt-2 text-xs tabular-nums text-[color:var(--color-ink-soft)]">
                 {recipe.nutrition.calories} → {healthierPreview.calories} kcal ·{' '}
                 {recipe.nutrition.protein}g → {healthierPreview.protein}g protein
+                <span className="mt-1 block text-[0.65rem] text-[color:var(--color-ink-faint)]">
+                  Swap estimate only — not medical advice.
+                </span>
               </p>
             )}
           </div>

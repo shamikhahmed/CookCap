@@ -19,9 +19,10 @@ export function FitBadge({ recipe }: { recipe: Recipe }) {
   return (
     <span
       className="inline-flex max-w-full items-center truncate rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)] px-2.5 py-0.5 text-[0.7rem] font-medium text-[color:var(--color-ink-soft)]"
-      title={bits.join(' · ')}
+      title={`${bits.join(' · ')} · ranking estimate`}
     >
       {bits.join(' · ')}
+      <span className="ml-1 opacity-60">· est.</span>
     </span>
   );
 }

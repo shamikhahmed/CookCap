@@ -140,9 +140,13 @@ export function estCostPkr(recipe: Recipe): number {
 export function formatCost(n: number, currency: 'PKR' | 'USD' | 'GBP' = 'PKR'): string {
   const rates: Record<'PKR' | 'USD' | 'GBP', number> = { PKR: 1, USD: 1 / 278, GBP: 1 / 350 };
   const converted = n * rates[currency];
-  if (currency === 'PKR') return `Rs ${Math.round(converted)}`;
-  return `${currency === 'USD' ? '$' : '£'}${converted.toFixed(2)}`;
+  if (currency === 'PKR') return `~Rs ${Math.round(converted)}`;
+  return `~${currency === 'USD' ? '$' : '£'}${converted.toFixed(2)}`;
 }
+
+/** Always-visible honesty suffix for grocery cost UI. */
+export const COST_ESTIMATE_HINT = 'Grocery estimate — prices vary by city/store.';
+
 
 export function costPerGramProtein(cost: number, protein: number): number | null {
   if (protein <= 0) return null;
