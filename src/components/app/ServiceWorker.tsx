@@ -41,7 +41,18 @@ export function ServiceWorker() {
     const register = () =>
       navigator.serviceWorker
         .register(swUrl, { scope })
-        .then(warm)
+        .then(async (reg) => {
+          warm(reg);
+          // Appendix L — pull updates on every visit so installed PWAs leave stale caches.
+          try {
+            await reg.update();
+          } catch {
+            /* offline */
+          }
+          if (reg.waiting) {
+            reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+          }
+        })
         .catch(() => void 0);
 
     if (document.readyState === 'complete') register();

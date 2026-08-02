@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.2.2 — 2026-08-02
+
+### Fix (PWA update)
+- **SW cache** → `cookcap-v8` (header comment no longer says stale `v2`; grep the `const VERSION`)
+- Register path calls `reg.update()` + `SKIP_WAITING` so installed PWAs leave old caches
+- Grounding still pure CSS `--book-h` (confirmed live at 1280)
+
 ## 2.2.1 — 2026-08-02
 
 ### Fix (desktop first paint)

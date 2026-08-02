@@ -4,7 +4,7 @@ import { useCallback, useRef, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { useDialogA11y, motionReduce } from '@/lib/a11y/dialog';
 import { PRODUCT_NAME } from '@/lib/edition';
-import { APP_VERSION, PRODUCT_TAGLINE } from '@/lib/version';
+import { APP_VERSION, PRODUCT_TAGLINE, SW_CACHE } from '@/lib/version';
 import * as store from '@/lib/db/store';
 
 /**
@@ -112,7 +112,7 @@ export function AboutModal({
             </h2>
             <p className="mt-1 text-sm text-[color:var(--color-ink-soft)]">{PRODUCT_TAGLINE}</p>
             <p className="mt-3 text-xs uppercase tracking-[0.2em] text-[color:var(--color-ink-faint)]">
-              Version {APP_VERSION}
+              Version {APP_VERSION} · cache {SW_CACHE}
             </p>
 
             <section className="mt-5 space-y-2 text-sm leading-relaxed text-[color:var(--color-ink-soft)]">
