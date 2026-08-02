@@ -238,6 +238,21 @@ function findBest(catalog, id, recipeTitle) {
 }
 
 async function main() {
+  const forceUnlock = process.argv.includes('--force-unlock');
+  try {
+    const lock = JSON.parse(
+      await readFile(join(root, 'src/lib/recipes/images.lock.json'), 'utf8'),
+    );
+    if (lock?.ids?.length && !forceUnlock) {
+      console.error(
+        'Hero map LOCKED (src/lib/recipes/images.lock.json). Pass --force-unlock only with human approval.',
+      );
+      process.exit(2);
+    }
+  } catch {
+    /* unlocked */
+  }
+
   const honesty = JSON.parse(await readFile(honestyPath, 'utf8'));
   const catalog = JSON.parse(await readFile(catalogPath, 'utf8'));
   const files = await Promise.all(

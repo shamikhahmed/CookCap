@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.4.4 — 2026-08-03
+
+### Fix
+- **Hero honesty + lock:** replace Foodish butter-chicken stand-ins (nihari/karahi/qorma/handi/veggie) with FoodFusion plates; fix edamame/tea-eggs/drinks; tip leaves stay generated art
+- `images.lock.json` + rematch/fill refuse overwrite without `--force-unlock`
+
+### Chore
+- SW → `cookcap-v23`; `npm run lock:heroes`
+
 ## 2.4.3 — 2026-08-03
 
 ### Fix

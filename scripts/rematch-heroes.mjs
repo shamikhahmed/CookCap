@@ -194,6 +194,19 @@ async function writeHero(id, hit, manifest) {
 async function main() {
   await mkdir(outDir, { recursive: true });
   const manifest = JSON.parse(await readFile(jsonOut, 'utf8'));
+  const forceUnlock = process.argv.includes('--force-unlock');
+  let lock = null;
+  try {
+    lock = JSON.parse(await readFile(join(root, 'src/lib/recipes/images.lock.json'), 'utf8'));
+  } catch {
+    /* unlocked */
+  }
+  if (lock?.ids?.length && !forceUnlock) {
+    console.error(
+      'Hero map LOCKED (src/lib/recipes/images.lock.json). Pass --force-unlock only with human approval.',
+    );
+    process.exit(2);
+  }
 
   // Discover titles from recipe data files
   const files = [

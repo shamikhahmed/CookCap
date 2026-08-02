@@ -1,6 +1,6 @@
 {
   "name": "cookcap",
-  "version": "2.4.3",
+  "version": "2.4.4",
   "private": true,
   "description": "CookCap — heirloom family cookbook Progressive Web App (Cap family).",
   "scripts": {
@@ -11,6 +11,7 @@
     "typecheck": "tsc --noEmit",
     "format": "prettier --write \"**/*.{ts,tsx,css,md,json}\"",
     "rematch:heroes": "node scripts/rematch-heroes.mjs",
+    "lock:heroes": "node scripts/lock-heroes.mjs",
     "gallery": "node scripts/capture-gallery.mjs",
     "gate:anti-2d": "node scripts/assert-anti-2d.mjs",
     "gate:recipes": "node scripts/assert-recipe-linkage.mjs",
