@@ -22,7 +22,12 @@
 
 ---
 
-## Punch list (Phase 1 fixes)
+## Punch list (v2.2.1)
+
+- **Desktop tiny/top-left first paint** — FIXED: `.book-frame` size from `--book-h: clamp(560px, 82vh, …)` + `width: calc(var(--book-h)*5/7)`; no flex-parent `%`. Proof: `docs/gallery/desktop/grounding-{1280,1440,1920}-reload.png` (hard reload, no resize). Live measure 1280 → ~527×738 centered in stage.
+- Cloth seam kiss — `left: 6px` + higher extrusion on cloth tabs.
+
+## Punch list (prior) (Phase 1 fixes)
 
 | Item | Status | Notes |
 |------|--------|-------|
