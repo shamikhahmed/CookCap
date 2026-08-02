@@ -53,7 +53,7 @@ export function FavoritesDrawer({ open, onClose }: { open: boolean; onClose: () 
           exit={{ opacity: 0 }}
           transition={motionReduce(reduce)}
           className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
-          onClick={onClose}
+          onClick={closeHandler}
         >
           <motion.aside
             ref={panelRef}

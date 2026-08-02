@@ -207,7 +207,7 @@ export function NameGate({
                       submitName();
                     }
                   }}
-                  placeholder="e.g. Jia"
+                  placeholder="e.g. Ayesha"
                   className="mt-1.5 w-full rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3.5 py-2.5 text-[color:var(--color-ink)] placeholder:text-[color:var(--color-ink-faint)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)]"
                 />
                 {error && (
@@ -266,7 +266,7 @@ export function NameGate({
                       void createProfile();
                     }
                   }}
-                  placeholder="e.g. Jia"
+                  placeholder="e.g. Ayesha"
                   className="mt-1.5 w-full rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3.5 py-2.5 text-[color:var(--color-ink)] placeholder:text-[color:var(--color-ink-faint)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)]"
                 />
                 {profileError && (

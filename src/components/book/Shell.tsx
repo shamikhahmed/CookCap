@@ -12,6 +12,8 @@ import { ImportModal } from '@/components/app/ImportModal';
 import { InstallBanner } from '@/components/app/InstallBanner';
 import { AssetPreloader } from '@/components/app/AssetPreloader';
 import { NameGate } from '@/components/app/NameGate';
+import { OnboardingFlow } from '@/components/app/OnboardingFlow';
+import { DresserOnboarding } from '@/components/app/DresserOnboarding';
 import { Splash } from '@/components/app/Splash';
 import { AboutModal } from '@/components/app/AboutModal';
 import { useApp } from '@/components/app/AppStore';
@@ -54,8 +56,10 @@ function Frame() {
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [pantryOpen, setPantryOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
-  /** First-run: book paints first, then warm welcome card. */
+  /** First-run: book paints first, then onboarding. */
   const [welcomeReady, setWelcomeReady] = useState(false);
+  const reduceMotion = useReducedMotion();
+  const [lowPower, setLowPower] = useState(false);
 
   useEffect(() => {
     if (!needsName) {
@@ -65,6 +69,17 @@ function Frame() {
     const t = window.setTimeout(() => setWelcomeReady(true), 480);
     return () => window.clearTimeout(t);
   }, [needsName]);
+
+  useEffect(() => {
+    try {
+      setLowPower(typeof navigator !== 'undefined' && (navigator.hardwareConcurrency ?? 8) <= 4);
+    } catch {
+      setLowPower(false);
+    }
+  }, []);
+
+  const firstRunOpen = Boolean(needsName && welcomeReady);
+  const useSimpleOnboard = Boolean(reduceMotion || lowPower);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -129,14 +144,29 @@ function Frame() {
       <AssetPreloader />
       <Splash />
       <NameGate
-        open={(needsName && welcomeReady) || renameOpen}
-        dismissible={renameOpen && !needsName}
+        open={renameOpen && !needsName}
+        dismissible
         onDismiss={() => setRenameOpen(false)}
         onSubmit={(name) => {
           setOwnerName(name);
           setRenameOpen(false);
         }}
       />
+      {useSimpleOnboard ? (
+        <OnboardingFlow
+          open={firstRunOpen}
+          onComplete={(name) => {
+            setOwnerName(name);
+          }}
+        />
+      ) : (
+        <DresserOnboarding
+          open={firstRunOpen}
+          onComplete={(name) => {
+            setOwnerName(name);
+          }}
+        />
+      )}
     </div>
   );
 }
@@ -431,7 +461,7 @@ function BottomBar() {
 
       <button
         type="button"
-        className="rounded-full px-2.5 py-1.5 font-serif text-[0.7rem] font-semibold text-[color:var(--color-ink-soft)] hover:bg-[color:var(--color-paper-sunk)] sm:hidden disabled:opacity-30"
+        className="min-h-11 rounded-full px-3 py-2.5 font-serif text-[0.7rem] font-semibold text-[color:var(--color-ink-soft)] hover:bg-[color:var(--color-paper-sunk)] sm:hidden disabled:opacity-30"
         aria-label="Open chapter stickers"
         disabled={busy}
         onClick={() => window.dispatchEvent(new Event('cookcap-open-chapters'))}

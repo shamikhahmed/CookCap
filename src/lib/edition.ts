@@ -103,6 +103,30 @@ export function kitchenLine(edition: Edition): string | null {
   return `— ${first.toUpperCase()}'S KITCHEN`;
 }
 
+/** Favorites chapter / tab label from edition. Never hard-code a person. */
+export function favoritesLabel(edition: Edition): string {
+  if (!edition.named || !edition.ownerName) return 'Favorites';
+  const first = edition.ownerName.split(' ')[0] || edition.ownerName;
+  return `${first}'s Favorites`;
+}
+
+/** Recipe story header. */
+export function storyByline(edition: Edition): string {
+  if (!edition.named || !edition.ownerName) return 'A note from our kitchen';
+  const first = edition.ownerName.split(' ')[0] || edition.ownerName;
+  return `A note from ${first}`;
+}
+
+export const ONBOARD_DONE_KEY = 'cookcap-onboarded';
+
+export function markOnboardingDone() {
+  try {
+    localStorage.setItem(ONBOARD_DONE_KEY, '1');
+  } catch {
+    /* ignore */
+  }
+}
+
 export function readStoredOwner(): string | null {
   if (typeof window === 'undefined') return null;
   try {

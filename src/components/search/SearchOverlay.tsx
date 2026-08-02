@@ -10,6 +10,7 @@ import { useApp } from '@/components/app/AppStore';
 import { RECIPE_MAP } from '@/lib/recipes/data';
 import { Icon } from '@/components/ui/Icon';
 import { useDialogA11y } from '@/lib/a11y/dialog';
+import { favoritesLabel } from '@/lib/edition';
 
 const RECENT_KEY = 'jia-recent-search';
 
@@ -26,7 +27,7 @@ export function SearchOverlay({
   onPlan?: () => void;
 }) {
   const { goToRecipe, goToChapter } = useBook();
-  const { recent, favorites, allRecipes, recipeMap, theme, setTheme } = useApp();
+  const { recent, favorites, allRecipes, recipeMap, theme, setTheme, edition } = useApp();
   const reduce = useReducedMotion();
   const [q, setQ] = useState('');
   const [filters, setFilters] = useState<SearchFilters>({});
@@ -189,7 +190,9 @@ export function SearchOverlay({
             </div>
 
             <p className="px-4 pt-2.5 text-[0.65rem] font-medium uppercase tracking-[0.2em] text-[color:var(--color-ink-faint)]">
-              {q.trim() ? `${rows.length} result${rows.length === 1 ? '' : 's'}` : 'Suggested'}
+              {q.trim() || hasFilters
+                ? `${rows.length} result${rows.length === 1 ? '' : 's'}`
+                : 'Suggested'}
             </p>
 
             {!q.trim() && (
@@ -287,7 +290,11 @@ export function SearchOverlay({
                           {r.title}
                         </span>
                         <span className="block truncate text-xs text-[color:var(--color-ink-faint)]">
-                          {[c.title, `${r.prepMin + r.cookMin} min`, DIFF_LABEL[r.difficulty]]
+                          {[
+                            r.chapter === 'favorites' ? favoritesLabel(edition) : c.title,
+                            `${r.prepMin + r.cookMin} min`,
+                            DIFF_LABEL[r.difficulty],
+                          ]
                             .filter(Boolean)
                             .join(' · ')}
                         </span>

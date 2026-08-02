@@ -6,11 +6,12 @@ import { useApp } from '@/components/app/AppStore';
 import { useBook } from '@/components/book/BookController';
 import { Icon, type IconName } from '@/components/ui/Icon';
 import { ideasForToday } from '@/lib/recipes/ideas';
+import { favoritesLabel } from '@/lib/edition';
 
 /** Table of contents + today’s kitchen ideas. */
 export function ContentsLeaf() {
   const { goToChapter, goToRecipe } = useBook();
-  const { allRecipes } = useApp();
+  const { allRecipes, edition } = useApp();
   const ideas = ideasForToday(allRecipes);
 
   return (
@@ -79,7 +80,7 @@ export function ContentsLeaf() {
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="block truncate font-serif text-lg text-[color:var(--color-ink)]">
-                    {c.title}
+                    {c.id === 'favorites' ? favoritesLabel(edition) : c.title}
                   </span>
                   <span className="block truncate text-xs text-[color:var(--color-ink-faint)]">
                     {c.subtitle}

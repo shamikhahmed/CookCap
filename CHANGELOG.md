@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.2.5 — 2026-08-02
+
+### Feat (The Dresser onboarding)
+- **3D dresser first-run** — Welcome → Name → Profile → Mode → reveal book embossed `{Name} Cooks`; drawer SFX when sound on
+- **Simple path** — reduced-motion / low-power uses calm full-bleed cards (same steps)
+- **Desk z-stack fix** — overlays/Appearance selectable again (removed blanket `.journal-desk > *` z-index)
+- **Jia wipe** — Favorites / story / tabs / recipe titles edition-aware; no user-facing Jia
+- ModeChooser single disclaimer; drawer backdrop = Escape handler; Appearance portals to `body`
+- SW → `cookcap-v11`
+
 ## 2.2.4 — 2026-08-02
 
 ### Fix (photo honesty refill)

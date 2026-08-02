@@ -5,6 +5,8 @@ import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { CHAPTERS } from '@/lib/recipes/chapters';
 import { motionReduce, useDialogA11y } from '@/lib/a11y/dialog';
 import { useAppearance, type TabStyle } from '@/components/app/Appearance';
+import { useApp } from '@/components/app/AppStore';
+import { favoritesLabel } from '@/lib/edition';
 import { useBook } from './BookController';
 
 /**
@@ -37,12 +39,19 @@ const STICKER: Record<string, string> = {
   baking: 'Baking',
   snacks: 'Snacks',
   meals: 'Meals',
-  favorites: '♥ Jia',
+  favorites: '♥',
   tips: 'Tips',
 };
 
+function tabLabel(id: string, title: string, favLabel: string) {
+  if (id === 'favorites') return favLabel.length > 12 ? '♥ Favs' : `♥ ${favLabel.replace(/'s Favorites$/, '')}`;
+  return STICKER[id] ?? title;
+}
+
 function useChapterTabs() {
   const { index, goToChapter, locked, leaves, chapterStart, turning } = useBook();
+  const { edition } = useApp();
+  const favLabel = favoritesLabel(edition);
   const currentLeaf = leaves[index];
   const activeChapter =
     currentLeaf && 'chapter' in currentLeaf ? currentLeaf.chapter : null;
@@ -51,13 +60,13 @@ function useChapterTabs() {
     const started = index >= (chapterStart[c.id] ?? Infinity);
     return { c, active, started, i };
   });
-  return { tabs, goToChapter, locked, turning, index, leaves, chapterStart };
+  return { tabs, goToChapter, locked, turning, index, leaves, chapterStart, favLabel };
 }
 
 /** Slim segmented control when data-tabs=top (desktop + tablet). */
 export function TopChapterBar() {
   const { tabStyle } = useAppearance();
-  const { tabs, goToChapter, locked, turning } = useChapterTabs();
+  const { tabs, goToChapter, locked, turning, favLabel } = useChapterTabs();
   const [narrow, setNarrow] = useState(true);
 
   useEffect(() => {
@@ -81,7 +90,7 @@ export function TopChapterBar() {
           aria-current={active ? 'page' : undefined}
           onClick={() => goToChapter(c.id)}
         >
-          {STICKER[c.id] ?? c.title}
+          {tabLabel(c.id, c.title, favLabel)}
         </button>
       ))}
     </nav>
@@ -95,7 +104,7 @@ function SheetChips({
   tabStyle: TabStyle;
   onPick: (id: string) => void;
 }) {
-  const { tabs, locked, turning } = useChapterTabs();
+  const { tabs, locked, turning, favLabel } = useChapterTabs();
 
   if (tabStyle === 'index' || tabStyle === 'top') {
     return (
@@ -112,7 +121,7 @@ function SheetChips({
           >
             <span className="chapter-index__dot" aria-hidden />
             <span>
-              {STICKER[c.id] ?? c.title}
+              {tabLabel(c.id, c.title, favLabel)}
               <span className="mt-0.5 block text-[0.65rem] font-sans font-normal tracking-normal text-[color:var(--color-ink-faint)]">
                 {c.subtitle}
               </span>
@@ -144,7 +153,7 @@ function SheetChips({
           }
         >
           <span className="font-serif text-sm font-semibold text-white">
-            {STICKER[c.id] ?? c.title}
+            {tabLabel(c.id, c.title, favLabel)}
           </span>
           <span className="mt-0.5 block text-[0.65rem] text-white/80">{c.subtitle}</span>
         </button>
@@ -155,7 +164,7 @@ function SheetChips({
 
 export function BookmarkRail() {
   const { tabStyle } = useAppearance();
-  const { tabs, goToChapter, locked, turning, index, leaves, chapterStart } = useChapterTabs();
+  const { tabs, goToChapter, locked, turning, index, leaves, chapterStart, favLabel } = useChapterTabs();
   const reduce = useReducedMotion();
   const [sheetOpen, setSheetOpen] = useState(false);
   const [narrow, setNarrow] = useState(false);
@@ -274,7 +283,7 @@ export function BookmarkRail() {
               style={{ '--sticker': c.tab } as CSSProperties}
             >
               <span className="chapter-index__dot" aria-hidden />
-              {STICKER[c.id] ?? c.title}
+              {tabLabel(c.id, c.title, favLabel)}
             </button>
           ))}
         </nav>
@@ -298,7 +307,7 @@ export function BookmarkRail() {
       <nav aria-label="Chapter stickers" className="book-edge__tabs" style={{ perspective: 600 }}>
         {tabs.map(({ c, active, i }) => {
           const tilt = depthOn ? (TILT[c.id] ?? 0) : 0;
-          const label = STICKER[c.id] ?? c.title;
+          const label = tabLabel(c.id, c.title, favLabel);
           const startI = chapterStart[c.id] ?? 0;
           const p = startI / total;
           const ahead = p >= cur - 0.001;

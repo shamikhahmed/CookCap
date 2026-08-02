@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useMemo, useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { useApp } from '@/components/app/AppStore';
 import { Icon, type IconName } from '@/components/ui/Icon';
@@ -60,10 +60,7 @@ export function ModeChooser({ open, onClose }: { open: boolean; onClose: () => v
 
   useDialogA11y(open, onClose, panelRef);
 
-  const showHealthNote = useMemo(
-    () => HEALTH_LENSES.includes(mode) || MODES.some((m) => HEALTH_LENSES.includes(m.id)),
-    [mode],
-  );
+  const showHealthNote = HEALTH_LENSES.includes(mode);
 
   const select = useCallback(
     (id: ModeId) => {
@@ -156,7 +153,7 @@ export function ModeChooser({ open, onClose }: { open: boolean; onClose: () => v
 
               {showHealthNote && (
                 <p className="mt-4 text-center text-[0.7rem] text-[color:var(--color-ink-faint)]">
-                  Health lenses are estimates only — not medical advice. {NUTRITION_DISCLAIMER}
+                  {NUTRITION_DISCLAIMER}
                 </p>
               )}
             </div>

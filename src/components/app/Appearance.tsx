@@ -10,6 +10,7 @@ import {
   useState,
   type ReactNode,
 } from 'react';
+import { createPortal } from 'react-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { useDialogA11y, motionReduce } from '@/lib/a11y/dialog';
 import { Icon } from '@/components/ui/Icon';
@@ -170,150 +171,155 @@ export function AppearanceButton() {
         <Icon name="palette" size={20} />
       </button>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            className={`fixed inset-0 z-[90] flex ${narrow ? 'items-end justify-center' : 'items-start justify-end p-4 pt-16 sm:pr-6'}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={motionReduce(reduce)}
-          >
-            <button
-              type="button"
-              aria-label="Close appearance"
-              className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"
-              onClick={close}
-            />
-            <motion.div
-              ref={panelRef}
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="appearance-title"
-              initial={narrow ? { y: 40 } : { opacity: 0, y: -8 }}
-              animate={narrow ? { y: 0 } : { opacity: 1, y: 0 }}
-              exit={narrow ? { y: 40 } : { opacity: 0, y: -8 }}
-              transition={motionReduce(reduce)}
-              className={`relative z-10 overflow-y-auto border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] shadow-[var(--shadow-lg)] ${
-                narrow
-                  ? 'max-h-[85dvh] w-full rounded-t-2xl px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-4'
-                  : 'w-[min(22rem,calc(100vw-2rem))] rounded-xl p-4'
-              }`}
-            >
-              <div className="mb-3 flex items-center justify-between gap-2">
-                <h2
-                  id="appearance-title"
-                  className="font-serif text-lg font-semibold text-[color:var(--color-ink)]"
-                >
-                  Appearance
-                </h2>
+      {typeof document !== 'undefined' &&
+        createPortal(
+          <AnimatePresence>
+            {open && (
+              <motion.div
+                data-overlay
+                className={`fixed inset-0 z-[90] flex ${narrow ? 'items-end justify-center' : 'items-start justify-end p-4 pt-16 sm:pr-6'}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={motionReduce(reduce)}
+              >
                 <button
                   type="button"
+                  aria-label="Close appearance"
+                  className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"
                   onClick={close}
-                  className="rounded-full px-2 py-1 text-xs text-[color:var(--color-ink-faint)] hover:bg-[color:var(--color-paper-sunk)]"
+                />
+                <motion.div
+                  ref={panelRef}
+                  role="dialog"
+                  aria-modal="true"
+                  aria-labelledby="appearance-title"
+                  initial={narrow ? { y: 40 } : { opacity: 0, y: -8 }}
+                  animate={narrow ? { y: 0 } : { opacity: 1, y: 0 }}
+                  exit={narrow ? { y: 40 } : { opacity: 0, y: -8 }}
+                  transition={motionReduce(reduce)}
+                  className={`relative z-10 overflow-y-auto border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] shadow-[var(--shadow-lg)] ${
+                    narrow
+                      ? 'max-h-[85dvh] w-full rounded-t-2xl px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-4'
+                      : 'w-[min(22rem,calc(100vw-2rem))] rounded-xl p-4'
+                  }`}
                 >
-                  Done
-                </button>
-              </div>
+                  <div className="mb-3 flex items-center justify-between gap-2">
+                    <h2
+                      id="appearance-title"
+                      className="font-serif text-lg font-semibold text-[color:var(--color-ink)]"
+                    >
+                      Appearance
+                    </h2>
+                    <button
+                      type="button"
+                      onClick={close}
+                      className="min-h-11 rounded-full px-3 py-1 text-xs text-[color:var(--color-ink-faint)] hover:bg-[color:var(--color-paper-sunk)]"
+                    >
+                      Done
+                    </button>
+                  </div>
 
-              <section className="mb-4">
-                <p className="mb-2 text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
-                  Theme
-                </p>
-                <div className="grid grid-cols-2 gap-2">
-                  {SKINS.map((s) => {
-                    const meta = SKIN_META[s];
-                    const on = skin === s;
-                    return (
-                      <button
-                        key={s}
-                        type="button"
-                        onClick={() => setSkin(s)}
-                        aria-pressed={on}
-                        className={`rounded-lg border p-2.5 text-left transition-colors ${
-                          on
-                            ? 'border-[color:var(--color-accent)] bg-[color:var(--color-paper-sunk)]'
-                            : 'border-[color:var(--color-line)] hover:border-[color:var(--color-ink-faint)]'
-                        }`}
-                      >
-                        <span
-                          className="mb-2 block h-8 w-full rounded-md border border-[color:var(--color-line)]"
-                          style={{
-                            background: `linear-gradient(135deg, ${meta.swatch} 55%, ${meta.desk})`,
-                          }}
-                          aria-hidden
-                        />
-                        <span className="block text-xs font-medium text-[color:var(--color-ink)]">
-                          {meta.label}
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </section>
+                  <section className="mb-4">
+                    <p className="mb-2 text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
+                      Theme
+                    </p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {SKINS.map((s) => {
+                        const meta = SKIN_META[s];
+                        const on = skin === s;
+                        return (
+                          <button
+                            key={s}
+                            type="button"
+                            onClick={() => setSkin(s)}
+                            aria-pressed={on}
+                            className={`min-h-11 rounded-lg border p-2.5 text-left transition-colors ${
+                              on
+                                ? 'border-[color:var(--color-accent)] bg-[color:var(--color-paper-sunk)]'
+                                : 'border-[color:var(--color-line)] hover:border-[color:var(--color-ink-faint)]'
+                            }`}
+                          >
+                            <span
+                              className="mb-2 block h-8 w-full rounded-md border border-[color:var(--color-line)]"
+                              style={{
+                                background: `linear-gradient(135deg, ${meta.swatch} 55%, ${meta.desk})`,
+                              }}
+                              aria-hidden
+                            />
+                            <span className="block text-xs font-medium text-[color:var(--color-ink)]">
+                              {meta.label}
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
 
-              <section className="mb-4">
-                <p className="mb-2 text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
-                  Chapter tabs
-                </p>
-                <div className="flex flex-col gap-1.5">
-                  {TABS.map((t) => {
-                    const on = tabStyle === t;
-                    return (
-                      <button
-                        key={t}
-                        type="button"
-                        onClick={() => setTabStyle(t)}
-                        aria-pressed={on}
-                        className={`rounded-md border px-3 py-2 text-left text-sm transition-colors ${
-                          on
-                            ? 'border-[color:var(--color-accent)] bg-[color:var(--color-paper-sunk)] text-[color:var(--color-ink)]'
-                            : 'border-[color:var(--color-line)] text-[color:var(--color-ink-soft)] hover:border-[color:var(--color-ink-faint)]'
-                        }`}
-                      >
-                        {TAB_META[t]}
-                      </button>
-                    );
-                  })}
-                </div>
-              </section>
+                  <section className="mb-4">
+                    <p className="mb-2 text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
+                      Chapter tabs
+                    </p>
+                    <div className="flex flex-col gap-1.5">
+                      {TABS.map((t) => {
+                        const on = tabStyle === t;
+                        return (
+                          <button
+                            key={t}
+                            type="button"
+                            onClick={() => setTabStyle(t)}
+                            aria-pressed={on}
+                            className={`min-h-11 rounded-md border px-3 py-2 text-left text-sm transition-colors ${
+                              on
+                                ? 'border-[color:var(--color-accent)] bg-[color:var(--color-paper-sunk)] text-[color:var(--color-ink)]'
+                                : 'border-[color:var(--color-line)] text-[color:var(--color-ink-soft)] hover:border-[color:var(--color-ink-faint)]'
+                            }`}
+                          >
+                            {TAB_META[t]}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
 
-              <section>
-                <p className="mb-2 text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
-                  Reading
-                </p>
-                <div
-                  className="flex overflow-hidden rounded-lg border border-[color:var(--color-line)]"
-                  role="group"
-                  aria-label="Reading mode"
-                >
-                  {READS.map((m) => {
-                    const on = readMode === m;
-                    return (
-                      <button
-                        key={m}
-                        type="button"
-                        onClick={() => setReadMode(m)}
-                        aria-pressed={on}
-                        className={`flex-1 px-3 py-2 text-sm capitalize transition-colors ${
-                          on
-                            ? 'bg-[color:var(--color-accent)] text-white'
-                            : 'bg-[color:var(--color-paper)] text-[color:var(--color-ink-soft)] hover:bg-[color:var(--color-paper-sunk)]'
-                        }`}
-                      >
-                        {m}
-                      </button>
-                    );
-                  })}
-                </div>
-                <p className="mt-2 text-[0.7rem] leading-snug text-[color:var(--color-ink-faint)]">
-                  Flip keeps page-turn hops. Fast jumps chapters instantly.
-                </p>
-              </section>
-            </motion.div>
-          </motion.div>
+                  <section>
+                    <p className="mb-2 text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
+                      Reading
+                    </p>
+                    <div
+                      className="flex overflow-hidden rounded-lg border border-[color:var(--color-line)]"
+                      role="group"
+                      aria-label="Reading mode"
+                    >
+                      {READS.map((m) => {
+                        const on = readMode === m;
+                        return (
+                          <button
+                            key={m}
+                            type="button"
+                            onClick={() => setReadMode(m)}
+                            aria-pressed={on}
+                            className={`min-h-11 flex-1 px-3 py-2 text-sm capitalize transition-colors ${
+                              on
+                                ? 'bg-[color:var(--color-accent)] text-white'
+                                : 'bg-[color:var(--color-paper)] text-[color:var(--color-ink-soft)] hover:bg-[color:var(--color-paper-sunk)]'
+                            }`}
+                          >
+                            {m}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    <p className="mt-2 text-[0.7rem] leading-snug text-[color:var(--color-ink-faint)]">
+                      Flip keeps page-turn hops. Fast jumps chapters instantly.
+                    </p>
+                  </section>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>,
+          document.body,
         )}
-      </AnimatePresence>
     </>
   );
 }

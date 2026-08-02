@@ -3163,7 +3163,7 @@ export const FILL_RECIPES: Recipe[] = [
   r({
     id: 'jia-sunday-biryani',
     chapter: 'favorites',
-    title: 'Jia’s Sunday Biryani',
+    title: 'Sunday Biryani',
     tagline: 'The one pot that means family is home.',
     story: 'If the house smells like this, everyone shows up without being asked. Don’t rush the last minute; that’s where it turns from fine to lovely.',
     tasteLike: 'Layered spice, saffron-kissed rice.',
@@ -3198,7 +3198,7 @@ export const FILL_RECIPES: Recipe[] = [
   r({
     id: 'jia-chai-ritual',
     chapter: 'favorites',
-    title: 'Jia’s Chai Ritual',
+    title: 'Chai Ritual',
     tagline: 'How I actually make chai when nobody’s watching.',
     story: 'Cardamom crushed in its shell, milk boiled properly, no shortcuts. Don’t rush the last minute; that’s where it turns from fine to lovely.',
     tasteLike: 'Spiced, milky, exact.',
@@ -3232,7 +3232,7 @@ export const FILL_RECIPES: Recipe[] = [
   r({
     id: 'jia-cake',
     chapter: 'favorites',
-    title: 'Jia’s Anytime Chocolate Cake',
+    title: 'Anytime Chocolate Cake',
     tagline: 'One bowl, no drama, always loved.',
     story: 'Birthdays, bad days, Tuesdays — this cake has seen them all. This one earns its page: simple enough for a Tuesday, proud enough for guests.',
     tasteLike: 'Deep chocolate, not too sweet.',
@@ -3268,7 +3268,7 @@ export const FILL_RECIPES: Recipe[] = [
   r({
     id: 'jia-karahi',
     chapter: 'favorites',
-    title: 'Jia’s Weeknight Karahi',
+    title: 'Weeknight Karahi',
     tagline: 'Karahi scaled for a Tuesday.',
     story: 'Same soul as the dhaba version, half the ceremony. Smell tells you when it’s ready more than any clock will.',
     tasteLike: 'Tomato, ginger, heat.',
@@ -3302,7 +3302,7 @@ export const FILL_RECIPES: Recipe[] = [
   r({
     id: 'jia-cookies',
     chapter: 'favorites',
-    title: 'Jia’s Midnight Cookies',
+    title: 'Midnight Cookies',
     tagline: 'The cookies I bake when I can’t sleep.',
     story: 'Brown butter if I have patience; regular butter if I don’t. Both work. If you’re tired, still make this — it’s kinder than takeaway and nearly as fast.',
     tasteLike: 'Butterscotch-sweet.',
@@ -3337,7 +3337,7 @@ export const FILL_RECIPES: Recipe[] = [
   r({
     id: 'jia-dal-chawal',
     chapter: 'favorites',
-    title: 'Jia’s Dal Chawal',
+    title: 'Dal Chawal',
     tagline: 'The plate that feels like home.',
     story: 'If I could only keep one meal, it would be this — dal, rice, a spoon of ghee. Leftovers (if any) taste even better the next day — plan for that.',
     tasteLike: 'Earthy, comforting.',
@@ -3371,7 +3371,7 @@ export const FILL_RECIPES: Recipe[] = [
   r({
     id: 'jia-salad',
     chapter: 'favorites',
-    title: 'Jia’s Crunchy Salad',
+    title: 'Crunchy Salad',
     tagline: 'The salad that doesn’t feel like punishment.',
     story: 'Crunch, acid, fat, salt — then I’ll happily eat leaves. If you’re tired, still make this — it’s kinder than takeaway and nearly as fast.',
     tasteLike: 'Bright, herby, lemony.',
@@ -3405,7 +3405,7 @@ export const FILL_RECIPES: Recipe[] = [
   r({
     id: 'jia-pasta',
     chapter: 'favorites',
-    title: 'Jia’s One-Pan Pasta',
+    title: 'One-Pan Pasta',
     tagline: 'Everything in one pan, including the pasta.',
     story: 'Lazy genius energy. The starch makes its own sauce. The version in my head is louder with spice — dial to your table.',
     tasteLike: 'Tomato, garlic, basil.',

@@ -24,7 +24,7 @@ export function FriendsLeaf() {
           Meet the Kitchen Friends
         </h2>
         <p className="mx-auto mt-2 max-w-sm font-serif italic text-[color:var(--color-ink-soft)]">
-          They live in Jia’s kitchen and lend a hand on every page.
+          They live in this kitchen and lend a hand on every page.
         </p>
       </header>
 

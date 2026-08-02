@@ -16,6 +16,7 @@ import { LogMealDialog } from '@/components/profiles/LogMealDialog';
 import { Icon } from '@/components/ui/Icon';
 import { formatCost, estCostPkr } from '@/lib/cost/ingredient-cost';
 import { applyHealthier } from '@/lib/profiles/nutrition';
+import { storyByline } from '@/lib/edition';
 import * as store from '@/lib/db/store';
 import type { Recipe } from '@/lib/recipes/types';
 
@@ -189,13 +190,13 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
           <FitBadge recipe={recipe} />
         </div>
 
-        {/* ── A note from Jia ────────────────────────────────*/}
+        {/* ── Kitchen note ───────────────────────────────────*/}
         {recipe.story && (
           <div className="mt-5 flex gap-3 rounded-xl bg-[color:var(--color-paper-sunk)] p-4">
             <CharacterArt id="chef-whisk" color="#c7913f" size={44} className="mt-0.5 shrink-0" />
             <div>
               <p className="mb-1 font-serif text-sm font-semibold text-[color:var(--color-ink)]">
-                A note from Jia
+                {storyByline(edition)}
               </p>
               <p className="jia-story font-serif text-[0.95rem] italic leading-relaxed text-[color:var(--color-ink-soft)] text-balance">
                 {recipe.story}

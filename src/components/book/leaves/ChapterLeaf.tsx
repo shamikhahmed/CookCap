@@ -4,13 +4,15 @@ import { motion } from 'motion/react';
 import { CHAPTER_MAP, chapterNumeral } from '@/lib/recipes/chapters';
 import { useBook } from '@/components/book/BookController';
 import { useApp } from '@/components/app/AppStore';
+import { favoritesLabel } from '@/lib/edition';
 import { Icon, type IconName } from '@/components/ui/Icon';
 import type { ChapterId } from '@/lib/recipes/types';
 
 /** A chapter divider page: big title, blurb, and the recipes it holds. */
 export function ChapterLeaf({ chapter }: { chapter: ChapterId }) {
   const c = CHAPTER_MAP[chapter];
-  const { allRecipes, recipeMap, favorites } = useApp();
+  const { allRecipes, recipeMap, favorites, edition } = useApp();
+  const displayTitle = chapter === 'favorites' ? favoritesLabel(edition) : c.title;
   const recipes = allRecipes.filter((r) => r.chapter === chapter);
   const { goToRecipe } = useBook();
 
@@ -45,7 +47,7 @@ export function ChapterLeaf({ chapter }: { chapter: ChapterId }) {
           Chapter {chapterNumeral(c.id)} · {c.subtitle}
         </span>
         <h2 className="mt-2 font-serif text-[clamp(2.4rem,6vw,3.4rem)] font-black leading-none text-[color:var(--color-ink)]">
-          {c.title}
+          {displayTitle}
         </h2>
         <p className="mt-4 max-w-sm font-serif text-lg italic text-[color:var(--color-ink-soft)]">
           {c.blurb}
@@ -58,7 +60,7 @@ export function ChapterLeaf({ chapter }: { chapter: ChapterId }) {
 
         {chapter === 'favorites' && (
           <p className="mt-4 max-w-md text-sm text-[color:var(--color-ink-soft)]">
-            Below are Jia’s forever picks. Tap the heart on any recipe and it joins
+            Below are forever picks for this kitchen. Tap the heart on any recipe and it joins
             your personal list here too.
           </p>
         )}
