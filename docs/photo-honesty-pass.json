@@ -1,179 +1,289 @@
 {
-  "removed": 34,
-  "report": [
+  "at": "2026-08-02T15:30:46.060Z",
+  "sampleSize": 40,
+  "poolSize": 738,
+  "pass": 40,
+  "fail": 0,
+  "items": [
     {
-      "id": "simple-tea-cake",
-      "was": "Simple heart of palm & tomato salad",
-      "credit": "TheMealDB"
+      "id": "mdb-52959",
+      "title": "Baked salmon with fennel & tomatoes",
+      "chapter": "baking",
+      "status": "pass",
+      "detail": "matched \"Baked salmon with fennel & tomatoes\""
     },
     {
-      "id": "iced-mocha-latte",
-      "was": "Spiced tortilla",
-      "credit": "TheMealDB"
+      "id": "mdb-52830",
+      "title": "Crock Pot Chicken Baked Tacos",
+      "chapter": "baking",
+      "status": "pass",
+      "detail": "matched \"Crock Pot Chicken Baked Tacos\""
     },
     {
-      "id": "iced-spanish-latte",
-      "was": "Spiced tortilla",
-      "credit": "TheMealDB"
+      "id": "mdb-53410",
+      "title": "Presh me Oriz Leek and Rice Bake",
+      "chapter": "baking",
+      "status": "pass",
+      "detail": "matched \"Presh me Oriz Leek and Rice Bake\""
     },
     {
-      "id": "iced-mocha-orange-latte",
-      "was": "Spiced tortilla",
-      "credit": "TheMealDB"
+      "id": "mdb-53459",
+      "title": "Chicken and Potato Roti",
+      "chapter": "breads",
+      "status": "pass",
+      "detail": "matched \"Chicken and Potato Roti\""
     },
     {
-      "id": "iced-blueberry-latte",
-      "was": "Spiced tortilla",
-      "credit": "TheMealDB"
+      "id": "mdb-53280",
+      "title": "Poulet Roti a l'Algerienne (Algerian Roast Chicken)",
+      "chapter": "breads",
+      "status": "pass",
+      "detail": "matched \"Poulet Roti a l'Algerienne (Algerian Roast Chicken)\""
     },
     {
-      "id": "iced-strawberry-latte",
-      "was": "Spiced tortilla",
-      "credit": "TheMealDB"
+      "id": "mdb-53089",
+      "title": "Syrian Bread",
+      "chapter": "breads",
+      "status": "pass",
+      "detail": "matched \"Syrian Bread\""
     },
     {
-      "id": "strawberry-oreo-latte",
-      "was": "Strawberry tart",
-      "credit": "TheMealDB"
+      "id": "mdb-53076",
+      "title": "Bread omelette",
+      "chapter": "breakfast",
+      "status": "pass",
+      "detail": "matched \"Bread omelette\""
     },
     {
-      "id": "cookies-cream-latte",
-      "was": "Honey Cookies",
-      "credit": "TheMealDB"
+      "id": "mdb-53450",
+      "title": "Grits",
+      "chapter": "breakfast",
+      "status": "pass",
+      "detail": "matched \"Grits\""
     },
     {
-      "id": "fruit-tart",
-      "was": "Fresh sardines",
-      "credit": "TheMealDB"
+      "id": "mdb-53331",
+      "title": "Oatmeal pancakes",
+      "chapter": "breakfast",
+      "status": "pass",
+      "detail": "matched \"Oatmeal pancakes\""
     },
     {
-      "id": "rice-pudding",
-      "was": "Creamy Tomato Soup",
-      "credit": "TheMealDB"
+      "id": "mdb-53366",
+      "title": "Beef and Broccoli Stir-Fry",
+      "chapter": "chinese",
+      "status": "pass",
+      "detail": "matched \"Beef and Broccoli Stir-Fry\""
     },
     {
-      "id": "panna-cotta",
-      "was": "Vanilla alfajores",
-      "credit": "TheMealDB"
+      "id": "mdb-52954",
+      "title": "Hot and Sour Soup",
+      "chapter": "chinese",
+      "status": "pass",
+      "detail": "matched \"Hot and Sour Soup\""
     },
     {
-      "id": "cheesecake",
-      "was": "Baked Yuca Fries",
-      "credit": "TheMealDB"
+      "id": "mdb-53234",
+      "title": "Salmon noodle soup",
+      "chapter": "chinese",
+      "status": "pass",
+      "detail": "matched \"Salmon noodle soup\""
     },
     {
-      "id": "edamame",
-      "was": "Salted Caramel Cheescake",
-      "credit": "TheMealDB"
+      "id": "mdb-52788",
+      "title": "Christmas Pudding Flapjack",
+      "chapter": "desserts",
+      "status": "pass",
+      "detail": "matched \"Christmas Pudding Flapjack\""
     },
     {
-      "id": "popcorn",
-      "was": "Stovetop Eggplant With Harissa, Chickpeas, and Cumin Yogurt",
-      "credit": "TheMealDB"
+      "id": "mdb-53399",
+      "title": "Firni",
+      "chapter": "desserts",
+      "status": "pass",
+      "detail": "matched \"Firni\""
     },
     {
-      "id": "boiled-chana",
-      "was": "Recheado Masala Fish",
-      "credit": "TheMealDB"
+      "id": "mdb-53109",
+      "title": "Mini chilli beef pies",
+      "chapter": "desserts",
+      "status": "pass",
+      "detail": "matched \"Mini chilli beef pies\""
     },
     {
-      "id": "chow-mein",
-      "was": "Vegetable Shepherds Pie",
-      "credit": "TheMealDB"
+      "id": "mdb-53119",
+      "title": "Tall Skoleboller",
+      "chapter": "desserts",
+      "status": "pass",
+      "detail": "matched \"Tall Skoleboller\""
     },
     {
-      "id": "dumpling-night",
-      "was": "Tonkatsu pork",
-      "credit": "TheMealDB"
+      "id": "mdb-53171",
+      "title": "Salt cod tortilla",
+      "chapter": "european",
+      "status": "pass",
+      "detail": "matched \"Salt cod tortilla\""
     },
     {
-      "id": "tea-eggs",
-      "was": "Silken Tofu with Sesame Soy Sauce",
-      "credit": "TheMealDB"
+      "id": "mdb-53264",
+      "title": "Smoky chicken skewers",
+      "chapter": "european",
+      "status": "pass",
+      "detail": "matched \"Smoky chicken skewers\""
     },
     {
-      "id": "lettuce-wraps",
-      "was": "Chicken Handi",
-      "credit": "TheMealDB"
+      "id": "mdb-53181",
+      "title": "Spanish beans with chicken & chorizo",
+      "chapter": "european",
+      "status": "pass",
+      "detail": "matched \"Spanish beans with chicken & chorizo\""
     },
     {
-      "id": "samosas",
-      "was": "Crispy Eggplant",
-      "credit": "TheMealDB"
+      "id": "mdb-53461",
+      "title": "Macaroni Pie",
+      "chapter": "italian",
+      "status": "pass",
+      "detail": "matched \"Macaroni Pie\""
     },
     {
-      "id": "pakoras",
-      "was": "Vegetable Shepherds Pie",
-      "credit": "TheMealDB"
+      "id": "mdb-52777",
+      "title": "Mediterranean Pasta Salad",
+      "chapter": "italian",
+      "status": "pass",
+      "detail": "matched \"Mediterranean Pasta Salad\""
     },
     {
-      "id": "spring-rolls",
-      "was": "Crispy Eggplant",
-      "credit": "TheMealDB"
+      "id": "mdb-52837",
+      "title": "Pilchard puttanesca",
+      "chapter": "italian",
+      "status": "pass",
+      "detail": "matched \"Pilchard puttanesca\""
     },
     {
-      "id": "chicken-stir-fry",
-      "was": "Quick gazpacho",
-      "credit": "TheMealDB"
+      "id": "mdb-53190",
+      "title": "Bryndzové Halušky",
+      "chapter": "meals",
+      "status": "pass",
+      "detail": "matched \"Bryndzové Halušky\""
     },
     {
-      "id": "cornbread",
-      "was": "Skillet Apple Pork Chops with Roasted Sweet Potatoes & Zucchini",
-      "credit": "TheMealDB"
+      "id": "mdb-53218",
+      "title": "Chicken Shawarma with homemade garlic herb yoghurt sauce",
+      "chapter": "meals",
+      "status": "pass",
+      "detail": "matched \"Chicken Shawarma with homemade garlic herb yoghurt sauce\""
     },
     {
-      "id": "bruschetta",
-      "was": "Creamy Tomato Soup",
-      "credit": "TheMealDB"
+      "id": "mdb-53056",
+      "title": "Croatian lamb peka",
+      "chapter": "meals",
+      "status": "pass",
+      "detail": "matched \"Croatian lamb peka\""
     },
     {
-      "id": "shortbread",
-      "was": "Mini butter buns",
-      "credit": "TheMealDB"
+      "id": "mdb-53345",
+      "title": "Jamaican Curry Chicken Recipe",
+      "chapter": "pakistani",
+      "status": "pass",
+      "detail": "matched \"Jamaican Curry Chicken Recipe\""
     },
     {
-      "id": "cinnamon-rolls",
-      "was": "Sticky Toffee Pudding",
-      "credit": "TheMealDB"
+      "id": "mdb-52805",
+      "title": "Lamb Biryani",
+      "chapter": "pakistani",
+      "status": "pass",
+      "detail": "matched \"Lamb Biryani\""
     },
     {
-      "id": "caprese-orzo",
-      "was": "Mediterranean Pasta Salad",
-      "credit": "TheMealDB"
+      "id": "mdb-52806",
+      "title": "Tandoori chicken",
+      "chapter": "pakistani",
+      "status": "pass",
+      "detail": "matched \"Tandoori chicken\""
     },
     {
-      "id": "chana-masala",
-      "was": "Chickpea Fajitas",
-      "credit": "TheMealDB"
+      "id": "mdb-53373",
+      "title": "Air Fryer Egg Rolls",
+      "chapter": "snacks",
+      "status": "pass",
+      "detail": "matched \"Air Fryer Egg Rolls\""
     },
     {
-      "id": "desi-chinese",
-      "was": "Sweet and Sour Pork",
-      "credit": "TheMealDB"
+      "id": "mdb-53361",
+      "title": "Callaloo and SaltFish",
+      "chapter": "snacks",
+      "status": "pass",
+      "detail": "matched \"Callaloo and SaltFish\""
     },
     {
-      "id": "sourdough-focaccia",
-      "was": "Rye bread",
-      "credit": "TheMealDB"
+      "id": "mdb-53121",
+      "title": "Norwegian Potato Lefse",
+      "chapter": "snacks",
+      "status": "pass",
+      "detail": "matched \"Norwegian Potato Lefse\""
     },
     {
-      "id": "naan",
-      "was": "Roti john",
-      "credit": "TheMealDB"
+      "id": "mdb-53073",
+      "title": "Eggplant Adobo",
+      "chapter": "vegetarian",
+      "status": "pass",
+      "detail": "matched \"Eggplant Adobo\""
     },
     {
-      "id": "tip-salt",
-      "was": "Salt cod tortilla",
-      "credit": "TheMealDB"
+      "id": "mdb-53518",
+      "title": "Empanadas Fritas de Queso",
+      "chapter": "vegetarian",
+      "status": "pass",
+      "detail": "matched \"Empanadas Fritas de Queso\""
     },
     {
-      "id": "tip-yogurt",
-      "was": "Honey Yogurt Cheesecake",
-      "credit": "TheMealDB"
+      "id": "mdb-53369",
+      "title": "Silken Tofu with Sesame Soy Sauce",
+      "chapter": "vegetarian",
+      "status": "pass",
+      "detail": "matched \"Silken Tofu with Sesame Soy Sauce\""
+    },
+    {
+      "id": "mdb-53113",
+      "title": "Sukuma Wiki",
+      "chapter": "vegetarian",
+      "status": "pass",
+      "detail": "matched \"Sukuma Wiki\""
+    },
+    {
+      "id": "mdb-53250",
+      "title": "Vegan banh mi",
+      "chapter": "vegetarian",
+      "status": "pass",
+      "detail": "matched \"Vegan banh mi\""
+    },
+    {
+      "id": "mdb-53553",
+      "title": "Frikadeller - Danish Meatballs",
+      "chapter": "world",
+      "status": "pass",
+      "detail": "matched \"Frikadeller - Danish Meatballs\""
+    },
+    {
+      "id": "mdb-52843",
+      "title": "Lamb Tagine",
+      "chapter": "world",
+      "status": "pass",
+      "detail": "matched \"Lamb Tagine\""
+    },
+    {
+      "id": "mdb-53029",
+      "title": "Mulukhiyah",
+      "chapter": "world",
+      "status": "pass",
+      "detail": "matched \"Mulukhiyah\""
+    },
+    {
+      "id": "mdb-53503",
+      "title": "Samlar Machu Kreung – Cambodian Sour Stew",
+      "chapter": "world",
+      "status": "pass",
+      "detail": "matched \"Samlar Machu Kreung – Cambodian Sour Stew\""
     }
-  ],
-  "keptFoodishDesserts": [
-    "tiramisu",
-    "balushahi"
   ]
 }
