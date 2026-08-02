@@ -19,11 +19,15 @@ const VALID_CHAPTERS = new Set([
   'pakistani',
   'chinese',
   'italian',
+  'european',
+  'world',
   'desserts',
   'coffee',
+  'breakfast',
   'breads',
   'baking',
   'snacks',
+  'vegetarian',
   'meals',
   'favorites',
   'tips',
@@ -131,6 +135,13 @@ async function main() {
   for (const chapter of CHAPTER_ORDER) {
     if (chapterCounts[chapter] === 0) {
       errors.push(`Chapter "${chapter}" has 0 recipes`);
+    }
+  }
+
+  const chaptersTs = await readFile(join(RECIPES_DIR, 'chapters.ts'), 'utf8');
+  for (const chapter of CHAPTER_ORDER) {
+    if (!chaptersTs.includes(`id: '${chapter}'`)) {
+      errors.push(`Chapter "${chapter}" missing from chapters.ts`);
     }
   }
 

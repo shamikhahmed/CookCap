@@ -26,8 +26,65 @@ const SOURCE_FILES = [
 
 const PAK_KEYWORDS =
   /\b(curry|biryani|masala|tikka|karahi|korma|qorma|nihari|dal|daal|chana|pakora|samosa|keema|seekh|tandoori|paneer|pulao|pilaf|saag|bhuna|jalfrezi|vindaloo|rogan|gosht|chaat|raita)\b/i;
-const PAK_AREAS = new Set(['indian', 'pakistani', 'bangladeshi', 'nepalese']);
-const ASIAN_STIR = /\b(stir[\s-]?fry|chow mein|chow\s+mein|fried rice|noodle|wok|dim sum|dumpling|wonton|mapo|kung pao|sweet[\s-]?sour|szechuan|sichuan)\b/i;
+const ASIAN_STIR =
+  /\b(stir[\s-]?fry|chow mein|chow\s+mein|fried rice|noodle|wok|dim sum|dumpling|wonton|mapo|kung pao|sweet[\s-]?sour|szechuan|sichuan)\b/i;
+
+const EUROPEAN_CUISINE =
+  /^(british|french|spanish|polish|turkish|greek|dutch|netherlands|norwegian|norway|irish|portuguese)$/;
+
+const WORLD_CUISINE =
+  /^(american|united states|canadian|australian|jamaican|mexican|moroccan|egyptian|tunisian|algerian|international|unknown)$/;
+
+const WORLD_PARTIAL = /argentin|venezuel/;
+
+/** Inline copy of src/lib/recipes/chapterMap.ts — keep in sync manually. */
+function resolveCategory(category, tags = []) {
+  const cat = String(category || '')
+    .trim()
+    .toLowerCase();
+  if (cat) return cat;
+  if (!tags.length) return '';
+  const i = tags.indexOf('themealdb');
+  const tagCat = i >= 0 ? tags[i + 1] : undefined;
+  if (tagCat) return String(tagCat).trim().toLowerCase();
+  return '';
+}
+
+function mapImportedChapter({ category, cuisine, title, tags = [] }) {
+  const cat = resolveCategory(category, tags);
+  const cui = String(cuisine || '')
+    .trim()
+    .toLowerCase();
+  const tit = title || '';
+
+  if (cat === 'dessert') return 'desserts';
+  if (cat === 'breakfast') return 'breakfast';
+  if (cat === 'side' || cat === 'starter') return 'snacks';
+  if (cat === 'pasta') return 'italian';
+  if (cat === 'vegetarian' || cat === 'vegan') return 'vegetarian';
+  if (cui === 'chinese' || ASIAN_STIR.test(tit)) return 'chinese';
+  if (cui === 'italian' || (cat === 'seafood' && cui === 'italian')) return 'italian';
+  if (cui === 'india' || cui === 'indian' || cui === 'pakistani' || PAK_KEYWORDS.test(tit)) {
+    return 'pakistani';
+  }
+  // SE/East Asia bucket — no dedicated tabs yet; fold into chinese for balance.
+  if (/^(thai|vietnamese|japanese|malaysian|filipino)$/.test(cui)) return 'chinese';
+  if (/bread|naan|roti|focaccia|baguette/i.test(tit)) return 'breads';
+  if (/cake|cookie|brownie|mousse|tart|pudding|pie/i.test(tit) && cat !== 'breakfast') return 'desserts';
+  if (/coffee|chai|latte|espresso|tea\b/i.test(tit)) return 'coffee';
+  if (/bake|muffin|scone|biscuit/i.test(tit)) return 'baking';
+  if (EUROPEAN_CUISINE.test(cui)) return 'european';
+  if (WORLD_CUISINE.test(cui) || WORLD_PARTIAL.test(cui)) return 'world';
+
+  return 'meals';
+}
+
+function mapChapter(meal) {
+  const category = (meal.strCategory || '').trim().toLowerCase();
+  const area = (meal.strArea || '').trim().toLowerCase();
+  const title = meal.strMeal || '';
+  return mapImportedChapter({ category, cuisine: area, title });
+}
 
 const args = process.argv.slice(2);
 const DRY = args.includes('--dry');
@@ -89,35 +146,6 @@ async function loadExistingTitles() {
     }
   }
   return norms;
-}
-
-function mapChapter(meal) {
-  const category = (meal.strCategory || '').trim().toLowerCase();
-  const area = (meal.strArea || '').trim().toLowerCase();
-  const title = meal.strMeal || '';
-
-  if (category === 'dessert') return 'desserts';
-  if (category === 'side' || category === 'starter') return 'snacks';
-  if (category === 'breakfast') return 'meals';
-  if (category === 'pasta') return 'italian';
-  if (category === 'seafood' && area === 'italian') return 'italian';
-  if (area === 'chinese' || ASIAN_STIR.test(title)) return 'chinese';
-  if (area === 'indian' || PAK_AREAS.has(area) || PAK_KEYWORDS.test(title)) return 'pakistani';
-  if (area === 'italian') return 'italian';
-
-  const cuisineMeals = ['beef', 'chicken', 'lamb', 'goat', 'vegan', 'vegetarian', 'miscellaneous', 'pork', 'seafood'];
-  if (cuisineMeals.includes(category)) {
-    if (area === 'italian') return 'italian';
-    if (area === 'chinese') return 'chinese';
-    if (area === 'indian' || PAK_AREAS.has(area)) return 'pakistani';
-    return 'meals';
-  }
-
-  if (/bread|naan|roti|flatbread|focaccia|baguette/i.test(title)) return 'breads';
-  if (/cake|cookie|brownie|mousse|tart|pudding/i.test(title) && category !== 'breakfast') return 'desserts';
-  if (/coffee|chai|latte|espresso|tea\b/i.test(title)) return 'coffee';
-
-  return 'meals';
 }
 
 function parseQuantity(raw) {

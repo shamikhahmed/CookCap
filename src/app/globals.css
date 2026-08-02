@@ -1048,10 +1048,10 @@
   left: 0;
   display: flex;
   align-items: center;
-  min-height: 2.75rem;
-  min-width: 5.5rem;
+  min-height: 2.15rem;
+  min-width: 5.25rem;
   max-width: 7.25rem;
-  padding: 0.4rem 0.7rem 0.4rem 0.55rem;
+  padding: 0.28rem 0.6rem 0.28rem 0.48rem;
   border-radius: 0 0.35rem 0.35rem 0;
   border: 1px solid color-mix(in srgb, var(--sticker) 35%, var(--dr-wood-dark));
   border-left: 2px solid color-mix(in srgb, var(--sticker) 55%, var(--dr-wood-dark));
@@ -1072,10 +1072,10 @@
 }
 .paper-tab__label {
   font-family: var(--font-serif);
-  font-size: 0.62rem;
+  font-size: 0.58rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  line-height: 1.15;
+  line-height: 1.1;
   color: color-mix(in srgb, var(--sticker) 55%, var(--color-ink));
   white-space: nowrap;
 }

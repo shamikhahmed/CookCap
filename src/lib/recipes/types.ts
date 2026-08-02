@@ -7,16 +7,20 @@
 
 export type Difficulty = 'easy' | 'medium' | 'hard';
 
-/** Jia's chapters, in the physical order they appear (and their bookmark tabs). */
+/** Chapters in physical bookmark / page order. */
 export type ChapterId =
   | 'pakistani'
   | 'chinese'
   | 'italian'
+  | 'european'
+  | 'world'
   | 'desserts'
   | 'coffee'
+  | 'breakfast'
   | 'breads'
   | 'baking'
   | 'snacks'
+  | 'vegetarian'
   | 'meals'
   | 'favorites'
   | 'tips';

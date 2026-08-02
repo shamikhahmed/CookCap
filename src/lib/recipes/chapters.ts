@@ -1,9 +1,8 @@
 import type { Chapter } from './types';
 
 /**
- * Jia's chapters. Order here is the physical order of the laminated bookmark
- * tabs and the order chapters appear when turning pages. Chapter numbers on the
- * dividers are derived from this order, so re-ordering is a one-line change.
+ * Chapters. Order = bookmark tab order + page-turn order.
+ * Numbers on dividers derive from this array.
  */
 export const CHAPTERS: Chapter[] = [
   {
@@ -34,6 +33,24 @@ export const CHAPTERS: Chapter[] = [
     icon: 'olive',
   },
   {
+    id: 'european',
+    title: 'European',
+    subtitle: 'Across the Channel',
+    blurb: 'Spanish tapas, French stews, Greek meze, British Sunday plates — Europe at our table.',
+    quote: '“A passport stamped in olive oil and butter.”',
+    tab: '#5a6f9a',
+    icon: 'olive',
+  },
+  {
+    id: 'world',
+    title: 'Around the World',
+    subtitle: 'Tables far from home',
+    blurb: 'Caribbean heat, Maghrebi spice, American comfort, and dishes that refuse one flag.',
+    quote: '“Travel by pan when you can’t travel by plane.”',
+    tab: '#3d6b8a',
+    icon: 'sparkle',
+  },
+  {
     id: 'desserts',
     title: 'Desserts',
     subtitle: 'A little theatre',
@@ -50,6 +67,15 @@ export const CHAPTERS: Chapter[] = [
     quote: '“Sit. Have chai first. The cooking can wait.”',
     tab: '#8a5a3a',
     icon: 'cup',
+  },
+  {
+    id: 'breakfast',
+    title: 'Breakfast',
+    subtitle: 'First light',
+    blurb: 'Eggs, toast, porridge, and the gentle start before the day asks too much.',
+    quote: '“Breakfast is a kindness to tomorrow’s self.”',
+    tab: '#d4a04a',
+    icon: 'sunrise',
   },
   {
     id: 'breads',
@@ -77,6 +103,15 @@ export const CHAPTERS: Chapter[] = [
     quote: '“Someone’s always hungry. This is for them.”',
     tab: '#d0724a',
     icon: 'cookie',
+  },
+  {
+    id: 'vegetarian',
+    title: 'Vegetarian',
+    subtitle: 'Plants first',
+    blurb: 'Full plates without the meat — pulse, dairy, spice, and clever swaps.',
+    quote: '“Nobody misses the meat when the spices show up.”',
+    tab: '#5a8f5a',
+    icon: 'leaf',
   },
   {
     id: 'meals',
@@ -115,6 +150,22 @@ export const CHAPTER_MAP = Object.fromEntries(CHAPTERS.map((c) => [c.id, c])) as
 /** Chapter display number (I, II, III…) derived from physical order. */
 export const chapterNumeral = (id: string): string => {
   const i = CHAPTERS.findIndex((c) => c.id === id);
-  const romans = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
+  const romans = [
+    'I',
+    'II',
+    'III',
+    'IV',
+    'V',
+    'VI',
+    'VII',
+    'VIII',
+    'IX',
+    'X',
+    'XI',
+    'XII',
+    'XIII',
+    'XIV',
+    'XV',
+  ];
   return i >= 0 ? (romans[i] ?? String(i + 1)) : '';
 };

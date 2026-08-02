@@ -405,7 +405,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53372',
-    chapter: 'chinese',
+    chapter: 'vegetarian',
     title: 'Chinese Tomato Egg Stir Fry',
     tagline: 'Chinese vegetarian — adapted from TheMealDB.',
     story: 'Chinese Tomato Egg Stir Fry from TheMealDB (Chinese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -451,7 +451,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52955',
-    chapter: 'chinese',
+    chapter: 'vegetarian',
     title: 'Egg Drop Soup',
     tagline: 'Chinese vegetarian — adapted from TheMealDB.',
     story: 'Egg Drop Soup from TheMealDB (Chinese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -1214,7 +1214,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53374',
-    chapter: 'chinese',
+    chapter: 'vegetarian',
     title: 'Sichuan Eggplant',
     tagline: 'Chinese vegetarian — adapted from TheMealDB.',
     story: 'Sichuan Eggplant from TheMealDB (Chinese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -1274,7 +1274,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53371',
-    chapter: 'chinese',
+    chapter: 'vegetarian',
     title: 'Sichuan Style Stir-Fried Chinese Long Beans',
     tagline: 'Chinese vegetarian — adapted from TheMealDB.',
     story: 'Sichuan Style Stir-Fried Chinese Long Beans from TheMealDB (Chinese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -1311,7 +1311,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53369',
-    chapter: 'chinese',
+    chapter: 'vegetarian',
     title: 'Silken Tofu with Sesame Soy Sauce',
     tagline: 'Chinese vegetarian — adapted from TheMealDB.',
     story: 'Silken Tofu with Sesame Soy Sauce from TheMealDB (Chinese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -1740,7 +1740,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53203',
-    chapter: 'chinese',
+    chapter: 'vegetarian',
     title: 'Thai rice noodle salad',
     tagline: 'Thai vegetarian — adapted from TheMealDB.',
     story: 'Thai rice noodle salad from TheMealDB (Thai). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -1790,7 +1790,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53240',
-    chapter: 'chinese',
+    chapter: 'vegetarian',
     title: 'Tofu, greens & cashew stir-fry',
     tagline: 'Vietnamese vegetarian — adapted from TheMealDB.',
     story: 'Tofu, greens & cashew stir-fry from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -8849,7 +8849,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52811',
-    chapter: 'italian',
+    chapter: 'vegetarian',
     title: 'Ribollita',
     tagline: 'Italian vegetarian — adapted from TheMealDB.',
     story: 'Ribollita from TheMealDB (Italian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9086,7 +9086,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52771',
-    chapter: 'italian',
+    chapter: 'vegetarian',
     title: 'Spicy Arrabiata Penne',
     tagline: 'Italian vegetarian — adapted from TheMealDB.',
     story: 'Spicy Arrabiata Penne from TheMealDB (Italian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9124,7 +9124,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52849',
-    chapter: 'italian',
+    chapter: 'vegetarian',
     title: 'Spinach & Ricotta Cannelloni',
     tagline: 'Italian vegetarian — adapted from TheMealDB.',
     story: 'Spinach & Ricotta Cannelloni from TheMealDB (Italian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9169,7 +9169,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52866',
-    chapter: 'italian',
+    chapter: 'vegetarian',
     title: 'Squash linguine',
     tagline: 'Italian vegetarian — adapted from TheMealDB.',
     story: 'Squash linguine from TheMealDB (Italian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9240,7 +9240,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52775',
-    chapter: 'italian',
+    chapter: 'vegetarian',
     title: 'Vegan Lasagna',
     tagline: 'Italian vegan — adapted from TheMealDB.',
     story: 'Vegan Lasagna from TheMealDB (Italian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9332,7 +9332,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   /* ── meals ── */
   r({
     id: 'mdb-52885',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Bubble & Squeak',
     tagline: 'British pork — adapted from TheMealDB.',
     story: 'Bubble & Squeak from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9367,7 +9367,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53085',
-    chapter: 'meals',
+    chapter: 'world',
     title: '15-minute chicken & halloumi burgers',
     tagline: 'United States chicken — adapted from TheMealDB.',
     story: '15-minute chicken & halloumi burgers from TheMealDB (United States). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9415,7 +9415,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53483',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Acaraje black-eyed pea fritters with shrimp filling',
     tagline: 'International seafood — adapted from TheMealDB.',
     story: 'Acaraje black-eyed pea fritters with shrimp filling from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9466,7 +9466,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53527',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Achiote Oil (Aceite Achiotado) Recipe',
     tagline: 'International miscellaneous — adapted from TheMealDB.',
     story: 'Achiote Oil (Aceite Achiotado) Recipe from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9497,7 +9497,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53262',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Adana kebab',
     tagline: 'Turkish lamb — adapted from TheMealDB.',
     story: 'Adana kebab from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9535,7 +9535,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53158',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Air fryer patatas bravas',
     tagline: 'Spanish vegetarian — adapted from TheMealDB.',
     story: 'Air fryer patatas bravas from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9576,7 +9576,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53525',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Ají de Aguacate Recipe (Colombian Spicy Avocado Sauce)',
     tagline: 'International miscellaneous — adapted from TheMealDB.',
     story: 'Ají de Aguacate Recipe (Colombian Spicy Avocado Sauce) from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9614,7 +9614,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53288',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Algerian Flafla (Bell Pepper Salad)',
     tagline: 'Algerian vegetarian — adapted from TheMealDB.',
     story: 'Algerian Flafla (Bell Pepper Salad) from TheMealDB (Algerian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9651,7 +9651,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53281',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Algerian Kefta (Meatballs)',
     tagline: 'Algerian beef — adapted from TheMealDB.',
     story: 'Algerian Kefta (Meatballs) from TheMealDB (Algerian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9690,7 +9690,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53430',
-    chapter: 'meals',
+    chapter: 'breakfast',
     title: 'Antiguan Breakfast (Chop Up and ‘Saltfish’)',
     tagline: 'International breakfast — adapted from TheMealDB.',
     story: 'Antiguan Breakfast (Chop Up and ‘Saltfish’) from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9733,7 +9733,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53334',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Arepa Pabellón',
     tagline: 'Venezuela beef — adapted from TheMealDB.',
     story: 'Arepa Pabellón from TheMealDB (Venezuela). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9772,7 +9772,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53329',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Arepa pelua',
     tagline: 'Venezuela beef — adapted from TheMealDB.',
     story: 'Arepa pelua from TheMealDB (Venezuela). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9818,7 +9818,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53156',
-    chapter: 'meals',
+    chapter: 'baking',
     title: 'Arroz al horno (baked rice)',
     tagline: 'Spanish pork — adapted from TheMealDB.',
     story: 'Arroz al horno (baked rice) from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9866,7 +9866,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53147',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Arroz con gambas y calamar',
     tagline: 'Spanish seafood — adapted from TheMealDB.',
     story: 'Arroz con gambas y calamar from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9909,7 +9909,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53133',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Asado',
     tagline: 'Argentina beef — adapted from TheMealDB.',
     story: 'Asado from TheMealDB (Argentina). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9950,7 +9950,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53278',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Aubergine & hummus grills',
     tagline: 'Turkish vegetarian — adapted from TheMealDB.',
     story: 'Aubergine & hummus grills from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -9992,7 +9992,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53267',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Aubergine couscous salad',
     tagline: 'Turkish vegetarian — adapted from TheMealDB.',
     story: 'Aubergine couscous salad from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10031,7 +10031,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53099',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Aussie Burgers',
     tagline: 'Australian beef — adapted from TheMealDB.',
     story: 'Aussie Burgers from TheMealDB (Australian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10071,7 +10071,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53107',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Avocado dip with new potatoes',
     tagline: 'Australian vegetarian — adapted from TheMealDB.',
     story: 'Avocado dip with new potatoes from TheMealDB (Australian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10113,7 +10113,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53050',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Ayam Percik',
     tagline: 'Malaysian chicken — adapted from TheMealDB.',
     story: 'Ayam Percik from TheMealDB (Malaysian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10160,7 +10160,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53481',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Bahia-style Moqueca prawn stew',
     tagline: 'International seafood — adapted from TheMealDB.',
     story: 'Bahia-style Moqueca prawn stew from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10206,7 +10206,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53496',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Bai Sach Chrouk – Grilled Pork with Rice',
     tagline: 'International pork — adapted from TheMealDB.',
     story: 'Bai Sach Chrouk – Grilled Pork with Rice from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10257,7 +10257,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52807',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Baingan Bharta',
     tagline: 'India vegetarian — adapted from TheMealDB.',
     story: 'Baingan Bharta from TheMealDB (India). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10321,7 +10321,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52959',
-    chapter: 'meals',
+    chapter: 'baking',
     title: 'Baked salmon with fennel & tomatoes',
     tagline: 'British seafood — adapted from TheMealDB.',
     story: 'Baked salmon with fennel & tomatoes from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10357,7 +10357,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53440',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Balchi di Pisca',
     tagline: 'International seafood — adapted from TheMealDB.',
     story: 'Balchi di Pisca from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10408,7 +10408,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53239',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Bang bang prawn salad',
     tagline: 'Vietnamese seafood — adapted from TheMealDB.',
     story: 'Bang bang prawn salad from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10447,7 +10447,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53457',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Barbados Pepperpot',
     tagline: 'International beef — adapted from TheMealDB.',
     story: 'Barbados Pepperpot from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10498,7 +10498,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53242',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Barbecue pork buns',
     tagline: 'Vietnamese pork — adapted from TheMealDB.',
     story: 'Barbecue pork buns from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10541,7 +10541,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53103',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Barramundi with Moroccan spices',
     tagline: 'Australian seafood — adapted from TheMealDB.',
     story: 'Barramundi with Moroccan spices from TheMealDB (Australian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10583,7 +10583,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52995',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'BBQ Pork Sloppy Joes',
     tagline: 'United States pork — adapted from TheMealDB.',
     story: 'BBQ Pork Sloppy Joes from TheMealDB (United States). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10629,7 +10629,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52848',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Bean & Sausage Hotpot',
     tagline: 'British miscellaneous — adapted from TheMealDB.',
     story: 'Bean & Sausage Hotpot from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10663,7 +10663,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52874',
-    chapter: 'meals',
+    chapter: 'desserts',
     title: 'Beef and Mustard Pie',
     tagline: 'British beef — adapted from TheMealDB.',
     story: 'Beef and Mustard Pie from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10718,7 +10718,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52878',
-    chapter: 'meals',
+    chapter: 'desserts',
     title: 'Beef and Oyster pie',
     tagline: 'British beef — adapted from TheMealDB.',
     story: 'Beef and Oyster pie from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10768,7 +10768,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53071',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Beef Asado',
     tagline: 'Filipino beef — adapted from TheMealDB.',
     story: 'Beef Asado from TheMealDB (Filipino). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10817,7 +10817,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52997',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Beef Banh Mi Bowls with Sriracha Mayo, Carrot & Pickled Cucumber',
     tagline: 'Vietnamese beef — adapted from TheMealDB.',
     story: 'Beef Banh Mi Bowls with Sriracha Mayo, Carrot & Pickled Cucumber from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10906,7 +10906,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52812',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Beef Brisket Pot Roast',
     tagline: 'United States beef — adapted from TheMealDB.',
     story: 'Beef Brisket Pot Roast from TheMealDB (United States). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -10961,7 +10961,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53070',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Beef Caldereta',
     tagline: 'Filipino beef — adapted from TheMealDB.',
     story: 'Beef Caldereta from TheMealDB (Filipino). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11059,7 +11059,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53421',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'BEEF LOK LAK (Lok Lak Sach Ko)',
     tagline: 'International beef — adapted from TheMealDB.',
     story: 'BEEF LOK LAK (Lok Lak Sach Ko) from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11108,7 +11108,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53359',
-    chapter: 'meals',
+    chapter: 'pakistani',
     title: 'Beef Mandi',
     tagline: 'India beef — adapted from TheMealDB.',
     story: 'Beef Mandi from TheMealDB (India). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11159,7 +11159,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53068',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Beef Mechado',
     tagline: 'Filipino beef — adapted from TheMealDB.',
     story: 'Beef Mechado from TheMealDB (Filipino). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11204,7 +11204,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53238',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Beef pho',
     tagline: 'Vietnamese beef — adapted from TheMealDB.',
     story: 'Beef pho from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11254,7 +11254,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53469',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Beef pumpkin Stew',
     tagline: 'International beef — adapted from TheMealDB.',
     story: 'Beef pumpkin Stew from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11298,7 +11298,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53053',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Beef Rendang',
     tagline: 'Malaysian beef — adapted from TheMealDB.',
     story: 'Beef Rendang from TheMealDB (Malaysian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11380,7 +11380,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52824',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Beef Sunday Roast',
     tagline: 'British beef — adapted from TheMealDB.',
     story: 'Beef Sunday Roast from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11421,7 +11421,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52803',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Beef Wellington',
     tagline: 'British beef — adapted from TheMealDB.',
     story: 'Beef Wellington from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11462,7 +11462,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53307',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Beetroot & red cabbage sauerkraut',
     tagline: 'Polish vegetarian — adapted from TheMealDB.',
     story: 'Beetroot & red cabbage sauerkraut from TheMealDB (Polish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11502,7 +11502,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53313',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Beetroot latkes',
     tagline: 'Ukrainian vegetarian — adapted from TheMealDB.',
     story: 'Beetroot latkes from TheMealDB (Ukrainian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11547,7 +11547,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53463',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Belgian Meatballs in Liège Syrup Sauce',
     tagline: 'International beef — adapted from TheMealDB.',
     story: 'Belgian Meatballs in Liège Syrup Sauce from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11617,7 +11617,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53468',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Belgian Stoemp',
     tagline: 'International pork — adapted from TheMealDB.',
     story: 'Belgian Stoemp from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11664,7 +11664,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53466',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Belgian Waterzooi Chicken',
     tagline: 'International chicken — adapted from TheMealDB.',
     story: 'Belgian Waterzooi Chicken from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11714,7 +11714,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53013',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Big Mac',
     tagline: 'United States beef — adapted from TheMealDB.',
     story: 'Big Mac from TheMealDB (United States). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11760,7 +11760,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53018',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Bigos (Hunters Stew)',
     tagline: 'Polish pork — adapted from TheMealDB.',
     story: 'Bigos (Hunters Stew) from TheMealDB (Polish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11813,7 +11813,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53300',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Bigos (Polish hunter\'s stew)',
     tagline: 'Polish beef — adapted from TheMealDB.',
     story: 'Bigos (Polish hunter\'s stew) from TheMealDB (Polish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11862,7 +11862,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53069',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Bistek',
     tagline: 'Filipino beef — adapted from TheMealDB.',
     story: 'Bistek from TheMealDB (Filipino). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11905,7 +11905,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52979',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Bitterballen (Dutch meatballs)',
     tagline: 'Netherlands beef — adapted from TheMealDB.',
     story: 'Bitterballen (Dutch meatballs) from TheMealDB (Netherlands). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11948,7 +11948,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53482',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Black bean & meat stew - feijoada',
     tagline: 'International beef — adapted from TheMealDB.',
     story: 'Black bean & meat stew - feijoada from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -11993,7 +11993,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53536',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Black Beans Hotpot',
     tagline: 'International vegetarian — adapted from TheMealDB.',
     story: 'Black Beans Hotpot from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12033,7 +12033,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53438',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Bolita di Keshi',
     tagline: 'International miscellaneous — adapted from TheMealDB.',
     story: 'Bolita di Keshi from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12122,7 +12122,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53036',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Boxty Breakfast',
     tagline: 'Irish pork — adapted from TheMealDB.',
     story: 'Boxty Breakfast from TheMealDB (Irish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12168,7 +12168,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52826',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Braised Beef Chilli',
     tagline: 'Mexican beef — adapted from TheMealDB.',
     story: 'Braised Beef Chilli from TheMealDB (Mexican). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12217,7 +12217,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53305',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Braised stuffed cabbage',
     tagline: 'Polish vegetarian — adapted from TheMealDB.',
     story: 'Braised stuffed cabbage from TheMealDB (Polish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12261,7 +12261,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53076',
-    chapter: 'meals',
+    chapter: 'breakfast',
     title: 'Bread omelette',
     tagline: 'India breakfast — adapted from TheMealDB.',
     story: 'Bread omelette from TheMealDB (India). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12292,7 +12292,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53533',
-    chapter: 'meals',
+    chapter: 'breads',
     title: 'Breaded Steak Recipe (Lomo de Res Apanado)',
     tagline: 'International beef — adapted from TheMealDB.',
     story: 'Breaded Steak Recipe (Lomo de Res Apanado) from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12334,7 +12334,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52965',
-    chapter: 'meals',
+    chapter: 'breakfast',
     title: 'Breakfast Potatoes',
     tagline: 'Canadian breakfast — adapted from TheMealDB.',
     story: 'Breakfast Potatoes from TheMealDB (Canadian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12380,7 +12380,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52940',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Brown Stew Chicken',
     tagline: 'Jamaican chicken — adapted from TheMealDB.',
     story: 'Brown Stew Chicken from TheMealDB (Jamaican). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12426,7 +12426,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53126',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Brun Lapskaus (Norwegian Beef Vegetable Stew)',
     tagline: 'Norway beef — adapted from TheMealDB.',
     story: 'Brun Lapskaus (Norwegian Beef Vegetable Stew) from TheMealDB (Norway). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12512,7 +12512,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53077',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Cabbage Soup (Shchi)',
     tagline: 'Russian vegetarian — adapted from TheMealDB.',
     story: 'Cabbage Soup (Shchi) from TheMealDB (Russian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12557,7 +12557,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53488',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Cabbage with Ground Beef',
     tagline: 'International beef — adapted from TheMealDB.',
     story: 'Cabbage with Ground Beef from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12614,7 +12614,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52939',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Callaloo Jamaican Style',
     tagline: 'Jamaican miscellaneous — adapted from TheMealDB.',
     story: 'Callaloo Jamaican Style from TheMealDB (Jamaican). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12663,7 +12663,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53428',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Camaro Grelhado Com Molho Cru (Grilled Prawns with Green Onion Sauce)',
     tagline: 'International seafood — adapted from TheMealDB.',
     story: 'Camaro Grelhado Com Molho Cru (Grilled Prawns with Green Onion Sauce) from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12701,7 +12701,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53418',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Cambodian Stir-fried Morning Glory with Pork, Fermented Soybeans, and Garlic',
     tagline: 'International pork — adapted from TheMealDB.',
     story: 'Cambodian Stir-fried Morning Glory with Pork, Fermented Soybeans, and Garlic from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12741,7 +12741,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53141',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Carbonada Criolla',
     tagline: 'Argentina beef — adapted from TheMealDB.',
     story: 'Carbonada Criolla from TheMealDB (Argentina). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12784,7 +12784,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53576',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Carrot and Bean Fritters',
     tagline: 'International vegetarian — adapted from TheMealDB.',
     story: 'Carrot and Bean Fritters from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12826,7 +12826,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53330',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Cassava pizza',
     tagline: 'Venezuela pork — adapted from TheMealDB.',
     story: 'Cassava pizza from TheMealDB (Venezuela). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12867,7 +12867,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53510',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Cayman-Style Lobster',
     tagline: 'International seafood — adapted from TheMealDB.',
     story: 'Cayman-Style Lobster from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12954,7 +12954,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52969',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Chakchouka',
     tagline: 'Tunisian miscellaneous — adapted from TheMealDB.',
     story: 'Chakchouka from TheMealDB (Tunisian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -12993,7 +12993,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53016',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Chick-Fil-A Sandwich',
     tagline: 'United States chicken — adapted from TheMealDB.',
     story: 'Chick-Fil-A Sandwich from TheMealDB (United States). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -13043,7 +13043,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53161',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Chicken & chorizo rice pot',
     tagline: 'Spanish chicken — adapted from TheMealDB.',
     story: 'Chicken & chorizo rice pot from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -13090,7 +13090,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52846',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Chicken & mushroom Hotpot',
     tagline: 'British chicken — adapted from TheMealDB.',
     story: 'Chicken & mushroom Hotpot from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -13133,7 +13133,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53459',
-    chapter: 'meals',
+    chapter: 'breads',
     title: 'Chicken and Potato Roti',
     tagline: 'International chicken — adapted from TheMealDB.',
     story: 'Chicken and Potato Roti from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -13241,7 +13241,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52850',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Chicken Couscous',
     tagline: 'Moroccan chicken — adapted from TheMealDB.',
     story: 'Chicken Couscous from TheMealDB (Moroccan). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -13280,7 +13280,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52765',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Chicken Enchilada Casserole',
     tagline: 'Mexican chicken — adapted from TheMealDB.',
     story: 'Chicken Enchilada Casserole from TheMealDB (Mexican). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -13317,7 +13317,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52818',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Chicken Fajita Mac and Cheese',
     tagline: 'United States chicken — adapted from TheMealDB.',
     story: 'Chicken Fajita Mac and Cheese from TheMealDB (United States). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -13360,7 +13360,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52875',
-    chapter: 'meals',
+    chapter: 'desserts',
     title: 'Chicken Ham and Leek Pie',
     tagline: 'British chicken — adapted from TheMealDB.',
     story: 'Chicken Ham and Leek Pie from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -13414,7 +13414,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52795',
-    chapter: 'meals',
+    chapter: 'pakistani',
     title: 'Chicken Handi',
     tagline: 'India chicken — adapted from TheMealDB.',
     story: 'Chicken Handi from TheMealDB (India). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -13466,7 +13466,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53531',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Chicken in Orange Sauce Recipe (Pollo a la Naranja)',
     tagline: 'International chicken — adapted from TheMealDB.',
     story: 'Chicken in Orange Sauce Recipe (Pollo a la Naranja) from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -13509,7 +13509,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52831',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Chicken Karaage',
     tagline: 'Japanese chicken — adapted from TheMealDB.',
     story: 'Chicken Karaage from TheMealDB (Japanese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -13549,7 +13549,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53455',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Chicken Liver Pate Recipe',
     tagline: 'International chicken — adapted from TheMealDB.',
     story: 'Chicken Liver Pate Recipe from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -13593,7 +13593,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53565',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Chicken Lollipop',
     tagline: 'International chicken — adapted from TheMealDB.',
     story: 'Chicken Lollipop from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -13634,7 +13634,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53358',
-    chapter: 'meals',
+    chapter: 'pakistani',
     title: 'Chicken Mandi',
     tagline: 'India chicken — adapted from TheMealDB.',
     story: 'Chicken Mandi from TheMealDB (India). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -13769,7 +13769,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53011',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Chicken Quinoa Greek Salad',
     tagline: 'Greek chicken — adapted from TheMealDB.',
     story: 'Chicken Quinoa Greek Salad from TheMealDB (Greek). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -13810,7 +13810,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53549',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Chicken Salad With Mushrooms and Bacon',
     tagline: 'International chicken — adapted from TheMealDB.',
     story: 'Chicken Salad With Mushrooms and Bacon from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -13901,7 +13901,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53261',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Chicken wings with cumin, lemon & garlic',
     tagline: 'Turkish chicken — adapted from TheMealDB.',
     story: 'Chicken wings with cumin, lemon & garlic from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -13938,7 +13938,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53186',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Chicken with saffron, raisins & pine nuts',
     tagline: 'Spanish chicken — adapted from TheMealDB.',
     story: 'Chicken with saffron, raisins & pine nuts from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -13983,7 +13983,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52870',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Chickpea Fajitas',
     tagline: 'Mexican vegetarian — adapted from TheMealDB.',
     story: 'Chickpea Fajitas from TheMealDB (Mexican). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14027,7 +14027,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53166',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Chickpea, chorizo & spinach stew',
     tagline: 'Spanish pork — adapted from TheMealDB.',
     story: 'Chickpea, chorizo & spinach stew from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14071,7 +14071,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53514',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Chilean Empanada',
     tagline: 'International pork — adapted from TheMealDB.',
     story: 'Chilean Empanada from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14120,7 +14120,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53265',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Chilli ginger lamb chops',
     tagline: 'Turkish lamb — adapted from TheMealDB.',
     story: 'Chilli ginger lamb chops from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14249,7 +14249,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53289',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Chorba Hamra bel Frik (Algerian Lamb, Tomato, and Freekeh Soup)',
     tagline: 'Algerian lamb — adapted from TheMealDB.',
     story: 'Chorba Hamra bel Frik (Algerian Lamb, Tomato, and Freekeh Soup) from TheMealDB (Algerian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14299,7 +14299,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53136',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Choripán',
     tagline: 'Argentina pork — adapted from TheMealDB.',
     story: 'Choripán from TheMealDB (Argentina). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14336,7 +14336,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53168',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Chorizo & chickpea soup',
     tagline: 'Spanish pork — adapted from TheMealDB.',
     story: 'Chorizo & chickpea soup from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14374,7 +14374,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53157',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Chorizo & soft-boiled egg salad',
     tagline: 'Spanish pork — adapted from TheMealDB.',
     story: 'Chorizo & soft-boiled egg salad from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14414,7 +14414,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53185',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Chorizo & tomato salad',
     tagline: 'Spanish pork — adapted from TheMealDB.',
     story: 'Chorizo & tomato salad from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14451,7 +14451,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53159',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Chorizo, potato & cheese omelette',
     tagline: 'Spanish pork — adapted from TheMealDB.',
     story: 'Chorizo, potato & cheese omelette from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14486,7 +14486,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53283',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Chtitha Batata (Algerian Potato Stew)',
     tagline: 'Algerian vegetarian — adapted from TheMealDB.',
     story: 'Chtitha Batata (Algerian Potato Stew) from TheMealDB (Algerian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14528,7 +14528,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53528',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Chuletas de Cerdo a la Criolla (Pork Chops in Creole Sauce)',
     tagline: 'International pork — adapted from TheMealDB.',
     story: 'Chuletas de Cerdo a la Criolla (Pork Chops in Creole Sauce) from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14569,7 +14569,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53154',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Clam, chorizo & white bean stew',
     tagline: 'Spanish seafood — adapted from TheMealDB.',
     story: 'Clam, chorizo & white bean stew from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14612,7 +14612,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53343',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Classic Tourtière',
     tagline: 'Canadian beef — adapted from TheMealDB.',
     story: 'Classic Tourtière from TheMealDB (Canadian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14659,7 +14659,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53446',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Clear Soup with Semolina Dumplings',
     tagline: 'International miscellaneous — adapted from TheMealDB.',
     story: 'Clear Soup with Semolina Dumplings from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14706,7 +14706,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53037',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Coddled pork with cider',
     tagline: 'Irish pork — adapted from TheMealDB.',
     story: 'Coddled pork with cider from TheMealDB (Irish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14749,7 +14749,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53561',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Codfish deviled eggs',
     tagline: 'International seafood — adapted from TheMealDB.',
     story: 'Codfish deviled eggs from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14796,7 +14796,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53505',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Conch Fritters',
     tagline: 'International seafood — adapted from TheMealDB.',
     story: 'Conch Fritters from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14841,7 +14841,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53512',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Conch Stew',
     tagline: 'International seafood — adapted from TheMealDB.',
     story: 'Conch Stew from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14939,7 +14939,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52998',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Corned Beef and Cabbage',
     tagline: 'Irish beef — adapted from TheMealDB.',
     story: 'Corned Beef and Cabbage from TheMealDB (Irish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -14973,7 +14973,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53096',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Corned Beef Hash',
     tagline: 'British beef — adapted from TheMealDB.',
     story: 'Corned Beef Hash from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15017,7 +15017,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53480',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Creamy Aji green sauce',
     tagline: 'International vegetarian — adapted from TheMealDB.',
     story: 'Creamy Aji green sauce from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15054,7 +15054,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53532',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Creamy Corn Soup Recipe',
     tagline: 'International vegetarian — adapted from TheMealDB.',
     story: 'Creamy Corn Soup Recipe from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15097,7 +15097,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53530',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Creamy Mustard Chicken',
     tagline: 'International chicken — adapted from TheMealDB.',
     story: 'Creamy Mustard Chicken from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15141,7 +15141,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53072',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Crispy Eggplant',
     tagline: 'Filipino vegetarian — adapted from TheMealDB.',
     story: 'Crispy Eggplant from TheMealDB (Filipino). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15180,7 +15180,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53419',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Crispy fried fish with ginger and fermented soybeans (trey chien chuon)',
     tagline: 'International seafood — adapted from TheMealDB.',
     story: 'Crispy fried fish with ginger and fermented soybeans (trey chien chuon) from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15225,7 +15225,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52999',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Crispy Sausages and Greens',
     tagline: 'Irish pork — adapted from TheMealDB.',
     story: 'Crispy Sausages and Greens from TheMealDB (Irish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15358,7 +15358,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52830',
-    chapter: 'meals',
+    chapter: 'baking',
     title: 'Crock Pot Chicken Baked Tacos',
     tagline: 'Mexican chicken — adapted from TheMealDB.',
     story: 'Crock Pot Chicken Baked Tacos from TheMealDB (Mexican). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15412,7 +15412,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53547',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Cuban Sandwich',
     tagline: 'International pork — adapted from TheMealDB.',
     story: 'Cuban Sandwich from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15468,7 +15468,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53309',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Cucumber & fennel salad',
     tagline: 'Polish vegetarian — adapted from TheMealDB.',
     story: 'Cucumber & fennel salad from TheMealDB (Polish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15506,7 +15506,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53098',
-    chapter: 'meals',
+    chapter: 'desserts',
     title: 'Cumberland Pie',
     tagline: 'British beef — adapted from TheMealDB.',
     story: 'Cumberland Pie from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15558,7 +15558,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53193',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Drunken noodles (pad kee mao)',
     tagline: 'Thai beef — adapted from TheMealDB.',
     story: 'Drunken noodles (pad kee mao) from TheMealDB (Thai). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15639,7 +15639,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53379',
-    chapter: 'meals',
+    chapter: 'breakfast',
     title: 'Dutch poffertjes (mini pancakes)',
     tagline: 'Netherlands breakfast — adapted from TheMealDB.',
     story: 'Dutch poffertjes (mini pancakes) from TheMealDB (Netherlands). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15680,7 +15680,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53143',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Easy Spanish chicken',
     tagline: 'Spanish chicken — adapted from TheMealDB.',
     story: 'Easy Spanish chicken from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15725,7 +15725,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53486',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Easy White Bean Soup',
     tagline: 'International vegetarian — adapted from TheMealDB.',
     story: 'Easy White Bean Soup from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15770,7 +15770,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53073',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Eggplant Adobo',
     tagline: 'Filipino vegetarian — adapted from TheMealDB.',
     story: 'Eggplant Adobo from TheMealDB (Filipino). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15814,7 +15814,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53031',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Egyptian Fatteh',
     tagline: 'Egyptian beef — adapted from TheMealDB.',
     story: 'Egyptian Fatteh from TheMealDB (Egyptian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15864,7 +15864,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53518',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Empanadas Fritas de Queso',
     tagline: 'International vegetarian — adapted from TheMealDB.',
     story: 'Empanadas Fritas de Queso from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15903,7 +15903,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52895',
-    chapter: 'meals',
+    chapter: 'breakfast',
     title: 'English Breakfast',
     tagline: 'British breakfast — adapted from TheMealDB.',
     story: 'English Breakfast from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15946,7 +15946,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52944',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Escovitch Fish',
     tagline: 'Jamaican seafood — adapted from TheMealDB.',
     story: 'Escovitch Fish from TheMealDB (Jamaican). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -15995,7 +15995,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53557',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Extra crispy chicken wings',
     tagline: 'International chicken — adapted from TheMealDB.',
     story: 'Extra crispy chicken wings from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -16039,7 +16039,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53254',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Ezme',
     tagline: 'Turkish vegetarian — adapted from TheMealDB.',
     story: 'Ezme from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -16083,7 +16083,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53266',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Falafel',
     tagline: 'Turkish vegetarian — adapted from TheMealDB.',
     story: 'Falafel from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -16122,7 +16122,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53123',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Fårikål (Norwegian National Dish)',
     tagline: 'Norway lamb — adapted from TheMealDB.',
     story: 'Fårikål (Norwegian National Dish) from TheMealDB (Norway). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -16222,7 +16222,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53092',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Fasoliyyeh Bi Z-Zayt (Syrian Green Beans with Olive Oil)',
     tagline: 'Syrian vegan — adapted from TheMealDB.',
     story: 'Fasoliyyeh Bi Z-Zayt (Syrian Green Beans with Olive Oil) from TheMealDB (Syrian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -16256,7 +16256,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53043',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Fish fofos',
     tagline: 'Portuguese seafood — adapted from TheMealDB.',
     story: 'Fish fofos from TheMealDB (Portuguese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -16303,7 +16303,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52802',
-    chapter: 'meals',
+    chapter: 'desserts',
     title: 'Fish pie',
     tagline: 'British seafood — adapted from TheMealDB.',
     story: 'Fish pie from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -16441,7 +16441,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53122',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Fiskesuppe (Creamy Norwegian Fish Soup)',
     tagline: 'Norway seafood — adapted from TheMealDB.',
     story: 'Fiskesuppe (Creamy Norwegian Fish Soup) from TheMealDB (Norway). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -16486,7 +16486,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52906',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Flamiche',
     tagline: 'France vegetarian — adapted from TheMealDB.',
     story: 'Flamiche from TheMealDB (France). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -16530,7 +16530,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53464',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Flemish Hutsepot',
     tagline: 'International pork — adapted from TheMealDB.',
     story: 'Flemish Hutsepot from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -16577,7 +16577,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53413',
-    chapter: 'meals',
+    chapter: 'breakfast',
     title: 'Flija Layered Pancake / Crepe',
     tagline: 'International breakfast — adapted from TheMealDB.',
     story: 'Flija Layered Pancake / Crepe from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -16703,7 +16703,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52996',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'French Onion Chicken with Roasted Carrots & Mashed Potatoes',
     tagline: 'United States chicken — adapted from TheMealDB.',
     story: 'French Onion Chicken with Roasted Carrots & Mashed Potatoes from TheMealDB (United States). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -16748,7 +16748,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53178',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Fried calamari',
     tagline: 'Spanish seafood — adapted from TheMealDB.',
     story: 'Fried calamari from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -16788,7 +16788,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53509',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Fried Crab',
     tagline: 'International seafood — adapted from TheMealDB.',
     story: 'Fried Crab from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -16825,7 +16825,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53553',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Frikadeller - Danish Meatballs',
     tagline: 'International pork — adapted from TheMealDB.',
     story: 'Frikadeller - Danish Meatballs from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -16867,7 +16867,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53465',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Frog Legs Recipe in Garlic Butter',
     tagline: 'International miscellaneous — adapted from TheMealDB.',
     story: 'Frog Legs Recipe in Garlic Butter from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -16908,7 +16908,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52957',
-    chapter: 'meals',
+    chapter: 'breakfast',
     title: 'Fruit and Cream Cheese Breakfast Pastries',
     tagline: 'United States breakfast — adapted from TheMealDB.',
     story: 'Fruit and Cream Cheese Breakfast Pastries from TheMealDB (United States). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -16950,7 +16950,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53025',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Ful Medames',
     tagline: 'Egyptian vegetarian — adapted from TheMealDB.',
     story: 'Ful Medames from TheMealDB (Egyptian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -16996,7 +16996,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53541',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Gallo pinto',
     tagline: 'International vegetarian — adapted from TheMealDB.',
     story: 'Gallo pinto from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17036,7 +17036,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53144',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Gambas al ajillo',
     tagline: 'Spanish seafood — adapted from TheMealDB.',
     story: 'Gambas al ajillo from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17072,7 +17072,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52764',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Garides Saganaki',
     tagline: 'Greek seafood — adapted from TheMealDB.',
     story: 'Garides Saganaki from TheMealDB (Greek). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17112,7 +17112,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53180',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Garlicky prawns with sherry',
     tagline: 'Spanish seafood — adapted from TheMealDB.',
     story: 'Garlicky prawns with sherry from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17148,7 +17148,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53012',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Gigantes Plaki',
     tagline: 'Greek vegetarian — adapted from TheMealDB.',
     story: 'Gigantes Plaki from TheMealDB (Greek). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17187,7 +17187,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53021',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Golabki (cabbage roll)',
     tagline: 'Polish beef — adapted from TheMealDB.',
     story: 'Golabki (cabbage roll) from TheMealDB (Polish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17232,7 +17232,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53274',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Griddled aubergines with sesame dressing',
     tagline: 'Turkish vegetarian — adapted from TheMealDB.',
     story: 'Griddled aubergines with sesame dressing from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17272,7 +17272,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53255',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Grilled aubergines with spicy chickpeas & walnut sauce',
     tagline: 'Turkish vegetarian — adapted from TheMealDB.',
     story: 'Grilled aubergines with spicy chickpeas & walnut sauce from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17318,7 +17318,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53478',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Grilled corn with garlic mayo & grated cheese',
     tagline: 'International vegetarian — adapted from TheMealDB.',
     story: 'Grilled corn with garlic mayo & grated cheese from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17355,7 +17355,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53074',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Grilled eggplant with coconut milk',
     tagline: 'Filipino vegetarian — adapted from TheMealDB.',
     story: 'Grilled eggplant with coconut milk from TheMealDB (Filipino). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17392,7 +17392,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53041',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Grilled Portuguese sardines',
     tagline: 'Portuguese seafood — adapted from TheMealDB.',
     story: 'Grilled Portuguese sardines from TheMealDB (Portuguese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17430,7 +17430,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53450',
-    chapter: 'meals',
+    chapter: 'breakfast',
     title: 'Grits',
     tagline: 'International breakfast — adapted from TheMealDB.',
     story: 'Grits from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17461,7 +17461,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53179',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Ham croquetas',
     tagline: 'Spanish pork — adapted from TheMealDB.',
     story: 'Ham croquetas from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17517,7 +17517,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53035',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Ham hock colcannon',
     tagline: 'Irish pork — adapted from TheMealDB.',
     story: 'Ham hock colcannon from TheMealDB (Irish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17561,7 +17561,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53340',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Hodge Podge',
     tagline: 'Canadian vegetarian — adapted from TheMealDB.',
     story: 'Hodge Podge from TheMealDB (Canadian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17603,7 +17603,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52967',
-    chapter: 'meals',
+    chapter: 'breakfast',
     title: 'Home-made Mandazi',
     tagline: 'Kenyan breakfast — adapted from TheMealDB.',
     story: 'Home-made Mandazi from TheMealDB (Kenyan). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17646,7 +17646,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52993',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Honey Balsamic Chicken with Crispy Broccoli & Potatoes',
     tagline: 'United States chicken — adapted from TheMealDB.',
     story: 'Honey Balsamic Chicken with Crispy Broccoli & Potatoes from TheMealDB (United States). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17690,7 +17690,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52773',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Honey Teriyaki Salmon',
     tagline: 'Japanese seafood — adapted from TheMealDB.',
     story: 'Honey Teriyaki Salmon from TheMealDB (Japanese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17725,7 +17725,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53258',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Hot cumin lamb wrap with crunchy slaw & spicy mayo',
     tagline: 'Turkish lamb — adapted from TheMealDB.',
     story: 'Hot cumin lamb wrap with crunchy slaw & spicy mayo from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17769,7 +17769,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53253',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Imam bayildi with BBQ lamb & tzatziki',
     tagline: 'Turkish lamb — adapted from TheMealDB.',
     story: 'Imam bayildi with BBQ lamb & tzatziki from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17819,7 +17819,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52781',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Irish stew',
     tagline: 'Irish beef — adapted from TheMealDB.',
     story: 'Irish stew from TheMealDB (Irish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17865,7 +17865,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52938',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Jamaican Beef Patties',
     tagline: 'Jamaican beef — adapted from TheMealDB.',
     story: 'Jamaican Beef Patties from TheMealDB (Jamaican). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17941,7 +17941,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53363',
-    chapter: 'meals',
+    chapter: 'breakfast',
     title: 'Jamaican Cornmeal Porridge',
     tagline: 'Jamaican breakfast — adapted from TheMealDB.',
     story: 'Jamaican Cornmeal Porridge from TheMealDB (Jamaican). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -17981,7 +17981,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53352',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Jamaican Instant Pot Rice and Beans',
     tagline: 'Jamaican vegetarian — adapted from TheMealDB.',
     story: 'Jamaican Instant Pot Rice and Beans from TheMealDB (Jamaican). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18032,7 +18032,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53349',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Jamaican Pepper Shrimp',
     tagline: 'Jamaican seafood — adapted from TheMealDB.',
     story: 'Jamaican Pepper Shrimp from TheMealDB (Jamaican). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18074,7 +18074,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53357',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Jamaican Rice and Peas',
     tagline: 'Jamaican vegetarian — adapted from TheMealDB.',
     story: 'Jamaican Rice and Peas from TheMealDB (Jamaican). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18116,7 +18116,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53145',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Jamon & wild garlic croquetas',
     tagline: 'Spanish pork — adapted from TheMealDB.',
     story: 'Jamon & wild garlic croquetas from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18162,7 +18162,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53034',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Japanese Katsudon',
     tagline: 'Japanese pork — adapted from TheMealDB.',
     story: 'Japanese Katsudon from TheMealDB (Japanese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18203,7 +18203,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52937',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Jerk chicken with rice & peas',
     tagline: 'Jamaican chicken — adapted from TheMealDB.',
     story: 'Jerk chicken with rice & peas from TheMealDB (Jamaican). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18256,7 +18256,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53335',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Jiggs Dinner',
     tagline: 'Canadian beef — adapted from TheMealDB.',
     story: 'Jiggs Dinner from TheMealDB (Canadian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18341,7 +18341,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53398',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Kadu Borani',
     tagline: 'International vegetarian — adapted from TheMealDB.',
     story: 'Kadu Borani from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18383,7 +18383,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52971',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Kafteji',
     tagline: 'Tunisian vegetarian — adapted from TheMealDB.',
     story: 'Kafteji from TheMealDB (Tunisian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18425,7 +18425,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52769',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Kapsalon',
     tagline: 'Netherlands lamb — adapted from TheMealDB.',
     story: 'Kapsalon from TheMealDB (Netherlands). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18466,7 +18466,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53125',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Karbonader (Lean Beef Patties) with Caramelized Onions',
     tagline: 'Norway beef — adapted from TheMealDB.',
     story: 'Karbonader (Lean Beef Patties) with Caramelized Onions from TheMealDB (Norway). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18507,7 +18507,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53445',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Kaspressknödel - Cheese Dumplings',
     tagline: 'International vegetarian — adapted from TheMealDB.',
     story: 'Kaspressknödel - Cheese Dumplings from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18554,7 +18554,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53449',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Kelem dolmasi',
     tagline: 'International lamb — adapted from TheMealDB.',
     story: 'Kelem dolmasi from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18621,7 +18621,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52974',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Keleya Zaara',
     tagline: 'Tunisian lamb — adapted from TheMealDB.',
     story: 'Keleya Zaara from TheMealDB (Tunisian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18658,7 +18658,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52813',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Kentucky Fried Chicken',
     tagline: 'United States chicken — adapted from TheMealDB.',
     story: 'Kentucky Fried Chicken from TheMealDB (United States). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18708,7 +18708,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53502',
-    chapter: 'meals',
+    chapter: 'desserts',
     title: 'Khmer Banh Xeo – Cambodian Savory Pancake',
     tagline: 'International pork — adapted from TheMealDB.',
     story: 'Khmer Banh Xeo – Cambodian Savory Pancake from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18755,7 +18755,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53257',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'kofta burgers',
     tagline: 'Turkish lamb — adapted from TheMealDB.',
     story: 'kofta burgers from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18797,7 +18797,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53412',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Lakra me Mish Cabbage and Meat Stew',
     tagline: 'International beef — adapted from TheMealDB.',
     story: 'Lakra me Mish Cabbage and Meat Stew from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18843,7 +18843,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53407',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Lakror me Kungull Summer Squash Pie',
     tagline: 'International vegetarian — adapted from TheMealDB.',
     story: 'Lakror me Kungull Summer Squash Pie from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18883,7 +18883,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52821',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Laksa King Prawn Noodles',
     tagline: 'Malaysian seafood — adapted from TheMealDB.',
     story: 'Laksa King Prawn Noodles from TheMealDB (Malaysian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18923,7 +18923,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53277',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Lamb & apricot meatballs',
     tagline: 'Turkish lamb — adapted from TheMealDB.',
     story: 'Lamb & apricot meatballs from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -18968,7 +18968,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53009',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Lamb and Lemon Souvlaki',
     tagline: 'Greek lamb — adapted from TheMealDB.',
     story: 'Lamb and Lemon Souvlaki from TheMealDB (Greek). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19004,7 +19004,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52877',
-    chapter: 'meals',
+    chapter: 'desserts',
     title: 'Lamb and Potato pie',
     tagline: 'British lamb — adapted from TheMealDB.',
     story: 'Lamb and Potato pie from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19049,7 +19049,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52843',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Lamb Tagine',
     tagline: 'Moroccan lamb — adapted from TheMealDB.',
     story: 'Lamb Tagine from TheMealDB (Moroccan). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19095,7 +19095,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52782',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Lamb tomato and sweet spices',
     tagline: 'Moroccan lamb — adapted from TheMealDB.',
     story: 'Lamb tomato and sweet spices from TheMealDB (Moroccan). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19148,7 +19148,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53010',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Lamb Tzatziki Burgers',
     tagline: 'Greek lamb — adapted from TheMealDB.',
     story: 'Lamb Tzatziki Burgers from TheMealDB (Greek). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19189,7 +19189,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52884',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Lancashire hotpot',
     tagline: 'British lamb — adapted from TheMealDB.',
     story: 'Lancashire hotpot from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19229,7 +19229,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53427',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Lao Naem Khao',
     tagline: 'International pork — adapted from TheMealDB.',
     story: 'Lao Naem Khao from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19290,7 +19290,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52973',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Leblebi Soup',
     tagline: 'Tunisian vegetarian — adapted from TheMealDB.',
     story: 'Leblebi Soup from TheMealDB (Tunisian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19332,7 +19332,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53437',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Leg of Lamb Armenian-Style',
     tagline: 'International lamb — adapted from TheMealDB.',
     story: 'Leg of Lamb Armenian-Style from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19371,7 +19371,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53211',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Lemongrass beef stew with noodles',
     tagline: 'Thai beef — adapted from TheMealDB.',
     story: 'Lemongrass beef stew with noodles from TheMealDB (Thai). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19415,7 +19415,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53467',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Liegeoise Salad',
     tagline: 'International vegetarian — adapted from TheMealDB.',
     story: 'Liegeoise Salad from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19458,7 +19458,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53146',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Locro',
     tagline: 'Argentina miscellaneous — adapted from TheMealDB.',
     story: 'Locro from TheMealDB (Argentina). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19503,7 +19503,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53472',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Madombi: Dumplings from Botswana',
     tagline: 'International miscellaneous — adapted from TheMealDB.',
     story: 'Madombi: Dumplings from Botswana from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19547,7 +19547,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53400',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Mastawa Lamb and Rice',
     tagline: 'International lamb — adapted from TheMealDB.',
     story: 'Mastawa Lamb and Rice from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19593,7 +19593,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53140',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Matambre a la Pizza',
     tagline: 'Argentina beef — adapted from TheMealDB.',
     story: 'Matambre a la Pizza from TheMealDB (Argentina). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19677,7 +19677,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52880',
-    chapter: 'meals',
+    chapter: 'desserts',
     title: 'McSinghs Scotch pie',
     tagline: 'British lamb — adapted from TheMealDB.',
     story: 'McSinghs Scotch pie from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19730,7 +19730,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53423',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Meang Nem',
     tagline: 'International seafood — adapted from TheMealDB.',
     story: 'Meang Nem from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19777,7 +19777,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53048',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Mee goreng mamak',
     tagline: 'Malaysian seafood — adapted from TheMealDB.',
     story: 'Mee goreng mamak from TheMealDB (Malaysian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19826,7 +19826,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53086',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Migas',
     tagline: 'Spanish miscellaneous — adapted from TheMealDB.',
     story: 'Migas from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19861,7 +19861,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53135',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Milanesa',
     tagline: 'Argentina beef — adapted from TheMealDB.',
     story: 'Milanesa from TheMealDB (Argentina). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19902,7 +19902,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52876',
-    chapter: 'meals',
+    chapter: 'desserts',
     title: 'Minced Beef Pie',
     tagline: 'British beef — adapted from TheMealDB.',
     story: 'Minced Beef Pie from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19946,7 +19946,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53109',
-    chapter: 'meals',
+    chapter: 'desserts',
     title: 'Mini chilli beef pies',
     tagline: 'Australian beef — adapted from TheMealDB.',
     story: 'Mini chilli beef pies from TheMealDB (Australian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -19992,7 +19992,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53336',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Molasses Baked Beans',
     tagline: 'Canadian vegetarian — adapted from TheMealDB.',
     story: 'Molasses Baked Beans from TheMealDB (Canadian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20034,7 +20034,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52927',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Montreal Smoked Meat',
     tagline: 'Canadian beef — adapted from TheMealDB.',
     story: 'Montreal Smoked Meat from TheMealDB (Canadian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20083,7 +20083,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53047',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Moroccan Carrot Soup',
     tagline: 'Moroccan vegetarian — adapted from TheMealDB.',
     story: 'Moroccan Carrot Soup from TheMealDB (Moroccan). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20132,7 +20132,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53006',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Moussaka',
     tagline: 'Greek beef — adapted from TheMealDB.',
     story: 'Moussaka from TheMealDB (Greek). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20169,7 +20169,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53029',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Mulukhiyah',
     tagline: 'Egyptian beef — adapted from TheMealDB.',
     story: 'Mulukhiyah from TheMealDB (Egyptian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20213,7 +20213,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53403',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Muraba-E-Kadu (Pumpkin Jam)',
     tagline: 'International miscellaneous — adapted from TheMealDB.',
     story: 'Muraba-E-Kadu (Pumpkin Jam) from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20251,7 +20251,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52864',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Mushroom & Chestnut Rotolo',
     tagline: 'British vegetarian — adapted from TheMealDB.',
     story: 'Mushroom & Chestnut Rotolo from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20343,7 +20343,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53051',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Nasi lemak',
     tagline: 'Malaysian seafood — adapted from TheMealDB.',
     story: 'Nasi lemak from TheMealDB (Malaysian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20397,7 +20397,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53117',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Nordic smørrebrød with asparagus and horseradish cream',
     tagline: 'Norway vegetarian — adapted from TheMealDB.',
     story: 'Nordic smørrebrød with asparagus and horseradish cream from TheMealDB (Norway). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20447,7 +20447,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53501',
-    chapter: 'meals',
+    chapter: 'breads',
     title: 'Num Pang – Cambodian Baguette Sandwich',
     tagline: 'International chicken — adapted from TheMealDB.',
     story: 'Num Pang – Cambodian Baguette Sandwich from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20499,7 +20499,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53331',
-    chapter: 'meals',
+    chapter: 'breakfast',
     title: 'Oatmeal pancakes',
     tagline: 'Venezuela breakfast — adapted from TheMealDB.',
     story: 'Oatmeal pancakes from TheMealDB (Venezuela). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20541,7 +20541,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53554',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Open-faced Sandwich With Potato',
     tagline: 'International pork — adapted from TheMealDB.',
     story: 'Open-faced Sandwich With Potato from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20585,7 +20585,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52943',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Oxtail with broad beans',
     tagline: 'Jamaican beef — adapted from TheMealDB.',
     story: 'Oxtail with broad beans from TheMealDB (Jamaican). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20627,7 +20627,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53417',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Pa Amb Tomaquet (Bread with Tomato)',
     tagline: 'International vegetarian — adapted from TheMealDB.',
     story: 'Pa Amb Tomaquet (Bread with Tomato) from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20664,7 +20664,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52774',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Pad See Ew',
     tagline: 'Thai chicken — adapted from TheMealDB.',
     story: 'Pad See Ew from TheMealDB (Thai). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20707,7 +20707,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53191',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Pad Thai',
     tagline: 'Thai seafood — adapted from TheMealDB.',
     story: 'Pad Thai from TheMealDB (Thai). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20755,7 +20755,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53150',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Padron peppers',
     tagline: 'Spanish vegan — adapted from TheMealDB.',
     story: 'Padron peppers from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20788,7 +20788,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53151',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Paella',
     tagline: 'Spanish seafood — adapted from TheMealDB.',
     story: 'Paella from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20839,7 +20839,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53152',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Pan-fried hake, white bean & chorizo broth',
     tagline: 'Spanish seafood — adapted from TheMealDB.',
     story: 'Pan-fried hake, white bean & chorizo broth from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20886,7 +20886,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53573',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Papaya salad',
     tagline: 'International vegetarian — adapted from TheMealDB.',
     story: 'Papaya salad from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20927,7 +20927,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53520',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Pastel de Choclo',
     tagline: 'International chicken — adapted from TheMealDB.',
     story: 'Pastel de Choclo from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -20977,7 +20977,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53517',
-    chapter: 'meals',
+    chapter: 'desserts',
     title: 'Pastel de Papas (Chilean Potato Pie)',
     tagline: 'International beef — adapted from TheMealDB.',
     story: 'Pastel de Papas (Chilean Potato Pie) from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21026,7 +21026,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53017',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Paszteciki (Polish Pasties)',
     tagline: 'Polish beef — adapted from TheMealDB.',
     story: 'Paszteciki (Polish Pasties) from TheMealDB (Polish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21083,7 +21083,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52930',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Pate Chinois',
     tagline: 'Canadian beef — adapted from TheMealDB.',
     story: 'Pate Chinois from TheMealDB (Canadian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21126,7 +21126,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53539',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Picadillo de Vainicas (Green Beans Picadillo)',
     tagline: 'International beef — adapted from TheMealDB.',
     story: 'Picadillo de Vainicas (Green Beans Picadillo) from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21165,7 +21165,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53039',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Piri-piri chicken and slaw',
     tagline: 'Portuguese chicken — adapted from TheMealDB.',
     story: 'Piri-piri chicken and slaw from TheMealDB (Portuguese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21213,7 +21213,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53160',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Pisto con huevos',
     tagline: 'Spanish vegetarian — adapted from TheMealDB.',
     story: 'Pisto con huevos from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21260,7 +21260,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53162',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Pollo en pepitoria',
     tagline: 'Spanish chicken — adapted from TheMealDB.',
     story: 'Pollo en pepitoria from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21314,7 +21314,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53540',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Pollo en Salsa',
     tagline: 'International chicken — adapted from TheMealDB.',
     story: 'Pollo en Salsa from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21354,7 +21354,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53297',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Pomegranate salad',
     tagline: 'Polish vegetarian — adapted from TheMealDB.',
     story: 'Pomegranate salad from TheMealDB (Polish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21395,7 +21395,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53301',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Pork & sauerkraut goulash',
     tagline: 'Polish pork — adapted from TheMealDB.',
     story: 'Pork & sauerkraut goulash from TheMealDB (Polish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21487,7 +21487,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53306',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Pork rib bortsch',
     tagline: 'Polish pork — adapted from TheMealDB.',
     story: 'Pork rib bortsch from TheMealDB (Polish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21535,7 +21535,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53521',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Porotos Granados (Chilean Bean Stew)',
     tagline: 'International miscellaneous — adapted from TheMealDB.',
     story: 'Porotos Granados (Chilean Bean Stew) from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21573,7 +21573,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53044',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Portuguese barbecued pork (Febras assadas)',
     tagline: 'Portuguese pork — adapted from TheMealDB.',
     story: 'Portuguese barbecued pork (Febras assadas) from TheMealDB (Portuguese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21621,7 +21621,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53045',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Portuguese fish stew (Caldeirada de peixe)',
     tagline: 'Portuguese seafood — adapted from TheMealDB.',
     story: 'Portuguese fish stew (Caldeirada de peixe) from TheMealDB (Portuguese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21670,7 +21670,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53042',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Portuguese prego with green piri-piri',
     tagline: 'Portuguese beef — adapted from TheMealDB.',
     story: 'Portuguese prego with green piri-piri from TheMealDB (Portuguese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21719,7 +21719,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53081',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Potato Salad (Olivier Salad)',
     tagline: 'Russian vegetarian — adapted from TheMealDB.',
     story: 'Potato Salad (Olivier Salad) from TheMealDB (Russian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21765,7 +21765,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53280',
-    chapter: 'meals',
+    chapter: 'breads',
     title: 'Poulet Roti a l\'Algerienne (Algerian Roast Chicken)',
     tagline: 'Algerian chicken — adapted from TheMealDB.',
     story: 'Poulet Roti a l\'Algerienne (Algerian Roast Chicken) from TheMealDB (Algerian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21805,7 +21805,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52804',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Poutine',
     tagline: 'Canadian miscellaneous — adapted from TheMealDB.',
     story: 'Poutine from TheMealDB (Canadian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21842,7 +21842,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53499',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Prahok Ktis – Pork and Coconut Dip',
     tagline: 'International pork — adapted from TheMealDB.',
     story: 'Prahok Ktis – Pork and Coconut Dip from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21892,7 +21892,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53174',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Prawns with Romesco sauce',
     tagline: 'Spanish seafood — adapted from TheMealDB.',
     story: 'Prawns with Romesco sauce from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21940,7 +21940,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53410',
-    chapter: 'meals',
+    chapter: 'baking',
     title: 'Presh me Oriz Leek and Rice Bake',
     tagline: 'International lamb — adapted from TheMealDB.',
     story: 'Presh me Oriz Leek and Rice Bake from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -21984,7 +21984,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52921',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Provençal Omelette Cake',
     tagline: 'France vegetarian — adapted from TheMealDB.',
     story: 'Provençal Omelette Cake from TheMealDB (France). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22028,7 +22028,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53230',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Purple sprouting broccoli tempura with nuoc cham',
     tagline: 'Vietnamese miscellaneous — adapted from TheMealDB.',
     story: 'Purple sprouting broccoli tempura with nuoc cham from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22071,7 +22071,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53108',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Quick salt & pepper squid',
     tagline: 'Australian seafood — adapted from TheMealDB.',
     story: 'Quick salt & pepper squid from TheMealDB (Australian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22110,7 +22110,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52933',
-    chapter: 'meals',
+    chapter: 'desserts',
     title: 'Rappie Pie',
     tagline: 'Canadian chicken — adapted from TheMealDB.',
     story: 'Rappie Pie from TheMealDB (Canadian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22150,7 +22150,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53124',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Raspeballer (Norwegian Potato Dumplings)',
     tagline: 'Norway pork — adapted from TheMealDB.',
     story: 'Raspeballer (Norwegian Potato Dumplings) from TheMealDB (Norway). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22201,7 +22201,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52908',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Ratatouille',
     tagline: 'France vegetarian — adapted from TheMealDB.',
     story: 'Ratatouille from TheMealDB (France). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22242,7 +22242,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53115',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Red onion pickle',
     tagline: 'Norway vegan — adapted from TheMealDB.',
     story: 'Red onion pickle from TheMealDB (Norway). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22278,7 +22278,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52941',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Red Peas Soup',
     tagline: 'Jamaican beef — adapted from TheMealDB.',
     story: 'Red Peas Soup from TheMealDB (Jamaican). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22328,7 +22328,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53227',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Rice paper dumplings',
     tagline: 'Vietnamese pork — adapted from TheMealDB.',
     story: 'Rice paper dumplings from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22378,7 +22378,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53273',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Roast aubergine with goat\'s cheese & toasted flatbread',
     tagline: 'Turkish vegetarian — adapted from TheMealDB.',
     story: 'Roast aubergine with goat\'s cheese & toasted flatbread from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22422,7 +22422,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53268',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Roasted chicken with creamy walnut sauce',
     tagline: 'Turkish chicken — adapted from TheMealDB.',
     story: 'Roasted chicken with creamy walnut sauce from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22467,7 +22467,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52816',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Roasted Eggplant With Tahini, Pine Nuts, and Lentils',
     tagline: 'United States vegetarian — adapted from TheMealDB.',
     story: 'Roasted Eggplant With Tahini, Pine Nuts, and Lentils from TheMealDB (United States). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22512,7 +22512,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53118',
-    chapter: 'meals',
+    chapter: 'breakfast',
     title: 'Rømmegrøt – Norwegian Sour Cream Porridge',
     tagline: 'Norway breakfast — adapted from TheMealDB.',
     story: 'Rømmegrøt – Norwegian Sour Cream Porridge from TheMealDB (Norway). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22550,7 +22550,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53545',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Ropa Veija',
     tagline: 'International beef — adapted from TheMealDB.',
     story: 'Ropa Veija from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22650,7 +22650,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53020',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Rosol (Polish Chicken Soup)',
     tagline: 'Polish chicken — adapted from TheMealDB.',
     story: 'Rosol (Polish Chicken Soup) from TheMealDB (Polish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22701,7 +22701,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53052',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Roti john',
     tagline: 'Malaysian beef — adapted from TheMealDB.',
     story: 'Roti john from TheMealDB (Malaysian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22743,7 +22743,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52960',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Salmon Avocado Salad',
     tagline: 'British seafood — adapted from TheMealDB.',
     story: 'Salmon Avocado Salad from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22780,7 +22780,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52962',
-    chapter: 'meals',
+    chapter: 'breakfast',
     title: 'Salmon Eggs Eggs Benedict',
     tagline: 'United States breakfast — adapted from TheMealDB.',
     story: 'Salmon Eggs Eggs Benedict from TheMealDB (United States). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22819,7 +22819,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53511',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Salt Beef and Beans',
     tagline: 'International beef — adapted from TheMealDB.',
     story: 'Salt Beef and Beans from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22858,7 +22858,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53171',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Salt cod tortilla',
     tagline: 'Spanish seafood — adapted from TheMealDB.',
     story: 'Salt cod tortilla from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22898,7 +22898,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52936',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Saltfish and Ackee',
     tagline: 'Jamaican seafood — adapted from TheMealDB.',
     story: 'Saltfish and Ackee from TheMealDB (Jamaican). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -22953,7 +22953,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53503',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Samlar Machu Kreung – Cambodian Sour Stew',
     tagline: 'International chicken — adapted from TheMealDB.',
     story: 'Samlar Machu Kreung – Cambodian Sour Stew from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23005,7 +23005,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53443',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Satee',
     tagline: 'International beef — adapted from TheMealDB.',
     story: 'Satee from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23059,7 +23059,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53577',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Sauerkraut and Fish Salad',
     tagline: 'International seafood — adapted from TheMealDB.',
     story: 'Sauerkraut and Fish Salad from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23096,7 +23096,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53296',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Sauerkraut pierogi',
     tagline: 'Polish vegetarian — adapted from TheMealDB.',
     story: 'Sauerkraut pierogi from TheMealDB (Polish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23153,7 +23153,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53247',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Sea bass with sizzled ginger, chilli & spring onions',
     tagline: 'Vietnamese seafood — adapted from TheMealDB.',
     story: 'Sea bass with sizzled ginger, chilli & spring onions from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23199,7 +23199,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52836',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Seafood fideuà',
     tagline: 'Spanish seafood — adapted from TheMealDB.',
     story: 'Seafood fideuà from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23245,7 +23245,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53167',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Seafood rice',
     tagline: 'Spanish seafood — adapted from TheMealDB.',
     story: 'Seafood rice from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23284,7 +23284,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53470',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Seswaa',
     tagline: 'International beef — adapted from TheMealDB.',
     story: 'Seswaa from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23410,7 +23410,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53491',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Shopska Salad',
     tagline: 'International vegetarian — adapted from TheMealDB.',
     story: 'Shopska Salad from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23446,7 +23446,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52994',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Skillet Apple Pork Chops with Roasted Sweet Potatoes & Zucchini',
     tagline: 'United States pork — adapted from TheMealDB.',
     story: 'Skillet Apple Pork Chops with Roasted Sweet Potatoes & Zucchini from TheMealDB (United States). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23490,7 +23490,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53023',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Sledz w Oleju (Polish Herrings)',
     tagline: 'Polish seafood — adapted from TheMealDB.',
     story: 'Sledz w Oleju (Polish Herrings) from TheMealDB (Polish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23528,7 +23528,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53432',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Slow-cooked, Wadadli-spiced Cubano pork belly',
     tagline: 'International pork — adapted from TheMealDB.',
     story: 'Slow-cooked, Wadadli-spiced Cubano pork belly from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23575,7 +23575,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53260',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Slow-roast lamb with cinnamon, fennel & citrus',
     tagline: 'Turkish lamb — adapted from TheMealDB.',
     story: 'Slow-roast lamb with cinnamon, fennel & citrus from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23618,7 +23618,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53302',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Slow-roasted ham with lemon, garlic & sage',
     tagline: 'Polish pork — adapted from TheMealDB.',
     story: 'Slow-roasted ham with lemon, garlic & sage from TheMealDB (Polish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23660,7 +23660,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52964',
-    chapter: 'meals',
+    chapter: 'breakfast',
     title: 'Smoked Haddock Kedgeree',
     tagline: 'India breakfast — adapted from TheMealDB.',
     story: 'Smoked Haddock Kedgeree from TheMealDB (India). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23708,7 +23708,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53264',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Smoky chicken skewers',
     tagline: 'Turkish chicken — adapted from TheMealDB.',
     story: 'Smoky chicken skewers from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23747,7 +23747,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52784',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Smoky Lentil Chili with Squash',
     tagline: 'British vegetarian — adapted from TheMealDB.',
     story: 'Smoky Lentil Chili with Squash from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23806,7 +23806,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52992',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Soy-Glazed Meatloaves with Wasabi Mashed Potatoes & Roasted Carrots',
     tagline: 'United States beef — adapted from TheMealDB.',
     story: 'Soy-Glazed Meatloaves with Wasabi Mashed Potatoes & Roasted Carrots from TheMealDB (United States). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23853,7 +23853,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53177',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Spaghetti with Spanish flavours',
     tagline: 'Spanish pork — adapted from TheMealDB.',
     story: 'Spaghetti with Spanish flavours from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23894,7 +23894,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53181',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Spanish beans with chicken & chorizo',
     tagline: 'Spanish chicken — adapted from TheMealDB.',
     story: 'Spanish beans with chicken & chorizo from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23937,7 +23937,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53155',
-    chapter: 'meals',
+    chapter: 'desserts',
     title: 'Spanish chicken pie',
     tagline: 'Spanish chicken — adapted from TheMealDB.',
     story: 'Spanish chicken pie from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -23979,7 +23979,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53183',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Spanish meatballs with clams, chorizo & squid',
     tagline: 'Spanish miscellaneous — adapted from TheMealDB.',
     story: 'Spanish meatballs with clams, chorizo & squid from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24027,7 +24027,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53184',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Spanish rice & prawn one-pot',
     tagline: 'Spanish seafood — adapted from TheMealDB.',
     story: 'Spanish rice & prawn one-pot from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24067,7 +24067,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53176',
-    chapter: 'meals',
+    chapter: 'breads',
     title: 'Spanish tomato bread with jamón Serrano',
     tagline: 'Spanish pork — adapted from TheMealDB.',
     story: 'Spanish tomato bread with jamón Serrano from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24105,7 +24105,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52872',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Spanish Tortilla',
     tagline: 'Spanish vegetarian — adapted from TheMealDB.',
     story: 'Spanish Tortilla from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24146,7 +24146,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53175',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Spanish-style slow-cooked lamb shoulder & beans',
     tagline: 'Spanish lamb — adapted from TheMealDB.',
     story: 'Spanish-style slow-cooked lamb shoulder & beans from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24193,7 +24193,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53105',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Spiced smoky barbecued chicken',
     tagline: 'Australian chicken — adapted from TheMealDB.',
     story: 'Spiced smoky barbecued chicken from TheMealDB (Australian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24235,7 +24235,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53142',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Spiced tortilla',
     tagline: 'Spanish vegetarian — adapted from TheMealDB.',
     story: 'Spiced tortilla from TheMealDB (Spanish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24274,7 +24274,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52797',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Spicy North African Potato Salad',
     tagline: 'Moroccan vegetarian — adapted from TheMealDB.',
     story: 'Spicy North African Potato Salad from TheMealDB (Moroccan). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24320,7 +24320,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53209',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Spicy Thai prawn noodles',
     tagline: 'Thai seafood — adapted from TheMealDB.',
     story: 'Spicy Thai prawn noodles from TheMealDB (Thai). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24362,7 +24362,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53040',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Spring onion and prawn empanadas',
     tagline: 'Portuguese seafood — adapted from TheMealDB.',
     story: 'Spring onion and prawn empanadas from TheMealDB (Portuguese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24407,7 +24407,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53102',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Squid, chickpea & chorizo salad',
     tagline: 'Australian seafood — adapted from TheMealDB.',
     story: 'Squid, chickpea & chorizo salad from TheMealDB (Australian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24447,7 +24447,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52980',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Stamppot',
     tagline: 'Netherlands pork — adapted from TheMealDB.',
     story: 'Stamppot from TheMealDB (Netherlands). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24494,7 +24494,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52881',
-    chapter: 'meals',
+    chapter: 'desserts',
     title: 'Steak and Kidney Pie',
     tagline: 'British beef — adapted from TheMealDB.',
     story: 'Steak and Kidney Pie from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24588,7 +24588,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53110',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Sticky Chicken',
     tagline: 'Australian chicken — adapted from TheMealDB.',
     story: 'Sticky Chicken from TheMealDB (Australian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24625,7 +24625,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53201',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Stir-fried chicken with chillies & basil',
     tagline: 'Thai chicken — adapted from TheMealDB.',
     story: 'Stir-fried chicken with chillies & basil from TheMealDB (Thai). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24666,7 +24666,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52817',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Stovetop Eggplant With Harissa, Chickpeas, and Cumin Yogurt',
     tagline: 'United States vegetarian — adapted from TheMealDB.',
     story: 'Stovetop Eggplant With Harissa, Chickpeas, and Cumin Yogurt from TheMealDB (United States). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24704,7 +24704,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53067',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Stuffed Bell Peppers with Quinoa and Black Beans',
     tagline: 'Mexican vegetarian — adapted from TheMealDB.',
     story: 'Stuffed Bell Peppers with Quinoa and Black Beans from TheMealDB (Mexican). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24753,7 +24753,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53008',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Stuffed Lamb Tomatoes',
     tagline: 'Greek lamb — adapted from TheMealDB.',
     story: 'Stuffed Lamb Tomatoes from TheMealDB (Greek). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24796,7 +24796,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53113',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Sukuma Wiki',
     tagline: 'Kenyan vegetarian — adapted from TheMealDB.',
     story: 'Sukuma Wiki from TheMealDB (Kenyan). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24832,7 +24832,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52911',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Summer Pistou',
     tagline: 'France vegetarian — adapted from TheMealDB.',
     story: 'Summer Pistou from TheMealDB (France). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24871,7 +24871,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53065',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Sushi',
     tagline: 'Japanese seafood — adapted from TheMealDB.',
     story: 'Sushi from TheMealDB (Japanese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24927,7 +24927,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53275',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Sweet potato salad',
     tagline: 'Turkish vegetarian — adapted from TheMealDB.',
     story: 'Sweet potato salad from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -24966,7 +24966,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53089',
-    chapter: 'meals',
+    chapter: 'breads',
     title: 'Syrian Bread',
     tagline: 'Syrian miscellaneous — adapted from TheMealDB.',
     story: 'Syrian Bread from TheMealDB (Syrian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25044,7 +25044,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53447',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Tafelspitz',
     tagline: 'International beef — adapted from TheMealDB.',
     story: 'Tafelspitz from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25091,7 +25091,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52869',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Tahini Lentils',
     tagline: 'Moroccan vegetarian — adapted from TheMealDB.',
     story: 'Tahini Lentils from TheMealDB (Moroccan). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25131,7 +25131,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53287',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Tajine de Poulet aux Carottes et Patates Douces (Chicken and Sweet Potato Tagine)',
     tagline: 'Algerian chicken — adapted from TheMealDB.',
     story: 'Tajine de Poulet aux Carottes et Patates Douces (Chicken and Sweet Potato Tagine) from TheMealDB (Algerian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25181,7 +25181,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53026',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Tamiya',
     tagline: 'Egyptian vegetarian — adapted from TheMealDB.',
     story: 'Tamiya from TheMealDB (Egyptian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25222,7 +25222,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53312',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Tangy cabbage slaw',
     tagline: 'Ukrainian vegetarian — adapted from TheMealDB.',
     story: 'Tangy cabbage slaw from TheMealDB (Ukrainian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25263,7 +25263,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53246',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Tangy carrot, cabbage & onion salad',
     tagline: 'Vietnamese vegetarian — adapted from TheMealDB.',
     story: 'Tangy carrot, cabbage & onion salad from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25302,7 +25302,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53404',
-    chapter: 'meals',
+    chapter: 'baking',
     title: 'Tavë Kosi Baked Lamb and Yogurt',
     tagline: 'International lamb — adapted from TheMealDB.',
     story: 'Tavë Kosi Baked Lamb and Yogurt from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25357,7 +25357,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53405',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Tavë me Presh ska Mish Meatless Leek Bake',
     tagline: 'International vegetarian — adapted from TheMealDB.',
     story: 'Tavë me Presh ska Mish Meatless Leek Bake from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25406,7 +25406,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52772',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Teriyaki Chicken Casserole',
     tagline: 'Japanese chicken — adapted from TheMealDB.',
     story: 'Teriyaki Chicken Casserole from TheMealDB (Japanese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25448,7 +25448,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53206',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Thai chicken cakes with sweet chilli sauce',
     tagline: 'Thai chicken — adapted from TheMealDB.',
     story: 'Thai chicken cakes with sweet chilli sauce from TheMealDB (Thai). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25490,7 +25490,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53208',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Thai coconut & veg broth',
     tagline: 'Thai vegetarian — adapted from TheMealDB.',
     story: 'Thai coconut & veg broth from TheMealDB (Thai). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25534,7 +25534,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53212',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Thai drumsticks',
     tagline: 'Thai chicken — adapted from TheMealDB.',
     story: 'Thai drumsticks from TheMealDB (Thai). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25571,7 +25571,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53214',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Thai green chicken soup',
     tagline: 'Thai chicken — adapted from TheMealDB.',
     story: 'Thai green chicken soup from TheMealDB (Thai). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25618,7 +25618,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53210',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Thai pumpkin soup',
     tagline: 'Thai vegetarian — adapted from TheMealDB.',
     story: 'Thai pumpkin soup from TheMealDB (Thai). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25660,7 +25660,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53213',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Thai-style fish broth with greens',
     tagline: 'Thai seafood — adapted from TheMealDB.',
     story: 'Thai-style fish broth with greens from TheMealDB (Thai). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25704,7 +25704,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53202',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Thai-style steamed fish',
     tagline: 'Thai seafood — adapted from TheMealDB.',
     story: 'Thai-style steamed fish from TheMealDB (Thai). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25789,7 +25789,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53444',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Tirolean Dumplings',
     tagline: 'International pork — adapted from TheMealDB.',
     story: 'Tirolean Dumplings from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25839,7 +25839,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52822',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Toad In The Hole',
     tagline: 'British pork — adapted from TheMealDB.',
     story: 'Toad In The Hole from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25877,7 +25877,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53207',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Tom kha gai',
     tagline: 'Thai chicken — adapted from TheMealDB.',
     story: 'Tom kha gai from TheMealDB (Thai). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25923,7 +25923,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53194',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Tom yum soup with prawns',
     tagline: 'Thai seafood — adapted from TheMealDB.',
     story: 'Tom yum soup with prawns from TheMealDB (Thai). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -25970,7 +25970,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53032',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Tonkatsu pork',
     tagline: 'Japanese pork — adapted from TheMealDB.',
     story: 'Tonkatsu pork from TheMealDB (Japanese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26014,7 +26014,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53415',
-    chapter: 'meals',
+    chapter: 'breakfast',
     title: 'Torrijas',
     tagline: 'International breakfast — adapted from TheMealDB.',
     story: 'Torrijas from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26097,7 +26097,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53075',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Tortang Talong',
     tagline: 'Filipino vegetarian — adapted from TheMealDB.',
     story: 'Tortang Talong from TheMealDB (Filipino). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26136,7 +26136,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52926',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Tourtiere',
     tagline: 'Canadian pork — adapted from TheMealDB.',
     story: 'Tourtiere from TheMealDB (Canadian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26223,7 +26223,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53416',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Trinxat (Potato, Cabbage and Bacon Hash)',
     tagline: 'International pork — adapted from TheMealDB.',
     story: 'Trinxat (Potato, Cabbage and Bacon Hash) from TheMealDB (International). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26269,7 +26269,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52975',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Tuna and Egg Briks',
     tagline: 'Tunisian seafood — adapted from TheMealDB.',
     story: 'Tuna and Egg Briks from TheMealDB (Tunisian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26353,7 +26353,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52972',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Tunisian Lamb Soup',
     tagline: 'Tunisian lamb — adapted from TheMealDB.',
     story: 'Tunisian Lamb Soup from TheMealDB (Tunisian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26397,7 +26397,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53249',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Turkey Bánh mì',
     tagline: 'Vietnamese miscellaneous — adapted from TheMealDB.',
     story: 'Turkey Bánh mì from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26440,7 +26440,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52845',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Turkey Meatloaf',
     tagline: 'British miscellaneous — adapted from TheMealDB.',
     story: 'Turkey Meatloaf from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26482,7 +26482,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53251',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Turkish lahmacun',
     tagline: 'Vietnamese beef — adapted from TheMealDB.',
     story: 'Turkish lahmacun from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26539,7 +26539,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53263',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Turkish lamb pilau',
     tagline: 'Turkish lamb — adapted from TheMealDB.',
     story: 'Turkish lamb pilau from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26579,7 +26579,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53252',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Turkish rice (vermicelli rice)',
     tagline: 'Turkish miscellaneous — adapted from TheMealDB.',
     story: 'Turkish rice (vermicelli rice) from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26617,7 +26617,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53270',
-    chapter: 'meals',
+    chapter: 'european',
     title: 'Turkish-style lamb',
     tagline: 'Turkish lamb — adapted from TheMealDB.',
     story: 'Turkish-style lamb from TheMealDB (Turkish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26657,7 +26657,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53114',
-    chapter: 'meals',
+    chapter: 'breakfast',
     title: 'Ugali – Kenyan cornmeal',
     tagline: 'Kenyan breakfast — adapted from TheMealDB.',
     story: 'Ugali – Kenyan cornmeal from TheMealDB (Kenyan). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26690,7 +26690,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53250',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Vegan banh mi',
     tagline: 'Vietnamese vegan — adapted from TheMealDB.',
     story: 'Vegan banh mi from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26730,7 +26730,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53000',
-    chapter: 'meals',
+    chapter: 'desserts',
     title: 'Vegetable Shepherds Pie',
     tagline: 'Irish beef — adapted from TheMealDB.',
     story: 'Vegetable Shepherds Pie from TheMealDB (Irish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26790,7 +26790,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52863',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Vegetarian Casserole',
     tagline: 'British vegetarian — adapted from TheMealDB.',
     story: 'Vegetarian Casserole from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26836,7 +26836,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52867',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Vegetarian Chilli',
     tagline: 'British vegetarian — adapted from TheMealDB.',
     story: 'Vegetarian Chilli from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26868,7 +26868,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53327',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Venezuelan Coconut Chicken',
     tagline: 'Venezuela chicken — adapted from TheMealDB.',
     story: 'Venezuelan Coconut Chicken from TheMealDB (Venezuela). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26917,7 +26917,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53326',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Venezuelan Sancocho',
     tagline: 'Venezuela beef — adapted from TheMealDB.',
     story: 'Venezuelan Sancocho from TheMealDB (Venezuela). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -26967,7 +26967,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53328',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Venezuelan Shredded Beef',
     tagline: 'Venezuela beef — adapted from TheMealDB.',
     story: 'Venezuelan Shredded Beef from TheMealDB (Venezuela). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -27022,7 +27022,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53228',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Vietnamese caramel trout',
     tagline: 'Vietnamese seafood — adapted from TheMealDB.',
     story: 'Vietnamese caramel trout from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -27062,7 +27062,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53232',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Vietnamese chicken salad',
     tagline: 'Vietnamese chicken — adapted from TheMealDB.',
     story: 'Vietnamese chicken salad from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -27106,7 +27106,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52828',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Vietnamese Grilled Pork (bun-thit-nuong)',
     tagline: 'Vietnamese pork — adapted from TheMealDB.',
     story: 'Vietnamese Grilled Pork (bun-thit-nuong) from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -27151,7 +27151,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53231',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Vietnamese lamb shanks with sweet potatoes',
     tagline: 'Vietnamese lamb — adapted from TheMealDB.',
     story: 'Vietnamese lamb shanks with sweet potatoes from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -27200,7 +27200,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53237',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Vietnamese pork salad',
     tagline: 'Vietnamese pork — adapted from TheMealDB.',
     story: 'Vietnamese pork salad from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -27251,7 +27251,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53243',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Vietnamese prawn spiralized rolls',
     tagline: 'Vietnamese seafood — adapted from TheMealDB.',
     story: 'Vietnamese prawn spiralized rolls from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -27297,7 +27297,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53241',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Vietnamese veg parcels',
     tagline: 'Vietnamese vegetarian — adapted from TheMealDB.',
     story: 'Vietnamese veg parcels from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -27343,7 +27343,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53235',
-    chapter: 'meals',
+    chapter: 'chinese',
     title: 'Vietnamese-style caramel pork',
     tagline: 'Vietnamese pork — adapted from TheMealDB.',
     story: 'Vietnamese-style caramel pork from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -27385,7 +27385,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53236',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Vietnamese-style veggie hotpot',
     tagline: 'Vietnamese vegetarian — adapted from TheMealDB.',
     story: 'Vietnamese-style veggie hotpot from TheMealDB (Vietnamese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -27425,7 +27425,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53106',
-    chapter: 'meals',
+    chapter: 'world',
     title: 'Warm roast asparagus salad',
     tagline: 'Australian pork — adapted from TheMealDB.',
     story: 'Warm roast asparagus salad from TheMealDB (Australian). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -27468,7 +27468,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52871',
-    chapter: 'meals',
+    chapter: 'vegetarian',
     title: 'Yaki Udon',
     tagline: 'Japanese vegetarian — adapted from TheMealDB.',
     story: 'Yaki Udon from TheMealDB (Japanese). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -27507,7 +27507,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53097',
-    chapter: 'meals',
+    chapter: 'desserts',
     title: 'Yorkshire Puddings',
     tagline: 'British miscellaneous — adapted from TheMealDB.',
     story: 'Yorkshire Puddings from TheMealDB (British). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -27552,7 +27552,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-53294',
-    chapter: 'meals',
+    chapter: 'desserts',
     title: 'Zapiekanki',
     tagline: 'Polish pork — adapted from TheMealDB.',
     story: 'Zapiekanki from TheMealDB (Polish). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -27741,7 +27741,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52785',
-    chapter: 'pakistani',
+    chapter: 'vegetarian',
     title: 'Dal fry',
     tagline: 'India vegetarian — adapted from TheMealDB.',
     story: 'Dal fry from TheMealDB (India). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -28036,7 +28036,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52868',
-    chapter: 'pakistani',
+    chapter: 'vegetarian',
     title: 'Kidney Bean Curry',
     tagline: 'India vegetarian — adapted from TheMealDB.',
     story: 'Kidney Bean Curry from TheMealDB (India). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
@@ -28269,7 +28269,7 @@ export const MEALDB_RECIPES: Recipe[] = [
   }),
   r({
     id: 'mdb-52865',
-    chapter: 'pakistani',
+    chapter: 'vegetarian',
     title: 'Matar Paneer',
     tagline: 'India vegetarian — adapted from TheMealDB.',
     story: 'Matar Paneer from TheMealDB (India). Nutrition figures below are rough estimates from ingredient count — not lab-tested.',
