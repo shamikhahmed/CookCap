@@ -2,7 +2,7 @@
 
 Version **2.3.0**. Regen: `GALLERY_URL=http://127.0.0.1:3456/CookCap npm run gallery`.
 
-Demo edition: **Ayesha**. Recipes: **838** (hero-only; no pork).
+Demo edition: **Ayesha**. Recipes: **782** (hero-only; no pork).
 
 ## Layout
 

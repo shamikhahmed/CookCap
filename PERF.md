@@ -1,7 +1,7 @@
 # CookCap v2.3.0 — Performance Budgets
 
 **Version:** 2.3.0 · **SW:** `cookcap-v16` · **Deploy:** GitHub Pages `/CookCap/`  
-**Catalog:** **838** recipes · no pork · max chapter share desserts
+**Catalog:** **782** recipes · no pork · max chapter share desserts
 
 ---
 

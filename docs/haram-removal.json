@@ -1,0 +1,231 @@
+{
+  "at": "2026-08-02T17:45:37.571Z",
+  "count": 56,
+  "removed": [
+    {
+      "id": "mdb-53147",
+      "title": "Arroz con gambas y calamar"
+    },
+    {
+      "id": "mdb-53366",
+      "title": "Beef and Broccoli Stir-Fry"
+    },
+    {
+      "id": "mdb-52874",
+      "title": "Beef and Mustard Pie"
+    },
+    {
+      "id": "mdb-52873",
+      "title": "Beef Dumpling Stew"
+    },
+    {
+      "id": "mdb-53421",
+      "title": "BEEF LOK LAK (Lok Lak Sach Ko)"
+    },
+    {
+      "id": "mdb-52961",
+      "title": "Budino Di Ricotta"
+    },
+    {
+      "id": "mdb-52796",
+      "title": "Chicken Alfredo Primavera"
+    },
+    {
+      "id": "mdb-52831",
+      "title": "Chicken Karaage"
+    },
+    {
+      "id": "mdb-52879",
+      "title": "Chicken Parmentier"
+    },
+    {
+      "id": "mdb-53186",
+      "title": "Chicken with saffron, raisins & pine nuts"
+    },
+    {
+      "id": "mdb-52910",
+      "title": "Chinon Apple Tarts"
+    },
+    {
+      "id": "mdb-52990",
+      "title": "Christmas cake"
+    },
+    {
+      "id": "mdb-52989",
+      "title": "Christmas Pudding Trifle"
+    },
+    {
+      "id": "mdb-52988",
+      "title": "Classic Christmas pudding"
+    },
+    {
+      "id": "mdb-53556",
+      "title": "Danish Rye Bread"
+    },
+    {
+      "id": "mdb-53193",
+      "title": "Drunken noodles (pad kee mao)"
+    },
+    {
+      "id": "mdb-52907",
+      "title": "Duck Confit"
+    },
+    {
+      "id": "mdb-53370",
+      "title": "Egg Foo Young"
+    },
+    {
+      "id": "mdb-53342",
+      "title": "Figgy Duff"
+    },
+    {
+      "id": "mdb-52918",
+      "title": "Fish Stew with Rouille"
+    },
+    {
+      "id": "mdb-52903",
+      "title": "French Onion Soup"
+    },
+    {
+      "id": "mdb-53131",
+      "title": "Fyrstekake – Norwegian Prince Cake"
+    },
+    {
+      "id": "mdb-52764",
+      "title": "Garides Saganaki"
+    },
+    {
+      "id": "mdb-53180",
+      "title": "Garlicky prawns with sherry"
+    },
+    {
+      "id": "mdb-52951",
+      "title": "General Tsos Chicken"
+    },
+    {
+      "id": "mdb-53578",
+      "title": "Gingerbread Waffles"
+    },
+    {
+      "id": "mdb-52773",
+      "title": "Honey Teriyaki Salmon"
+    },
+    {
+      "id": "mdb-52781",
+      "title": "Irish stew"
+    },
+    {
+      "id": "mdb-53348",
+      "title": "Jamaican Spice Bun Recipe"
+    },
+    {
+      "id": "mdb-53033",
+      "title": "Japanese gohan rice"
+    },
+    {
+      "id": "mdb-53335",
+      "title": "Jiggs Dinner"
+    },
+    {
+      "id": "mdb-52945",
+      "title": "Kung Pao Chicken"
+    },
+    {
+      "id": "mdb-52876",
+      "title": "Minced Beef Pie"
+    },
+    {
+      "id": "mdb-52864",
+      "title": "Mushroom & Chestnut Rotolo"
+    },
+    {
+      "id": "mdb-53347",
+      "title": "No-Churn Rum Raisin Ice Cream"
+    },
+    {
+      "id": "mdb-52916",
+      "title": "Pear Tarte Tatin"
+    },
+    {
+      "id": "mdb-53162",
+      "title": "Pollo en pepitoria"
+    },
+    {
+      "id": "mdb-53045",
+      "title": "Portuguese fish stew (Caldeirada de peixe)"
+    },
+    {
+      "id": "mdb-52922",
+      "title": "Prawn & Fennel Bisque"
+    },
+    {
+      "id": "mdb-53383",
+      "title": "Ramen Noodles with Boiled Egg"
+    },
+    {
+      "id": "mdb-53545",
+      "title": "Ropa Veija"
+    },
+    {
+      "id": "mdb-52823",
+      "title": "Salmon Prawn Risotto"
+    },
+    {
+      "id": "mdb-52953",
+      "title": "Shrimp Chow Fun"
+    },
+    {
+      "id": "mdb-53375",
+      "title": "Shrimp With Snow Peas"
+    },
+    {
+      "id": "mdb-53163",
+      "title": "Spanish fig & almond balls"
+    },
+    {
+      "id": "mdb-52935",
+      "title": "Steak Diane"
+    },
+    {
+      "id": "mdb-53082",
+      "title": "Strawberries Romanoff"
+    },
+    {
+      "id": "mdb-53065",
+      "title": "Sushi"
+    },
+    {
+      "id": "mdb-52950",
+      "title": "Szechuan Beef"
+    },
+    {
+      "id": "tiramisu",
+      "title": "Tiramisù"
+    },
+    {
+      "id": "tiramisu-cups",
+      "title": "Tiramisu Cups"
+    },
+    {
+      "id": "mdb-53415",
+      "title": "Torrijas"
+    },
+    {
+      "id": "mdb-53000",
+      "title": "Vegetable Shepherds Pie"
+    },
+    {
+      "id": "mdb-52838",
+      "title": "Venetian Duck Ragu"
+    },
+    {
+      "id": "mdb-52871",
+      "title": "Yaki Udon"
+    },
+    {
+      "id": "mdb-53056",
+      "title": "Croatian lamb peka"
+    }
+  ],
+  "note": "Alcohol + leftover pork. Vinegar/wine-glass kept."
+}

@@ -626,7 +626,7 @@ export const EXTRA_RECIPES: Recipe[] = [
       ['Chill before serving.', 10800],
     ],
     tips: ['Assemble a few hours ahead so the layers set and slice cleanly.'],
-    related: ['kheer', 'tiramisu'],
+    related: ['kheer'],
     seed: 114,
   }),
   r({

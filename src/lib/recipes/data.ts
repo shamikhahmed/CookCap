@@ -246,7 +246,7 @@ export const RECIPES: Recipe[] = [
     equipment: ['Wide heavy pan', 'Ladle'],
     storage: 'Best fresh; refrigerate up to 2 days.',
     reheating: 'Loosen with hot stock over low heat, stirring.',
-    related: ['roast-chicken', 'tiramisu'],
+    related: ['roast-chicken'],
     heroSeed: 21,
   },
   {
@@ -306,67 +306,7 @@ export const RECIPES: Recipe[] = [
     reheating: 'Loosen with a splash of water over low heat.',
     related: ['shakshuka', 'masala-chai'],
     heroSeed: 14,
-  },
-  {
-    id: 'tiramisu',
-    chapter: 'desserts',
-    title: 'Tiramisù',
-    tagline: 'Coffee, cocoa, and clouds of mascarpone.',
-    story:
-      'The dessert I make to show off, and it’s secretly the easiest — no oven, just a gentle hand folding the cream. Dip the biscuits fast, one second a side, or they go soggy. Make it the night before; it’s always better after a sleep in the fridge.',
-    tasteLike: 'Bittersweet coffee against cool, sweet cream.',
-    texture: 'Pillowy and spoonable, with soft soaked biscuits.',
-    spiceLevel: 0,
-    allergens: ['dairy', 'egg', 'gluten'],
-    cuisine: 'Italian',
-    difficulty: 'medium',
-    prepMin: 30,
-    cookMin: 0,
-    servings: 8,
-    nutrition: { calories: 390, protein: 7, carbs: 30, fat: 26, fiber: 1, sugar: 22 },
-    tags: ['sweet', 'no-bake', 'make-ahead', 'vegetarian'],
-    ingredients: [
-      {
-        items: [
-          { quantity: 4, unit: '', item: 'eggs', note: 'separated' },
-          { quantity: 90, unit: 'g', item: 'caster sugar' },
-          { quantity: 500, unit: 'g', item: 'mascarpone', note: 'cold' },
-          { quantity: 300, unit: 'ml', item: 'strong espresso', note: 'cooled' },
-          { quantity: 2, unit: 'tbsp', item: 'extra espresso or date syrup', note: 'optional soak' },
-          { quantity: 250, unit: 'g', item: 'savoiardi (ladyfingers)' },
-          { quantity: null, unit: '', item: 'cocoa powder', note: 'to dust' },
-        ],
-      },
-    ],
-    steps: [
-      {
-        instruction: 'Whip yolks with sugar until pale and thick, then fold in mascarpone.',
-        durationSec: 300,
-      },
-      {
-        instruction: 'Whip whites to soft peaks and fold in gently to keep the air.',
-        tip: 'Fold in thirds — the first loosens, the rest lifts.',
-      },
-      { instruction: 'Combine espresso and liquor. Dip each biscuit briefly — one second a side.' },
-      { instruction: 'Layer biscuits and cream twice, finishing with cream.' },
-      {
-        instruction: 'Chill to set, then dust thickly with cocoa just before serving.',
-        durationSec: 14400,
-      },
-    ],
-    chefNotes: ['Use pasteurised eggs if serving anyone vulnerable to raw egg.'],
-    tips: ['A cold bowl helps the mascarpone stay firm while folding.'],
-    warnings: [
-      'This recipe uses raw egg. Avoid serving to pregnant people, infants, or the immunocompromised, or use pasteurised eggs.',
-    ],
-    substitutions: [{ from: 'soaking liquid', to: 'just espresso if you like it stronger' }],
-    equipment: ['Electric whisk', 'Deep dish'],
-    storage: 'Best after 12 hours; keeps 3 days covered.',
-    reheating: 'Serve cold — never heat.',
-    related: ['risotto-milanese', 'affogato'],
-    heroSeed: 28,
-  },
-  {
+  },  {
     id: 'masala-chai',
     chapter: 'coffee',
     title: 'Masala Chai',

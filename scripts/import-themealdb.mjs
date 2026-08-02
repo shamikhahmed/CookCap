@@ -83,6 +83,18 @@ function mapImportedChapter({ category, cuisine, title, tags = [] }) {
 const PORK_CAT = /^(pork)$/i;
 const PORK_TEXT = /\b(?:pork|bacon|pancetta|prosciutto|chorizo|gammon|\bham\b|parma\s*ham|salami|pepperoni|guanciale|jam[oó]n|sausage|sausages|lardons?)\b/i;
 
+const ALCOHOL_IMPORT = /\\b(?:shaoxing|sherry|mirin|sake\\b|marsala|(?:red|white|rice|cooking)\\s+wine|brandy|rum\\b|beer|cognac|liqueur|liquor|vodka|whisky|whiskey|stout|lager|alcoholic)\\b/i;
+
+function isHaramMeal(meal) {
+  if (isHaramMeal(meal)) return true;
+  const blob = [meal.strMeal, meal.strInstructions, meal.strIngredient1, meal.strIngredient2, meal.strIngredient3, meal.strIngredient4, meal.strIngredient5, meal.strIngredient6, meal.strIngredient7, meal.strIngredient8]
+    .filter(Boolean)
+    .join(' ')
+    .replace(/\\b(?:cider|wine|rice\\s*wine|red\\s*wine|white\\s*wine)\\s+vinegar\\b/gi, '')
+    .replace(/\\bwine\\s+glasses?\\b/gi, '');
+  return ALCOHOL_IMPORT.test(blob);
+}
+
 function isPorkMeal(meal) {
   const cat = (meal.strCategory || '').trim();
   if (PORK_CAT.test(cat)) return true;

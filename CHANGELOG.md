@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.3.2 — 2026-08-02
+
+### Fix
+- **Haram food purged** — alcohol (wine/sherry/mirin/sake/beer/rum/brandy/…) + any leftover pork products; **56** dishes out
+- Catalog **782**; vinegar / wine-glass serving notes kept
+- `import:mealdb` skips haram; log `docs/haram-removal.json`
+
 ## 2.3.1 — 2026-08-02
 
 ### Fix
