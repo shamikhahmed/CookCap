@@ -60,9 +60,10 @@ function Frame() {
         onRename={() => setRenameOpen(true)}
       />
 
-      <main className="journal-stage relative flex min-h-0 flex-1 items-center justify-center overflow-visible px-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-1 sm:px-6 sm:pr-36 md:pr-40 lg:pr-48">
-        <div className="book-stage relative mx-auto flex h-full min-h-0 w-full max-w-full items-center justify-center py-1 sm:max-w-[min(720px,calc(100%-9rem))] md:py-2">
-          <div className="relative aspect-[5/7] h-[min(100%,calc(100dvh-7.5rem))] w-auto max-w-full min-w-0">
+      <main className="journal-stage relative flex min-h-0 flex-1 items-center justify-center overflow-hidden px-0 pt-0 sm:overflow-visible sm:px-6 sm:pr-36 sm:pt-1 md:pr-40 lg:pr-48">
+        <div className="book-stage relative mx-auto flex h-full min-h-0 w-full max-w-full items-center justify-center sm:max-w-[min(720px,calc(100%-9rem))] sm:py-2">
+          {/* Phone: full-bleed page (Apple Books). Desktop: aspect-locked hardcover. */}
+          <div className="book-frame relative h-full w-full min-w-0 sm:aspect-[5/7] sm:h-[min(100%,calc(100dvh-7.5rem))] sm:w-auto sm:max-w-full">
             <Book />
           </div>
         </div>
@@ -137,34 +138,36 @@ function TopBar({
   }, [more]);
 
   return (
-    <header className="flex shrink-0 items-center justify-between px-4 py-2.5 sm:px-6">
+    <header className="relative z-30 flex shrink-0 items-center justify-between gap-2 px-3 py-2 sm:px-6 sm:py-2.5">
       <div className="flex min-w-0 items-center gap-2 text-[color:var(--color-ink)]">
         <Icon name="book" size={20} />
         <div className="min-w-0 leading-tight">
-          <span className="block truncate font-serif text-lg font-semibold italic tracking-tight">
+          <span className="block truncate font-serif text-base font-semibold italic tracking-tight sm:text-lg">
             {PRODUCT_NAME}
           </span>
           <span
             suppressHydrationWarning
-            className="block truncate text-[10px] uppercase tracking-[0.2em] text-[color:var(--color-ink-faint)]"
+            className="block truncate text-[9px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)] sm:text-[10px] sm:tracking-[0.2em]"
           >
             {edition.bookTitle}
           </span>
         </div>
       </div>
-      <div className="flex items-center gap-1">
+      <div className="flex shrink-0 items-center gap-0.5 sm:gap-1">
         <IconBtn label="Search recipes" onClick={onSearch}>
           <Icon name="search" size={20} />
         </IconBtn>
-        <IconBtn label="Favorites and history" onClick={onFavorites}>
-          <Icon name="bookmark" size={20} />
-        </IconBtn>
-        <IconBtn
-          label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
-          onClick={() => setTheme(dark ? 'light' : 'dark')}
-        >
-          <Icon name={dark ? 'sun-toggle' : 'moon-toggle'} size={20} />
-        </IconBtn>
+        <span className="hidden sm:contents">
+          <IconBtn label="Favorites and history" onClick={onFavorites}>
+            <Icon name="bookmark" size={20} />
+          </IconBtn>
+          <IconBtn
+            label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
+            onClick={() => setTheme(dark ? 'light' : 'dark')}
+          >
+            <Icon name={dark ? 'sun-toggle' : 'moon-toggle'} size={20} />
+          </IconBtn>
+        </span>
 
         <div className="relative" ref={moreRef}>
           <IconBtn label="More" onClick={() => setMore((v) => !v)} ariaExpanded={more}>
@@ -181,6 +184,22 @@ function TopBar({
                 transition={{ duration: reduce ? 0 : 0.15 }}
                 className="absolute right-0 top-full z-50 mt-1 min-w-[11rem] overflow-hidden rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] py-1 shadow-[var(--shadow-lg)]"
               >
+                <span className="sm:hidden">
+                  <MenuItem
+                    label="Favorites & history"
+                    onClick={() => {
+                      onFavorites();
+                      setMore(false);
+                    }}
+                  />
+                  <MenuItem
+                    label={dark ? 'Light mode' : 'Dark mode'}
+                    onClick={() => {
+                      setTheme(dark ? 'light' : 'dark');
+                      setMore(false);
+                    }}
+                  />
+                </span>
                 <MenuItem
                   label={soundOn ? 'Mute page sound' : 'Page sound on'}
                   onClick={() => {
@@ -247,7 +266,7 @@ function BottomBar() {
   const busy = locked || turning;
   const extras = customs.length;
   return (
-    <footer className="flex shrink-0 items-center gap-3 px-4 py-3 sm:gap-4 sm:px-6 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+    <footer className="relative z-30 flex shrink-0 items-center gap-2 px-3 py-2.5 sm:gap-4 sm:px-6 sm:py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
       <IconBtn label="Previous page" onClick={prev} disabled={atStart || busy}>
         <Icon name="arrow-left" size={20} />
       </IconBtn>
@@ -266,7 +285,7 @@ function BottomBar() {
       </div>
 
       <span
-        className="min-w-14 text-center text-xs tabular-nums text-[color:var(--color-ink-faint)]"
+        className="min-w-12 text-center text-[11px] tabular-nums text-[color:var(--color-ink-faint)] sm:min-w-14 sm:text-xs"
         title={
           extras > 0
             ? `Includes ${extras} imported custom recipes (this device only)`
@@ -276,6 +295,16 @@ function BottomBar() {
       >
         {ready ? `${index + 1} / ${total}` : '…'}
       </span>
+
+      <button
+        type="button"
+        className="rounded-full px-2.5 py-1.5 font-serif text-[0.7rem] font-semibold text-[color:var(--color-ink-soft)] hover:bg-[color:var(--color-paper-sunk)] sm:hidden disabled:opacity-30"
+        aria-label="Open chapter stickers"
+        disabled={busy}
+        onClick={() => window.dispatchEvent(new Event('cookcap-open-chapters'))}
+      >
+        Tabs
+      </button>
 
       <IconBtn label="Next page" onClick={next} disabled={atEnd || busy}>
         <Icon name="arrow-right" size={20} />

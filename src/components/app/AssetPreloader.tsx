@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { useApp } from '@/components/app/AppStore';
 import stepMap from '@/lib/recipes/step-images.generated.json';
+import { withBase } from '@/lib/base-path';
 
 /**
  * On enter: warm every recipe hero (+ @sm when available) and step photo into
@@ -65,9 +66,9 @@ export function AssetPreloader() {
 
     for (const r of allRecipes) {
       if (r.chapter === 'tips') continue;
-      add(`/recipes/${r.id}.webp`);
-      add(`/recipes/${r.id}@sm.webp`);
-      for (const s of STEP[r.id] ?? []) add(s);
+      add(withBase(`/recipes/${r.id}.webp`));
+      add(withBase(`/recipes/${r.id}@sm.webp`));
+      for (const s of STEP[r.id] ?? []) add(withBase(s));
     }
 
     const kick = () => {

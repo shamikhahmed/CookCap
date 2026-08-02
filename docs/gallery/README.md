@@ -1,6 +1,6 @@
 # CookCap — Screen gallery
 
-Version **1.5.0**. Regen: `npm run gallery` (dev on `:3000`).
+Version **1.5.1**. Regen: `npm run gallery` (dev on `:3000`).
 
 ## Desktop (1440×900)
 
@@ -21,7 +21,7 @@ Version **1.5.0**. Regen: `npm run gallery` (dev on `:3000`).
 
 ## Mobile (390×844)
 
-Same set + `12-tabs-sheet.png`. See `mobile/`.
+Same set + `12-tabs-sheet.png`. Phone = full-bleed leaf; **Tabs** in footer → sheet. See `mobile/`.
 
 ## Regen
 

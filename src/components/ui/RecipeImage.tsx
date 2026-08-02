@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { getImage } from '@/lib/recipes/images';
 import { generateHero } from '@/lib/recipes/hero';
+import { withBase } from '@/lib/base-path';
 
 const EMPTY_BLUR =
   'data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=';
@@ -32,7 +33,7 @@ export function RecipeImage({
   const meta = getImage(recipeId);
   const [failed, setFailed] = useState(false);
   const [loaded, setLoaded] = useState(false);
-  const src = meta?.src ?? `/recipes/${recipeId}.webp`;
+  const src = meta?.src ?? withBase(`/recipes/${recipeId}.webp`);
   const blur = meta?.blurDataURL ?? EMPTY_BLUR;
 
   if (failed) {

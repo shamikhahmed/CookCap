@@ -22,7 +22,8 @@ import { WarmLeafPool } from './WarmLeafPool';
  */
 
 const MAX_DEG = 168;
-const H_INTENT = 12;
+/** Lower than desktop so phone horizontal drags win over scroll sooner. */
+const H_INTENT = 8;
 
 interface Turn {
   dir: 'forward' | 'backward';
@@ -50,6 +51,7 @@ export function Book() {
     setTurning(false);
     setTurn(null);
     deg.set(0);
+    if (containerRef.current) containerRef.current.style.touchAction = '';
   };
 
   const play = (dir: 'forward' | 'backward', base: Leaf, overlay: Leaf) => {
@@ -165,6 +167,11 @@ export function Book() {
       d.engageX = e.clientX;
       active.current = true;
       setTurning(true);
+      try {
+        (e.currentTarget as HTMLElement).style.touchAction = 'none';
+      } catch {
+        /* ignore */
+      }
       if (dir === 'forward') {
         setTurn({ dir, base: leaves[Math.min(leaves.length - 1, index + 1)]!, overlay: leaves[index]! });
         deg.set(0);
@@ -260,21 +267,20 @@ export function Book() {
   return (
     <div
       ref={containerRef}
-      className="relative mx-auto flex h-full w-full items-center justify-center"
-      style={{ perspective: 2200 }}
+      className="relative mx-auto flex h-full w-full items-center justify-center touch-pan-y"
+      style={{ perspective: 'min(1400px, 120vw)' }}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
       onPointerCancel={onPointerUp}
     >
-      <div className="absolute inset-0 rounded-[1.4rem]">
+      {/* Hardcover case — desktop/tablet only. Phone is a full-bleed leaf. */}
+      <div className="absolute inset-0 hidden rounded-[1.4rem] sm:block">
         <div
           className="absolute inset-0 rounded-[1.4rem] shadow-[var(--shadow-book)]"
           style={{ background: 'var(--color-leather-dark)' }}
         />
-        {/* Spine (left) */}
         <div className="absolute inset-y-3 left-[-4px] w-[8px] rounded-l-md bg-gradient-to-l from-[color:var(--color-paper-sunk)] via-[color:var(--color-paper-sunk)]/40 to-transparent" />
-        {/* Soft stack hint under open leaf (right peeks only) */}
         <div className="book-page-stack" aria-hidden>
           <span />
           <span />
@@ -283,23 +289,19 @@ export function Book() {
         </div>
       </div>
 
-      {/* Fat fore-edge + chapter tabs (one composition) */}
       <BookmarkRail />
 
-      {/* Keep nearby pages mounted — flip should not cold-start React + images */}
       <WarmLeafPool index={index} leaves={leaves} />
 
       <div
         className="relative z-20 h-full w-full"
         style={{ transformStyle: 'preserve-3d', touchAction: 'pan-y' }}
       >
-        {/* In-flow sheet — keeps case width solid (no absolute-only collapse). */}
-        <div className="relative h-full w-full overflow-hidden rounded-[1.2rem] bg-[color:var(--color-paper)] shadow-[var(--shadow-lg)] ring-1 ring-black/5">
+        <div className="relative h-full w-full overflow-hidden rounded-none bg-[color:var(--color-paper)] shadow-none ring-0 sm:rounded-[1.2rem] sm:shadow-[var(--shadow-lg)] sm:ring-1 sm:ring-black/5">
           <SpineGutter />
-          {/* Soft cast onto the page block */}
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-y-0 right-0 z-[5] w-4 bg-gradient-to-l from-black/12 to-transparent"
+            className="pointer-events-none absolute inset-y-0 right-0 z-[5] hidden w-4 bg-gradient-to-l from-black/12 to-transparent sm:block"
           />
           <LeafView leaf={baseLeaf} />
           <motion.div
@@ -315,13 +317,13 @@ export function Book() {
 
         {turn && overlayLeaf && (
           <motion.div
-            className="absolute inset-0 origin-left overflow-hidden rounded-[1.2rem] bg-[color:var(--color-paper)] shadow-[var(--shadow-lg)]"
+            className="absolute inset-0 origin-left overflow-hidden rounded-none bg-[color:var(--color-paper)] shadow-none sm:rounded-[1.2rem] sm:shadow-[var(--shadow-lg)]"
             style={{
               rotateY: deg,
               scaleX: bendSquash,
               transformStyle: 'preserve-3d',
               backfaceVisibility: 'hidden',
-              transformPerspective: 2200,
+              transformPerspective: 1800,
               zIndex: 30,
             }}
           >

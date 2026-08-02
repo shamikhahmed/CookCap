@@ -62,6 +62,14 @@ async function openMore(page) {
   await settle(page, 350);
 }
 
+async function setDarkMode(page, dark) {
+  await page.evaluate((wantDark) => {
+    localStorage.setItem('cookcap-theme', wantDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', wantDark ? 'dark' : 'light');
+  }, dark);
+  await settle(page, 300);
+}
+
 async function captureSet(page, folder) {
   // First-run name gate
   await page.goto(BASE, { waitUntil: 'domcontentloaded' });
@@ -95,22 +103,30 @@ async function captureSet(page, folder) {
     waitUntil: 'domcontentloaded',
     timeout: 60000,
   });
+  await waitFooterReady(page, 60000);
+  // WarmLeafPool keeps neighbor recipes in DOM — wait for active leaf cook CTA
   await page.waitForFunction(
-    () =>
-      [...document.querySelectorAll('button')].some((b) =>
-        (b.textContent || '').includes('Cook mode'),
-      ),
+    () => {
+      const cook = [...document.querySelectorAll('button')].find(
+        (b) => (b.textContent || '').trim() === 'Cook mode' && b.offsetParent !== null,
+      );
+      return Boolean(cook);
+    },
     null,
     { timeout: 60000 },
   );
+  await settle(page, 800);
   const cookBtn = page
     .getByRole('button', { name: 'Cook mode' })
     .filter({ visible: true })
     .first();
-  await cookBtn.scrollIntoViewIfNeeded();
-  await settle(page, 700);
+  await page.evaluate(() => {
+    document.querySelector('[data-leaf-scroll]')?.scrollTo(0, 0);
+  });
+  await settle(page, 500);
   await shot(page, `${folder}/05-recipe.png`);
 
+  await cookBtn.scrollIntoViewIfNeeded();
   await cookBtn.click();
   await page.getByRole('button', { name: 'Exit cooking mode' }).waitFor({
     state: 'visible',
@@ -143,23 +159,26 @@ async function captureSet(page, folder) {
   await page.keyboard.press('Escape');
   await settle(page, 300);
 
-  await page.getByRole('button', { name: 'Switch to dark mode' }).click();
-  await settle(page, 400);
+  await setDarkMode(page, true);
   await page.goto(`${BASE}/?recipe=${RECIPE}&for=Jia`, {
     waitUntil: 'domcontentloaded',
     timeout: 60000,
   });
+  await waitFooterReady(page, 60000);
   await page.waitForFunction(
     () =>
-      [...document.querySelectorAll('button')].some((b) =>
-        (b.textContent || '').includes('Cook mode'),
+      [...document.querySelectorAll('button')].some(
+        (b) => (b.textContent || '').trim() === 'Cook mode' && b.offsetParent !== null,
       ),
     null,
     { timeout: 60000 },
   );
+  await page.evaluate(() => {
+    document.querySelector('[data-leaf-scroll]')?.scrollTo(0, 0);
+  });
   await settle(page, 600);
   await shot(page, `${folder}/10-recipe-dark.png`);
-  await page.getByRole('button', { name: 'Switch to light mode' }).click().catch(() => {});
+  await setDarkMode(page, false);
 
   // Chapter opener
   await page.evaluate(() => localStorage.setItem('cookcap-pos', '4'));

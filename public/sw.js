@@ -1,10 +1,10 @@
 /*
-  CookCap service worker — offline-first (cookcap-v1).
+  CookCap service worker — offline-first (cookcap-v2).
 
   Works under GitHub Pages project path (/CookCap/) by deriving BASE from the
   script URL. Local/static export root uses BASE ''.
 */
-const VERSION = 'cookcap-v1';
+const VERSION = 'cookcap-v2';
 const SHELL = `${VERSION}-shell`;
 const ASSETS = `${VERSION}-assets`;
 const BASE = new URL('./', self.location.href).pathname.replace(/\/$/, '');

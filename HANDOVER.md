@@ -1,56 +1,48 @@
 # CookCap — Handover
 
-Heirloom family cookbook PWA (Cap family). Version **1.5.0**.
+Heirloom family cookbook PWA (Cap family). Version **1.5.1**.
 
-## Hosting (like other Caps)
+## Live
 
-| Cap | URL |
-|-----|-----|
-| PulseCap | https://shamikhahmed.github.io/PulseCap/ |
-| VaultCap | https://shamikhahmed.github.io/VaultCap/ |
-| **CookCap** | https://shamikhahmed.github.io/CookCap/ |
+https://shamikhahmed.github.io/CookCap/
 
-- `output: 'export'` → `out/`
-- Workflow: `.github/workflows/pages.yml` (`NEXT_PUBLIC_BASE_PATH=/CookCap`)
-- **Not** Vercel — GitHub Pages from `main`, same as Pulse/Vault
+Same model as PulseCap / VaultCap: Next `output: 'export'` + Actions Pages.
+`NEXT_PUBLIC_BASE_PATH=/CookCap` on CI only.
+
+## Critical gotcha (v1.5.1)
+
+`next/image` with `unoptimized` does **not** auto-prefix `basePath`. All recipe /
+step / preload asset URLs must go through `withBase()` or they 404 on Pages
+(looked like “no photos”). SW `cookcap-v2`.
 
 ## Stack
 
-- Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB · SW `cookcap-v1`
+Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB · SW `cookcap-v2`
 
 ## Run
 
 ```bash
 cd "/Users/shamikhahmed/CookBook Website"
 npm install && npm run dev
-npm run build && npm run typecheck
+npm run typecheck && npm run build
+npm run gallery   # needs :3000
 ```
 
-## Architecture
+## Mobile
 
-| Piece | Role |
-|-------|------|
-| **NameGate** | First-run owner name → `{Name} Cooks` |
-| **Shell** | Desk chrome; CookCap + book subtitle; safe-area |
-| **BookController** | Index, `cookcap-pos`, turn lock |
-| **Book** | Single-page curl + haptic |
-| **WarmLeafPool** | Off-screen ±3 neighbors |
-| **AssetPreloader** | Idle-warm heroes + steps |
-| **SW** | Shell + offline.html (`cookcap-v1`, basePath-aware) |
+Phone = full-bleed reader leaf (Apple Books style). Desktop = leather case + fat
+fore-edge tabs. Phone Tabs = footer control → sheet (no floating FAB).
 
-## Page totals
+## Name → book
 
-Bundled leaves ≈ **218**. Customs = per-origin IndexedDB.
+`NameGate` → `{Name} Cooks`. Product chrome = **CookCap**. ··· → Change book name.
 
-## Kitchen standard (quiet)
+## Roadmap honesty
 
-No pork / wine / gelatin as ingredients. No “halal certified” badge.
-
-## Still open
-
-- Real family photos → `docs/photos.md`
-- Collections store unused
+`MASTER_PROMPT.md` + `docs/plan-profiles-modes.md` describe profiles/modes/
+nutrition/calendar. **Not shipped.** Only Phase 0 stabilize (this release) is done.
 
 ## Key files
 
-`NameGate.tsx` · `edition.ts` · `Shell.tsx` · `Book*.tsx` · `public/sw.js` · `.github/workflows/pages.yml` · `PRESENTATION.md` · `docs/gallery/`
+`withBase` · `RecipeImage` · `images.ts` · `Shell` · `Book` · `BookmarkRail` ·
+`.github/workflows/pages.yml` · `docs/gallery/`

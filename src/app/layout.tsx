@@ -23,12 +23,14 @@ const caveat = Caveat({
   display: 'swap',
 });
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export const metadata: Metadata = {
   title: 'CookCap — A Family Cookbook',
   description:
     'CookCap — an interactive heirloom cookbook PWA. Name your book, flip pages, cook offline, keep family recipes forever.',
   applicationName: 'CookCap',
-  manifest: '/manifest.webmanifest',
+  manifest: `${BASE}/manifest.webmanifest`,
   appleWebApp: { capable: true, statusBarStyle: 'black-translucent', title: 'CookCap' },
   formatDetection: { telephone: false },
   metadataBase: new URL('https://shamikhahmed.github.io/CookCap'),
@@ -47,10 +49,10 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
   icons: {
     icon: [
-      { url: '/icons/icon.svg', type: 'image/svg+xml' },
-      { url: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: `${BASE}/icons/icon.svg`, type: 'image/svg+xml' },
+      { url: `${BASE}/icons/icon-192.png`, sizes: '192x192', type: 'image/png' },
     ],
-    apple: [{ url: '/icons/icon-192.png', sizes: '192x192' }],
+    apple: [{ url: `${BASE}/icons/icon-192.png`, sizes: '192x192' }],
   },
 };
 

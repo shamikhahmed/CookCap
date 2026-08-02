@@ -1,4 +1,5 @@
 import generated from './step-images.generated.json';
+import { withBase } from '@/lib/base-path';
 
 /** Build-time map of process photos for Method steps (see scripts/fetch-step-images.mjs). */
 const MAP = generated as Record<string, string[]>;
@@ -13,7 +14,7 @@ export function stepImageFor(
   stepCount: number,
   explicit?: string,
 ): string | undefined {
-  if (explicit) return explicit;
+  if (explicit) return withBase(explicit);
   const list = MAP[recipeId];
   if (!list?.length || stepCount <= 0) return undefined;
 
@@ -32,7 +33,8 @@ export function stepImageFor(
   if (last && stepCount > 2) {
     slots.set(stepCount - 1, last);
   }
-  return slots.get(stepIndex);
+  const path = slots.get(stepIndex);
+  return path ? withBase(path) : undefined;
 }
 
 export function hasStepImages(recipeId: string): boolean {

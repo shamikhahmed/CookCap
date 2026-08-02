@@ -514,8 +514,25 @@
   z-index: 1;
 }
 .journal-stage {
-  /* desk lamp vignette */
+  /* desk lamp vignette — desktop only (phone is full-bleed reader) */
   mask-image: radial-gradient(ellipse 95% 90% at 50% 45%, #000 55%, transparent 100%);
+}
+
+@media (max-width: 639px) {
+  .journal-stage {
+    mask-image: none;
+  }
+  /* Never show desktop fore-edge / page stack on phones — causes overflow + overlap */
+  .book-edge,
+  .book-page-stack {
+    display: none !important;
+  }
+  .book-frame {
+    border-radius: 0;
+  }
+  .journal-desk {
+    background: var(--color-paper);
+  }
 }
 
 /* Tiny paper lips above/below tab — reads as sandwiched in the stack */

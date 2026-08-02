@@ -69,6 +69,12 @@ export function BookmarkRail() {
   const closeSheet = useCallback(() => setSheetOpen(false), []);
   useDialogA11y(sheetOpen, closeSheet, sheetRef);
 
+  useEffect(() => {
+    const open = () => setSheetOpen(true);
+    window.addEventListener('cookcap-open-chapters', open);
+    return () => window.removeEventListener('cookcap-open-chapters', open);
+  }, []);
+
   const tabs = CHAPTERS.map((c, i) => {
     const active = c.id === activeChapter;
     const started = index >= (chapterStart[c.id] ?? Infinity);
@@ -77,83 +83,72 @@ export function BookmarkRail() {
 
   if (narrow) {
     return (
-      <>
-        <button
-          type="button"
-          onClick={() => setSheetOpen(true)}
-          disabled={locked || turning}
-          aria-label="Open chapter stickers"
-          className="sticker-fab pointer-events-auto absolute -right-1 top-3 z-30 disabled:opacity-40"
-        >
-          <span className="font-serif text-[0.7rem] font-bold tracking-wide text-white">Tabs</span>
-        </button>
-        <AnimatePresence>
-          {sheetOpen && (
-            <motion.div
-              className="fixed inset-0 z-50 flex justify-end"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+      <AnimatePresence>
+        {sheetOpen && (
+          <motion.div
+            className="fixed inset-0 z-50 flex justify-end"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={motionReduce(reduce)}
+          >
+            <button
+              type="button"
+              aria-label="Close chapters"
+              className="absolute inset-0 bg-black/45 backdrop-blur-[2px]"
+              onClick={closeSheet}
+            />
+            <motion.nav
+              ref={sheetRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="chapter-sheet-title"
+              initial={{ x: 48 }}
+              animate={{ x: 0 }}
+              exit={{ x: 48 }}
               transition={motionReduce(reduce)}
+              className="journal-sheet relative flex h-full w-[min(18rem,90vw)] flex-col gap-2 overflow-y-auto p-5 shadow-[var(--shadow-lg)]"
             >
-              <button
-                type="button"
-                aria-label="Close chapters"
-                className="absolute inset-0 bg-black/45 backdrop-blur-[2px]"
-                onClick={closeSheet}
-              />
-              <motion.nav
-                ref={sheetRef}
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby="chapter-sheet-title"
-                initial={{ x: 48 }}
-                animate={{ x: 0 }}
-                exit={{ x: 48 }}
-                transition={motionReduce(reduce)}
-                className="journal-sheet relative flex h-full w-[min(18rem,90vw)] flex-col gap-2 overflow-y-auto p-5 shadow-[var(--shadow-lg)]"
+              <p
+                id="chapter-sheet-title"
+                className="mb-0.5 font-serif text-xl font-semibold text-[color:var(--color-ink)]"
               >
-                <p
-                  id="chapter-sheet-title"
-                  className="mb-0.5 font-serif text-xl font-semibold text-[color:var(--color-ink)]"
+                Chapter tabs
+              </p>
+              <p className="mb-3 text-xs leading-relaxed text-[color:var(--color-ink-faint)]">
+                Tap a flag — pages flip toward that chapter.
+              </p>
+              {tabs.map(({ c, active }) => (
+                <button
+                  key={c.id}
+                  type="button"
+                  disabled={locked || turning}
+                  aria-current={active ? 'page' : undefined}
+                  onClick={() => {
+                    goToChapter(c.id);
+                    closeSheet();
+                  }}
+                  className="sticker-chip text-left disabled:opacity-40"
+                  style={
+                    {
+                      '--sticker': c.tab,
+                      transform: `rotate(${TILT[c.id] ?? 0}deg)`,
+                      outline: active
+                        ? '2px solid color-mix(in srgb, var(--color-ink) 35%, transparent)'
+                        : undefined,
+                    } as CSSProperties
+                  }
                 >
-                  Chapter tabs
-                </p>
-                <p className="mb-3 text-xs leading-relaxed text-[color:var(--color-ink-faint)]">
-                  Tap a flag — pages flip toward that chapter.
-                </p>
-                {tabs.map(({ c, active }) => (
-                  <button
-                    key={c.id}
-                    type="button"
-                    disabled={locked || turning}
-                    aria-current={active ? 'page' : undefined}
-                    onClick={() => {
-                      goToChapter(c.id);
-                      closeSheet();
-                    }}
-                    className="sticker-chip text-left disabled:opacity-40"
-                    style={
-                      {
-                        '--sticker': c.tab,
-                        transform: `rotate(${TILT[c.id] ?? 0}deg)`,
-                        outline: active
-                          ? '2px solid color-mix(in srgb, var(--color-ink) 35%, transparent)'
-                          : undefined,
-                      } as CSSProperties
-                    }
-                  >
-                    <span className="font-serif text-sm font-semibold text-white">
-                      {STICKER[c.id] ?? c.title}
-                    </span>
-                    <span className="mt-0.5 block text-[0.65rem] text-white/80">{c.subtitle}</span>
-                  </button>
-                ))}
-              </motion.nav>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </>
+                  <span className="font-serif text-sm font-semibold text-white">
+                    {STICKER[c.id] ?? c.title}
+                  </span>
+                  <span className="mt-0.5 block text-[0.65rem] text-white/80">{c.subtitle}</span>
+                </button>
+              ))}
+            </motion.nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     );
   }
 

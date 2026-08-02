@@ -94,7 +94,7 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
       className="paper-grain h-full w-full overflow-y-auto overscroll-contain"
     >
       {/* ── Hero ─────────────────────────────────────────────*/}
-      <div className="relative aspect-[16/10] w-full overflow-hidden">
+      <div className="relative aspect-[16/11] w-full overflow-hidden sm:aspect-[16/10]">
         <RecipeImage
           recipeId={recipe.id}
           seed={recipe.heroSeed}
@@ -104,19 +104,19 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
           sizes="(max-width: 640px) 100vw, 560px"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 p-5">
+        <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
           <span
-            className="text-[0.7rem] font-medium uppercase tracking-[0.35em] text-white/80"
+            className="text-[0.65rem] font-medium uppercase tracking-[0.3em] text-white/80 sm:text-[0.7rem] sm:tracking-[0.35em]"
           >
             From our family kitchen
           </span>
           <p
-            className="mt-1 text-[0.7rem] font-medium uppercase tracking-[0.35em]"
+            className="mt-1 text-[0.65rem] font-medium uppercase tracking-[0.3em] sm:text-[0.7rem] sm:tracking-[0.35em]"
             style={{ color: chapter.tab }}
           >
             {recipe.cuisine}
           </p>
-          <h2 className="font-serif text-[clamp(1.6rem,4.5vw,2.4rem)] font-bold leading-tight text-white text-balance">
+          <h2 className="font-serif text-[clamp(1.45rem,5.5vw,2.4rem)] font-bold leading-tight text-white text-balance">
             {recipe.title}
           </h2>
         </div>
@@ -124,14 +124,14 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
           onClick={() => toggleFavorite(recipe.id)}
           aria-pressed={fav}
           aria-label={fav ? 'Remove from favorites' : 'Add to favorites'}
-          className="absolute right-4 top-4 grid size-11 place-items-center rounded-full bg-black/30 text-white backdrop-blur-md transition-transform active:scale-90"
+          className="absolute right-3 top-3 grid size-10 place-items-center rounded-full bg-black/30 text-white backdrop-blur-md transition-transform active:scale-90 sm:right-4 sm:top-4 sm:size-11"
           style={{ color: fav ? '#ff7a6b' : 'white' }}
         >
           <Icon name={fav ? 'heart-filled' : 'heart'} size={22} />
         </button>
       </div>
 
-      <div className="px-[7%] py-6">
+      <div className="px-4 py-5 sm:px-[7%] sm:py-6">
         <p className="font-serif text-lg italic text-[color:var(--color-ink-soft)] text-balance">
           {recipe.tagline}
         </p>

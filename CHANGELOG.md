@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.5.1 — 2026-08-02
+
+### Fix (mobile + GitHub Pages)
+- **Recipe photos 404 on Pages** — `unoptimized` Next Image ignored `basePath`; all hero/step/preload URLs now use `withBase()` (`/CookCap/recipes/...`)
+- Manifest + icons metadata prefixed for `/CookCap/`
+- SW → `cookcap-v2` (cache bust)
+- **Phone reader** — full-bleed leaf (no crushed `aspect-[5/7]` + leather case); hide fore-edge/page-stack on `<640px`; Tabs FAB fixed above footer (no overlap on book)
+- Phone chrome: Search + ··· only (Favorites / theme in menu); Tabs in footer (no FAB); header/footer `z-30` so ··· menu not covered by book; install banner at top
+- Recipe hero / padding tuned for narrow screens
+- Flip: lower horizontal intent (8px), `touch-pan-y` + lock `touch-action:none` while curling
+
+### Honest scope (MASTER_PROMPT)
+- Phase **0 stabilize** only this ship (mobile/images/flip/Pages). Profiles / modes / nutrition / calendar (phases 1–12) **not** built yet — still planned in `docs/plan-profiles-modes.md` + `MASTER_PROMPT.md`.
+
 ## 1.5.0 — 2026-08-02
 
 ### Rebrand

@@ -1,38 +1,25 @@
 # CookCap — User guide
 
-Cap-family private cookbook. Works offline after first visit. No account.
+## Open
 
-## First open
+Phone or desktop: https://shamikhahmed.github.io/CookCap/
 
-1. Enter **your name** (or nickname).
-2. Cover becomes **`{Name} Cooks`**. Product chrome says **CookCap**.
-3. Change later: ··· → **Change book name**.
+1. Enter your name (cover becomes **YourName Cooks**).
+2. Tap cover / swipe to flip. Buttons ← → also work.
+3. Phone: **Tabs** (bottom-right) opens chapters. Desktop: stickers on the right edge.
 
-## Open the book
+## Recipes
 
-1. Visit https://shamikhahmed.github.io/CookCap/ (or local / install PWA).
-2. Tap cover → flip (drag, arrows, ← →).
-3. Chapter tabs (phone: **Tabs**) jump with a short curl.
+- Photos load after first visit; if one fails, generated art shows.
+- **Cook mode** = big steps + timers.
+- **Add to list** → Shopping (aisles). ··· → This week’s meals.
 
-## Find a recipe
+## Tips
 
-- **⌘K** / Search — quick actions (Surprise, theme, shopping, week).
-- Contents + “Today’s kitchen”.
-- Favorites (♥) chapter.
+- Install to home screen for offline.
+- ··· → Change book name anytime.
+- Clearing site data wipes favorites / shopping / meal plan on that device.
 
-## Cook / shopping / week
+## Not in the app yet
 
-- **Cook mode** — big steps + timers.
-- ··· → Shopping (aisles) · This week’s meals.
-
-## Share
-
-Recipe **Share link** includes `?for=YourName` so the cover matches.
-
-## Photos / recipes
-
-See `docs/photos.md` and `docs/adding-recipes.md`.
-
-## Themes & backup
-
-Moon/sun theme. State lives in **this device’s** IndexedDB — clearing site data wipes it.
+Profiles, gym modes, calorie diary, pantry — planned (`docs/plan-profiles-modes.md`), not built.

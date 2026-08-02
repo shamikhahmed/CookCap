@@ -1,11 +1,9 @@
 import generated from './images.generated.json';
+import { withBase } from '@/lib/base-path';
 
 /**
  * Access layer for the build-time image pipeline (see scripts/fetch-images.mjs).
- * A recipe either has a real, optimized local photo (with a blur placeholder)
- * or falls back to procedural art. Swapping in licensed photography later means
- * only replacing files in /public/recipes and regenerating the JSON — no code
- * changes here or at call sites.
+ * Paths are basePath-aware for GitHub Pages (`/CookCap/...`).
  */
 export interface RecipeImageMeta {
   src: string;
@@ -23,8 +21,8 @@ export function getImage(recipeId: string): RecipeImageMeta | null {
   const entry = MAP[recipeId];
   if (!entry) return null;
   return {
-    src: `/recipes/${recipeId}.webp`,
-    smSrc: `/recipes/${recipeId}@sm.webp`,
+    src: withBase(`/recipes/${recipeId}.webp`),
+    smSrc: withBase(`/recipes/${recipeId}@sm.webp`),
     blurDataURL: entry.blurDataURL,
     credit: entry.credit,
   };

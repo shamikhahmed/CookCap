@@ -1,29 +1,20 @@
 # CookCap — Presentation
 
-**Version 1.5.0** · Cap family heirloom cookbook PWA  
-Live: https://shamikhahmed.github.io/CookCap/  
-Repo: https://github.com/shamikhahmed/CookCap
+**v1.5.1** · https://shamikhahmed.github.io/CookCap/
 
-## One-liner
+## Pitch
 
-**CookCap** — name your book, open a leather-bound heirloom cookbook offline. No account.
+CookCap opens like a hardcover. Name the book. Flip offline. No account.
 
-## Demo path (2 min)
+## Demo
 
-1. Enter name → cover becomes **`{Name} Cooks`**
-2. Flip Title → Friends → Contents
-3. Chapter tab → recipe → **Cook mode**
-4. Search → Shopping / This week
-5. ··· → Change book name
+1. Enter name → cover `{Name} Cooks`
+2. Flip / Tabs → recipe → Cook mode
+3. Search → Shopping / This week
 
-Screens: [docs/gallery/README.md](./docs/gallery/README.md)
+## Status
 
-## Why GitHub Pages (not Vercel)
+Reader + meal planner + shopping shipped. Profiles/modes/nutrition calendar from
+`MASTER_PROMPT.md` **not** shipped (planned).
 
-Other Caps (PulseCap, VaultCap, ScentCap) ship static files on
-`shamikhahmed.github.io/<Repo>/`. CookCap uses the same: Next static export +
-Actions deploy. Phone opens that URL — public git alone was never enough.
-
-## Stack
-
-Next.js 15 static export · React 19 · Tailwind v4 · Motion · IndexedDB · SW `cookcap-v1`
+Gallery: [docs/gallery/README.md](./docs/gallery/README.md)
