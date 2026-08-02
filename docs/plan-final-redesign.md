@@ -1,3 +1,5 @@
+# Historical — catalog is 215 family recipes; TheMealDB removed in v2.4.0.
+
 # CookCap — Final redesign + 500 recipes (build spec)
 
 Structure is solid (3D dresser world, paper tabs, appearance skins). This is the

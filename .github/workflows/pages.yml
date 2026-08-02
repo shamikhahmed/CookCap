@@ -26,6 +26,7 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
       - run: npm run gate:recipes
+      - run: npx playwright install chromium
       - run: npm run gate:anti-2d
       - run: NEXT_PUBLIC_BASE_PATH=/CookCap npm run build
       - uses: actions/upload-pages-artifact@v3

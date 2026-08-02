@@ -1,3 +1,5 @@
+# Historical — catalog is 215 family recipes; TheMealDB removed in v2.4.0.
+
 # Cursor — rebalance chapters + photo-honesty audit + perf at 956 (v2.3.0)
 
 Live v2.2.9, 956 recipes, SW `cookcap-v15`. Ship **v2.3.0 / cookcap-v16**. Guardrails

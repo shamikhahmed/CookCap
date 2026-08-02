@@ -6,6 +6,7 @@ import type { Recipe } from '@/lib/recipes/types';
 export interface ScoreResult {
   score: number;
   reasons: string[];
+  penalties: string[];
 }
 
 function ingredientCount(recipe: Recipe): number {
@@ -36,10 +37,11 @@ export function scoreRecipe(
 ): ScoreResult {
   const def = typeof mode === 'string' ? getMode(mode) : mode;
   const reasons: string[] = [];
+  const penalties: string[] = [];
   let score = 0;
 
   if (def.id === 'reader' || !def.boost) {
-    return { score: 0, reasons: [] };
+    return { score: 0, reasons: [], penalties: [] };
   }
 
   const boost = def.boost;
@@ -162,7 +164,7 @@ export function scoreRecipe(
 
   if (def.maxMinutes != null && minutes > def.maxMinutes) {
     score -= (minutes - def.maxMinutes) / 5;
-    reasons.push('over time budget');
+    penalties.push('over time budget');
   }
 
   if (def.maxCostPerServing != null) {
@@ -185,7 +187,7 @@ export function scoreRecipe(
       );
       if (hits.length) {
         score -= hits.length * 5;
-        reasons.push(`contains ${hits.join(', ')}`);
+        penalties.push(`contains ${hits.join(', ')}`);
       }
     }
 
@@ -205,14 +207,18 @@ export function scoreRecipe(
 
     if (eater.spiceMax != null && recipe.spiceLevel != null && recipe.spiceLevel > eater.spiceMax) {
       score -= (recipe.spiceLevel - eater.spiceMax) * 1.5;
-      reasons.push('too spicy');
+      penalties.push('too spicy');
     }
   }
 
   if (tags.has('high-protein') && boost.highProtein) reasons.push('high-protein tag');
   if (tags.has('budget') && boost.lowCost) reasons.push('budget tag');
 
-  return { score: Math.round(score * 100) / 100, reasons: [...new Set(reasons)].slice(0, 4) };
+  return {
+    score: Math.round(score * 100) / 100,
+    reasons: [...new Set(reasons)].slice(0, 4),
+    penalties: [...new Set(penalties)].slice(0, 4),
+  };
 }
 
 export function rankRecipes(

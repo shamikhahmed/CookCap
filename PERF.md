@@ -1,6 +1,6 @@
-# CookCap v2.4.1 — Performance Budgets
+# CookCap v2.4.2 — Performance Budgets
 
-**Version:** 2.4.1 · **SW:** `cookcap-v20` · **Deploy:** GitHub Pages `/CookCap/`  
+**Version:** 2.4.2 · **SW:** `cookcap-v21` · **Deploy:** GitHub Pages `/CookCap/`  
 **Catalog:** **215** recipes · family editorial only
 
 ---
@@ -43,7 +43,7 @@ const SHELL_OFFSETS = [-3, -2, 2, 3, 4];
 
 ```bash
 NEXT_PUBLIC_BASE_PATH=/CookCap npm run build
-npm run measure:perf956
+npm run measure:perf
 ```
 
 Hard fail = `mountedLeaves > 12`.

@@ -31,12 +31,10 @@ export function RecipeImage({
   className?: string;
 }) {
   const meta = getImage(recipeId);
-  const [failed, setFailed] = useState(false);
+  const [failed, setFailed] = useState(!meta);
   const [loaded, setLoaded] = useState(false);
-  const src = meta?.src ?? withBase(`/recipes/${recipeId}.webp`);
-  const blur = meta?.blurDataURL ?? EMPTY_BLUR;
 
-  if (failed) {
+  if (!meta || failed) {
     return (
       <div
         className={`absolute inset-0 h-full w-full ${className}`}
@@ -47,6 +45,9 @@ export function RecipeImage({
       />
     );
   }
+
+  const src = meta.src ?? withBase(`/recipes/${recipeId}.webp`);
+  const blur = meta.blurDataURL ?? EMPTY_BLUR;
 
   return (
     <>

@@ -69,6 +69,7 @@ export function ChapterLeaf({ chapter }: { chapter: ChapterId }) {
           {recipes.slice(0, 24).map((r) => (
             <li key={r.id}>
               <button
+                type="button"
                 onClick={() => goToRecipe(r.id)}
                 className="group flex w-full items-baseline gap-3 py-1.5 text-left"
               >
@@ -99,6 +100,7 @@ export function ChapterLeaf({ chapter }: { chapter: ChapterId }) {
               {hearted.map((r) => (
                 <li key={`heart-${r.id}`}>
                   <button
+                    type="button"
                     onClick={() => goToRecipe(r.id)}
                     className="group flex w-full items-baseline gap-3 py-1.5 text-left"
                   >

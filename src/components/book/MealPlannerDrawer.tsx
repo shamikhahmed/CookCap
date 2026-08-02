@@ -12,6 +12,24 @@ const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as const;
 type Day = (typeof DAYS)[number];
 type Plan = Partial<Record<Day, string>>;
 
+function scrubPlanAgainstCatalog(
+  plan: Plan,
+  recipeMap: Record<string, unknown>,
+): { cleaned: Plan; changed: boolean } {
+  const cleaned: Plan = {};
+  let changed = false;
+  for (const day of DAYS) {
+    const id = plan[day];
+    if (!id) continue;
+    if (recipeMap[id]) {
+      cleaned[day] = id;
+    } else {
+      changed = true;
+    }
+  }
+  return { cleaned, changed };
+}
+
 /** Simple week meal plan — IndexedDB meta. Generates shopping from assigned days. */
 export function MealPlannerDrawer({
   open,
@@ -28,6 +46,7 @@ export function MealPlannerDrawer({
   const [plan, setPlan] = useState<Plan>({});
   const [picking, setPicking] = useState<Day | null>(null);
   const [q, setQ] = useState('');
+  const [error, setError] = useState('');
   const panelRef = useRef<HTMLElement>(null);
   const pickingRef = useRef(picking);
   pickingRef.current = picking;
@@ -36,12 +55,18 @@ export function MealPlannerDrawer({
     if (!open) {
       setPicking(null);
       setQ('');
+      setError('');
       return;
     }
     void getMeta<Plan>('meal-plan')
-      .then((p) => setPlan(p ?? {}))
+      .then(async (p) => {
+        const raw = p ?? {};
+        const { cleaned, changed } = scrubPlanAgainstCatalog(raw, recipeMap);
+        if (changed) await putMeta('meal-plan', cleaned);
+        setPlan(cleaned);
+      })
       .catch(() => setPlan({}));
-  }, [open]);
+  }, [open, recipeMap]);
 
   const closeHandler = useCallback(() => {
     if (pickingRef.current) {
@@ -54,15 +79,24 @@ export function MealPlannerDrawer({
 
   useDialogA11y(open, closeHandler, panelRef);
 
-  const save = async (next: Plan) => {
+  const save = async (next: Plan): Promise<boolean> => {
     setPlan(next);
-    await putMeta('meal-plan', next);
+    try {
+      await putMeta('meal-plan', next);
+      setError('');
+      return true;
+    } catch {
+      setError('Could not save meal plan on this device.');
+      return false;
+    }
   };
 
   const assign = async (day: Day, id: string) => {
-    await save({ ...plan, [day]: id });
-    setPicking(null);
-    setQ('');
+    const ok = await save({ ...plan, [day]: id });
+    if (ok) {
+      setPicking(null);
+      setQ('');
+    }
   };
 
   const clearDay = async (day: Day) => {
@@ -72,25 +106,33 @@ export function MealPlannerDrawer({
   };
 
   const shopWeek = async () => {
-    for (const day of DAYS) {
-      const id = plan[day];
-      if (!id) continue;
-      const r = recipeMap[id];
-      if (!r) continue;
-      const items = r.ingredients.flatMap((g) =>
-        g.items.map((it) => ({
-          item: it.item,
-          qty: [it.quantity, it.unit].filter((x) => x != null && x !== '').join(' '),
-        })),
-      );
-      await addIngredientsToShopping(r.id, items);
+    try {
+      for (const day of DAYS) {
+        const id = plan[day];
+        if (!id) continue;
+        const r = recipeMap[id];
+        if (!r) continue;
+        const items = r.ingredients.flatMap((g) =>
+          g.items.map((it) => ({
+            item: it.item,
+            qty: [it.quantity, it.unit].filter((x) => x != null && x !== '').join(' '),
+          })),
+        );
+        await addIngredientsToShopping(r.id, items);
+      }
+      refreshShoppingCount();
+      setError('');
+      onClose();
+      onShop();
+    } catch {
+      setError('Could not add week to shopping list on this device.');
     }
-    refreshShoppingCount();
-    onClose();
-    onShop();
   };
 
-  const assignedCount = DAYS.filter((d) => plan[d]).length;
+  const assignedCount = DAYS.filter((d) => {
+    const id = plan[d];
+    return id && recipeMap[id];
+  }).length;
 
   const matches = allRecipes
     .filter((r) => r.chapter !== 'tips')
@@ -142,6 +184,12 @@ export function MealPlannerDrawer({
             </header>
 
             <div className="min-h-0 flex-1 space-y-2 overflow-y-auto px-5 py-4">
+              {error && (
+                <p className="rounded-lg bg-[color:var(--color-danger)]/10 p-3 text-sm text-[color:var(--color-danger)]" role="alert">
+                  {error}
+                </p>
+              )}
+
               {assignedCount === 0 && !picking && (
                 <p className="rounded-lg bg-[color:var(--color-paper-sunk)] p-3 text-sm text-[color:var(--color-ink-faint)]">
                   No days assigned yet — tap Pick on a day to plan the week.
@@ -151,6 +199,7 @@ export function MealPlannerDrawer({
               {DAYS.map((day) => {
                 const id = plan[day];
                 const r = id ? recipeMap[id] : undefined;
+                const missing = id && !r;
                 return (
                   <div
                     key={day}
@@ -170,6 +219,8 @@ export function MealPlannerDrawer({
                       >
                         {r.title}
                       </button>
+                    ) : missing ? (
+                      <span className="flex-1 text-sm text-[color:var(--color-danger)]">Missing recipe</span>
                     ) : (
                       <span className="flex-1 text-sm text-[color:var(--color-ink-faint)]">—</span>
                     )}
@@ -180,14 +231,14 @@ export function MealPlannerDrawer({
                     >
                       {r ? 'Change' : 'Pick'}
                     </button>
-                    {r && (
+                    {(r || missing) && (
                       <button
                         type="button"
                         aria-label={`Clear ${day}`}
-                        className="text-[color:var(--color-ink-faint)]"
+                        className="rounded-lg px-2 py-1 text-xs text-[color:var(--color-ink-faint)] hover:bg-[color:var(--color-paper-sunk)]"
                         onClick={() => void clearDay(day)}
                       >
-                        ×
+                        {missing ? 'Clear' : '×'}
                       </button>
                     )}
                   </div>

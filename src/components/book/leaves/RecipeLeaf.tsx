@@ -83,6 +83,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
     cookingForIds,
     profiles,
     currency,
+    reportStorageError,
   } = useApp();
   const { goToRecipe } = useBook();
   const fav = isFavorite(recipe.id);
@@ -176,13 +177,17 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
 
   const rate = (n: number) => {
     setRating(n);
-    store.setRating(recipe.id, n).catch(() => void 0);
+    store.setRating(recipe.id, n).catch(() => {
+      reportStorageError('Could not save rating on this device.');
+    });
   };
   const editNote = (t: string) => {
     setNote(t);
     if (noteTimer.current) window.clearTimeout(noteTimer.current);
     noteTimer.current = window.setTimeout(() => {
-      store.saveNote(recipe.id, t).catch(() => void 0);
+      store.saveNote(recipe.id, t).catch(() => {
+        reportStorageError('Could not save note on this device.');
+      });
     }, 400);
   };
 
@@ -487,7 +492,9 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                     setShopFlash(true);
                     window.setTimeout(() => setShopFlash(false), 1600);
                   })
-                  .catch(() => void 0);
+                  .catch(() => {
+                    reportStorageError('Could not save to shopping list on this device.');
+                  });
               }}
               className="ml-auto rounded-full border border-[color:var(--color-line)] px-3 py-1 text-xs font-medium text-[color:var(--color-ink-soft)] hover:border-[color:var(--color-accent)]"
             >

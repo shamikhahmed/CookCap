@@ -1,9 +1,9 @@
-## Cursor status (2.4.1)
+## Cursor status (2.4.2)
 
 - [x] Soft-spot reliability pass (IDB, remap, sodium, export, CI gates, …)
 - [x] Search ★5…★1 filters
 - [x] Contents single-scroll
-- [x] TheMealDB purged (2.4.0) · catalog **215** · SW `cookcap-v20`
+- [x] TheMealDB purged (2.4.0) · catalog **215** · SW `cookcap-v21`
 - [ ] Live DOM verify after push
 - [ ] Gallery regen (in progress / post-build)
 

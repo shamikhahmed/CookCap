@@ -18,6 +18,7 @@ const files = [
   'src/lib/recipes/data-extra.ts',
   'src/lib/recipes/data-fill.ts',
   'src/lib/recipes/data-foodfusion.ts',
+  'src/lib/recipes/data-goal.ts',
 ];
   const map = new Map();
   for (const f of files) {

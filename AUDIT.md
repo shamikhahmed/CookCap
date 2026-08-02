@@ -1,3 +1,5 @@
+# Historical — catalog is 215 family recipes; TheMealDB removed in v2.4.0.
+
 # CookCap v2.2.5 — Phase 1 Audit
 
 **Product:** offline heirloom cookbook PWA · **Version:** 2.2.5 · **SW:** `cookcap-v11`  

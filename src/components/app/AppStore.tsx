@@ -92,6 +92,7 @@ interface AppState {
   setHealthierOn: (v: boolean) => void;
   storageError: string | null;
   dismissStorageError: () => void;
+  reportStorageError: (msg: string) => void;
 }
 
 const Ctx = createContext<AppState | null>(null);
@@ -172,19 +173,18 @@ export function AppStore({ children }: { children: ReactNode }) {
     setEditionReady(true);
 
     Promise.all([
-      store.getFavorites(),
-      store.getRecentlyViewed(),
       store.getCustomRecipes(),
       store.getShopping(),
       store.listProfiles(),
       store.listDiary(),
       store.listPantry(),
     ])
-      .then(async ([, r, c, shop, profs, diaryRows, pantryRows]) => {
+      .then(async ([c, shop, profs, diaryRows, pantryRows]) => {
         const keepIds = new Set([...RECIPES.map((recipe) => recipe.id), ...c.map((recipe) => recipe.id)]);
-        const cleaned = await store.scrubOrphanFavorites(keepIds);
-        setFavorites(new Set(cleaned));
-        setRecent(r);
+        const { favorites: cleanedFavorites, recent: cleanedRecent } =
+          await store.scrubOrphanUserData(keepIds);
+        setFavorites(new Set(cleanedFavorites));
+        setRecent(cleanedRecent);
         setCustoms(c);
         setShoppingCount(shop.filter((s) => !s.checked).length);
         setProfiles(profs);
@@ -255,6 +255,7 @@ export function AppStore({ children }: { children: ReactNode }) {
   }, []);
 
   const dismissStorageError = useCallback(() => setStorageError(null), []);
+  const reportStorageError = useCallback((msg: string) => setStorageError(msg), []);
 
   const toggleFavorite = useCallback((id: string) => {
     let wasOn = false;
@@ -294,8 +295,24 @@ export function AppStore({ children }: { children: ReactNode }) {
 
   const removeCustom = useCallback(async (id: string) => {
     await store.deleteCustomRecipe(id);
+    if (favorites.has(id)) {
+      await store.toggleFavorite(id).catch(() => void 0);
+      setFavorites((prev) => {
+        const next = new Set(prev);
+        next.delete(id);
+        return next;
+      });
+    }
+    await Promise.all([
+      store.deleteHistory(id),
+      store.deleteRating(id),
+      store.deleteNote(id),
+      store.removeRecipeFromMealPlan(id),
+      store.deleteShoppingForRecipe(id),
+    ]).catch(() => void 0);
     setCustoms((prev) => prev.filter((r) => r.id !== id));
-  }, []);
+    setRecent((prev) => prev.filter((r) => r !== id));
+  }, [favorites]);
 
   const refreshShoppingCount = useCallback(() => {
     store
@@ -415,6 +432,7 @@ export function AppStore({ children }: { children: ReactNode }) {
       setHealthierOn,
       storageError,
       dismissStorageError,
+      reportStorageError,
     }),
     [
       theme,
@@ -460,6 +478,7 @@ export function AppStore({ children }: { children: ReactNode }) {
       setHealthierOn,
       storageError,
       dismissStorageError,
+      reportStorageError,
     ],
   );
 

@@ -1,5 +1,22 @@
 # Changelog
 
+## 2.4.2 — 2026-08-03
+
+### Fix
+- **CI:** `npx playwright install chromium` before `gate:anti-2d` (Pages was red)
+- RecipeImage skips 404 when no manifest — generated art immediately
+- Boot scrub: favorites + history + ratings + notes + meal-plan orphans / `mdb-*`
+- Meal planner: scrub dead slots, Clear missing, save errors surfaced
+- Recommender `penalties` separate from FitBadge / For You reasons
+- `reportStorageError` on recipe rating/notes/shopping save fails
+- `removeCustom` cascades favorites/history/ratings/notes/meal-plan/shopping
+- About wipe copy matches full clear scope
+- Delete 92 orphan `ff-*` hero files not in catalog; ChapterLeaf `type="button"`
+- Docs banners (AUDIT / plan-final / rebalance); `measure:perf` rename
+
+### Chore
+- SW → `cookcap-v21`
+
 ## 2.4.1 — 2026-08-02
 
 ### Fix (reliability)

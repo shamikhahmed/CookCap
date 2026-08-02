@@ -93,18 +93,69 @@ export async function toggleFavorite(id: string): Promise<boolean> {
   await d.put('favorites', { id, addedAt: Date.now() });
   return true;
 }
-export async function scrubOrphanFavorites(keepIds: Set<string>): Promise<string[]> {
+function isOrphanId(id: string, keepIds: Set<string>): boolean {
+  return !keepIds.has(id) || id.startsWith('mdb-');
+}
+
+export async function scrubOrphanUserData(
+  keepIds: Set<string>,
+): Promise<{ favorites: string[]; recent: string[] }> {
   const d = await db();
-  const all = await d.getAll('favorites');
-  const kept: typeof all = [];
-  for (const f of all) {
-    if (keepIds.has(f.id) && !f.id.startsWith('mdb-')) {
-      kept.push(f);
-    } else {
+
+  const allFavorites = await d.getAll('favorites');
+  const keptFavorites: typeof allFavorites = [];
+  for (const f of allFavorites) {
+    if (isOrphanId(f.id, keepIds)) {
       await d.delete('favorites', f.id);
+    } else {
+      keptFavorites.push(f);
     }
   }
-  return kept.sort((a, b) => b.addedAt - a.addedAt).map((f) => f.id);
+
+  const allHistory = await d.getAll('history');
+  const keptHistory: typeof allHistory = [];
+  for (const h of allHistory) {
+    if (isOrphanId(h.id, keepIds)) {
+      await d.delete('history', h.id);
+    } else {
+      keptHistory.push(h);
+    }
+  }
+
+  for (const row of await d.getAll('ratings')) {
+    if (isOrphanId(row.id, keepIds)) await d.delete('ratings', row.id);
+  }
+
+  for (const row of await d.getAll('notes')) {
+    if (isOrphanId(row.id, keepIds)) await d.delete('notes', row.id);
+  }
+
+  type MealPlan = Partial<Record<string, string>>;
+  const plan = await getMeta<MealPlan>('meal-plan');
+  if (plan) {
+    let changed = false;
+    const cleaned: MealPlan = { ...plan };
+    for (const [day, id] of Object.entries(plan)) {
+      if (id && isOrphanId(id, keepIds)) {
+        delete cleaned[day as keyof MealPlan];
+        changed = true;
+      }
+    }
+    if (changed) await putMeta('meal-plan', cleaned);
+  }
+
+  const favorites = keptFavorites.sort((a, b) => b.addedAt - a.addedAt).map((f) => f.id);
+  const recent = keptHistory
+    .sort((a, b) => b.viewedAt - a.viewedAt)
+    .slice(0, 12)
+    .map((h) => h.id);
+
+  return { favorites, recent };
+}
+
+export async function scrubOrphanFavorites(keepIds: Set<string>): Promise<string[]> {
+  const { favorites } = await scrubOrphanUserData(keepIds);
+  return favorites;
 }
 
 /* ── History ───────────────────────────────────────────────────────────*/
@@ -118,6 +169,9 @@ export async function getRecentlyViewed(limit = 12): Promise<string[]> {
     .slice(0, limit)
     .map((h) => h.id);
 }
+export async function deleteHistory(id: string): Promise<void> {
+  await (await db()).delete('history', id);
+}
 
 /* ── Notes ─────────────────────────────────────────────────────────────*/
 export async function getNote(id: string): Promise<string> {
@@ -126,6 +180,9 @@ export async function getNote(id: string): Promise<string> {
 export async function saveNote(id: string, text: string): Promise<void> {
   await (await db()).put('notes', { id, text, updatedAt: Date.now() });
 }
+export async function deleteNote(id: string): Promise<void> {
+  await (await db()).delete('notes', id);
+}
 
 /* ── Ratings ───────────────────────────────────────────────────────────*/
 export async function getRating(id: string): Promise<number> {
@@ -133,6 +190,9 @@ export async function getRating(id: string): Promise<number> {
 }
 export async function setRating(id: string, stars: number): Promise<void> {
   await (await db()).put('ratings', { id, stars });
+}
+export async function deleteRating(id: string): Promise<void> {
+  await (await db()).delete('ratings', id);
 }
 /** id → 1–5 stars. Unrated recipes omitted. */
 export async function getAllRatings(): Promise<Record<string, number>> {
@@ -172,6 +232,13 @@ export async function clearAllShopping() {
   const all = await d.getAll('shopping');
   await Promise.all(all.map((r) => d.delete('shopping', r.key)));
 }
+export async function deleteShoppingForRecipe(recipeId: string): Promise<void> {
+  const d = await db();
+  const all = await d.getAll('shopping');
+  await Promise.all(
+    all.filter((r) => r.recipeId === recipeId).map((r) => d.delete('shopping', r.key)),
+  );
+}
 export async function addIngredientsToShopping(
   recipeId: string,
   items: { item: string; qty: string }[],
@@ -206,6 +273,23 @@ export async function getMeta<T>(key: string): Promise<T | undefined> {
 }
 export async function putMeta(key: string, value: unknown): Promise<void> {
   await (await db()).put('meta', value, key);
+}
+
+type MealPlanDay = 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri' | 'Sat' | 'Sun';
+type MealPlan = Partial<Record<MealPlanDay, string>>;
+
+export async function removeRecipeFromMealPlan(id: string): Promise<void> {
+  const plan = await getMeta<MealPlan>('meal-plan');
+  if (!plan) return;
+  let changed = false;
+  const next: MealPlan = { ...plan };
+  for (const [day, recipeId] of Object.entries(plan)) {
+    if (recipeId === id) {
+      delete next[day as MealPlanDay];
+      changed = true;
+    }
+  }
+  if (changed) await putMeta('meal-plan', next);
 }
 
 /* ── Custom / imported recipes ─────────────────────────────────────────*/

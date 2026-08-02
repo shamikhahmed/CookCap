@@ -160,8 +160,9 @@ export function AboutModal({
                 ) : (
                   <div className="rounded-xl border border-[color:var(--color-danger)]/50 bg-[color:var(--color-danger)]/5 p-3">
                     <p className="text-sm text-[color:var(--color-ink)]">
-                      This permanently erases favorites, notes, profiles, diary, pantry, and
-                      settings on this device. Cannot be undone.
+                      This permanently erases favorites, notes, ratings, meal plan, shopping list,
+                      imported recipes, profiles, diary, pantry, and settings on this device.
+                      Cannot be undone.
                     </p>
                     <div className="mt-3 flex gap-2">
                       <button

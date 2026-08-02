@@ -1,6 +1,6 @@
 {
   "name": "cookcap",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "private": true,
   "description": "CookCap — heirloom family cookbook Progressive Web App (Cap family).",
   "scripts": {
@@ -14,7 +14,7 @@
     "gallery": "node scripts/capture-gallery.mjs",
     "gate:anti-2d": "node scripts/assert-anti-2d.mjs",
     "gate:recipes": "node scripts/assert-recipe-linkage.mjs",
-    "measure:perf956": "node scripts/measure-perf-956.mjs",
+    "measure:perf": "node scripts/measure-perf-956.mjs",
     "pages:build": "NEXT_PUBLIC_BASE_PATH=/CookCap next build"
   },
   "dependencies": {
