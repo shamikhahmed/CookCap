@@ -154,16 +154,17 @@ async function captureDresserOnboarding(page, folder) {
   await shot(page, `${folder}/dresser/00b-name.png`);
 
   await page.locator('#dresser-name').fill(DEMO);
-  // Playwright pointer click flaky on velvet cards — DOM click is reliable
-  await page.locator('.dresser-card').getByRole('button', { name: 'Continue' }).evaluate((el) =>
-    /** @type {HTMLElement} */ (el).click(),
-  );
+  // Playwright pointer click flaky on velvet interior — DOM click is reliable
+  await page
+    .locator('.dresser-drawer.is-open .dresser-drawer__interior')
+    .getByRole('button', { name: 'Continue' })
+    .evaluate((el) => /** @type {HTMLElement} */ (el).click());
   await page.getByRole('heading', { name: /Who eats/i }).waitFor({ state: 'visible', timeout: 15000 });
   await settle(page, 700);
   await shot(page, `${folder}/dresser/00c-profile.png`);
 
   await page
-    .locator('.dresser-card button')
+    .locator('.dresser-drawer.is-open .dresser-drawer__interior button')
     .filter({ hasText: /^Skip$/ })
     .evaluate((el) => /** @type {HTMLElement} */ (el).click());
   await settle(page, 500);
@@ -175,7 +176,7 @@ async function captureDresserOnboarding(page, folder) {
   await shot(page, `${folder}/dresser/00d-mode.png`);
 
   await page
-    .locator('.dresser-card button')
+    .locator('.dresser-drawer.is-open .dresser-drawer__interior button')
     .filter({ hasText: /Skip — open my book/ })
     .evaluate((el) => /** @type {HTMLElement} */ (el).click());
   await settle(page, 400);
@@ -186,6 +187,32 @@ async function captureDresserOnboarding(page, folder) {
 
   await waitFooterPage(page, 1, 30000);
   await shot(page, `${folder}/dresser/01-cover-handoff.png`);
+
+  // Skin stills — editorial + candlelit welcome
+  for (const skin of ['editorial', 'candlelit']) {
+    await page.addInitScript(() => {
+      try {
+        Object.defineProperty(navigator, 'hardwareConcurrency', {
+          configurable: true,
+          get: () => 8,
+        });
+      } catch {
+        /* ignore */
+      }
+    });
+    await page.goto(BASE, { waitUntil: 'domcontentloaded' });
+    await page.evaluate((s) => {
+      localStorage.clear();
+      localStorage.setItem('cookcap-theme', 'light');
+      localStorage.setItem('cookcap-skin', s);
+      document.documentElement.setAttribute('data-skin', s);
+    }, skin);
+    await page.reload({ waitUntil: 'domcontentloaded' });
+    await settle(page, 700);
+    await page.locator('.dresser-scene').waitFor({ state: 'visible', timeout: 8000 });
+    await settle(page, 400);
+    await shot(page, `${folder}/dresser/skin-${skin}-welcome.png`);
+  }
 }
 
 async function captureBookChrome(page, folder) {

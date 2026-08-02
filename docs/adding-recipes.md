@@ -1,4 +1,4 @@
-# Adding a recipe to Jia Cooks
+# Adding a recipe to CookCap
 
 The book is data-driven: **one recipe = one object**. Everything else — the index,
 bookmarks, search, categories, related links, navigation, reading progress —
@@ -15,7 +15,7 @@ spread into `RECIPES` automatically).
 
 **FoodFusion research cards** — generated into `data-foodfusion.ts` by
 `python3 scripts/scrape-foodfusion.py --bodies 220 --curate 64 --emit-ts --download-images`.
-Attributed; rewrite stories in Jia’s voice before treating as family lore. Archive lives under
+Attributed; rewrite stories in the owner's voice before treating as family lore. Archive lives under
 `content/sources/foodfusion/`.
 
 ```ts
@@ -24,7 +24,7 @@ Attributed; rewrite stories in Jia’s voice before treating as family lore. Arc
   chapter: 'pakistani',       // one of the ChapterId values (src/lib/recipes/types.ts)
   title: 'Kebab Rolls',
   tagline: 'Spiced mince, wrapped and griddled.',
-  story: 'Jia’s note — why she loves it, in her own voice.',
+  story: 'A short note — why this recipe matters, in first person.',
   tasteLike: 'Smoky and rich…',
   texture: 'Crisp paratha, juicy filling.',
   cuisine: 'Pakistani',

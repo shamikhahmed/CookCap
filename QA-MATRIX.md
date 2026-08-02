@@ -1,10 +1,10 @@
-# CookCap v2.2.5 — QA Matrix
+# CookCap v2.2.6 — QA Matrix
 
 **Columns:** screen · element · expected · actual · pass/fail  
 **Scope:** phone 390 · iPad 768/834 · desktop 1280/1920 · 4 skins · light/dark · reduced-motion  
-**Live URL:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v11`
+**Live URL:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v12`
 
-> Critical paths marked **PASS** — verified in build/typecheck + gallery; live recheck on push.
+> Critical paths marked **PASS** — verified in build/typecheck + gallery; live recheck on push. Prove chrome by **DOM geometry**, not screenshots.
 
 ---
 
@@ -41,7 +41,10 @@
 | ··· | Shopping drawer | Aisle groups, check, merge dupes | `ShoppingDrawer` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | ··· | Meal planner | Assign week; add week to shopping | `MealPlannerDrawer` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | ··· | Import modal | Paste WhatsApp text → custom recipe | `ImportModal` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
-| ··· | About | Version 2.2.5, privacy, export, delete confirm | `AboutModal` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| ··· | About | Version 2.2.6, privacy, export, delete confirm | `AboutModal` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| Header | Safe top | Content below `--safe-t`; `viewportFit: cover`; min-height includes inset | `.app-header` | **PASS** — DOM: `padding-top ≥ safe-t` |
+| Footer | Safe bottom | Controls above `--safe-b` / home indicator; Tabs ≥44px | `.app-footer` | **PASS** — DOM: `padding-bottom ≥ safe-b` |
+| Book | Height | `--book-h` = `100dvh − chrome-total − 2rem`; fully between header+footer | `.book-frame` | **PASS** — CSS tokens |
 
 ---
 
@@ -49,7 +52,9 @@
 
 | Screen | Element | Expected | Actual | Pass/Fail |
 |--------|---------|----------|--------|-----------|
-| Dresser | Welcome → drawers | 3D dresser; one drawer at a time; SFX when sound on | `DresserOnboarding` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| Dresser | Interior Q | Question + inputs inside open drawer (`.dresser-drawer__interior`); front+handle below | Claude accordion | **PASS** — DOM interior height > 0 when open |
+| Dresser | Reveal | `db-rise`→`db-turn`→`db-settle`→FLIP to `.book-frame`; skin `.leather` cover | timings 700/1400/2360 | **PASS** — code + CSS |
+| Dresser | Welcome → drawers | One drawer at a time; SFX when sound on | `DresserOnboarding` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Simple | Full-bleed steps | Used when `prefers-reduced-motion` or `hardwareConcurrency ≤ 4` | `OnboardingFlow` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Onboard | Name | Preview `{Name} Cooks`; never “Family Cooks” / no Jia in UI | `useOnboardingSteps` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Onboard | Skip / Set up later | Unnamed → Our Family Cookbook; `cookcap-onboarded` | `edition.ts` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
@@ -74,7 +79,7 @@
 |--------|---------|----------|--------|-----------|
 | URL | `?recipe=<id>` | Opens recipe leaf; basePath `/CookCap/` | `BookController` hydrate | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | URL | `?for=Name` | Sets edition + persists owner | `edition.ts` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
-| Offline | SW shell | Navigate works offline after first load | `cookcap-v11` SW | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| Offline | SW shell | Navigate works offline after first load | `cookcap-v12` SW | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Perf | WarmLeafPool | Neighbors `[-3,-2,-1,1,2,3,4]` mounted off-screen | `WarmLeafPool.tsx` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Perf | No full mount | Never all ~218 recipe DOMs at once | Pool + single `LeafView` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 

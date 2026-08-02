@@ -1,6 +1,6 @@
 # CookCap — Handover
 
-Heirloom family cookbook PWA (Cap family). Version **2.2.5**.
+Heirloom family cookbook PWA (Cap family). Version **2.2.6**.
 
 ## Live
 
@@ -10,7 +10,7 @@ Next `output: 'export'` + Actions Pages. `NEXT_PUBLIC_BASE_PATH=/CookCap` on CI.
 
 ## Stack
 
-Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v3 · SW `cookcap-v11`
+Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v3 · SW `cookcap-v12`
 
 ## Run
 
@@ -20,6 +20,19 @@ npm install && npm run dev
 npm run typecheck && npm run build
 npm run gallery   # prefer: npm run build && python3 -m http.server 3456 --directory out; GALLERY_URL=http://127.0.0.1:3456 npm run gallery
 ```
+
+## Chrome / safe areas
+
+- `viewportFit: 'cover'` in `layout.tsx` (required for `env(safe-area-inset-*)`)
+- Tokens: `--safe-t/b/l/r`, `--header-h`, `--footer-h`, `--chrome-total`
+- `.app-header` / `.app-footer` carry insets; desk is `100dvh` flex column (no double pad)
+- `--book-h: min(860px, max(180px, calc(100dvh - var(--chrome-total) - 2rem)))`
+
+## Dresser
+
+- Question lives in `.dresser-drawer__interior` (velvet); wood `__front` + handle below
+- Reveal: `db-rise` → `db-turn` → `db-settle` → FLIP onto `.book-frame` (~260ms)
+- Cover art = `.leather` (linen light skins / leather dark)
 
 ## Lenses (additive — Reader = pure book)
 

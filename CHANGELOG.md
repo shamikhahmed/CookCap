@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.2.6 — 2026-08-02
+
+### Feat / fix (dresser reveal + safe-area chrome)
+- **Question inside drawer** — accordion interior (velvet + wood front/handle); no floating VelvetCard
+- **Reveal keyframes** — `db-rise` / `db-turn` / `db-settle`; rising cover uses skin `.leather`; FLIP/crossfade onto `.book-frame` (~260ms)
+- **Safe-area chrome** — `viewportFit: cover`; `--safe-*` / `--header-h` / `--footer-h`; `--book-h` = `100dvh − chrome − insets`; header/footer clear island + home bar
+- Tidy: drop unused `--dr-z-open` / old face-cavity card CSS
+- SW → `cookcap-v12`
+
 ## 2.2.5 — 2026-08-02
 
 ### Feat (The Dresser onboarding)

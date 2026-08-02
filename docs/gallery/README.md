@@ -1,6 +1,6 @@
 # CookCap — Screen gallery
 
-Version **2.2.5**. Regen: `GALLERY_URL=http://127.0.0.1:3456 npm run gallery` (static `out/` preferred).
+Version **2.2.6**. Regen: `GALLERY_URL=http://127.0.0.1:3456 npm run gallery` (static `out/` preferred).
 
 Demo edition in shots: **Ayesha** (not a hard-coded product name).
 
@@ -14,14 +14,15 @@ Demo edition in shots: **Ayesha** (not a hard-coded product name).
 | 13–17 | Modes / profiles / calendar / pantry / plate | `desktop/13`…`17` |
 | 18 | Appearance panel | `desktop/18-appearance.png` |
 
-### Dresser (full-motion path)
+### Dresser (full-motion · question inside drawer)
 
 | # | Screen | File |
 |---|--------|------|
 | 00 | Welcome plate on dresser | `desktop/dresser/00-welcome.png` |
-| 00b–00d | Name / profile / mode drawers | `desktop/dresser/00b`…`00d` |
-| 00e | Rising embossed book | `desktop/dresser/00e-reveal.png` |
-| 01 | Cover after handoff | `desktop/dresser/01-cover-handoff.png` |
+| 00b–00d | Name / profile / mode **open interiors** | `desktop/dresser/00b`…`00d` |
+| 00e | Rising embossed book (`db-rise`) | `desktop/dresser/00e-reveal.png` |
+| 01 | Cover after FLIP handoff | `desktop/dresser/01-cover-handoff.png` |
+| skins | Editorial + Candlelit welcome | `desktop/dresser/skin-editorial-welcome.png`, `skin-candlelit-welcome.png` |
 
 ## Appearance matrix
 
