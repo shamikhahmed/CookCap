@@ -1,6 +1,6 @@
 # CookCap — Handover
 
-Heirloom family cookbook PWA (Cap family). Version **2.2.9**.
+Heirloom family cookbook PWA (Cap family). Version **2.3.0**.
 
 ## Live
 
@@ -10,7 +10,7 @@ Next `output: 'export'` + Actions Pages. `NEXT_PUBLIC_BASE_PATH=/CookCap` on CI.
 
 ## Stack
 
-Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v3 · SW `cookcap-v15`
+Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v3 · SW `cookcap-v16`
 
 ## Run
 
@@ -18,7 +18,8 @@ Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v3 ·
 cd "/Users/shamikhahmed/CookBook Website"
 npm install && npm run dev
 npm run typecheck && npm run build
-npm run gallery   # prefer: npm run build && python3 -m http.server 3456 --directory out; GALLERY_URL=http://127.0.0.1:3456 npm run gallery
+npm run gate:recipes && npm run rebalance:mealdb && npm run audit:photos
+npm run gallery   # prefer: npm run build && python3 -m http.server 3456 --directory out; GALLERY_URL=http://127.0.0.1:3456/CookCap npm run gallery
 ```
 
 ## Chrome / safe areas
@@ -39,7 +40,8 @@ npm run gallery   # prefer: npm run build && python3 -m http.server 3456 --direc
 
 - One hero only (no step photos)
 - TheMealDB import: `npm run import:mealdb` → `data-themealdb.ts` + bundled thumbs
-- First-load JS ~816 kB with full catalog — WarmLeafPool still ±3 DOM; future split catalog JSON if needed
+- Chapter map: `chapterMap.ts` — cuisine / type / dietary; **meals = fallback**; tabs include breakfast / vegetarian / world / european
+- First-load JS ~818 kB with full catalog — WarmLeafPool ≤9 DOM; chapter lists ≤24 rows
 
 ## Lenses (additive — Reader = pure book)
 

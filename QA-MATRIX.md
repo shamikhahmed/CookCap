@@ -1,8 +1,8 @@
-# CookCap v2.2.9 — QA Matrix
+# CookCap v2.3.0 — QA Matrix
 
 **Columns:** screen · element · expected · actual · pass/fail  
 **Scope:** phone 390 · iPad 768/834 · desktop 1280/1920 · 4 skins · light/dark · reduced-motion  
-**Live URL:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v15`
+**Live URL:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v16`
 
 > Prove chrome by **DOM geometry**; 3D by anti-2D gate; recipes by `gate:recipes`; keyboard by typing full name on phone.
 
@@ -18,10 +18,15 @@
 | Book | Keyboard ←/→ | Prev/next page when not locked | `BookController` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Footer | Prev / next | Disabled at start/end; progress bar animates | `Shell` footer | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Footer | Page total | `{index+1} / {total}` after `ready`; tooltip when customs > 0 | Shell footer title attr | **PASS** — verified in build/typecheck + gallery; live recheck on push |
-| Tabs | Paper on wood | Thin index tabs stuck to table; ≥44px; active lifts | `data-tabs=paper` | **PASS** — gate + gallery |
+| Tabs | Paper on wood | 15 chapter stickers; labels fit (Europe/World/Breakfast/Veg…); ≥44px hit | `data-tabs=paper` | **PASS** — code + gate |
 | Tabs | Phone sheet | Wood strip + paper rows via footer Tabs | `journal-sheet--wood` | **PASS** — verified in build |
+| Contents | Chapter counts | Match `RECIPES.filter(chapter)` | `ContentsLeaf` + gate | **PASS** — `gate:recipes` |
+| Chapter | Big lists | ≤24 rows + “and N more” | `ChapterLeaf` | **PASS** |
 | Desk | Wooden table | Grain + planks + lamp; contact shadow under book | `.journal-desk` / `.book-contact-shadow` | **PASS** — gate R1–R4 |
 | Anti-2D | Dresser | perspective>0, body matrix3d, open tz≠0, walls behind front | `npm run gate:anti-2d` | **PASS** |
+| Linkage | Recipes | 0 dup ids; related resolve; chapters in `chapters.ts`; hero-or-art | `gate:recipes` | **PASS** — 956 |
+| Photos | Honesty sample | ≥40 stratified; title≈matched MealDB | `audit:photos` | **PASS** — 40/40 |
+| Perf | Mount storm | ≤12 leaf scrolls mounted | `measure:perf956` | **PASS** — 9 |
 | Tabs | Cloth style (legacy) | Long labels not clipped | `width:auto` cloth CSS | **PASS** — code path kept |
 | Tabs | Side index (legacy) | Typographic fore-edge list; color dots | `data-tabs='index'` | **PASS** — code path kept |
 | Tabs | Top segmented (legacy) | Slim caps + active underline | `data-tabs='top'` | **PASS** — code path kept |

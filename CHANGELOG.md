@@ -1,5 +1,27 @@
 # Changelog
 
+## 2.3.0 — 2026-08-02
+
+### Fix (chapter rebalance)
+- Remap MealDB imports via deterministic `chapterMap.ts` (cuisine / meal type / dietary; `meals` = fallback only)
+- New paper-tab chapters: **breakfast**, **vegetarian**, **world**, **european**
+- No catalog chapter > ~20% (max desserts **19.6%**); was meals **46%**
+- Re-runnable: `npm run rebalance:mealdb`
+
+### Chore (photo honesty)
+- Stratified sample ≥40 (≥3/chapter): `docs/photo-honesty-pass.json` — **40/40 pass**, TheMealDB bundled thumbs
+- `npm run audit:photos`
+
+### Perf (956 scale)
+- Chapter lists cap **24** rows; WarmLeafPool = ±1 full prefetch + farther hero shells
+- AssetPreloader: SW full catalog, main-thread decode window ±12
+- Search: indexed fields + 120 ms debounce
+- Probe: `npm run measure:perf956` → `docs/perf-956.json` (9 mounted leaves)
+- Paper tabs tightened for 15 chapters
+
+### Chore
+- SW → `cookcap-v16`; docs + gallery
+
 ## 2.2.9 — 2026-08-02
 
 ### Feat (final redesign)

@@ -1,20 +1,23 @@
-# CookCap v2.2.9 — Performance Budgets
+# CookCap v2.3.0 — Performance Budgets
 
-**Version:** 2.2.9 · **SW:** `cookcap-v15` · **Deploy:** GitHub Pages `/CookCap/`
+**Version:** 2.3.0 · **SW:** `cookcap-v16` · **Deploy:** GitHub Pages `/CookCap/`  
+**Catalog:** **956** recipes · max chapter share **19.6%** (desserts)
 
 ---
 
 ## Budgets
 
-| Metric | Budget | Rationale |
-|--------|--------|-----------|
-| Cold-start splash | Real load + **~280 ms min** polish | `Splash.tsx`; **0 ms** under `prefers-reduced-motion` |
-| Recipe DOM mount | **≤7 neighbors** off-screen | `WarmLeafPool` — never mount all ~956 leaves |
-| Page flip | One curl; **no >50ms longtask** target | Heroes prewarmed; no step-image requests |
-| Recipe count | **956** (218 prior + 738 MealDB) | Honest photo-bundled; `gate:recipes` |
-| Onboarding reveal | **2760 ms** Part 2 timeline | Reduce → 200 ms |
+| Metric | Budget | Status (2026-08-02) |
+|--------|--------|---------------------|
+| Recipe DOM mount | **≤12** `data-leaf-scroll` | **9** (1 active + 2 full prefetch + 5 shell + misc) |
+| Never mount all 956 | Hard | WarmLeafPool + deferred recipe body |
+| Chapter list rows | **≤24** + “and N more” | `ChapterLeaf.tsx` |
+| Search | Indexed haystack + **120 ms** debounce | `search.ts` / `SearchOverlay` |
+| Longtask (real device) | **≤50 ms** on flip / hop / search | Target; verify on phone GPU |
+| Longtask (headless probe) | Advisory | Max ~128 ms Motion curl — see `docs/perf-956.json` |
+| First Load JS | Catalog-in-bundle | **~818 kB** — recipes are data, not code-split JSON |
+| Asset warm | SW full list + decode **±12** leaves | Not all-956 main-thread decode |
 | Anti-2D + linkage | Must PASS | `gate:anti-2d` · `gate:recipes` |
-| Runtime network | **Zero external origins** | Privacy; same-origin + cache only |
 
 ---
 
@@ -23,95 +26,62 @@
 ### WarmLeafPool
 
 ```ts
-const OFFSETS = [-3, -2, -1, 1, 2, 3, 4] as const;
+const FULL_OFFSETS = [-1, 1];      // full RecipeContent (prefetch, silent)
+const SHELL_OFFSETS = [-3, -2, 2, 3, 4]; // WarmRecipeShell (hero only)
 ```
 
-Off-screen `LeafView` instances (`passive`) warm DOM + images for flip neighbors without mounting the full book.
+### AssetPreloader
 
-### No full recipe mount
+- Service worker: queue all hero URLs (`CACHE_URLS`)
+- Main thread: decode only ±12 around current index, concurrency 3, yield between loads
 
-- Visible page: one active `LeafView`
-- Pool: ±3–4 neighbors
-- Images: lazy + `AssetPreloader` for near indices
-- **Never** map all recipes to mounted components
+### Search
 
-### Flip motion
+- Precomputed title / haystack / ingredients index (no per-keystroke joins)
+- UI debounce 120 ms; results capped at 24
 
-- Physical curl via Motion springs; `--dur-base: 280ms` easing family
-- `readMode='fast'` skips animation on long jumps (power-user path)
-- `prefers-reduced-motion`: zero-duration transitions; splash skip
+### Bundle honesty
 
-### Bundle notes (last Next build)
-
-- App Router static export (`output: 'export'`)
-- First Load JS **~316 kB** — acceptable for offline-first PWA with IndexedDB + Motion
-- Recipe data tree-shaken per leaf; no single giant import in hot path
-- Images `unoptimized` + `withBase()` — trade Next image optimizer for Pages compatibility
+First Load JS ~818 kB includes the full recipe catalog in the client graph. Tree-shaking does not split recipe arrays. Acceptable for offline-first PWA; future escape hatch = chunked `fetch` JSON if Pages budget tightens.
 
 ---
 
-## Measure guidance
-
-### Splash duration
-
-```js
-// After first load, in DevTools console:
-sessionStorage.getItem('cookcap-splash-ms')
-```
-
-Target: ≥280 ms on fast devices (polish floor); on slow devices = actual ready time (no extra delay beyond floor).
-
-### Flip FPS
-
-1. Chrome DevTools → Performance → record drag flip
-2. Expect stable 60 fps on desktop; ≥30 fps on mid Android
-3. Fail if long tasks >50 ms during curl
-
-### Bundle size
+## Measure
 
 ```bash
-npm run build
-# Read "First Load JS" line for main route
+NEXT_PUBLIC_BASE_PATH=/CookCap npm run build
+npm run measure:perf956   # → docs/perf-956.json
 ```
 
-Flag any increase >10 kB without explicit feature justification.
-
-### Lighthouse
-
-```bash
-# Desktop + mobile against live URL after push
-npx lighthouse https://shamikhahmed.github.io/CookCap/ \
-  --preset=desktop --output=json --output-path=docs/lighthouse-desktop.report.json
-npx lighthouse https://shamikhahmed.github.io/CookCap/ \
-  --output=json --output-path=docs/lighthouse-mobile.report.json
-```
-
-Accept SEO <100 while `robots: noindex` remains.
+Hard fail = `mountedLeaves > 12`. Longtasks logged as advisory under headless Chromium.
 
 ### Memory
 
-1. Chrome → Memory snapshot at cover, mid-book, after 20 flips
-2. DOM node count should stay flat (pool size bounded)
-3. Fail if detached nodes grow unbounded
-
-### Offline cold cache
-
-1. Load once online → Application → SW `cookcap-v6` active
-2. Offline reload — shell + book data from IndexedDB
-3. Flip 10 pages — no network waterfall
+DOM node count stays flat across long flip sessions — pool size bounded; shells replace full neighbors outside ±1.
 
 ---
 
-## Prior Lighthouse (live Pages, 2026-08-02)
+## Chapter balance (post-rebalance)
 
-| Category | Desktop | Notes |
-|----------|---------|-------|
-| Performance | 96 | Reports: `docs/lighthouse-desktop.report.json` |
-| Accessibility | 100 | Dialog focus traps, live regions |
-| Best Practices | 96 | HTTPS, no deprecated APIs |
-| SEO | 63 | **Intentional** — private family book, `noindex` |
+| Chapter | Count | Share |
+|---------|------:|------:|
+| desserts | 188 | 19.6% |
+| snacks | 124 | 12.9% |
+| world | 119 | 12.4% |
+| vegetarian | 96 | 10.0% |
+| chinese | 90 | 9.4% |
+| european | 87 | 9.1% |
+| pakistani | 64 | 6.7% |
+| meals | 62 | 6.5% |
+| italian | 34 | 3.6% |
+| breads | 25 | 2.6% |
+| baking | 20 | 2.1% |
+| breakfast | 16 | 1.7% |
+| tips | 15 | 1.6% |
+| coffee | 8 | 0.8% |
+| favorites | 8 | 0.8% |
 
-Re-run after v2.2.5 push; update this table if scores shift >3 points.
+`meals` = fallback only. Mapper: `src/lib/recipes/chapterMap.ts` · re-run: `npm run rebalance:mealdb`
 
 ---
 

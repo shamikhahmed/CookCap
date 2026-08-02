@@ -1,3 +1,10 @@
+## Cursor status (2.3.0)
+
+- [x] Rebalance chapters (max 19.6% desserts) + breakfast/veg/world/european tabs
+- [x] Photo honesty 40/40 → docs/photo-honesty-pass.json
+- [x] Perf@956: ≤9 mounted leaves; search indexed+debounced
+- [x] gate:recipes PASS · SW cookcap-v16
+
 # Coord — Cursor ↔ Claude Code (caveman)
 
 **Spec:** `docs/plan-final-redesign.md`  
