@@ -1,64 +1,21 @@
-# Recipe photos
+# CookCap photos
 
-Drop hero images into `public/recipes/` using the recipe **id** as the filename.
+## Heroes only
 
-## Files
+One photo per recipe: `public/recipes/<id>.webp` + `<id>@sm.webp` + blur in
+`src/lib/recipes/images.generated.json`.
 
-| File | Size |
-|------|------|
-| `public/recipes/<recipe-id>.webp` | Full hero |
-| `public/recipes/<recipe-id>@sm.webp` | ~800w thumbnail |
+- **Honest path:** photo ships with the dish (TheMealDB `strMealThumb`, FoodFusion
+  scrape, etc.). Never attach a guessed stock photo.
+- Missing / broken → generated art via `heroSeed` (never a wrong-dish photo).
+- **Step photos removed** (v2.2.9) — no `public/recipes/steps/`, no `stepImages.ts`.
 
-Optional blur + catalog entry: run `node scripts/fetch-images.mjs` after adding files (or to backfill missing stock).
-
-## Finding the id
-
-- **URL / deep link** — the leaf uses the recipe id (e.g. `karahi-chicken`).
-- **Source** — `id:` field on the object in `src/lib/recipes/data.ts`, `data-extra.ts`, `data-fill.ts`, or `data-foodfusion.ts`.
-- Same id is the image basename (`karahi-chicken.webp`, `ff-beef-biryani.webp`).
-
-## Step photos
-
-Method leaf shows up to 3 dish-correct photos (first / mid / last) when mapped.
-
-| File | Use |
-|------|-----|
-| `public/recipes/steps/<id>-1.webp` | Early / plated A |
-| `public/recipes/steps/<id>-2.webp` | Mid / plated B |
-| `public/recipes/steps/<id>-3.webp` | Finish / plated C |
-
-## Honest rule
-
-Dish must match. Wrong stock → **omit** from `images.generated.json` + delete
-`public/recipes/<id>.webp` (+ `@sm`) so `RecipeImage` falls back to generated art.
-No photo better than wrong photo.
-
-### 2026-08-02 pass (v2.0.1)
-
-Removed **34** mismatched MealDB/Foodish heroes (lattes→tortilla, edamame→cheesecake,
-samosas→eggplant, etc.). Kept Foodish desserts that match (`tiramisu`, `balushahi`).
-Audit artifact: `docs/photo-honesty-pass.json`.
-
-### 2026-08-02 fill (FoodFusion)
-
-Filled **34 / 34** from FF catalog via `node scripts/fill-heroes-from-foodfusion.mjs`.
-Credit `FoodFusion` in `images.generated.json`. Report: `docs/ff-hero-fill-report.json`.
-
-Exact / strong matches for most; soft stand-ins where FF has no plate:
-`iced-blueberry-latte`→berry smoothie, `tea-eggs`→steamed egg squares,
-`edamame`→green beans, `bruschetta`→garlic bread, `tip-salt`→namak paray,
-`tip-yogurt`→silky dahi.
-
-Regen curated map:
+## Scripts
 
 ```bash
-node scripts/rematch-step-images.mjs
+npm run import:mealdb          # MealDB recipes + bundled thumbs
+npm run rematch:heroes         # fix mismatched legacy heroes
+npm run gate:recipes           # linkage integrity
 ```
 
-`fetch-step-images.mjs` is **disabled** (Foodish/LoremFlickr used to put dosa on bread, cupcakes on latte).
-
-Family photos preferred — overwrite same paths.
-
-## Stock vs your photos
-
-Free stock (MealDB / Unsplash) covers many recipes. Your own photos are the gold path — same filenames replace stock.
+`AssetPreloader` warms hero + `@sm` only.

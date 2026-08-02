@@ -3,12 +3,14 @@ import { EXTRA_RECIPES } from './data-extra';
 import { FILL_RECIPES } from './data-fill';
 import { FOODFUSION_RECIPES } from './data-foodfusion';
 import { GOAL_RECIPES } from './data-goal';
+import { MEALDB_RECIPES } from './data-themealdb';
 
 /**
  * The cookbook's recipes. Flagship entries below are fully editorial; the
  * growing collection in `data-extra.ts` / `data-fill.ts` uses a compact builder.
  * `data-foodfusion.ts` = cleaned English adaptations (no promo/login/Urdu dump).
  * `data-goal.ts` = breakfast / high-protein / light / budget goal recipes.
+ * `data-themealdb.ts` = TheMealDB imports (photo bundled with each dish).
  * Heroes fall back to procedural art (`hero.ts`) until photos are added.
  */
 export const RECIPES: Recipe[] = [
@@ -681,6 +683,7 @@ export const RECIPES: Recipe[] = [
   ...FILL_RECIPES,
   ...FOODFUSION_RECIPES,
   ...GOAL_RECIPES,
+  ...MEALDB_RECIPES,
 ];
 
 export const RECIPE_MAP = Object.fromEntries(RECIPES.map((r) => [r.id, r])) as Record<

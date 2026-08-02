@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Caveat, Fraunces, Inter } from 'next/font/google';
+import { Caveat, Fraunces, Inter, Source_Serif_4 } from 'next/font/google';
 import './globals.css';
 import { AppStore } from '@/components/app/AppStore';
 import { ServiceWorker } from '@/components/app/ServiceWorker';
@@ -9,6 +9,12 @@ const fraunces = Fraunces({
   variable: '--font-fraunces',
   display: 'swap',
   axes: ['opsz', 'SOFT', 'WONK'],
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ['latin'],
+  variable: '--font-source-serif',
+  display: 'swap',
 });
 
 const inter = Inter({
@@ -72,7 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${inter.variable} ${caveat.variable}`}
+      className={`${fraunces.variable} ${sourceSerif.variable} ${inter.variable} ${caveat.variable}`}
       data-skin="editorial"
       data-tabs="paper"
       data-readmode="flip"

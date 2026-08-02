@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.2.9 — 2026-08-02
+
+### Feat (final redesign)
+- **Step photos removed** — one hero only; deleted `stepImages.ts`, `public/recipes/steps/*`, rematch step scripts
+- **Refined-editorial recipe page** — quick facts under title; Source Serif 4 body; allergen chips AA; 72ch measure
+- **+738 TheMealDB recipes** (photo bundled with each dish) → **956 total**; `npm run import:mealdb` / `gate:recipes`
+- Wood sheet contrast fix for phone chapter tabs
+- Anti-2D + linkage gates green
+
+### Chore
+- Gallery regen; docs (`plan-final-redesign`, photos, adding-recipes, coord)
+- SW → `cookcap-v15`
+
 ## 2.2.8 — 2026-08-02
 
 ### Feat (Dresser World)

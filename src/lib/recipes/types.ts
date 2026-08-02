@@ -53,12 +53,6 @@ export interface Step {
   /** Optional inline timer in seconds, surfaced as a tappable chip. */
   durationSec?: number;
   tip?: string;
-  /**
-   * Optional process photo for this step. Path under /public/recipes/steps.
-   * Absent today for every recipe — the layout renders gracefully without it,
-   * and adding one later is a one-line change (see docs/adding-recipes.md).
-   */
-  image?: string;
 }
 
 export interface Nutrition {

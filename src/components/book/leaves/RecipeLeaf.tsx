@@ -7,7 +7,6 @@ import { RecipeImage } from '@/components/ui/RecipeImage';
 import { CharacterArt } from '@/components/art/CharacterArt';
 import { formatQty, scaleIngredient } from '@/lib/recipes/scale';
 import { relatedFor } from '@/lib/recipes/related';
-import { stepImageFor } from '@/lib/recipes/stepImages';
 import { useApp } from '@/components/app/AppStore';
 import { useBook } from '@/components/book/BookController';
 import { CookingMode } from '@/components/book/CookingMode';
@@ -182,13 +181,70 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
         </button>
       </div>
 
-      <div className="px-4 py-5 sm:px-[7%] sm:py-6">
+      <div className="mx-auto max-w-[72ch] px-4 py-5 sm:px-[7%] sm:py-6">
         <p className="font-serif text-lg italic text-[color:var(--color-ink-soft)] text-balance">
           {recipe.tagline}
         </p>
         <div className="mt-3">
           <FitBadge recipe={recipe} />
         </div>
+
+        {/* ── Quick facts (refined editorial hierarchy) ─────*/}
+        <dl className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <Meta icon="clock" label="Prep" value={`${recipe.prepMin}m`} />
+          <Meta icon="flame" label="Cook" value={`${recipe.cookMin}m`} />
+          <Meta icon="gauge" label="Level" value={DIFF_LABEL[recipe.difficulty]} />
+          {!isTip && (
+            <Meta
+              icon="flame-cal"
+              label="Cal"
+              value={`${displayNutrition.calories}`}
+            />
+          )}
+        </dl>
+        {recipeCost && (
+          <p className="mt-2 text-xs text-[color:var(--color-ink-faint)]">
+            Ingredients {recipeCost}{' '}
+            <span className="opacity-80">(grocery estimate — not a receipt)</span>
+          </p>
+        )}
+        {!isTip && (
+          <p className="mt-1 text-[0.7rem] text-[color:var(--color-ink-faint)]">
+            {recipe.macrosVerified
+              ? 'Macros hand-checked for this edition.'
+              : 'Macros are kitchen estimates — not lab values.'}
+          </p>
+        )}
+        {!isTip && (
+          <>
+            <div className="mt-3 grid grid-cols-3 gap-2">
+              {(
+                [
+                  ['Protein', `${displayNutrition.protein}g`],
+                  ['Carbs', `${displayNutrition.carbs}g`],
+                  ['Fat', `${displayNutrition.fat}g`],
+                ] as const
+              ).map(([k, v]) => (
+                <div
+                  key={k}
+                  className="rounded-lg border border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)]/60 px-2 py-2 text-center"
+                >
+                  <div className="font-serif text-base font-semibold tabular-nums text-[color:var(--color-ink)]">
+                    {v}
+                  </div>
+                  <div className="text-[0.65rem] uppercase tracking-wide text-[color:var(--color-ink-faint)]">
+                    {k}
+                  </div>
+                </div>
+              ))}
+            </div>
+            {!recipe.macrosVerified && (
+              <p className="mt-1.5 text-[0.7rem] text-[color:var(--color-ink-faint)]">
+                Estimated macros
+              </p>
+            )}
+          </>
+        )}
 
         {/* ── Kitchen note ───────────────────────────────────*/}
         {recipe.story && (
@@ -246,7 +302,11 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
                 {recipe.allergens.map((a) => (
                   <span
                     key={a}
-                    className="rounded-full bg-[color:var(--color-paper-sunk)] px-2 py-0.5 text-xs capitalize text-[color:var(--color-ink-soft)]"
+                    className="rounded-full border px-2.5 py-1 text-xs font-medium capitalize text-[color:var(--color-ink)]"
+                    style={{
+                      borderColor: 'color-mix(in srgb, var(--color-danger) 35%, transparent)',
+                      background: 'color-mix(in srgb, var(--color-danger) 12%, var(--color-paper))',
+                    }}
                   >
                     {a}
                   </span>
@@ -278,65 +338,6 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
               ))}
             </ul>
           </div>
-        )}
-
-        {/* ── Meta strip ─────────────────────────────────────*/}
-        <dl className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <Meta icon="clock" label="Prep" value={`${recipe.prepMin}m`} />
-          <Meta icon="flame" label="Cook" value={`${recipe.cookMin}m`} />
-          <Meta icon="gauge" label="Level" value={DIFF_LABEL[recipe.difficulty]} />
-          {!isTip && (
-            <Meta
-              icon="flame-cal"
-              label="Cal"
-              value={`${displayNutrition.calories}`}
-            />
-          )}
-        </dl>
-        {recipeCost && (
-          <p className="mt-2 text-xs text-[color:var(--color-ink-faint)]">
-            Ingredients {recipeCost}{' '}
-            <span className="opacity-80">(grocery estimate — not a receipt)</span>
-          </p>
-        )}
-        {!isTip && (
-          <p className="mt-1 text-[0.65rem] text-[color:var(--color-ink-faint)]">
-            {recipe.macrosVerified
-              ? 'Macros hand-checked for this edition.'
-              : 'Macros are kitchen estimates — not lab values.'}
-          </p>
-        )}
-
-        {/* Macros up front — family card glance */}
-        {!isTip && (
-          <>
-            <div className="mt-3 grid grid-cols-3 gap-2">
-              {(
-                [
-                  ['Protein', `${displayNutrition.protein}g`],
-                  ['Carbs', `${displayNutrition.carbs}g`],
-                  ['Fat', `${displayNutrition.fat}g`],
-                ] as const
-              ).map(([k, v]) => (
-                <div
-                  key={k}
-                  className="rounded-lg border border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)]/60 px-2 py-2 text-center"
-                >
-                  <div className="font-serif text-base font-semibold tabular-nums text-[color:var(--color-ink)]">
-                    {v}
-                  </div>
-                  <div className="text-[0.65rem] uppercase tracking-wide text-[color:var(--color-ink-faint)]">
-                    {k}
-                  </div>
-                </div>
-              ))}
-            </div>
-            {!recipe.macrosVerified && (
-              <p className="mt-1.5 text-[0.7rem] text-[color:var(--color-ink-faint)]">
-                Estimated macros
-              </p>
-            )}
-          </>
         )}
 
         {mode !== 'reader' && !isTip && healthierPreview && (
@@ -488,7 +489,6 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
           <ol className="space-y-4">
             {recipe.steps.map((step, i) => {
               const isDone = done.has(i);
-              const stepImg = stepImageFor(recipe.id, i, recipe.steps.length, step.image);
               return (
                 <li key={i} className="flex gap-4">
                   <button
@@ -502,21 +502,10 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
                   </button>
                   <div className={isDone ? 'opacity-50' : ''}>
                     <p
-                      className={`text-[color:var(--color-ink)] ${isDone ? 'line-through decoration-[color:var(--color-ink-faint)]' : ''}`}
+                      className={`text-base leading-relaxed text-[color:var(--color-ink)] ${isDone ? 'line-through decoration-[color:var(--color-ink-faint)]' : ''}`}
                     >
                       {step.instruction}
                     </p>
-                    {stepImg && (
-                      <span className="relative mt-2 block aspect-[16/10] w-full overflow-hidden rounded-lg">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={stepImg}
-                          alt={`Step ${i + 1} — ${recipe.title}`}
-                          loading="lazy"
-                          className="absolute inset-0 h-full w-full object-cover"
-                        />
-                      </span>
-                    )}
                     {step.durationSec != null && <Timer seconds={step.durationSec} />}
                     {step.tip &&
                       (looksRomanUrdu(step.tip) ? (

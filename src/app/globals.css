@@ -31,8 +31,9 @@
      and a humanist sans for UI chrome. Loaded via next/font in layout. */
   --font-serif: var(--font-fraunces), 'Iowan Old Style', Georgia, serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-source-serif), var(--font-fraunces), Georgia, serif;
 
-  /* Modular type scale (1.25 major third), fluid via clamp. */
+  /* Modular type scale (1.25 major third), fluid via clamp. Body ≥16px. */
   --text-caption: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
@@ -327,6 +328,16 @@
     background-image:
       radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.35), transparent 40%),
       radial-gradient(circle at 85% 90%, rgba(120, 90, 60, 0.06), transparent 45%);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.65;
+  }
+  .paper-grain h2,
+  .paper-grain h3,
+  .paper-grain .font-serif {
+    text-wrap: balance;
+    font-family: var(--font-serif);
   }
   .paper-grain::before {
     content: '';
@@ -676,6 +687,15 @@
   background-blend-mode: normal, soft-light;
   border-left: 1px solid color-mix(in srgb, var(--dr-wood-dark) 45%, transparent);
   box-shadow: inset 1px 0 0 color-mix(in srgb, #fff 18%, transparent);
+  color: var(--dr-wood-dark);
+}
+.journal-sheet--wood #chapter-sheet-title,
+.journal-sheet--wood .paper-tab__label {
+  color: color-mix(in srgb, var(--dr-wood-dark) 75%, #1a1008) !important;
+}
+.journal-sheet--wood p,
+.journal-sheet--wood .paper-tab__sub {
+  color: color-mix(in srgb, var(--dr-wood-dark) 55%, #3a2a18) !important;
 }
 
 .journal-desk {

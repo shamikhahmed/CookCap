@@ -1,19 +1,19 @@
 # CookCap — Presentation
 
-**v2.2.8** · https://shamikhahmed.github.io/CookCap/
+**v2.2.9** · https://shamikhahmed.github.io/CookCap/
 
 ## Pitch
 
-CookCap opens like a hardcover on a wooden table. Name the book (3D dresser — carved question in the drawer — or calm Simple path). Book lifts out onto the same wood; paper tabs stick beside it. Flip offline. Optional lenses — never required.
+CookCap opens like a hardcover on a wooden table. Name the book in a 3D dresser. Flip ~956 recipes offline — each with one honest hero photo. Paper pages, wood frame. Optional lenses — never required.
 
 ## Demo
 
-1. First-run → Begin → drawer pulls out → type name (keyboard stays) → reveal sinks dresser into table → paper tabs peel in
-2. Appearance → Theme skins (wood frame around all four) · Paper tabs on wood · Flip / Fast
-3. Flip → cook · search · shopping
+1. First-run → dresser → reveal sinks into table → paper tabs peel in
+2. Open a recipe — single hero, quick facts, method checklist (no step photos)
+3. Search finds MealDB + family recipes · Appearance skins keep wood world
 
 ## Status
 
-**v2.2.8** = Dresser World (wooden table + paper tabs + reveal→table timeline) · SW `cookcap-v14`. Cloud sync out of scope.
+**v2.2.9** = final redesign (step photos gone, Source Serif body, +738 MealDB, linkage gate) · SW `cookcap-v15`.
 
 Gallery: [docs/gallery/README.md](./docs/gallery/README.md)

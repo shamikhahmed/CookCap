@@ -1,32 +1,22 @@
 # CookCap — Screen gallery
 
-Version **2.2.8**. Regen: `GALLERY_URL=http://127.0.0.1:3456 npm run gallery` (static `out/` preferred).
+Version **2.2.9**. Regen: `GALLERY_URL=http://127.0.0.1:3456 npm run gallery`.
 
-Demo edition: **Ayesha**.
+Demo edition: **Ayesha**. Recipes: **956** (hero-only).
 
-## Dresser World (shipped)
+## Dresser World
 
-- **Wooden table** — reading desk grain + lamp; book contact shadow
-- **Paper tabs** — `{desktop,mobile}/tabs/paper-{editorial|candlelit}.png`
-- Phone: book full-bleed; Tabs sheet = paper tabs on wood strip
-- Anti-2D checkpoints: `docs/gallery/checkpoints/`
+Wooden table + paper tabs + dresser stills — see `{desktop,mobile}/`.
 
-## Legacy tab styles (code kept, not shipped default)
+## Recipe (redesign)
 
-`{desktop,mobile}/tabs/{cloth|index|top|pills}-{editorial|candlelit}.png`
+One hero, quick facts, no step photos. Spot-check `05-recipe.png` / cook mode.
 
-## Dresser / reveal
-
-`{desktop,mobile}/dresser/` — welcome, open drawers (carved Q), reveal→table, handoff, skin welcomes.
-
-## Core + appearance
-
-See prior index (`00`–`18`, `appearance/`).
-
-## Regen
+## Gates
 
 ```bash
-npm run build && python3 -m http.server 3456 --directory out
-GALLERY_URL=http://127.0.0.1:3456 npm run gallery
-GATE_URL=http://127.0.0.1:3456 npm run gate:anti-2d
+npm run gate:anti-2d
+npm run gate:recipes
 ```
+
+Checkpoints: `docs/gallery/checkpoints/`.

@@ -13,10 +13,9 @@ updates automatically from that object. You never touch layout code.
 `src/lib/recipes/data-extra.ts` or `src/lib/recipes/data-fill.ts` (both are
 spread into `RECIPES` automatically).
 
-**FoodFusion research cards** — generated into `data-foodfusion.ts` by
-`python3 scripts/scrape-foodfusion.py --bodies 220 --curate 64 --emit-ts --download-images`.
-Attributed; rewrite stories in the owner's voice before treating as family lore. Archive lives under
-`content/sources/foodfusion/`.
+**TheMealDB bulk** — `npm run import:mealdb` → `data-themealdb.ts` + bundled
+`mdb-<id>.webp` heroes (photo ships with the dish). Spread into `RECIPES` in
+`data.ts`.
 
 ```ts
 {
@@ -36,18 +35,18 @@ Attributed; rewrite stories in the owner's voice before treating as family lore.
   tags: ['savory', 'street-food'],
   ingredients: [{ items: [{ quantity: 500, unit: 'g', item: 'minced beef' } /* … */] }],
   steps: [
-    { instruction: 'Brown the mince with the spices.', durationSec: 480,
-      image: '/recipes/steps/kebab-rolls-1.webp' }, // optional — omit if none
+    { instruction: 'Brown the mince with the spices.', durationSec: 480 },
   ],
   chefNotes: ['…'], tips: ['…'], commonMistakes: ['…'],
   substitutions: [{ from: 'beef', to: 'chicken mince' }],
   equipment: ['Griddle'], storage: '…', reheating: '…',
-  related: ['chana-masala'],  // ids of other recipes
+  related: ['chana-masala'],  // optional — auto-related fills gaps
   heroSeed: 12,               // any number — used only if no photo exists
 }
 ```
 
 That’s it. The recipe now appears in its chapter, the contents page, search,
+and the page-flip book. One hero photo only — never step images.
 and the bookmark tab — no other edits.
 
 ## 2. Add a hero photo (optional but lovely)
@@ -64,11 +63,6 @@ Two paths:
   `sharp('photo.jpg').resize(20,20).webp({quality:40}).toBuffer()` → base64.
 
 No photo? The page falls back to generated art automatically — nothing breaks.
-
-## 3. Step photos (optional)
-
-Set `steps[i].image` to a path under `public/recipes/steps/`. The step layout
-renders it lazily; steps without an image render exactly as before.
 
 ## Meal planner
 

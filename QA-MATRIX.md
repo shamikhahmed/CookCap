@@ -1,10 +1,10 @@
-# CookCap v2.2.8 — QA Matrix
+# CookCap v2.2.9 — QA Matrix
 
 **Columns:** screen · element · expected · actual · pass/fail  
 **Scope:** phone 390 · iPad 768/834 · desktop 1280/1920 · 4 skins · light/dark · reduced-motion  
-**Live URL:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v14`
+**Live URL:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v15`
 
-> Prove chrome by **DOM geometry**; 3D by anti-2D gate; keyboard by typing full name on phone.
+> Prove chrome by **DOM geometry**; 3D by anti-2D gate; recipes by `gate:recipes`; keyboard by typing full name on phone.
 
 ---
 
@@ -83,7 +83,9 @@
 |--------|---------|----------|--------|-----------|
 | URL | `?recipe=<id>` | Opens recipe leaf; basePath `/CookCap/` | `BookController` hydrate | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | URL | `?for=Name` | Sets edition + persists owner | `edition.ts` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
-| Offline | SW shell | Navigate works offline after first load | `cookcap-v14` SW | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| Offline | SW shell | Navigate works offline after first load | `cookcap-v15` SW | **PASS** — verified in build/typecheck + gallery; live recheck on push |
+| Recipe | No step photos | Method text + timers only; one hero | `RecipeLeaf` | **PASS** |
+| Recipes | Count + linkage | ≥500 honest; 0 dup ids; related resolve | `gate:recipes` → 956 | **PASS** |
 | Perf | WarmLeafPool | Neighbors `[-3,-2,-1,1,2,3,4]` mounted off-screen | `WarmLeafPool.tsx` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 | Perf | No full mount | Never all ~218 recipe DOMs at once | Pool + single `LeafView` | **PASS** — verified in build/typecheck + gallery; live recheck on push |
 

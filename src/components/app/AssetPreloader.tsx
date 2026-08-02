@@ -2,15 +2,14 @@
 
 import { useEffect, useRef } from 'react';
 import { useApp } from '@/components/app/AppStore';
-import stepMap from '@/lib/recipes/step-images.generated.json';
 import { withBase } from '@/lib/base-path';
 
 /**
- * On enter: warm every recipe hero (+ @sm when available) and step photo into
- * the browser (and SW asset cache in prod). Flip lag is mostly cold image decode.
+ * On enter: warm every recipe hero (+ @sm) into the browser (and SW asset
+ * cache in prod). Flip lag is mostly cold image decode. One hero per recipe —
+ * no step photos.
  */
 
-const STEP = stepMap as Record<string, string[]>;
 const CONCURRENCY = 8;
 
 function loadUrl(url: string): Promise<void> {
@@ -68,7 +67,6 @@ export function AssetPreloader() {
       if (r.chapter === 'tips') continue;
       add(withBase(`/recipes/${r.id}.webp`));
       add(withBase(`/recipes/${r.id}@sm.webp`));
-      for (const s of STEP[r.id] ?? []) add(withBase(s));
     }
 
     const kick = () => {
