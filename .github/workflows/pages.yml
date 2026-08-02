@@ -27,8 +27,19 @@ jobs:
       - run: npm run typecheck
       - run: npm run gate:recipes
       - run: npx playwright install chromium
-      - run: npm run gate:anti-2d
       - run: NEXT_PUBLIC_BASE_PATH=/CookCap npm run build
+      - name: Anti-2D gate (static out under /CookCap)
+        run: |
+          mkdir -p /tmp/gate-root
+          ln -sfn "$PWD/out" /tmp/gate-root/CookCap
+          python3 -m http.server 3456 --directory /tmp/gate-root &
+          echo $! > /tmp/gate-server.pid
+          for i in 1 2 3 4 5 6 7 8 9 10; do
+            if curl -sf -o /dev/null http://127.0.0.1:3456/CookCap/; then break; fi
+            sleep 1
+          done
+          GATE_URL=http://127.0.0.1:3456/CookCap npm run gate:anti-2d
+          kill "$(cat /tmp/gate-server.pid)" || true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
