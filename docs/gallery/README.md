@@ -1,46 +1,30 @@
 # CookCap — Screen gallery
 
-Version **2.2.6**. Regen: `GALLERY_URL=http://127.0.0.1:3456 npm run gallery` (static `out/` preferred).
+Version **2.2.7**. Regen: `GALLERY_URL=http://127.0.0.1:3456 npm run gallery` (static `out/` preferred).
 
-Demo edition in shots: **Ayesha** (not a hard-coded product name).
+Demo edition: **Ayesha**.
 
-## Desktop (1440×900)
+## Tab style options (pick — default still Cloth)
 
-| # | Screen | File |
-|---|--------|------|
-| 00 | Simple welcome | `desktop/00-welcome.png` |
-| 00b–00e | Simple name → profile → mode → reveal | `desktop/00b`…`00e` |
-| 01–12 | Core book + tabs | `desktop/01`…`12` |
-| 13–17 | Modes / profiles / calendar / pantry / plate | `desktop/13`…`17` |
-| 18 | Appearance panel | `desktop/18-appearance.png` |
+`{desktop,mobile}/tabs/{cloth|index|top|pills}-{editorial|candlelit}.png`
 
-### Dresser (full-motion · question inside drawer)
+**Default unchanged** until you choose.
 
-| # | Screen | File |
-|---|--------|------|
-| 00 | Welcome plate on dresser | `desktop/dresser/00-welcome.png` |
-| 00b–00d | Name / profile / mode **open interiors** | `desktop/dresser/00b`…`00d` |
-| 00e | Rising embossed book (`db-rise`) | `desktop/dresser/00e-reveal.png` |
-| 01 | Cover after FLIP handoff | `desktop/dresser/01-cover-handoff.png` |
-| skins | Editorial + Candlelit welcome | `desktop/dresser/skin-editorial-welcome.png`, `skin-candlelit-welcome.png` |
+**What's off with Cloth today:** active tab extrusion can kiss/overlap the fore-edge seam; long labels need `width:auto` (already); cloth faces can look jagged at deviceScale 2; spacing between tabs uneven vs Side Index.
 
-## Appearance matrix
+**Proposal (wait for pick):** cleaner **Side Index** default — typographic list, tiny chapter color dots, hairline dividers, no 3D extrusion fight with the book edge.
 
-`desktop/appearance/{skin}-{tabs}-cover.png` + `panel.png`  
-Skins: editorial · candlelit · lightbook · modern  
-Tabs: cloth · index · top · pills
+## Dresser v3
 
-## Mobile (390×844)
+`{desktop,mobile}/dresser/` — welcome, open drawers (carved Q), reveal, handoff, skin welcomes.
 
-Same under `mobile/` (+ `mobile/dresser/`).
+## Core + appearance
+
+See prior index (`00`–`18`, `appearance/`).
 
 ## Regen
 
 ```bash
 npm run build && python3 -m http.server 3456 --directory out
 GALLERY_URL=http://127.0.0.1:3456 npm run gallery
-# device-only: GALLERY_DEVICE=desktop|mobile
 ```
-
-Prefer `python3 -m http.server` over `npx serve` (EMFILE under heavy recipe prefetch).  
-Simple stills use `prefers-reduced-motion: reduce`. Dresser stills force `no-preference` + `hardwareConcurrency > 4`.
