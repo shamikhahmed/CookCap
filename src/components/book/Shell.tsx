@@ -94,7 +94,7 @@ function Frame() {
   }, []);
 
   return (
-    <div className="journal-desk flex h-[100dvh] flex-col pb-[env(safe-area-inset-bottom)] pt-[env(safe-area-inset-top)]">
+    <div className="journal-desk flex h-[100dvh] flex-col">
       <TopBar
         onSearch={() => setSearchOpen(true)}
         onFavorites={() => setFavOpen(true)}
@@ -226,7 +226,7 @@ function TopBar({
   }, [more]);
 
   return (
-    <header className="relative z-50 flex shrink-0 items-center justify-between gap-2 px-3 py-2 sm:px-6 sm:py-2.5">
+    <header className="app-header relative z-50 flex shrink-0 items-center justify-between gap-2 sm:gap-3">
       <div className="flex min-w-0 items-center gap-2 text-[color:var(--color-ink)]">
         <Icon name="book" size={20} />
         <div className="min-w-0 leading-tight">
@@ -429,7 +429,7 @@ function BottomBar() {
   const busy = locked || turning;
   const extras = customs.length;
   return (
-    <footer className="relative z-30 flex shrink-0 items-center gap-2 px-3 py-2.5 sm:gap-4 sm:px-6 sm:py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+    <footer className="app-footer relative z-30 flex shrink-0 items-center gap-2 sm:gap-4">
       <IconBtn label="Previous page" onClick={prev} disabled={atStart || busy}>
         <Icon name="arrow-left" size={20} />
       </IconBtn>
