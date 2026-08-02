@@ -178,7 +178,12 @@ export function MealPlannerDrawer({
                   Assign dishes · stays on this device
                 </p>
               </div>
-              <button type="button" onClick={onClose} aria-label="Close" className="text-[color:var(--color-ink-faint)]">
+              <button
+                type="button"
+                onClick={closeHandler}
+                aria-label="Close"
+                className="grid size-11 place-items-center text-[color:var(--color-ink-faint)]"
+              >
                 <Icon name="close" size={22} />
               </button>
             </header>

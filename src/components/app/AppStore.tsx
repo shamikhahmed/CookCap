@@ -330,7 +330,11 @@ export function AppStore({ children }: { children: ReactNode }) {
       next[i] = p;
       return next;
     });
-    setActiveProfileIdState((cur) => cur ?? p.id);
+    setActiveProfileIdState((cur) => {
+      if (cur) return cur;
+      localStorage.setItem(ACTIVE_PROFILE_KEY, p.id);
+      return p.id;
+    });
   }, []);
 
   const removeProfile = useCallback(async (id: string) => {
@@ -338,8 +342,16 @@ export function AppStore({ children }: { children: ReactNode }) {
     await store.deleteDiaryForProfile(id);
     setProfiles((prev) => prev.filter((p) => p.id !== id));
     setDiary((prev) => prev.filter((d) => d.profileId !== id));
-    setCookingForIdsState((prev) => prev.filter((x) => x !== id));
-    setActiveProfileIdState((cur) => (cur === id ? null : cur));
+    setCookingForIdsState((prev) => {
+      const next = prev.filter((x) => x !== id);
+      localStorage.setItem(COOKING_FOR_KEY, JSON.stringify(next));
+      return next;
+    });
+    setActiveProfileIdState((cur) => {
+      if (cur !== id) return cur;
+      localStorage.removeItem(ACTIVE_PROFILE_KEY);
+      return null;
+    });
   }, []);
 
   const logMeal = useCallback(

@@ -1,5 +1,5 @@
 {
-  "at": "2026-08-02T22:42:04.266Z",
+  "at": "2026-08-02T23:22:36.124Z",
   "url": "http://127.0.0.1:3457/CookCap/",
   "recipeCatalog": 956,
   "warmLeafPoolOffsets": [
@@ -14,90 +14,56 @@
   "assetPreload": "SW full catalog + decode window ±12",
   "chapterListCap": 24,
   "search": "indexed haystack + 120ms debounce",
-  "longtaskCount": 11,
-  "longtaskMaxMs": 152,
-  "longtaskOver50": 11,
+  "longtaskCount": 6,
+  "longtaskMaxMs": 137,
+  "longtaskOver50": 6,
   "byPhase": {
-    "search": {
-      "count": 1,
-      "max": 102
-    },
     "flip": {
-      "count": 10,
-      "max": 152
+      "count": 6,
+      "max": 137
     }
   },
   "longtasks": [
     {
       "name": "self",
-      "duration": 102,
-      "start": 5334.20000000298,
-      "phase": "search"
-    },
-    {
-      "name": "self",
-      "duration": 152,
-      "start": 8847.20000000298,
+      "duration": 58,
+      "start": 5718.20000000298,
       "phase": "flip"
     },
     {
       "name": "self",
-      "duration": 78,
-      "start": 9030.800000011921,
+      "duration": 54,
+      "start": 5872,
       "phase": "flip"
     },
     {
       "name": "self",
-      "duration": 80,
-      "start": 9114.300000011921,
+      "duration": 85,
+      "start": 5942.5999999940395,
       "phase": "flip"
     },
     {
       "name": "self",
-      "duration": 143,
-      "start": 9196.70000000298,
+      "duration": 88,
+      "start": 6092.70000000298,
       "phase": "flip"
     },
     {
       "name": "self",
-      "duration": 53,
-      "start": 9340.60000000894,
+      "duration": 137,
+      "start": 7041.70000000298,
       "phase": "flip"
     },
     {
       "name": "self",
-      "duration": 129,
-      "start": 10147.20000000298,
-      "phase": "flip"
-    },
-    {
-      "name": "self",
-      "duration": 66,
-      "start": 10276.5,
-      "phase": "flip"
-    },
-    {
-      "name": "self",
-      "duration": 65,
-      "start": 10347.20000000298,
-      "phase": "flip"
-    },
-    {
-      "name": "self",
-      "duration": 61,
-      "start": 10413.90000000596,
-      "phase": "flip"
-    },
-    {
-      "name": "self",
-      "duration": 84,
-      "start": 10480.5,
+      "duration": 55,
+      "start": 7179.20000000298,
       "phase": "flip"
     }
   ],
   "mountedLeaves": 5,
   "pass": true,
   "longtaskBudgetMs": 50,
-  "longtaskAdvisoryMaxMs": 152,
+  "longtaskAdvisoryMaxMs": 137,
   "note": "Hard fail = mount storm (>12 data-leaf-scroll). Longtasks advisory: headless Motion curl often 50–170ms; real-device GPU target ≤50ms."
 }

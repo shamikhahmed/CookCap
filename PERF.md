@@ -1,6 +1,6 @@
-# CookCap v2.4.5 — Performance Budgets
+# CookCap v2.4.6 — Performance Budgets
 
-**Version:** 2.4.5 · **SW:** `cookcap-v24` · **Deploy:** GitHub Pages `/CookCap/`  
+**Version:** 2.4.6 · **SW:** `cookcap-v25` · **Deploy:** GitHub Pages `/CookCap/`  
 **Catalog:** **215** recipes
 
 ---
@@ -14,7 +14,8 @@
 | Never mount all recipes | Hard | WarmLeafPool | **PASS** |
 | Chapter list rows | **≤24** + more | ChapterLeaf | OK |
 | Search debounce | **120 ms** | search.ts | OK |
-| Longtask flip (headless) | advisory ≤50 / soft ≤170 | 61–152 ms Motion curl | Advisory |
+| CookingMode timers | 1 interval / open | fixed 2.4.6 | OK |
+| Longtask flip (headless) | advisory ≤50 / soft ≤170 | Motion curl often 50–170 | Advisory |
 | Longtask flip (real device) | **≤50 ms** | verify phone GPU | Target |
 | Anti-2D + linkage + smoke | Must PASS | CI | Required |
 

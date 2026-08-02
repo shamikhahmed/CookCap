@@ -78,7 +78,7 @@ export function FavoritesDrawer({ open, onClose }: { open: boolean; onClose: () 
                 type="button"
                 onClick={onClose}
                 aria-label="Close"
-                className="text-[color:var(--color-ink-faint)]"
+                className="grid size-11 place-items-center text-[color:var(--color-ink-faint)]"
               >
                 <Icon name="close" size={22} />
               </button>

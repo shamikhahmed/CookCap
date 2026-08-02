@@ -36,7 +36,7 @@ export function NameGate({
 }) {
   const reduce = useReducedMotion();
   const panelRef = useRef<HTMLDivElement>(null);
-  const { upsertProfile, setMode, setActiveProfileId } = useApp();
+  const { upsertProfile, setMode, setActiveProfileId, reportStorageError } = useApp();
   const [step, setStep] = useState<Step>(dismissible ? 'name' : 'welcome');
   const [value, setValue] = useState('');
   const [profileName, setProfileName] = useState('');
@@ -80,10 +80,16 @@ export function NameGate({
       setProfileError('Enter a name for this eater.');
       return;
     }
-    const profile = makeProfile({ name });
-    await upsertProfile(profile);
-    setActiveProfileId(profile.id);
-    setStep('mode');
+    try {
+      const profile = makeProfile({ name });
+      await upsertProfile(profile);
+      setActiveProfileId(profile.id);
+      setProfileError('');
+      setStep('mode');
+    } catch {
+      setProfileError('Could not save profile on this device.');
+      reportStorageError('Could not save profile on this device.');
+    }
   };
 
   const completeGate = (modeId?: ModeId) => {

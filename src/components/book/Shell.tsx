@@ -96,6 +96,9 @@ function Frame() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
+  /** Block book chrome until first-run name path resolves (splash → onboard). */
+  const firstRunGate = needsName;
+
   return (
     <div className="journal-desk flex h-[100dvh] flex-col">
       {storageError && (
@@ -115,54 +118,59 @@ function Frame() {
           </div>
         </div>
       )}
-      <TopBar
-        onSearch={() => setSearchOpen(true)}
-        onFavorites={() => setFavOpen(true)}
-        onShop={() => setShopOpen(true)}
-        onImport={() => setImportOpen(true)}
-        onPlan={() => setPlanOpen(true)}
-        onRename={() => setRenameOpen(true)}
-        onProfiles={() => setProfilesOpen(true)}
-        onMode={() => setModeOpen(true)}
-        onCalendar={() => setCalendarOpen(true)}
-        onPantry={() => setPantryOpen(true)}
-        onAbout={() => setAboutOpen(true)}
-      />
+      <div
+        className={`flex min-h-0 flex-1 flex-col${firstRunGate ? ' pointer-events-none select-none' : ''}`}
+        aria-hidden={firstRunGate || undefined}
+      >
+        <TopBar
+          onSearch={() => setSearchOpen(true)}
+          onFavorites={() => setFavOpen(true)}
+          onShop={() => setShopOpen(true)}
+          onImport={() => setImportOpen(true)}
+          onPlan={() => setPlanOpen(true)}
+          onRename={() => setRenameOpen(true)}
+          onProfiles={() => setProfilesOpen(true)}
+          onMode={() => setModeOpen(true)}
+          onCalendar={() => setCalendarOpen(true)}
+          onPantry={() => setPantryOpen(true)}
+          onAbout={() => setAboutOpen(true)}
+        />
 
-      <main className="journal-stage relative flex min-h-0 flex-1 flex-col items-center justify-center overflow-hidden px-0 pt-0 sm:overflow-visible sm:px-6 sm:pr-44 sm:pt-1 md:pr-48 lg:pr-56">
-        <TopChapterBar />
-        {/* Pure CSS grounding — size from vh on first paint (no parent-% / resize). */}
-        <div className="book-stage">
-          <div className="book-table">
-            <div className="book-contact-shadow" aria-hidden />
-            <div className="book-frame">
-              <Book />
+        <main className="journal-stage relative flex min-h-0 flex-1 flex-col items-center justify-center overflow-hidden px-0 pt-0 sm:overflow-visible sm:px-6 sm:pr-44 sm:pt-1 md:pr-48 lg:pr-56">
+          <TopChapterBar />
+          {/* Pure CSS grounding — size from vh on first paint (no parent-% / resize). */}
+          <div className="book-stage">
+            <div className="book-table">
+              <div className="book-contact-shadow" aria-hidden />
+              <div className="book-frame">
+                <Book />
+              </div>
             </div>
           </div>
-        </div>
-      </main>
+        </main>
 
-      <BottomBar />
+        <BottomBar />
+      </div>
 
       <SearchOverlay
-        open={searchOpen}
+        open={searchOpen && !firstRunGate}
         onClose={() => setSearchOpen(false)}
         onShop={() => setShopOpen(true)}
         onPlan={() => setPlanOpen(true)}
       />
-      <FavoritesDrawer open={favOpen} onClose={() => setFavOpen(false)} />
-      <ShoppingDrawer open={shopOpen} onClose={() => setShopOpen(false)} />
+      <FavoritesDrawer open={favOpen && !firstRunGate} onClose={() => setFavOpen(false)} />
+      <ShoppingDrawer open={shopOpen && !firstRunGate} onClose={() => setShopOpen(false)} />
       <MealPlannerDrawer
-        open={planOpen}
+        open={planOpen && !firstRunGate}
         onClose={() => setPlanOpen(false)}
         onShop={() => setShopOpen(true)}
       />
-      <ImportModal open={importOpen} onClose={() => setImportOpen(false)} />
-      <ProfilesDrawer open={profilesOpen} onClose={() => setProfilesOpen(false)} />
-      <ModeChooser open={modeOpen} onClose={() => setModeOpen(false)} />
-      <CalendarDrawer open={calendarOpen} onClose={() => setCalendarOpen(false)} />
-      <PantryDrawer open={pantryOpen} onClose={() => setPantryOpen(false)} />
-      <AboutModal open={aboutOpen} onClose={() => setAboutOpen(false)} />
+      <ImportModal open={importOpen && !firstRunGate} onClose={() => setImportOpen(false)} />
+      <ProfilesDrawer open={profilesOpen && !firstRunGate} onClose={() => setProfilesOpen(false)} />
+      <ModeChooser open={modeOpen && !firstRunGate} onClose={() => setModeOpen(false)} />
+      <CalendarDrawer open={calendarOpen && !firstRunGate} onClose={() => setCalendarOpen(false)} />
+      <PantryDrawer open={pantryOpen && !firstRunGate} onClose={() => setPantryOpen(false)} />
+      <AboutModal open={aboutOpen && !firstRunGate} onClose={() => setAboutOpen(false)} />
       <InstallBanner />
       <AssetPreloader />
       <Splash />

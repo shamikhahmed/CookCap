@@ -133,7 +133,12 @@ export function ShoppingDrawer({ open, onClose }: { open: boolean; onClose: () =
                   </p>
                 )}
               </div>
-              <button onClick={onClose} aria-label="Close" className="text-[color:var(--color-ink-faint)]">
+              <button
+                type="button"
+                onClick={onClose}
+                aria-label="Close"
+                className="grid size-11 place-items-center text-[color:var(--color-ink-faint)]"
+              >
                 <Icon name="close" size={22} />
               </button>
             </header>

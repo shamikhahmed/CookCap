@@ -1,6 +1,6 @@
-# CookCap v2.4.5 — QA Matrix
+# CookCap v2.4.6 — QA Matrix
 
-**Live:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v24`  
+**Live:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v25`  
 **Evidence dirs:** `docs/gallery/checkpoints/`
 
 > Prove by gates + smoke against served `out/`. Gallery ≠ live alone.
@@ -17,7 +17,7 @@
 | `npm run gate:anti-2d` | 3D + wood + paper tabs | GATE PASS | **PASS** |
 | `npm run smoke:product` | S1–S7 | SMOKE PASS | **PASS** |
 | `npm run measure:perf` | mountedLeaves ≤12 | mountedLeaves=5 | **PASS** |
-| CI Pages | build+deploy | workflow | VERIFY after push |
+| CI Pages | build+deploy | workflow after push | **PASS** (prior 2.4.5; re-verify 2.4.6) |
 
 ### Smoke detail (`smoke-product-report.json`)
 
@@ -25,22 +25,34 @@
 |----|----------|--------|
 | S1 | Footer `n / total` | PASS |
 | S2 | `.book-frame` present | PASS |
-| S3 | Search control ≥44×44 | PASS 44×44 |
+| S3 | Search control ≥44×44 | PASS |
 | S4 | Shopping before Change book name | PASS |
 | S5 | About & data last in ··· menu | PASS |
 | S6 | Phone Search ≥44×44 | PASS |
-| S7 | No third-party runtime fetch | PASS none |
+| S7 | No third-party runtime fetch | PASS |
 
 ---
 
-## Manual / persona (spot)
+## Fix verification (2.4.6 code)
+
+| Area | Expected | Status |
+|------|----------|--------|
+| Profile delete | LS active + cooking-for cleared | Code + typecheck |
+| Import save | Navigates after leaves rebuild | Code |
+| Mother allergens | Active profile if cooking-for empty | Code + Profiles UI |
+| First-run | Chrome `pointer-events: none` while `needsName` | Code |
+| Drawer × | `size-11` hit target | Code |
+
+---
+
+## Manual / persona (optional device spot)
 
 | Persona | Flow | Status |
 |---------|------|--------|
-| First-timer | Splash → dresser/simple → cover → flip | VERIFY on device after SW update |
-| Power user | ⌘K ★ filter · mode switch · planner | VERIFY |
-| Reduced-motion | Simple onboard, no dresser SFX | VERIFY (`prefers-reduced-motion`) |
-| Offline | Load once, kill network, read/fav | VERIFY |
+| First-timer | Splash → dresser/simple → cover → flip | Spot after SW `v25` |
+| Power user | ⌘K · mode · Cooking for · planner | Spot |
+| Reduced-motion | Simple onboard Escape confirm | Spot |
+| Offline | Load once, kill network, read/fav | Spot |
 
 ---
 

@@ -1,6 +1,6 @@
-# Universal Product-Standard — Phase report (v2.4.5)
+# Universal Product-Standard — Phase report (through v2.4.6)
 
-**Date:** 2026-08-03 · **App:** CookCap · **Commit ship:** this release
+**Date:** 2026-08-03 · **App:** CookCap
 
 ---
 
@@ -8,32 +8,26 @@
 
 | Phase | Done | Evidence |
 |-------|------|----------|
-| 1 Discover | Yes | `AUDIT.md` refreshed for 2.4.5 tree |
-| 2 Code health | Scoped | No MealDB runtime; typecheck/lint clean; no drive-by rewrite of book physics |
-| 3 IA | Yes | ··· menu reordered; `IA-RATIONALE.md` |
-| 4 Design system | Prior + small | Tokens in `globals.css`; contrast pass 2.4.3; menu ink/weight |
-| 5 Forms/selection | Partial | Menu ≥44px + menuitem roles; onboard forms already labelled |
-| 6 Platforms | Smoke | 1280 + 390 viewports in `smoke:product` |
-| 7 A11y | Partial | Focus dialogs exist; hit targets fixed; full SR pass = ongoing |
-| 8 Perf | Yes | First Load 328 kB; `mountedLeaves=5`; longtask advisory headless |
-| 9 Security | Yes | No auth; S7 no third-party fetch; local IDB |
-| 10 Offline/API | Yes | Static export + SW; no remote recipe API |
-| 11 QA personas | Automated core | Gates + smoke PASS; device spot VERIFY |
-| 12 Docs/gallery | Yes | AUDIT/IA/QA/PERF/CHANGELOG; checkpoints smoke shot |
-| 13 Final | Yes | CI includes anti-2d + smoke |
+| 1 Discover | Yes | `AUDIT.md` 2.4.6 |
+| 2 Code health | Yes | Profile/import/timer/onboard fixes |
+| 3 IA | Yes | ··· menu; Cooking for under Profiles |
+| 4 Design system | Prior | Tokens; drawer × 44px |
+| 5 Forms/selection | Yes | Profile save errors; cooking-for checkboxes |
+| 6 Platforms | Smoke | 1280 + 390 |
+| 7 A11y | Partial | Dialogs + 44px; full SR ongoing |
+| 8 Perf | Yes | leaves=5; timer interval fix |
+| 9 Security | Yes | Local-only; S7 |
+| 10 Offline/API | Yes | SW + IDB |
+| 11 QA | Automated core | Gates + smoke |
+| 12 Docs | Yes | This ship |
+| 13 Final | Yes | typecheck → push Pages |
 
-## Skipped (stated)
+## Skipped
 
-- Appendix E Auth — no accounts  
-- Appendix I Push — none  
-- Appendix J i18n — English UI  
+- E Auth · I Push · J i18n
 
-## Guardrails held
+## Residual
 
-Book-first, no dashboard, WarmLeafPool, hero lock, Reader pure book.
-
-## Residual (honest)
-
-- Full click-every-control matrix not exhaustive across all skins/modes (smoke covers IA + chrome).  
-- Headless Motion flip longtasks >50ms — advisory; real-device target remains.  
-- Gallery full regen not required for menu-only chrome (checkpoints updated).
+- Goal-* art-only heroes (lock held)  
+- Phone longtask ≤50ms spot  
+- Full click-every-control matrix across skins — smoke covers chrome/IA  

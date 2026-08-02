@@ -13,7 +13,8 @@ import { useDialogA11y } from '@/lib/a11y/dialog';
 import { favoritesLabel } from '@/lib/edition';
 import * as store from '@/lib/db/store';
 
-const RECENT_KEY = 'jia-recent-search';
+const RECENT_KEY = 'cookcap-recent-search';
+const LEGACY_RECENT_KEY = 'jia-recent-search';
 const STAR_LEVELS = [5, 4, 3, 2, 1] as const;
 
 /** Raycast / macOS Spotlight–style search. ⌘K from Shell. */
@@ -50,7 +51,8 @@ export function SearchOverlay({
     setFilters({});
     setCursor(0);
     try {
-      const raw = localStorage.getItem(RECENT_KEY);
+      const raw =
+        localStorage.getItem(RECENT_KEY) || localStorage.getItem(LEGACY_RECENT_KEY);
       const parsed = raw ? JSON.parse(raw) : [];
       setRecentSearches(Array.isArray(parsed) ? parsed : []);
     } catch {
@@ -264,12 +266,13 @@ export function SearchOverlay({
                 <Chip
                   active={false}
                   onClick={() => {
-                    const next = theme === 'dark' ? 'light' : 'dark';
+                    const next =
+                      theme === 'system' ? 'light' : theme === 'light' ? 'dark' : 'system';
                     setTheme(next);
                     onClose();
                   }}
                 >
-                  Toggle theme
+                  Theme · {theme}
                 </Chip>
                 <Chip
                   active={false}

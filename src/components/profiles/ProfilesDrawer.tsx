@@ -107,14 +107,18 @@ export function ProfilesDrawer({ open, onClose }: { open: boolean; onClose: () =
     profiles,
     activeProfile,
     setActiveProfileId,
+    cookingForIds,
+    setCookingForIds,
     upsertProfile,
     removeProfile,
+    reportStorageError,
   } = useApp();
   const reduce = useReducedMotion();
   const panelRef = useRef<HTMLElement>(null);
   const [editing, setEditing] = useState<FormState | null>(null);
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [saveError, setSaveError] = useState('');
   const editingRef = useRef(editing);
   editingRef.current = editing;
 
@@ -145,14 +149,26 @@ export function ProfilesDrawer({ open, onClose }: { open: boolean; onClose: () =
   const save = async () => {
     if (!editing || !editing.name.trim()) return;
     setSaving(true);
+    setSaveError('');
     try {
       const profile = buildProfile(editing);
       await upsertProfile(profile);
       if (!activeProfile) setActiveProfileId(profile.id);
       setEditing(null);
+    } catch {
+      setSaveError('Could not save profile on this device.');
+      reportStorageError('Could not save profile on this device.');
     } finally {
       setSaving(false);
     }
+  };
+
+  const toggleCookingFor = (id: string) => {
+    setCookingForIds(
+      cookingForIds.includes(id)
+        ? cookingForIds.filter((x) => x !== id)
+        : [...cookingForIds, id],
+    );
   };
 
   const doDelete = async (id: string) => {
@@ -180,7 +196,7 @@ export function ProfilesDrawer({ open, onClose }: { open: boolean; onClose: () =
           exit={{ opacity: 0 }}
           transition={motionReduce(reduce)}
           className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
-          onClick={onClose}
+          onClick={closeHandler}
         >
           <motion.aside
             ref={panelRef}
@@ -203,9 +219,9 @@ export function ProfilesDrawer({ open, onClose }: { open: boolean; onClose: () =
               </h2>
               <button
                 type="button"
-                onClick={onClose}
+                onClick={closeHandler}
                 aria-label="Close"
-                className="text-[color:var(--color-ink-faint)]"
+                className="grid size-11 place-items-center text-[color:var(--color-ink-faint)]"
               >
                 <Icon name="close" size={22} />
               </button>
@@ -392,6 +408,12 @@ export function ProfilesDrawer({ open, onClose }: { open: boolean; onClose: () =
                     </p>
                   ) : null}
 
+                  {saveError && (
+                    <p className="rounded-lg bg-[color:var(--color-danger)]/10 p-3 text-sm text-[color:var(--color-danger)]" role="alert">
+                      {saveError}
+                    </p>
+                  )}
+
                   <button
                     type="button"
                     disabled={saving || !editing.name.trim()}
@@ -496,6 +518,35 @@ export function ProfilesDrawer({ open, onClose }: { open: boolean; onClose: () =
                   >
                     + Add profile
                   </button>
+
+                  {profiles.length > 0 && (
+                    <section className="mt-5 rounded-xl bg-[color:var(--color-paper-sunk)] p-3">
+                      <h3 className="text-xs font-medium uppercase tracking-wide text-[color:var(--color-ink-faint)]">
+                        Cooking for
+                      </h3>
+                      <p className="mt-1 text-xs text-[color:var(--color-ink-soft)]">
+                        Mother mode allergen checks. Empty = active profile only.
+                      </p>
+                      <ul className="mt-2 space-y-1">
+                        {profiles.map((p) => {
+                          const on = cookingForIds.includes(p.id);
+                          return (
+                            <li key={p.id}>
+                              <label className="flex min-h-11 cursor-pointer items-center gap-3 rounded-lg px-1 py-1 text-sm text-[color:var(--color-ink)]">
+                                <input
+                                  type="checkbox"
+                                  checked={on}
+                                  onChange={() => toggleCookingFor(p.id)}
+                                  className="size-4 accent-[color:var(--color-accent)]"
+                                />
+                                <span className="truncate">{p.name}</span>
+                              </label>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </section>
+                  )}
 
                   <p className="mt-4 text-center text-[0.7rem] text-[color:var(--color-ink-faint)]">
                     {NUTRITION_DISCLAIMER}

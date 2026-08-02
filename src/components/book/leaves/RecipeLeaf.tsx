@@ -82,6 +82,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
     setHealthierOn,
     cookingForIds,
     profiles,
+    activeProfile,
     currency,
     reportStorageError,
   } = useApp();
@@ -119,19 +120,23 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
   const healthierPreview =
     mode !== 'reader' ? applyHealthier(recipe.nutrition) : null;
 
-  const motherAllergenHits =
-    mode === 'mother' && cookingForIds.length > 0
-      ? cookingForIds.flatMap((id) => {
-          const p = profiles.find((x) => x.id === id);
-          if (!p?.avoid?.length || !recipe.allergens?.length) return [];
-          const hits = recipe.allergens.filter((a) =>
-            p.avoid.some((av) => av.toLowerCase() === a.toLowerCase()),
-          );
-          return hits.length
-            ? [{ name: p.name, allergens: hits }]
-            : [];
-        })
+  /** Mother mode: cooking-for list, else active profile (so allergens still warn). */
+  const motherTargetIds =
+    mode === 'mother'
+      ? cookingForIds.length > 0
+        ? cookingForIds
+        : activeProfile
+          ? [activeProfile.id]
+          : []
       : [];
+  const motherAllergenHits = motherTargetIds.flatMap((id) => {
+    const p = profiles.find((x) => x.id === id);
+    if (!p?.avoid?.length || !recipe.allergens?.length) return [];
+    const hits = recipe.allergens.filter((a) =>
+      p.avoid.some((av) => av.toLowerCase() === a.toLowerCase()),
+    );
+    return hits.length ? [{ name: p.name, allergens: hits }] : [];
+  });
 
   const recipeCost =
     mode === 'budget' ? formatCost(estCostPkr(recipe), currency) : null;

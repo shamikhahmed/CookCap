@@ -17,7 +17,7 @@ export const QUICK_MODES: { id: ModeId; label: string; blurb: string }[] = [
 const ORDER: OnboardStep[] = ['welcome', 'name', 'profile', 'mode', 'reveal'];
 
 export function useOnboardingSteps(onComplete: (name: string) => void) {
-  const { upsertProfile, setMode, setActiveProfileId, soundOn } = useApp();
+  const { upsertProfile, setMode, setActiveProfileId, soundOn, reportStorageError } = useApp();
   const [step, setStep] = useState<OnboardStep>('welcome');
   const [ownerName, setOwnerName] = useState('');
   const [profileName, setProfileName] = useState('');
@@ -95,10 +95,14 @@ export function useOnboardingSteps(onComplete: (name: string) => void) {
       setProfileError('');
       setStep('mode');
       return true;
+    } catch {
+      setProfileError('Could not save profile on this device.');
+      reportStorageError('Could not save profile on this device.');
+      return false;
     } finally {
       setBusy(false);
     }
-  }, [profileName, upsertProfile, setActiveProfileId]);
+  }, [profileName, upsertProfile, setActiveProfileId, reportStorageError]);
 
   const skipProfile = useCallback(() => {
     setProfileError('');

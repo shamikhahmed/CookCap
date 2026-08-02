@@ -1,5 +1,25 @@
 # Changelog
 
+## 2.4.6 — 2026-08-03
+
+### Fix
+- **Profile delete** syncs `cookcap-active-profile` + `cookcap-cooking-for` localStorage (no ghost IDs after reload)
+- **First profile upsert** persists active id to localStorage
+- **Mother mode** allergen checks fall back to active profile; Profiles drawer **Cooking for** multi-select
+- **Import save** waits for leaves rebuild before `goToRecipe` (no silent miss)
+- **First-run gate** blocks book chrome until name path resolves
+- Profile create/save errors surfaced (onboard + NameGate + Profiles)
+- Profiles / Meal planner close handlers respect edit/pick state; drawer × ≥44px
+- CookingMode timer interval no longer recreates every tick
+- Search theme chip cycles `system → light → dark`; recent key → `cookcap-recent-search` (+ legacy read)
+- Simple onboard Escape confirms before skip (match dresser)
+
+### Docs
+- AUDIT / QA / PERF / HANDOVER / README / PRESENTATION / coord-build for v2.4.6
+
+### Chore
+- SW → `cookcap-v25`; package-lock name `cookcap`
+
 ## 2.4.5 — 2026-08-03
 
 ### Fix / Product-standard

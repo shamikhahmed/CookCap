@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { parseWhatsAppRecipe } from '@/lib/import/whatsapp';
 import type { ChapterId, Recipe } from '@/lib/recipes/types';
@@ -9,6 +9,7 @@ import { useApp } from '@/components/app/AppStore';
 import { useBook } from '@/components/book/BookController';
 import { Icon } from '@/components/ui/Icon';
 import { motionReduce, useDialogA11y } from '@/lib/a11y/dialog';
+import { leafOfRecipe } from '@/lib/book/pages';
 
 const PLACEHOLDER = `Aloo Gobi
 
@@ -31,13 +32,14 @@ const FOOD_CHAPTERS = CHAPTERS.filter(
 /** Paste a WhatsApp-forwarded recipe → preview → save into the book. */
 export function ImportModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const { addCustom } = useApp();
-  const { goToRecipe } = useBook();
+  const { goToRecipe, leaves } = useBook();
   const reduce = useReducedMotion();
   const [raw, setRaw] = useState('');
   const [chapter, setChapter] = useState<ChapterId>('meals');
   const [preview, setPreview] = useState<Recipe | null>(null);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [pendingGoId, setPendingGoId] = useState<string | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
   const close = useCallback(() => {
@@ -47,6 +49,14 @@ export function ImportModal({ open, onClose }: { open: boolean; onClose: () => v
   }, [onClose]);
 
   useDialogA11y(open, close, panelRef);
+
+  /** Navigate after customs → leaves rebuild (goToRecipe before that = silent -1). */
+  useEffect(() => {
+    if (!pendingGoId) return;
+    if (leafOfRecipe(pendingGoId, leaves) < 0) return;
+    goToRecipe(pendingGoId);
+    setPendingGoId(null);
+  }, [pendingGoId, leaves, goToRecipe]);
 
   const counts = useMemo(() => {
     if (!preview) return null;
@@ -66,7 +76,7 @@ export function ImportModal({ open, onClose }: { open: boolean; onClose: () => v
     try {
       const recipe = { ...preview, chapter };
       await addCustom(recipe);
-      goToRecipe(recipe.id);
+      setPendingGoId(recipe.id);
       setRaw('');
       setPreview(null);
       onClose();

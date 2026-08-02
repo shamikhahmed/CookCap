@@ -79,16 +79,17 @@ export function CookingMode({
   }, [open]);
 
   useEffect(() => {
-    if (!open || timers.every((t) => !t.running || t.left <= 0)) return;
+    if (!open) return;
     const id = window.setInterval(() => {
-      setTimers((prev) =>
-        prev.map((t) =>
+      setTimers((prev) => {
+        if (prev.every((t) => !t.running || t.left <= 0)) return prev;
+        return prev.map((t) =>
           t.running && t.left > 0 ? { ...t, left: Math.max(0, t.left - 1) } : t,
-        ),
-      );
+        );
+      });
     }, 1000);
     return () => window.clearInterval(id);
-  }, [open, timers]);
+  }, [open]);
 
   const goNext = useCallback(() => {
     setDone((d) => new Set(d).add(step));

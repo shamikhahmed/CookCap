@@ -1,4 +1,4 @@
-# CookCap v2.4.5 — Information Architecture Rationale
+# CookCap v2.4.6 — Information Architecture Rationale
 
 **Principle:** every surface has exactly one job. No duplicate homes for the same task.  
 **Ordering law:** most-used / daily tools at top → rarely used middle → identity rename late → legal last.
@@ -18,7 +18,7 @@
 | **Drawers** (favorites, shopping, planner, import) | One workflow each | Cross-drawer settings |
 | **Dresser / Simple onboard** | First-run identity + optional profile/mode | Ongoing profile management |
 | **NameGate** | Rename only (··· Change book name) | First-run ceremony |
-| **Profiles drawer** | Create / edit / delete / switch eaters | Mode preset definitions |
+| **Profiles drawer** | Create / edit / delete / switch eaters + Cooking for (Mother) | Mode preset definitions |
 | **Mode chooser** | Lens preset (Reader, Plate, Mother, …) | Biometric entry |
 | **Calendar / Pantry** | Diary rings + inventory / budget | Recipe authoring |
 | **About modal** | Version, privacy, export, wipe | Appearance tweaks |
