@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { PRODUCT_NAME } from '@/lib/edition';
@@ -35,8 +35,12 @@ export function DresserOnboarding({
 
   const [drawerOpen, setDrawerOpen] = useState<DrawerId | null>(null);
   const [animating, setAnimating] = useState(false);
-  const [bookPhase, setBookPhase] = useState<'hidden' | 'rise' | 'turn' | 'settle' | 'done'>('hidden');
+  const [bookPhase, setBookPhase] = useState<'hidden' | 'rise' | 'turn' | 'settle' | 'handoff' | 'done'>(
+    'hidden',
+  );
+  const [handoffStyle, setHandoffStyle] = useState<CSSProperties | undefined>();
   const prevStep = useRef<OnboardStep | null>(null);
+  const bookRef = useRef<HTMLDivElement>(null);
 
   const {
     step,
@@ -95,25 +99,50 @@ export function DresserOnboarding({
     return () => window.clearTimeout(openT);
   }, [step, open, muted]);
 
-  /** Reveal timeline */
+  /** Reveal timeline → FLIP onto .book-frame → complete */
   useEffect(() => {
     if (step !== 'reveal' || !open) return;
+    if (reduce) {
+      const t = window.setTimeout(() => completeReveal(), 200);
+      return () => window.clearTimeout(t);
+    }
     setBookPhase('rise');
+    setHandoffStyle(undefined);
     const t1 = window.setTimeout(() => setBookPhase('turn'), 700);
     const t2 = window.setTimeout(() => {
       setBookPhase('settle');
       playBookStamp(muted);
     }, 1400);
+    const tHandoff = window.setTimeout(() => {
+      const frame = document.querySelector('.book-frame');
+      const rising = bookRef.current;
+      if (frame instanceof HTMLElement && rising) {
+        const b = frame.getBoundingClientRect();
+        setBookPhase('handoff');
+        setHandoffStyle({
+          left: `${b.left}px`,
+          top: `${b.top}px`,
+          width: `${b.width}px`,
+          height: `${b.height}px`,
+          opacity: 1,
+        });
+      } else {
+        setBookPhase('done');
+      }
+    }, 2100);
     const t3 = window.setTimeout(() => {
       setBookPhase('done');
-      completeReveal();
+      setHandoffStyle((s) => (s ? { ...s, opacity: 0 } : s));
     }, 2360);
+    const tDone = window.setTimeout(() => completeReveal(), 2360 + 260);
     return () => {
       window.clearTimeout(t1);
       window.clearTimeout(t2);
+      window.clearTimeout(tHandoff);
       window.clearTimeout(t3);
+      window.clearTimeout(tDone);
     };
-  }, [step, open, muted, completeReveal]);
+  }, [step, open, muted, completeReveal, reduce]);
 
   if (!open || typeof document === 'undefined') return null;
 
@@ -196,152 +225,160 @@ export function DresserOnboarding({
                 </motion.div>
               )}
 
-              {/* Dresser body */}
+              {/* Dresser body — each drawer opens to reveal its question INSIDE. */}
               <div
                 className={`dresser-body ${step === 'reveal' && bookPhase !== 'hidden' ? 'dresser-body--recede' : ''}`}
-                aria-hidden
               >
-                {(['name', 'profile', 'mode', 'reveal'] as DrawerId[]).map((id, i) => {
+                {(['name', 'profile', 'mode', 'reveal'] as DrawerId[]).map((id) => {
                   const isOpen = drawerOpen === id;
                   const isReveal = id === 'reveal';
                   return (
                     <div
                       key={id}
                       className={`dresser-drawer ${isOpen ? 'is-open' : ''} ${isReveal ? 'dresser-drawer--deep' : ''}`}
-                      style={{ '--drawer-i': i } as CSSProperties}
                     >
-                      <div className="dresser-drawer__face">
-                        <span className="dresser-handle" />
+                      <div className="dresser-drawer__interior">
+                        {isOpen && id === 'name' && step === 'name' && (
+                          <>
+                            <h2 id={titleId} className="font-serif text-lg font-semibold text-[color:var(--color-ink)]">
+                              What should we call this cookbook?
+                            </h2>
+                            <p className="mt-2 font-serif text-2xl italic text-[color:var(--color-ink)]" aria-live="polite">
+                              {previewName || 'Your name'}{' '}
+                              <span className="text-[color:var(--color-ink-faint)]">Cooks</span>
+                            </p>
+                            <label className="mt-4 block text-sm text-[color:var(--color-ink-soft)]" htmlFor="dresser-name">
+                              Your name
+                            </label>
+                            <input
+                              id="dresser-name"
+                              type="text"
+                              autoFocus
+                              maxLength={40}
+                              value={ownerName}
+                              onChange={(e) => setOwnerName(e.target.value)}
+                              onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                  e.preventDefault();
+                                  submitName();
+                                }
+                              }}
+                              placeholder="e.g. Ayesha"
+                              className="mt-1.5 min-h-11 w-full rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3.5 py-2.5"
+                            />
+                            {error && (
+                              <p className="mt-2 text-sm text-[color:var(--color-danger,#b33)]" role="alert">
+                                {error}
+                              </p>
+                            )}
+                            <button
+                              type="button"
+                              disabled={animating}
+                              onClick={() => submitName()}
+                              className="mt-4 min-h-11 w-full rounded-xl bg-[color:var(--color-accent)] px-4 py-3 font-medium text-white"
+                            >
+                              Continue
+                            </button>
+                          </>
+                        )}
+
+                        {isOpen && id === 'profile' && step === 'profile' && (
+                          <>
+                            <h2 id={titleId} className="font-serif text-lg font-semibold text-[color:var(--color-ink)]">
+                              Who eats from this book?
+                            </h2>
+                            <p className="mt-1 text-sm text-[color:var(--color-ink-soft)]">
+                              Optional — plate goals and allergen flags.
+                            </p>
+                            <label className="mt-4 block text-sm" htmlFor="dresser-profile">
+                              Name
+                            </label>
+                            <input
+                              id="dresser-profile"
+                              type="text"
+                              maxLength={40}
+                              value={profileName}
+                              onChange={(e) => setProfileName(e.target.value)}
+                              placeholder="e.g. Ayesha"
+                              className="mt-1.5 min-h-11 w-full rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3.5 py-2.5"
+                            />
+                            {profileError && (
+                              <p className="mt-2 text-sm text-[color:var(--color-danger,#b33)]" role="alert">
+                                {profileError}
+                              </p>
+                            )}
+                            <button
+                              type="button"
+                              disabled={busy || animating}
+                              onClick={() => void createProfile()}
+                              className="mt-4 min-h-11 w-full rounded-xl bg-[color:var(--color-accent)] px-4 py-3 font-medium text-white"
+                            >
+                              Create profile
+                            </button>
+                            <button
+                              type="button"
+                              disabled={animating}
+                              onClick={skipProfile}
+                              className="mt-2 min-h-11 w-full text-sm text-[color:var(--color-ink-faint)]"
+                            >
+                              Skip
+                            </button>
+                          </>
+                        )}
+
+                        {isOpen && id === 'mode' && step === 'mode' && (
+                          <>
+                            <h2 id={titleId} className="font-serif text-lg font-semibold text-[color:var(--color-ink)]">
+                              How do you like to cook?
+                            </h2>
+                            <div className="mt-3 space-y-2">
+                              {QUICK_MODES.map((m) => (
+                                <button
+                                  key={m.id}
+                                  type="button"
+                                  disabled={animating}
+                                  onClick={() => pickMode(m.id)}
+                                  className="flex min-h-11 w-full flex-col rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3 py-2.5 text-left"
+                                >
+                                  <span className="font-medium text-[color:var(--color-ink)]">{m.label}</span>
+                                  <span className="text-xs text-[color:var(--color-ink-faint)]">{m.blurb}</span>
+                                </button>
+                              ))}
+                            </div>
+                            <button
+                              type="button"
+                              disabled={animating}
+                              onClick={skipMode}
+                              className="mt-3 min-h-11 w-full text-sm text-[color:var(--color-ink-faint)]"
+                            >
+                              Skip — open my book
+                            </button>
+                          </>
+                        )}
                       </div>
-                      <div className="dresser-drawer__cavity">
-                        <div className="dresser-velvet" />
+                      <div className="dresser-drawer__front" aria-hidden>
+                        <span className="dresser-handle" />
                       </div>
                     </div>
                   );
                 })}
               </div>
 
-              {/* Question card (a11y focusable — not aria-hidden) */}
-              <AnimatePresence mode="wait">
-                {drawerOpen === 'name' && step === 'name' && (
-                  <VelvetCard key="name" titleId={titleId} title="What should we call this cookbook?">
-                    <p className="font-serif text-2xl italic text-[color:var(--color-ink)]" aria-live="polite">
-                      {previewName || 'Your name'}{' '}
-                      <span className="text-[color:var(--color-ink-faint)]">Cooks</span>
-                    </p>
-                    <label className="mt-4 block text-sm text-[color:var(--color-ink-soft)]" htmlFor="dresser-name">
-                      Your name
-                    </label>
-                    <input
-                      id="dresser-name"
-                      type="text"
-                      autoFocus
-                      maxLength={40}
-                      value={ownerName}
-                      onChange={(e) => setOwnerName(e.target.value)}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                          e.preventDefault();
-                          submitName();
-                        }
-                      }}
-                      placeholder="e.g. Ayesha"
-                      className="mt-1.5 min-h-11 w-full rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3.5 py-2.5"
-                    />
-                    {error && (
-                      <p className="mt-2 text-sm text-[color:var(--color-danger,#b33)]" role="alert">
-                        {error}
-                      </p>
-                    )}
-                    <button
-                      type="button"
-                      disabled={animating}
-                      onClick={() => submitName()}
-                      className="mt-4 min-h-11 w-full rounded-xl bg-[color:var(--color-accent)] px-4 py-3 font-medium text-white"
-                    >
-                      Continue
-                    </button>
-                  </VelvetCard>
-                )}
-
-                {drawerOpen === 'profile' && step === 'profile' && (
-                  <VelvetCard key="profile" titleId={titleId} title="Who eats from this book?">
-                    <p className="text-sm text-[color:var(--color-ink-soft)]">
-                      Optional — plate goals and allergen flags.
-                    </p>
-                    <label className="mt-4 block text-sm" htmlFor="dresser-profile">
-                      Name
-                    </label>
-                    <input
-                      id="dresser-profile"
-                      type="text"
-                      maxLength={40}
-                      value={profileName}
-                      onChange={(e) => setProfileName(e.target.value)}
-                      placeholder="e.g. Ayesha"
-                      className="mt-1.5 min-h-11 w-full rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3.5 py-2.5"
-                    />
-                    {profileError && (
-                      <p className="mt-2 text-sm text-[color:var(--color-danger,#b33)]" role="alert">
-                        {profileError}
-                      </p>
-                    )}
-                    <button
-                      type="button"
-                      disabled={busy || animating}
-                      onClick={() => void createProfile()}
-                      className="mt-4 min-h-11 w-full rounded-xl bg-[color:var(--color-accent)] px-4 py-3 font-medium text-white"
-                    >
-                      Create profile
-                    </button>
-                    <button
-                      type="button"
-                      disabled={animating}
-                      onClick={skipProfile}
-                      className="mt-2 min-h-11 w-full text-sm text-[color:var(--color-ink-faint)]"
-                    >
-                      Skip
-                    </button>
-                  </VelvetCard>
-                )}
-
-                {drawerOpen === 'mode' && step === 'mode' && (
-                  <VelvetCard key="mode" titleId={titleId} title="How do you like to cook?">
-                    <div className="space-y-2">
-                      {QUICK_MODES.map((m) => (
-                        <button
-                          key={m.id}
-                          type="button"
-                          disabled={animating}
-                          onClick={() => pickMode(m.id)}
-                          className="flex min-h-11 w-full flex-col rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3 py-2.5 text-left"
-                        >
-                          <span className="font-medium text-[color:var(--color-ink)]">{m.label}</span>
-                          <span className="text-xs text-[color:var(--color-ink-faint)]">{m.blurb}</span>
-                        </button>
-                      ))}
-                    </div>
-                    <button
-                      type="button"
-                      disabled={animating}
-                      onClick={skipMode}
-                      className="mt-3 min-h-11 w-full text-sm text-[color:var(--color-ink-faint)]"
-                    >
-                      Skip — open my book
-                    </button>
-                  </VelvetCard>
-                )}
-              </AnimatePresence>
-
-              {/* Rising cookbook */}
+              {/* Rising cookbook — skin-matched leather/linen cover */}
               {step === 'reveal' && bookPhase !== 'hidden' && (
-                <div className={`dresser-book dresser-book--${bookPhase}`}>
-                  <div className="dresser-book__cover">
-                    <p className="text-[0.55rem] uppercase tracking-[0.3em] text-white/70">A Family Cookbook</p>
-                    <p className="foil-sweep-inline mt-2 font-serif text-2xl font-semibold text-white sm:text-3xl">
+                <div
+                  ref={bookRef}
+                  className={`dresser-book dresser-book--${bookPhase}`}
+                  style={handoffStyle}
+                >
+                  <div className="dresser-book__cover leather flex flex-col items-center justify-center text-center">
+                    <p className="gold-foil text-[0.55rem] uppercase tracking-[0.3em] opacity-80">
+                      A Family Cookbook
+                    </p>
+                    <p className="foil-sweep-inline gold-foil mt-2 font-serif text-2xl font-semibold sm:text-3xl">
                       {bookTitle}
                     </p>
-                    <p className="mt-2 text-xs text-white/60">Made & Kept with Love</p>
+                    <p className="gold-foil mt-2 text-xs opacity-70">Made & Kept with Love</p>
                   </div>
                 </div>
               )}
@@ -362,30 +399,5 @@ export function DresserOnboarding({
       )}
     </AnimatePresence>,
     document.body,
-  );
-}
-
-function VelvetCard({
-  titleId,
-  title,
-  children,
-}: {
-  titleId: string;
-  title: string;
-  children: ReactNode;
-}) {
-  return (
-    <motion.div
-      className="dresser-card"
-      initial={{ opacity: 0, y: 10, scale: 0.98 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: 8 }}
-      transition={{ duration: 0.26, ease: [0.22, 1, 0.36, 1] }}
-    >
-      <h2 id={titleId} className="font-serif text-xl font-semibold text-[color:var(--color-ink)]">
-        {title}
-      </h2>
-      <div className="mt-3">{children}</div>
-    </motion.div>
   );
 }
