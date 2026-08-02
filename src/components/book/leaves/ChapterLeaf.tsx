@@ -66,7 +66,7 @@ export function ChapterLeaf({ chapter }: { chapter: ChapterId }) {
         )}
 
         <ul className="mt-6 space-y-1">
-          {recipes.map((r) => (
+          {recipes.slice(0, 24).map((r) => (
             <li key={r.id}>
               <button
                 onClick={() => goToRecipe(r.id)}
@@ -83,6 +83,12 @@ export function ChapterLeaf({ chapter }: { chapter: ChapterId }) {
             </li>
           ))}
         </ul>
+        {recipes.length > 24 && (
+          <p className="mt-4 text-sm text-[color:var(--color-ink-faint)]">
+            …and {recipes.length - 24} more in the pages ahead — keep flipping, or use Search /
+            Tabs.
+          </p>
+        )}
 
         {hearted.length > 0 && (
           <>

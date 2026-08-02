@@ -9,16 +9,44 @@ export interface SearchFilters {
   cuisine?: string;
 }
 
-function score(recipe: Recipe, q: string): number {
-  const title = recipe.title.toLowerCase();
-  const haystack = [recipe.title, recipe.cuisine, CHAPTER_MAP[recipe.chapter]?.title, ...recipe.tags]
-    .join(' ')
-    .toLowerCase();
-  const ingredients = recipe.ingredients
-    .flatMap((g) => g.items.map((i) => i.item))
-    .join(' ')
-    .toLowerCase();
+/** Precomputed fields so each query skips string joins over 900+ recipes. */
+type IndexedRecipe = {
+  recipe: Recipe;
+  title: string;
+  haystack: string;
+  ingredients: string;
+};
 
+let INDEX: IndexedRecipe[] | null = null;
+let INDEX_POOL: Recipe[] | null = null;
+
+function buildIndex(pool: Recipe[]): IndexedRecipe[] {
+  return pool.map((recipe) => ({
+    recipe,
+    title: recipe.title.toLowerCase(),
+    haystack: [recipe.title, recipe.cuisine, CHAPTER_MAP[recipe.chapter]?.title, ...recipe.tags]
+      .join(' ')
+      .toLowerCase(),
+    ingredients: recipe.ingredients
+      .flatMap((g) => g.items.map((i) => i.item))
+      .join(' ')
+      .toLowerCase(),
+  }));
+}
+
+function getIndex(pool: Recipe[]): IndexedRecipe[] {
+  if (pool === RECIPES) {
+    if (!INDEX) INDEX = buildIndex(RECIPES);
+    return INDEX;
+  }
+  if (pool === INDEX_POOL && INDEX) return INDEX;
+  INDEX_POOL = pool;
+  INDEX = buildIndex(pool);
+  return INDEX;
+}
+
+function scoreIndexed(entry: IndexedRecipe, q: string): number {
+  const { title, haystack, ingredients } = entry;
   let s = 0;
   if (title === q) s += 100;
   if (title.startsWith(q)) s += 40;
@@ -44,6 +72,7 @@ export function searchRecipes(
   pool: Recipe[] = RECIPES,
 ): Recipe[] {
   const q = query.trim().toLowerCase();
+  const index = getIndex(pool);
 
   const pass = (r: Recipe) =>
     (!filters.difficulty || r.difficulty === filters.difficulty) &&
@@ -53,8 +82,8 @@ export function searchRecipes(
 
   if (!q) return pool.filter(pass);
 
-  return pool
-    .map((recipe) => ({ recipe, s: score(recipe, q) }))
+  return index
+    .map((entry) => ({ recipe: entry.recipe, s: scoreIndexed(entry, q) }))
     .filter(({ recipe, s }) => s > 0 && pass(recipe))
     .sort((a, b) => b.s - a.s)
     .map(({ recipe }) => recipe);

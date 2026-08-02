@@ -2,15 +2,18 @@
 
 import { useEffect, useRef } from 'react';
 import { useApp } from '@/components/app/AppStore';
+import { useBook } from '@/components/book/BookController';
 import { withBase } from '@/lib/base-path';
+import type { Leaf } from '@/lib/book/pages';
 
 /**
- * On enter: warm every recipe hero (+ @sm) into the browser (and SW asset
- * cache in prod). Flip lag is mostly cold image decode. One hero per recipe —
- * no step photos.
+ * Keep flips cold-start-free without decoding all 956 heroes on the main thread.
+ * - SW gets full URL list (cache only — no decode)
+ * - Browser decode window tracks the reader (±WINDOW around index)
  */
 
-const CONCURRENCY = 8;
+const CONCURRENCY = 3;
+const WINDOW = 12;
 
 function loadUrl(url: string): Promise<void> {
   return new Promise((resolve) => {
@@ -28,6 +31,8 @@ async function runPool(urls: string[], limit: number, signal: { dead: boolean })
     while (!signal.dead && i < urls.length) {
       const url = urls[i++]!;
       await loadUrl(url);
+      // Yield so page flips / search stay under the longtask budget.
+      await new Promise((r) => setTimeout(r, 0));
     }
   });
   await Promise.all(workers);
@@ -45,58 +50,60 @@ function warmServiceWorker(urls: string[]) {
     .catch(() => void 0);
 }
 
+function heroUrlsForLeaf(leaf: Leaf | undefined): string[] {
+  if (!leaf || leaf.kind !== 'recipe') return [];
+  return [withBase(`/recipes/${leaf.recipeId}.webp`), withBase(`/recipes/${leaf.recipeId}@sm.webp`)];
+}
+
 export function AssetPreloader() {
-  const { allRecipes, ready } = useApp();
-  const started = useRef(false);
+  const { allRecipes, ready, leaves } = useApp();
+  const { index } = useBook();
+  const decoded = useRef(new Set<string>());
+  const swQueued = useRef(false);
+  const signalRef = useRef({ dead: false });
 
+  // One-shot: hand full catalog to SW cache (no main-thread decode).
   useEffect(() => {
-    if (!ready || started.current) return;
-    if (allRecipes.length === 0) return;
-    started.current = true;
-
-    const signal = { dead: false };
+    if (!ready || swQueued.current || allRecipes.length === 0) return;
+    swQueued.current = true;
     const urls: string[] = [];
-    const seen = new Set<string>();
-    const add = (u: string) => {
-      if (!u || seen.has(u)) return;
-      seen.add(u);
-      urls.push(u);
-    };
-
     for (const r of allRecipes) {
       if (r.chapter === 'tips') continue;
-      add(withBase(`/recipes/${r.id}.webp`));
-      add(withBase(`/recipes/${r.id}@sm.webp`));
+      urls.push(withBase(`/recipes/${r.id}.webp`), withBase(`/recipes/${r.id}@sm.webp`));
     }
-
-    const kick = () => {
-      void runPool(urls, CONCURRENCY, signal).then(() => {
-        if (!signal.dead) warmServiceWorker(urls);
-      });
-    };
-
     const ric = (
       window as Window & {
         requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
       }
     ).requestIdleCallback;
+    const kick = () => warmServiceWorker(urls);
+    if (typeof ric === 'function') ric(kick, { timeout: 4000 });
+    else window.setTimeout(kick, 800);
+  }, [allRecipes, ready]);
 
-    let idleId = 0;
-    let timeoutId = 0;
-    if (typeof ric === 'function') {
-      idleId = ric(kick, { timeout: 1200 });
-    } else {
-      timeoutId = window.setTimeout(kick, 200);
+  // Sliding decode window around the current leaf.
+  useEffect(() => {
+    if (!ready || leaves.length === 0) return;
+    signalRef.current.dead = false;
+    const signal = signalRef.current;
+
+    const urls: string[] = [];
+    const lo = Math.max(0, index - WINDOW);
+    const hi = Math.min(leaves.length - 1, index + WINDOW);
+    for (let i = lo; i <= hi; i++) {
+      for (const u of heroUrlsForLeaf(leaves[i])) {
+        if (decoded.current.has(u)) continue;
+        decoded.current.add(u);
+        urls.push(u);
+      }
     }
+    if (urls.length === 0) return;
 
+    void runPool(urls, CONCURRENCY, signal);
     return () => {
       signal.dead = true;
-      if (idleId && 'cancelIdleCallback' in window) {
-        (window as Window & { cancelIdleCallback: (id: number) => void }).cancelIdleCallback(idleId);
-      }
-      if (timeoutId) window.clearTimeout(timeoutId);
     };
-  }, [allRecipes, ready]);
+  }, [index, leaves, ready]);
 
   return null;
 }

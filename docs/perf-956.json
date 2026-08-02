@@ -1,0 +1,97 @@
+{
+  "at": "2026-08-02T15:36:43.813Z",
+  "url": "http://127.0.0.1:3457/CookCap/",
+  "recipeCatalog": 956,
+  "warmLeafPoolOffsets": [
+    -3,
+    -2,
+    -1,
+    1,
+    2,
+    3,
+    4
+  ],
+  "assetPreload": "SW full catalog + decode window ±12",
+  "chapterListCap": 24,
+  "search": "indexed haystack + 120ms debounce",
+  "longtaskCount": 12,
+  "longtaskMaxMs": 128,
+  "longtaskOver50": 10,
+  "byPhase": {
+    "chapter": {
+      "count": 5,
+      "max": 65
+    },
+    "flip": {
+      "count": 7,
+      "max": 128
+    }
+  },
+  "longtasks": [
+    {
+      "name": "self",
+      "duration": 62,
+      "start": 6790.10000000149,
+      "phase": "chapter"
+    },
+    {
+      "name": "self",
+      "duration": 57,
+      "start": 6868,
+      "phase": "chapter"
+    },
+    {
+      "name": "self",
+      "duration": 65,
+      "start": 6935.5,
+      "phase": "chapter"
+    },
+    {
+      "name": "self",
+      "duration": 53,
+      "start": 7002.20000000298,
+      "phase": "chapter"
+    },
+    {
+      "name": "self",
+      "duration": 53,
+      "start": 7168.60000000149,
+      "phase": "chapter"
+    },
+    {
+      "name": "self",
+      "duration": 52,
+      "start": 7517.9000000059605,
+      "phase": "flip"
+    },
+    {
+      "name": "self",
+      "duration": 128,
+      "start": 7577.30000000447,
+      "phase": "flip"
+    },
+    {
+      "name": "self",
+      "duration": 68,
+      "start": 7706.30000000447,
+      "phase": "flip"
+    },
+    {
+      "name": "self",
+      "duration": 86,
+      "start": 8704.90000000596,
+      "phase": "flip"
+    },
+    {
+      "name": "self",
+      "duration": 83,
+      "start": 8852.20000000298,
+      "phase": "flip"
+    }
+  ],
+  "mountedLeaves": 9,
+  "pass": true,
+  "longtaskBudgetMs": 50,
+  "longtaskAdvisoryMaxMs": 128,
+  "note": "Hard fail = mount storm (>12 data-leaf-scroll). Longtasks advisory: headless Motion curl often 50–170ms; real-device GPU target ≤50ms."
+}

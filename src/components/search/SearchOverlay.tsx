@@ -30,6 +30,7 @@ export function SearchOverlay({
   const { recent, favorites, allRecipes, recipeMap, theme, setTheme, edition } = useApp();
   const reduce = useReducedMotion();
   const [q, setQ] = useState('');
+  const [debouncedQ, setDebouncedQ] = useState('');
   const [filters, setFilters] = useState<SearchFilters>({});
   const [recentSearches, setRecentSearches] = useState<string[]>([]);
   const [cursor, setCursor] = useState(0);
@@ -42,6 +43,7 @@ export function SearchOverlay({
   useEffect(() => {
     if (!open) return;
     setQ('');
+    setDebouncedQ('');
     setFilters({});
     setCursor(0);
     try {
@@ -54,9 +56,14 @@ export function SearchOverlay({
     requestAnimationFrame(() => inputRef.current?.focus());
   }, [open]);
 
+  useEffect(() => {
+    const t = window.setTimeout(() => setDebouncedQ(q), 120);
+    return () => window.clearTimeout(t);
+  }, [q]);
+
   const results = useMemo(
-    () => searchRecipes(q, filters, allRecipes).slice(0, 24),
-    [q, filters, allRecipes],
+    () => searchRecipes(debouncedQ, filters, allRecipes).slice(0, 24),
+    [debouncedQ, filters, allRecipes],
   );
 
   const suggestions = useMemo(() => {
@@ -76,13 +83,13 @@ export function SearchOverlay({
     return out;
   }, [favorites, recent, allRecipes, recipeMap]);
 
-  const rows = q.trim() || Object.keys(filters).some((k) => filters[k as keyof SearchFilters])
+  const rows = debouncedQ.trim() || Object.keys(filters).some((k) => filters[k as keyof SearchFilters])
     ? results
     : suggestions;
 
   useEffect(() => {
     setCursor(0);
-  }, [q, filters.difficulty, filters.maxTime]);
+  }, [debouncedQ, filters.difficulty, filters.maxTime]);
 
   useEffect(() => {
     const el = listRef.current?.querySelector(`[data-idx="${cursor}"]`) as HTMLElement | null;

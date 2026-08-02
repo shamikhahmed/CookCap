@@ -10,7 +10,15 @@ import { ForYouLeaf } from './leaves/ForYouLeaf';
 import { RecipeLeaf } from './leaves/RecipeLeaf';
 
 /** Maps a leaf descriptor to its rendered page content. */
-export function LeafView({ leaf, passive = false }: { leaf: Leaf; passive?: boolean }) {
+export function LeafView({
+  leaf,
+  passive = false,
+  prefetch = false,
+}: {
+  leaf: Leaf;
+  passive?: boolean;
+  prefetch?: boolean;
+}) {
   switch (leaf.kind) {
     case 'cover':
       return <CoverLeaf />;
@@ -25,6 +33,6 @@ export function LeafView({ leaf, passive = false }: { leaf: Leaf; passive?: bool
     case 'chapter':
       return <ChapterLeaf chapter={leaf.chapter} />;
     case 'recipe':
-      return <RecipeLeaf recipeId={leaf.recipeId} passive={passive} />;
+      return <RecipeLeaf recipeId={leaf.recipeId} passive={passive} prefetch={prefetch} />;
   }
 }

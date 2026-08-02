@@ -30,14 +30,45 @@ const URDU_HINT = /\b(mein|ker|dein|lein|aur|per|karein|dal|phir|tak|ubal|pheela
 function looksRomanUrdu(text: string): boolean {
   return (text.match(new RegExp(URDU_HINT.source, 'gi')) || []).length >= 2;
 }
-export function RecipeLeaf({ recipeId, passive = false }: { recipeId: string; passive?: boolean }) {
+export function RecipeLeaf({
+  recipeId,
+  passive = false,
+  prefetch = false,
+}: {
+  recipeId: string;
+  passive?: boolean;
+  prefetch?: boolean;
+}) {
   const { recipeMap } = useApp();
   const recipe = recipeMap[recipeId];
   if (!recipe) return null;
-  return <RecipeContent recipe={recipe} passive={passive} />;
+  if (passive) return <WarmRecipeShell recipe={recipe} />;
+  return <RecipeContent recipe={recipe} prefetch={prefetch} />;
 }
 
-function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: boolean }) {
+/** Neighbor warm only — hero decode + title, no method DOM. */
+function WarmRecipeShell({ recipe }: { recipe: Recipe }) {
+  const chapter = CHAPTER_MAP[recipe.chapter] ?? CHAPTER_MAP.pakistani!;
+  return (
+    <article data-leaf-scroll className="paper-grain h-full w-full overflow-hidden" aria-hidden>
+      <div className="relative aspect-[16/11] w-full overflow-hidden sm:aspect-[16/10]">
+        <RecipeImage
+          recipeId={recipe.id}
+          seed={recipe.heroSeed}
+          tab={chapter.tab}
+          alt=""
+          priority={false}
+          sizes="(max-width: 640px) 100vw, 560px"
+        />
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+          <h2 className="font-serif text-xl font-bold text-white">{recipe.title}</h2>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?: boolean }) {
   const chapter = CHAPTER_MAP[recipe.chapter] ?? CHAPTER_MAP.pakistani!;
   const {
     isFavorite,
@@ -65,6 +96,8 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
   const [shopFlash, setShopFlash] = useState(false);
   const [shareFlash, setShareFlash] = useState(false);
   const [logOpen, setLogOpen] = useState(false);
+  /** Prefetch neighbors paint full body off-screen; active leaf defers body one frame. */
+  const [bodyReady, setBodyReady] = useState(prefetch);
   const factor = servings / recipe.servings;
   const related = relatedFor(recipe, 4, allRecipes);
   const noteTimer = useRef<number | null>(null);
@@ -103,13 +136,29 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
     mode === 'budget' ? formatCost(estCostPkr(recipe), currency) : null;
 
   useEffect(() => {
-    if (passive) return;
+    if (prefetch) {
+      setBodyReady(true);
+      return;
+    }
+    setBodyReady(false);
+    let inner = 0;
+    const outer = requestAnimationFrame(() => {
+      inner = requestAnimationFrame(() => setBodyReady(true));
+    });
+    return () => {
+      cancelAnimationFrame(outer);
+      if (inner) cancelAnimationFrame(inner);
+    };
+  }, [recipe.id, prefetch]);
+
+  useEffect(() => {
+    if (prefetch) return;
     markViewed(recipe.id);
     store.getRating(recipe.id).then(setRating).catch(() => void 0);
     store.getNote(recipe.id).then(setNote).catch(() => void 0);
     setServings(recipe.servings);
     setDone(new Set());
-  }, [recipe.id, recipe.servings, markViewed, passive]);
+  }, [recipe.id, recipe.servings, markViewed, prefetch]);
 
   useEffect(() => {
     return () => {
@@ -150,7 +199,7 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
           seed={recipe.heroSeed}
           tab={chapter.tab}
           alt={`${recipe.title} — ${recipe.tagline}`}
-          priority={!passive}
+          priority
           sizes="(max-width: 640px) 100vw, 560px"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -185,6 +234,10 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
         <p className="font-serif text-lg italic text-[color:var(--color-ink-soft)] text-balance">
           {recipe.tagline}
         </p>
+        {!bodyReady ? (
+          <p className="mt-6 text-sm text-[color:var(--color-ink-faint)]">Opening recipe…</p>
+        ) : (
+        <>
         <div className="mt-3">
           <FitBadge recipe={recipe} />
         </div>
@@ -689,6 +742,8 @@ function RecipeContent({ recipe, passive = false }: { recipe: Recipe; passive?: 
         )}
 
         <div className="h-6" />
+        </>
+        )}
       </div>
     </article>
   );
