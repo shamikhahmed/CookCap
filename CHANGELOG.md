@@ -3,7 +3,7 @@
 ## 2.4.2 — 2026-08-03
 
 ### Fix
-- **CI:** `npx playwright install chromium` + serve `out/` under `/CookCap` before `gate:anti-2d` (Pages was red)
+- **CI:** serve `out/` under `/CookCap` before `gate:anti-2d`; force dresser via `cookcap-force-dresser` (CI ≤4 cores used Simple onboard)
 - RecipeImage skips 404 when no manifest — generated art immediately
 - Boot scrub: favorites + history + ratings + notes + meal-plan orphans / `mdb-*`
 - Meal planner: scrub dead slots, Clear missing, save errors surfaced

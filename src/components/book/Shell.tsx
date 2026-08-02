@@ -60,6 +60,8 @@ function Frame() {
   const [welcomeReady, setWelcomeReady] = useState(false);
   const reduceMotion = useReducedMotion();
   const [lowPower, setLowPower] = useState(false);
+  /** Gate / QA: localStorage cookcap-force-dresser=1 keeps 3D dresser on low-CPU CI. */
+  const [forceDresser, setForceDresser] = useState(false);
 
   useEffect(() => {
     if (!needsName) {
@@ -73,13 +75,14 @@ function Frame() {
   useEffect(() => {
     try {
       setLowPower(typeof navigator !== 'undefined' && (navigator.hardwareConcurrency ?? 8) <= 4);
+      setForceDresser(localStorage.getItem('cookcap-force-dresser') === '1');
     } catch {
       setLowPower(false);
     }
   }, []);
 
   const firstRunOpen = Boolean(needsName && welcomeReady);
-  const useSimpleOnboard = Boolean(reduceMotion || lowPower);
+  const useSimpleOnboard = Boolean(!forceDresser && (reduceMotion || lowPower));
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {

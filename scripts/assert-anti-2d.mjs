@@ -78,7 +78,10 @@ async function seedOnboarding(page) {
     localStorage.setItem('cookcap-theme', 'light');
     localStorage.setItem('cookcap-skin', 'editorial');
     localStorage.setItem('cookcap-tabs', 'paper');
+    // CI runners often have ≤4 cores → Shell picks Simple onboard. Force dresser for 3D gate.
+    localStorage.setItem('cookcap-force-dresser', '1');
   });
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
   await page.goto(BASE, { waitUntil: 'networkidle' });
   await page.waitForSelector('.dresser-scene', { timeout: 20000 });
   await settle(page, 500);
@@ -235,10 +238,12 @@ async function assertDresser3d(page) {
 
 async function main() {
   const browser = await chromium.launch({ headless: true });
-  const page = await browser.newPage({
+  const context = await browser.newContext({
     viewport: { width: 1280, height: 800 },
     deviceScaleFactor: 2,
+    reducedMotion: 'no-preference',
   });
+  const page = await context.newPage();
 
   const all = [];
   let failed = 0;
