@@ -156,7 +156,7 @@ async function captureDresserOnboarding(page, folder) {
   await page.locator('#dresser-name').fill(DEMO);
   // Playwright pointer click flaky on velvet interior — DOM click is reliable
   await page
-    .locator('.dresser-drawer.is-open .dresser-drawer__interior')
+    .locator('.dresser-drawer.is-open .dresser-drawer__content')
     .getByRole('button', { name: 'Continue' })
     .evaluate((el) => /** @type {HTMLElement} */ (el).click());
   await page.getByRole('heading', { name: /Who eats/i }).waitFor({ state: 'visible', timeout: 15000 });
@@ -164,10 +164,10 @@ async function captureDresserOnboarding(page, folder) {
   await shot(page, `${folder}/dresser/00c-profile.png`);
 
   await page
-    .locator('.dresser-drawer.is-open .dresser-drawer__interior button')
+    .locator('.dresser-drawer.is-open .dresser-drawer__content button')
     .filter({ hasText: /^Skip$/ })
     .evaluate((el) => /** @type {HTMLElement} */ (el).click());
-  await settle(page, 500);
+  await settle(page, 600);
   await page.getByRole('heading', { name: /How do you like to cook/i }).waitFor({
     state: 'visible',
     timeout: 15000,
@@ -176,7 +176,7 @@ async function captureDresserOnboarding(page, folder) {
   await shot(page, `${folder}/dresser/00d-mode.png`);
 
   await page
-    .locator('.dresser-drawer.is-open .dresser-drawer__interior button')
+    .locator('.dresser-drawer.is-open .dresser-drawer__content button')
     .filter({ hasText: /Skip — open my book/ })
     .evaluate((el) => /** @type {HTMLElement} */ (el).click());
   await settle(page, 400);
@@ -452,6 +452,42 @@ async function captureAppearanceMatrix(page, folder) {
   await page.keyboard.press('Escape');
 }
 
+/** All 4 tab styles × 2 skins — for owner pick (do not change default). */
+async function captureTabOptions(page, folder) {
+  const styles = ['cloth', 'index', 'top', 'pills'];
+  const skins = ['editorial', 'candlelit'];
+  mkdirSync(join(OUT, folder, 'tabs'), { recursive: true });
+
+  for (const skin of skins) {
+    for (const tabs of styles) {
+      await page.goto(BASE, { waitUntil: 'domcontentloaded', timeout: 60000 });
+      await page.evaluate(
+        ({ skin, tabs, name }) => {
+          localStorage.clear();
+          localStorage.setItem('cookcap-skin', skin);
+          localStorage.setItem('cookcap-tabs', tabs);
+          localStorage.setItem('cookcap-readmode', 'flip');
+          localStorage.setItem('cookcap-theme', 'light');
+          localStorage.setItem('cookcap-owner', name);
+          localStorage.setItem('cookcap-onboarded', '1');
+          localStorage.setItem('cookcap-pos', '0');
+          document.documentElement.setAttribute('data-skin', skin);
+          document.documentElement.setAttribute('data-tabs', tabs);
+          document.documentElement.setAttribute('data-theme', 'light');
+        },
+        { skin, tabs, name: DEMO },
+      );
+      await page.goto(`${BASE}/?for=${encodeURIComponent(DEMO)}`, {
+        waitUntil: 'domcontentloaded',
+        timeout: 60000,
+      });
+      await waitFooterReady(page, 60000);
+      await settle(page, 700);
+      await shot(page, `${folder}/tabs/${tabs}-${skin}.png`);
+    }
+  }
+}
+
 async function main() {
   console.log(`Gallery → ${OUT}`);
   console.log(`Base URL ${BASE} · recipe ${RECIPE} · demo ${DEMO}`);
@@ -472,6 +508,8 @@ async function main() {
     await captureSet(page, 'desktop');
     console.log('Desktop appearance matrix…');
     await captureAppearanceMatrix(page, 'desktop');
+    console.log('Desktop tab options…');
+    await captureTabOptions(page, 'desktop');
     await context.close();
 
     // Dresser stills
@@ -501,6 +539,8 @@ async function main() {
     await captureSet(page, 'mobile');
     console.log('Mobile appearance matrix…');
     await captureAppearanceMatrix(page, 'mobile');
+    console.log('Mobile tab options…');
+    await captureTabOptions(page, 'mobile');
     await context.close();
 
     const dresserCtx = await browser.newContext({

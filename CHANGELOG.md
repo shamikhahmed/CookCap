@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.2.7 — 2026-08-02
+
+### Fix (onboarding keyboard)
+- **`useDialogA11y`** — `onClose` in ref; no longer in effect deps (keystroke no longer re-steals focus / dismisses mobile keyboard)
+- Dresser / Simple / NameGate: stable close + `initialFocus: 'none'` so input `autoFocus` holds
+
+### Feat (Dresser v3)
+- True 3D pull-out (`rotateX` camera + `translateZ` drawer), carved letterpress question, brass-rimmed paper slot, wooden mode tags
+- Timing: open 520ms / close 380ms + 120ms beat; reveal FLIP kept
+
+### Chore
+- Gallery: all 4 tab styles × editorial/candlelit (desktop + phone) for owner pick — **default unchanged**
+- SW → `cookcap-v13`
+
 ## 2.2.6 — 2026-08-02
 
 ### Feat / fix (dresser reveal + safe-area chrome)

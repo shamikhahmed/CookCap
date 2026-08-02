@@ -1,6 +1,6 @@
 # CookCap — Handover
 
-Heirloom family cookbook PWA (Cap family). Version **2.2.6**.
+Heirloom family cookbook PWA (Cap family). Version **2.2.7**.
 
 ## Live
 
@@ -10,7 +10,7 @@ Next `output: 'export'` + Actions Pages. `NEXT_PUBLIC_BASE_PATH=/CookCap` on CI.
 
 ## Stack
 
-Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v3 · SW `cookcap-v12`
+Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v3 · SW `cookcap-v13`
 
 ## Run
 
@@ -30,9 +30,9 @@ npm run gallery   # prefer: npm run build && python3 -m http.server 3456 --direc
 
 ## Dresser
 
-- Question lives in `.dresser-drawer__interior` (velvet); wood `__front` + handle below
-- Reveal: `db-rise` → `db-turn` → `db-settle` → FLIP onto `.book-frame` (~260ms)
-- Cover art = `.leather` (linen light skins / leather dark)
+- v3: 3D pull-out drawers (`translateZ` + body `rotateX`); question letterpress-carved; brass paper slot
+- `useDialogA11y` holds `onClose` in ref — never pass inline `() => …` for focus stability (still safe if you do)
+- Reveal: `db-rise` → `db-turn` → `db-settle` → FLIP onto `.book-frame`
 
 ## Lenses (additive — Reader = pure book)
 

@@ -1,21 +1,19 @@
 # CookCap — Presentation
 
-**v2.2.6** · https://shamikhahmed.github.io/CookCap/
+**v2.2.7** · https://shamikhahmed.github.io/CookCap/
 
 ## Pitch
 
-CookCap opens like a hardcover. Name the book (Dresser ceremony — question inside the drawer — or calm Simple path). Flip offline. Optional lenses for goals, family cooking, budget — never required.
+CookCap opens like a hardcover. Name the book (3D dresser — carved question in the drawer — or calm Simple path). Flip offline. Optional lenses — never required.
 
 ## Demo
 
-1. First-run → Begin → open drawer (question inside) → reveal rises → lands as cover `{Name} Cooks`
-2. (Optional) My Plate / Mother / Budget from Mode
-3. Flip → For You / fit badge → Log this → Calendar
-4. Appearance (palette) → skins / cloth tabs / Flip vs Fast
-5. ··· → Reader restores pure book
+1. First-run → Begin → drawer pulls out → type name (keyboard stays) → reveal → cover
+2. Appearance → try tab styles (Cloth / Side Index / Top / Pills) — pick your favorite
+3. Flip → cook · search · shopping
 
 ## Status
 
-Phases 0–12 shipped. **v2.2.6** = interior drawers + reveal FLIP + safe-area chrome (`cookcap-v12`). Cloud sync still out of scope.
+**v2.2.7** = keyboard fix + Dresser v3 + tab option gallery (`cookcap-v13`). Cloud sync out of scope.
 
-Gallery: [docs/gallery/README.md](./docs/gallery/README.md)
+Gallery: [docs/gallery/README.md](./docs/gallery/README.md) — see `tabs/` for bookmark choices.
