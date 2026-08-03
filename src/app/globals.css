@@ -1530,8 +1530,8 @@
   /* Wood tokens inherit from skin :root --dr-wood*; scene = same table as reading desk */
   --dr-brass: #c9a24a;
   --dr-brass-hi: #f0e0a8;
-  --dr-open: 520ms;
-  --dr-close: 380ms;
+  --dr-open: 560ms;
+  --dr-close: 340ms;
   --dr-z: 150px;
   --dr-tilt: 16deg;
   perspective: 1200px;
@@ -1605,24 +1605,62 @@
   background: radial-gradient(ellipse at center, color-mix(in srgb, var(--color-accent) 32%, transparent), transparent 72%);
   pointer-events: none;
   z-index: 0;
+  animation: dresser-lamp-breathe 6s var(--e-inout, cubic-bezier(0.65, 0, 0.35, 1)) infinite;
+  transform-origin: center top;
 }
-.dresser-lamp::after {
-  content: '';
+.dresser-motes {
   position: absolute;
-  inset: 20% 30%;
-  background:
-    radial-gradient(circle at 30% 40%, color-mix(in srgb, #fff 35%, transparent) 0 1px, transparent 2px),
-    radial-gradient(circle at 70% 55%, color-mix(in srgb, #fff 28%, transparent) 0 1px, transparent 2px),
-    radial-gradient(circle at 45% 70%, color-mix(in srgb, #fff 22%, transparent) 0 1px, transparent 2px);
-  animation: dresser-dust 8s linear infinite;
-  opacity: 0.55;
+  inset: 8% 18% 30%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+.dresser-mote {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: color-mix(in srgb, #fff 55%, transparent);
+  filter: blur(0.5px);
+  opacity: 0;
+  animation: dresser-mote-drift var(--mote-dur, 11s) var(--e-soft, ease) infinite;
+  animation-delay: var(--mote-delay, 0s);
+}
+@keyframes dresser-lamp-breathe {
+  0%,
+  100% {
+    opacity: 0.85;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.02);
+  }
+}
+@keyframes dresser-mote-drift {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.4;
+  }
+  85% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .dresser-lamp::after { animation: none; opacity: 0.3; }
-}
-@keyframes dresser-dust {
-  from { transform: translateY(0); opacity: 0.4; }
-  to { transform: translateY(-18px); opacity: 0.15; }
+  .dresser-lamp {
+    animation: none;
+    opacity: 0.9;
+  }
+  .dresser-motes {
+    display: none;
+  }
 }
 .dresser-plate {
   position: relative;
@@ -1652,8 +1690,8 @@
     inset 0 1px 0 color-mix(in srgb, #fff 28%, transparent),
     inset 0 -8px 16px color-mix(in srgb, #000 18%, transparent);
   transition:
-    transform var(--dresser-recede, 700ms) var(--ease-out-soft, cubic-bezier(0.22, 1, 0.36, 1)),
-    opacity var(--dresser-recede, 700ms) var(--ease-out-soft, cubic-bezier(0.22, 1, 0.36, 1));
+    transform var(--dresser-recede, 700ms) var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1)),
+    opacity var(--dresser-recede, 700ms) var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1));
 }
 .dresser-body--recede {
   /* Sink into the table surface (Part 2 §A t=1400) */
@@ -1664,26 +1702,65 @@
 }
 .dresser-body--recede .dresser-drawer.is-open {
   transform: translateZ(0) translateY(0);
+  animation: none;
 }
 
-/* Drawer = 3D box that pulls toward viewer */
+/* Drawer = 3D box that pulls toward viewer (animation bible §2–3) */
 .dresser-drawer {
   position: relative;
   margin-top: 0.55rem;
   height: 3.15rem;
   transform-style: preserve-3d;
   transition:
-    transform var(--dr-open) var(--ease-out-soft, cubic-bezier(0.22, 1, 0.36, 1)),
-    height var(--dr-open) var(--ease-out-soft, cubic-bezier(0.22, 1, 0.36, 1)),
-    box-shadow var(--dr-open) var(--ease-out-soft, cubic-bezier(0.22, 1, 0.36, 1));
-  transform: translateZ(0);
+    transform var(--dr-close) var(--e-wood-in, cubic-bezier(0.5, 0, 0.75, 0.2)),
+    height var(--dr-close) var(--e-wood-in, cubic-bezier(0.5, 0, 0.75, 0.2)),
+    box-shadow var(--dr-close) var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1)),
+    filter var(--dr-close) var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1));
+  transform: translateZ(0) translateY(0);
 }
 .dresser-drawer.is-open {
   height: auto;
   min-height: 12rem;
-  transform: translateZ(var(--dr-z)) translateY(10px);
   z-index: 4;
   filter: drop-shadow(0 18px 22px color-mix(in srgb, #000 38%, transparent));
+  animation: dresser-drawer-open var(--dr-open) var(--e-wood-out, cubic-bezier(0.16, 0.84, 0.3, 1)) both;
+}
+.dresser-drawer.is-closing {
+  height: auto;
+  min-height: 12rem;
+  z-index: 4;
+  animation: dresser-drawer-close var(--dr-close) var(--e-wood-in, cubic-bezier(0.5, 0, 0.75, 0.2)) both;
+}
+@keyframes dresser-drawer-open {
+  0% {
+    transform: translateZ(0) translateY(0);
+  }
+  11% {
+    transform: translateZ(18px) translateY(0);
+  }
+  90% {
+    transform: translateZ(var(--dr-z)) translateY(10px);
+  }
+  95% {
+    transform: translateZ(calc(var(--dr-z) - 4px)) translateY(10px);
+  }
+  100% {
+    transform: translateZ(var(--dr-z)) translateY(10px);
+  }
+}
+@keyframes dresser-drawer-close {
+  0% {
+    transform: translateZ(var(--dr-z)) translateY(10px);
+  }
+  88% {
+    transform: translateZ(0) translateY(0);
+  }
+  94% {
+    transform: translateZ(6px) translateY(0);
+  }
+  100% {
+    transform: translateZ(0) translateY(0);
+  }
 }
 .dresser-drawer--deep.is-open {
   min-height: 4.5rem;
@@ -1739,18 +1816,20 @@
   opacity: 0;
   overflow: hidden;
   padding: 0 1rem;
-  transform: rotateX(calc(var(--dr-tilt) * -1));
+  transform: rotateX(calc(var(--dr-tilt) * -1)) translateY(12px) scale(0.98);
   transform-origin: center top;
   transition:
-    max-height var(--dr-open) var(--ease-out-soft, cubic-bezier(0.22, 1, 0.36, 1)),
-    opacity 260ms ease 180ms,
-    padding var(--dr-open) var(--ease-out-soft, cubic-bezier(0.22, 1, 0.36, 1));
+    max-height var(--dr-open) var(--e-wood-out, cubic-bezier(0.16, 0.84, 0.3, 1)),
+    opacity 260ms var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1)) 180ms,
+    padding var(--dr-open) var(--e-wood-out, cubic-bezier(0.16, 0.84, 0.3, 1)),
+    transform 260ms var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1)) 180ms;
 }
 .dresser-drawer__content.is-visible {
   max-height: 28rem;
   opacity: 1;
   padding: 1rem 1rem 1.15rem;
   margin-bottom: 0.15rem;
+  transform: rotateX(calc(var(--dr-tilt) * -1)) translateZ(8px) translateY(0) scale(1);
   /* Always-light parchment card — readable on every skin (incl. candlelit) */
   --dr-card: #fbf7ee;
   --dr-card-deep: #efe4d0;
@@ -1760,6 +1839,18 @@
     inset 0 1px 0 color-mix(in srgb, #fff 55%, transparent),
     0 2px 10px color-mix(in srgb, #000 28%, transparent);
   color: #1a120e;
+}
+.dresser-drawer.is-closing .dresser-drawer__content {
+  animation: dresser-content-jiggle 120ms var(--ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1));
+}
+@keyframes dresser-content-jiggle {
+  0%,
+  100% {
+    transform: rotateX(calc(var(--dr-tilt) * -1)) translateY(0);
+  }
+  50% {
+    transform: rotateX(calc(var(--dr-tilt) * -1)) translateY(2px) rotate(0.3deg);
+  }
 }
 .dresser-drawer__front {
   position: relative;
@@ -1792,6 +1883,15 @@
     0 2px 4px color-mix(in srgb, #000 45%, transparent),
     inset 0 1px 0 color-mix(in srgb, #fff 55%, transparent),
     inset 0 -1px 1px color-mix(in srgb, #000 30%, transparent);
+  transition: filter 180ms var(--e-soft, ease), box-shadow 180ms var(--e-soft, ease);
+}
+.dresser-drawer__front:hover .dresser-handle,
+.dresser-drawer__front:focus-visible .dresser-handle {
+  filter: brightness(1.18) saturate(1.1);
+  box-shadow:
+    0 2px 6px color-mix(in srgb, #000 40%, transparent),
+    inset 0 1px 0 color-mix(in srgb, #fff 75%, transparent),
+    0 0 10px color-mix(in srgb, var(--dr-brass-hi) 45%, transparent);
 }
 
 /* Carved letterpress question — on parchment liner */
@@ -1912,13 +2012,16 @@
 @media (prefers-reduced-motion: reduce) {
   .dresser-body { transform: none; }
   .dresser-drawer,
-  .dresser-drawer.is-open {
+  .dresser-drawer.is-open,
+  .dresser-drawer.is-closing {
     transform: none;
     transition: none;
+    animation: none;
   }
   .dresser-drawer__content {
     transform: none;
     transition: none;
+    animation: none;
   }
 }
 
@@ -1963,10 +2066,10 @@
   opacity: 0.85;
 }
 .dresser-book--rise {
-  animation: db-rise 900ms var(--ease-out-soft, cubic-bezier(0.22, 1, 0.36, 1)) both;
+  animation: db-rise 900ms var(--e-wood-out, cubic-bezier(0.16, 0.84, 0.3, 1)) both;
 }
 .dresser-book--turn {
-  animation: db-turn 700ms var(--ease-out-soft, cubic-bezier(0.22, 1, 0.36, 1)) both;
+  animation: db-turn 700ms var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1)) both;
 }
 .dresser-book--settle,
 .dresser-book--done {
@@ -1975,18 +2078,27 @@
 .dresser-book--handoff {
   animation: none !important;
   transition:
-    left 260ms ease,
-    top 260ms ease,
-    width 260ms ease,
-    height 260ms ease,
-    opacity 260ms ease,
-    transform 260ms ease;
+    left 260ms var(--e-soft, ease),
+    top 260ms var(--e-soft, ease),
+    width 260ms var(--e-soft, ease),
+    height 260ms var(--e-soft, ease),
+    opacity 260ms var(--e-soft, ease),
+    transform 260ms var(--e-soft, ease);
   transform: none;
   transform-origin: top left;
 }
 .dresser-book--handoff .dresser-book__shadow {
   opacity: 0;
-  transition: opacity 200ms ease;
+  transition: opacity 200ms var(--e-soft, ease);
+}
+.dresser-book--rise,
+.dresser-book--turn,
+.dresser-book--settle {
+  will-change: transform, opacity;
+}
+.dresser-book--done,
+.dresser-book--handoff {
+  will-change: auto;
 }
 .dresser-book__cover {
   height: 100%;

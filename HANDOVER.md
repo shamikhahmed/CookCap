@@ -1,6 +1,6 @@
 # CookCap — Handover
 
-Heirloom family cookbook PWA (Cap family). Version **3.3.0**.
+Heirloom family cookbook PWA (Cap family). Version **3.3.1**.
 
 ## Live
 
@@ -10,7 +10,7 @@ Next `output: 'export'` + Actions Pages. `NEXT_PUBLIC_BASE_PATH=/CookCap` on CI.
 
 ## Stack
 
-Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v4 (`cookcap`, migrates `jia-cooks`) · SW `cookcap-v34`
+Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v4 (`cookcap`, migrates `jia-cooks`) · SW `cookcap-v35`
 
 Heroes locked: `src/lib/recipes/images.lock.json` — rematch/fill need `--force-unlock`.  
 Gates: `gate:recipes` · `gate:anti-2d` · `gate:wood` · `smoke:product` (CI after build).  
@@ -39,11 +39,13 @@ GATE_URL=http://127.0.0.1:3456/CookCap npm run gate:wood
 - Tokens: `--safe-t/b/l/r`, `--header-h`, `--footer-h`, `--chrome-total`
 - `.app-header` / `.app-footer` carry insets; desk is `100dvh` flex column
 - Footer nav: Home · ±5 · prev/next · **page scrubber** · tap page count → go-to #
-- **v3.3.0** reading desk = real wood (`--dr-wood`), not cream; phone chrome wood-tinted
+- **v3.2.0** reading desk = real wood (`--dr-wood`), not cream; phone chrome wood-tinted
+- **v3.3.1** dresser animation bible — idle (lamp/motes/parallax) + wood drawer open/close
 
 ## Dresser
 
 - Dressing table onboard → book lands on **same** wooden table → paper tabs stuck to wood
+- **v3.3.1** — lamp breathe, dust motes, ≤±4° mouse parallax; drawer break-free open + thunk close
 - Escape during dresser confirms before skip
 - Low CPU / reduced motion → Simple onboard (`OnboardingFlow`)
 

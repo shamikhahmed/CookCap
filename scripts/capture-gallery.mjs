@@ -18,7 +18,7 @@ const RECIPE = process.env.GALLERY_RECIPE || 'butter-chicken';
 /** Demo edition — not a hard-coded product name */
 const DEMO = 'Ayesha';
 /** Keep in sync with src/lib/version.ts — suppresses What’s new sheet. */
-const APP_VER = '3.3.0';
+const APP_VER = '3.3.1';
 
 mkdirSync(join(OUT, 'desktop'), { recursive: true });
 mkdirSync(join(OUT, 'mobile'), { recursive: true });
@@ -509,9 +509,13 @@ async function captureBookChrome(page, folder) {
   await waitFooterPage(page, 5);
   await shot(page, `${folder}/11-chapter.png`);
 
+  await page.evaluate((ver) => localStorage.setItem('cookcap-whats-new', ver), APP_VER);
+  await page.locator('[role="dialog"][aria-labelledby="whats-new-title"] button').first().click({ timeout: 1500 }).catch(() => {});
+  await settle(page, 200);
+
   const tabs = page.getByRole('button', { name: 'Open chapter tabs' });
   if (await tabs.isVisible().catch(() => false)) {
-    await tabs.click();
+    await tabs.click({ force: true });
     await page.getByText(/Chapters|Pakistani/i).first().waitFor({ state: 'visible', timeout: 8000 });
     await settle(page, 400);
     await shot(page, `${folder}/12-tabs-sheet.png`);

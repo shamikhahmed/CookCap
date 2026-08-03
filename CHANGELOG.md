@@ -1,5 +1,17 @@
 # Changelog
 
+## 3.3.1 — 2026-08-04
+
+### Feat
+- **Animation bible Act III** — dresser idle (lamp breathe, dust motes, ≤±4° mouse parallax); drawer open break-free + stop bounce (`--e-wood-out` 560ms); close wood-in + thunk recoil + content jiggle (`--e-wood-in` 340ms); content depth settle `translateZ(8)`
+- Brass handle hover shimmer; book rise/turn use wood easings
+
+### Docs
+- Capricorn + HANDOVER sync for dresser motion ship
+
+### Chore
+- SW → `cookcap-v35`
+
 ## 3.3.0 — 2026-08-04
 
 ### Fix

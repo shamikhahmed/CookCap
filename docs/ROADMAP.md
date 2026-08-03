@@ -4,7 +4,7 @@ Master phase map. **Icebox ≠ promise.**
 
 Live: https://shamikhahmed.github.io/CookCap/
 
-## Pillar scorecard (after 3.3.0)
+## Pillar scorecard (after 3.3.1)
 
 | Pillar | Score 1–5 | Note |
 |--------|-----------|------|
@@ -39,6 +39,7 @@ Live: https://shamikhahmed.github.io/CookCap/
 | **Wood** | Reader wood + world catalog | **Shipped 3.2.0** |
 | **Paper** | Even dark-skin leaf wash | **Shipped 3.2.1** |
 | **Stability** | Stale-SW crash + error screens | **Shipped 3.3.0** |
+| **Motion** | Dresser idle + drawer wood physics | **Shipped 3.3.1** |
 
 ## P15 — Hard nos
 

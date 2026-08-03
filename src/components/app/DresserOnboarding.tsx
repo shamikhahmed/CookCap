@@ -2,11 +2,19 @@
 
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react';
 import { createPortal } from 'react-dom';
-import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import {
+  AnimatePresence,
+  motion,
+  useMotionValue,
+  useReducedMotion,
+  useSpring,
+  useTransform,
+} from 'motion/react';
 import { PRODUCT_NAME } from '@/lib/edition';
 import { PRODUCT_TAGLINE } from '@/lib/version';
 import { useDialogA11y } from '@/lib/a11y/dialog';
 import { playBookStamp, playDrawerClose, playDrawerOpen } from '@/lib/sound/dresser';
+import { EASE_OUT_SOFT } from '@/lib/motion';
 import { QUICK_MODES, useOnboardingSteps, type OnboardStep } from './onboarding/useOnboardingSteps';
 
 type DrawerId = 'name' | 'profile' | 'mode' | 'reveal';
@@ -17,6 +25,16 @@ const DRAWER_FOR_STEP: Partial<Record<OnboardStep, DrawerId>> = {
   mode: 'mode',
   reveal: 'reveal',
 };
+
+const MOTES = [
+  { left: '18%', top: '62%', dur: '10s', delay: '0s' },
+  { left: '32%', top: '48%', dur: '12s', delay: '1.2s' },
+  { left: '48%', top: '70%', dur: '9s', delay: '2.4s' },
+  { left: '61%', top: '40%', dur: '14s', delay: '0.6s' },
+  { left: '72%', top: '58%', dur: '11s', delay: '3.1s' },
+  { left: '40%', top: '35%', dur: '13s', delay: '4s' },
+  { left: '55%', top: '78%', dur: '8s', delay: '1.8s' },
+] as const;
 
 /**
  * 3D dresser first-run ceremony. Portal z-100. One drawer at a time.
@@ -34,6 +52,7 @@ export function DresserOnboarding({
   const muted = !api.soundOn;
 
   const [drawerOpen, setDrawerOpen] = useState<DrawerId | null>(null);
+  const [closingId, setClosingId] = useState<DrawerId | null>(null);
   const [animating, setAnimating] = useState(false);
   const [bookPhase, setBookPhase] = useState<'hidden' | 'rise' | 'turn' | 'settle' | 'handoff' | 'done'>(
     'hidden',
@@ -42,6 +61,14 @@ export function DresserOnboarding({
   const [handoffStyle, setHandoffStyle] = useState<CSSProperties | undefined>();
   const prevStep = useRef<OnboardStep | null>(null);
   const bookRef = useRef<HTMLDivElement>(null);
+  const stageRef = useRef<HTMLDivElement>(null);
+
+  const parallaxX = useMotionValue(0);
+  const parallaxY = useMotionValue(0);
+  const springX = useSpring(parallaxX, { stiffness: 60, damping: 14 });
+  const springY = useSpring(parallaxY, { stiffness: 60, damping: 14 });
+  const stageRotateY = useTransform(springX, [-1, 1], [-4, 4]);
+  const stageRotateX = useTransform(springY, [-1, 1], [4, -4]);
 
   const {
     step,
@@ -78,6 +105,7 @@ export function DresserOnboarding({
     if (!open) return;
     if (step === 'welcome') {
       setDrawerOpen(null);
+      setClosingId(null);
       setBookPhase('hidden');
       setRecede(false);
       prevStep.current = step;
@@ -87,16 +115,19 @@ export function DresserOnboarding({
     if (!id) return;
 
     const switching = prevStep.current !== null && prevStep.current !== step;
+    const prevDrawer = prevStep.current ? DRAWER_FOR_STEP[prevStep.current] : null;
     prevStep.current = step;
     setAnimating(true);
 
     let openT = 0;
-    const closeMs = switching ? 380 + 120 : 0;
+    const closeMs = switching ? 340 + 80 : 0;
     if (switching) {
       playDrawerClose(muted);
+      if (prevDrawer) setClosingId(prevDrawer);
       setDrawerOpen(null);
     }
     openT = window.setTimeout(() => {
+      setClosingId(null);
       setDrawerOpen(id);
       playDrawerOpen(muted);
       setAnimating(false);
@@ -104,6 +135,35 @@ export function DresserOnboarding({
 
     return () => window.clearTimeout(openT);
   }, [step, open, muted]);
+
+  /** Mouse parallax on dresser (bible §1) — desktop only, RM off. */
+  useEffect(() => {
+    if (!open || reduce) return;
+    const fine = window.matchMedia('(pointer: fine)').matches;
+    if (!fine) return;
+
+    const onMove = (e: MouseEvent) => {
+      const el = stageRef.current;
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      const nx = ((e.clientX - r.left) / r.width) * 2 - 1;
+      const ny = ((e.clientY - r.top) / r.height) * 2 - 1;
+      parallaxX.set(Math.max(-1, Math.min(1, nx)));
+      parallaxY.set(Math.max(-1, Math.min(1, ny)));
+    };
+    const onLeave = () => {
+      parallaxX.set(0);
+      parallaxY.set(0);
+    };
+    window.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseleave', onLeave);
+    return () => {
+      window.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseleave', onLeave);
+      parallaxX.set(0);
+      parallaxY.set(0);
+    };
+  }, [open, reduce, parallaxX, parallaxY]);
 
   /** Reveal → table timeline (plan-dresser-world Part 2 §A). t=0 at reveal step. */
   useEffect(() => {
@@ -218,9 +278,38 @@ export function DresserOnboarding({
           </div>
 
           <div className="relative z-10 flex flex-1 flex-col items-center justify-end px-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:justify-center">
-            <div className="dresser-stage">
-              {/* Lamp + drawers = decoration only */}
+            <motion.div
+              ref={stageRef}
+              className="dresser-stage"
+              style={
+                reduce
+                  ? undefined
+                  : {
+                      rotateX: stageRotateX,
+                      rotateY: stageRotateY,
+                      transformPerspective: 1200,
+                    }
+              }
+            >
               <div className="dresser-lamp" aria-hidden />
+              {!reduce && (
+                <div className="dresser-motes" aria-hidden>
+                  {MOTES.map((m, i) => (
+                    <span
+                      key={i}
+                      className="dresser-mote"
+                      style={
+                        {
+                          left: m.left,
+                          top: m.top,
+                          '--mote-dur': m.dur,
+                          '--mote-delay': m.delay,
+                        } as CSSProperties
+                      }
+                    />
+                  ))}
+                </div>
+              )}
 
               {/* Welcome plate on top */}
               {step === 'welcome' && (
@@ -228,7 +317,7 @@ export function DresserOnboarding({
                   className="dresser-plate"
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.45, ease: EASE_OUT_SOFT }}
                 >
                   <p className="text-[0.65rem] uppercase tracking-[0.35em] text-[color:var(--color-ink-faint)]">
                     {PRODUCT_NAME} · a living family cookbook
@@ -261,7 +350,7 @@ export function DresserOnboarding({
                   return (
                     <div
                       key={id}
-                      className={`dresser-drawer ${isOpen ? 'is-open' : ''} ${isReveal ? 'dresser-drawer--deep' : ''}`}
+                      className={`dresser-drawer ${isOpen ? 'is-open' : ''} ${closingId === id ? 'is-closing' : ''} ${isReveal ? 'dresser-drawer--deep' : ''}`}
                     >
                       {/* Decorative 3D box faces */}
                       <div className="dresser-drawer__box" aria-hidden>
@@ -420,7 +509,7 @@ export function DresserOnboarding({
                   </div>
                 </div>
               )}
-            </div>
+            </motion.div>
 
             {showBack && (
               <button
