@@ -1989,3 +1989,41 @@
   }
 }
 
+
+/* ── Print / chapbook (P12) ────────────────────────────────────────────*/
+@media print {
+  .journal-desk > header,
+  .journal-desk > footer,
+  .app-header,
+  .app-footer,
+  .paper-tab-rail,
+  .book-contact-shadow,
+  [data-overlay],
+  .skip-to-book,
+  .print\:hidden {
+    display: none !important;
+  }
+  .journal-desk {
+    height: auto !important;
+    max-width: none;
+    background: #fff !important;
+  }
+  .book-stage,
+  .book-table,
+  .book-frame {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  [data-print-root],
+  [data-leaf-scroll] {
+    overflow: visible !important;
+    height: auto !important;
+  }
+  body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+}

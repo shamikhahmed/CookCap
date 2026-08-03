@@ -13,6 +13,8 @@ import { DresserOnboarding } from '@/components/app/DresserOnboarding';
 import { Splash } from '@/components/app/Splash';
 import { OfflineChip } from '@/components/app/OfflineChip';
 import { SwUpdateToast } from '@/components/app/SwUpdateToast';
+import { WhatsNewSheet } from '@/components/app/WhatsNewSheet';
+import { useGuest } from '@/components/app/GuestMode';
 import { useApp } from '@/components/app/AppStore';
 import {
   AppearanceButton,
@@ -22,6 +24,7 @@ import {
 import { Icon } from '@/components/ui/Icon';
 import { PRODUCT_NAME, kitchenLine } from '@/lib/edition';
 import { getMode } from '@/lib/modes/registry';
+import { t } from '@/lib/i18n/strings';
 import { TopChapterBar } from './BookmarkRail';
 
 const FavoritesDrawer = dynamic(
@@ -79,6 +82,8 @@ export function Shell() {
 
 function Frame() {
   const { needsName, setOwnerName, storageError, dismissStorageError } = useApp();
+  const { guestActive, exitGuest } = useGuest();
+  const { locale } = useAppearance();
   const [searchOpen, setSearchOpen] = useState(false);
   const [favOpen, setFavOpen] = useState(false);
   const [shopOpen, setShopOpen] = useState(false);
@@ -130,6 +135,22 @@ function Frame() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const open = params.get('open');
+      if (open === 'search') setSearchOpen(true);
+      if (open === 'shop') setShopOpen(true);
+      if (open === 'plan') setPlanOpen(true);
+      if (params.get('share-target') === '1' || params.get('text') || params.get('title')) {
+        setImportOpen(true);
+      }
+      if (params.get('restore') === '1') setAboutOpen(true);
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
   /** Block book chrome until first-run name path resolves (splash → onboard). */
   const firstRunGate = needsName;
 
@@ -140,6 +161,22 @@ function Frame() {
       </a>
       <OfflineChip />
       <SwUpdateToast />
+      <WhatsNewSheet />
+      {guestActive && (
+        <div
+          role="status"
+          className="relative z-[55] shrink-0 border-b border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)] px-4 py-1.5 text-center text-xs text-[color:var(--color-ink-soft)]"
+        >
+          <span>{t(locale, 'guestReadonly')}</span>
+          <button
+            type="button"
+            onClick={exitGuest}
+            className="ml-3 underline underline-offset-2"
+          >
+            Exit
+          </button>
+        </div>
+      )}
       {storageError && (
         <div
           role="alert"
@@ -162,6 +199,7 @@ function Frame() {
         aria-hidden={firstRunGate || undefined}
       >
         <TopBar
+          searchLabel={t(locale, 'search')}
           onSearch={() => setSearchOpen(true)}
           onFavorites={() => setFavOpen(true)}
           onShop={() => setShopOpen(true)}
@@ -246,6 +284,7 @@ function Frame() {
 }
 
 function TopBar({
+  searchLabel,
   onSearch,
   onFavorites,
   onShop,
@@ -258,6 +297,7 @@ function TopBar({
   onPantry,
   onAbout,
 }: {
+  searchLabel: string;
   onSearch: () => void;
   onFavorites: () => void;
   onShop: () => void;
@@ -368,7 +408,7 @@ function TopBar({
         >
           {modeLetter}
         </button>
-        <IconBtn label="Search recipes" onClick={onSearch}>
+        <IconBtn label={searchLabel} onClick={onSearch}>
           <Icon name="search" size={20} />
         </IconBtn>
         <AppearanceButton />

@@ -9,6 +9,10 @@ import { Icon } from '@/components/ui/Icon';
 import { motionReduce, useDialogA11y } from '@/lib/a11y/dialog';
 import { serveWithFor } from '@/lib/recipes/serve-with';
 import { formatQty } from '@/lib/recipes/scale';
+import {
+  OCCASION_TEMPLATES,
+  buildWeekFromTemplate,
+} from '@/lib/occasions/templates';
 
 const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as const;
 type Day = (typeof DAYS)[number];
@@ -106,6 +110,18 @@ export function MealPlannerDrawer({
     const next = { ...plan };
     delete next[day];
     await save(next);
+  };
+
+  const applyTemplate = async (id: string) => {
+    const tpl = OCCASION_TEMPLATES.find((t) => t.id === id);
+    if (!tpl) return;
+    try {
+      const next = buildWeekFromTemplate(tpl, allRecipes) as Plan;
+      await save(next);
+      setError('');
+    } catch {
+      setError('Could not apply template on this device.');
+    }
   };
 
   const shopWeek = async () => {
@@ -215,8 +231,29 @@ export function MealPlannerDrawer({
 
               {assignedCount === 0 && !picking && (
                 <p className="rounded-lg bg-[color:var(--color-paper-sunk)] p-3 text-sm text-[color:var(--color-ink-faint)]">
-                  No days planned yet — tap Pick on a day.
+                  No days planned yet — tap Pick on a day, or use a week template.
                 </p>
+              )}
+
+              {!picking && (
+                <div className="mb-3 space-y-1.5">
+                  <p className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-ink-faint)]">
+                    Week templates
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {OCCASION_TEMPLATES.map((tpl) => (
+                      <button
+                        key={tpl.id}
+                        type="button"
+                        onClick={() => void applyTemplate(tpl.id)}
+                        className="min-h-11 rounded-full border border-[color:var(--color-line)] px-3 text-xs text-[color:var(--color-ink)]"
+                        title={tpl.blurb}
+                      >
+                        {tpl.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               )}
 
               {DAYS.map((day) => {

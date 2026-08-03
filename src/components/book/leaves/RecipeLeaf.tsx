@@ -19,6 +19,7 @@ import { applyHealthier } from '@/lib/profiles/nutrition';
 import { storyByline } from '@/lib/edition';
 import { RECIPES } from '@/lib/recipes/data';
 import * as store from '@/lib/db/store';
+import { suggestSwaps } from '@/lib/assistant/substitutes';
 import type { Recipe } from '@/lib/recipes/types';
 
 const DIFF_LABEL: Record<Recipe['difficulty'], string> = {
@@ -123,6 +124,10 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
   const related = relatedFor(recipe, 4, allRecipes);
   const serveWith = serveWithFor(recipe, allRecipes, 3);
   const goesWith = goesWithFor(recipe, allRecipes, 6);
+  const swapHints = suggestSwaps(
+    recipe.ingredients.flatMap((g) => g.items.map((i) => i.item)),
+    4,
+  );
   const noteTimer = useRef<number | null>(null);
 
   const healthierMacros =
@@ -500,6 +505,30 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
               </Stepper>
             </div>
             <span className="text-xs text-[color:var(--color-ink-faint)]">servings</span>
+            <div className="flex flex-wrap gap-1">
+              {[8, 12, 20].map((n) => (
+                <button
+                  key={n}
+                  type="button"
+                  onClick={() => setServings(n)}
+                  className={`min-h-9 rounded-full border px-2 text-[0.7rem] ${
+                    servings === n
+                      ? 'border-[color:var(--color-accent)] text-[color:var(--color-accent)]'
+                      : 'border-[color:var(--color-line)] text-[color:var(--color-ink-faint)]'
+                  }`}
+                  title="Party scale"
+                >
+                  {n}
+                </button>
+              ))}
+            </div>
+            <button
+              type="button"
+              onClick={() => window.print()}
+              className="rounded-full border border-[color:var(--color-line)] px-3 py-1 text-xs font-medium text-[color:var(--color-ink-soft)] print:hidden"
+            >
+              Print
+            </button>
             <button
               type="button"
               onClick={() => {
@@ -523,7 +552,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                     reportStorageError('Could not save to shopping list on this device.');
                   });
               }}
-              className="ml-auto rounded-full border border-[color:var(--color-line)] px-3 py-1 text-xs font-medium text-[color:var(--color-ink-soft)] hover:border-[color:var(--color-accent)]"
+              className="ml-auto rounded-full border border-[color:var(--color-line)] px-3 py-1 text-xs font-medium text-[color:var(--color-ink-soft)] hover:border-[color:var(--color-accent)] print:hidden"
             >
               {shopFlash ? 'Added ✓' : 'Add to list'}
             </button>
@@ -833,7 +862,11 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
         </Section>
 
         {/* ── Reference grid ────────────────────────────────*/}
-        {(recipe.substitutions || recipe.equipment || recipe.storage || recipe.reheating) && (
+        {(recipe.substitutions ||
+          recipe.equipment ||
+          recipe.storage ||
+          recipe.reheating ||
+          swapHints.length > 0) && (
           <Section title="Good to know" accent={chapter.tab}>
             <div className="grid gap-4 sm:grid-cols-2">
               {recipe.equipment && (
@@ -843,6 +876,17 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                 <Detail label="Substitutions">
                   <ul className="space-y-0.5">
                     {recipe.substitutions.map((s, i) => (
+                      <li key={i}>
+                        {s.from} → <span className="text-[color:var(--color-ink)]">{s.to}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Detail>
+              )}
+              {!recipe.substitutions && swapHints.length > 0 && (
+                <Detail label="Swap ideas">
+                  <ul className="space-y-0.5">
+                    {swapHints.map((s, i) => (
                       <li key={i}>
                         {s.from} → <span className="text-[color:var(--color-ink)]">{s.to}</span>
                       </li>

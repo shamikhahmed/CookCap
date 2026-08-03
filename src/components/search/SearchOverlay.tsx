@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { searchRecipes, type SearchFilters } from '@/lib/search/search';
+import { filterSmart, parseSmartQuery } from '@/lib/assistant/smart-query';
+
 import { CHAPTER_MAP } from '@/lib/recipes/chapters';
 import { RecipeImage } from '@/components/ui/RecipeImage';
 import { useBook } from '@/components/book/BookController';
@@ -70,10 +72,16 @@ export function SearchOverlay({
     return () => window.clearTimeout(t);
   }, [q]);
 
-  const results = useMemo(
-    () => searchRecipes(debouncedQ, filters, allRecipes, ratings).slice(0, 24),
-    [debouncedQ, filters, allRecipes, ratings],
-  );
+  const smart = useMemo(() => parseSmartQuery(debouncedQ), [debouncedQ]);
+  const results = useMemo(() => {
+    const filtersWithTime: SearchFilters = {
+      ...filters,
+      maxTime: smart.maxMinutes ?? filters.maxTime,
+    };
+    const q = smart.cleaned || debouncedQ;
+    const found = searchRecipes(q, filtersWithTime, allRecipes, ratings);
+    return filterSmart(found, smart).slice(0, 24);
+  }, [debouncedQ, filters, allRecipes, ratings, smart]);
 
   const ratingCounts = useMemo(() => {
     const counts: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
@@ -103,6 +111,9 @@ export function SearchOverlay({
   const rows = debouncedQ.trim() || Object.keys(filters).some((k) => filters[k as keyof SearchFilters])
     ? results
     : suggestions;
+
+  const smartHint =
+    debouncedQ.trim() && smart.hint ? smart.hint : null;
 
   useEffect(() => {
     setCursor(0);
@@ -174,7 +185,7 @@ export function SearchOverlay({
                 ref={inputRef}
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
-                placeholder="Search recipes, ingredients, cuisines…"
+                placeholder="Try “30 min yogurt” or a dish name…"
                 className="flex-1 bg-transparent text-lg text-[color:var(--color-ink)] placeholder:text-[color:var(--color-ink-faint)] focus:outline-none"
                 autoComplete="off"
                 spellCheck={false}
@@ -183,6 +194,12 @@ export function SearchOverlay({
                 esc
               </kbd>
             </div>
+
+            {smartHint && (
+              <p className="border-b border-[color:var(--color-line)] px-4 py-1.5 text-[0.7rem] text-[color:var(--color-ink-faint)]">
+                Smart filter · {smartHint}
+              </p>
+            )}
 
             <div className="flex flex-wrap gap-1.5 border-y border-[color:var(--color-line)] px-4 py-2">
               <Chip

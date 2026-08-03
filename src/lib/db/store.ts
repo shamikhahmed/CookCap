@@ -560,10 +560,13 @@ export type UserSnapshot = Awaited<ReturnType<typeof exportUserSnapshot>> & {
   version?: string;
 };
 
-/** Restore from export JSON (replaces matching stores; optional localStorage keys). */
-export async function importUserSnapshot(payload: UserSnapshot): Promise<void> {
+/** Restore from export JSON. `mode: 'replace'` wipes first; `merge` upserts. */
+export async function importUserSnapshot(
+  payload: UserSnapshot,
+  mode: 'replace' | 'merge' = 'replace',
+): Promise<void> {
   const d = await db();
-  await clearAllUserData();
+  if (mode === 'replace') await clearAllUserData();
 
   const putAll = async <T>(storeName: (typeof STORE_NAMES)[number], rows: T[] | undefined) => {
     if (!rows?.length) return;

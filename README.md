@@ -2,21 +2,22 @@
 
 Cap-family offline-first cookbook PWA. Name your book → **`{Name} Cooks`**.
 
-**Live:** https://shamikhahmed.github.io/CookCap/ · **v2.7.0**
+**Live:** https://shamikhahmed.github.io/CookCap/ · **v3.0.0**
 
 ## Features
 
 - Hardcover flip book + cook mode + search + shopping + meal planner
-- **~215 recipes** — family editorial only (no third-party MealDB dump)
+- **~223 recipes** — family editorial only (no third-party MealDB dump)
 - Chapters: Pakistani, Chinese, Italian, desserts, chai, breads, baking, snacks, meals, favorites, tips
-- Search filters: Easy · ≤30 min · **★5…★1** (your local ratings)
+- Search filters: Easy · ≤30 min · **★5…★1** (your local ratings) · smart phrases (“30 min yogurt”)
+- Occasions (Ramadan / Eid / rainy) · print recipe · guest PIN · merge backup
 - **Optional lenses:** profiles, My Plate / Mother / Budget / more modes, meal diary + calendar, pantry, PKR cost estimates
 - Reader mode = pure book (ignore lenses → same heirloom experience)
 - **Dresser World** — wooden table + paper-tab bookmarks; dresser onboarding continuous with reading desk
 
 ## Stack
 
-Next.js 15 (`output: 'export'`) · React 19 · Tailwind v4 · Motion · IndexedDB · SW `cookcap-v25`
+Next.js 15 (`output: 'export'`) · React 19 · Tailwind v4 · Motion · IndexedDB · SW `cookcap-v29`
 
 ## Run
 

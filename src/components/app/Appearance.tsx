@@ -14,6 +14,7 @@ import { createPortal } from 'react-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { useDialogA11y, motionReduce } from '@/lib/a11y/dialog';
 import { Icon } from '@/components/ui/Icon';
+import { type Locale, localeDir } from '@/lib/i18n/strings';
 
 export type Skin = 'editorial' | 'candlelit' | 'lightbook' | 'modern';
 /** `paper` = shipped world nav. Legacy styles kept for localStorage / code paths. */
@@ -24,14 +25,17 @@ interface AppearanceState {
   skin: Skin;
   tabStyle: TabStyle;
   readMode: ReadMode;
+  locale: Locale;
   setSkin: (s: Skin) => void;
   setTabStyle: (t: TabStyle) => void;
   setReadMode: (m: ReadMode) => void;
+  setLocale: (l: Locale) => void;
 }
 
 const SKIN_KEY = 'cookcap-skin';
 const TABS_KEY = 'cookcap-tabs';
 const READ_KEY = 'cookcap-readmode';
+const LOCALE_KEY = 'cookcap-locale';
 
 const SKINS: Skin[] = ['editorial', 'candlelit', 'lightbook', 'modern'];
 /** Shipped picker — paper tabs on wood only. */
@@ -63,12 +67,17 @@ function isTabs(v: string | null): v is TabStyle {
 function isRead(v: string | null): v is ReadMode {
   return !!v && (READS as string[]).includes(v);
 }
+function isLocale(v: string | null): v is Locale {
+  return v === 'en' || v === 'ur';
+}
 
-function applyAppearance(skin: Skin, tabs: TabStyle, read: ReadMode) {
+function applyAppearance(skin: Skin, tabs: TabStyle, read: ReadMode, locale: Locale) {
   const root = document.documentElement;
   root.dataset.skin = skin;
   root.dataset.tabs = tabs;
   root.dataset.readmode = read;
+  root.lang = locale === 'ur' ? 'ur' : 'en';
+  root.dir = localeDir(locale);
 }
 
 const Ctx = createContext<AppearanceState | null>(null);
@@ -77,12 +86,14 @@ export function AppearanceProvider({ children }: { children: ReactNode }) {
   const [skin, setSkinState] = useState<Skin>('editorial');
   const [tabStyle, setTabStyleState] = useState<TabStyle>('paper');
   const [readMode, setReadModeState] = useState<ReadMode>('flip');
+  const [locale, setLocaleState] = useState<Locale>('en');
 
   useEffect(() => {
     try {
       const s = localStorage.getItem(SKIN_KEY);
       const t = localStorage.getItem(TABS_KEY);
       const r = localStorage.getItem(READ_KEY);
+      const loc = localStorage.getItem(LOCALE_KEY);
       const skinV = isSkin(s) ? s : 'editorial';
       const tabsV = isTabs(t) && (TABS as TabStyle[]).includes(t) ? t : 'paper';
       if (tabsV === 'paper' && t !== 'paper') {
@@ -93,12 +104,14 @@ export function AppearanceProvider({ children }: { children: ReactNode }) {
         }
       }
       const readV = isRead(r) ? r : 'flip';
+      const localeV = isLocale(loc) ? loc : 'en';
       setSkinState(skinV);
       setTabStyleState(tabsV);
       setReadModeState(readV);
-      applyAppearance(skinV, tabsV, readV);
+      setLocaleState(localeV);
+      applyAppearance(skinV, tabsV, readV, localeV);
     } catch {
-      applyAppearance('editorial', 'paper', 'flip');
+      applyAppearance('editorial', 'paper', 'flip', 'en');
     }
   }, []);
 
@@ -132,9 +145,20 @@ export function AppearanceProvider({ children }: { children: ReactNode }) {
     document.documentElement.dataset.readmode = m;
   }, []);
 
+  const setLocale = useCallback((l: Locale) => {
+    setLocaleState(l);
+    try {
+      localStorage.setItem(LOCALE_KEY, l);
+    } catch {
+      /* private */
+    }
+    document.documentElement.lang = l === 'ur' ? 'ur' : 'en';
+    document.documentElement.dir = localeDir(l);
+  }, []);
+
   const value = useMemo(
-    () => ({ skin, tabStyle, readMode, setSkin, setTabStyle, setReadMode }),
-    [skin, tabStyle, readMode, setSkin, setTabStyle, setReadMode],
+    () => ({ skin, tabStyle, readMode, locale, setSkin, setTabStyle, setReadMode, setLocale }),
+    [skin, tabStyle, readMode, locale, setSkin, setTabStyle, setReadMode, setLocale],
   );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
@@ -155,7 +179,8 @@ export function AppearanceButton() {
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
   const panelRef = useRef<HTMLDivElement>(null);
-  const { skin, tabStyle, readMode, setSkin, setTabStyle, setReadMode } = useAppearance();
+  const { skin, tabStyle, readMode, locale, setSkin, setTabStyle, setReadMode, setLocale } =
+    useAppearance();
   const [narrow, setNarrow] = useState(false);
 
   useEffect(() => {
@@ -296,7 +321,7 @@ export function AppearanceButton() {
                     </p>
                   </section>
 
-                  <section>
+                  <section className="mb-4">
                     <p className="mb-2 text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
                       Reading
                     </p>
@@ -326,6 +351,44 @@ export function AppearanceButton() {
                     </div>
                     <p className="mt-2 text-[0.7rem] leading-snug text-[color:var(--color-ink-faint)]">
                       Flip keeps page-turn hops. Fast jumps chapters instantly.
+                    </p>
+                  </section>
+
+                  <section>
+                    <p className="mb-2 text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
+                      Labels
+                    </p>
+                    <div
+                      className="flex overflow-hidden rounded-lg border border-[color:var(--color-line)]"
+                      role="group"
+                      aria-label="Language"
+                    >
+                      {(
+                        [
+                          { id: 'en' as const, label: 'English' },
+                          { id: 'ur' as const, label: 'Roman Urdu' },
+                        ] as const
+                      ).map((opt) => {
+                        const on = locale === opt.id;
+                        return (
+                          <button
+                            key={opt.id}
+                            type="button"
+                            onClick={() => setLocale(opt.id)}
+                            aria-pressed={on}
+                            className={`min-h-11 flex-1 px-3 py-2 text-sm transition-colors ${
+                              on
+                                ? 'bg-[color:var(--color-accent)] text-white'
+                                : 'bg-[color:var(--color-paper)] text-[color:var(--color-ink-soft)] hover:bg-[color:var(--color-paper-sunk)]'
+                            }`}
+                          >
+                            {opt.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    <p className="mt-2 text-[0.7rem] leading-snug text-[color:var(--color-ink-faint)]">
+                      Stub pack — chrome labels only. True Urdu script / RTL later.
                     </p>
                   </section>
                 </motion.div>

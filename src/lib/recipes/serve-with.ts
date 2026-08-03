@@ -10,15 +10,18 @@ const NOTES: Record<string, string> = {
   'green-chutney': 'Bright coriander-mint heat on the side.',
   'imli-chutney': 'Tangy-sweet with fried or grilled bites.',
   'kachumber-salad': 'Fresh onion-tomato crunch beside rich curries.',
+  'onion-achaar': 'Sharp onion pickle for grilled or karahi plates.',
+  'lemon-pickle': 'Sour lemon heat beside daal and rice.',
   naan: 'Soft tear-and-scoop bread for gravy.',
   roti: 'Everyday whole-wheat flatbread.',
   paratha: 'Flaky layered bread for richer plates.',
 };
 
 const DEFAULT_BIRYANI = ['mint-raita', 'cucumber-raita', 'green-chutney', 'naan'] as const;
-const DEFAULT_KEBAB = ['green-chutney', 'mint-raita', 'imli-chutney'] as const;
+const DEFAULT_KEBAB = ['green-chutney', 'mint-raita', 'imli-chutney', 'onion-achaar'] as const;
 const DEFAULT_CURRY = ['mint-raita', 'kachumber-salad', 'naan', 'roti'] as const;
 const DEFAULT_BREAD_WITH = ['naan', 'roti', 'paratha'] as const;
+const DEFAULT_DAAL = ['lemon-pickle', 'onion-achaar', 'roti'] as const;
 
 function isAccompaniment(r: Recipe): boolean {
   return r.tags.includes('accompaniment') || r.tags.includes('serve-with');
@@ -67,6 +70,8 @@ export function serveWithFor(
   if (tags.has('biryani') || title.includes('biryani')) rule = DEFAULT_BIRYANI;
   else if (tags.has('kebab') || title.includes('kebab') || title.includes('seekh'))
     rule = DEFAULT_KEBAB;
+  else if (/daal|dal\b|lentil/.test(title) || tags.has('daal') || tags.has('lentil'))
+    rule = DEFAULT_DAAL;
   else if (
     /karahi|qorma|handi|nihari|stew|curry|salan/.test(title) ||
     tags.has('curry') ||

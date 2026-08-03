@@ -17,6 +17,7 @@ import {
   type Edition,
 } from '@/lib/edition';
 import { AppearanceProvider } from '@/components/app/Appearance';
+import { GuestProvider, isGuestActive } from '@/components/app/GuestMode';
 import { buildLeaves, type Leaf } from '@/lib/book/pages';
 import { compressImageFile } from '@/lib/media/compress';
 import { RECIPES } from '@/lib/recipes/data';
@@ -274,7 +275,14 @@ export function AppStore({ children }: { children: ReactNode }) {
   const dismissStorageError = useCallback(() => setStorageError(null), []);
   const reportStorageError = useCallback((msg: string) => setStorageError(msg), []);
 
+  const guardGuest = useCallback((): boolean => {
+    if (!isGuestActive()) return false;
+    setStorageError('Guest view — edits locked on this device.');
+    return true;
+  }, []);
+
   const toggleFavorite = useCallback((id: string) => {
+    if (guardGuest()) return;
     let wasOn = false;
     setFavorites((prev) => {
       wasOn = prev.has(id);
@@ -293,7 +301,7 @@ export function AppStore({ children }: { children: ReactNode }) {
       });
       setStorageError('Could not save favorite on this device.');
     });
-  }, []);
+  }, [guardGuest]);
 
   const markViewed = useCallback((id: string) => {
     store.recordView(id).catch(() => void 0);
@@ -301,16 +309,19 @@ export function AppStore({ children }: { children: ReactNode }) {
   }, []);
 
   const addCustom = useCallback(async (r: Recipe) => {
+    if (guardGuest()) return;
     await store.saveCustomRecipe(r);
     setCustoms((prev) => [...prev.filter((x) => x.id !== r.id), r]);
-  }, []);
+  }, [guardGuest]);
 
   const updateCustom = useCallback(async (r: Recipe) => {
+    if (guardGuest()) return;
     await store.saveCustomRecipe(r);
     setCustoms((prev) => prev.map((x) => (x.id === r.id ? r : x)));
-  }, []);
+  }, [guardGuest]);
 
   const removeCustom = useCallback(async (id: string, opts?: { keepLinks?: boolean }) => {
+    if (guardGuest()) return;
     await store.deleteCustomRecipe(id);
     if (!opts?.keepLinks) {
       if (favorites.has(id)) {
@@ -331,9 +342,10 @@ export function AppStore({ children }: { children: ReactNode }) {
       setRecent((prev) => prev.filter((r) => r !== id));
     }
     setCustoms((prev) => prev.filter((r) => r.id !== id));
-  }, [favorites]);
+  }, [favorites, guardGuest]);
 
   const setRecipeHero = useCallback(async (id: string, file: File) => {
+    if (guardGuest()) return;
     try {
       const blob = await compressImageFile(file);
       await store.putUserHero(id, blob);
@@ -345,9 +357,10 @@ export function AppStore({ children }: { children: ReactNode }) {
       console.error('[CookCap] setRecipeHero failed:', e);
       setStorageError('Could not save recipe photo on this device.');
     }
-  }, []);
+  }, [guardGuest]);
 
   const clearRecipeHero = useCallback(async (id: string) => {
+    if (guardGuest()) return;
     await store.deleteUserHero(id);
     setHeroUrls((prev) => {
       if (prev[id]) URL.revokeObjectURL(prev[id]!);
@@ -355,9 +368,10 @@ export function AppStore({ children }: { children: ReactNode }) {
       delete next[id];
       return next;
     });
-  }, []);
+  }, [guardGuest]);
 
   const setCoverPhoto = useCallback(async (file: File) => {
+    if (guardGuest()) return;
     try {
       const blob = await compressImageFile(file, 1600);
       await store.putCoverImage(blob);
@@ -369,15 +383,16 @@ export function AppStore({ children }: { children: ReactNode }) {
       console.error('[CookCap] setCoverPhoto failed:', e);
       setStorageError('Could not save cover photo on this device.');
     }
-  }, []);
+  }, [guardGuest]);
 
   const clearCoverPhoto = useCallback(async () => {
+    if (guardGuest()) return;
     await store.deleteCoverImage();
     setCoverUrl((prev) => {
       if (prev) URL.revokeObjectURL(prev);
       return null;
     });
-  }, []);
+  }, [guardGuest]);
 
   const refreshShoppingCount = useCallback(() => {
     store
@@ -387,6 +402,7 @@ export function AppStore({ children }: { children: ReactNode }) {
   }, []);
 
   const upsertProfile = useCallback(async (p: Profile) => {
+    if (guardGuest()) return;
     await store.putProfile(p);
     setProfiles((prev) => {
       const i = prev.findIndex((x) => x.id === p.id);
@@ -400,9 +416,10 @@ export function AppStore({ children }: { children: ReactNode }) {
       localStorage.setItem(ACTIVE_PROFILE_KEY, p.id);
       return p.id;
     });
-  }, []);
+  }, [guardGuest]);
 
   const removeProfile = useCallback(async (id: string) => {
+    if (guardGuest()) return;
     await store.deleteProfile(id);
     await store.deleteDiaryForProfile(id);
     setProfiles((prev) => prev.filter((p) => p.id !== id));
@@ -417,7 +434,7 @@ export function AppStore({ children }: { children: ReactNode }) {
       localStorage.removeItem(ACTIVE_PROFILE_KEY);
       return null;
     });
-  }, []);
+  }, [guardGuest]);
 
   const logMeal = useCallback(
     async (entry: {
@@ -432,19 +449,22 @@ export function AppStore({ children }: { children: ReactNode }) {
       fat: number;
       healthier?: boolean;
     }) => {
+      if (guardGuest()) return;
       const row: DiaryEntry = { id: newId('log'), ...entry };
       await store.putDiary(row);
       setDiary((prev) => [...prev, row]);
     },
-    [],
+    [guardGuest],
   );
 
   const removeDiaryEntry = useCallback(async (id: string) => {
+    if (guardGuest()) return;
     await store.deleteDiary(id);
     setDiary((prev) => prev.filter((d) => d.id !== id));
-  }, []);
+  }, [guardGuest]);
 
   const upsertPantry = useCallback(async (item: PantryItem) => {
+    if (guardGuest()) return;
     await store.putPantry(item);
     setPantry((prev) => {
       const i = prev.findIndex((x) => x.id === item.id);
@@ -453,12 +473,13 @@ export function AppStore({ children }: { children: ReactNode }) {
       next[i] = item;
       return next;
     });
-  }, []);
+  }, [guardGuest]);
 
   const removePantry = useCallback(async (id: string) => {
+    if (guardGuest()) return;
     await store.deletePantry(id);
     setPantry((prev) => prev.filter((p) => p.id !== id));
-  }, []);
+  }, [guardGuest]);
 
   const value = useMemo<AppState>(
     () => ({
@@ -573,7 +594,9 @@ export function AppStore({ children }: { children: ReactNode }) {
 
   return (
     <AppearanceProvider>
-      <Ctx.Provider value={value}>{children}</Ctx.Provider>
+      <GuestProvider>
+        <Ctx.Provider value={value}>{children}</Ctx.Provider>
+      </GuestProvider>
     </AppearanceProvider>
   );
 }

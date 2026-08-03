@@ -1,5 +1,24 @@
 # Changelog
 
+## 3.0.0 — 2026-08-03
+
+### Feat
+- **P7 Content** — onion achaar + lemon pickle; daal/kebab serve-with rules; related cleanup
+- **P8 PWA** — manifest shortcuts (`?open=`), share-target → import, file_handlers → About restore, orientation any
+- **P9 Smart Assistant** — parse “30 min yogurt”; rules-based swap ideas; party scale 8/12/20
+- **P10 Occasions** — Ramadan / Eid / rainy rails + meal-plan week templates
+- **P11 i18n stub** — EN / Roman Urdu chrome labels in Appearance
+- **P12 Print** — recipe + Your Kitchen print CSS; Print buttons
+- **P13 Multi-device** — merge-or-replace backup restore; guest PIN (browse-only)
+- **P14 Harden** — EXIF strip via canvas compress; `docs/SECURITY.md`
+- **P15** — hard nos documented (no cloud sync / LLM / AR)
+
+### Docs
+- ROADMAP P7–P15; SECURITY; Capricorn
+
+### Chore
+- SW → `cookcap-v29`
+
 ## 2.7.0 — 2026-08-03
 
 ### Feat

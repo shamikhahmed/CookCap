@@ -1,4 +1,6 @@
-/** Compress image File → JPEG Blob for IDB (local-only heroes/cover). */
+/** Compress image File → JPEG Blob for IDB (local-only heroes/cover).
+ * Canvas re-encode strips EXIF / GPS metadata (P14).
+ */
 
 const MAX_EDGE = 1280;
 const QUALITY = 0.82;
@@ -7,6 +9,7 @@ export async function compressImageFile(file: File, maxEdge = MAX_EDGE): Promise
   if (!file.type.startsWith('image/')) {
     throw new Error('Pick an image file.');
   }
+  // createImageBitmap + canvas JPEG → no EXIF passthrough
   const bitmap = await createImageBitmap(file);
   const scale = Math.min(1, maxEdge / Math.max(bitmap.width, bitmap.height));
   const w = Math.max(1, Math.round(bitmap.width * scale));

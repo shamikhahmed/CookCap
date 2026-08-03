@@ -1612,7 +1612,7 @@ function biryani(style: 'saadi' | 'sindhi' | 'zaffarani', meat: 'chicken' | 'mut
         'Parboil the rice to 70% — it finishes cooking in the steam.',
         'Seal the lid with foil or dough so no steam escapes during dum.',
       ],
-      related: ['qorma-chicken', 'qorma-mutton', 'nihari-beef', 'mint-raita'],
+      related: ['mint-raita', 'cucumber-raita', 'green-chutney', 'kachumber-salad'],
       serveWith: ['mint-raita', 'cucumber-raita', 'green-chutney'],
       seed,
     }),

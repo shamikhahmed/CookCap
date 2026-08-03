@@ -7,6 +7,7 @@ import { useBook } from '@/components/book/BookController';
 import { Icon, type IconName } from '@/components/ui/Icon';
 import { ideasForToday } from '@/lib/recipes/ideas';
 import { favoritesLabel } from '@/lib/edition';
+import { OCCASION_TEMPLATES, occasionRail } from '@/lib/occasions/templates';
 
 /** Table of contents + today’s kitchen ideas — one scroll, no stuck hero. */
 export function ContentsLeaf() {
@@ -61,6 +62,39 @@ export function ContentsLeaf() {
               </button>
             </li>
           ))}
+        </ul>
+      </section>
+
+      <section className="mb-4 shrink-0">
+        <p className="mb-2 text-[0.65rem] uppercase tracking-[0.35em] text-[color:var(--color-ink-faint)]">
+          Occasions
+        </p>
+        <ul className="space-y-2">
+          {OCCASION_TEMPLATES.map((tpl) => {
+            const rail = occasionRail(tpl, allRecipes, 3);
+            if (rail.length === 0) return null;
+            return (
+              <li
+                key={tpl.id}
+                className="rounded-xl border border-[color:var(--color-line)]/80 bg-[color:var(--color-paper-raised)]/70 px-3 py-2"
+              >
+                <p className="font-serif text-[color:var(--color-ink)]">{tpl.label}</p>
+                <p className="text-[0.7rem] text-[color:var(--color-ink-faint)]">{tpl.blurb}</p>
+                <div className="mt-1.5 flex flex-wrap gap-1.5">
+                  {rail.map((r) => (
+                    <button
+                      key={r.id}
+                      type="button"
+                      onClick={() => goToRecipe(r.id)}
+                      className="min-h-9 rounded-full border border-[color:var(--color-line)] px-2.5 text-xs text-[color:var(--color-ink)]"
+                    >
+                      {r.title}
+                    </button>
+                  ))}
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </section>
 
