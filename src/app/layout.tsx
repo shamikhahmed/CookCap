@@ -3,6 +3,7 @@ import { Caveat, Fraunces, Inter, Source_Serif_4 } from 'next/font/google';
 import './globals.css';
 import { AppStore } from '@/components/app/AppStore';
 import { ServiceWorker } from '@/components/app/ServiceWorker';
+import { ChunkRecovery } from '@/components/app/ChunkRecovery';
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -90,6 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <AppStore>{children}</AppStore>
         <ServiceWorker />
+        <ChunkRecovery />
       </body>
     </html>
   );

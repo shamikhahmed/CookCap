@@ -1,5 +1,22 @@
 # Changelog
 
+## 3.3.0 — 2026-08-04
+
+### Fix
+- **P0 stale-SW crash** — HTML/navigation network-first (`cache: no-store`); `/_next/static/*` cache-first; install precache with `no-store`; `ChunkRecovery` reloads once on `ChunkLoadError`
+- Designed `error.tsx` / `global-error.tsx` / `not-found.tsx` (no raw Next overlay)
+
+### Feat
+- Animation bible easing tokens (`--e-wood-out/in`, `--e-page`) + `motion.ts` helpers
+- Deeper book contact shadow; search empty state editorial polish
+
+### Docs
+- Claude master roadmap / SW crash / punchlist / animation bible checked in
+- Full gallery regen; catalog honesty **790**
+
+### Chore
+- SW → `cookcap-v34`
+
 ## 3.2.1 — 2026-08-04
 
 ### Fix

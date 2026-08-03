@@ -1,6 +1,6 @@
 # Security (CookCap)
 
-**Version context:** 3.2.1 · See `docs/REVIEW-PACK.md`
+**Version context:** 3.3.0 · See `docs/REVIEW-PACK.md`
 
 Local-first PWA. No accounts. No server recipe DB. User data stays in IndexedDB / localStorage on device.
 

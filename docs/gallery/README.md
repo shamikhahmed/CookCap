@@ -1,6 +1,6 @@
 # CookCap — Screen gallery
 
-Version **3.2.1**. Regen: `GALLERY_URL=http://127.0.0.1:3456/CookCap npm run gallery`.
+Version **3.3.0**. Regen: `GALLERY_URL=http://127.0.0.1:3456/CookCap npm run gallery`.
 
 Demo edition: **Ayesha**. Recipes: **790** (family + world table; hero-only).
 
@@ -23,7 +23,7 @@ Demo edition: **Ayesha**. Recipes: **790** (family + world table; hero-only).
 
 `reader` · `plate` · `mother` · `budget` · `quick` · `beginner` · `dawat` · `ramadan` · `toddler` · `diabetic` · `heart` · `fiber` · `couple`
 
-## Spot-check (3.2.1)
+## Spot-check (3.3.0)
 
 - Reading screen shows **wood**, not cream desk (desktop + phone)  
 - `03-friends.png` — even paper wash (no grey/black split on candlelit)  

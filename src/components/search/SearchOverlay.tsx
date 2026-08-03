@@ -323,13 +323,16 @@ export function SearchOverlay({
 
             <ul ref={listRef} className="min-h-0 flex-1 overflow-y-auto p-2">
               {rows.length === 0 && (
-                <li className="space-y-1 p-10 text-center text-sm text-[color:var(--color-ink-faint)]">
-                  <p>
+                <li className="space-y-2 p-8 text-center">
+                  <p className="font-serif text-lg text-[color:var(--color-ink)]">
+                    {q.trim() ? 'Nothing on that shelf' : 'No matches yet'}
+                  </p>
+                  <p className="text-sm text-[color:var(--color-ink-soft)]">
                     {q.trim()
                       ? `No recipes match “${q.trim()}”.`
                       : 'No recipes match these filters.'}
                   </p>
-                  <p className="text-xs">
+                  <p className="text-xs text-[color:var(--color-ink-faint)]">
                     {filters.stars
                       ? `No recipes rated ${filters.stars}★ yet. Open a dish and tap the stars under the method.`
                       : hasFilters

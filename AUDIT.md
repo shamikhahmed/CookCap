@@ -1,8 +1,8 @@
 # CookCap — Universal Product-Standard Audit
 
 **Product:** offline heirloom cookbook PWA (Cap family)  
-**Version:** **3.2.1**  
-**SW:** `cookcap-v33`  
+**Version:** **3.3.0**  
+**SW:** `cookcap-v34`  
 **Live:** https://shamikhahmed.github.io/CookCap/ (`NEXT_PUBLIC_BASE_PATH=/CookCap`)  
 **Stack:** Next.js 15 static export · React 19 · Tailwind v4 · Motion · IndexedDB (`cookcap`) · SW  
 **Auth:** none (local-only) — Appendix E **SKIP**  
@@ -50,19 +50,19 @@
 | Med | Some `goal-*` / tips still art-only | Fill only with unlock + honest plates |
 | Med | Headless Motion flip longtasks | Real-device GPU ≤50ms target |
 | Med | Large catalog JS (790) | WarmLeafPool + chapter pagination hold |
-| Low | Gallery tree ~200 MB | Regen on chrome ships (done 3.2.1) |
+| Low | Gallery tree ~200 MB | Regen on chrome ships (done 3.3.0) |
 | Low | Guest PIN = obfuscation not crypto | Documented honesty |
 | Low | SEO Lighthouse ~63 (`noindex`) | Intentional private book |
 
 ---
 
-## Shipped through 3.2.1 (summary)
+## Shipped through 3.3.0 (summary)
 
 - Serve-with · cook ritual · backup merge · guest PIN · smart search · occasions · print · i18n stub · PWA shortcuts  
 - Honest guacamole fix (3.0.1)  
 - Footer Home / ±5 / scrub / go-to page (3.1.0)  
 - Wooden reader + world table restore + `gate:wood` (3.2.0)  
-- Even paper wash on dark skins (3.2.1)  
+- Even paper wash on dark skins (3.3.0)  
 
 ## Gates
 

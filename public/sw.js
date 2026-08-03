@@ -3,10 +3,16 @@
   Cache name = VERSION below (bump on every ship so installed PWAs drop old caches).
   Grep the const, not this comment.
 
+  Strategy (anti stale-chunk crash):
+  - navigate / HTML → network-first (never pin old index.html to new chunk hashes)
+  - /_next/static/* → cache-first (content-hashed, immutable)
+  - other same-origin assets → stale-while-revalidate
+  - install: skipWaiting; activate: claim + delete foreign caches
+
   Works under GitHub Pages project path (/CookCap/) by deriving BASE from the
   script URL. Local/static export root uses BASE ''.
 */
-const VERSION = 'cookcap-v33';
+const VERSION = 'cookcap-v34';
 const SHELL = `${VERSION}-shell`;
 const ASSETS = `${VERSION}-assets`;
 const BASE = new URL('./', self.location.href).pathname.replace(/\/$/, '');
@@ -22,8 +28,22 @@ const SHELL_URLS = [
   root('/icons/maskable-512.png'),
 ];
 
+async function precacheShell() {
+  const cache = await caches.open(SHELL);
+  await Promise.all(
+    SHELL_URLS.map(async (u) => {
+      try {
+        const res = await fetch(u, { cache: 'no-store', credentials: 'same-origin' });
+        if (res.ok) await cache.put(u, res.clone());
+      } catch {
+        /* offline install — skip */
+      }
+    }),
+  );
+}
+
 self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(SHELL).then((c) => c.addAll(SHELL_URLS)).then(() => self.skipWaiting()));
+  event.waitUntil(precacheShell().then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', (event) => {
@@ -60,18 +80,29 @@ self.addEventListener('message', (event) => {
   );
 });
 
+function isHtmlRequest(request, url) {
+  if (request.mode === 'navigate') return true;
+  const accept = request.headers.get('accept') || '';
+  if (accept.includes('text/html')) return true;
+  const path = url.pathname;
+  return path === BASE || path === `${BASE}/` || path.endsWith('.html');
+}
+
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   if (request.method !== 'GET') return;
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
 
-  if (request.mode === 'navigate') {
+  // HTML / navigations — always prefer network so chunk hashes match deploy
+  if (isHtmlRequest(request, url)) {
     event.respondWith(
-      fetch(request)
+      fetch(request, { cache: 'no-store' })
         .then((res) => {
-          const copy = res.clone();
-          caches.open(SHELL).then((c) => c.put(root('/'), copy));
+          if (res.ok) {
+            const copy = res.clone();
+            caches.open(SHELL).then((c) => c.put(root('/'), copy));
+          }
           return res;
         })
         .catch(() =>
@@ -84,6 +115,25 @@ self.addEventListener('fetch', (event) => {
   }
 
   const path = url.pathname;
+
+  // Hashed Next bundles — cache-first forever
+  if (path.includes('/_next/static/')) {
+    event.respondWith(
+      caches.open(ASSETS).then(async (cache) => {
+        const cached = await cache.match(request);
+        if (cached) return cached;
+        try {
+          const res = await fetch(request);
+          if (res.ok) await cache.put(request, res.clone());
+          return res;
+        } catch {
+          return cached || Response.error();
+        }
+      }),
+    );
+    return;
+  }
+
   if (
     path.includes('/_next/') ||
     path.includes('/icons/') ||
@@ -91,7 +141,9 @@ self.addEventListener('fetch', (event) => {
     path.endsWith('.webp') ||
     path.endsWith('.png') ||
     path.endsWith('.svg') ||
-    path.endsWith('.woff2')
+    path.endsWith('.woff2') ||
+    path.endsWith('.js') ||
+    path.endsWith('.css')
   ) {
     event.respondWith(
       caches.open(ASSETS).then(async (cache) => {
