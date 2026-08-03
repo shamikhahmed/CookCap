@@ -1,6 +1,6 @@
-# CookCap v3.3.1 — QA Matrix
+# CookCap v3.3.2 — QA Matrix
 
-**Live:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v35`  
+**Live:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v36`  
 **Evidence:** `docs/gallery/` · **Review:** `docs/REVIEW-PACK.md`
 
 > Prove by gates + smoke against served `out/` under `/CookCap`. Gallery ≠ live alone.
@@ -47,6 +47,7 @@
 | World table | ~790 catalog, chapters restored | Shipped 3.2.0 |
 | Even paper wash | Dark leaves one tone, no band | Shipped 3.2.1 |
 | Dresser bible motion | Lamp/motes/parallax + wood drawer open/close | Shipped 3.3.1 |
+| Cover open hinge | −160° `--e-page`, inside cover, page fan | Shipped 3.3.2 |
 | Smart search | “30 min yogurt” hint | Shipped 3.0.0 |
 | Guest PIN | Locks writes | Shipped 3.0.0 |
 | Merge restore | Checkbox in About | Shipped 3.0.0 |

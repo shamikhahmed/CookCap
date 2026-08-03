@@ -1,6 +1,6 @@
 # CookCap — Handover
 
-Heirloom family cookbook PWA (Cap family). Version **3.3.1**.
+Heirloom family cookbook PWA (Cap family). Version **3.3.2**.
 
 ## Live
 
@@ -10,7 +10,7 @@ Next `output: 'export'` + Actions Pages. `NEXT_PUBLIC_BASE_PATH=/CookCap` on CI.
 
 ## Stack
 
-Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v4 (`cookcap`, migrates `jia-cooks`) · SW `cookcap-v35`
+Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v4 (`cookcap`, migrates `jia-cooks`) · SW `cookcap-v36`
 
 Heroes locked: `src/lib/recipes/images.lock.json` — rematch/fill need `--force-unlock`.  
 Gates: `gate:recipes` · `gate:anti-2d` · `gate:wood` · `smoke:product` (CI after build).  
@@ -41,6 +41,7 @@ GATE_URL=http://127.0.0.1:3456/CookCap npm run gate:wood
 - Footer nav: Home · ±5 · prev/next · **page scrubber** · tap page count → go-to #
 - **v3.2.0** reading desk = real wood (`--dr-wood`), not cream; phone chrome wood-tinted
 - **v3.3.1** dresser animation bible — idle (lamp/motes/parallax) + wood drawer open/close
+- **v3.3.2** cover open hinge — leather swing, inside paper, page fan
 
 ## Dresser
 

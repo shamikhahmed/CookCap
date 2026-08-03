@@ -1,5 +1,17 @@
 # Changelog
 
+## 3.3.2 — 2026-08-04
+
+### Feat
+- **Cover open (animation bible §6)** — leather hinge `rotateY 0→−160°` over 620ms `--e-page`; paper inside cover past −90°; cast shadow peaks mid-swing; right-edge page fan (4 sheets, 20ms stagger); spine gutter deepens
+- Reduced-motion: 200ms cross-fade cover → first spread
+
+### Docs
+- Capricorn + HANDOVER sync
+
+### Chore
+- SW → `cookcap-v36`
+
 ## 3.3.1 — 2026-08-04
 
 ### Feat

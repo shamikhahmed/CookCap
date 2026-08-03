@@ -18,7 +18,7 @@ const RECIPE = process.env.GALLERY_RECIPE || 'butter-chicken';
 /** Demo edition — not a hard-coded product name */
 const DEMO = 'Ayesha';
 /** Keep in sync with src/lib/version.ts — suppresses What’s new sheet. */
-const APP_VER = '3.3.1';
+const APP_VER = '3.3.2';
 
 mkdirSync(join(OUT, 'desktop'), { recursive: true });
 mkdirSync(join(OUT, 'mobile'), { recursive: true });

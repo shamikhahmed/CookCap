@@ -1,6 +1,6 @@
 # CookCap — Presentation
 
-**v3.3.1** · https://shamikhahmed.github.io/CookCap/
+**v3.3.2** · https://shamikhahmed.github.io/CookCap/
 
 ## Pitch
 
@@ -16,6 +16,7 @@ CookCap opens like a hardcover on a **wooden table**. Name the book in a 3D dres
 
 ## Status
 
+**v3.3.2** = cover open hinge (bible §6) · SW `cookcap-v36`.  
 **v3.3.1** = dresser animation bible (idle + drawer wood feel) · SW `cookcap-v35`.  
 **v3.3.0** = P0 stale-SW crash fix · designed error screens · motion tokens.  
 **v3.2.1** = even paper wash on dark skins · SW `cookcap-v33`.  

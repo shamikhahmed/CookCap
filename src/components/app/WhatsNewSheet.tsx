@@ -8,6 +8,9 @@ import { fadeTransition } from '@/lib/motion';
 const KEY = 'cookcap-whats-new';
 
 const NOTES: Record<string, string[]> = {
+  '3.3.2': [
+    'Cover opens like a real book — leather hinge, inside paper, page fan at the edge',
+  ],
   '3.3.1': [
     'Dresser feels alive — lamp breathe, dust motes, soft tilt toward the cursor',
     'Drawers pull like wood — break-free glide out, firm thunk close',
