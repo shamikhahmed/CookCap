@@ -1,7 +1,7 @@
-# CookCap v2.4.6 — Performance Budgets
+# CookCap v2.6.0 — Performance Budgets
 
-**Version:** 2.4.6 · **SW:** `cookcap-v25` · **Deploy:** GitHub Pages `/CookCap/`  
-**Catalog:** **215** recipes
+**Version:** 2.6.0 · **SW:** `cookcap-v27` · **Deploy:** GitHub Pages `/CookCap/`  
+**Catalog:** **~221** recipes
 
 ---
 
@@ -9,8 +9,8 @@
 
 | Metric | Budget | Measured (this pass) | Status |
 |--------|--------|----------------------|--------|
-| First Load JS (route `/`) | monitor | **328 kB** shared+page | OK |
-| Recipe DOM mount | **≤12** `data-leaf-scroll` | **5** (`measure:perf`) | **PASS** |
+| First Load JS (route `/`) | monitor | drawer code-split (dynamic) | OK |
+| Recipe DOM mount | **≤12** `data-leaf-scroll` | WarmLeafPool | **PASS** |
 | Never mount all recipes | Hard | WarmLeafPool | **PASS** |
 | Chapter list rows | **≤24** + more | ChapterLeaf | OK |
 | Search debounce | **120 ms** | search.ts | OK |
@@ -28,7 +28,9 @@ const FULL_OFFSETS = [-1, 1];
 const SHELL_OFFSETS = [-3, -2, 2, 3, 4];
 ```
 
-`remapLeafIndex` on mode/leaves change. AssetPreloader skips missing heroes.
+`remapLeafIndex` on mode/leaves change. AssetPreloader skips missing heroes.  
+Shell drawers/modals = `next/dynamic` (ssr:false) — load on open.  
+SW update: toast → Reload (no silent skipWaiting while active controller).
 
 ```bash
 npm run measure:perf   # hard fail if mountedLeaves > 12

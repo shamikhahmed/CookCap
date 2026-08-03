@@ -1,4 +1,4 @@
-# CookCap v2.5.0 — Information Architecture Rationale
+# CookCap v2.6.0 — Information Architecture Rationale
 
 **Principle:** every surface has exactly one job. No duplicate homes for the same task.  
 **Ordering law:** most-used / daily tools at top → rarely used middle → identity rename late → legal last.
@@ -29,8 +29,8 @@
 
 Title/hero → meta → story → ingredients → method → **Serve with / Goes well with** → Cook next → Good to know → **Your kitchen copy** (photo/fork) → notes
 
-Serve with never auto-adds shopping — open side when you want.
-
+Serve with never auto-adds shopping — open side when you want, or tap **Add to list** (opt-in). Meal planner can include sides when shopping the week.
+Collections live under Your Kitchen (favorites drawer).
 ---
 
 ## ··· overflow menu (v2.4.5 — matches code)

@@ -4,36 +4,32 @@ Master phase map. **Icebox ≠ promise.** One phase per train.
 
 Live: https://shamikhahmed.github.io/CookCap/
 
-## Pillar scorecard (after 2.5.0)
+## Pillar scorecard (after 2.6.0)
 
 | Pillar | Score 1–5 | Note |
 |--------|-----------|------|
 | First minute | 4 | Splash + name gate solid |
 | Book object | 4 | Desk vignette + soft drawer motion |
-| Recipe clarity | 4 | Serve with + measure ~65ch |
-| Personal kitchen | 4 | Photos, fork, cover (IDB v4) |
+| Recipe clarity | 4 | Serve with + breads + measure |
+| Personal kitchen | 4 | Photos, fork, cover, collections |
 | Quiet craft | 4 | Motion tokens `--dur-1…5` |
 | Trust | 4 | Local-only; export includes blobs |
-| Speed & calm | 3 | WarmLeafPool; measure:perf next |
-| Discoverability | 4 | Mode groups; Serve with on leaf |
+| Speed & calm | 4 | Dynamic drawers; SW reload UX; offline chip |
+| Discoverability | 4 | Mode groups; Serve with shop opt-in |
 
-**Next slice:** lowest pillar → Speed (P4) or Table (P2).
+**Next slice:** P5 Cook ritual or P7 Content — pick by need.
 
 ## Phases
 
 | ID | Name | Status |
 |----|------|--------|
-| **P0** | Serve-with | **Shipped 2.5.0** — 6 sides, engine, RecipeLeaf |
-| **P0.5** | Motion | **Shipped** — tokens, soft drawer tween, splash |
-| **P0.6** | Look/type/desk | **Shipped** — measure, desk vignette |
-| **P0.7** | UX screens | **Shipped** — empty copy polish |
-| **P0.8** | Organise | **Shipped** — Mode groups; IA note |
-| **P0.9** | Viewports | **Shipped** — smoke 320/768/1920 |
-| **P1** | Personalize | **Shipped** — IDB v4 heroes/cover, fork merge |
-| P2 | Table | Icebox |
-| P3 | A11y+i18n | Icebox |
-| P4 | Perf/offline | Icebox |
-| P5–P15 | See plan | Icebox |
+| **P0–P1** | Craft + personalize | **Shipped 2.5.0** |
+| **P2** | Table | **Shipped 2.6.0** |
+| **P3** | A11y | **Shipped 2.6.0** (Urdu later) |
+| **P4** | Perf/offline | **Shipped 2.6.0** |
+| P5 | Cook ritual | Icebox |
+| P6 | Data power | Icebox |
+| P7–P15 | See plan | Icebox |
 
 ## Guardrails
 

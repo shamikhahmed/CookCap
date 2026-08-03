@@ -37,3 +37,18 @@ Macros and costs are **estimates** unless marked verified. Health modes are **no
 ## Tips
 
 Install to home screen for offline. ··· → Change book name (compact rename). Clearing site data wipes local favorites / shopping / profiles / diary on that device.
+
+## Accessibility
+
+- **Skip to book** link appears on keyboard focus (start of page).
+- Drawers trap focus; Escape closes. ··· menu: Escape + arrow keys.
+- Turn on system Reduce Motion for calmer transitions.
+- High-contrast / forced-colors modes get stronger outlines.
+- Screen reader announces page turns (“Page N of M”).
+
+## Table extras (v2.6)
+
+- Recipe **Serve with** → optional **Add to list** (never auto-shop).
+- Meal planner can include serve-with sides when shopping the week.
+- Favorites → **Collections** folders (device-local).
+- Offline chip when network drops; SW toast when new kitchen ready.

@@ -50,8 +50,19 @@ export function ServiceWorker() {
             /* offline */
           }
           if (reg.waiting) {
-            reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+            // First install: activate immediately. Updates: SwUpdateToast offers reload.
+            if (!navigator.serviceWorker.controller) {
+              reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+            }
           }
+          reg.addEventListener('updatefound', () => {
+            const sw = reg.installing;
+            sw?.addEventListener('statechange', () => {
+              if (sw.state === 'installed' && !navigator.serviceWorker.controller) {
+                sw.postMessage({ type: 'SKIP_WAITING' });
+              }
+            });
+          });
         })
         .catch((e) => {
           console.warn('[CookCap] Service worker registration failed:', e);

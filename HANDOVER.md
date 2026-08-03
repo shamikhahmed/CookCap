@@ -1,6 +1,6 @@
 # CookCap — Handover
 
-Heirloom family cookbook PWA (Cap family). Version **2.5.0**.
+Heirloom family cookbook PWA (Cap family). Version **2.6.0**.
 
 ## Live
 
@@ -10,7 +10,7 @@ Next `output: 'export'` + Actions Pages. `NEXT_PUBLIC_BASE_PATH=/CookCap` on CI.
 
 ## Stack
 
-Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v4 · SW `cookcap-v26`
+Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v4 · SW `cookcap-v27`
 
 Heroes locked: `src/lib/recipes/images.lock.json` — rematch/fill need `--force-unlock`.  
 Gates: `gate:recipes` · `gate:anti-2d` · `smoke:product` (CI after build).

@@ -1,6 +1,6 @@
 # CookCap — Presentation
 
-**v2.5.0** · https://shamikhahmed.github.io/CookCap/
+**v2.6.0** · https://shamikhahmed.github.io/CookCap/
 
 ## Pitch
 
@@ -15,7 +15,7 @@ CookCap opens like a hardcover on a wooden table. Name the book in a 3D dresser.
 
 ## Status
 
-**v2.5.0** = Train A craft + P1 personalize (Serve with, motion/look, IDB photos/fork/cover) · SW `cookcap-v26`.  
-Prior: **v2.4.6** integrity fix-all · SW `cookcap-v25`.
+**v2.6.0** = P2 Table + P3 A11y + P4 Perf/offline · SW `cookcap-v27`.  
+Prior: **v2.5.0** Serve with + personalize · SW `cookcap-v26`.
 
 Gallery: [docs/gallery/README.md](./docs/gallery/README.md)

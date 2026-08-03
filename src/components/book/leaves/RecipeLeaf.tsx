@@ -907,18 +907,45 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
         {serveWith.length > 0 && (
           <Section title="Serve with" accent={chapter.tab}>
             <p className="mb-2 text-xs text-[color:var(--color-ink-faint)]">
-              Optional sides — open one when you want.
+              Optional sides — open one, or add ingredients to shopping.
             </p>
             <ul className="space-y-2">
               {serveWith.map(({ recipe: side, note }) => (
-                <li key={side.id}>
+                <li
+                  key={side.id}
+                  className="flex flex-col gap-2 rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-3 py-2 sm:flex-row sm:items-center"
+                >
                   <button
                     type="button"
                     onClick={() => goToRecipe(side.id)}
-                    className="flex min-h-11 w-full flex-col items-start rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-3 py-2 text-left transition-colors hover:border-[color:var(--color-accent)]"
+                    className="min-h-11 flex-1 text-left transition-colors"
                   >
-                    <span className="font-serif text-[color:var(--color-ink)]">{side.title}</span>
-                    <span className="text-xs text-[color:var(--color-ink-soft)]">{note}</span>
+                    <span className="block font-serif text-[color:var(--color-ink)]">{side.title}</span>
+                    <span className="block text-xs text-[color:var(--color-ink-soft)]">{note}</span>
+                  </button>
+                  <button
+                    type="button"
+                    className="min-h-11 shrink-0 rounded-full border border-[color:var(--color-line)] px-3 text-xs font-medium text-[color:var(--color-ink-soft)] hover:border-[color:var(--color-accent)]"
+                    onClick={() => {
+                      const items = side.ingredients.flatMap((g) =>
+                        g.items.map((ing) => ({
+                          item: ing.item,
+                          qty: `${formatQty(ing.quantity)} ${ing.unit}`.trim(),
+                        })),
+                      );
+                      store
+                        .addIngredientsToShopping(side.id, items)
+                        .then(() => {
+                          refreshShoppingCount();
+                          setShopFlash(true);
+                          window.setTimeout(() => setShopFlash(false), 1600);
+                        })
+                        .catch(() => {
+                          reportStorageError('Could not save to shopping list on this device.');
+                        });
+                    }}
+                  >
+                    {shopFlash ? 'Added ✓' : 'Add to list'}
                   </button>
                 </li>
               ))}

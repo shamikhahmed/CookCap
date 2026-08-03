@@ -1,35 +1,69 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { BookController, useBook } from './BookController';
 import { Book } from './Book';
-import { FavoritesDrawer } from './FavoritesDrawer';
-import { ShoppingDrawer } from './ShoppingDrawer';
-import { MealPlannerDrawer } from './MealPlannerDrawer';
-import { SearchOverlay } from '@/components/search/SearchOverlay';
-import { ImportModal } from '@/components/app/ImportModal';
 import { InstallBanner } from '@/components/app/InstallBanner';
 import { AssetPreloader } from '@/components/app/AssetPreloader';
 import { NameGate } from '@/components/app/NameGate';
 import { OnboardingFlow } from '@/components/app/OnboardingFlow';
 import { DresserOnboarding } from '@/components/app/DresserOnboarding';
 import { Splash } from '@/components/app/Splash';
-import { AboutModal } from '@/components/app/AboutModal';
+import { OfflineChip } from '@/components/app/OfflineChip';
+import { SwUpdateToast } from '@/components/app/SwUpdateToast';
 import { useApp } from '@/components/app/AppStore';
 import {
   AppearanceButton,
   skinSupportsThemeToggle,
   useAppearance,
 } from '@/components/app/Appearance';
-import { ProfilesDrawer } from '@/components/profiles/ProfilesDrawer';
-import { ModeChooser } from '@/components/profiles/ModeChooser';
-import { CalendarDrawer } from '@/components/profiles/CalendarDrawer';
-import { PantryDrawer } from '@/components/profiles/PantryDrawer';
 import { Icon } from '@/components/ui/Icon';
 import { PRODUCT_NAME, kitchenLine } from '@/lib/edition';
 import { getMode } from '@/lib/modes/registry';
 import { TopChapterBar } from './BookmarkRail';
+
+const FavoritesDrawer = dynamic(
+  () => import('./FavoritesDrawer').then((m) => ({ default: m.FavoritesDrawer })),
+  { ssr: false },
+);
+const ShoppingDrawer = dynamic(
+  () => import('./ShoppingDrawer').then((m) => ({ default: m.ShoppingDrawer })),
+  { ssr: false },
+);
+const MealPlannerDrawer = dynamic(
+  () => import('./MealPlannerDrawer').then((m) => ({ default: m.MealPlannerDrawer })),
+  { ssr: false },
+);
+const SearchOverlay = dynamic(
+  () => import('@/components/search/SearchOverlay').then((m) => ({ default: m.SearchOverlay })),
+  { ssr: false },
+);
+const ImportModal = dynamic(
+  () => import('@/components/app/ImportModal').then((m) => ({ default: m.ImportModal })),
+  { ssr: false },
+);
+const AboutModal = dynamic(
+  () => import('@/components/app/AboutModal').then((m) => ({ default: m.AboutModal })),
+  { ssr: false },
+);
+const ProfilesDrawer = dynamic(
+  () => import('@/components/profiles/ProfilesDrawer').then((m) => ({ default: m.ProfilesDrawer })),
+  { ssr: false },
+);
+const ModeChooser = dynamic(
+  () => import('@/components/profiles/ModeChooser').then((m) => ({ default: m.ModeChooser })),
+  { ssr: false },
+);
+const CalendarDrawer = dynamic(
+  () => import('@/components/profiles/CalendarDrawer').then((m) => ({ default: m.CalendarDrawer })),
+  { ssr: false },
+);
+const PantryDrawer = dynamic(
+  () => import('@/components/profiles/PantryDrawer').then((m) => ({ default: m.PantryDrawer })),
+  { ssr: false },
+);
 
 /**
  * Application frame — Claude chrome: slim top bar, book + ribbon rail,
@@ -101,6 +135,11 @@ function Frame() {
 
   return (
     <div className="journal-desk flex h-[100dvh] flex-col">
+      <a href="#book-main" className="sr-only skip-to-book">
+        Skip to book
+      </a>
+      <OfflineChip />
+      <SwUpdateToast />
       {storageError && (
         <div
           role="alert"
@@ -136,7 +175,11 @@ function Frame() {
           onAbout={() => setAboutOpen(true)}
         />
 
-        <main className="journal-stage relative flex min-h-0 flex-1 flex-col items-center justify-center overflow-hidden px-0 pt-0 sm:overflow-visible sm:px-6 sm:pr-44 sm:pt-1 md:pr-48 lg:pr-56">
+        <main
+          id="book-main"
+          tabIndex={-1}
+          className="journal-stage relative flex min-h-0 flex-1 flex-col items-center justify-center overflow-hidden px-0 pt-0 sm:overflow-visible sm:px-6 sm:pr-44 sm:pt-1 md:pr-48 lg:pr-56"
+        >
           <TopChapterBar />
           {/* Pure CSS grounding — size from vh on first paint (no parent-% / resize). */}
           <div className="book-stage">
@@ -252,8 +295,30 @@ function TopBar({
     const onDoc = (e: MouseEvent) => {
       if (!moreRef.current?.contains(e.target as Node)) setMore(false);
     };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        setMore(false);
+        return;
+      }
+      if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+      e.preventDefault();
+      const items = moreRef.current?.querySelectorAll<HTMLElement>('[role="menuitem"]');
+      if (!items?.length) return;
+      const list = Array.from(items);
+      const i = list.indexOf(document.activeElement as HTMLElement);
+      const next =
+        e.key === 'ArrowDown'
+          ? list[(i + 1 + list.length) % list.length]
+          : list[(i - 1 + list.length) % list.length];
+      next?.focus();
+    };
     document.addEventListener('mousedown', onDoc);
-    return () => document.removeEventListener('mousedown', onDoc);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onDoc);
+      document.removeEventListener('keydown', onKey);
+    };
   }, [more]);
 
   return (

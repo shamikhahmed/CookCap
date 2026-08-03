@@ -7,6 +7,8 @@ import { useApp } from '@/components/app/AppStore';
 import { useBook } from '@/components/book/BookController';
 import { Icon } from '@/components/ui/Icon';
 import { motionReduce, useDialogA11y } from '@/lib/a11y/dialog';
+import { serveWithFor } from '@/lib/recipes/serve-with';
+import { formatQty } from '@/lib/recipes/scale';
 
 const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as const;
 type Day = (typeof DAYS)[number];
@@ -47,6 +49,7 @@ export function MealPlannerDrawer({
   const [picking, setPicking] = useState<Day | null>(null);
   const [q, setQ] = useState('');
   const [error, setError] = useState('');
+  const [includeSides, setIncludeSides] = useState(true);
   const panelRef = useRef<HTMLElement>(null);
   const pickingRef = useRef(picking);
   pickingRef.current = picking;
@@ -107,6 +110,7 @@ export function MealPlannerDrawer({
 
   const shopWeek = async () => {
     try {
+      const seenSides = new Set<string>();
       for (const day of DAYS) {
         const id = plan[day];
         if (!id) continue;
@@ -119,6 +123,20 @@ export function MealPlannerDrawer({
           })),
         );
         await addIngredientsToShopping(r.id, items);
+
+        if (includeSides) {
+          for (const { recipe: side } of serveWithFor(r, allRecipes, 3)) {
+            if (seenSides.has(side.id)) continue;
+            seenSides.add(side.id);
+            const sideItems = side.ingredients.flatMap((g) =>
+              g.items.map((it) => ({
+                item: it.item,
+                qty: `${formatQty(it.quantity)} ${it.unit}`.trim(),
+              })),
+            );
+            await addIngredientsToShopping(side.id, sideItems);
+          }
+        }
       }
       refreshShoppingCount();
       setError('');
@@ -285,7 +303,16 @@ export function MealPlannerDrawer({
               )}
             </div>
 
-            <footer className="shrink-0 border-t border-[color:var(--color-line)] px-5 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+            <footer className="shrink-0 space-y-2 border-t border-[color:var(--color-line)] px-5 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+              <label className="flex min-h-11 cursor-pointer items-center gap-2 text-sm text-[color:var(--color-ink-soft)]">
+                <input
+                  type="checkbox"
+                  checked={includeSides}
+                  onChange={(e) => setIncludeSides(e.target.checked)}
+                  className="size-4 accent-[color:var(--color-accent)]"
+                />
+                Include serve-with sides in shopping
+              </label>
               <button
                 type="button"
                 onClick={() => void shopWeek()}

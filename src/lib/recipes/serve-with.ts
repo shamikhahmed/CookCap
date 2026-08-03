@@ -10,14 +10,22 @@ const NOTES: Record<string, string> = {
   'green-chutney': 'Bright coriander-mint heat on the side.',
   'imli-chutney': 'Tangy-sweet with fried or grilled bites.',
   'kachumber-salad': 'Fresh onion-tomato crunch beside rich curries.',
+  naan: 'Soft tear-and-scoop bread for gravy.',
+  roti: 'Everyday whole-wheat flatbread.',
+  paratha: 'Flaky layered bread for richer plates.',
 };
 
-const DEFAULT_BIRYANI = ['mint-raita', 'cucumber-raita', 'green-chutney'] as const;
+const DEFAULT_BIRYANI = ['mint-raita', 'cucumber-raita', 'green-chutney', 'naan'] as const;
 const DEFAULT_KEBAB = ['green-chutney', 'mint-raita', 'imli-chutney'] as const;
-const DEFAULT_CURRY = ['mint-raita', 'kachumber-salad'] as const;
+const DEFAULT_CURRY = ['mint-raita', 'kachumber-salad', 'naan', 'roti'] as const;
+const DEFAULT_BREAD_WITH = ['naan', 'roti', 'paratha'] as const;
 
 function isAccompaniment(r: Recipe): boolean {
   return r.tags.includes('accompaniment') || r.tags.includes('serve-with');
+}
+
+function isBread(r: Recipe): boolean {
+  return r.chapter === 'breads' || r.tags.includes('bread') || r.tags.includes('flatbread');
 }
 
 function pushId(
@@ -35,15 +43,15 @@ function pushId(
 }
 
 /**
- * Optional sides for a main. Explicit `serveWith` first, then tag rules.
- * Never auto-adds to shopping — UI only.
+ * Optional sides + breads for a main. Explicit `serveWith` first, then tag rules.
+ * Never auto-adds to shopping — UI only (opt-in buttons).
  */
 export function serveWithFor(
   recipe: Recipe,
   pool: Recipe[],
-  limit = 3,
+  limit = 4,
 ): ServeWithNote[] {
-  if (isAccompaniment(recipe)) return [];
+  if (isAccompaniment(recipe) || isBread(recipe)) return [];
   const map = new Map(pool.map((r) => [r.id, r]));
   const out: ServeWithNote[] = [];
   const seen = new Set<string>([recipe.id]);
@@ -60,11 +68,13 @@ export function serveWithFor(
   else if (tags.has('kebab') || title.includes('kebab') || title.includes('seekh'))
     rule = DEFAULT_KEBAB;
   else if (
-    /karahi|qorma|handi|nihari|stew/.test(title) ||
+    /karahi|qorma|handi|nihari|stew|curry|salan/.test(title) ||
     tags.has('curry') ||
     (recipe.chapter === 'pakistani' && recipe.spiceLevel && recipe.spiceLevel >= 2)
   )
     rule = DEFAULT_CURRY;
+  else if (recipe.chapter === 'pakistani' && (tags.has('savory') || tags.has('festive')))
+    rule = DEFAULT_BREAD_WITH;
 
   for (const id of rule) {
     pushId(id, map, seen, out, limit);
@@ -74,20 +84,20 @@ export function serveWithFor(
   return out;
 }
 
-/** Mains that pair with an accompaniment (reverse of serveWithFor). */
+/** Mains that pair with an accompaniment or bread (reverse of serveWithFor). */
 export function goesWithFor(
   accompaniment: Recipe,
   pool: Recipe[],
   limit = 6,
 ): ServeWithNote[] {
-  if (!isAccompaniment(accompaniment)) return [];
+  if (!isAccompaniment(accompaniment) && !isBread(accompaniment)) return [];
   const out: ServeWithNote[] = [];
   const seen = new Set<string>([accompaniment.id]);
   const note = `Nice with ${accompaniment.title}.`;
 
   for (const main of pool) {
-    if (isAccompaniment(main) || seen.has(main.id)) continue;
-    const hits = serveWithFor(main, pool, 4).some((s) => s.recipe.id === accompaniment.id);
+    if (isAccompaniment(main) || isBread(main) || seen.has(main.id)) continue;
+    const hits = serveWithFor(main, pool, 5).some((s) => s.recipe.id === accompaniment.id);
     if (!hits) continue;
     seen.add(main.id);
     out.push({ recipe: main, note });

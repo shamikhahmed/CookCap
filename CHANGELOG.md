@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.6.0 — 2026-08-03
+
+### Feat
+- **P2 Table** — Serve-with **Add to list** opt-in; bread pairs (naan/roti/paratha); meal-plan week shop can include sides; Collections folders in Your Kitchen
+- **P3 A11y** — skip-to-book link; ··· Escape + arrow keys; `forced-colors` / `prefers-contrast` outlines
+- **P4 Perf/offline** — drawer `next/dynamic` code-split; offline chip; SW “New kitchen — Reload” toast (no silent activate while browsing)
+
+### Docs
+- ROADMAP pillar bump; USER_GUIDE a11y + table; PERF 2.6.0
+
+### Chore
+- SW → `cookcap-v27`
+
 ## 2.5.0 — 2026-08-03
 
 ### Feat
