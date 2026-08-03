@@ -25,7 +25,7 @@ export function ChapterLeaf({ chapter }: { chapter: ChapterId }) {
       : [];
 
   return (
-    <div className="paper-grain relative flex h-full w-full flex-col justify-center px-[9%] py-[8%]">
+    <div className="paper-grain relative flex min-h-full h-full w-full flex-col justify-center px-[9%] py-[8%]">
       <div
         className="pointer-events-none absolute -right-6 top-1/2 -translate-y-1/2 opacity-[0.06]"
         style={{ color: c.tab }}

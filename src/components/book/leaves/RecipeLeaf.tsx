@@ -54,7 +54,7 @@ function WarmRecipeShell({ recipe }: { recipe: Recipe }) {
   const chapter = CHAPTER_MAP[recipe.chapter] ?? CHAPTER_MAP.pakistani!;
   const { heroUrls } = useApp();
   return (
-    <article data-leaf-scroll className="paper-grain h-full w-full overflow-hidden" aria-hidden>
+    <article data-leaf-scroll className="paper-grain min-h-full h-full w-full overflow-hidden" aria-hidden>
       <div className="relative aspect-[16/11] w-full overflow-hidden sm:aspect-[16/10]">
         <RecipeImage
           recipeId={recipe.id}
@@ -226,7 +226,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
     <article
       data-leaf-scroll
       data-print-root
-      className="paper-grain h-full w-full overflow-y-auto overscroll-contain"
+      className="paper-grain min-h-full h-full w-full overflow-y-auto overscroll-contain"
     >
       {/* ── Hero ─────────────────────────────────────────────*/}
       <div className="relative aspect-[16/11] w-full overflow-hidden sm:aspect-[16/10]">

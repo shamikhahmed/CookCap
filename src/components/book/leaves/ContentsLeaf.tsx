@@ -18,7 +18,7 @@ export function ContentsLeaf() {
   return (
     <div
       data-leaf-scroll
-      className="paper-grain flex h-full w-full flex-col overflow-y-auto overscroll-contain px-[7%] py-[6%]"
+      className="paper-grain flex min-h-full h-full w-full flex-col overflow-y-auto overscroll-contain px-[7%] py-[6%]"
     >
       <header className="mb-4 shrink-0">
         <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--color-ink-faint)]">

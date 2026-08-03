@@ -14,9 +14,9 @@ export function FriendsLeaf() {
   return (
     <div
       data-leaf-scroll
-      className="paper-grain flex h-full w-full flex-col overflow-y-auto overscroll-contain px-[7%] py-[8%]"
+      className="paper-grain flex min-h-full h-full w-full flex-col overflow-y-auto overscroll-contain px-[7%] py-[8%]"
     >
-      <header className="mb-5 shrink-0 text-center">
+      <header className="relative z-[1] mb-5 shrink-0 text-center">
         <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--color-ink-faint)]">
           Before we begin
         </p>
@@ -28,7 +28,7 @@ export function FriendsLeaf() {
         </p>
       </header>
 
-      <ul className="grid grid-cols-2 gap-x-4 gap-y-5">
+      <ul className="relative z-[1] grid grid-cols-2 gap-x-4 gap-y-5 pb-2">
         {FRIENDS.map((f, i) => (
           <motion.li
             key={f.id}

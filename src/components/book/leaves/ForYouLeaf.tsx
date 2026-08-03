@@ -27,7 +27,7 @@ export function ForYouLeaf() {
   const modeDef = getMode(mode);
 
   return (
-    <div className="paper-grain flex h-full w-full flex-col px-[7%] py-[8%]">
+    <div className="paper-grain flex min-h-full h-full w-full flex-col px-[7%] py-[8%]">
       <header className="mb-5 shrink-0">
         <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--color-ink-faint)]">
           For you

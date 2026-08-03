@@ -4,7 +4,7 @@ Master phase map. **Icebox ≠ promise.**
 
 Live: https://shamikhahmed.github.io/CookCap/
 
-## Pillar scorecard (after 3.2.0)
+## Pillar scorecard (after 3.2.1)
 
 | Pillar | Score 1–5 | Note |
 |--------|-----------|------|
@@ -12,7 +12,7 @@ Live: https://shamikhahmed.github.io/CookCap/
 | Book object | 5 | **Real wood desk** + motion + footer page nav |
 | Recipe clarity | 5 | Serve with + cook ritual + print + swaps |
 | Personal kitchen | 5 | Photos, fork, collections, merge backup, guest PIN |
-| Quiet craft | 5 | Wood tokens dresser→reader |
+| Quiet craft | 5 | Wood tokens + even paper wash |
 | Trust | 5 | Local-only + SECURITY hard nos |
 | Speed & calm | 4 | Dynamic drawers / offline chip; 790 catalog watch |
 | Discoverability | 5 | Occasions + smart search + world chapters + scrub |
@@ -37,6 +37,7 @@ Live: https://shamikhahmed.github.io/CookCap/
 | **P15** | Hard nos | **Documented only** |
 | **Nav** | Home / jump / scrub / go-to # | **Shipped 3.1.0** |
 | **Wood** | Reader wood + world catalog | **Shipped 3.2.0** |
+| **Paper** | Even dark-skin leaf wash | **Shipped 3.2.1** |
 
 ## P15 — Hard nos
 

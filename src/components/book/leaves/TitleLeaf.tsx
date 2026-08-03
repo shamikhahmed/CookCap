@@ -16,7 +16,7 @@ export function TitleLeaf() {
   return (
     <div
       data-tap-advance
-      className="paper-grain relative flex h-full w-full cursor-pointer flex-col items-center justify-center overflow-hidden px-8 text-center"
+      className="paper-grain relative flex min-h-full h-full w-full cursor-pointer flex-col items-center justify-center overflow-hidden px-8 text-center"
     >
       <Doodle className="left-6 top-10 rotate-[-8deg]" name="sprig" />
       <Doodle className="right-7 top-12 rotate-[10deg]" name="flower" />

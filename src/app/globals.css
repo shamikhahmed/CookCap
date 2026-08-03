@@ -128,15 +128,15 @@
     --paper-grain-opacity: 0.35;
   }
 
-  /* Candlelit — dark, warm, de-muddied */
+  /* Candlelit — dark, warm walnut paper (match desk wood, not cool charcoal) */
   :root[data-skin='candlelit'] {
-    --color-paper: #2a2320;
-    --color-paper-raised: #322a25;
-    --color-paper-sunk: #201a16;
+    --color-paper: #2e241c;
+    --color-paper-raised: #382c22;
+    --color-paper-sunk: #241c16;
     --color-ink: #f7f0e6;
-    --color-ink-soft: #ddd0c0;
-    --color-ink-faint: #c4b4a2;
-    --color-line: #40352d;
+    --color-ink-soft: #e0d2c0;
+    --color-ink-faint: #c8b6a0;
+    --color-line: #4a3a2e;
     --color-accent: #e6934f;
     --color-accent-soft: #eaa66d;
     --color-gold: #d3b26b;
@@ -147,7 +147,9 @@
     --dr-wood-mid: color-mix(in srgb, var(--color-leather, #5c4030) 80%, #1e1008);
     --dr-wood-dark: #1a1008;
     --shadow-book: 0 34px 70px -22px rgba(0, 0, 0, 0.7);
-    --paper-grain-opacity: 0.5;
+    --paper-grain-opacity: 0.28;
+    --paper-glow: rgba(255, 210, 160, 0.1);
+    --paper-shade: rgba(20, 10, 4, 0.18);
   }
   :root[data-skin='candlelit'][data-theme='light'] {
     --color-paper: #f6f1e7;
@@ -207,13 +209,13 @@
     --paper-grain-opacity: 0.18;
   }
   :root[data-skin='modern'][data-theme='dark'] {
-    --color-paper: #1e1b17;
-    --color-paper-raised: #2a2622;
-    --color-paper-sunk: #151310;
+    --color-paper: #262018;
+    --color-paper-raised: #322a20;
+    --color-paper-sunk: #1a1510;
     --color-ink: #f7f0e6;
     --color-ink-soft: #ddd4c8;
     --color-ink-faint: #c2b8ac;
-    --color-line: #3a3530;
+    --color-line: #3f362c;
     --color-accent: #e07a4a;
     --color-gold: #c9a860;
     --desk: #12100e;
@@ -222,34 +224,38 @@
     --dr-wood-dark: #14100c;
     --shadow-book: 0 18px 44px -22px rgba(0, 0, 0, 0.55);
     --paper-grain-opacity: 0.22;
+    --paper-glow: rgba(255, 215, 170, 0.08);
+    --paper-shade: rgba(10, 6, 2, 0.2);
   }
 
   /* Legacy theme toggle — only when no skin, or candlelit/modern via attrs above */
   :root:not([data-skin])[data-theme='dark'],
   :root[data-skin=''][data-theme='dark'] {
-    --color-paper: #2a2320;
-    --color-paper-raised: #322a25;
-    --color-paper-sunk: #201a16;
+    --color-paper: #2e241c;
+    --color-paper-raised: #382c22;
+    --color-paper-sunk: #241c16;
     --color-ink: #f7f0e6;
-    --color-ink-soft: #ddd0c0;
-    --color-ink-faint: #c4b4a2;
-    --color-line: #40352d;
+    --color-ink-soft: #e0d2c0;
+    --color-ink-faint: #c8b6a0;
+    --color-line: #4a3a2e;
     --color-accent: #e6934f;
     --color-gold: #d3b26b;
     --desk: #17120f;
     --shadow-book: 0 34px 70px -22px rgba(0, 0, 0, 0.7);
+    --paper-glow: rgba(255, 210, 160, 0.1);
+    --paper-shade: rgba(20, 10, 4, 0.18);
   }
 
   @media (prefers-color-scheme: dark) {
     :root:not([data-skin]):not([data-theme='light']),
     :root[data-skin='candlelit']:not([data-theme='light']) {
-      --color-paper: #2a2320;
-      --color-paper-raised: #322a25;
-      --color-paper-sunk: #201a16;
+      --color-paper: #2e241c;
+      --color-paper-raised: #382c22;
+      --color-paper-sunk: #241c16;
       --color-ink: #f7f0e6;
-      --color-ink-soft: #ddd0c0;
-      --color-ink-faint: #c4b4a2;
-      --color-line: #40352d;
+      --color-ink-soft: #e0d2c0;
+      --color-ink-faint: #c8b6a0;
+      --color-line: #4a3a2e;
       --color-accent: #e6934f;
       --color-accent-soft: #eaa66d;
       --color-gold: #d3b26b;
@@ -257,7 +263,9 @@
       --color-leather-dark: #3a2218;
       --desk: #17120f;
       --shadow-book: 0 34px 70px -22px rgba(0, 0, 0, 0.7);
-      --paper-grain-opacity: 0.5;
+      --paper-grain-opacity: 0.28;
+      --paper-glow: rgba(255, 210, 160, 0.1);
+      --paper-shade: rgba(20, 10, 4, 0.18);
     }
   }
 
@@ -328,13 +336,17 @@
 
 /* ── Reusable material textures ────────────────────────────────────────*/
 @layer components {
-  /* Paper grain: layered noise + subtle vignette, GPU-cheap (no images). */
+  /* Paper grain: even wash — no cold spotlight banding on dark skins. */
   .paper-grain {
+    --paper-glow: rgba(255, 250, 240, 0.28);
+    --paper-shade: rgba(120, 90, 60, 0.05);
     position: relative;
+    isolation: isolate;
+    min-height: 100%;
     background-color: var(--color-paper);
     background-image:
-      radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.35), transparent 40%),
-      radial-gradient(circle at 85% 90%, rgba(120, 90, 60, 0.06), transparent 45%);
+      radial-gradient(ellipse 140% 90% at 50% -10%, var(--paper-glow), transparent 58%),
+      radial-gradient(ellipse 100% 70% at 50% 110%, var(--paper-shade), transparent 55%);
     color: var(--color-ink);
     font-family: var(--font-body);
     font-size: var(--text-base);
@@ -350,9 +362,10 @@
     content: '';
     position: absolute;
     inset: 0;
+    z-index: 0;
     pointer-events: none;
     opacity: var(--paper-grain-opacity, 0.4);
-    mix-blend-mode: multiply;
+    mix-blend-mode: soft-light;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
   }
 

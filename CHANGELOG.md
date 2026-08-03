@@ -1,5 +1,17 @@
 # Changelog
 
+## 3.2.1 — 2026-08-04
+
+### Fix
+- **Even paper wash** — dark/candlelit leaves no longer band grey→black; warm walnut paper matches wood desk
+- `.paper-grain` — soft lamp glow + `soft-light` grain + `isolation: isolate`; `min-h-full` on all leaves
+
+### Docs
+- Gallery regen (desktop + mobile); REVIEW-PACK / HANDOVER / QA / AUDIT sync
+
+### Chore
+- SW → `cookcap-v33`
+
 ## 3.2.0 — 2026-08-03
 
 ### Feat

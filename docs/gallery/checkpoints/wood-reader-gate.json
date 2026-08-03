@@ -1,5 +1,5 @@
 {
-  "at": "2026-08-03T14:13:51.817Z",
+  "at": "2026-08-03T19:56:16.662Z",
   "base": "http://127.0.0.1:3456/CookCap",
   "failed": 0,
   "results": [
@@ -106,7 +106,7 @@
     {
       "id": "candlelit tab label AA (≥4.5)",
       "pass": true,
-      "detail": "ratio=12.43 fg=rgb(247, 240, 230) bg=rgb(50, 42, 37)"
+      "detail": "ratio=11.96 fg=rgb(247, 240, 230) bg=rgb(56, 44, 34)"
     },
     {
       "id": "modern stage wood backgroundImage",
@@ -178,7 +178,7 @@
     {
       "id": "candlelit tab label AA (≥4.5)",
       "pass": true,
-      "detail": "ratio=12.43 fg=rgb(247, 240, 230) bg=rgb(50, 42, 37)"
+      "detail": "ratio=11.96 fg=rgb(247, 240, 230) bg=rgb(56, 44, 34)"
     },
     {
       "id": "modern tab label AA (≥4.5)",

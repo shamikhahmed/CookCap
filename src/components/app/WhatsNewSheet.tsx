@@ -8,6 +8,10 @@ import { fadeTransition } from '@/lib/motion';
 const KEY = 'cookcap-whats-new';
 
 const NOTES: Record<string, string[]> = {
+  '3.2.1': [
+    'Even paper wash — dark skins no more grey/black page split',
+    'Warm walnut paper matches wooden desk',
+  ],
   '3.2.0': [
     'Wooden reading table — book sits on real wood, not cream desk',
     'Paper tabs stuck to wood · phone wood frame',
