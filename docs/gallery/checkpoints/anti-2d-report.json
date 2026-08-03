@@ -1,5 +1,5 @@
 {
-  "at": "2026-08-03T12:09:58.641Z",
+  "at": "2026-08-03T14:14:08.511Z",
   "base": "http://127.0.0.1:3456/CookCap",
   "failed": 0,
   "results": [
@@ -16,7 +16,7 @@
     {
       "id": "R3 paper tabs on table",
       "pass": true,
-      "detail": "data-tabs=paper tabs=11"
+      "detail": "data-tabs=paper tabs=15"
     },
     {
       "id": "R4 wood token on desk",

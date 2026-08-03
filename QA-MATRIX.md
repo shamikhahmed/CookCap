@@ -1,6 +1,6 @@
-# CookCap v3.1.0 — QA Matrix
+# CookCap v3.2.0 — QA Matrix
 
-**Live:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v31`  
+**Live:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v32`  
 **Evidence:** `docs/gallery/` · **Review:** `docs/REVIEW-PACK.md`
 
 > Prove by gates + smoke against served `out/` under `/CookCap`. Gallery ≠ live alone.
@@ -12,8 +12,9 @@
 | Check | Expected | Pass |
 |-------|----------|------|
 | `npm run typecheck` | 0 errors | Required |
-| `npm run gate:recipes` | **223** recipes linked | Required |
+| `npm run gate:recipes` | **790** recipes linked | Required |
 | `npm run gate:anti-2d` | 3D + wood + paper tabs | Required |
+| `npm run gate:wood` | Stage wood DOM + 4 skins + phone | Required |
 | `npm run smoke:product` | S1–S7 + viewports | Required |
 | CI Pages deploy | success after push | Required |
 
@@ -31,7 +32,7 @@
 
 ---
 
-## Feature verification (3.0 → 3.1)
+## Feature verification (3.0 → 3.2)
 
 | Area | Expected | Status |
 |------|----------|--------|
@@ -40,6 +41,10 @@
 | ±5 jump | Moves index ±5 clamped | Shipped 3.1.0 |
 | Scrub slider | `input[type=range].page-scrub` | Shipped 3.1.0 |
 | Go-to page | Tap count → dialog → Go | Shipped 3.1.0 |
+| Wooden stage | `backgroundImage` gradient/url | Shipped 3.2.0 |
+| Paper tabs on wood | Cream face + ink AA | Shipped 3.2.0 |
+| Phone wood frame | Desk/chrome wood tint | Shipped 3.2.0 |
+| World table | ~790 catalog, chapters restored | Shipped 3.2.0 |
 | Smart search | “30 min yogurt” hint | Shipped 3.0.0 |
 | Guest PIN | Locks writes | Shipped 3.0.0 |
 | Merge restore | Checkbox in About | Shipped 3.0.0 |

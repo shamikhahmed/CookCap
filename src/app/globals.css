@@ -62,8 +62,9 @@
 
   /* Semantic feedback */
   --color-success: #5a7a4a;
-  --color-warning: #b07a2a;
-  --color-danger: #a33a2a;
+  /* Warning/danger tuned for ≥7:1 on paper for critical copy */
+  --color-warning: #8a5a14;
+  --color-danger: #8f2f22;
 
   /* ── Spacing scale (8pt base, plus half-steps) ───────────────────────*/
   --spacing: 0.25rem;
@@ -707,7 +708,7 @@
 .journal-desk {
   position: relative;
   height: 100dvh;
-  /* Wooden table surface (tablet/desktop); phone overrides to flat paper reader */
+  /* Wooden table surface — same --dr-wood as dresser reveal */
   background:
     linear-gradient(
       90deg,
@@ -830,7 +831,19 @@
   background: var(--color-line);
 }
 .journal-stage {
-  /* desk lamp vignette — desktop only (phone is full-bleed reader) */
+  position: relative;
+  /* Wooden reading surface — must be measurable in getComputedStyle.backgroundImage */
+  background-color: var(--dr-wood);
+  background-image:
+    radial-gradient(120% 90% at 50% 18%, color-mix(in srgb, #fff 14%, transparent), transparent 60%),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0 1px, transparent 1px 190px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E"),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--dr-wood) 88%, #fff),
+      color-mix(in srgb, var(--dr-wood) 82%, #000)
+    );
+  background-blend-mode: overlay, normal, multiply, normal;
   mask-image: none;
 }
 .journal-stage::before {
@@ -846,8 +859,8 @@
   border-radius: 50%;
   background: radial-gradient(
     ellipse at center,
-    color-mix(in srgb, var(--color-accent) 12%, transparent) 0%,
-    color-mix(in srgb, var(--dr-wood) 35%, transparent) 42%,
+    color-mix(in srgb, var(--color-accent) 10%, transparent) 0%,
+    color-mix(in srgb, var(--dr-wood) 28%, transparent) 42%,
     transparent 72%
   );
 }
@@ -875,25 +888,39 @@
   width: 100%;
   height: 100%;
   min-width: 0;
+  /* Raised wood panel the book sits on */
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--dr-wood) 92%, #fff) 0%,
+      var(--dr-wood) 45%,
+      var(--dr-wood-mid) 100%
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.3'/%3E%3C/svg%3E");
+  background-blend-mode: normal, soft-light;
+  border-radius: 0.5rem;
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, #fff 22%, transparent),
+    inset 0 -2px 6px color-mix(in srgb, var(--dr-wood-dark) 18%, transparent);
 }
 .book-contact-shadow {
   display: none;
   pointer-events: none;
   position: absolute;
   left: 50%;
-  bottom: 2%;
+  bottom: 1.5%;
   z-index: 0;
-  width: 78%;
-  height: 10%;
+  width: 82%;
+  height: 12%;
   transform: translateX(-50%);
   border-radius: 50%;
   background: radial-gradient(
     ellipse at center,
-    color-mix(in srgb, #000 38%, transparent) 0%,
-    color-mix(in srgb, #000 14%, transparent) 55%,
+    color-mix(in srgb, #000 48%, transparent) 0%,
+    color-mix(in srgb, #000 18%, transparent) 55%,
     transparent 78%
   );
-  filter: blur(6px);
+  filter: blur(8px);
 }
 .book-frame {
   position: relative;
@@ -935,9 +962,25 @@
 @media (max-width: 639px) {
   .journal-stage {
     mask-image: none;
+    /* Keep wood visible as frame; book still full-bleed */
+    background-color: var(--dr-wood);
+    background-image:
+      radial-gradient(100% 80% at 50% 0%, color-mix(in srgb, #fff 10%, transparent), transparent 55%),
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--dr-wood) 90%, #fff),
+        var(--dr-wood-mid)
+      );
+    background-blend-mode: overlay, normal;
+    padding: 0;
   }
   .journal-stage::before {
     display: none;
+  }
+  .book-table {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
   }
   /* Never show desktop fore-edge / page stack on phones — causes overflow + overlap */
   .book-edge,
@@ -950,19 +993,41 @@
     box-shadow: none;
     width: 100%;
     height: 100%;
+    outline: 2px solid color-mix(in srgb, var(--dr-wood-dark) 35%, transparent);
+    outline-offset: -2px;
   }
   .book-contact-shadow {
     display: none;
   }
   .journal-desk {
-    background: var(--color-paper);
-    background-blend-mode: normal;
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--dr-wood) 88%, #fff) 0%,
+        var(--dr-wood) 50%,
+        var(--dr-wood-mid) 100%
+      ),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+    background-blend-mode: normal, soft-light;
     max-width: none;
   }
   .journal-desk::before {
-    opacity: var(--paper-grain-opacity, 0.35);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
-    mix-blend-mode: multiply;
+    opacity: 0.35;
+    background-image: none;
+  }
+  .app-header,
+  .app-footer {
+    background: color-mix(in srgb, var(--dr-wood) 78%, var(--color-paper-raised));
+    border-color: color-mix(in srgb, var(--dr-wood-dark) 28%, transparent);
+  }
+  .journal-sheet--wood {
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--dr-wood) 70%, var(--color-paper-raised)) 0%,
+        var(--dr-wood) 55%,
+        var(--dr-wood-mid) 100%
+      );
   }
 }
 
@@ -1100,43 +1165,54 @@
   left: 0;
   display: flex;
   align-items: center;
-  min-height: 2.15rem;
+  min-height: 2.75rem;
   min-width: 5.25rem;
   max-width: 7.25rem;
-  padding: 0.28rem 0.6rem 0.28rem 0.48rem;
-  border-radius: 0 0.35rem 0.35rem 0;
-  border: 1px solid color-mix(in srgb, var(--sticker) 35%, var(--dr-wood-dark));
-  border-left: 2px solid color-mix(in srgb, var(--sticker) 55%, var(--dr-wood-dark));
-  background:
-    linear-gradient(
-      105deg,
-      color-mix(in srgb, var(--sticker) 40%, var(--color-paper)) 0%,
-      color-mix(in srgb, var(--sticker) 22%, var(--color-paper-raised)) 100%
-    );
+  padding: 0.35rem 0.65rem 0.35rem 0.5rem;
+  border-radius: 0 0.4rem 0.4rem 0;
+  /* Paper note stuck to wood */
+  border: 1px solid color-mix(in srgb, var(--color-ink) 14%, var(--color-line));
+  border-left: 1px solid color-mix(in srgb, var(--color-ink) 22%, var(--color-line));
+  background: var(--color-paper-raised);
+  color: var(--color-ink);
   box-shadow:
-    1px 2px 4px color-mix(in srgb, #000 18%, transparent),
-    inset 0 1px 0 color-mix(in srgb, #fff 35%, transparent);
-  transform-origin: 0% 50%;
-  cursor: pointer;
+    1px 2px 4px color-mix(in srgb, var(--dr-wood-dark) 28%, transparent),
+    inset 0 1px 0 color-mix(in srgb, #fff 55%, transparent);
+  transform-origin: left center;
   transition:
-    filter 180ms var(--ease-out-soft, cubic-bezier(0.22, 1, 0.36, 1)),
-    box-shadow 180ms var(--ease-out-soft, cubic-bezier(0.22, 1, 0.36, 1));
+    transform 160ms var(--ease-out-soft, cubic-bezier(0.22, 1, 0.36, 1)),
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.paper-tab:hover,
+.paper-tab:focus-visible {
+  transform: translateX(3px) rotate(0.4deg);
+  box-shadow:
+    2px 3px 8px color-mix(in srgb, var(--dr-wood-dark) 34%, transparent),
+    inset 0 1px 0 color-mix(in srgb, #fff 65%, transparent);
+  outline: none;
+}
+.paper-tab:active {
+  transform: translateX(1px) rotate(-0.6deg) scale(0.98);
 }
 .paper-tab__label {
-  font-family: var(--font-serif);
-  font-size: 0.58rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  line-height: 1.1;
-  color: color-mix(in srgb, var(--sticker) 30%, var(--color-ink));
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--color-ink);
+  letter-spacing: 0.01em;
   white-space: nowrap;
 }
 .paper-tab.is-active {
-  filter: brightness(1.06) saturate(1.08);
+  background: color-mix(in srgb, var(--color-paper-raised) 88%, var(--sticker));
+  transform: translateX(5px);
   box-shadow:
-    2px 4px 8px color-mix(in srgb, #000 22%, transparent),
-    inset 0 1px 0 color-mix(in srgb, #fff 45%, transparent);
-  border-left-width: 3px;
+    2px 4px 10px color-mix(in srgb, var(--dr-wood-dark) 38%, transparent),
+    inset 0 1px 0 color-mix(in srgb, #fff 70%, transparent);
+  border-color: color-mix(in srgb, var(--sticker) 45%, var(--color-line));
 }
 .paper-tab.is-active .paper-tab__label {
   color: var(--color-ink);
@@ -1177,7 +1253,7 @@
   font-size: 0.62rem;
   font-weight: 500;
   letter-spacing: 0;
-  color: color-mix(in srgb, var(--color-ink-soft) 75%, var(--dr-wood-dark));
+  color: var(--color-ink-soft);
 }
 @media (prefers-reduced-motion: reduce) {
   .paper-tab {

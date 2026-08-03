@@ -1,5 +1,22 @@
 # Changelog
 
+## 3.2.0 — 2026-08-03
+
+### Feat
+- **Wooden reading table** — `.journal-stage` / `.book-table` / desk use `--dr-wood*` (lamp + plank + grain); dresser→reader continuity
+- **Paper tabs on wood** — cream face, ink label, hairline + shadow, peel hover; ≥44px
+- **Phone wood frame** — header/footer + desk tint; Tabs sheet on wood strip
+- **World table catalog** — restore ~567 local recipes as `WORLD_TABLE_RECIPES` (`data-world-table.ts`) + `mdb-*` heroes; chapters european / world / breakfast / vegetarian back; catalog **790**
+
+### Fix
+- Contrast — stronger danger/warning tokens; allergen chips + “not medical advice” ≥ critical contrast; footer page count ink on wood chrome
+- Story body ≥16px (`text-base`) + drop-cap held
+
+### Chore
+- SW → `cookcap-v32`
+- `npm run gate:wood` (DOM wood proof, 4 skins + phone)
+- Full docs + gallery regen
+
 ## 3.1.0 — 2026-08-03
 
 ### Feat

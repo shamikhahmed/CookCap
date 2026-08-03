@@ -4,6 +4,7 @@ import { FILL_RECIPES } from './data-fill';
 import { FOODFUSION_RECIPES } from './data-foodfusion';
 import { GOAL_RECIPES } from './data-goal';
 import { SERVE_WITH_RECIPES } from './data-serve-with';
+import { WORLD_TABLE_RECIPES } from './data-world-table';
 
 /**
  * The cookbook's recipes. Flagship entries below are fully editorial; the
@@ -11,6 +12,7 @@ import { SERVE_WITH_RECIPES } from './data-serve-with';
  * `data-foodfusion.ts` = cleaned English adaptations (no promo/login/Urdu dump).
  * `data-goal.ts` = breakfast / high-protein / light / budget goal recipes.
  * `data-serve-with.ts` = raita / chutney / kachumber sides.
+ * `data-world-table.ts` = restored world-table catalog (bundled heroes; no third-party UI credit).
  * Heroes fall back to procedural art (`hero.ts`) until photos are added.
  */
 export const RECIPES: Recipe[] = [
@@ -624,6 +626,7 @@ export const RECIPES: Recipe[] = [
   ...FOODFUSION_RECIPES,
   ...GOAL_RECIPES,
   ...SERVE_WITH_RECIPES,
+  ...WORLD_TABLE_RECIPES,
 ];
 
 export const RECIPE_MAP = Object.fromEntries(RECIPES.map((r) => [r.id, r])) as Record<

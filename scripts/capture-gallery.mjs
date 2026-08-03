@@ -18,7 +18,7 @@ const RECIPE = process.env.GALLERY_RECIPE || 'butter-chicken';
 /** Demo edition — not a hard-coded product name */
 const DEMO = 'Ayesha';
 /** Keep in sync with src/lib/version.ts — suppresses What’s new sheet. */
-const APP_VER = '3.1.0';
+const APP_VER = '3.2.0';
 
 mkdirSync(join(OUT, 'desktop'), { recursive: true });
 mkdirSync(join(OUT, 'mobile'), { recursive: true });
@@ -598,7 +598,7 @@ async function captureAppearanceMatrix(page, folder) {
     for (const tabs of tabStyles) {
       await page.goto(BASE, { waitUntil: 'domcontentloaded', timeout: 60000 });
       await page.evaluate(
-        ({ skin, tabs, name }) => {
+        ({ skin, tabs, name, ver }) => {
           localStorage.clear();
           localStorage.setItem('cookcap-skin', skin);
           localStorage.setItem('cookcap-tabs', tabs);
@@ -606,13 +606,14 @@ async function captureAppearanceMatrix(page, folder) {
           localStorage.setItem('cookcap-theme', 'light');
           localStorage.setItem('cookcap-owner', name);
           localStorage.setItem('cookcap-onboarded', '1');
+          localStorage.setItem('cookcap-whats-new', ver);
           localStorage.setItem('cookcap-pos', '0');
           document.documentElement.setAttribute('data-skin', skin);
           document.documentElement.setAttribute('data-tabs', tabs);
           document.documentElement.setAttribute('data-readmode', 'flip');
           document.documentElement.setAttribute('data-theme', 'light');
         },
-        { skin, tabs, name: DEMO },
+        { skin, tabs, name: DEMO, ver: APP_VER },
       );
       await page.goto(`${BASE}/?for=${encodeURIComponent(DEMO)}`, {
         waitUntil: 'domcontentloaded',
@@ -625,18 +626,22 @@ async function captureAppearanceMatrix(page, folder) {
   }
 
   await page.goto(BASE, { waitUntil: 'domcontentloaded' });
-  await page.evaluate((name) => {
-    localStorage.clear();
-    localStorage.setItem('cookcap-skin', 'editorial');
-    localStorage.setItem('cookcap-tabs', 'paper');
-    localStorage.setItem('cookcap-readmode', 'flip');
-    localStorage.setItem('cookcap-theme', 'light');
-    localStorage.setItem('cookcap-owner', name);
-    localStorage.setItem('cookcap-onboarded', '1');
-    document.documentElement.setAttribute('data-skin', 'editorial');
-    document.documentElement.setAttribute('data-tabs', 'paper');
-    document.documentElement.setAttribute('data-theme', 'light');
-  }, DEMO);
+  await page.evaluate(
+    ({ name, ver }) => {
+      localStorage.clear();
+      localStorage.setItem('cookcap-skin', 'editorial');
+      localStorage.setItem('cookcap-tabs', 'paper');
+      localStorage.setItem('cookcap-readmode', 'flip');
+      localStorage.setItem('cookcap-theme', 'light');
+      localStorage.setItem('cookcap-owner', name);
+      localStorage.setItem('cookcap-onboarded', '1');
+      localStorage.setItem('cookcap-whats-new', ver);
+      document.documentElement.setAttribute('data-skin', 'editorial');
+      document.documentElement.setAttribute('data-tabs', 'paper');
+      document.documentElement.setAttribute('data-theme', 'light');
+    },
+    { name: DEMO, ver: APP_VER },
+  );
   await page.goto(`${BASE}/?for=${encodeURIComponent(DEMO)}`, { waitUntil: 'domcontentloaded' });
   await waitFooterReady(page, 60000);
   await page.getByRole('button', { name: 'Appearance' }).click();
@@ -656,7 +661,7 @@ async function captureTabOptions(page, folder) {
     for (const tabs of styles) {
       await page.goto(BASE, { waitUntil: 'domcontentloaded', timeout: 60000 });
       await page.evaluate(
-        ({ skin, tabs, name }) => {
+        ({ skin, tabs, name, ver }) => {
           localStorage.clear();
           localStorage.setItem('cookcap-skin', skin);
           localStorage.setItem('cookcap-tabs', tabs);
@@ -664,12 +669,13 @@ async function captureTabOptions(page, folder) {
           localStorage.setItem('cookcap-theme', 'light');
           localStorage.setItem('cookcap-owner', name);
           localStorage.setItem('cookcap-onboarded', '1');
+          localStorage.setItem('cookcap-whats-new', ver);
           localStorage.setItem('cookcap-pos', '0');
           document.documentElement.setAttribute('data-skin', skin);
           document.documentElement.setAttribute('data-tabs', tabs);
           document.documentElement.setAttribute('data-theme', 'light');
         },
-        { skin, tabs, name: DEMO },
+        { skin, tabs, name: DEMO, ver: APP_VER },
       );
       await page.goto(`${BASE}/?for=${encodeURIComponent(DEMO)}`, {
         waitUntil: 'domcontentloaded',

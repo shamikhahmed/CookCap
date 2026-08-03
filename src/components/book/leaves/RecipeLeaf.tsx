@@ -344,7 +344,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
               <p className="mb-1 font-serif text-sm font-semibold text-[color:var(--color-ink)]">
                 {storyByline(edition)}
               </p>
-              <p className="jia-story font-serif text-[0.95rem] italic leading-relaxed text-[color:var(--color-ink-soft)] text-balance">
+              <p className="jia-story font-serif text-base italic leading-relaxed text-[color:var(--color-ink-soft)] text-balance">
                 {recipe.story}
               </p>
             </div>
@@ -392,10 +392,10 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                 {recipe.allergens.map((a) => (
                   <span
                     key={a}
-                    className="rounded-full border px-2.5 py-1 text-xs font-medium capitalize text-[color:var(--color-ink)]"
+                    className="rounded-full border px-2.5 py-1 text-xs font-semibold capitalize text-[color:var(--color-danger)]"
                     style={{
-                      borderColor: 'color-mix(in srgb, var(--color-danger) 35%, transparent)',
-                      background: 'color-mix(in srgb, var(--color-danger) 12%, var(--color-paper))',
+                      borderColor: 'color-mix(in srgb, var(--color-danger) 45%, transparent)',
+                      background: 'color-mix(in srgb, var(--color-danger) 10%, var(--color-paper))',
                     }}
                   >
                     {a}
@@ -447,7 +447,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
               <p className="mt-2 text-xs tabular-nums text-[color:var(--color-ink-soft)]">
                 {recipe.nutrition.calories} → {healthierPreview.calories} kcal ·{' '}
                 {recipe.nutrition.protein}g → {healthierPreview.protein}g protein
-                <span className="mt-1 block text-[0.65rem] text-[color:var(--color-ink-faint)]">
+                <span className="mt-1 block text-xs font-medium text-[color:var(--color-ink)]">
                   Swap estimate only — not medical advice.
                 </span>
               </p>

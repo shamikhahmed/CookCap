@@ -1,0 +1,189 @@
+{
+  "at": "2026-08-03T14:13:51.817Z",
+  "base": "http://127.0.0.1:3456/CookCap",
+  "failed": 0,
+  "results": [
+    {
+      "id": "editorial stage wood backgroundImage",
+      "pass": true,
+      "detail": "gradient/url present"
+    },
+    {
+      "id": "editorial stage not cream",
+      "pass": true,
+      "detail": "bg=color(srgb 0.876471 0.802157 0.685294)"
+    },
+    {
+      "id": "editorial wood token",
+      "pass": true,
+      "detail": "--dr-wood=color-mix(in srgb,#f6f1e7 55%,#c4a06a)"
+    },
+    {
+      "id": "editorial book-table surface",
+      "pass": true,
+      "detail": "linear-gradient(color(srgb 0.886353 0.817984 0.710471) 0px, color(srgb 0.876471 "
+    },
+    {
+      "id": "editorial paper tabs present",
+      "pass": true,
+      "detail": "tabs=15"
+    },
+    {
+      "id": "editorial tab touch ≥44px",
+      "pass": true,
+      "detail": "h=44.0px"
+    },
+    {
+      "id": "editorial tab label AA (≥4.5)",
+      "pass": true,
+      "detail": "ratio=16.38 fg=rgb(31, 24, 20) bg=rgb(251, 247, 238)"
+    },
+    {
+      "id": "lightbook stage wood backgroundImage",
+      "pass": true,
+      "detail": "gradient/url present"
+    },
+    {
+      "id": "lightbook stage not cream",
+      "pass": true,
+      "detail": "bg=color(srgb 0.868627 0.792157 0.664706)"
+    },
+    {
+      "id": "lightbook wood token",
+      "pass": true,
+      "detail": "--dr-wood=color-mix(in srgb,#f3ecdb 50%,#c8a878)"
+    },
+    {
+      "id": "lightbook book-table surface",
+      "pass": true,
+      "detail": "linear-gradient(color(srgb 0.879137 0.808784 0.691529) 0px, color(srgb 0.868627 "
+    },
+    {
+      "id": "lightbook paper tabs present",
+      "pass": true,
+      "detail": "tabs=15"
+    },
+    {
+      "id": "lightbook tab touch ≥44px",
+      "pass": true,
+      "detail": "h=44.0px"
+    },
+    {
+      "id": "lightbook tab label AA (≥4.5)",
+      "pass": true,
+      "detail": "ratio=15.84 fg=rgb(31, 24, 20) bg=rgb(249, 243, 230)"
+    },
+    {
+      "id": "candlelit stage wood backgroundImage",
+      "pass": true,
+      "detail": "gradient/url present"
+    },
+    {
+      "id": "candlelit stage not cream",
+      "pass": true,
+      "detail": "bg=color(srgb 0.30902 0.179216 0.129412)"
+    },
+    {
+      "id": "candlelit wood token",
+      "pass": true,
+      "detail": "--dr-wood=color-mix(in srgb,#5a3428 65%,#3a2214)"
+    },
+    {
+      "id": "candlelit book-table surface",
+      "pass": true,
+      "detail": "linear-gradient(color(srgb 0.364298 0.244878 0.199059) 0px, color(srgb 0.30902 0"
+    },
+    {
+      "id": "candlelit paper tabs present",
+      "pass": true,
+      "detail": "tabs=15"
+    },
+    {
+      "id": "candlelit tab touch ≥44px",
+      "pass": true,
+      "detail": "h=44.0px"
+    },
+    {
+      "id": "candlelit tab label AA (≥4.5)",
+      "pass": true,
+      "detail": "ratio=12.43 fg=rgb(247, 240, 230) bg=rgb(50, 42, 37)"
+    },
+    {
+      "id": "modern stage wood backgroundImage",
+      "pass": true,
+      "detail": "gradient/url present"
+    },
+    {
+      "id": "modern stage not cream",
+      "pass": true,
+      "detail": "bg=color(srgb 0.916667 0.892157 0.851961)"
+    },
+    {
+      "id": "modern wood token",
+      "pass": true,
+      "detail": "--dr-wood=color-mix(in srgb,#faf7f2 75%,#b9a98f)"
+    },
+    {
+      "id": "modern book-table surface",
+      "pass": true,
+      "detail": "linear-gradient(color(srgb 0.923333 0.900784 0.863804) 0px, color(srgb 0.916667 "
+    },
+    {
+      "id": "modern paper tabs present",
+      "pass": true,
+      "detail": "tabs=15"
+    },
+    {
+      "id": "modern tab touch ≥44px",
+      "pass": true,
+      "detail": "h=44.0px"
+    },
+    {
+      "id": "modern tab label AA (≥4.5)",
+      "pass": true,
+      "detail": "ratio=18.81 fg=rgb(20, 17, 14) bg=rgb(255, 255, 255)"
+    },
+    {
+      "id": "phone stage wood backgroundImage",
+      "pass": true,
+      "detail": "radial-gradient(100% 80% at 50% 0px, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0) "
+    },
+    {
+      "id": "phone stage not cream",
+      "pass": true,
+      "detail": "bg=color(srgb 0.876471 0.802157 0.685294)"
+    },
+    {
+      "id": "phone desk wood",
+      "pass": true,
+      "detail": "linear-gradient(color(srgb 0.891294 0.825898 0.723059) 0px, color(srgb 0.876471 "
+    },
+    {
+      "id": "phone wood token",
+      "pass": true,
+      "detail": "--dr-wood=color-mix(in srgb,#f6f1e7 55%,#c4a06a)"
+    }
+  ],
+  "contrast": [
+    {
+      "id": "editorial tab label AA (≥4.5)",
+      "pass": true,
+      "detail": "ratio=16.38 fg=rgb(31, 24, 20) bg=rgb(251, 247, 238)"
+    },
+    {
+      "id": "lightbook tab label AA (≥4.5)",
+      "pass": true,
+      "detail": "ratio=15.84 fg=rgb(31, 24, 20) bg=rgb(249, 243, 230)"
+    },
+    {
+      "id": "candlelit tab label AA (≥4.5)",
+      "pass": true,
+      "detail": "ratio=12.43 fg=rgb(247, 240, 230) bg=rgb(50, 42, 37)"
+    },
+    {
+      "id": "modern tab label AA (≥4.5)",
+      "pass": true,
+      "detail": "ratio=18.81 fg=rgb(20, 17, 14) bg=rgb(255, 255, 255)"
+    }
+  ]
+}

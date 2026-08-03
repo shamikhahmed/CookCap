@@ -1,12 +1,12 @@
 {
-  "at": "2026-08-03T12:10:04.409Z",
+  "at": "2026-08-03T14:14:15.157Z",
   "base": "http://127.0.0.1:3456/CookCap",
   "failed": 0,
   "results": [
     {
       "id": "S1 footer page chrome",
       "pass": true,
-      "detail": "Scrub pages 1 / 255"
+      "detail": "Scrub pages 1 / 826"
     },
     {
       "id": "S2 book-frame",

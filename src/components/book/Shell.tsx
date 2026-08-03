@@ -649,7 +649,7 @@ function BottomBar() {
           type="button"
           disabled={!ready || busy}
           onClick={() => setGotoOpen((v) => !v)}
-          className="min-h-11 min-w-12 rounded-full px-2 text-center text-[11px] tabular-nums text-[color:var(--color-ink-soft)] hover:bg-[color:var(--color-paper-sunk)] hover:text-[color:var(--color-ink)] disabled:opacity-30 sm:min-w-14 sm:text-xs"
+          className="min-h-11 min-w-12 rounded-full px-2 text-center text-[11px] tabular-nums text-[color:var(--color-ink)] hover:bg-[color:var(--color-paper-sunk)] disabled:opacity-30 sm:min-w-14 sm:text-xs"
           title={
             extras > 0
               ? `Go to page — this edition: ${total} pages (includes ${extras} imported).`

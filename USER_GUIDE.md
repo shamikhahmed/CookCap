@@ -6,7 +6,7 @@ https://shamikhahmed.github.io/CookCap/
 
 1. First visit: **Begin** on the dresser (or calm full-screen steps if reduced motion). Name the book → cover becomes **YourName Cooks**. Skip → **Our Family Cookbook** (never “Family Cooks”).
 2. Optional: who eats + how you cook (or skip → Reader).
-3. Flip pages. Phone: **Tabs** in footer.
+3. Flip pages on the wooden desk. Phone: wood-tinted chrome + **Tabs** in footer.
 
 ## Page navigation (footer)
 

@@ -1,7 +1,7 @@
-# CookCap v3.1.0 — Performance Budgets
+# CookCap v3.2.0 — Performance Budgets
 
-**Version:** 3.1.0 · **SW:** `cookcap-v31` · **Deploy:** GitHub Pages `/CookCap/`  
-**Catalog:** **223** recipes
+**Version:** 3.2.0 · **SW:** `cookcap-v32` · **Deploy:** GitHub Pages `/CookCap/`  
+**Catalog:** **790** recipes
 
 ---
 
@@ -9,7 +9,7 @@
 
 | Metric | Budget | Status |
 |--------|--------|--------|
-| First Load JS (route `/`) | monitor | Drawer code-split OK |
+| First Load JS (route `/`) | monitor | Drawer code-split OK; catalog larger — watch |
 | Recipe DOM mount | **≤12** `data-leaf-scroll` | WarmLeafPool **PASS** |
 | Never mount all recipes | Hard | **PASS** |
 | Chapter list rows | **≤24** + more | OK |
@@ -17,7 +17,7 @@
 | CookingMode timers | 1 interval / open | OK |
 | Longtask flip (headless) | advisory ≤50 / soft ≤170 | Advisory |
 | Longtask flip (real device) | **≤50 ms** | Target |
-| Anti-2D + linkage + smoke | Must PASS | CI Required |
+| Anti-2D + wood + linkage + smoke | Must PASS | CI Required |
 
 ---
 

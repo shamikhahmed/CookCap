@@ -1,4 +1,4 @@
-# CookCap v3.1.0 — Information Architecture Rationale
+# CookCap v3.2.0 — Information Architecture Rationale
 
 **Principle:** every surface has exactly one job. No duplicate homes for the same task.  
 **Ordering law:** most-used / daily tools at top → rarely used middle → identity rename late → legal last.
@@ -12,6 +12,7 @@
 | **Splash** | Quiet launch mark | Settings |
 | **Cover leaf** | Book identity + open + optional cover photo | App settings |
 | **Book leaves** | Read recipes / chapters / For You; Serve with; kitchen copy | Shopping CRUD |
+| **Wooden desk** | Frame book (`--dr-wood*`) — not content | Recipe text |
 | **Top bar** | Global wayfinding + mode/profile | Deep editing |
 | **Footer** | Page position + **Home / ±5 / scrub / go-to #** | Chapter tabs (desktop rail) |
 | **Appearance** | Skin, tabs, Flip/Fast, Labels (EN/Ur stub) | Data export |

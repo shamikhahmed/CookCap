@@ -1,12 +1,12 @@
 # CookCap — Universal Product-Standard Audit
 
 **Product:** offline heirloom cookbook PWA (Cap family)  
-**Version:** **3.1.0**  
-**SW:** `cookcap-v31`  
+**Version:** **3.2.0**  
+**SW:** `cookcap-v32`  
 **Live:** https://shamikhahmed.github.io/CookCap/ (`NEXT_PUBLIC_BASE_PATH=/CookCap`)  
 **Stack:** Next.js 15 static export · React 19 · Tailwind v4 · Motion · IndexedDB (`cookcap`) · SW  
 **Auth:** none (local-only) — Appendix E **SKIP**  
-**Catalog:** **223** recipes  
+**Catalog:** **790** recipes  
 **Review entry:** `docs/REVIEW-PACK.md`
 
 ---
@@ -18,13 +18,14 @@
 | Entry | `src/app/page.tsx` → `Shell` | Single route book object |
 | Chrome | `Shell.tsx` | Top bar, **footer page nav**, drawers, onboard |
 | Book | `BookController` · `Book` · `WarmLeafPool` · leaves/* | Position + mount window |
-| Data | `src/lib/recipes/data*.ts` (223) | Bundled catalog |
+| Desk | `globals.css` `.journal-stage` / `.book-table` | Real wood via `--dr-wood*` |
+| Data | `src/lib/recipes/data*.ts` (790) | Bundled catalog + world table |
 | Heroes | `images.generated.json` + `images.lock.json` | Locked photo map |
 | State | `AppStore` + `src/lib/db/store.ts` (`cookcap`) | Favorites, notes, profiles, plan… |
 | Modes | `src/lib/modes/*` | Reader / Plate / Mother / … lenses |
 | Search | `search.ts` + `smart-query.ts` + `SearchOverlay` | Indexed + ★ + smart phrases |
-| Design | `globals.css` + `data-skin` / `data-tabs` | Skins + paper tabs |
-| Deploy | `.github/workflows/pages.yml` | typecheck → recipes → build → anti-2d → smoke → Pages |
+| Design | `globals.css` + `data-skin` / `data-tabs` | Skins + paper tabs on wood |
+| Deploy | `.github/workflows/pages.yml` | typecheck → recipes → build → anti-2d → wood → smoke → Pages |
 
 ### Guardrails (do not regress)
 
@@ -38,6 +39,7 @@
 8. Honest photos or generated art (never wrong-dish stock)  
 9. No fake AI marketing  
 10. P15 hard nos stay out unless product reopens  
+11. Reading desk is wood (DOM `backgroundImage`), not cream  
 
 ---
 
@@ -47,18 +49,20 @@
 |-----|------|------|
 | Med | Some `goal-*` / tips still art-only | Fill only with unlock + honest plates |
 | Med | Headless Motion flip longtasks | Real-device GPU ≤50ms target |
-| Low | Gallery tree ~200 MB | Regen on chrome ships (done 3.1.0) |
+| Med | Large catalog JS (790) | WarmLeafPool + chapter pagination hold |
+| Low | Gallery tree ~200 MB | Regen on chrome ships (done 3.2.0) |
 | Low | Guest PIN = obfuscation not crypto | Documented honesty |
 | Low | SEO Lighthouse ~63 (`noindex`) | Intentional private book |
 
 ---
 
-## Shipped through 3.1.0 (summary)
+## Shipped through 3.2.0 (summary)
 
 - Serve-with · cook ritual · backup merge · guest PIN · smart search · occasions · print · i18n stub · PWA shortcuts  
 - Honest guacamole fix (3.0.1)  
 - Footer Home / ±5 / scrub / go-to page (3.1.0)  
+- Wooden reader + world table restore + `gate:wood` (3.2.0)  
 
 ## Gates
 
-`typecheck` · `gate:recipes` · `gate:anti-2d` · `smoke:product` — required green before ship.
+`typecheck` · `gate:recipes` · `gate:anti-2d` · `gate:wood` · `smoke:product` — required green before ship.
