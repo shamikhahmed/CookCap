@@ -31,11 +31,15 @@ interface CookbookDB extends DBSchema {
     indexes: { date: string; profileId: string };
   };
   pantry: { key: string; value: PantryItem };
+  /** Custom recipe heroes — Blob JPEG, keyed by recipe id. */
+  'user-heroes': { key: string; value: { id: string; blob: Blob; updatedAt: number } };
+  /** Journal cover photo — single row id `cover`. */
+  'cover-image': { key: string; value: { id: string; blob: Blob; updatedAt: number } };
   meta: { key: string; value: unknown };
 }
 
 const DB_NAME = 'jia-cooks';
-const DB_VERSION = 3;
+const DB_VERSION = 4;
 
 let dbp: Promise<IDBPDatabase<CookbookDB>> | null = null;
 
@@ -70,6 +74,14 @@ function db() {
           }
           if (!d.objectStoreNames.contains('pantry')) {
             d.createObjectStore('pantry', { keyPath: 'id' });
+          }
+        }
+        if (oldVersion < 4) {
+          if (!d.objectStoreNames.contains('user-heroes')) {
+            d.createObjectStore('user-heroes', { keyPath: 'id' });
+          }
+          if (!d.objectStoreNames.contains('cover-image')) {
+            d.createObjectStore('cover-image', { keyPath: 'id' });
           }
         }
       },
@@ -346,6 +358,32 @@ export async function deletePantry(id: string): Promise<void> {
   await (await db()).delete('pantry', id);
 }
 
+/* ── User heroes (custom photos) ───────────────────────────────────────*/
+export async function listUserHeroes(): Promise<{ id: string; blob: Blob; updatedAt: number }[]> {
+  return (await db()).getAll('user-heroes');
+}
+export async function getUserHero(id: string): Promise<Blob | undefined> {
+  return (await (await db()).get('user-heroes', id))?.blob;
+}
+export async function putUserHero(id: string, blob: Blob): Promise<void> {
+  await (await db()).put('user-heroes', { id, blob, updatedAt: Date.now() });
+}
+export async function deleteUserHero(id: string): Promise<void> {
+  await (await db()).delete('user-heroes', id);
+}
+
+/* ── Cover photo ───────────────────────────────────────────────────────*/
+const COVER_ID = 'cover';
+export async function getCoverImage(): Promise<Blob | undefined> {
+  return (await (await db()).get('cover-image', COVER_ID))?.blob;
+}
+export async function putCoverImage(blob: Blob): Promise<void> {
+  await (await db()).put('cover-image', { id: COVER_ID, blob, updatedAt: Date.now() });
+}
+export async function deleteCoverImage(): Promise<void> {
+  await (await db()).delete('cover-image', COVER_ID);
+}
+
 /** Wipe every user store (export/delete in About). Does not delete the DB schema. */
 export async function clearAllUserData(): Promise<void> {
   const d = await db();
@@ -360,6 +398,8 @@ export async function clearAllUserData(): Promise<void> {
     'profiles',
     'diary',
     'pantry',
+    'user-heroes',
+    'cover-image',
     'meta',
   ] as const;
   const tx = d.transaction(stores as unknown as Array<(typeof stores)[number]>, 'readwrite');
@@ -367,9 +407,19 @@ export async function clearAllUserData(): Promise<void> {
   await tx.done;
 }
 
-/** Snapshot for JSON export. */
+async function blobToBase64(blob: Blob): Promise<string> {
+  const buf = await blob.arrayBuffer();
+  let binary = '';
+  const bytes = new Uint8Array(buf);
+  for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]!);
+  return btoa(binary);
+}
+
+/** Snapshot for JSON export (blobs as base64). */
 export async function exportUserSnapshot() {
   const d = await db();
+  const heroes = await d.getAll('user-heroes');
+  const covers = await d.getAll('cover-image');
   return {
     favorites: await d.getAll('favorites'),
     history: await d.getAll('history'),
@@ -381,6 +431,22 @@ export async function exportUserSnapshot() {
     profiles: await d.getAll('profiles'),
     diary: await d.getAll('diary'),
     pantry: await d.getAll('pantry'),
+    userHeroes: await Promise.all(
+      heroes.map(async (h) => ({
+        id: h.id,
+        mime: h.blob.type || 'image/jpeg',
+        dataBase64: await blobToBase64(h.blob),
+        updatedAt: h.updatedAt,
+      })),
+    ),
+    coverImage: await Promise.all(
+      covers.map(async (c) => ({
+        id: c.id,
+        mime: c.blob.type || 'image/jpeg',
+        dataBase64: await blobToBase64(c.blob),
+        updatedAt: c.updatedAt,
+      })),
+    ),
     mealPlan: await getMeta('meal-plan'),
   };
 }

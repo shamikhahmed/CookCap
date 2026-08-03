@@ -29,6 +29,7 @@ interface Mini {
   steps: St[];
   tips?: string[];
   related?: string[];
+  serveWith?: string[];
   seed: number;
 }
 
@@ -61,6 +62,7 @@ function r(x: Mini): Recipe {
     steps: x.steps.map((s) => (Array.isArray(s) ? { instruction: s[0], durationSec: s[1] } : { instruction: s })),
     tips: x.tips,
     related: x.related,
+    serveWith: x.serveWith,
     heroSeed: x.seed,
   };
 }
@@ -3122,6 +3124,7 @@ export const FILL_RECIPES: Recipe[] = [
       'Rest and serve from the sides.'
     ],
     tips: ['Made with love — taste and adjust as you go.'],
+    serveWith: ['mint-raita', 'cucumber-raita', 'green-chutney'],
     seed: 393,
   }),
   r({
@@ -3401,6 +3404,7 @@ export const FILL_RECIPES: Recipe[] = [
     ],
     tips: ['Wet hands so the mince doesn’t stick.'],
     related: ['karahi-chicken'],
+    serveWith: ['green-chutney', 'mint-raita', 'imli-chutney'],
     seed: 501,
   }),
   r({

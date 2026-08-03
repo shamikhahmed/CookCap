@@ -23,9 +23,10 @@ export function buildLeaves(extra: Recipe[] = [], includeForYou = false): {
   allRecipes: Recipe[];
   recipeMap: Record<string, Recipe>;
 } {
-  const bundledIds = new Set(RECIPES.map((r) => r.id));
-  const customs = extra.filter((r) => !bundledIds.has(r.id));
-  const allRecipes = [...RECIPES, ...customs].map(enrichRecipe);
+  /* Customs override catalog by id (forks); new ids append. */
+  const byId = new Map<string, Recipe>(RECIPES.map((r) => [r.id, r]));
+  for (const c of extra) byId.set(c.id, c);
+  const allRecipes = [...byId.values()].map(enrichRecipe);
   const recipeMap = Object.fromEntries(allRecipes.map((r) => [r.id, r])) as Record<string, Recipe>;
 
   const byChapter = (id: string) => allRecipes.filter((r) => r.chapter === id);

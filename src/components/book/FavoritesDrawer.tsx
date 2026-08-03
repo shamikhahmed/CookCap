@@ -100,7 +100,7 @@ export function FavoritesDrawer({ open, onClose }: { open: boolean; onClose: () 
                     title="Favorites"
                     empty={
                       ready
-                        ? 'Tap the heart on any recipe to save it here.'
+                        ? 'Tap the heart on a recipe — it lands here.'
                         : 'Loading your kitchen…'
                     }
                   >

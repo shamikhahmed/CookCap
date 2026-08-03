@@ -1,5 +1,6 @@
 'use client';
 
+import { useRef } from 'react';
 import { useBook } from '@/components/book/BookController';
 import { useApp } from '@/components/app/AppStore';
 import { PRODUCT_NAME } from '@/lib/edition';
@@ -9,11 +10,12 @@ import { PRODUCT_NAME } from '@/lib/edition';
  * grained leather, with a subtle spine highlight. Tapping it "opens" the book.
  *
  * Brand hierarchy: big personal title (or Our Family / Cookbook), tiny CookCap
- * foil mark as publisher at the bottom.
+ * foil mark as publisher at the bottom. Optional user cover photo under scrim.
  */
 export function CoverLeaf() {
   const { next } = useBook();
-  const { edition, editionReady } = useApp();
+  const { edition, editionReady, coverUrl, setCoverPhoto, clearCoverPhoto } = useApp();
+  const fileRef = useRef<HTMLInputElement>(null);
 
   return (
     <div
@@ -29,8 +31,21 @@ export function CoverLeaf() {
       className="leather relative flex h-full w-full cursor-pointer flex-col items-center justify-center overflow-hidden text-center"
       aria-label="Open the cookbook"
     >
+      {coverUrl && (
+        // eslint-disable-next-line @next/next/no-img-element -- blob URL
+        <img
+          src={coverUrl}
+          alt=""
+          aria-hidden
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        />
+      )}
       <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-black/40 to-transparent" />
-      <div className="pointer-events-none absolute inset-0 rounded-[inherit] shadow-[inset_0_0_60px_rgba(0,0,0,0.5)]" />
+      <div
+        className={`pointer-events-none absolute inset-0 rounded-[inherit] ${
+          coverUrl ? 'bg-black/45 shadow-[inset_0_0_60px_rgba(0,0,0,0.55)]' : 'shadow-[inset_0_0_60px_rgba(0,0,0,0.5)]'
+        }`}
+      />
 
       <div className="foil-sweep pointer-events-none absolute inset-0 z-20" />
 
@@ -56,6 +71,40 @@ export function CoverLeaf() {
         <p className="gold-foil text-xs uppercase tracking-[0.4em] opacity-80" suppressHydrationWarning>
           {edition.tagline}
         </p>
+      </div>
+
+      <div
+        className="absolute bottom-[4.5rem] z-30 flex gap-2"
+        onClick={(e) => e.stopPropagation()}
+        onKeyDown={(e) => e.stopPropagation()}
+      >
+        <input
+          ref={fileRef}
+          type="file"
+          accept="image/*"
+          className="sr-only"
+          onChange={(e) => {
+            const f = e.target.files?.[0];
+            if (f) void setCoverPhoto(f);
+            e.target.value = '';
+          }}
+        />
+        <button
+          type="button"
+          className="min-h-11 rounded-full border border-[color:var(--color-gold)]/50 bg-black/35 px-3 py-1.5 text-[0.65rem] uppercase tracking-[0.2em] text-[color:var(--color-gold)] backdrop-blur-sm"
+          onClick={() => fileRef.current?.click()}
+        >
+          {coverUrl ? 'Change photo' : 'Add photo'}
+        </button>
+        {coverUrl && (
+          <button
+            type="button"
+            className="min-h-11 rounded-full border border-[color:var(--color-gold)]/40 bg-black/35 px-3 py-1.5 text-[0.65rem] uppercase tracking-[0.2em] text-[color:var(--color-gold)]/80 backdrop-blur-sm"
+            onClick={() => void clearCoverPhoto()}
+          >
+            Remove
+          </button>
+        )}
       </div>
 
       <span className="cover-hint absolute bottom-14 z-10 text-xs uppercase tracking-[0.35em] text-[color:var(--color-gold)]/70">

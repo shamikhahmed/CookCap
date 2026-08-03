@@ -1,4 +1,4 @@
-# CookCap v2.4.6 — Information Architecture Rationale
+# CookCap v2.5.0 — Information Architecture Rationale
 
 **Principle:** every surface has exactly one job. No duplicate homes for the same task.  
 **Ordering law:** most-used / daily tools at top → rarely used middle → identity rename late → legal last.
@@ -10,8 +10,8 @@
 | Surface | Job | Not responsible for |
 |---------|-----|---------------------|
 | **Splash** | Quiet launch mark; dissolve when ready | Settings, onboarding data |
-| **Cover leaf** | Personal book identity + open gesture | App settings |
-| **Book leaves** | Read recipes, chapters, For You (when lens on) | Shopping, profiles CRUD |
+| **Cover leaf** | Personal book identity + open gesture + optional cover photo | App settings |
+| **Book leaves** | Read recipes, chapters, For You (when lens on); Serve with; kitchen copy (photo/fork) | Shopping, profiles CRUD |
 | **Top bar** | Global wayfinding + mode/profile affordances | Deep editing |
 | **Appearance panel** | Skin, tab style, reading mode (portal over desk) | Data export, legal |
 | **Search (⌘K)** | Find recipes + ★ rating filters + quick actions | Profile setup |
@@ -19,9 +19,17 @@
 | **Dresser / Simple onboard** | First-run identity + optional profile/mode | Ongoing profile management |
 | **NameGate** | Rename only (··· Change book name) | First-run ceremony |
 | **Profiles drawer** | Create / edit / delete / switch eaters + Cooking for (Mother) | Mode preset definitions |
-| **Mode chooser** | Lens preset (Reader, Plate, Mother, …) | Biometric entry |
+| **Mode chooser** | Lens preset grouped: book → kitchen → occasion → health | Biometric entry |
 | **Calendar / Pantry** | Diary rings + inventory / budget | Recipe authoring |
-| **About modal** | Version, privacy, export, wipe | Appearance tweaks |
+| **About modal** | Version, privacy, export (incl. photo blobs), wipe | Appearance tweaks |
+
+---
+
+## Recipe leaf section order (reader path)
+
+Title/hero → meta → story → ingredients → method → **Serve with / Goes well with** → Cook next → Good to know → **Your kitchen copy** (photo/fork) → notes
+
+Serve with never auto-adds shopping — open side when you want.
 
 ---
 

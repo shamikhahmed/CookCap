@@ -525,14 +525,14 @@ async function captureBookChrome(page, folder) {
   await settle(page, 300);
 
   await openMore(page);
-  await page.getByRole('button', { name: 'Calendar', exact: true }).click({ force: true });
+  await page.getByRole('menuitem', { name: 'Calendar', exact: true }).click({ force: true });
   await settle(page, 500);
   await shot(page, `${folder}/15-calendar.png`);
   await page.keyboard.press('Escape');
   await settle(page, 300);
 
   await openMore(page);
-  await page.getByRole('button', { name: /Pantry/i }).click({ force: true });
+  await page.getByRole('menuitem', { name: /Pantry/i }).click({ force: true });
   await settle(page, 500);
   await shot(page, `${folder}/16-pantry.png`);
   await page.keyboard.press('Escape');

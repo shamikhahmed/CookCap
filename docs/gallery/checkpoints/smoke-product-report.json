@@ -1,12 +1,12 @@
 {
-  "at": "2026-08-02T23:23:45.613Z",
+  "at": "2026-08-03T08:14:08.174Z",
   "base": "http://127.0.0.1:3456/CookCap",
   "failed": 0,
   "results": [
     {
       "id": "S1 footer page chrome",
       "pass": true,
-      "detail": "1 / 247"
+      "detail": "1 / 253"
     },
     {
       "id": "S2 book-frame",
@@ -32,6 +32,21 @@
       "id": "S6 phone search ≥44px",
       "pass": true,
       "detail": "44×44"
+    },
+    {
+      "id": "S6a 320 book + search",
+      "pass": true,
+      "detail": "frame=1 search=44×44"
+    },
+    {
+      "id": "S6b 768 book + search",
+      "pass": true,
+      "detail": "frame=1 search=44×44"
+    },
+    {
+      "id": "S6c 1920 book + search",
+      "pass": true,
+      "detail": "frame=1 search=44×44"
     },
     {
       "id": "S7 no third-party runtime fetch",

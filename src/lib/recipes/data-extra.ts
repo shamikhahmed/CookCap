@@ -36,6 +36,7 @@ interface Mini {
   steps: St[];
   tips?: string[];
   related?: string[];
+  serveWith?: string[];
   seed: number;
 }
 
@@ -68,6 +69,7 @@ function r(x: Mini): Recipe {
     steps: x.steps.map((s) => (Array.isArray(s) ? { instruction: s[0], durationSec: s[1] } : { instruction: s })),
     tips: x.tips,
     related: x.related,
+    serveWith: x.serveWith,
     heroSeed: x.seed,
   };
 }
@@ -796,6 +798,7 @@ export const EXTRA_RECIPES: Recipe[] = [
     ],
     tips: ['Don’t add water — the tomatoes give all the moisture you need.'],
     related: ['karahi-mutton', 'handi-chicken'],
+    serveWith: ['mint-raita', 'kachumber-salad'],
     seed: 210,
   }),
   r({
@@ -1609,7 +1612,8 @@ function biryani(style: 'saadi' | 'sindhi' | 'zaffarani', meat: 'chicken' | 'mut
         'Parboil the rice to 70% — it finishes cooking in the steam.',
         'Seal the lid with foil or dough so no steam escapes during dum.',
       ],
-      related: ['saadi', 'sindhi', 'saadi', 'chicken', 'qorma-chicken', 'mutton', 'qorma-mutton', 'nihari-beef'],
+      related: ['qorma-chicken', 'qorma-mutton', 'nihari-beef', 'mint-raita'],
+      serveWith: ['mint-raita', 'cucumber-raita', 'green-chutney'],
       seed,
     }),
   ];

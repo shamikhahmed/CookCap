@@ -2,7 +2,7 @@
 
 Cap-family offline-first cookbook PWA. Name your book → **`{Name} Cooks`**.
 
-**Live:** https://shamikhahmed.github.io/CookCap/ · **v2.4.6**
+**Live:** https://shamikhahmed.github.io/CookCap/ · **v2.5.0**
 
 ## Features
 

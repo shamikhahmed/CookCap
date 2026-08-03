@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { useApp } from '@/components/app/AppStore';
 import { PRODUCT_NAME } from '@/lib/edition';
+import { splashTransition } from '@/lib/motion';
 import { APP_VERSION } from '@/lib/version';
 
 /**
@@ -41,12 +42,17 @@ export function Splash() {
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[color:var(--desk,var(--color-paper-sunk))]"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: reduce ? 0 : 0.45, ease: [0.22, 1, 0.36, 1] }}
+          transition={splashTransition(reduce)}
           aria-hidden={!show}
         >
-          <p className="font-serif text-3xl font-semibold italic tracking-tight text-[color:var(--color-ink)]">
+          <motion.p
+            className="font-serif text-3xl font-semibold italic tracking-tight text-[color:var(--color-ink)]"
+            initial={reduce ? false : { opacity: 0.92, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={splashTransition(reduce)}
+          >
             {PRODUCT_NAME}
-          </p>
+          </motion.p>
           <p className="mt-2 text-[10px] uppercase tracking-[0.28em] text-[color:var(--color-ink-faint)]">
             v{APP_VERSION}
           </p>

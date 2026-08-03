@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.5.0 — 2026-08-03
+
+### Feat
+- **Serve with / Goes well with** — optional sides (raita, chutney, kachumber); tag rules + hand links; 6 new snack recipes (~221 catalog)
+- **Personal kitchen (IDB v4)** — custom recipe photos, journal cover photo, fork/edit catalog text with restore; customs override catalog by id in `buildLeaves`
+- **Mode chooser groups** — The book / Kitchen / Occasions / Health lenses
+- Motion tokens `--dur-1…5`; drawers use soft tween (no spring); splash scale+fade
+- Recipe body measure ~65ch; quieter desk vignette; empty-state copy polish
+- `smoke:product` viewport checks at 320 / 768 / 1920
+
+### Docs
+- `docs/ROADMAP.md` phase map + pillar scorecard; IA / PRESENTATION / Capricorn
+
+### Chore
+- SW → `cookcap-v26`
+
 ## 2.4.6 — 2026-08-03
 
 ### Fix

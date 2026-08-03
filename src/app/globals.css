@@ -85,10 +85,16 @@
   /* ── Motion — one language of easing + duration ─────────────────────*/
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+  /* Press settle only — never page/drawer flips */
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --dur-fast: 160ms;
+  --dur-1: 120ms;
+  --dur-2: 200ms;
+  --dur-3: 320ms;
+  --dur-4: 480ms;
+  --dur-5: 700ms;
+  --dur-fast: var(--dur-2);
   --dur-base: 280ms;
-  --dur-slow: 520ms;
+  --dur-slow: var(--dur-4);
   --dur-book: 1100ms;
 
   /* ── Breakpoints ─────────────────────────────────────────────────────*/
@@ -737,10 +743,10 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  opacity: 0.55;
+  opacity: 0.5;
   background:
-    radial-gradient(ellipse 70% 55% at 50% 42%, color-mix(in srgb, #fff 14%, transparent), transparent 68%),
-    radial-gradient(ellipse 100% 80% at 50% 100%, color-mix(in srgb, #000 22%, transparent), transparent 55%);
+    radial-gradient(ellipse 72% 58% at 50% 38%, color-mix(in srgb, #fff 12%, transparent), transparent 70%),
+    radial-gradient(ellipse 110% 70% at 50% 108%, color-mix(in srgb, var(--dr-wood-dark) 28%, transparent), transparent 58%);
   mix-blend-mode: soft-light;
 }
 /* Stacking: do NOT force every desk child to z-index:1 — that trapped

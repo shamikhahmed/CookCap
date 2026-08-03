@@ -65,12 +65,17 @@ function parseRecipesFromFile(text, fileLabel) {
     const related = relatedBlock
       ? [...relatedBlock[1].matchAll(/'([^']+)'/g)].map((r) => r[1])
       : [];
+    const serveBlock = slice.match(/serveWith:\s*\[([^\]]*)\]/);
+    const serveWith = serveBlock
+      ? [...serveBlock[1].matchAll(/'([^']+)'/g)].map((r) => r[1])
+      : [];
     recipes.push({
       id,
       chapter,
       title,
       heroSeed: heroSeed ? Number(heroSeed) : seed ? Number(seed) : null,
       related,
+      serveWith,
       file: fileLabel,
     });
   }
@@ -118,6 +123,12 @@ async function main() {
     for (const rel of r.related) {
       if (!idSet.has(rel)) {
         errors.push(`Recipe "${r.id}" (${r.file}) related id missing: "${rel}"`);
+      }
+    }
+
+    for (const sw of r.serveWith || []) {
+      if (!idSet.has(sw)) {
+        errors.push(`Recipe "${r.id}" (${r.file}) serveWith id missing: "${sw}"`);
       }
     }
 

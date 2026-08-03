@@ -99,6 +99,8 @@ export interface Recipe {
   storage?: string;
   reheating?: string;
   related?: string[];
+  /** Optional accompaniment recipe ids (raita, chutney). Distinct from `related` (cook-next). */
+  serveWith?: string[];
   /** Deterministic art seed → generated SVG hero (offline fallback if no photo). */
   heroSeed: number;
   /** True when macros were hand-checked; UI should hint "estimated" when false/absent. */

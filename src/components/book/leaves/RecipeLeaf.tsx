@@ -7,6 +7,7 @@ import { RecipeImage } from '@/components/ui/RecipeImage';
 import { CharacterArt } from '@/components/art/CharacterArt';
 import { formatQty, scaleIngredient } from '@/lib/recipes/scale';
 import { relatedFor } from '@/lib/recipes/related';
+import { goesWithFor, serveWithFor } from '@/lib/recipes/serve-with';
 import { useApp } from '@/components/app/AppStore';
 import { useBook } from '@/components/book/BookController';
 import { CookingMode } from '@/components/book/CookingMode';
@@ -16,6 +17,7 @@ import { Icon } from '@/components/ui/Icon';
 import { formatCost, estCostPkr } from '@/lib/cost/ingredient-cost';
 import { applyHealthier } from '@/lib/profiles/nutrition';
 import { storyByline } from '@/lib/edition';
+import { RECIPES } from '@/lib/recipes/data';
 import * as store from '@/lib/db/store';
 import type { Recipe } from '@/lib/recipes/types';
 
@@ -49,6 +51,7 @@ export function RecipeLeaf({
 /** Neighbor warm only — hero decode + title, no method DOM. */
 function WarmRecipeShell({ recipe }: { recipe: Recipe }) {
   const chapter = CHAPTER_MAP[recipe.chapter] ?? CHAPTER_MAP.pakistani!;
+  const { heroUrls } = useApp();
   return (
     <article data-leaf-scroll className="paper-grain h-full w-full overflow-hidden" aria-hidden>
       <div className="relative aspect-[16/11] w-full overflow-hidden sm:aspect-[16/10]">
@@ -59,6 +62,7 @@ function WarmRecipeShell({ recipe }: { recipe: Recipe }) {
           alt=""
           priority={false}
           sizes="(max-width: 640px) 100vw, 560px"
+          userSrc={heroUrls[recipe.id]}
         />
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
           <h2 className="font-serif text-xl font-bold text-white">{recipe.title}</h2>
@@ -85,10 +89,25 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
     activeProfile,
     currency,
     reportStorageError,
+    customs,
+    addCustom,
+    updateCustom,
+    removeCustom,
+    heroUrls,
+    setRecipeHero,
+    clearRecipeHero,
   } = useApp();
   const { goToRecipe } = useBook();
   const fav = isFavorite(recipe.id);
   const isTip = recipe.chapter === 'tips';
+  const heroFileRef = useRef<HTMLInputElement>(null);
+  const customOverride = customs.find((c) => c.id === recipe.id);
+  const isBundled = RECIPES.some((r) => r.id === recipe.id);
+  const isFork = Boolean(customOverride && isBundled);
+  const [editOpen, setEditOpen] = useState(false);
+  const [editTitle, setEditTitle] = useState(recipe.title);
+  const [editTagline, setEditTagline] = useState(recipe.tagline);
+  const [editStory, setEditStory] = useState(recipe.story ?? '');
 
   const [servings, setServings] = useState(recipe.servings);
   const [rating, setRating] = useState(0);
@@ -102,6 +121,8 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
   const [bodyReady, setBodyReady] = useState(prefetch);
   const factor = servings / recipe.servings;
   const related = relatedFor(recipe, 4, allRecipes);
+  const serveWith = serveWithFor(recipe, allRecipes, 3);
+  const goesWith = goesWithFor(recipe, allRecipes, 6);
   const noteTimer = useRef<number | null>(null);
 
   const healthierMacros =
@@ -211,6 +232,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
           alt={`${recipe.title} — ${recipe.tagline}`}
           priority
           sizes="(max-width: 640px) 100vw, 560px"
+          userSrc={heroUrls[recipe.id]}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
@@ -240,8 +262,8 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
         </button>
       </div>
 
-      <div className="mx-auto max-w-[72ch] px-4 py-5 sm:px-[7%] sm:py-6">
-        <p className="font-serif text-lg italic text-[color:var(--color-ink-soft)] text-balance">
+      <div className="mx-auto max-w-[65ch] px-4 py-5 sm:px-[7%] sm:py-6">
+        <p className="font-serif text-lg italic leading-relaxed text-[color:var(--color-ink-soft)] text-balance">
           {recipe.tagline}
         </p>
         {!bodyReady ? (
@@ -662,8 +684,154 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
         )}
 
         <p className="mt-6 text-center font-serif text-sm italic text-[color:var(--color-ink-faint)]">
-          Made for our table — swap in your own photos anytime.
+          Your kitchen, your copy — photos and edits stay on this device.
         </p>
+
+        {/* ── Personalize (P1) ────────────────────────────────*/}
+        <Section title="Your kitchen copy" accent={chapter.tab}>
+          <input
+            ref={heroFileRef}
+            type="file"
+            accept="image/*"
+            className="sr-only"
+            onChange={(e) => {
+              const f = e.target.files?.[0];
+              if (f) void setRecipeHero(recipe.id, f);
+              e.target.value = '';
+            }}
+          />
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              className="min-h-11 rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-3 py-1.5 text-sm text-[color:var(--color-ink)]"
+              onClick={() => heroFileRef.current?.click()}
+            >
+              {heroUrls[recipe.id] ? 'Change photo' : 'Add photo'}
+            </button>
+            {heroUrls[recipe.id] && (
+              <button
+                type="button"
+                className="min-h-11 rounded-full border border-[color:var(--color-line)] px-3 py-1.5 text-sm text-[color:var(--color-ink-soft)]"
+                onClick={() => void clearRecipeHero(recipe.id)}
+              >
+                Remove photo
+              </button>
+            )}
+            {isBundled && !isFork && (
+              <button
+                type="button"
+                className="min-h-11 rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-3 py-1.5 text-sm text-[color:var(--color-ink)]"
+                onClick={() => {
+                  setEditTitle(recipe.title);
+                  setEditTagline(recipe.tagline);
+                  setEditStory(recipe.story ?? '');
+                  setEditOpen(true);
+                }}
+              >
+                Edit text
+              </button>
+            )}
+            {isFork && (
+              <>
+                <button
+                  type="button"
+                  className="min-h-11 rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-3 py-1.5 text-sm text-[color:var(--color-ink)]"
+                  onClick={() => {
+                    setEditTitle(recipe.title);
+                    setEditTagline(recipe.tagline);
+                    setEditStory(recipe.story ?? '');
+                    setEditOpen(true);
+                  }}
+                >
+                  Edit fork
+                </button>
+                <button
+                  type="button"
+                  className="min-h-11 rounded-full border border-[color:var(--color-accent)]/40 px-3 py-1.5 text-sm text-[color:var(--color-accent)]"
+                  onClick={() => void removeCustom(recipe.id, { keepLinks: true })}
+                >
+                  Restore book recipe
+                </button>
+              </>
+            )}
+            {!isBundled && customOverride && (
+              <button
+                type="button"
+                className="min-h-11 rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-3 py-1.5 text-sm text-[color:var(--color-ink)]"
+                onClick={() => {
+                  setEditTitle(recipe.title);
+                  setEditTagline(recipe.tagline);
+                  setEditStory(recipe.story ?? '');
+                  setEditOpen(true);
+                }}
+              >
+                Edit import
+              </button>
+            )}
+          </div>
+          {isFork && (
+            <p className="mt-2 text-xs text-[color:var(--color-ink-faint)]">
+              Forked — your wording overrides the book copy on this device.
+            </p>
+          )}
+          {editOpen && (
+            <form
+              className="mt-3 space-y-2 rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] p-3"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const next: Recipe = {
+                  ...recipe,
+                  title: editTitle.trim() || recipe.title,
+                  tagline: editTagline.trim() || recipe.tagline,
+                  story: editStory.trim() || recipe.story,
+                };
+                void (customOverride ? updateCustom(next) : addCustom(next));
+                setEditOpen(false);
+              }}
+            >
+              <label className="block text-xs text-[color:var(--color-ink-faint)]">
+                Title
+                <input
+                  className="mt-1 min-h-11 w-full rounded-lg border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3 text-[color:var(--color-ink)]"
+                  value={editTitle}
+                  onChange={(e) => setEditTitle(e.target.value)}
+                />
+              </label>
+              <label className="block text-xs text-[color:var(--color-ink-faint)]">
+                Tagline
+                <input
+                  className="mt-1 min-h-11 w-full rounded-lg border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3 text-[color:var(--color-ink)]"
+                  value={editTagline}
+                  onChange={(e) => setEditTagline(e.target.value)}
+                />
+              </label>
+              <label className="block text-xs text-[color:var(--color-ink-faint)]">
+                Story
+                <textarea
+                  className="mt-1 min-h-24 w-full rounded-lg border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3 py-2 text-[color:var(--color-ink)]"
+                  value={editStory}
+                  onChange={(e) => setEditStory(e.target.value)}
+                />
+              </label>
+              <div className="flex gap-2">
+                <button
+                  type="submit"
+                  className="min-h-11 rounded-full bg-[color:var(--color-accent)] px-4 text-sm text-white"
+                >
+                  Save on this device
+                </button>
+                <button
+                  type="button"
+                  className="min-h-11 rounded-full border border-[color:var(--color-line)] px-4 text-sm"
+                  onClick={() => setEditOpen(false)}
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          )}
+        </Section>
+
         {/* ── Reference grid ────────────────────────────────*/}
         {(recipe.substitutions || recipe.equipment || recipe.storage || recipe.reheating) && (
           <Section title="Good to know" accent={chapter.tab}>
@@ -735,6 +903,45 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
           </button>
         </div>
 
+        {/* ── Serve with / Goes well with ─────────────────────*/}
+        {serveWith.length > 0 && (
+          <Section title="Serve with" accent={chapter.tab}>
+            <p className="mb-2 text-xs text-[color:var(--color-ink-faint)]">
+              Optional sides — open one when you want.
+            </p>
+            <ul className="space-y-2">
+              {serveWith.map(({ recipe: side, note }) => (
+                <li key={side.id}>
+                  <button
+                    type="button"
+                    onClick={() => goToRecipe(side.id)}
+                    className="flex min-h-11 w-full flex-col items-start rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-3 py-2 text-left transition-colors hover:border-[color:var(--color-accent)]"
+                  >
+                    <span className="font-serif text-[color:var(--color-ink)]">{side.title}</span>
+                    <span className="text-xs text-[color:var(--color-ink-soft)]">{note}</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </Section>
+        )}
+        {goesWith.length > 0 && (
+          <Section title="Goes well with" accent={chapter.tab}>
+            <div className="flex flex-wrap gap-2">
+              {goesWith.map(({ recipe: main }) => (
+                <button
+                  key={main.id}
+                  type="button"
+                  onClick={() => goToRecipe(main.id)}
+                  className="min-h-11 rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-3 py-1.5 text-sm text-[color:var(--color-ink)] transition-colors hover:border-[color:var(--color-accent)]"
+                >
+                  {main.title}
+                </button>
+              ))}
+            </div>
+          </Section>
+        )}
+
         {/* ── Related ────────────────────────────────────────*/}
         {related.length > 0 && (
           <Section title="Cook next" accent={chapter.tab}>
@@ -744,7 +951,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                   key={r.id}
                   type="button"
                   onClick={() => goToRecipe(r.id)}
-                  className="rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-3 py-1.5 text-sm text-[color:var(--color-ink)] transition-colors hover:border-[color:var(--color-accent)]"
+                  className="min-h-11 rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-3 py-1.5 text-sm text-[color:var(--color-ink)] transition-colors hover:border-[color:var(--color-accent)]"
                 >
                   {r.title}
                 </button>

@@ -17,12 +17,16 @@ export interface ModeBoosts {
   smallBatch: number;
 }
 
+export type ModeGroup = 'book' | 'kitchen' | 'occasion' | 'health';
+
 export interface ModeDef {
   id: ModeId;
   label: string;
   blurb: string;
   icon: string;
   color: string;
+  /** ModeChooser section — book → kitchen → occasion → health. */
+  group: ModeGroup;
   boost?: Partial<ModeBoosts>;
   maxMinutes?: number;
   maxCostPerServing?: number;
@@ -30,3 +34,12 @@ export interface ModeDef {
   showCost?: boolean;
   showMacros?: boolean;
 }
+
+export const MODE_GROUP_LABELS: Record<ModeGroup, string> = {
+  book: 'The book',
+  kitchen: 'Kitchen lenses',
+  occasion: 'Occasions',
+  health: 'Health lenses',
+};
+
+export const MODE_GROUP_ORDER: ModeGroup[] = ['book', 'kitchen', 'occasion', 'health'];

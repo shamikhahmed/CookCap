@@ -86,8 +86,8 @@ export function useDialogA11y(
   }, [open, panelRef, initial]);
 }
 
+/** Shared drawer/modal transition — soft tween (no spring overshoot). */
 export function motionReduce(reduce: boolean | null) {
-  return reduce
-    ? { type: 'tween' as const, duration: 0 }
-    : { type: 'spring' as const, stiffness: 320, damping: 34 };
+  if (reduce) return { type: 'tween' as const, duration: 0 };
+  return { type: 'tween' as const, duration: 0.28, ease: [0.22, 1, 0.36, 1] as const };
 }

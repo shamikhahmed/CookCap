@@ -1,6 +1,6 @@
 # CookCap — Screen gallery
 
-Version **2.4.6**. Regen: `GALLERY_URL=http://127.0.0.1:3456/CookCap npm run gallery`.
+Version **2.5.0**. Regen: `GALLERY_URL=http://127.0.0.1:3456/CookCap npm run gallery`.
 
 Demo edition: **Ayesha**. Recipes: **215** (family editorial; hero-only).
 

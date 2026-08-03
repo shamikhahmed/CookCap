@@ -197,7 +197,7 @@ export function MealPlannerDrawer({
 
               {assignedCount === 0 && !picking && (
                 <p className="rounded-lg bg-[color:var(--color-paper-sunk)] p-3 text-sm text-[color:var(--color-ink-faint)]">
-                  No days assigned yet — tap Pick on a day to plan the week.
+                  No days planned yet — tap Pick on a day.
                 </p>
               )}
 

@@ -1,5 +1,5 @@
 /**
- * RecipeImage: blur manifest preferred; disk path fallback; generated art on error.
+ * RecipeImage: user IDB hero → blur manifest → disk → generated art.
  * Skeleton while first paint / decode.
  */
 'use client';
@@ -21,6 +21,7 @@ export function RecipeImage({
   sizes = '(max-width: 640px) 100vw, 560px',
   priority = false,
   className = '',
+  userSrc,
 }: {
   recipeId: string;
   seed: number;
@@ -29,10 +30,34 @@ export function RecipeImage({
   sizes?: string;
   priority?: boolean;
   className?: string;
+  /** Object URL from IDB user-heroes — wins over bundled. */
+  userSrc?: string | null;
 }) {
   const meta = getImage(recipeId);
-  const [failed, setFailed] = useState(!meta);
+  const [failed, setFailed] = useState(!meta && !userSrc);
   const [loaded, setLoaded] = useState(false);
+  const [userFailed, setUserFailed] = useState(false);
+
+  if (userSrc && !userFailed) {
+    return (
+      <>
+        {!loaded && (
+          <div
+            className="absolute inset-0 animate-pulse bg-[color:var(--color-paper-sunk)]"
+            aria-hidden
+          />
+        )}
+        {/* eslint-disable-next-line @next/next/no-img-element -- blob:/object URL */}
+        <img
+          src={userSrc}
+          alt={alt}
+          onLoad={() => setLoaded(true)}
+          onError={() => setUserFailed(true)}
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'} ${className}`}
+        />
+      </>
+    );
+  }
 
   if (!meta || failed) {
     return (

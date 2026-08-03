@@ -92,6 +92,24 @@ async function main() {
     phoneBtn ? `${phoneBtn.width.toFixed(0)}×${phoneBtn.height.toFixed(0)}` : 'missing',
   );
 
+  // Viewport matrix — book frame survives narrow → ultrawide
+  for (const [label, w, h] of [
+    ['S6a 320', 320, 568],
+    ['S6b 768', 768, 1024],
+    ['S6c 1920', 1920, 1080],
+  ]) {
+    await page.setViewportSize({ width: w, height: h });
+    await page.waitForTimeout(200);
+    const frame = await page.locator('.book-frame').count();
+    const search = await page.getByRole('button', { name: 'Search recipes' }).boundingBox();
+    check(
+      `${label} book + search`,
+      frame > 0 && search && search.height >= 40,
+      `frame=${frame} search=${search ? `${search.width.toFixed(0)}×${search.height.toFixed(0)}` : 'missing'}`,
+    );
+  }
+  await page.setViewportSize({ width: 1280, height: 800 });
+
   // No third-party network after load (collect briefly)
   const external = [];
   page.on('request', (req) => {

@@ -6,6 +6,7 @@ import { useApp } from '@/components/app/AppStore';
 import { Icon, type IconName } from '@/components/ui/Icon';
 import { motionReduce, useDialogA11y } from '@/lib/a11y/dialog';
 import { MODES } from '@/lib/modes/registry';
+import { MODE_GROUP_LABELS, MODE_GROUP_ORDER, type ModeGroup } from '@/lib/modes/types';
 import { NUTRITION_DISCLAIMER } from '@/lib/profiles/nutrition';
 import type { ModeId } from '@/lib/profiles/types';
 
@@ -116,40 +117,51 @@ export function ModeChooser({ open, onClose }: { open: boolean; onClose: () => v
             </header>
 
             <div className="min-h-0 flex-1 overflow-y-auto px-5 py-4 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
-              <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                {MODES.map((m) => {
-                  const active = m.id === mode;
-                  return (
-                    <li key={m.id}>
-                      <button
-                        type="button"
-                        onClick={() => select(m.id)}
-                        aria-pressed={active}
-                        className={`flex w-full items-start gap-3 rounded-xl border px-3 py-3 text-left transition-colors ${
-                          active
-                            ? 'border-[color:var(--color-accent)] bg-[color:var(--color-paper-sunk)]'
-                            : 'border-[color:var(--color-line)] hover:bg-[color:var(--color-paper-sunk)]'
-                        }`}
-                      >
-                        <span
-                          className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-full"
-                          style={{ background: `${m.color}22`, color: m.color }}
-                        >
-                          <Icon name={modeIcon(m.icon)} size={18} />
-                        </span>
-                        <span className="min-w-0">
-                          <span className="block font-serif text-[color:var(--color-ink)]">
-                            {m.label}
-                          </span>
-                          <span className="mt-0.5 block text-xs text-[color:var(--color-ink-faint)]">
-                            {m.blurb}
-                          </span>
-                        </span>
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
+              {MODE_GROUP_ORDER.map((group: ModeGroup) => {
+                const items = MODES.filter((m) => m.group === group);
+                if (items.length === 0) return null;
+                return (
+                  <section key={group} className="mb-4 last:mb-0">
+                    <h3 className="mb-2 text-[0.65rem] font-medium uppercase tracking-[0.2em] text-[color:var(--color-ink-faint)]">
+                      {MODE_GROUP_LABELS[group]}
+                    </h3>
+                    <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                      {items.map((m) => {
+                        const active = m.id === mode;
+                        return (
+                          <li key={m.id}>
+                            <button
+                              type="button"
+                              onClick={() => select(m.id)}
+                              aria-pressed={active}
+                              className={`flex min-h-11 w-full items-start gap-3 rounded-xl border px-3 py-3 text-left transition-colors ${
+                                active
+                                  ? 'border-[color:var(--color-accent)] bg-[color:var(--color-paper-sunk)]'
+                                  : 'border-[color:var(--color-line)] hover:bg-[color:var(--color-paper-sunk)]'
+                              }`}
+                            >
+                              <span
+                                className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-full"
+                                style={{ background: `${m.color}22`, color: m.color }}
+                              >
+                                <Icon name={modeIcon(m.icon)} size={18} />
+                              </span>
+                              <span className="min-w-0">
+                                <span className="block font-serif text-[color:var(--color-ink)]">
+                                  {m.label}
+                                </span>
+                                <span className="mt-0.5 block text-xs text-[color:var(--color-ink-faint)]">
+                                  {m.blurb}
+                                </span>
+                              </span>
+                            </button>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </section>
+                );
+              })}
 
               {showHealthNote && (
                 <p className="mt-4 text-center text-[0.7rem] text-[color:var(--color-ink-faint)]">

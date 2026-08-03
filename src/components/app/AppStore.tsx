@@ -18,6 +18,7 @@ import {
 } from '@/lib/edition';
 import { AppearanceProvider } from '@/components/app/Appearance';
 import { buildLeaves, type Leaf } from '@/lib/book/pages';
+import { compressImageFile } from '@/lib/media/compress';
 import { RECIPES } from '@/lib/recipes/data';
 import type { Recipe } from '@/lib/recipes/types';
 import type {
@@ -50,7 +51,14 @@ interface AppState {
   customs: Recipe[];
   addCustom: (r: Recipe) => Promise<void>;
   updateCustom: (r: Recipe) => Promise<void>;
-  removeCustom: (id: string) => Promise<void>;
+  removeCustom: (id: string, opts?: { keepLinks?: boolean }) => Promise<void>;
+  /** Object URLs for user-uploaded recipe heroes (IDB). */
+  heroUrls: Record<string, string>;
+  setRecipeHero: (id: string, file: File) => Promise<void>;
+  clearRecipeHero: (id: string) => Promise<void>;
+  coverUrl: string | null;
+  setCoverPhoto: (file: File) => Promise<void>;
+  clearCoverPhoto: () => Promise<void>;
   leaves: Leaf[];
   chapterStart: Record<string, number>;
   allRecipes: Recipe[];
@@ -122,6 +130,8 @@ export function AppStore({ children }: { children: ReactNode }) {
   const [editionReady, setEditionReady] = useState(false);
   const [needsName, setNeedsName] = useState(false);
   const [customs, setCustoms] = useState<Recipe[]>([]);
+  const [heroUrls, setHeroUrls] = useState<Record<string, string>>({});
+  const [coverUrl, setCoverUrl] = useState<string | null>(null);
   const [shoppingCount, setShoppingCount] = useState(0);
 
   const [mode, setModeState] = useState<ModeId>('reader');
@@ -178,8 +188,10 @@ export function AppStore({ children }: { children: ReactNode }) {
       store.listProfiles(),
       store.listDiary(),
       store.listPantry(),
+      store.listUserHeroes(),
+      store.getCoverImage(),
     ])
-      .then(async ([c, shop, profs, diaryRows, pantryRows]) => {
+      .then(async ([c, shop, profs, diaryRows, pantryRows, heroes, coverBlob]) => {
         const keepIds = new Set([...RECIPES.map((recipe) => recipe.id), ...c.map((recipe) => recipe.id)]);
         const { favorites: cleanedFavorites, recent: cleanedRecent } =
           await store.scrubOrphanUserData(keepIds);
@@ -191,6 +203,11 @@ export function AppStore({ children }: { children: ReactNode }) {
         setDiary(diaryRows);
         setPantry(pantryRows);
         if (!savedActive && profs[0]) setActiveProfileIdState(profs[0].id);
+
+        const urls: Record<string, string> = {};
+        for (const h of heroes) urls[h.id] = URL.createObjectURL(h.blob);
+        setHeroUrls(urls);
+        if (coverBlob) setCoverUrl(URL.createObjectURL(coverBlob));
       })
       .catch((e) => {
         console.error('[CookCap] Failed to load saved data:', e);
@@ -293,26 +310,74 @@ export function AppStore({ children }: { children: ReactNode }) {
     setCustoms((prev) => prev.map((x) => (x.id === r.id ? r : x)));
   }, []);
 
-  const removeCustom = useCallback(async (id: string) => {
+  const removeCustom = useCallback(async (id: string, opts?: { keepLinks?: boolean }) => {
     await store.deleteCustomRecipe(id);
-    if (favorites.has(id)) {
-      await store.toggleFavorite(id).catch(() => void 0);
-      setFavorites((prev) => {
-        const next = new Set(prev);
-        next.delete(id);
-        return next;
-      });
+    if (!opts?.keepLinks) {
+      if (favorites.has(id)) {
+        await store.toggleFavorite(id).catch(() => void 0);
+        setFavorites((prev) => {
+          const next = new Set(prev);
+          next.delete(id);
+          return next;
+        });
+      }
+      await Promise.all([
+        store.deleteHistory(id),
+        store.deleteRating(id),
+        store.deleteNote(id),
+        store.removeRecipeFromMealPlan(id),
+        store.deleteShoppingForRecipe(id),
+      ]).catch(() => void 0);
+      setRecent((prev) => prev.filter((r) => r !== id));
     }
-    await Promise.all([
-      store.deleteHistory(id),
-      store.deleteRating(id),
-      store.deleteNote(id),
-      store.removeRecipeFromMealPlan(id),
-      store.deleteShoppingForRecipe(id),
-    ]).catch(() => void 0);
     setCustoms((prev) => prev.filter((r) => r.id !== id));
-    setRecent((prev) => prev.filter((r) => r !== id));
   }, [favorites]);
+
+  const setRecipeHero = useCallback(async (id: string, file: File) => {
+    try {
+      const blob = await compressImageFile(file);
+      await store.putUserHero(id, blob);
+      setHeroUrls((prev) => {
+        if (prev[id]) URL.revokeObjectURL(prev[id]!);
+        return { ...prev, [id]: URL.createObjectURL(blob) };
+      });
+    } catch (e) {
+      console.error('[CookCap] setRecipeHero failed:', e);
+      setStorageError('Could not save recipe photo on this device.');
+    }
+  }, []);
+
+  const clearRecipeHero = useCallback(async (id: string) => {
+    await store.deleteUserHero(id);
+    setHeroUrls((prev) => {
+      if (prev[id]) URL.revokeObjectURL(prev[id]!);
+      const next = { ...prev };
+      delete next[id];
+      return next;
+    });
+  }, []);
+
+  const setCoverPhoto = useCallback(async (file: File) => {
+    try {
+      const blob = await compressImageFile(file, 1600);
+      await store.putCoverImage(blob);
+      setCoverUrl((prev) => {
+        if (prev) URL.revokeObjectURL(prev);
+        return URL.createObjectURL(blob);
+      });
+    } catch (e) {
+      console.error('[CookCap] setCoverPhoto failed:', e);
+      setStorageError('Could not save cover photo on this device.');
+    }
+  }, []);
+
+  const clearCoverPhoto = useCallback(async () => {
+    await store.deleteCoverImage();
+    setCoverUrl((prev) => {
+      if (prev) URL.revokeObjectURL(prev);
+      return null;
+    });
+  }, []);
 
   const refreshShoppingCount = useCallback(() => {
     store
@@ -415,6 +480,12 @@ export function AppStore({ children }: { children: ReactNode }) {
       addCustom,
       updateCustom,
       removeCustom,
+      heroUrls,
+      setRecipeHero,
+      clearRecipeHero,
+      coverUrl,
+      setCoverPhoto,
+      clearCoverPhoto,
       leaves: catalog.leaves,
       chapterStart: catalog.chapterStart,
       allRecipes: catalog.allRecipes,
@@ -464,6 +535,12 @@ export function AppStore({ children }: { children: ReactNode }) {
       addCustom,
       updateCustom,
       removeCustom,
+      heroUrls,
+      setRecipeHero,
+      clearRecipeHero,
+      coverUrl,
+      setCoverPhoto,
+      clearCoverPhoto,
       catalog,
       shoppingCount,
       refreshShoppingCount,

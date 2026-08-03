@@ -1,6 +1,6 @@
 # CookCap — Handover
 
-Heirloom family cookbook PWA (Cap family). Version **2.4.6**.
+Heirloom family cookbook PWA (Cap family). Version **2.5.0**.
 
 ## Live
 
@@ -10,10 +10,11 @@ Next `output: 'export'` + Actions Pages. `NEXT_PUBLIC_BASE_PATH=/CookCap` on CI.
 
 ## Stack
 
-Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v3 · SW `cookcap-v25`
+Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v4 · SW `cookcap-v26`
 
 Heroes locked: `src/lib/recipes/images.lock.json` — rematch/fill need `--force-unlock`.  
 Gates: `gate:recipes` · `gate:anti-2d` · `smoke:product` (CI after build).
+User media: IDB `user-heroes` + `cover-image`; fork merge in `buildLeaves`; Serve with → `src/lib/recipes/serve-with.ts`. Phase map: `docs/ROADMAP.md`.
 
 ## Run
 
@@ -36,7 +37,7 @@ npm run gallery   # prefer: npm run pages:build && python3 -m http.server 3456 -
 
 - **World:** dressing table onboarding → book lifts out → lands on same wooden table → paper tabs stuck beside book
 - Escape during dresser confirms before skip
-- Gates: `npm run gate:anti-2d` · `npm run gate:recipes` (215 recipes) — also CI-enforced
+- Gates: `npm run gate:anti-2d` · `npm run gate:recipes` (~221 recipes) — also CI-enforced
 
 ## Recipes
 
@@ -56,7 +57,7 @@ npm run gallery   # prefer: npm run pages:build && python3 -m http.server 3456 -
 | Budget | Cost estimates + weekly budget + pantry |
 | Quick / Beginner / Dawat / Ramadan / Toddler / health lenses / Couple | Scoring presets |
 
-Profiles + diary + pantry = device-local IndexedDB. Migration v2→v3 keeps favorites/notes/ratings/meal-plan. Export includes meal plan. Profile delete cascades diary.
+Profiles + diary + pantry + user heroes + cover = device-local IndexedDB. Migration through v4 keeps prior stores. Export includes meal plan + photo blobs (base64). Profile delete cascades diary. Catalog forks: custom with same id overrides bundled; Restore deletes custom only (`keepLinks`).
 
 ## Gotchas
 
