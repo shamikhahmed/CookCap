@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.0.1 — 2026-08-03
+
+### Fix
+- **Honest heroes** — Guacamole no longer shows samosas; `jia-salad` rematched. Foodish bucket no longer maps guacamole/salad/hummus → samosa. Rematch supports `--only=id,…`
+
+### Chore
+- SW → `cookcap-v30` (bust cached wrong hero)
+
 ## 3.0.0 — 2026-08-03
 
 ### Feat

@@ -1,6 +1,6 @@
 # CookCap — Presentation
 
-**v3.0.0** · https://shamikhahmed.github.io/CookCap/
+**v3.0.1** · https://shamikhahmed.github.io/CookCap/
 
 ## Pitch
 
@@ -15,7 +15,7 @@ CookCap opens like a hardcover on a wooden table. Name the book in a 3D dresser.
 
 ## Status
 
-**v3.0.0** = P7–P14 shipped · P15 hard nos documented · SW `cookcap-v29`.  
-Prior: **v2.7.0** Cook ritual + Data · SW `cookcap-v28`.
+**v3.0.1** = honest hero fix (guacamole) · SW `cookcap-v30`.  
+Prior: **v3.0.0** P7–P14 · P15 hard nos · SW `cookcap-v29`.
 
 Gallery: [docs/gallery/README.md](./docs/gallery/README.md)

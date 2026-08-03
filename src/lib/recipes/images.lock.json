@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lockedAt": "2026-08-02T22:27:11.242Z",
+  "lockedAt": "2026-08-03T11:57:59.914Z",
   "policy": "Hero map locked. scripts/rematch-heroes.mjs + fill-heroes-from-foodfusion.mjs refuse overwrite unless --force-unlock. Tips stay generated art.",
   "artOnly": [
     "tip-fried-onions",
@@ -299,7 +299,7 @@
     "golden-latte": "3ca326c7269d23d8",
     "green-handi-chicken": "7588d8a597ef2a85",
     "green-shakverdi-salad": "cdc84d21b9e275a4",
-    "guacamole": "558cd6efa49b87f7",
+    "guacamole": "4aca1a7310a7c784",
     "gulab-jamun": "7648c04e4e8853aa",
     "halloumi-wrap": "3968316cf347032b",
     "handi-chicken": "7c224fdbe5e72f50",
@@ -318,7 +318,7 @@
     "jia-dal-chawal": "530bcfa3d99726aa",
     "jia-karahi": "89c1239444d71195",
     "jia-pasta": "a95de863ffb04e88",
-    "jia-salad": "d08e967358a973a5",
+    "jia-salad": "d4df022f9468c99a",
     "jia-sunday-biryani": "032c8bfbb4f11160",
     "karahi-chicken": "da5fae4007a71f02",
     "karahi-mutton": "a5f098eb92100321",

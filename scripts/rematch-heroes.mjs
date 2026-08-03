@@ -74,6 +74,16 @@ const DIRECT = {
     name: 'Beef curry (stand-in for nihari)',
     src: 'Unsplash',
   },
+  guacamole: {
+    url: 'https://images.unsplash.com/photo-1680992071073-cb1696ba8d3e?auto=format&fit=crop&w=1600&q=80',
+    name: 'Guacamole in molcajete with chips',
+    src: 'Unsplash',
+  },
+  'jia-salad': {
+    url: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1600&q=80',
+    name: 'Fresh vegetable salad bowl',
+    src: 'Unsplash',
+  },
 };
 
 /** Ids that should prefer a Foodish category rematch when credit is wrong. */
@@ -124,7 +134,7 @@ async function findFoodish(id, title) {
     ['burger', 'kfc|fried chicken|burger'],
     ['pasta', 'pasta|lasagna|lasagne|alfredo|rigatoni|spaghetti|carbonara|gnocchi|cacio|aglio|minestrone'],
     ['dessert', 'cake|cookie|brownie|cupcake|mousse|tiramisu|cheesecake|fudge|churro|baklava|gulab|kheer|balush|pudding|parfait|ice cream|mochi|shortbread|cinnamon|oreo'],
-    ['samosa', 'samosa|pakora|chaat|salad|guacamole|hummus'],
+    ['samosa', 'samosa|pakora|chaat'],
     ['dosa', 'dosa|idli|bread|bun|naan|roti|paratha|bagel|baguette|focaccia|brioche|ciabatta|pita|roll'],
     ['rice', 'rice|fried rice|risotto'],
     ['pizza', 'pizza'],
@@ -136,8 +146,9 @@ async function findFoodish(id, title) {
       break;
     }
   }
-  // Never Foodish for drinks — wrong categories
+  // Never Foodish for drinks / dips Foodish cannot name honestly
   if (/latte|chai|coffee|espresso|affogato|brew|lassi|patti|karak|tonic/.test(hay)) return null;
+  if (/guacamole|hummus|salad|cheese.?board|avocado/.test(hay)) return null;
   try {
     const res = await fetch(`https://foodish-api.com/api/images/${cat}`);
     const data = await res.json();
@@ -239,10 +250,25 @@ async function main() {
     }
   }
 
-  const targets = new Set(
+  const onlyArg = process.argv.find((a) => a.startsWith('--only='));
+  const only = onlyArg
+    ? new Set(
+        onlyArg
+          .slice('--only='.length)
+          .split(',')
+          .map((s) => s.trim())
+          .filter(Boolean),
+      )
+    : null;
+
+  let targets = new Set(
     [...recipes.keys()].filter((id) => needsRematch(id, manifest[id])),
   );
   for (const id of Object.keys(DIRECT)) targets.add(id);
+  if (only) {
+    targets = new Set([...targets].filter((id) => only.has(id)));
+    for (const id of only) targets.add(id);
+  }
   console.log(`Rematching ${targets.size} heroes`);
 
   let ok = 0;

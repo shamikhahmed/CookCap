@@ -8,6 +8,7 @@ import { fadeTransition } from '@/lib/motion';
 const KEY = 'cookcap-whats-new';
 
 const NOTES: Record<string, string[]> = {
+  '3.0.1': ['Honest heroes — guacamole shows guacamole'],
   '3.0.0': [
     'Occasions + week templates',
     'Smart search (“30 min yogurt”) + swap ideas',
