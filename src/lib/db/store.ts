@@ -38,54 +38,165 @@ interface CookbookDB extends DBSchema {
   meta: { key: string; value: unknown };
 }
 
-const DB_NAME = 'jia-cooks';
+const LEGACY_DB_NAME = 'jia-cooks';
+const DB_NAME = 'cookcap';
 const DB_VERSION = 4;
 
+const STORE_NAMES = [
+  'favorites',
+  'history',
+  'notes',
+  'ratings',
+  'collections',
+  'shopping',
+  'customs',
+  'profiles',
+  'diary',
+  'pantry',
+  'user-heroes',
+  'cover-image',
+  'meta',
+] as const;
+
 let dbp: Promise<IDBPDatabase<CookbookDB>> | null = null;
+let migrated = false;
+
+function upgradeDb(d: IDBPDatabase<CookbookDB>, oldVersion: number) {
+  if (oldVersion < 1) {
+    d.createObjectStore('favorites', { keyPath: 'id' });
+    const h = d.createObjectStore('history', { keyPath: 'id' });
+    h.createIndex('viewedAt', 'viewedAt');
+    d.createObjectStore('notes', { keyPath: 'id' });
+    d.createObjectStore('ratings', { keyPath: 'id' });
+    d.createObjectStore('collections', { keyPath: 'id' });
+    d.createObjectStore('shopping', { keyPath: 'key' });
+    d.createObjectStore('meta');
+  }
+  if (oldVersion < 2 && !d.objectStoreNames.contains('customs')) {
+    d.createObjectStore('customs', { keyPath: 'id' });
+  }
+  if (oldVersion < 3) {
+    if (!d.objectStoreNames.contains('profiles')) {
+      d.createObjectStore('profiles', { keyPath: 'id' });
+    }
+    if (!d.objectStoreNames.contains('diary')) {
+      const diary = d.createObjectStore('diary', { keyPath: 'id' });
+      diary.createIndex('date', 'date');
+      diary.createIndex('profileId', 'profileId');
+    }
+    if (!d.objectStoreNames.contains('pantry')) {
+      d.createObjectStore('pantry', { keyPath: 'id' });
+    }
+  }
+  if (oldVersion < 4) {
+    if (!d.objectStoreNames.contains('user-heroes')) {
+      d.createObjectStore('user-heroes', { keyPath: 'id' });
+    }
+    if (!d.objectStoreNames.contains('cover-image')) {
+      d.createObjectStore('cover-image', { keyPath: 'id' });
+    }
+  }
+}
+
+async function legacyDbExists(): Promise<boolean> {
+  if (typeof indexedDB.databases === 'function') {
+    try {
+      const list = await indexedDB.databases();
+      return list.some((x) => x.name === LEGACY_DB_NAME);
+    } catch {
+      /* fall through */
+    }
+  }
+  return new Promise((resolve) => {
+    const req = indexedDB.open(LEGACY_DB_NAME);
+    req.onsuccess = () => {
+      const d = req.result;
+      const has = d.objectStoreNames.length > 0;
+      d.close();
+      resolve(has);
+    };
+    req.onerror = () => resolve(false);
+    req.onupgradeneeded = () => {
+      /* empty legacy — abort create */
+      req.transaction?.abort();
+      resolve(false);
+    };
+  });
+}
+
+async function copyLegacyInto(target: IDBPDatabase<CookbookDB>): Promise<boolean> {
+  let legacy: IDBPDatabase<CookbookDB>;
+  try {
+    legacy = await openDB<CookbookDB>(LEGACY_DB_NAME, DB_VERSION, {
+      upgrade(d, oldVersion) {
+        upgradeDb(d, oldVersion);
+      },
+    });
+  } catch {
+    return false;
+  }
+
+  let copied = false;
+  try {
+    for (const name of STORE_NAMES) {
+      if (name === 'meta') continue;
+      if (!legacy.objectStoreNames.contains(name)) continue;
+      if (!target.objectStoreNames.contains(name)) continue;
+      const rows = await legacy.getAll(name);
+      if (rows.length === 0) continue;
+      const tx = target.transaction(name, 'readwrite');
+      for (const row of rows) {
+        await tx.store.put(row as never);
+      }
+      await tx.done;
+      copied = true;
+    }
+    if (legacy.objectStoreNames.contains('meta')) {
+      const keys = await legacy.getAllKeys('meta');
+      for (const key of keys) {
+        const val = await legacy.get('meta', key);
+        await target.put('meta', val, key);
+        copied = true;
+      }
+    }
+  } finally {
+    legacy.close();
+  }
+  return copied;
+}
+
+async function cookcapIsEmpty(d: IDBPDatabase<CookbookDB>): Promise<boolean> {
+  for (const name of ['favorites', 'customs', 'profiles', 'notes'] as const) {
+    if (!d.objectStoreNames.contains(name)) continue;
+    const n = await d.count(name);
+    if (n > 0) return false;
+  }
+  return true;
+}
 
 function db() {
   if (typeof indexedDB === 'undefined') {
     throw new Error('IndexedDB unavailable (server render)');
   }
   if (!dbp) {
-    dbp = openDB<CookbookDB>(DB_NAME, DB_VERSION, {
-      upgrade(d, oldVersion) {
-        if (oldVersion < 1) {
-          d.createObjectStore('favorites', { keyPath: 'id' });
-          const h = d.createObjectStore('history', { keyPath: 'id' });
-          h.createIndex('viewedAt', 'viewedAt');
-          d.createObjectStore('notes', { keyPath: 'id' });
-          d.createObjectStore('ratings', { keyPath: 'id' });
-          d.createObjectStore('collections', { keyPath: 'id' });
-          d.createObjectStore('shopping', { keyPath: 'key' });
-          d.createObjectStore('meta');
+    dbp = (async () => {
+      const d = await openDB<CookbookDB>(DB_NAME, DB_VERSION, {
+        upgrade(database, oldVersion) {
+          upgradeDb(database, oldVersion);
+        },
+      });
+      if (!migrated) {
+        migrated = true;
+        try {
+          if ((await cookcapIsEmpty(d)) && (await legacyDbExists())) {
+            await copyLegacyInto(d);
+          }
+        } catch (e) {
+          console.warn('[CookCap] Legacy IDB migrate skipped:', e);
         }
-        if (oldVersion < 2 && !d.objectStoreNames.contains('customs')) {
-          d.createObjectStore('customs', { keyPath: 'id' });
-        }
-        if (oldVersion < 3) {
-          if (!d.objectStoreNames.contains('profiles')) {
-            d.createObjectStore('profiles', { keyPath: 'id' });
-          }
-          if (!d.objectStoreNames.contains('diary')) {
-            const diary = d.createObjectStore('diary', { keyPath: 'id' });
-            diary.createIndex('date', 'date');
-            diary.createIndex('profileId', 'profileId');
-          }
-          if (!d.objectStoreNames.contains('pantry')) {
-            d.createObjectStore('pantry', { keyPath: 'id' });
-          }
-        }
-        if (oldVersion < 4) {
-          if (!d.objectStoreNames.contains('user-heroes')) {
-            d.createObjectStore('user-heroes', { keyPath: 'id' });
-          }
-          if (!d.objectStoreNames.contains('cover-image')) {
-            d.createObjectStore('cover-image', { keyPath: 'id' });
-          }
-        }
-      },
-    });
+      }
+      return d;
+    })();
   }
   return dbp;
 }
@@ -387,23 +498,8 @@ export async function deleteCoverImage(): Promise<void> {
 /** Wipe every user store (export/delete in About). Does not delete the DB schema. */
 export async function clearAllUserData(): Promise<void> {
   const d = await db();
-  const stores = [
-    'favorites',
-    'history',
-    'notes',
-    'ratings',
-    'collections',
-    'shopping',
-    'customs',
-    'profiles',
-    'diary',
-    'pantry',
-    'user-heroes',
-    'cover-image',
-    'meta',
-  ] as const;
-  const tx = d.transaction(stores as unknown as Array<(typeof stores)[number]>, 'readwrite');
-  await Promise.all(stores.map((name) => tx.objectStore(name).clear()));
+  const tx = d.transaction([...STORE_NAMES], 'readwrite');
+  await Promise.all(STORE_NAMES.map((name) => tx.objectStore(name).clear()));
   await tx.done;
 }
 
@@ -450,3 +546,98 @@ export async function exportUserSnapshot() {
     mealPlan: await getMeta('meal-plan'),
   };
 }
+
+function base64ToBlob(dataBase64: string, mime: string): Blob {
+  const bin = atob(dataBase64);
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return new Blob([bytes], { type: mime || 'image/jpeg' });
+}
+
+export type UserSnapshot = Awaited<ReturnType<typeof exportUserSnapshot>> & {
+  localStorage?: Record<string, string | null>;
+  app?: string;
+  version?: string;
+};
+
+/** Restore from export JSON (replaces matching stores; optional localStorage keys). */
+export async function importUserSnapshot(payload: UserSnapshot): Promise<void> {
+  const d = await db();
+  await clearAllUserData();
+
+  const putAll = async <T>(storeName: (typeof STORE_NAMES)[number], rows: T[] | undefined) => {
+    if (!rows?.length) return;
+    const tx = d.transaction(storeName, 'readwrite');
+    for (const row of rows) await tx.store.put(row as never);
+    await tx.done;
+  };
+
+  await putAll('favorites', payload.favorites);
+  await putAll('history', payload.history);
+  await putAll('notes', payload.notes);
+  await putAll('ratings', payload.ratings);
+  await putAll('collections', payload.collections);
+  await putAll('shopping', payload.shopping);
+  await putAll('customs', payload.customs);
+  await putAll('profiles', payload.profiles);
+  await putAll('diary', payload.diary);
+  await putAll('pantry', payload.pantry);
+
+  if (payload.userHeroes?.length) {
+    const tx = d.transaction('user-heroes', 'readwrite');
+    for (const h of payload.userHeroes) {
+      if (!h?.id || !h.dataBase64) continue;
+      await tx.store.put({
+        id: h.id,
+        blob: base64ToBlob(h.dataBase64, h.mime),
+        updatedAt: h.updatedAt ?? Date.now(),
+      });
+    }
+    await tx.done;
+  }
+  if (payload.coverImage?.length) {
+    const tx = d.transaction('cover-image', 'readwrite');
+    for (const c of payload.coverImage) {
+      if (!c?.id || !c.dataBase64) continue;
+      await tx.store.put({
+        id: c.id,
+        blob: base64ToBlob(c.dataBase64, c.mime),
+        updatedAt: c.updatedAt ?? Date.now(),
+      });
+    }
+    await tx.done;
+  }
+  if (payload.mealPlan != null) await putMeta('meal-plan', payload.mealPlan);
+
+  if (payload.localStorage && typeof localStorage !== 'undefined') {
+    for (const [k, v] of Object.entries(payload.localStorage)) {
+      if (!k.startsWith('cookcap-') && !k.startsWith('jia-') && !k.startsWith('grimoire-')) continue;
+      if (v == null) localStorage.removeItem(k);
+      else localStorage.setItem(k, v);
+    }
+  }
+
+  try {
+    new BroadcastChannel('cookcap-data').postMessage({ type: 'restored' });
+  } catch {
+    /* ignore */
+  }
+}
+
+export async function getLocalStats() {
+  const d = await db();
+  return {
+    favorites: await d.count('favorites'),
+    customs: await d.count('customs'),
+    notes: await d.count('notes'),
+    ratings: await d.count('ratings'),
+    collections: await d.count('collections'),
+    diary: await d.count('diary'),
+    pantry: await d.count('pantry'),
+    shopping: await d.count('shopping'),
+    heroes: await d.count('user-heroes'),
+    hasCover: (await d.count('cover-image')) > 0,
+    dbName: DB_NAME,
+  };
+}
+

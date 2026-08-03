@@ -46,6 +46,17 @@ Install to home screen for offline. ··· → Change book name (compact rename)
 - High-contrast / forced-colors modes get stronger outlines.
 - Screen reader announces page turns (“Page N of M”).
 
+## Cook mode
+
+1. **Start cooking** on a recipe → mise en place checklist (or skip).
+2. Steps + optional named timers (vibrate when done).
+3. **Glove** = bigger buttons.
+4. Done → rate stars; **Log this meal** in non-Reader modes.
+
+## Backup
+
+··· → About → Download / Restore backup (JSON, includes photos). Stats show counts on this device. Storage id `cookcap` (migrates from older `jia-cooks`).
+
 ## Table extras (v2.6)
 
 - Recipe **Serve with** → optional **Add to list** (never auto-shop).

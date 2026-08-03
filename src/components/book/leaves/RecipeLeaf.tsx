@@ -569,7 +569,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
               className="inline-flex items-center gap-1.5 rounded-full bg-[color:var(--color-accent)] px-3 py-1.5 text-xs font-semibold text-white transition-transform active:scale-95"
             >
               <Icon name="flame" size={14} />
-              Cook mode
+              Start cooking
             </button>
           </div>
           <CookingMode recipe={recipe} open={cooking} onClose={() => setCooking(false)} />

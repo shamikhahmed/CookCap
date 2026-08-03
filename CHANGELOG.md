@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.7.0 — 2026-08-03
+
+### Feat
+- **P5 Cook ritual** — mise en place gate; named step timers + vibrate on done; end screen rate + log meal; Glove mode (bigger targets); “Start cooking” label
+- **P6 Data power** — restore backup JSON; local stats in About; IDB rename `jia-cooks` → `cookcap` with one-time migrate; BroadcastChannel on restore
+
+### Docs
+- ROADMAP / USER_GUIDE / Capricorn for 2.7.0
+
+### Chore
+- SW → `cookcap-v28`
+
 ## 2.6.0 — 2026-08-03
 
 ### Feat
