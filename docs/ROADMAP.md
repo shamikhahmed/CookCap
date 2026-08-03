@@ -37,7 +37,8 @@ Live: https://shamikhahmed.github.io/CookCap/
 | **P15** | Hard nos | **Documented only** |
 | **Nav** | Home / jump / scrub / go-to # | **Shipped 3.1.0** |
 | **Wood** | Reader wood + world catalog | **Shipped 3.2.0** |
-| **Paper** | Even dark-skin leaf wash | **Shipped 3.3.0** |
+| **Paper** | Even dark-skin leaf wash | **Shipped 3.2.1** |
+| **Stability** | Stale-SW crash + error screens | **Shipped 3.3.0** |
 
 ## P15 — Hard nos
 
