@@ -17,6 +17,8 @@ const BASE = process.env.GALLERY_URL || 'http://localhost:3000';
 const RECIPE = process.env.GALLERY_RECIPE || 'butter-chicken';
 /** Demo edition — not a hard-coded product name */
 const DEMO = 'Ayesha';
+/** Keep in sync with src/lib/version.ts — suppresses What’s new sheet. */
+const APP_VER = '3.1.0';
 
 mkdirSync(join(OUT, 'desktop'), { recursive: true });
 mkdirSync(join(OUT, 'mobile'), { recursive: true });
@@ -56,6 +58,7 @@ async function waitFooterPage(page, n, timeout = 20000) {
 }
 
 async function nextPage(page) {
+  await dismissWhatsNew(page);
   await page.getByRole('button', { name: 'Next page' }).click();
   await settle(page, 500);
 }
@@ -115,14 +118,24 @@ async function scrollDialog(page, ratio) {
 
 async function seedOwner(page, extras = {}) {
   await page.evaluate(
-    ({ name, extras }) => {
+    ({ name, extras, ver }) => {
       localStorage.setItem('cookcap-owner', name);
       localStorage.setItem('cookcap-onboarded', '1');
       localStorage.setItem('cookcap-theme', 'light');
+      localStorage.setItem('cookcap-whats-new', ver);
       for (const [k, v] of Object.entries(extras)) localStorage.setItem(k, v);
     },
-    { name: DEMO, extras },
+    { name: DEMO, extras, ver: APP_VER },
   );
+}
+
+async function dismissWhatsNew(page) {
+  await page.evaluate((ver) => localStorage.setItem('cookcap-whats-new', ver), APP_VER);
+  const got = page.getByRole('button', { name: 'Got it' });
+  if (await got.isVisible().catch(() => false)) {
+    await got.click();
+    await settle(page, 200);
+  }
 }
 
 /** Recipe / contents / chapter / mode-chooser scroll depths. */
@@ -139,7 +152,7 @@ async function captureScrollables(page, folder) {
   await page.waitForFunction(
     () =>
       [...document.querySelectorAll('button')].some(
-        (b) => (b.textContent || '').trim() === 'Cook mode' && b.offsetParent !== null,
+        (b) => (b.textContent || '').trim() === 'Start cooking' && b.offsetParent !== null,
       ),
     null,
     { timeout: 60000 },
@@ -191,8 +204,8 @@ async function captureScrollables(page, folder) {
 
   // Search overlay scroll
   await page.getByRole('button', { name: 'Search recipes' }).click();
-  await page.getByPlaceholder(/Search recipes/i).waitFor({ state: 'visible', timeout: 8000 });
-  await page.getByPlaceholder(/Search recipes/i).fill('chicken');
+  await page.getByPlaceholder(/Try|dish name|Search/i).waitFor({ state: 'visible', timeout: 8000 });
+  await page.getByPlaceholder(/Try|dish name|Search/i).fill('chicken');
   await settle(page, 500);
   await scrollDialog(page, 0);
   await shot(page, `${folder}/scroll/search-top.png`);
@@ -217,7 +230,7 @@ async function captureEveryMode(page, folder) {
     await page.waitForFunction(
       () =>
         [...document.querySelectorAll('button')].some(
-          (b) => (b.textContent || '').trim() === 'Cook mode' && b.offsetParent !== null,
+          (b) => (b.textContent || '').trim() === 'Start cooking' && b.offsetParent !== null,
         ),
       null,
       { timeout: 60000 },
@@ -381,16 +394,21 @@ async function captureDresserOnboarding(page, folder) {
 
 async function captureBookChrome(page, folder) {
   // Assumes already past onboarding with DEMO owner (or set owner)
-  await page.evaluate((name) => {
-    localStorage.setItem('cookcap-owner', name);
-    localStorage.setItem('cookcap-onboarded', '1');
-    localStorage.setItem('cookcap-theme', 'light');
-  }, DEMO);
+  await page.evaluate(
+    ({ name, ver }) => {
+      localStorage.setItem('cookcap-owner', name);
+      localStorage.setItem('cookcap-onboarded', '1');
+      localStorage.setItem('cookcap-theme', 'light');
+      localStorage.setItem('cookcap-whats-new', ver);
+    },
+    { name: DEMO, ver: APP_VER },
+  );
 
   await page.goto(`${BASE}/?for=${encodeURIComponent(DEMO)}`, {
     waitUntil: 'domcontentloaded',
   });
   await waitFooterPage(page, 1);
+  await dismissWhatsNew(page);
   await shot(page, `${folder}/01-cover.png`);
 
   await nextPage(page);
@@ -413,7 +431,7 @@ async function captureBookChrome(page, folder) {
   await page.waitForFunction(
     () => {
       const cook = [...document.querySelectorAll('button')].find(
-        (b) => (b.textContent || '').trim() === 'Cook mode' && b.offsetParent !== null,
+        (b) => (b.textContent || '').trim() === 'Start cooking' && b.offsetParent !== null,
       );
       return Boolean(cook);
     },
@@ -422,7 +440,7 @@ async function captureBookChrome(page, folder) {
   );
   await settle(page, 800);
   const cookBtn = page
-    .getByRole('button', { name: 'Cook mode' })
+    .getByRole('button', { name: 'Start cooking' })
     .filter({ visible: true })
     .first();
   await page.evaluate(() => {
@@ -439,11 +457,11 @@ async function captureBookChrome(page, folder) {
   });
   await settle(page, 450);
   await shot(page, `${folder}/06-cook-mode.png`);
-  await page.keyboard.press('Escape');
-  await settle(page, 350);
+  await page.getByRole('button', { name: 'Exit cooking mode' }).click();
+  await settle(page, 400);
 
   await page.getByRole('button', { name: 'Search recipes' }).click();
-  await page.getByPlaceholder(/Search recipes/i).waitFor({ state: 'visible', timeout: 8000 });
+  await page.getByPlaceholder(/Try|dish name|Search/i).waitFor({ state: 'visible', timeout: 8000 });
   await settle(page, 350);
   await shot(page, `${folder}/07-search.png`);
 
@@ -455,7 +473,7 @@ async function captureBookChrome(page, folder) {
   await settle(page, 300);
 
   await page.getByRole('button', { name: 'Search recipes' }).click();
-  await page.getByPlaceholder(/Search recipes/i).waitFor({ state: 'visible', timeout: 8000 });
+  await page.getByPlaceholder(/Try|dish name|Search/i).waitFor({ state: 'visible', timeout: 8000 });
   await page.getByRole('button', { name: /^This week$/ }).click();
   await page.locator('#meal-planner-title').waitFor({ state: 'visible', timeout: 8000 });
   await settle(page, 400);
@@ -472,7 +490,7 @@ async function captureBookChrome(page, folder) {
   await page.waitForFunction(
     () =>
       [...document.querySelectorAll('button')].some(
-        (b) => (b.textContent || '').trim() === 'Cook mode' && b.offsetParent !== null,
+        (b) => (b.textContent || '').trim() === 'Start cooking' && b.offsetParent !== null,
       ),
     null,
     { timeout: 60000 },
@@ -551,6 +569,16 @@ async function captureBookChrome(page, folder) {
   await page.getByRole('heading', { name: 'Appearance' }).waitFor({ state: 'visible', timeout: 8000 });
   await settle(page, 400);
   await shot(page, `${folder}/18-appearance.png`);
+  await page.keyboard.press('Escape');
+  await settle(page, 300);
+
+  // Page navigation chrome (Home / scrub / go-to #)
+  await page.getByRole('button', { name: /\/\s*\d+/ }).click().catch(async () => {
+    await page.locator('footer button').filter({ hasText: /\d+\s*\/\s*\d+/ }).click();
+  });
+  await page.getByRole('dialog', { name: 'Go to page' }).waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
+  await settle(page, 350);
+  await shot(page, `${folder}/19-page-nav.png`);
   await page.keyboard.press('Escape');
 }
 

@@ -2,35 +2,32 @@
 
 Cap-family offline-first cookbook PWA. Name your book → **`{Name} Cooks`**.
 
-**Live:** https://shamikhahmed.github.io/CookCap/ · **v3.0.1**
+**Live:** https://shamikhahmed.github.io/CookCap/ · **v3.1.0**
 
 ## Features
 
 - Hardcover flip book + cook mode + search + shopping + meal planner
-- **~223 recipes** — family editorial only (no third-party MealDB dump)
+- **223 recipes** — family editorial only (no third-party MealDB dump)
+- Footer: Home · ±5 jump · scrub slider · go-to page #
+- Smart search phrases · occasions · print · guest PIN · merge backup
 - Chapters: Pakistani, Chinese, Italian, desserts, chai, breads, baking, snacks, meals, favorites, tips
-- Search filters: Easy · ≤30 min · **★5…★1** (your local ratings) · smart phrases (“30 min yogurt”)
-- Occasions (Ramadan / Eid / rainy) · print recipe · guest PIN · merge backup
-- **Optional lenses:** profiles, My Plate / Mother / Budget / more modes, meal diary + calendar, pantry, PKR cost estimates
-- Reader mode = pure book (ignore lenses → same heirloom experience)
-- **Dresser World** — wooden table + paper-tab bookmarks; dresser onboarding continuous with reading desk
+- Optional lenses: profiles, My Plate / Mother / Budget / more modes
+- **Dresser World** — wooden table + paper-tab bookmarks
 
 ## Stack
 
-Next.js 15 (`output: 'export'`) · React 19 · Tailwind v4 · Motion · IndexedDB · SW `cookcap-v30`
+Next.js 15 (`output: 'export'`) · React 19 · Tailwind v4 · Motion · IndexedDB · SW `cookcap-v31`
 
 ## Run
 
 ```bash
 npm install && npm run dev
 npm run typecheck && npm run gate:recipes && npm run gate:anti-2d
-npm run build
 npm run pages:build
-npm run gallery
+npm run gallery   # see HANDOVER for /CookCap serve
 ```
 
 ## Docs
 
-[HANDOVER](./HANDOVER.md) · [CHANGELOG](./CHANGELOG.md) · [USER_GUIDE](./USER_GUIDE.md) ·
-[PRESENTATION](./PRESENTATION.md) · [gallery](./docs/gallery/README.md) ·
-[plan](./docs/plan-profiles-modes.md)
+[REVIEW-PACK](./docs/REVIEW-PACK.md) · [HANDOVER](./HANDOVER.md) · [CHANGELOG](./CHANGELOG.md) · [USER_GUIDE](./USER_GUIDE.md) ·  
+[PRESENTATION](./PRESENTATION.md) · [ROADMAP](./docs/ROADMAP.md) · [SECURITY](./docs/SECURITY.md) · [gallery](./docs/gallery/README.md)

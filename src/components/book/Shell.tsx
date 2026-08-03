@@ -562,56 +562,171 @@ function MenuItem({ label, onClick }: { label: string; onClick: () => void }) {
 }
 
 function BottomBar() {
-  const { index, total, next, prev, atStart, atEnd, locked, turning } = useBook();
+  const { index, total, next, prev, goToLeaf, atStart, atEnd, locked, turning } = useBook();
   const { ready, customs } = useApp();
-  const reduce = useReducedMotion();
-  const progress = total > 1 ? index / (total - 1) : 0;
+  const [gotoOpen, setGotoOpen] = useState(false);
+  const [draft, setDraft] = useState('');
+  const gotoRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const JUMP = 5;
   const busy = locked || turning;
   const extras = customs.length;
+  const maxIdx = Math.max(0, total - 1);
+
+  useEffect(() => {
+    if (!gotoOpen) return;
+    setDraft(String(index + 1));
+    const t = window.setTimeout(() => inputRef.current?.select(), 40);
+    return () => window.clearTimeout(t);
+  }, [gotoOpen, index]);
+
+  useEffect(() => {
+    if (!gotoOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setGotoOpen(false);
+    };
+    const onDoc = (e: MouseEvent) => {
+      if (gotoRef.current && !gotoRef.current.contains(e.target as Node)) {
+        setGotoOpen(false);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    document.addEventListener('mousedown', onDoc);
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.removeEventListener('mousedown', onDoc);
+    };
+  }, [gotoOpen]);
+
+  const submitGoto = () => {
+    const n = Math.floor(Number(draft));
+    if (!Number.isFinite(n) || total < 1 || n < 1 || n > total) return;
+    goToLeaf(n - 1);
+    setGotoOpen(false);
+  };
+
   return (
-    <footer className="app-footer relative z-30 flex shrink-0 items-center gap-2 sm:gap-4">
+    <footer className="app-footer relative z-30 flex shrink-0 items-center gap-1 sm:gap-2">
+      <IconBtn label="Cover — first page" onClick={() => goToLeaf(0)} disabled={atStart || busy}>
+        <Icon name="home" size={20} />
+      </IconBtn>
+
+      <IconBtn
+        label={`Jump back ${JUMP} pages`}
+        onClick={() => goToLeaf(index - JUMP)}
+        disabled={atStart || busy}
+      >
+        <Icon name="chevrons-left" size={20} />
+      </IconBtn>
+
       <IconBtn label="Previous page" onClick={prev} disabled={atStart || busy}>
         <Icon name="arrow-left" size={20} />
       </IconBtn>
 
-      <div className="relative h-[3px] flex-1 overflow-hidden rounded-full bg-[color:var(--color-line)]">
-        <motion.div
-          className="absolute inset-y-0 left-0 rounded-full"
-          style={{ background: 'var(--color-accent)' }}
-          animate={{ width: `${progress * 100}%` }}
-          transition={
-            reduce
-              ? { duration: 0 }
-              : { type: 'spring', stiffness: 200, damping: 30 }
+      <label className="relative mx-0.5 flex h-11 min-w-0 flex-1 items-center sm:mx-1">
+        <span className="sr-only">Scrub pages</span>
+        <input
+          type="range"
+          className="page-scrub"
+          min={0}
+          max={maxIdx}
+          step={1}
+          value={ready ? index : 0}
+          disabled={!ready || busy || total < 2}
+          aria-valuetext={ready ? `Page ${index + 1} of ${total}` : 'Loading'}
+          style={
+            {
+              ['--scrub-pct' as string]:
+                total > 1 ? `${(index / (total - 1)) * 100}%` : '0%',
+            } as React.CSSProperties
           }
+          onChange={(e) => goToLeaf(Number(e.target.value))}
         />
+      </label>
+
+      <div className="relative" ref={gotoRef}>
+        <button
+          type="button"
+          disabled={!ready || busy}
+          onClick={() => setGotoOpen((v) => !v)}
+          className="min-h-11 min-w-12 rounded-full px-2 text-center text-[11px] tabular-nums text-[color:var(--color-ink-soft)] hover:bg-[color:var(--color-paper-sunk)] hover:text-[color:var(--color-ink)] disabled:opacity-30 sm:min-w-14 sm:text-xs"
+          title={
+            extras > 0
+              ? `Go to page — this edition: ${total} pages (includes ${extras} imported).`
+              : 'Go to page number'
+          }
+          aria-haspopup="dialog"
+          aria-expanded={gotoOpen}
+          aria-live="polite"
+        >
+          {ready ? `${index + 1} / ${total}` : '…'}
+        </button>
+
+        <AnimatePresence>
+          {gotoOpen && (
+            <motion.div
+              role="dialog"
+              aria-label="Go to page"
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 6 }}
+              transition={{ duration: 0.15 }}
+              className="absolute bottom-[calc(100%+0.5rem)] left-1/2 z-40 w-[11.5rem] -translate-x-1/2 rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] p-3 shadow-[var(--shadow-lg)]"
+            >
+              <p className="mb-2 text-[10px] uppercase tracking-[0.16em] text-[color:var(--color-ink-faint)]">
+                Go to page
+              </p>
+              <form
+                className="flex gap-2"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  submitGoto();
+                }}
+              >
+                <input
+                  ref={inputRef}
+                  type="number"
+                  inputMode="numeric"
+                  min={1}
+                  max={total}
+                  value={draft}
+                  onChange={(e) => setDraft(e.target.value)}
+                  className="min-h-11 w-full rounded-lg border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-2 text-center text-sm tabular-nums text-[color:var(--color-ink)]"
+                  aria-label={`Page number, 1 to ${total}`}
+                />
+                <button
+                  type="submit"
+                  className="min-h-11 shrink-0 rounded-full bg-[color:var(--color-accent)] px-3 text-sm font-medium text-white"
+                >
+                  Go
+                </button>
+              </form>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
-      <span
-        className="min-w-12 text-center text-[11px] tabular-nums text-[color:var(--color-ink-faint)] sm:min-w-14 sm:text-xs"
-        title={
-          extras > 0
-            ? `This edition: ${total} pages (includes ${extras} imported recipe${extras === 1 ? '' : 's'} on this device). Modes that add a For You leaf also change the total.`
-            : 'Page in this edition of the book. Total can grow with imported recipes or a For You leaf.'
-        }
-        aria-live="polite"
+      <IconBtn label="Next page" onClick={next} disabled={atEnd || busy}>
+        <Icon name="arrow-right" size={20} />
+      </IconBtn>
+
+      <IconBtn
+        label={`Jump forward ${JUMP} pages`}
+        onClick={() => goToLeaf(index + JUMP)}
+        disabled={atEnd || busy}
       >
-        {ready ? `${index + 1} / ${total}` : '…'}
-      </span>
+        <Icon name="chevrons-right" size={20} />
+      </IconBtn>
 
       <button
         type="button"
-        className="min-h-11 rounded-full px-3 py-2.5 font-serif text-[0.7rem] font-semibold text-[color:var(--color-ink-soft)] hover:bg-[color:var(--color-paper-sunk)] sm:hidden disabled:opacity-30"
+        className="min-h-11 rounded-full px-2.5 py-2.5 font-serif text-[0.7rem] font-semibold text-[color:var(--color-ink-soft)] hover:bg-[color:var(--color-paper-sunk)] sm:hidden disabled:opacity-30"
         aria-label="Open chapter tabs"
         disabled={busy}
         onClick={() => window.dispatchEvent(new Event('cookcap-open-chapters'))}
       >
         Tabs
       </button>
-
-      <IconBtn label="Next page" onClick={next} disabled={atEnd || busy}>
-        <Icon name="arrow-right" size={20} />
-      </IconBtn>
     </footer>
   );
 }

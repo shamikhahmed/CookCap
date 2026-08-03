@@ -783,6 +783,52 @@
   padding-right: max(0.75rem, var(--safe-r));
   min-height: calc(var(--footer-h) + var(--safe-b));
 }
+
+/* Page scrubber — touch-friendly thumb on thin track */
+.page-scrub {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 3px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    var(--color-accent) 0%,
+    var(--color-accent) var(--scrub-pct, 0%),
+    var(--color-line) var(--scrub-pct, 0%),
+    var(--color-line) 100%
+  );
+  outline: none;
+  cursor: pointer;
+}
+.page-scrub:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.page-scrub::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: var(--color-accent);
+  border: 2px solid var(--color-paper-raised);
+  box-shadow: var(--shadow-sm, 0 1px 2px rgb(0 0 0 / 0.12));
+  cursor: grab;
+}
+.page-scrub::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: var(--color-accent);
+  border: 2px solid var(--color-paper-raised);
+  cursor: grab;
+}
+.page-scrub::-moz-range-track {
+  height: 3px;
+  border-radius: 9999px;
+  background: var(--color-line);
+}
 .journal-stage {
   /* desk lamp vignette — desktop only (phone is full-bleed reader) */
   mask-image: none;

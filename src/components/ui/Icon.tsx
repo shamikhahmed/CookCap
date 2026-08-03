@@ -35,6 +35,9 @@ export type IconName =
   | 'close'
   | 'arrow-left'
   | 'arrow-right'
+  | 'chevrons-left'
+  | 'chevrons-right'
+  | 'home'
   | 'book'
   | 'bookmark'
   | 'sun-toggle'
@@ -72,6 +75,9 @@ const P: Record<IconName, string> = {
   close: 'M6 6l12 12M18 6 6 18',
   'arrow-left': 'M15 5l-7 7 7 7',
   'arrow-right': 'M9 5l7 7-7 7',
+  'chevrons-left': 'M11 6 5 12l6 6M18 6l-6 6 6 6',
+  'chevrons-right': 'M6 6l6 6-6 6M13 6l6 6-6 6',
+  home: 'M4 11.5 12 4l8 7.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-8.5Z',
   book: 'M4 5a2 2 0 0 1 2-2h5v18H6a2 2 0 0 0-2 2V5ZM20 5a2 2 0 0 0-2-2h-5v18h5a2 2 0 0 1 2 2V5Z',
   bookmark: 'M7 3h10v18l-5-4-5 4V3Z',
   'sun-toggle': 'M12 4v2M12 18v2M4 12h2M18 12h2M6 6l1.5 1.5M18 6l-1.5 1.5M6 18l1.5-1.5M18 18l-1.5-1.5M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z',

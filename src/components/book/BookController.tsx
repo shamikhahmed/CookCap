@@ -144,9 +144,11 @@ export function BookController({ children }: { children: ReactNode }) {
       if (hopTimer.current) clearTimeout(hopTimer.current);
       setTurning(false);
       setAnimateJump(false);
-      setIndex(clamp(i));
+      const target = clamp(i);
+      if (target !== indexRef.current) playPageFlip(!soundOn);
+      setIndex(target);
     },
-    [clamp, setTurning],
+    [clamp, setTurning, soundOn],
   );
 
   const goToChapter = useCallback(

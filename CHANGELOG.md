@@ -1,5 +1,19 @@
 # Changelog
 
+## 3.1.0 — 2026-08-03
+
+### Feat
+- **Page navigation** — footer: Home (cover), ±5 jump, prev/next, scrub **slider**, tap `n / total` → go-to page # dialog
+- Flip sound on `goToLeaf` jumps
+
+### Docs
+- Full doc refresh for Claude review pack; gallery regen (desktop + mobile)
+- HANDOVER / USER_GUIDE / AUDIT / QA / PERF / IA / ROADMAP / PRESENTATION cross-sync
+
+### Chore
+- SW → `cookcap-v31`
+
+
 ## 3.0.1 — 2026-08-03
 
 ### Fix

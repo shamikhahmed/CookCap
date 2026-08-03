@@ -1,6 +1,6 @@
 # CookCap — Handover
 
-Heirloom family cookbook PWA (Cap family). Version **3.0.1**.
+Heirloom family cookbook PWA (Cap family). Version **3.1.0**.
 
 ## Live
 
@@ -10,11 +10,14 @@ Next `output: 'export'` + Actions Pages. `NEXT_PUBLIC_BASE_PATH=/CookCap` on CI.
 
 ## Stack
 
-Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v4 (`cookcap`, migrates `jia-cooks`) · SW `cookcap-v30`
+Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v4 (`cookcap`, migrates `jia-cooks`) · SW `cookcap-v31`
 
 Heroes locked: `src/lib/recipes/images.lock.json` — rematch/fill need `--force-unlock`.  
-Gates: `gate:recipes` · `gate:anti-2d` · `smoke:product` (CI after build).
-User media: IDB `user-heroes` + `cover-image`; fork merge in `buildLeaves`; Serve with → `src/lib/recipes/serve-with.ts`. Phase map: `docs/ROADMAP.md`. Hard nos: `docs/SECURITY.md`.
+Gates: `gate:recipes` · `gate:anti-2d` · `smoke:product` (CI after build).  
+Catalog: **223** recipes (`gate:recipes`).  
+User media: IDB `user-heroes` + `cover-image`; fork merge in `buildLeaves`.  
+Serve with → `src/lib/recipes/serve-with.ts`. Phase map: `docs/ROADMAP.md`. Hard nos: `docs/SECURITY.md`.  
+**Claude review entry:** `docs/REVIEW-PACK.md`
 
 ## Run
 
@@ -22,30 +25,33 @@ User media: IDB `user-heroes` + `cover-image`; fork merge in `buildLeaves`; Serv
 cd "/Users/shamikhahmed/CookBook Website"
 npm install && npm run dev
 npm run typecheck && npm run gate:recipes && npm run gate:anti-2d
-npm run build
-npm run gallery   # prefer: npm run pages:build && python3 -m http.server 3456 --directory out; GALLERY_URL=http://127.0.0.1:3456/CookCap npm run gallery
+npm run pages:build
+# Gallery (base path):
+mkdir -p /tmp/gal-root && ln -sfn "$PWD/out" /tmp/gal-root/CookCap
+python3 -m http.server 3456 --directory /tmp/gal-root &
+GALLERY_URL=http://127.0.0.1:3456/CookCap npm run gallery
 ```
 
 ## Chrome / safe areas
 
 - `viewportFit: 'cover'` in `layout.tsx` (required for `env(safe-area-inset-*)`)
 - Tokens: `--safe-t/b/l/r`, `--header-h`, `--footer-h`, `--chrome-total`
-- `.app-header` / `.app-footer` carry insets; desk is `100dvh` flex column (no double pad)
-- `--book-h: min(860px, max(180px, calc(100dvh - var(--chrome-total) - 2rem)))`
+- `.app-header` / `.app-footer` carry insets; desk is `100dvh` flex column
+- Footer nav (3.1.0): Home · ±5 · prev/next · **page scrubber** · tap page count → go-to #
 
 ## Dresser
 
-- **World:** dressing table onboarding → book lifts out → lands on same wooden table → paper tabs stuck beside book
+- Dressing table onboard → book lands on wooden table → paper tabs beside book
 - Escape during dresser confirms before skip
-- Gates: `npm run gate:anti-2d` · `npm run gate:recipes` (~221 recipes) — also CI-enforced
+- Low CPU / reduced motion → Simple onboard (`OnboardingFlow`)
 
 ## Recipes
 
-- One hero only (no step photos)
-- Family editorial catalog only — **no TheMealDB**
+- One hero only (no step photos); honest photos or generated art
+- Family editorial only — **no TheMealDB**
 - Chapters: pakistani / chinese / italian / desserts / coffee / breads / baking / snacks / meals / favorites / tips
 - WarmLeafPool ≤9 DOM; chapter lists ≤24 rows
-- Contents leaf = single scroll (Today’s kitchen + chapters)
+- Contents = single scroll (Today’s kitchen + occasions + chapters)
 
 ## Lenses (additive — Reader = pure book)
 
@@ -55,19 +61,20 @@ npm run gallery   # prefer: npm run pages:build && python3 -m http.server 3456 -
 | My Plate | Fit badges, For You leaf, log, healthier |
 | Mother | Cook-for multi + allergen flags |
 | Budget | Cost estimates + weekly budget + pantry |
-| Quick / Beginner / Dawat / Ramadan / Toddler / health lenses / Couple | Scoring presets |
+| Quick / Beginner / Dawat / Ramadan / Toddler / health / Couple | Scoring presets |
 
-Profiles + diary + pantry + user heroes + cover = device-local IndexedDB. Migration through v4 keeps prior stores. Export includes meal plan + photo blobs (base64). Profile delete cascades diary. Catalog forks: custom with same id overrides bundled; Restore deletes custom only (`keepLinks`).
+Profiles + diary + pantry + heroes + cover = device-local IndexedDB. Export includes meal plan + photo blobs. Guest PIN = browse-only (not crypto). Merge or replace on restore.
 
 ## Gotchas
 
 - `unoptimized` Image needs `withBase()` on Pages
-- Phone = full-bleed leaf; Tabs in footer
-- Switching mode remaps leaf index (`remapLeafIndex`) — still expect For You to appear/disappear
-- First-run: Dresser unless `prefers-reduced-motion` or `hardwareConcurrency ≤ 4` → Simple
-- Desk z: never reintroduce `.journal-desk > * { z-index: 1 }` (kills Appearance clicks)
-- Shipped tabs = `paper` only (legacy LS cloth/index/top/pills forced back to paper)
+- Phone = full-bleed leaf; **Tabs** in footer
+- Mode switch remaps leaf index (`remapLeafIndex`)
+- First-run: Dresser unless reduced-motion or `hardwareConcurrency ≤ 4`
+- Never `.journal-desk > * { z-index: 1 }` (kills Appearance)
+- Shipped tabs = `paper` only
+- Hero rematch: `node scripts/rematch-heroes.mjs --force-unlock --only=id` (human approval)
 
 ## Key paths
 
-`src/components/app/DresserOnboarding.tsx` · `OnboardingFlow.tsx` · `onboarding/useOnboardingSteps.ts` · `src/lib/profiles/*` · `src/lib/modes/*` · `src/lib/cost/*` · `src/components/profiles/*` · `ForYouLeaf` · `enrich.ts` · `data-goal.ts` · `src/lib/book/pages.ts` (`remapLeafIndex`)
+`Shell.tsx` (footer nav) · `BookController.tsx` · `DresserOnboarding.tsx` · `CookingMode.tsx` · `serve-with.ts` · `smart-query.ts` · `occasions/templates.ts` · `GuestMode.tsx` · `docs/SECURITY.md` · `docs/gallery/`

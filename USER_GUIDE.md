@@ -4,9 +4,17 @@
 
 https://shamikhahmed.github.io/CookCap/
 
-1. First visit: **Begin** on the dresser (or calm full-screen steps if you prefer reduced motion). Name the book → cover becomes **YourName Cooks**. Skip anytime → **Our Family Cookbook** (never “Family Cooks”).
+1. First visit: **Begin** on the dresser (or calm full-screen steps if reduced motion). Name the book → cover becomes **YourName Cooks**. Skip → **Our Family Cookbook** (never “Family Cooks”).
 2. Optional: who eats + how you cook (or skip → Reader).
-3. Flip / Tabs. Phone: **Tabs** in footer.
+3. Flip pages. Phone: **Tabs** in footer.
+
+## Page navigation (footer)
+
+- **Home** — jump to cover (first page).
+- **« »** — jump ±5 pages.
+- **‹ ›** — one page.
+- **Slider** — scrub anywhere in the book.
+- Tap **`n / total`** — type a page number → **Go**.
 
 ## Modes (··· → Mode)
 
@@ -24,42 +32,47 @@ Log from a recipe with **Log this**. Calendar shows planned vs eaten. Pantry mat
 
 ## Appearance
 
-Palette icon in the top bar → **Theme** (Editorial Cream default, Candlelit, Light Book, Modern), **Chapter tabs** (Paper tabs on wood — stuck beside the book), **Reading** (Flip / Fast). Choices save on this device.
+Palette → **Theme**, **Chapter tabs** (Paper on wood), **Reading** (Flip / Fast), **Labels** (English / Roman Urdu stub).
+
+## Search
+
+⌘K / search icon. Filters: Easy · ≤30 min · ★ ratings.  
+**Smart phrases** (rules, not AI): e.g. `30 min yogurt` → time + ingredient hint.
 
 ## About & data
 
-··· → **About & data** — version, privacy (“stays on your device”), export JSON, delete all local data (confirm).
-
-## Honesty
-
-Macros and costs are **estimates** unless marked verified. Health modes are **not medical advice**.
-
-## Tips
-
-Install to home screen for offline. ··· → Change book name (compact rename). Clearing site data wipes local favorites / shopping / profiles / diary on that device.
-
-## Accessibility
-
-- **Skip to book** link appears on keyboard focus (start of page).
-- Drawers trap focus; Escape closes. ··· menu: Escape + arrow keys.
-- Turn on system Reduce Motion for calmer transitions.
-- High-contrast / forced-colors modes get stronger outlines.
-- Screen reader announces page turns (“Page N of M”).
+··· → **About & data** — version, privacy, export JSON, restore (replace or **merge**), **Guest PIN** (browse-only), wipe (confirm), local stats.
 
 ## Cook mode
 
-1. **Start cooking** on a recipe → mise en place checklist (or skip).
+1. **Start cooking** → mise en place (or skip).
 2. Steps + optional named timers (vibrate when done).
 3. **Glove** = bigger buttons.
-4. Done → rate stars; **Log this meal** in non-Reader modes.
+4. Done → rate; **Log this meal** in non-Reader modes.
 
-## Backup
+## Table extras
 
-··· → About → Download / Restore backup (JSON, includes photos). Stats show counts on this device. Storage id `cookcap` (migrates from older `jia-cooks`).
+- **Serve with / Goes well with** — open side or **Add to list** (opt-in).
+- Party scale presets **8 / 12 / 20** on recipe servings.
+- **Swap ideas** when recipe has no hand substitutions.
+- Occasions on Contents + meal-plan week templates (Ramadan / Eid / rainy).
+- Favorites → **Collections**; **Print** recipe or Your Kitchen.
+- Offline chip; SW “New kitchen — Reload” toast.
+- PWA shortcuts: Search / Shop / Plan.
 
-## Table extras (v2.6)
+## Honesty
 
-- Recipe **Serve with** → optional **Add to list** (never auto-shop).
-- Meal planner can include serve-with sides when shopping the week.
-- Favorites → **Collections** folders (device-local).
-- Offline chip when network drops; SW toast when new kitchen ready.
+Macros and costs are **estimates**. Health modes are **not medical advice**.  
+Smart search / swaps = **Smart Assistant** (rules) — not generative AI.
+
+## Accessibility
+
+- **Skip to book** on keyboard focus.
+- Drawers trap focus; Escape closes.
+- Reduce Motion → calmer transitions.
+- High-contrast / forced-colors outlines.
+- Screen reader announces page turns.
+
+## Tips
+
+Install to home screen for offline. Clearing site data wipes local kitchen on that device. Storage id `cookcap`.

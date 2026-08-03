@@ -1,75 +1,69 @@
-# CookCap v2.4.6 — QA Matrix
+# CookCap v3.1.0 — QA Matrix
 
-**Live:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v25`  
-**Evidence dirs:** `docs/gallery/checkpoints/`
+**Live:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v31`  
+**Evidence:** `docs/gallery/` · **Review:** `docs/REVIEW-PACK.md`
 
-> Prove by gates + smoke against served `out/`. Gallery ≠ live alone.
-
----
-
-## Automated gates (this pass)
-
-| Check | Expected | Actual | Pass |
-|-------|----------|--------|------|
-| `npm run typecheck` | 0 errors | clean | **PASS** |
-| `npm run lint` | 0 warnings | clean | **PASS** |
-| `npm run gate:recipes` | 215 recipes linked | 215 / 5 files | **PASS** |
-| `npm run gate:anti-2d` | 3D + wood + paper tabs | GATE PASS | **PASS** |
-| `npm run smoke:product` | S1–S7 | SMOKE PASS | **PASS** |
-| `npm run measure:perf` | mountedLeaves ≤12 | mountedLeaves=5 | **PASS** |
-| CI Pages | build+deploy | workflow after push | **PASS** (prior 2.4.5; re-verify 2.4.6) |
-
-### Smoke detail (`smoke-product-report.json`)
-
-| ID | Expected | Result |
-|----|----------|--------|
-| S1 | Footer `n / total` | PASS |
-| S2 | `.book-frame` present | PASS |
-| S3 | Search control ≥44×44 | PASS |
-| S4 | Shopping before Change book name | PASS |
-| S5 | About & data last in ··· menu | PASS |
-| S6 | Phone Search ≥44×44 | PASS |
-| S7 | No third-party runtime fetch | PASS |
+> Prove by gates + smoke against served `out/` under `/CookCap`. Gallery ≠ live alone.
 
 ---
 
-## Fix verification (2.4.6 code)
+## Automated gates
+
+| Check | Expected | Pass |
+|-------|----------|------|
+| `npm run typecheck` | 0 errors | Required |
+| `npm run gate:recipes` | **223** recipes linked | Required |
+| `npm run gate:anti-2d` | 3D + wood + paper tabs | Required |
+| `npm run smoke:product` | S1–S7 + viewports | Required |
+| CI Pages deploy | success after push | Required |
+
+### Smoke IDs
+
+| ID | Expected |
+|----|----------|
+| S1 | Footer `n / total` |
+| S2 | `.book-frame` present |
+| S3 | Search control ≥44×44 |
+| S4 | Shopping before Change book name |
+| S5 | About & data last in ··· |
+| S6 | Phone Search ≥44×44 |
+| S7 | No third-party runtime fetch |
+
+---
+
+## Feature verification (3.0 → 3.1)
 
 | Area | Expected | Status |
 |------|----------|--------|
-| Profile delete | LS active + cooking-for cleared | Code + typecheck |
-| Import save | Navigates after leaves rebuild | Code |
-| Mother allergens | Active profile if cooking-for empty | Code + Profiles UI |
-| First-run | Chrome `pointer-events: none` while `needsName` | Code |
-| Drawer × | `size-11` hit target | Code |
+| Guacamole hero | Guacamole photo, not samosas | Shipped 3.0.1 |
+| Footer Home | Goes to leaf 0 | Shipped 3.1.0 |
+| ±5 jump | Moves index ±5 clamped | Shipped 3.1.0 |
+| Scrub slider | `input[type=range].page-scrub` | Shipped 3.1.0 |
+| Go-to page | Tap count → dialog → Go | Shipped 3.1.0 |
+| Smart search | “30 min yogurt” hint | Shipped 3.0.0 |
+| Guest PIN | Locks writes | Shipped 3.0.0 |
+| Merge restore | Checkbox in About | Shipped 3.0.0 |
+| Print | Recipe + Favorites Print | Shipped 3.0.0 |
 
 ---
 
-## Manual / persona (optional device spot)
+## Manual / persona
 
-| Persona | Flow | Status |
-|---------|------|--------|
-| First-timer | Splash → dresser/simple → cover → flip | Spot after SW `v25` |
-| Power user | ⌘K · mode · Cooking for · planner | Spot |
-| Reduced-motion | Simple onboard Escape confirm | Spot |
-| Offline | Load once, kill network, read/fav | Spot |
-
----
-
-## Appendix skips
-
-| Appendix | Status |
-|----------|--------|
-| E Auth | SKIP — no accounts |
-| I Push notifications | SKIP — none |
-| J i18n/RTL | SKIP — English UI |
+| Persona | Flow |
+|---------|------|
+| First-run | Dresser → name → cover |
+| Cook | Start cooking → mise → timer → done |
+| Host | Guest PIN → browse → Exit |
+| Planner | Occasions rail → week template |
+| Searcher | Smart phrase + ★ filter |
 
 ---
+
+## Gallery regen
 
 ```bash
-NEXT_PUBLIC_BASE_PATH=/CookCap npm run build
-# serve out under /CookCap
-GATE_URL=… npm run gate:anti-2d
-GATE_URL=… npm run smoke:product
-npm run measure:perf
+npm run pages:build
+mkdir -p /tmp/gal-root && ln -sfn "$PWD/out" /tmp/gal-root/CookCap
+python3 -m http.server 3456 --directory /tmp/gal-root
+GALLERY_URL=http://127.0.0.1:3456/CookCap npm run gallery
 ```
