@@ -21,6 +21,12 @@ import { RECIPES } from '@/lib/recipes/data';
 import * as store from '@/lib/db/store';
 import { suggestSwaps } from '@/lib/assistant/substitutes';
 import type { Recipe } from '@/lib/recipes/types';
+import {
+  DUR_ODOMETER_MS,
+  DUR_STAR_STAGGER_MS,
+  flyToCart,
+  prefersReducedMotion,
+} from '@/lib/motion';
 
 const DIFF_LABEL: Record<Recipe['difficulty'], string> = {
   easy: 'Easy',
@@ -112,8 +118,16 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
 
   const [servings, setServings] = useState(recipe.servings);
   const [rating, setRating] = useState(0);
+  const [displayRating, setDisplayRating] = useState(0);
+  const [bounceStar, setBounceStar] = useState<number | null>(null);
   const [note, setNote] = useState('');
   const [done, setDone] = useState<Set<number>>(new Set());
+  const [striking, setStriking] = useState<Set<number>>(new Set());
+  const [unstriking, setUnstriking] = useState<Set<number>>(new Set());
+  const [checkPop, setCheckPop] = useState<number | null>(null);
+  const [heartOff, setHeartOff] = useState(false);
+  const [servFlash, setServFlash] = useState(false);
+  const [qtyFlash, setQtyFlash] = useState(false);
   const [cooking, setCooking] = useState(false);
   const [shopFlash, setShopFlash] = useState(false);
   const [shareFlash, setShareFlash] = useState(false);
@@ -129,6 +143,38 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
     4,
   );
   const noteTimer = useRef<number | null>(null);
+  const starTimers = useRef<number[]>([]);
+  const stepAnimTimers = useRef<number[]>([]);
+
+  const changeServings = (next: number | ((s: number) => number)) => {
+    setServings((prev) => {
+      const n = typeof next === 'function' ? next(prev) : next;
+      return n;
+    });
+    if (prefersReducedMotion()) return;
+    setServFlash(true);
+    setQtyFlash(true);
+    window.setTimeout(() => setServFlash(false), DUR_ODOMETER_MS);
+    window.setTimeout(() => setQtyFlash(false), 200);
+  };
+
+  const addToShopping = (
+    sourceEl: HTMLElement,
+    items: { item: string; qty: string }[],
+    sourceId: string,
+  ) => {
+    store
+      .addIngredientsToShopping(sourceId, items)
+      .then(() => {
+        refreshShoppingCount();
+        flyToCart(sourceEl, 'List');
+        setShopFlash(true);
+        window.setTimeout(() => setShopFlash(false), 1600);
+      })
+      .catch(() => {
+        reportStorageError('Could not save to shopping list on this device.');
+      });
+  };
 
   const healthierMacros =
     healthierOn && mode !== 'reader'
@@ -186,31 +232,96 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
   useEffect(() => {
     if (prefetch) return;
     markViewed(recipe.id);
-    store.getRating(recipe.id).then(setRating).catch(() => void 0);
+    store
+      .getRating(recipe.id)
+      .then((n) => {
+        setRating(n);
+        setDisplayRating(n);
+      })
+      .catch(() => void 0);
     store.getNote(recipe.id).then(setNote).catch(() => void 0);
     setServings(recipe.servings);
     setDone(new Set());
+    setStriking(new Set());
+    setUnstriking(new Set());
+    setBounceStar(null);
+    setCheckPop(null);
   }, [recipe.id, recipe.servings, markViewed, prefetch]);
 
   useEffect(() => {
     return () => {
       if (noteTimer.current) window.clearTimeout(noteTimer.current);
+      const stars = starTimers.current;
+      const steps = stepAnimTimers.current;
+      stars.forEach((t) => window.clearTimeout(t));
+      steps.forEach((t) => window.clearTimeout(t));
     };
   }, []);
 
-  const toggleStep = (i: number) =>
+  const toggleStep = (i: number) => {
+    const wasDone = done.has(i);
     setDone((prev) => {
       const nextSet = new Set(prev);
       if (nextSet.has(i)) nextSet.delete(i);
       else nextSet.add(i);
       return nextSet;
     });
+    if (prefersReducedMotion()) return;
+    if (!wasDone) {
+      setCheckPop(i);
+      setStriking((s) => new Set(s).add(i));
+      setUnstriking((s) => {
+        const n = new Set(s);
+        n.delete(i);
+        return n;
+      });
+      const t = window.setTimeout(() => {
+        setCheckPop((c) => (c === i ? null : c));
+        setStriking((s) => {
+          const n = new Set(s);
+          n.delete(i);
+          return n;
+        });
+      }, 320);
+      stepAnimTimers.current.push(t);
+    } else {
+      setUnstriking((s) => new Set(s).add(i));
+      setStriking((s) => {
+        const n = new Set(s);
+        n.delete(i);
+        return n;
+      });
+      const t = window.setTimeout(() => {
+        setUnstriking((s) => {
+          const n = new Set(s);
+          n.delete(i);
+          return n;
+        });
+      }, 180);
+      stepAnimTimers.current.push(t);
+    }
+  };
 
   const rate = (n: number) => {
     setRating(n);
     store.setRating(recipe.id, n).catch(() => {
       reportStorageError('Could not save rating on this device.');
     });
+    starTimers.current.forEach((t) => window.clearTimeout(t));
+    starTimers.current = [];
+    if (prefersReducedMotion()) {
+      setDisplayRating(n);
+      setBounceStar(null);
+      return;
+    }
+    setDisplayRating(0);
+    setBounceStar(n);
+    for (let i = 1; i <= n; i++) {
+      const t = window.setTimeout(() => setDisplayRating(i), (i - 1) * DUR_STAR_STAGGER_MS);
+      starTimers.current.push(t);
+    }
+    const clearBounce = window.setTimeout(() => setBounceStar(null), 320);
+    starTimers.current.push(clearBounce);
   };
   const editNote = (t: string) => {
     setNote(t);
@@ -257,10 +368,16 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
           </h2>
         </div>
         <button
-          onClick={() => toggleFavorite(recipe.id)}
+          onClick={() => {
+            if (fav) {
+              setHeartOff(true);
+              window.setTimeout(() => setHeartOff(false), 200);
+            }
+            toggleFavorite(recipe.id);
+          }}
           aria-pressed={fav}
           aria-label={fav ? 'Remove from favorites' : 'Add to favorites'}
-          className={`micro-press absolute right-3 top-3 grid size-11 origin-center place-items-center rounded-full bg-black/30 text-white backdrop-blur-md sm:right-4 sm:top-4${fav ? ' micro-heart-on shadow-[0_0_12px_rgba(255,122,107,0.55)] ring-2 ring-[#ff7a6b]/50' : ''}`}
+          className={`micro-press absolute right-3 top-3 grid size-11 origin-center place-items-center rounded-full bg-black/30 text-white backdrop-blur-md sm:right-4 sm:top-4${fav ? ' micro-heart-on shadow-[0_0_12px_rgba(255,122,107,0.55)] ring-2 ring-[#ff7a6b]/50' : ''}${heartOff ? ' micro-heart-off' : ''}`}
           style={{
             color: fav ? '#ff7a6b' : 'white',
           }}
@@ -283,14 +400,15 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
 
         {/* ── Quick facts (refined editorial hierarchy) ─────*/}
         <dl className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <Meta icon="clock" label="Prep" value={`${recipe.prepMin}m`} />
-          <Meta icon="flame" label="Cook" value={`${recipe.cookMin}m`} />
-          <Meta icon="gauge" label="Level" value={DIFF_LABEL[recipe.difficulty]} />
+          <Meta icon="clock" label="Prep" value={`${recipe.prepMin}m`} index={0} />
+          <Meta icon="flame" label="Cook" value={`${recipe.cookMin}m`} index={1} />
+          <Meta icon="gauge" label="Level" value={DIFF_LABEL[recipe.difficulty]} index={2} />
           {!isTip && (
             <Meta
               icon="flame-cal"
               label="Cal"
               value={`${displayNutrition.calories}`}
+              index={3}
             />
           )}
         </dl>
@@ -371,17 +489,22 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                 </span>
                 <span className="flex gap-0.5" aria-label={`Spice level ${recipe.spiceLevel} of 5`}>
                   {[1, 2, 3, 4, 5].map((n) => (
-                    <Icon
+                    <span
                       key={n}
-                      name="chili"
-                      size={15}
-                      style={{
-                        color:
-                          n <= recipe.spiceLevel!
-                            ? 'var(--color-danger)'
-                            : 'var(--color-line)',
-                      }}
-                    />
+                      className="micro-spice-pip inline-flex"
+                      style={{ ['--micro-i' as string]: n - 1 }}
+                    >
+                      <Icon
+                        name="chili"
+                        size={15}
+                        style={{
+                          color:
+                            n <= recipe.spiceLevel!
+                              ? 'var(--color-danger)'
+                              : 'var(--color-line)',
+                        }}
+                      />
+                    </span>
                   ))}
                 </span>
               </div>
@@ -464,7 +587,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
             <button
               type="button"
               onClick={() => setLogOpen(true)}
-              className="min-h-11 rounded-full bg-[color:var(--color-accent)] px-4 py-2 text-sm font-semibold text-white transition-transform active:scale-95"
+              className="micro-press min-h-11 rounded-full bg-[color:var(--color-accent)] px-4 py-2 text-sm font-semibold text-white"
             >
               Log this
             </button>
@@ -483,9 +606,9 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
               key={n}
               onClick={() => rate(n)}
               aria-label={`${n} star${n > 1 ? 's' : ''}`}
-              className="micro-press grid min-h-11 min-w-11 place-items-center text-[color:var(--color-gold)]"
+              className={`micro-press grid min-h-11 min-w-11 place-items-center text-[color:var(--color-gold)]${bounceStar === n ? ' micro-star-bounce' : ''}`}
             >
-              <Icon name={n <= rating ? 'star-filled' : 'star'} size={22} />
+              <Icon name={n <= displayRating ? 'star-filled' : 'star'} size={22} />
             </button>
           ))}
           <span className="ml-2 text-xs text-[color:var(--color-ink-faint)]">
@@ -498,13 +621,15 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
           <div className="mb-3 flex flex-wrap items-center gap-3">
             <Icon name="users" size={18} />
             <div className="flex items-center rounded-full border border-[color:var(--color-line)]">
-              <Stepper label="Fewer servings" onClick={() => setServings((s) => Math.max(1, s - 1))}>
+              <Stepper label="Fewer servings" onClick={() => changeServings((s) => Math.max(1, s - 1))}>
                 −
               </Stepper>
-              <span className="min-w-10 text-center text-sm font-medium tabular-nums">
+              <span
+                className={`micro-odo min-w-10 text-center text-sm font-medium tabular-nums${servFlash ? ' is-flash' : ''}`}
+              >
                 {servings}
               </span>
-              <Stepper label="More servings" onClick={() => setServings((s) => Math.min(40, s + 1))}>
+              <Stepper label="More servings" onClick={() => changeServings((s) => Math.min(40, s + 1))}>
                 +
               </Stepper>
             </div>
@@ -514,8 +639,8 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                 <button
                   key={n}
                   type="button"
-                  onClick={() => setServings(n)}
-                  className={`min-h-11 min-w-11 rounded-full border px-2 text-xs tabular-nums ${
+                  onClick={() => changeServings(n)}
+                  className={`micro-press min-h-11 min-w-11 rounded-full border px-2 text-xs tabular-nums ${
                     servings === n
                       ? 'border-[color:var(--color-accent)] text-[color:var(--color-accent)]'
                       : 'border-[color:var(--color-line)] text-[color:var(--color-ink-faint)]'
@@ -529,13 +654,13 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
             <button
               type="button"
               onClick={() => window.print()}
-              className="min-h-11 rounded-full border border-[color:var(--color-line)] px-3 py-1 text-xs font-medium text-[color:var(--color-ink-soft)] print:hidden"
+              className="micro-press min-h-11 rounded-full border border-[color:var(--color-line)] px-3 py-1 text-xs font-medium text-[color:var(--color-ink-soft)] print:hidden"
             >
               Print
             </button>
             <button
               type="button"
-              onClick={() => {
+              onClick={(e) => {
                 const items = recipe.ingredients.flatMap((g) =>
                   g.items.map((ing) => {
                     const scaled = scaleIngredient(ing, factor);
@@ -545,18 +670,9 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                     };
                   }),
                 );
-                store
-                  .addIngredientsToShopping(recipe.id, items)
-                  .then(() => {
-                    refreshShoppingCount();
-                    setShopFlash(true);
-                    window.setTimeout(() => setShopFlash(false), 1600);
-                  })
-                  .catch(() => {
-                    reportStorageError('Could not save to shopping list on this device.');
-                  });
+                addToShopping(e.currentTarget, items, recipe.id);
               }}
-              className="ml-auto min-h-11 rounded-full border border-[color:var(--color-line)] px-3 py-1 text-xs font-medium text-[color:var(--color-ink-soft)] hover:border-[color:var(--color-accent)] print:hidden"
+              className="micro-press ml-auto min-h-11 rounded-full border border-[color:var(--color-line)] px-3 py-1 text-xs font-medium text-[color:var(--color-ink-soft)] hover:border-[color:var(--color-accent)] print:hidden"
             >
               {shopFlash ? 'Added ✓' : 'Add to list'}
             </button>
@@ -574,7 +690,9 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                   const scaled = scaleIngredient(ing, factor);
                   return (
                     <li key={ii} className="flex gap-3 text-[color:var(--color-ink)]">
-                      <span className="min-w-[4.5rem] shrink-0 text-right font-medium tabular-nums text-[color:var(--color-accent)]">
+                      <span
+                        className={`min-w-[4.5rem] shrink-0 text-right font-medium tabular-nums text-[color:var(--color-accent)]${qtyFlash ? ' micro-qty-flash' : ''}`}
+                      >
                         {formatQty(scaled)} {ing.unit}
                       </span>
                       <span>
@@ -599,7 +717,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
             </p>
             <button
               onClick={() => setCooking(true)}
-              className="inline-flex min-h-11 items-center gap-1.5 rounded-full bg-[color:var(--color-accent)] px-3 py-1.5 text-xs font-semibold text-white transition-transform active:scale-95"
+              className="micro-press inline-flex min-h-11 items-center gap-1.5 rounded-full bg-[color:var(--color-accent)] px-3 py-1.5 text-xs font-semibold text-white"
             >
               <Icon name="flame" size={14} />
               Start cooking
@@ -609,23 +727,24 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
           <ol className="space-y-4">
             {recipe.steps.map((step, i) => {
               const isDone = done.has(i);
+              const isStriking = striking.has(i);
+              const isUnstriking = unstriking.has(i);
               return (
                 <li key={i} className="flex gap-4">
                   <button
                     onClick={() => toggleStep(i)}
                     aria-pressed={isDone}
                     aria-label={`Mark step ${i + 1} ${isDone ? 'not done' : 'done'}`}
-                    className="grid size-11 shrink-0 place-items-center rounded-full font-serif text-sm font-bold text-white transition-transform duration-200 active:scale-90"
+                    className={`micro-press micro-step-check grid size-11 shrink-0 place-items-center rounded-full font-serif text-sm font-bold text-white${checkPop === i ? ' is-done' : ''}`}
                     style={{
                       background: isDone ? 'var(--color-success)' : chapter.tab,
-                      transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
                     }}
                   >
                     {isDone ? '✓' : i + 1}
                   </button>
-                  <div className={isDone ? 'opacity-50' : ''}>
+                  <div className={`micro-step-body${isDone ? ' is-done' : ''}`}>
                     <p
-                      className={`text-base leading-relaxed text-[color:var(--color-ink)] ${isDone ? 'line-through decoration-[color:var(--color-ink-faint)]' : ''}`}
+                      className={`micro-step-text text-base leading-relaxed text-[color:var(--color-ink)]${isDone ? ' is-done' : ''}${isStriking ? ' is-striking' : ''}${isUnstriking ? ' is-unstriking' : ''}`}
                     >
                       {step.instruction}
                     </p>
@@ -923,7 +1042,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
           <button
             type="button"
             onClick={() => window.print()}
-            className="min-h-11 rounded-full border border-[color:var(--color-line)] px-4 py-2 text-sm text-[color:var(--color-ink-soft)]"
+            className="micro-press min-h-11 rounded-full border border-[color:var(--color-line)] px-4 py-2 text-sm text-[color:var(--color-ink-soft)]"
           >
             Print
           </button>
@@ -948,7 +1067,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                 window.setTimeout(() => setShareFlash(false), 1600);
               }
             }}
-            className="min-h-11 rounded-full border border-[color:var(--color-line)] px-4 py-2 text-sm text-[color:var(--color-ink-soft)]"
+            className="micro-press min-h-11 rounded-full border border-[color:var(--color-line)] px-4 py-2 text-sm text-[color:var(--color-ink-soft)]"
           >
             {shareFlash ? 'Link copied ✓' : 'Share link'}
           </button>
@@ -976,24 +1095,15 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                   </button>
                   <button
                     type="button"
-                    className="min-h-11 shrink-0 rounded-full border border-[color:var(--color-line)] px-3 text-xs font-medium text-[color:var(--color-ink-soft)] hover:border-[color:var(--color-accent)]"
-                    onClick={() => {
+                    className="micro-press min-h-11 shrink-0 rounded-full border border-[color:var(--color-line)] px-3 text-xs font-medium text-[color:var(--color-ink-soft)] hover:border-[color:var(--color-accent)]"
+                    onClick={(e) => {
                       const items = side.ingredients.flatMap((g) =>
                         g.items.map((ing) => ({
                           item: ing.item,
                           qty: `${formatQty(ing.quantity)} ${ing.unit}`.trim(),
                         })),
                       );
-                      store
-                        .addIngredientsToShopping(side.id, items)
-                        .then(() => {
-                          refreshShoppingCount();
-                          setShopFlash(true);
-                          window.setTimeout(() => setShopFlash(false), 1600);
-                        })
-                        .catch(() => {
-                          reportStorageError('Could not save to shopping list on this device.');
-                        });
+                      addToShopping(e.currentTarget, items, side.id);
                     }}
                   >
                     {shopFlash ? 'Added ✓' : 'Add to list'}
@@ -1048,9 +1158,22 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
 
 /* ── Small building blocks ───────────────────────────────────────────────*/
 
-function Meta({ icon, label, value }: { icon: 'clock' | 'flame' | 'gauge' | 'flame-cal'; label: string; value: string }) {
+function Meta({
+  icon,
+  label,
+  value,
+  index = 0,
+}: {
+  icon: 'clock' | 'flame' | 'gauge' | 'flame-cal';
+  label: string;
+  value: string;
+  index?: number;
+}) {
   return (
-    <div className="flex items-center gap-2 rounded-md bg-[color:var(--color-paper-sunk)] px-3 py-2">
+    <div
+      className="micro-fact flex items-center gap-2 rounded-md bg-[color:var(--color-paper-sunk)] px-3 py-2"
+      style={{ ['--micro-i' as string]: index }}
+    >
       <Icon name={icon} size={18} />
       <div className="leading-tight">
         <div className="text-xs uppercase tracking-wide text-[color:var(--color-ink-faint)]">
@@ -1101,7 +1224,7 @@ function Stepper({
     <button
       onClick={onClick}
       aria-label={label}
-      className="grid size-11 place-items-center text-lg text-[color:var(--color-ink-soft)] transition-colors hover:text-[color:var(--color-accent)]"
+      className="micro-press grid size-11 place-items-center text-lg text-[color:var(--color-ink-soft)] transition-colors hover:text-[color:var(--color-accent)]"
     >
       {children}
     </button>

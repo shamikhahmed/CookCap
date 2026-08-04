@@ -1,8 +1,8 @@
 # CookCap — Universal Product-Standard Audit
 
 **Product:** offline heirloom cookbook PWA (Cap family)  
-**Version:** **3.4.0**  
-**SW:** `cookcap-v37`  
+**Version:** **3.4.1**  
+**SW:** `cookcap-v38`  
 **Live:** https://shamikhahmed.github.io/CookCap/ (`NEXT_PUBLIC_BASE_PATH=/CookCap`)  
 **Stack:** Next.js 15 static export · React 19 · Tailwind v4 · Motion · IndexedDB (`cookcap`) · SW  
 **Auth:** none (local-only) — Appendix E **SKIP**  
@@ -50,13 +50,13 @@
 | Med | Some `goal-*` / tips still art-only | Fill only with unlock + honest plates |
 | Med | Headless Motion flip longtasks | Real-device GPU ≤50ms target |
 | Med | Large catalog JS (790) | WarmLeafPool + chapter pagination hold |
-| Low | Gallery tree ~200 MB | Regen on chrome ships (done 3.4.0) |
+| Low | Gallery tree ~200 MB | Regen on chrome ships (done 3.4.1) |
 | Low | Guest PIN = obfuscation not crypto | Documented honesty |
 | Low | SEO Lighthouse ~63 (`noindex`) | Intentional private book |
 
 ---
 
-## Shipped through 3.4.0 (summary)
+## Shipped through 3.4.1 (summary)
 
 - Serve-with · cook ritual · backup merge · guest PIN · smart search · occasions · print · i18n stub · PWA shortcuts  
 - Honest guacamole fix (3.0.1)  
@@ -67,7 +67,8 @@
 - Animation bible Act III dresser motion (3.3.1)
 - Cover open hinge — leather −160° / inside / fan / gutter (3.3.2)
 - Type/taps/WhatsNew/hero/tabs polish (3.4.0)
-- Full gallery + docs pack sync (3.4.0) 
+- Bible §9 micros + onboard→flip 60fps proof (3.4.1)
+- Full gallery + docs pack sync (3.4.0+) 
 
 ## Gates
 

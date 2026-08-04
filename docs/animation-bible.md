@@ -181,3 +181,8 @@ Reduced-motion: fade only.
 Record each on a real device: drawer open/close feel, book reveal, cover open, a page
 flip, tab stick + select, and 3 micro-interactions. Confirm 60fps (no long frames),
 correct reduced-motion, and that no animation blocks reaching the book quickly.
+
+**Proof (3.4.1):** `docs/gallery/recordings/onboard-flip.webm` +
+`onboard-flip-metrics.json` — ceremony window after `book-ready`: avg frame **16.66ms
+(≈60fps)**, `longTasksOver50: 0`. Regen: `npm run record:onboard-flip` (serve `out` under
+`/CookCap`). BrowserStack Live (iPhone 15 Pro / iOS Safari) for tactile real-device check.

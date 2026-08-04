@@ -13,8 +13,8 @@ Cooks" · estimates labeled · no telemetry · no fake-AI copy.
   `_next/static` cache-first, ChunkLoadError reload, designed error screens).
 - Wood **is** in the reader (DOM-proven since 3.2.0).
 - Catalog is **790** (family + local world table). Older “223-only” notes are stale.
-- **Act III (partial):** dresser idle/drawers **3.3.1**; cover open **3.3.2**; type/taps/hero/tabs polish **3.4.0**.
-  Remaining: deeper micro fly-to-cart; page-flip 60fps device proof.
+- **Act III (partial):** dresser idle/drawers **3.3.1**; cover open **3.3.2**; type/taps/hero/tabs polish **3.4.0**; §9 micros + onboard→flip 60fps proof **3.4.1**.
+  Remaining: tab stick/select polish; drawer/sheet §10 if gaps; ambient §11; more real-device Acceptances.
 
 ## Spec index (all authoritative)
 `cursor-sw-crash-v3.2.2.md` · `cursor-master-punchlist-v3.3.md` · `animation-bible.md` ·

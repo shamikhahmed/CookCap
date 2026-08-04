@@ -8,6 +8,10 @@ import { fadeTransition } from '@/lib/motion';
 const KEY = 'cookcap-whats-new';
 
 const NOTES: Record<string, string[]> = {
+  '3.4.1': [
+    'Micro moments — heart glow, star sweep, step strike, fly-to-cart',
+    'Servings roll · quick-facts settle in · buttons press soft',
+  ],
   '3.4.0': [
     'Bigger type · easier taps (44px targets)',
     'Clearer recipe heroes · paper tabs no longer clip',

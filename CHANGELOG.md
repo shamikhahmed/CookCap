@@ -1,5 +1,19 @@
 # Changelog
 
+## 3.4.1 — 2026-08-04
+
+### Feat
+- **Animation bible §9 micros** — heart spring+glow; star stagger 40ms + bounce; step ✓ pop + strike clip; fly-to-cart + badge bump; servings odo + qty flash; quick-facts / spice-pip stagger; `micro-press` settle
+- Shared tokens in `src/lib/motion.ts` (`flyToCart`, `CART_BUMP_EVENT`, `EASE_SPRING`); Shell `[data-cart-fly-target]`
+- Reduced-motion: instant state, no fly/pop
+
+### Docs
+- `scripts/record-onboard-flip.mjs` + `npm run record:onboard-flip`
+- Proof: `docs/gallery/recordings/onboard-flip.webm` + metrics (ceremony avg **16.66ms ≈ 60fps**, `longTasksOver50: 0`)
+
+### Chore
+- SW → `cookcap-v38`
+
 ## 3.4.0 — 2026-08-04
 
 ### Fix

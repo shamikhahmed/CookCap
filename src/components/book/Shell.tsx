@@ -26,6 +26,7 @@ import { PRODUCT_NAME, kitchenLine } from '@/lib/edition';
 import { getMode } from '@/lib/modes/registry';
 import { t } from '@/lib/i18n/strings';
 import { TopChapterBar } from './BookmarkRail';
+import { CART_BUMP_EVENT, prefersReducedMotion } from '@/lib/motion';
 
 const FavoritesDrawer = dynamic(
   () => import('./FavoritesDrawer').then((m) => ({ default: m.FavoritesDrawer })),
@@ -326,9 +327,20 @@ function TopBar({
   const kitchen = kitchenLine(edition);
   const reduce = useReducedMotion();
   const [more, setMore] = useState(false);
+  const [cartBump, setCartBump] = useState(false);
   const moreRef = useRef<HTMLDivElement>(null);
   const modeDef = getMode(mode);
   const modeLetter = modeDef.label.trim().charAt(0).toUpperCase() || 'R';
+
+  useEffect(() => {
+    const onBump = () => {
+      if (prefersReducedMotion()) return;
+      setCartBump(true);
+      window.setTimeout(() => setCartBump(false), 400);
+    };
+    window.addEventListener(CART_BUMP_EVENT, onBump);
+    return () => window.removeEventListener(CART_BUMP_EVENT, onBump);
+  }, []);
 
   useEffect(() => {
     if (!more) return;
@@ -425,6 +437,29 @@ function TopBar({
             </IconBtn>
           )}
         </span>
+
+        <button
+          type="button"
+          data-cart-fly-target
+          onClick={onShop}
+          aria-label={
+            shoppingCount > 0 ? `Shopping list (${shoppingCount})` : 'Shopping list'
+          }
+          title={
+            shoppingCount > 0 ? `Shopping list (${shoppingCount})` : 'Shopping list'
+          }
+          className="relative grid size-11 place-items-center rounded-full text-[color:var(--color-ink-soft)] transition-all hover:bg-[color:var(--color-paper-sunk)] hover:text-[color:var(--color-ink)] active:scale-90"
+        >
+          <Icon name="cart" size={20} />
+          {(shoppingCount > 0 || cartBump) && (
+            <span
+              className={`cart-badge${cartBump ? ' is-bump' : ''}`}
+              aria-hidden
+            >
+              {shoppingCount > 99 ? '99+' : shoppingCount > 0 ? shoppingCount : '·'}
+            </span>
+          )}
+        </button>
 
         <div className="relative" ref={moreRef}>
           <IconBtn label="More" onClick={() => setMore((v) => !v)} ariaExpanded={more}>

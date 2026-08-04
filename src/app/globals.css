@@ -553,16 +553,19 @@
   }
 }
 
-/* Micro presses (bible §9) — tokenized spring; RM = opacity only */
+/* Micro presses (bible §9) — tokenized spring; RM = instant state */
 .micro-press {
   transition: transform var(--dur-2, 200ms) var(--ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1));
 }
 .micro-press:active {
-  transform: scale(0.92);
+  transform: scale(0.96);
 }
 .micro-heart-on {
   box-shadow: 0 0 0 0 color-mix(in srgb, #ff7a6b 55%, transparent);
   animation: micro-heart-glow 420ms var(--ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1));
+}
+.micro-heart-off {
+  animation: micro-heart-shrink 180ms var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1));
 }
 @keyframes micro-heart-glow {
   0% {
@@ -570,21 +573,263 @@
     transform: scale(1);
   }
   40% {
-    box-shadow: 0 0 0 10px transparent;
-    transform: scale(1.18);
+    box-shadow: 0 0 12px 8px color-mix(in srgb, #ff7a6b 35%, transparent);
+    transform: scale(1.25);
   }
   100% {
     box-shadow: 0 0 0 0 transparent;
     transform: scale(1);
   }
 }
+@keyframes micro-heart-shrink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.82);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Rating stars — fill stagger + tapped bounce */
+.micro-star-bounce {
+  animation: micro-star-bounce 280ms var(--ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1));
+}
+@keyframes micro-star-bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.22);
+  }
+}
+
+/* Step check — ✓ pop + strike overlay (scaleX = GPU “width-clip”) + dim */
+.micro-step-check {
+  transition: opacity var(--dur-2, 200ms) var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1));
+}
+.micro-step-check.is-done {
+  animation: micro-check-pop 320ms var(--ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1));
+}
+@keyframes micro-check-pop {
+  0% {
+    transform: scale(0.7);
+  }
+  55% {
+    transform: scale(1.18);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.micro-step-body {
+  position: relative;
+  transition: opacity 180ms var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1));
+}
+.micro-step-body.is-done {
+  opacity: 0.5;
+}
+.micro-step-text {
+  position: relative;
+  display: inline;
+}
+.micro-step-text.is-done,
+.micro-step-text.is-striking,
+.micro-step-text.is-unstriking {
+  text-decoration: none;
+}
+.micro-step-text.is-done::after,
+.micro-step-text.is-striking::after,
+.micro-step-text.is-unstriking::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1.5px;
+  background: color-mix(in srgb, var(--color-ink-faint) 85%, transparent);
+  transform: scaleX(1);
+  transform-origin: left center;
+  pointer-events: none;
+}
+.micro-step-text.is-striking::after {
+  animation: micro-strike-in 180ms var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+}
+.micro-step-text.is-unstriking::after {
+  animation: micro-strike-out 180ms var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+}
+@keyframes micro-strike-in {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes micro-strike-out {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+/* Servings odometer + qty flash */
+.micro-odo {
+  display: inline-block;
+  transition: opacity 160ms var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1)),
+    transform 160ms var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1));
+}
+.micro-odo.is-flash {
+  animation: micro-odo-roll 160ms var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1));
+}
+@keyframes micro-odo-roll {
+  0% {
+    opacity: 0.35;
+    transform: translateY(0.35em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.micro-qty-flash {
+  animation: micro-qty-flash 200ms var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1));
+}
+@keyframes micro-qty-flash {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Quick-facts stagger on first mount */
+.micro-fact {
+  opacity: 0;
+  animation: micro-fact-in 280ms var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1)) both;
+  animation-delay: calc(var(--micro-i, 0) * 40ms);
+}
+.micro-spice-pip {
+  opacity: 0;
+  animation: micro-fact-in 240ms var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1)) both;
+  animation-delay: calc(var(--micro-i, 0) * 40ms);
+}
+@keyframes micro-fact-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fly-to-cart chip + badge bump */
+.micro-cart-fly {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  margin: 0;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: var(--color-accent, #c2683c);
+  box-shadow: var(--shadow-md);
+  white-space: nowrap;
+  will-change: transform, opacity;
+  animation: micro-cart-fly 380ms var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+}
+@keyframes micro-cart-fly {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  45% {
+    opacity: 0.95;
+    transform: translate(
+        calc(-50% + var(--fly-x, 0px) * 0.45),
+        calc(-50% + var(--fly-y, 0px) * 0.45 - 36px)
+      )
+      scale(0.72);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--fly-x, 0px)), calc(-50% + var(--fly-y, 0px)))
+      scale(0.4);
+  }
+}
+.cart-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 1rem;
+  height: 1rem;
+  padding: 0 0.2rem;
+  border-radius: 999px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  line-height: 1rem;
+  text-align: center;
+  color: #fff;
+  background: var(--color-accent, #c2683c);
+  pointer-events: none;
+}
+.cart-badge.is-bump {
+  animation: micro-badge-bump 360ms var(--ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1));
+}
+@keyframes micro-badge-bump {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.35);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .micro-press,
   .micro-press:active,
-  .micro-heart-on {
+  .micro-heart-on,
+  .micro-heart-off,
+  .micro-star-bounce,
+  .micro-step-check,
+  .micro-step-check.is-done,
+  .micro-step-body,
+  .micro-step-text.is-striking::after,
+  .micro-step-text.is-unstriking::after,
+  .micro-odo,
+  .micro-odo.is-flash,
+  .micro-qty-flash,
+  .micro-fact,
+  .micro-spice-pip,
+  .micro-cart-fly,
+  .cart-badge.is-bump {
     transition: none;
     animation: none;
     transform: none;
+    will-change: auto;
+  }
+  .micro-fact,
+  .micro-spice-pip {
+    opacity: 1;
+  }
+  .micro-step-text.is-done {
+    text-decoration: line-through;
+    text-decoration-color: var(--color-ink-faint);
+  }
+  .micro-step-text.is-done::after {
+    display: none;
   }
 }
 

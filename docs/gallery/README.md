@@ -1,10 +1,17 @@
 # CookCap — Screen gallery
 
-Version **3.4.0**. Regen: `GALLERY_URL=http://127.0.0.1:3456/CookCap npm run gallery`.
+Version **3.4.1**. Regen: `GALLERY_URL=http://127.0.0.1:3456/CookCap npm run gallery`.
 
 Demo edition: **Ayesha**. Recipes: **790** (family + world table; hero-only).
 
 **Claude entry:** [`../REVIEW-PACK.md`](../REVIEW-PACK.md)
+
+## Motion proof
+
+| Path | What |
+|------|------|
+| `recordings/onboard-flip.webm` | Onboarding → cover open → 3 flips (390×844 @3x) |
+| `recordings/onboard-flip-metrics.json` | rAF + longtask gate (`npm run record:onboard-flip`) |
 
 ## Layout
 
@@ -23,7 +30,7 @@ Demo edition: **Ayesha**. Recipes: **790** (family + world table; hero-only).
 
 `reader` · `plate` · `mother` · `budget` · `quick` · `beginner` · `dawat` · `ramadan` · `toddler` · `diabetic` · `heart` · `fiber` · `couple`
 
-## Spot-check (3.4.0)
+## Spot-check (3.4.1)
 
 - Reading body ≥16px; chrome labels ≥12px  
 - Interactive hits ≥44px (heart / stars / steps / footer)  

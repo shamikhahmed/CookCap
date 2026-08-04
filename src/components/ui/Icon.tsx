@@ -40,6 +40,7 @@ export type IconName =
   | 'home'
   | 'book'
   | 'bookmark'
+  | 'cart'
   | 'sun-toggle'
   | 'moon-toggle'
   | 'palette';
@@ -80,6 +81,7 @@ const P: Record<IconName, string> = {
   home: 'M4 11.5 12 4l8 7.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-8.5Z',
   book: 'M4 5a2 2 0 0 1 2-2h5v18H6a2 2 0 0 0-2 2V5ZM20 5a2 2 0 0 0-2-2h-5v18h5a2 2 0 0 1 2 2V5Z',
   bookmark: 'M7 3h10v18l-5-4-5 4V3Z',
+  cart: 'M4 7h2l1.5 10h9L18.5 9H7M9 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM17 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z',
   'sun-toggle': 'M12 4v2M12 18v2M4 12h2M18 12h2M6 6l1.5 1.5M18 6l-1.5 1.5M6 18l1.5-1.5M18 18l-1.5-1.5M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z',
   'moon-toggle': 'M20 14.5A8 8 0 0 1 9.5 4 7 7 0 1 0 20 14.5Z',
   palette:
