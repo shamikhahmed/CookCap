@@ -1441,7 +1441,7 @@
   white-space: nowrap !important;
   letter-spacing: 0.01em;
   overflow: visible !important;
-  font-size: 0.6rem;
+  font-size: var(--text-floor, 0.75rem);
 }
 :root[data-tabs='cloth'] .sticker-slit,
 :root[data-tabs='cloth'] .sticker-pin,
@@ -1508,7 +1508,7 @@
   text-align: left;
   color: var(--color-ink);
   font-family: var(--font-serif), ui-serif, Georgia, serif;
-  font-size: 0.62rem;
+  font-size: var(--text-floor, 0.75rem);
   font-weight: 600;
   letter-spacing: 0.02em;
   line-height: 1.2;
@@ -2131,7 +2131,7 @@
   color: #1a120e;
 }
 .dresser-tag__blurb {
-  font-size: 0.7rem;
+  font-size: var(--text-floor, 0.75rem);
   color: #3d342c;
 }
 .dresser-tag:disabled {

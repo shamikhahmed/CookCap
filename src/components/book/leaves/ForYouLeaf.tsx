@@ -87,7 +87,7 @@ export function ForYouLeaf() {
         )}
       </ul>
 
-      <p className="mt-4 shrink-0 text-center text-[0.7rem] text-[color:var(--color-ink-faint)]">
+      <p className="mt-4 shrink-0 text-center text-xs text-[color:var(--color-ink-faint)]">
         {NUTRITION_DISCLAIMER}
       </p>
     </div>

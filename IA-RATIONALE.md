@@ -1,4 +1,4 @@
-# CookCap v3.3.2 — Information Architecture Rationale
+# CookCap v3.4.0 — Information Architecture Rationale
 
 **Principle:** every surface has exactly one job. No duplicate homes for the same task.  
 **Ordering law:** most-used / daily tools at top → rarely used middle → identity rename late → legal last.

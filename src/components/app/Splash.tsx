@@ -53,7 +53,7 @@ export function Splash() {
           >
             {PRODUCT_NAME}
           </motion.p>
-          <p className="mt-2 text-[10px] uppercase tracking-[0.28em] text-[color:var(--color-ink-faint)]">
+          <p className="mt-2 text-xs uppercase tracking-[0.28em] text-[color:var(--color-ink-faint)]">
             v{APP_VERSION}
           </p>
         </motion.div>

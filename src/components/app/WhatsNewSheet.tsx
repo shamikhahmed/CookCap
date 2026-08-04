@@ -76,20 +76,18 @@ export function WhatsNewSheet() {
     setOpen(false);
   };
 
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') dismiss();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open]);
+
   return (
     <AnimatePresence>
       {open && (
-        <>
-          <motion.button
-            type="button"
-            aria-label="Dismiss what’s new"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={fadeTransition(reduce, 160)}
-            className="fixed inset-0 z-[93] cursor-default bg-transparent"
-            onClick={dismiss}
-          />
           <motion.div
             role="dialog"
             aria-labelledby="whats-new-title"
@@ -118,7 +116,6 @@ export function WhatsNewSheet() {
               Got it
             </button>
           </motion.div>
-        </>
       )}
     </AnimatePresence>
   );

@@ -454,7 +454,7 @@ export function ProfilesDrawer({ open, onClose }: { open: boolean; onClose: () =
                     </div>
                   )}
 
-                  <p className="text-center text-[0.7rem] text-[color:var(--color-ink-faint)]">
+                  <p className="text-center text-xs text-[color:var(--color-ink-faint)]">
                     {NUTRITION_DISCLAIMER}
                   </p>
                 </div>
@@ -548,7 +548,7 @@ export function ProfilesDrawer({ open, onClose }: { open: boolean; onClose: () =
                     </section>
                   )}
 
-                  <p className="mt-4 text-center text-[0.7rem] text-[color:var(--color-ink-faint)]">
+                  <p className="mt-4 text-center text-xs text-[color:var(--color-ink-faint)]">
                     {NUTRITION_DISCLAIMER}
                   </p>
                 </>

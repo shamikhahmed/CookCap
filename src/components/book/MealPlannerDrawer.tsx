@@ -237,7 +237,7 @@ export function MealPlannerDrawer({
 
               {!picking && (
                 <div className="mb-3 space-y-1.5">
-                  <p className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-ink-faint)]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[color:var(--color-ink-faint)]">
                     Week templates
                   </p>
                   <div className="flex flex-wrap gap-2">

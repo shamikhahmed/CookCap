@@ -319,7 +319,7 @@ export function DresserOnboarding({
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.45, ease: EASE_OUT_SOFT }}
                 >
-                  <p className="text-[0.65rem] uppercase tracking-[0.35em] text-[color:var(--color-ink-faint)]">
+                  <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--color-ink-faint)]">
                     {PRODUCT_NAME} · a living family cookbook
                   </p>
                   <h1
@@ -499,7 +499,7 @@ export function DresserOnboarding({
                 >
                   <div className="dresser-book__shadow" aria-hidden />
                   <div className="dresser-book__cover leather flex flex-col items-center justify-center text-center">
-                    <p className="gold-foil text-[0.55rem] uppercase tracking-[0.3em] opacity-80">
+                    <p className="gold-foil text-xs uppercase tracking-[0.3em] opacity-80">
                       A Family Cookbook
                     </p>
                     <p className="foil-sweep-inline gold-foil mt-2 font-serif text-2xl font-semibold sm:text-3xl">

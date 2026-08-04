@@ -397,7 +397,7 @@ export function CookingMode({
 
               {timers.length > 0 && (
                 <div className="border-t border-[color:var(--color-line)] px-4 py-3 sm:px-6">
-                  <p className="mb-2 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-ink-faint)]">
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-[color:var(--color-ink-faint)]">
                     Timers
                   </p>
                   <ul className="flex flex-wrap gap-2">

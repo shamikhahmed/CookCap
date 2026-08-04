@@ -90,7 +90,7 @@ export function OnboardingFlow({
               {PRODUCT_NAME}
             </p>
             <p
-              className="text-[0.7rem] font-medium tabular-nums text-[color:var(--color-ink-soft)]"
+              className="text-xs font-medium tabular-nums text-[color:var(--color-ink-soft)]"
               aria-live="polite"
             >
               {progressLabel}

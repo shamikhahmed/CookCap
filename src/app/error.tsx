@@ -23,7 +23,7 @@ export default function Error({
         recipes stay on this device.
       </p>
       {error?.digest ? (
-        <p className="mt-2 text-[0.65rem] tabular-nums text-[color:var(--color-ink-faint)]">
+        <p className="mt-2 text-xs tabular-nums text-[color:var(--color-ink-faint)]">
           {error.digest}
         </p>
       ) : null}

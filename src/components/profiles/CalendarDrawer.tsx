@@ -208,7 +208,7 @@ export function CalendarDrawer({ open, onClose }: { open: boolean; onClose: () =
             <div className="min-h-0 flex-1 space-y-4 overflow-y-auto px-5 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
               {/* Today summary */}
               <section className="rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)]/55 p-3">
-                <p className="text-[0.65rem] uppercase tracking-[0.3em] text-[color:var(--color-accent)]">
+                <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-accent)]">
                   Today
                 </p>
                 <p className="mt-1 font-serif text-lg text-[color:var(--color-ink)]">
@@ -250,7 +250,7 @@ export function CalendarDrawer({ open, onClose }: { open: boolean; onClose: () =
                 </button>
               </div>
 
-              <div className="grid grid-cols-7 gap-1 text-center text-[0.65rem] uppercase tracking-wide text-[color:var(--color-ink-faint)]">
+              <div className="grid grid-cols-7 gap-1 text-center text-xs uppercase tracking-wide text-[color:var(--color-ink-faint)]">
                 {DOW_LABELS.map((d) => (
                   <span key={d}>{d}</span>
                 ))}
@@ -378,7 +378,7 @@ export function CalendarDrawer({ open, onClose }: { open: boolean; onClose: () =
                 </section>
               )}
 
-              <p className="text-center text-[0.7rem] text-[color:var(--color-ink-faint)]">
+              <p className="text-center text-xs text-[color:var(--color-ink-faint)]">
                 {NUTRITION_DISCLAIMER}
               </p>
             </div>

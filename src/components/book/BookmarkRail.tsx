@@ -151,7 +151,7 @@ function SheetChips({
             <span className="chapter-index__dot" aria-hidden />
             <span>
               {tabLabel(c.id, c.title, favLabel)}
-              <span className="mt-0.5 block text-[0.65rem] font-sans font-normal tracking-normal text-[color:var(--color-ink-faint)]">
+              <span className="mt-0.5 block text-xs font-sans font-normal tracking-normal text-[color:var(--color-ink-faint)]">
                 {c.subtitle}
               </span>
             </span>
@@ -184,7 +184,7 @@ function SheetChips({
           <span className="font-serif text-sm font-semibold text-white">
             {tabLabel(c.id, c.title, favLabel)}
           </span>
-          <span className="mt-0.5 block text-[0.65rem] text-white/80">{c.subtitle}</span>
+          <span className="mt-0.5 block text-xs text-white/80">{c.subtitle}</span>
         </button>
       ))}
     </>

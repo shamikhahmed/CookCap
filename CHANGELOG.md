@@ -1,5 +1,24 @@
 # Changelog
 
+## 3.4.0 — 2026-08-04
+
+### Fix
+- **Type scale** — recipe body ≥16px; UI floor ≥12px (`--text-floor`); sticker/tab/chrome labels raised
+- **Tap targets** — interactive hits ≥44px (heart, stars, steps, steppers, chips, scrub track, shopping rows)
+- **What's new** — corner toast, deferred, backdrop-dismiss; never covers recipe hero
+- **Recipe hero** — stronger scrim, title clears heart (`pr-14`)
+- **Paper tabs** — short stickers for World/Europe/Breakfast/Veg; wider rail; active lift; no clip
+
+### Feat
+- Page-flip depth cues tuned (shade/curl/thickness/bend)
+- Micro-press + heart glow tokens (RM-safe)
+
+### Docs
+- `docs/cursor-polish-v3.4.md`; gallery + pack sync
+
+### Chore
+- SW → `cookcap-v37`
+
 ## 3.3.2 — 2026-08-04
 
 ### Feat

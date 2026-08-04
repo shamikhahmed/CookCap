@@ -1,6 +1,6 @@
 # CookCap — Screen gallery
 
-Version **3.3.2**. Regen: `GALLERY_URL=http://127.0.0.1:3456/CookCap npm run gallery`.
+Version **3.4.0**. Regen: `GALLERY_URL=http://127.0.0.1:3456/CookCap npm run gallery`.
 
 Demo edition: **Ayesha**. Recipes: **790** (family + world table; hero-only).
 
@@ -23,16 +23,15 @@ Demo edition: **Ayesha**. Recipes: **790** (family + world table; hero-only).
 
 `reader` · `plate` · `mother` · `budget` · `quick` · `beginner` · `dawat` · `ramadan` · `toddler` · `diabetic` · `heart` · `fiber` · `couple`
 
-## Spot-check (3.3.2)
+## Spot-check (3.4.0)
 
-- Reading screen shows **wood**, not cream desk (desktop + phone)  
-- `03-friends.png` — even paper wash (no grey/black split on candlelit)  
-- `05-recipe.png` — one hero, no step photos  
-- `01-cover.png` — leather cover; tap opens with hinge (not flat curl)  
-- `19-page-nav.png` — footer Home / scrub / page count (if captured)  
+- Reading body ≥16px; chrome labels ≥12px  
+- Interactive hits ≥44px (heart / stars / steps / footer)  
+- WhatsNew = small top-right toast (not over hero)  
+- `05-recipe.png` — title clear of heart; strong scrim  
+- Paper tabs — World / Europe fully visible  
+- Reading screen shows **wood**, not cream desk  
 - Guacamole leaf — honest green dip (not samosas)  
-- Paper tabs = cream notes on wood  
-- `dresser/*` — wood drawers + lamp pool (idle motes may be still-frame)  
 
 ## Gates
 

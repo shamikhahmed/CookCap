@@ -390,7 +390,7 @@ function TopBar({
                 : 'Open profiles'
             }
             title={activeProfile?.name ?? 'Profiles'}
-            className="grid size-11 place-items-center rounded-full text-[0.7rem] font-semibold text-white transition-transform active:scale-90"
+            className="grid size-11 place-items-center rounded-full text-xs font-semibold text-white transition-transform active:scale-90"
             style={{
               background: activeProfile?.color ?? 'var(--color-accent)',
             }}
@@ -403,7 +403,7 @@ function TopBar({
           onClick={onMode}
           aria-label={`Mode — ${modeDef.label}`}
           title={modeDef.label}
-          className="grid size-11 place-items-center rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)] text-[0.7rem] font-semibold text-[color:var(--color-ink-soft)] transition-transform hover:border-[color:var(--color-accent)] active:scale-90"
+          className="grid size-11 place-items-center rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)] text-xs font-semibold text-[color:var(--color-ink-soft)] transition-transform hover:border-[color:var(--color-accent)] active:scale-90"
           style={{ color: modeDef.color }}
         >
           {modeLetter}
@@ -514,7 +514,7 @@ function TopBar({
                   }}
                 />
                 {mode === 'mother' && (
-                  <p className="px-3.5 py-1.5 text-[0.7rem] leading-snug text-[color:var(--color-ink-soft)]">
+                  <p className="px-3.5 py-1.5 text-xs leading-snug text-[color:var(--color-ink-soft)]">
                     Cooking-for list lives in Profiles.
                   </p>
                 )}

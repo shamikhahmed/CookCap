@@ -1,6 +1,6 @@
-# CookCap v3.3.2 — QA Matrix
+# CookCap v3.4.0 — QA Matrix
 
-**Live:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v36`  
+**Live:** https://shamikhahmed.github.io/CookCap/ · **SW:** `cookcap-v37`  
 **Evidence:** `docs/gallery/` · **Review:** `docs/REVIEW-PACK.md`
 
 > Prove by gates + smoke against served `out/` under `/CookCap`. Gallery ≠ live alone.
@@ -48,6 +48,7 @@
 | Even paper wash | Dark leaves one tone, no band | Shipped 3.2.1 |
 | Dresser bible motion | Lamp/motes/parallax + wood drawer open/close | Shipped 3.3.1 |
 | Cover open hinge | −160° `--e-page`, inside cover, page fan | Shipped 3.3.2 |
+| Polish type/taps/hero/tabs | Body ≥16 · floor ≥12 · hits ≥44 · tabs no clip | Shipped 3.4.0 |
 | Smart search | “30 min yogurt” hint | Shipped 3.0.0 |
 | Guest PIN | Locks writes | Shipped 3.0.0 |
 | Merge restore | Checkbox in About | Shipped 3.0.0 |

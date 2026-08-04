@@ -136,7 +136,7 @@ export function PantryDrawer({ open, onClose }: { open: boolean; onClose: () => 
               <BudgetPanel />
 
               <section>
-                <h3 className="mb-2 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-ink-faint)]">
+                <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-[color:var(--color-ink-faint)]">
                   Add item
                 </h3>
                 <div className="flex gap-2">
@@ -170,7 +170,7 @@ export function PantryDrawer({ open, onClose }: { open: boolean; onClose: () => 
               </section>
 
               <section>
-                <h3 className="mb-2 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-ink-faint)]">
+                <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-[color:var(--color-ink-faint)]">
                   On hand
                 </h3>
                 {pantry.length === 0 ? (
@@ -209,7 +209,7 @@ export function PantryDrawer({ open, onClose }: { open: boolean; onClose: () => 
               </section>
 
               <section>
-                <h3 className="mb-2 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-ink-faint)]">
+                <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-[color:var(--color-ink-faint)]">
                   You can cook now
                 </h3>
                 {cookNow.length === 0 ? (

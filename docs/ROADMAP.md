@@ -4,7 +4,7 @@ Master phase map. **Icebox ≠ promise.**
 
 Live: https://shamikhahmed.github.io/CookCap/
 
-## Pillar scorecard (after 3.3.2)
+## Pillar scorecard (after 3.4.0)
 
 | Pillar | Score 1–5 | Note |
 |--------|-----------|------|
@@ -41,6 +41,7 @@ Live: https://shamikhahmed.github.io/CookCap/
 | **Stability** | Stale-SW crash + error screens | **Shipped 3.3.0** |
 | **Motion** | Dresser idle + drawer wood physics | **Shipped 3.3.1** |
 | **Cover open** | Leather hinge + inside + page fan | **Shipped 3.3.2** |
+| **Polish** | Type ≥16 · taps 44 · hero/tabs | **Shipped 3.4.0** |
 
 ## P15 — Hard nos
 

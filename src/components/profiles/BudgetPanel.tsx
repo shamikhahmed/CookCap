@@ -45,7 +45,7 @@ export function BudgetPanel() {
 
   return (
     <section className="rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)]/60 p-3">
-      <h3 className="mb-2 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-ink-faint)]">
+      <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-[color:var(--color-ink-faint)]">
         Weekly budget
       </h3>
       <label className="block text-xs text-[color:var(--color-ink-faint)]">

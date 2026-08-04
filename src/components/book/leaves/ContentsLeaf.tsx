@@ -33,7 +33,7 @@ export function ContentsLeaf() {
       {/* Tonight / today ideas — compact; scrolls away with chapters */}
       <section className="mb-4 shrink-0 rounded-xl border border-[color:var(--color-line)]/80 bg-[color:var(--color-paper-sunk)]/55 px-3 py-2.5 sm:px-4 sm:py-3">
         <div className="flex items-baseline justify-between gap-2">
-          <p className="text-[0.65rem] uppercase tracking-[0.35em] text-[color:var(--color-accent)]">
+          <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--color-accent)]">
             Today’s kitchen
           </p>
           <p className="hidden font-serif text-sm text-[color:var(--color-ink-faint)] sm:block">
@@ -66,7 +66,7 @@ export function ContentsLeaf() {
       </section>
 
       <section className="mb-4 shrink-0">
-        <p className="mb-2 text-[0.65rem] uppercase tracking-[0.35em] text-[color:var(--color-ink-faint)]">
+        <p className="mb-2 text-xs uppercase tracking-[0.35em] text-[color:var(--color-ink-faint)]">
           Occasions
         </p>
         <ul className="space-y-2">
@@ -79,7 +79,7 @@ export function ContentsLeaf() {
                 className="rounded-xl border border-[color:var(--color-line)]/80 bg-[color:var(--color-paper-raised)]/70 px-3 py-2"
               >
                 <p className="font-serif text-[color:var(--color-ink)]">{tpl.label}</p>
-                <p className="text-[0.7rem] text-[color:var(--color-ink-faint)]">{tpl.blurb}</p>
+                <p className="text-xs text-[color:var(--color-ink-faint)]">{tpl.blurb}</p>
                 <div className="mt-1.5 flex flex-wrap gap-1.5">
                   {rail.map((r) => (
                     <button

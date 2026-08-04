@@ -257,7 +257,7 @@ export function AppearanceButton() {
                   </div>
 
                   <section className="mb-4">
-                    <p className="mb-2 text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
+                    <p className="mb-2 text-xs uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
                       Theme
                     </p>
                     <div className="grid grid-cols-2 gap-2">
@@ -293,7 +293,7 @@ export function AppearanceButton() {
                   </section>
 
                   <section className="mb-4">
-                    <p className="mb-2 text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
+                    <p className="mb-2 text-xs uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
                       Chapter tabs
                     </p>
                     <div className="flex flex-col gap-1.5">
@@ -316,13 +316,13 @@ export function AppearanceButton() {
                         );
                       })}
                     </div>
-                    <p className="mt-2 text-[0.7rem] leading-snug text-[color:var(--color-ink-faint)]">
+                    <p className="mt-2 text-xs leading-snug text-[color:var(--color-ink-faint)]">
                       Index tabs stuck to the wooden table beside the book.
                     </p>
                   </section>
 
                   <section className="mb-4">
-                    <p className="mb-2 text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
+                    <p className="mb-2 text-xs uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
                       Reading
                     </p>
                     <div
@@ -349,13 +349,13 @@ export function AppearanceButton() {
                         );
                       })}
                     </div>
-                    <p className="mt-2 text-[0.7rem] leading-snug text-[color:var(--color-ink-faint)]">
+                    <p className="mt-2 text-xs leading-snug text-[color:var(--color-ink-faint)]">
                       Flip keeps page-turn hops. Fast jumps chapters instantly.
                     </p>
                   </section>
 
                   <section>
-                    <p className="mb-2 text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
+                    <p className="mb-2 text-xs uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
                       Labels
                     </p>
                     <div
@@ -387,7 +387,7 @@ export function AppearanceButton() {
                         );
                       })}
                     </div>
-                    <p className="mt-2 text-[0.7rem] leading-snug text-[color:var(--color-ink-faint)]">
+                    <p className="mt-2 text-xs leading-snug text-[color:var(--color-ink-faint)]">
                       Stub pack — chrome labels only. True Urdu script / RTL later.
                     </p>
                   </section>

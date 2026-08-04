@@ -1,4 +1,4 @@
-# Cursor — v3.4.0 polish (measured live on v3.3.2)
+# Cursor — v3.4.0 polish (measured live on v3.4.0)
 
 Independent live audit (DOM + contrast math). App is in good shape: crash fixed, wood
 renders (oak light / walnut dark), paper tabs on wood, contrast excellent both skins

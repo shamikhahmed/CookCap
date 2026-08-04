@@ -122,7 +122,7 @@ export function ModeChooser({ open, onClose }: { open: boolean; onClose: () => v
                 if (items.length === 0) return null;
                 return (
                   <section key={group} className="mb-4 last:mb-0">
-                    <h3 className="mb-2 text-[0.65rem] font-medium uppercase tracking-[0.2em] text-[color:var(--color-ink-faint)]">
+                    <h3 className="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-ink-faint)]">
                       {MODE_GROUP_LABELS[group]}
                     </h3>
                     <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
@@ -164,7 +164,7 @@ export function ModeChooser({ open, onClose }: { open: boolean; onClose: () => v
               })}
 
               {showHealthNote && (
-                <p className="mt-4 text-center text-[0.7rem] text-[color:var(--color-ink-faint)]">
+                <p className="mt-4 text-center text-xs text-[color:var(--color-ink-faint)]">
                   {NUTRITION_DISCLAIMER}
                 </p>
               )}

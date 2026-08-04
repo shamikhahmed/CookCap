@@ -91,7 +91,7 @@ export function CoverLeaf() {
         />
         <button
           type="button"
-          className="min-h-11 rounded-full border border-[color:var(--color-gold)]/50 bg-black/35 px-3 py-1.5 text-[0.65rem] uppercase tracking-[0.2em] text-[color:var(--color-gold)] backdrop-blur-sm"
+          className="min-h-11 rounded-full border border-[color:var(--color-gold)]/50 bg-black/35 px-3 py-1.5 text-xs uppercase tracking-[0.2em] text-[color:var(--color-gold)] backdrop-blur-sm"
           onClick={() => fileRef.current?.click()}
         >
           {coverUrl ? 'Change photo' : 'Add photo'}
@@ -99,7 +99,7 @@ export function CoverLeaf() {
         {coverUrl && (
           <button
             type="button"
-            className="min-h-11 rounded-full border border-[color:var(--color-gold)]/40 bg-black/35 px-3 py-1.5 text-[0.65rem] uppercase tracking-[0.2em] text-[color:var(--color-gold)]/80 backdrop-blur-sm"
+            className="min-h-11 rounded-full border border-[color:var(--color-gold)]/40 bg-black/35 px-3 py-1.5 text-xs uppercase tracking-[0.2em] text-[color:var(--color-gold)]/80 backdrop-blur-sm"
             onClick={() => void clearCoverPhoto()}
           >
             Remove
@@ -111,7 +111,7 @@ export function CoverLeaf() {
         Tap to open
       </span>
       <span
-        className="absolute bottom-5 z-10 font-serif text-[0.65rem] uppercase tracking-[0.35em] text-[color:var(--color-gold)]/55"
+        className="absolute bottom-5 z-10 font-serif text-xs uppercase tracking-[0.35em] text-[color:var(--color-gold)]/55"
         aria-hidden
       >
         {PRODUCT_NAME}

@@ -1,6 +1,6 @@
 # CookCap — Handover
 
-Heirloom family cookbook PWA (Cap family). Version **3.3.2**.
+Heirloom family cookbook PWA (Cap family). Version **3.4.0**.
 
 ## Live
 
@@ -10,7 +10,7 @@ Next `output: 'export'` + Actions Pages. `NEXT_PUBLIC_BASE_PATH=/CookCap` on CI.
 
 ## Stack
 
-Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v4 (`cookcap`, migrates `jia-cooks`) · SW `cookcap-v36`
+Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v4 (`cookcap`, migrates `jia-cooks`) · SW `cookcap-v37`
 
 Heroes locked: `src/lib/recipes/images.lock.json` — rematch/fill need `--force-unlock`.  
 Gates: `gate:recipes` · `gate:anti-2d` · `gate:wood` · `smoke:product` (CI after build).  
@@ -42,6 +42,7 @@ GATE_URL=http://127.0.0.1:3456/CookCap npm run gate:wood
 - **v3.2.0** reading desk = real wood (`--dr-wood`), not cream; phone chrome wood-tinted
 - **v3.3.1** dresser animation bible — idle (lamp/motes/parallax) + wood drawer open/close
 - **v3.3.2** cover open hinge — leather swing, inside paper, page fan
+- **v3.4.0** type ≥16 · taps 44 · WhatsNew corner · hero/tabs polish
 
 ## Dresser
 
@@ -56,6 +57,14 @@ GATE_URL=http://127.0.0.1:3456/CookCap npm run gate:wood
 - Paper inside cover past −90°; cast shadow peaks mid-swing; 4-sheet right-edge fan
 - Spine gutter deepens while open; reduced-motion = 200ms cross-fade
 - Spec: `docs/animation-bible.md` §6 · impl: `src/components/book/Book.tsx`
+
+## Polish (v3.4.0)
+
+- Reading body ≥16px; chrome floor ≥12px (`--text-floor`)
+- Interactive hits ≥44px; scrub track 44px tall
+- WhatsNew = deferred corner toast + dismiss backdrop
+- Recipe hero scrim + title clears heart; paper tabs short labels (World/Europe/…)
+- Spec: `docs/cursor-polish-v3.4.md`
 
 ## Recipes
 

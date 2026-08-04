@@ -142,7 +142,7 @@ export function NameGate({
               </p>
               {!dismissible && (
                 <p
-                  className="text-[10px] tabular-nums text-[color:var(--color-ink-faint)]"
+                  className="text-xs tabular-nums text-[color:var(--color-ink-faint)]"
                   aria-label={`Step ${progressIdx + 1} of ${progressTotal}`}
                 >
                   {progressIdx + 1}/{progressTotal}

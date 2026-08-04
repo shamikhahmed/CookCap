@@ -515,7 +515,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                   key={n}
                   type="button"
                   onClick={() => setServings(n)}
-                  className={`min-h-11 rounded-full border px-2 text-xs ${
+                  className={`min-h-11 min-w-11 rounded-full border px-2 text-xs tabular-nums ${
                     servings === n
                       ? 'border-[color:var(--color-accent)] text-[color:var(--color-accent)]'
                       : 'border-[color:var(--color-line)] text-[color:var(--color-ink-faint)]'

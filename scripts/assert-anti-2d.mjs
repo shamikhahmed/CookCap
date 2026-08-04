@@ -58,6 +58,7 @@ async function seedReading(page) {
     localStorage.setItem('cookcap-readmode', 'flip');
     localStorage.setItem('cookcap-owner', name);
     localStorage.setItem('cookcap-onboarded', '1');
+    localStorage.setItem('cookcap-whats-new', '9.9.9');
     localStorage.setItem('cookcap-pos', '0');
   }, DEMO);
   await page.goto(`${BASE}/?for=${encodeURIComponent(DEMO)}`, {

@@ -221,7 +221,7 @@ export function LogMealDialog({
 
                   {preview && (
                     <div className="rounded-xl bg-[color:var(--color-paper-sunk)] p-3 text-sm text-[color:var(--color-ink-soft)]">
-                      <p className="mb-1 text-[0.65rem] uppercase tracking-wide text-[color:var(--color-ink-faint)]">
+                      <p className="mb-1 text-xs uppercase tracking-wide text-[color:var(--color-ink-faint)]">
                         Preview {healthierOn ? '(healthier estimate)' : ''}
                       </p>
                       <p className="tabular-nums">
@@ -231,7 +231,7 @@ export function LogMealDialog({
                     </div>
                   )}
 
-                  <p className="text-[0.7rem] text-[color:var(--color-ink-faint)]">
+                  <p className="text-xs text-[color:var(--color-ink-faint)]">
                     {NUTRITION_DISCLAIMER}
                   </p>
                 </>

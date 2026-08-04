@@ -1,11 +1,11 @@
-# CookCap — Claude / agent review pack (v3.3.2)
+# CookCap — Claude / agent review pack (v3.4.0)
 
 **Purpose:** one door for an external agent (Claude, Cursor, etc.) to audit the product without rediscovering history.
 
 **Live:** https://shamikhahmed.github.io/CookCap/  
 **Repo:** https://github.com/shamikhahmed/CookCap  
 **Path:** `/Users/shamikhahmed/CookBook Website`  
-**Version:** 3.3.2 · SW `cookcap-v36` · Catalog **790**
+**Version:** 3.4.0 · SW `cookcap-v37` · Catalog **790**
 
 ---
 
@@ -14,7 +14,7 @@
 1. This file  
 2. `HANDOVER.md`  
 3. `docs/ROADMAP.md` + `docs/SECURITY.md` (P15 hard nos)  
-4. `CHANGELOG.md` (3.3.2 → 3.1.0)  
+4. `CHANGELOG.md` (3.4.0 → 3.1.0)  
 5. `USER_GUIDE.md`  
 6. `AUDIT.md` · `QA-MATRIX.md` · `PERF.md` · `IA-RATIONALE.md`  
 7. Visuals: `docs/gallery/README.md` + `docs/gallery/{desktop,mobile}/`  
@@ -44,6 +44,7 @@
 
 | Ver | What |
 |-----|------|
+| **3.4.0** | Type ≥16 / taps 44 / WhatsNew corner / hero + tab polish / flip depth |
 | **3.3.2** | Cover open (bible §6) — hinge −160° `--e-page`, inside cover, cast shadow, page fan |
 | **3.3.1** | Animation bible Act III — dresser idle + drawer open/close wood physics |
 | **3.3.0** | P0 stale-SW crash fix; ChunkLoadError recovery; designed error/404; motion tokens |

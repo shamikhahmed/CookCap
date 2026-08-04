@@ -145,7 +145,7 @@ export function AboutModal({
             </p>
 
             <section className="mt-5 space-y-2 text-sm leading-relaxed text-[color:var(--color-ink-soft)]">
-              <h3 className="text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
+              <h3 className="text-xs uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
                 Privacy
               </h3>
               <p>
@@ -157,7 +157,7 @@ export function AboutModal({
 
             {stats && (
               <section className="mt-5 space-y-2 text-sm text-[color:var(--color-ink-soft)]">
-                <h3 className="text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
+                <h3 className="text-xs uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
                   On this device
                 </h3>
                 <ul className="grid grid-cols-2 gap-x-3 gap-y-1 text-xs">
@@ -172,14 +172,14 @@ export function AboutModal({
                   <li>Photos · {stats.heroes}</li>
                   <li>Cover · {stats.hasCover ? 'yes' : 'no'}</li>
                 </ul>
-                <p className="text-[0.65rem] text-[color:var(--color-ink-faint)]">
+                <p className="text-xs text-[color:var(--color-ink-faint)]">
                   Storage · {stats.dbName}
                 </p>
               </section>
             )}
 
             <section className="mt-5 space-y-2 text-sm leading-relaxed text-[color:var(--color-ink-soft)]">
-              <h3 className="text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
+              <h3 className="text-xs uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
                 Licenses
               </h3>
               <p>
@@ -189,7 +189,7 @@ export function AboutModal({
             </section>
 
             <section className="mt-6 border-t border-[color:var(--color-line)] pt-5">
-              <h3 className="text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
+              <h3 className="text-xs uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
                 Backup &amp; data
               </h3>
               <div className="mt-3 flex flex-col gap-2">
@@ -231,7 +231,7 @@ export function AboutModal({
                 </button>
 
                 <div className="rounded-xl border border-[color:var(--color-line)] p-3">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
+                  <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)]">
                     Guest PIN
                   </p>
                   <p className="mt-1 text-xs text-[color:var(--color-ink-soft)]">
