@@ -175,7 +175,7 @@ export function LogMealDialog({
                         type="button"
                         aria-label="Fewer servings"
                         onClick={() => setServings((s) => Math.max(0.5, Math.round((s - 0.5) * 10) / 10))}
-                        className="grid size-9 place-items-center rounded-lg bg-[color:var(--color-paper-sunk)] text-[color:var(--color-ink)]"
+                        className="grid size-11 place-items-center rounded-lg bg-[color:var(--color-paper-sunk)] text-[color:var(--color-ink)]"
                       >
                         −
                       </button>
@@ -186,7 +186,7 @@ export function LogMealDialog({
                         type="button"
                         aria-label="More servings"
                         onClick={() => setServings((s) => Math.round((s + 0.5) * 10) / 10)}
-                        className="grid size-9 place-items-center rounded-lg bg-[color:var(--color-paper-sunk)] text-[color:var(--color-ink)]"
+                        className="grid size-11 place-items-center rounded-lg bg-[color:var(--color-paper-sunk)] text-[color:var(--color-ink)]"
                       >
                         +
                       </button>

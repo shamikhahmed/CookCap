@@ -8,6 +8,11 @@ import { fadeTransition } from '@/lib/motion';
 const KEY = 'cookcap-whats-new';
 
 const NOTES: Record<string, string[]> = {
+  '3.4.0': [
+    'Bigger type · easier taps (44px targets)',
+    'Clearer recipe heroes · paper tabs no longer clip',
+    'Cover hinge + page flip polish',
+  ],
   '3.3.2': [
     'Cover opens like a real book — leather hinge, inside paper, page fan at the edge',
   ],
@@ -41,7 +46,11 @@ const NOTES: Record<string, string[]> = {
   '2.7.0': ['Cook ritual (mise + glove)', 'Backup restore'],
 };
 
-/** One-shot “what’s new” after SW bump / version change. */
+/**
+ * One-shot “what’s new” after version change.
+ * Compact corner toast — never covers recipe hero/title.
+ * Gated on localStorage last-seen version; dismiss persists.
+ */
 export function WhatsNewSheet() {
   const reduce = useReducedMotion();
   const [open, setOpen] = useState(false);
@@ -50,11 +59,13 @@ export function WhatsNewSheet() {
   useEffect(() => {
     try {
       if (localStorage.getItem(KEY) === APP_VERSION) return;
-      setOpen(true);
+      /* Defer so first paint shows the book, not the toast. */
+      const t = window.setTimeout(() => setOpen(true), reduce ? 80 : 700);
+      return () => window.clearTimeout(t);
     } catch {
       /* ignore */
     }
-  }, []);
+  }, [reduce]);
 
   const dismiss = () => {
     try {
@@ -68,31 +79,46 @@ export function WhatsNewSheet() {
   return (
     <AnimatePresence>
       {open && (
-        <motion.div
-          role="dialog"
-          aria-labelledby="whats-new-title"
-          initial={{ opacity: 0, y: reduce ? 0 : 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0 }}
-          transition={fadeTransition(reduce, 200)}
-          className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-1/2 z-[94] w-[min(92vw,22rem)] -translate-x-1/2 rounded-2xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] p-4 shadow-[var(--shadow-lg)]"
-        >
-          <h2 id="whats-new-title" className="font-serif text-lg text-[color:var(--color-ink)]">
-            What’s new · v{APP_VERSION}
-          </h2>
-          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-[color:var(--color-ink-soft)]">
-            {bullets.map((b) => (
-              <li key={b}>{b}</li>
-            ))}
-          </ul>
-          <button
+        <>
+          <motion.button
             type="button"
+            aria-label="Dismiss what’s new"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={fadeTransition(reduce, 160)}
+            className="fixed inset-0 z-[93] cursor-default bg-transparent"
             onClick={dismiss}
-            className="mt-3 min-h-11 w-full rounded-full bg-[color:var(--color-accent)] text-sm font-medium text-white"
+          />
+          <motion.div
+            role="dialog"
+            aria-labelledby="whats-new-title"
+            initial={{ opacity: 0, y: reduce ? 0 : -8, scale: reduce ? 1 : 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: reduce ? 0 : -6 }}
+            transition={fadeTransition(reduce, 200)}
+            className="fixed top-[max(4.75rem,calc(env(safe-area-inset-top)+3.75rem))] right-[max(0.75rem,env(safe-area-inset-right))] z-[94] w-[min(17.5rem,calc(100vw-1.5rem))] rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] p-3 shadow-[var(--shadow-lg)]"
           >
-            Got it
-          </button>
-        </motion.div>
+            <h2
+              id="whats-new-title"
+              className="font-serif text-base text-[color:var(--color-ink)]"
+            >
+              What’s new · v{APP_VERSION}
+            </h2>
+            <ul className="mt-1.5 list-disc space-y-0.5 pl-4 text-xs leading-snug text-[color:var(--color-ink-soft)]">
+              {bullets.map((b) => (
+                <li key={b}>{b}</li>
+              ))}
+            </ul>
+            <button
+              type="button"
+              onClick={dismiss}
+              className="mt-2.5 min-h-11 w-full rounded-full bg-[color:var(--color-accent)] text-sm font-medium text-white"
+            >
+              Got it
+            </button>
+          </motion.div>
+        </>
       )}
     </AnimatePresence>
   );

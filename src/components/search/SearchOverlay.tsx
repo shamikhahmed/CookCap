@@ -190,13 +190,13 @@ export function SearchOverlay({
                 autoComplete="off"
                 spellCheck={false}
               />
-              <kbd className="hidden rounded-md border border-[color:var(--color-line)] px-1.5 py-0.5 text-[0.65rem] text-[color:var(--color-ink-faint)] sm:inline">
+              <kbd className="hidden rounded-md border border-[color:var(--color-line)] px-1.5 py-0.5 text-xs text-[color:var(--color-ink-faint)] sm:inline">
                 esc
               </kbd>
             </div>
 
             {smartHint && (
-              <p className="border-b border-[color:var(--color-line)] px-4 py-1.5 text-[0.7rem] text-[color:var(--color-ink-faint)]">
+              <p className="border-b border-[color:var(--color-line)] px-4 py-1.5 text-xs text-[color:var(--color-ink-faint)]">
                 Smart filter · {smartHint}
               </p>
             )}
@@ -262,7 +262,7 @@ export function SearchOverlay({
               ))}
             </div>
 
-            <p className="px-4 pt-2.5 text-[0.65rem] font-medium uppercase tracking-[0.2em] text-[color:var(--color-ink-faint)]">
+            <p className="px-4 pt-2.5 text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-ink-faint)]">
               {q.trim() || hasFilters
                 ? `${rows.length} result${rows.length === 1 ? '' : 's'}`
                 : 'Suggested'}
@@ -380,7 +380,7 @@ export function SearchOverlay({
                         </span>
                       </span>
                       {active && (
-                        <span className="hidden text-[0.65rem] text-[color:var(--color-ink-faint)] sm:inline">
+                        <span className="hidden text-xs text-[color:var(--color-ink-faint)] sm:inline">
                           ↵
                         </span>
                       )}
@@ -390,7 +390,7 @@ export function SearchOverlay({
               })}
             </ul>
 
-            <div className="flex items-center justify-between border-t border-[color:var(--color-line)] px-4 py-2 text-[0.65rem] text-[color:var(--color-ink-faint)]">
+            <div className="flex items-center justify-between border-t border-[color:var(--color-line)] px-4 py-2 text-xs text-[color:var(--color-ink-faint)]">
               <span>↑↓ navigate · ↵ open</span>
               <span>{isMac ? '⌘K' : 'Ctrl+K'} anytime</span>
             </div>
@@ -420,7 +420,7 @@ function Chip({
       onClick={onClick}
       aria-pressed={active}
       title={title}
-      className="rounded-md border px-2.5 py-1 text-xs transition-colors"
+      className="min-h-11 rounded-md border px-3 text-xs transition-colors"
       style={{
         borderColor: active ? 'var(--color-accent)' : 'var(--color-line)',
         background: active ? 'var(--color-accent)' : 'transparent',

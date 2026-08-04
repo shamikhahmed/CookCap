@@ -152,14 +152,14 @@ export function ShoppingDrawer({ open, onClose }: { open: boolean; onClose: () =
                 <div className="space-y-5">
                   {grouped.map(({ cat, rows: catRows }) => (
                     <section key={cat} aria-label={cat}>
-                      <h3 className="mb-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-ink-faint)]">
+                      <h3 className="mb-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-[color:var(--color-ink-faint)]">
                         {cat}
                       </h3>
                       <ul className="space-y-1">
                         {catRows.map((row) => (
                           <li key={row.key}>
                             <label
-                              className={`flex cursor-pointer items-start gap-3 rounded-xl p-2.5 transition-colors hover:bg-[color:var(--color-paper-sunk)] ${
+                              className={`flex min-h-11 cursor-pointer items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-[color:var(--color-paper-sunk)] ${
                                 row.checked ? 'opacity-55' : ''
                               }`}
                             >
@@ -167,7 +167,7 @@ export function ShoppingDrawer({ open, onClose }: { open: boolean; onClose: () =
                                 type="checkbox"
                                 checked={row.checked}
                                 onChange={() => void toggle(row)}
-                                className="mt-1 size-4 accent-[color:var(--color-accent)]"
+                                className="size-4 shrink-0 accent-[color:var(--color-accent)]"
                               />
                               <span className="min-w-0 flex-1">
                                 <span

@@ -216,7 +216,7 @@ function Frame() {
         <main
           id="book-main"
           tabIndex={-1}
-          className="journal-stage relative flex min-h-0 flex-1 flex-col items-center justify-center overflow-hidden px-0 pt-0 sm:overflow-visible sm:px-6 sm:pr-44 sm:pt-1 md:pr-48 lg:pr-56"
+          className="journal-stage relative flex min-h-0 flex-1 flex-col items-center justify-center overflow-hidden px-0 pt-0 sm:overflow-visible sm:px-6 sm:pr-48 sm:pt-1 md:pr-52 lg:pr-60"
         >
           <TopChapterBar />
           {/* Pure CSS grounding — size from vh on first paint (no parent-% / resize). */}
@@ -372,7 +372,7 @@ function TopBar({
           {kitchen && (
             <span
               suppressHydrationWarning
-              className="block truncate text-[9px] uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)] sm:text-[10px] sm:tracking-[0.2em]"
+              className="block truncate text-xs uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)] sm:tracking-[0.2em]"
             >
               {kitchen}
             </span>
@@ -649,7 +649,7 @@ function BottomBar() {
           type="button"
           disabled={!ready || busy}
           onClick={() => setGotoOpen((v) => !v)}
-          className="min-h-11 min-w-12 rounded-full px-2 text-center text-[11px] tabular-nums text-[color:var(--color-ink)] hover:bg-[color:var(--color-paper-sunk)] disabled:opacity-30 sm:min-w-14 sm:text-xs"
+          className="min-h-11 min-w-12 rounded-full px-2 text-center text-xs tabular-nums text-[color:var(--color-ink)] hover:bg-[color:var(--color-paper-sunk)] disabled:opacity-30 sm:min-w-14"
           title={
             extras > 0
               ? `Go to page — this edition: ${total} pages (includes ${extras} imported).`
@@ -673,7 +673,7 @@ function BottomBar() {
               transition={{ duration: 0.15 }}
               className="absolute bottom-[calc(100%+0.5rem)] left-1/2 z-40 w-[11.5rem] -translate-x-1/2 rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] p-3 shadow-[var(--shadow-lg)]"
             >
-              <p className="mb-2 text-[10px] uppercase tracking-[0.16em] text-[color:var(--color-ink-faint)]">
+              <p className="mb-2 text-xs uppercase tracking-[0.16em] text-[color:var(--color-ink-faint)]">
                 Go to page
               </p>
               <form
@@ -720,7 +720,7 @@ function BottomBar() {
 
       <button
         type="button"
-        className="min-h-11 rounded-full px-2.5 py-2.5 font-serif text-[0.7rem] font-semibold text-[color:var(--color-ink-soft)] hover:bg-[color:var(--color-paper-sunk)] sm:hidden disabled:opacity-30"
+        className="min-h-11 rounded-full px-2.5 py-2.5 font-serif text-xs font-semibold text-[color:var(--color-ink-soft)] hover:bg-[color:var(--color-paper-sunk)] sm:hidden disabled:opacity-30"
         aria-label="Open chapter tabs"
         disabled={busy}
         onClick={() => window.dispatchEvent(new Event('cookcap-open-chapters'))}

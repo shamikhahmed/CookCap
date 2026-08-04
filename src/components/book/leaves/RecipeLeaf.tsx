@@ -239,15 +239,15 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
           sizes="(max-width: 640px) 100vw, 560px"
           userSrc={heroUrls[recipe.id]}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 p-4 pr-14 sm:p-5 sm:pr-16">
           <span
-            className="text-[0.65rem] font-medium uppercase tracking-[0.3em] text-white/80 sm:text-[0.7rem] sm:tracking-[0.35em]"
+            className="text-xs font-medium uppercase tracking-[0.3em] text-white/80 sm:tracking-[0.35em]"
           >
             From our family kitchen
           </span>
           <p
-            className="mt-1 text-[0.65rem] font-medium uppercase tracking-[0.3em] sm:text-[0.7rem] sm:tracking-[0.35em]"
+            className="mt-1 text-xs font-medium uppercase tracking-[0.3em] sm:tracking-[0.35em]"
             style={{ color: chapter.tab }}
           >
             {recipe.cuisine}
@@ -260,8 +260,10 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
           onClick={() => toggleFavorite(recipe.id)}
           aria-pressed={fav}
           aria-label={fav ? 'Remove from favorites' : 'Add to favorites'}
-          className="absolute right-3 top-3 grid size-10 place-items-center rounded-full bg-black/30 text-white backdrop-blur-md transition-transform active:scale-90 sm:right-4 sm:top-4 sm:size-11"
-          style={{ color: fav ? '#ff7a6b' : 'white' }}
+          className={`micro-press absolute right-3 top-3 grid size-11 origin-center place-items-center rounded-full bg-black/30 text-white backdrop-blur-md sm:right-4 sm:top-4${fav ? ' micro-heart-on shadow-[0_0_12px_rgba(255,122,107,0.55)] ring-2 ring-[#ff7a6b]/50' : ''}`}
+          style={{
+            color: fav ? '#ff7a6b' : 'white',
+          }}
         >
           <Icon name={fav ? 'heart-filled' : 'heart'} size={22} />
         </button>
@@ -272,7 +274,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
           {recipe.tagline}
         </p>
         {!bodyReady ? (
-          <p className="mt-6 text-sm text-[color:var(--color-ink-faint)]">Opening recipe…</p>
+          <p className="mt-6 text-base text-[color:var(--color-ink-faint)]">Opening recipe…</p>
         ) : (
         <>
         <div className="mt-3">
@@ -299,7 +301,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
           </p>
         )}
         {!isTip && (
-          <p className="mt-1 text-[0.7rem] text-[color:var(--color-ink-faint)]">
+          <p className="mt-1 text-xs text-[color:var(--color-ink-faint)]">
             {recipe.macrosVerified
               ? 'Macros hand-checked for this edition.'
               : 'Macros are kitchen estimates — not lab values.'}
@@ -322,14 +324,14 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                   <div className="font-serif text-base font-semibold tabular-nums text-[color:var(--color-ink)]">
                     {v}
                   </div>
-                  <div className="text-[0.65rem] uppercase tracking-wide text-[color:var(--color-ink-faint)]">
+                  <div className="text-xs uppercase tracking-wide text-[color:var(--color-ink-faint)]">
                     {k}
                   </div>
                 </div>
               ))}
             </div>
             {!recipe.macrosVerified && (
-              <p className="mt-1.5 text-[0.7rem] text-[color:var(--color-ink-faint)]">
+              <p className="mt-1.5 text-xs text-[color:var(--color-ink-faint)]">
                 Estimated macros
               </p>
             )}
@@ -408,7 +410,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
 
         {motherAllergenHits.length > 0 && (
           <div
-            className="mt-3 rounded-md border-l-4 p-3 text-sm text-[color:var(--color-ink-soft)]"
+            className="mt-3 rounded-md border-l-4 p-3 text-base text-[color:var(--color-ink-soft)]"
             style={{
               background:
                 'color-mix(in srgb, var(--color-danger) 10%, var(--color-paper))',
@@ -436,12 +438,14 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
               <span className="text-sm font-medium text-[color:var(--color-ink)]">
                 Make it healthier
               </span>
-              <input
-                type="checkbox"
-                checked={healthierOn}
-                onChange={(e) => setHealthierOn(e.target.checked)}
-                className="size-4 accent-[color:var(--color-accent)]"
-              />
+              <span className="flex min-h-11 min-w-11 items-center justify-center">
+                <input
+                  type="checkbox"
+                  checked={healthierOn}
+                  onChange={(e) => setHealthierOn(e.target.checked)}
+                  className="size-4 accent-[color:var(--color-accent)]"
+                />
+              </span>
             </label>
             {healthierOn && (
               <p className="mt-2 text-xs tabular-nums text-[color:var(--color-ink-soft)]">
@@ -460,7 +464,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
             <button
               type="button"
               onClick={() => setLogOpen(true)}
-              className="rounded-full bg-[color:var(--color-accent)] px-4 py-2 text-sm font-semibold text-white transition-transform active:scale-95"
+              className="min-h-11 rounded-full bg-[color:var(--color-accent)] px-4 py-2 text-sm font-semibold text-white transition-transform active:scale-95"
             >
               Log this
             </button>
@@ -479,7 +483,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
               key={n}
               onClick={() => rate(n)}
               aria-label={`${n} star${n > 1 ? 's' : ''}`}
-              className="text-[color:var(--color-gold)] transition-transform active:scale-90"
+              className="micro-press grid min-h-11 min-w-11 place-items-center text-[color:var(--color-gold)]"
             >
               <Icon name={n <= rating ? 'star-filled' : 'star'} size={22} />
             </button>
@@ -511,7 +515,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                   key={n}
                   type="button"
                   onClick={() => setServings(n)}
-                  className={`min-h-9 rounded-full border px-2 text-[0.7rem] ${
+                  className={`min-h-11 rounded-full border px-2 text-xs ${
                     servings === n
                       ? 'border-[color:var(--color-accent)] text-[color:var(--color-accent)]'
                       : 'border-[color:var(--color-line)] text-[color:var(--color-ink-faint)]'
@@ -525,7 +529,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
             <button
               type="button"
               onClick={() => window.print()}
-              className="rounded-full border border-[color:var(--color-line)] px-3 py-1 text-xs font-medium text-[color:var(--color-ink-soft)] print:hidden"
+              className="min-h-11 rounded-full border border-[color:var(--color-line)] px-3 py-1 text-xs font-medium text-[color:var(--color-ink-soft)] print:hidden"
             >
               Print
             </button>
@@ -552,7 +556,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                     reportStorageError('Could not save to shopping list on this device.');
                   });
               }}
-              className="ml-auto rounded-full border border-[color:var(--color-line)] px-3 py-1 text-xs font-medium text-[color:var(--color-ink-soft)] hover:border-[color:var(--color-accent)] print:hidden"
+              className="ml-auto min-h-11 rounded-full border border-[color:var(--color-line)] px-3 py-1 text-xs font-medium text-[color:var(--color-ink-soft)] hover:border-[color:var(--color-accent)] print:hidden"
             >
               {shopFlash ? 'Added ✓' : 'Add to list'}
             </button>
@@ -595,7 +599,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
             </p>
             <button
               onClick={() => setCooking(true)}
-              className="inline-flex items-center gap-1.5 rounded-full bg-[color:var(--color-accent)] px-3 py-1.5 text-xs font-semibold text-white transition-transform active:scale-95"
+              className="inline-flex min-h-11 items-center gap-1.5 rounded-full bg-[color:var(--color-accent)] px-3 py-1.5 text-xs font-semibold text-white transition-transform active:scale-95"
             >
               <Icon name="flame" size={14} />
               Start cooking
@@ -611,8 +615,11 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                     onClick={() => toggleStep(i)}
                     aria-pressed={isDone}
                     aria-label={`Mark step ${i + 1} ${isDone ? 'not done' : 'done'}`}
-                    className="grid size-7 shrink-0 place-items-center rounded-full font-serif text-sm font-bold text-white transition-transform active:scale-90"
-                    style={{ background: isDone ? 'var(--color-success)' : chapter.tab }}
+                    className="grid size-11 shrink-0 place-items-center rounded-full font-serif text-sm font-bold text-white transition-transform duration-200 active:scale-90"
+                    style={{
+                      background: isDone ? 'var(--color-success)' : chapter.tab,
+                      transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+                    }}
                   >
                     {isDone ? '✓' : i + 1}
                   </button>
@@ -625,14 +632,14 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                     {step.durationSec != null && <Timer seconds={step.durationSec} />}
                     {step.tip &&
                       (looksRomanUrdu(step.tip) ? (
-                        <p className="mt-1.5 text-[0.95rem] leading-relaxed text-[color:var(--color-ink-soft)]">
-                          <span className="mb-0.5 block text-[0.65rem] font-medium uppercase tracking-[0.2em] text-[color:var(--color-ink-faint)]">
+                        <p className="mt-1.5 text-base leading-relaxed text-[color:var(--color-ink-soft)]">
+                          <span className="mb-0.5 block text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--color-ink-faint)]">
                             Roman Urdu
                           </span>
                           {step.tip}
                         </p>
                       ) : (
-                        <p className="mt-1 text-sm italic text-[color:var(--color-ink-faint)]">
+                        <p className="mt-1 text-base italic text-[color:var(--color-ink-faint)]">
                           {step.tip}
                         </p>
                       ))}
@@ -703,7 +710,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                   <div className="font-serif text-lg font-semibold text-[color:var(--color-ink)]">
                     {v}
                   </div>
-                  <div className="text-[0.65rem] uppercase tracking-wide text-[color:var(--color-ink-faint)]">
+                  <div className="text-xs uppercase tracking-wide text-[color:var(--color-ink-faint)]">
                     {k}
                   </div>
                 </div>
@@ -916,7 +923,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
           <button
             type="button"
             onClick={() => window.print()}
-            className="rounded-full border border-[color:var(--color-line)] px-4 py-2 text-sm text-[color:var(--color-ink-soft)]"
+            className="min-h-11 rounded-full border border-[color:var(--color-line)] px-4 py-2 text-sm text-[color:var(--color-ink-soft)]"
           >
             Print
           </button>
@@ -941,7 +948,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                 window.setTimeout(() => setShareFlash(false), 1600);
               }
             }}
-            className="rounded-full border border-[color:var(--color-line)] px-4 py-2 text-sm text-[color:var(--color-ink-soft)]"
+            className="min-h-11 rounded-full border border-[color:var(--color-line)] px-4 py-2 text-sm text-[color:var(--color-ink-soft)]"
           >
             {shareFlash ? 'Link copied ✓' : 'Share link'}
           </button>
@@ -1046,7 +1053,7 @@ function Meta({ icon, label, value }: { icon: 'clock' | 'flame' | 'gauge' | 'fla
     <div className="flex items-center gap-2 rounded-md bg-[color:var(--color-paper-sunk)] px-3 py-2">
       <Icon name={icon} size={18} />
       <div className="leading-tight">
-        <div className="text-[0.65rem] uppercase tracking-wide text-[color:var(--color-ink-faint)]">
+        <div className="text-xs uppercase tracking-wide text-[color:var(--color-ink-faint)]">
           {label}
         </div>
         <div className="text-sm font-semibold text-[color:var(--color-ink)]">{value}</div>
@@ -1094,7 +1101,7 @@ function Stepper({
     <button
       onClick={onClick}
       aria-label={label}
-      className="grid size-9 place-items-center text-lg text-[color:var(--color-ink-soft)] transition-colors hover:text-[color:var(--color-accent)]"
+      className="grid size-11 place-items-center text-lg text-[color:var(--color-ink-soft)] transition-colors hover:text-[color:var(--color-accent)]"
     >
       {children}
     </button>
@@ -1104,10 +1111,10 @@ function Stepper({
 function Sensory({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="rounded-lg border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-3 py-2">
-      <div className="text-[0.65rem] font-semibold uppercase tracking-wide text-[color:var(--color-ink-faint)]">
+      <div className="text-xs font-semibold uppercase tracking-wide text-[color:var(--color-ink-faint)]">
         {label}
       </div>
-      <div className="font-serif text-sm italic text-[color:var(--color-ink)]">{children}</div>
+      <div className="font-serif text-base italic text-[color:var(--color-ink)]">{children}</div>
     </div>
   );
 }
@@ -1118,7 +1125,7 @@ function Detail({ label, children }: { label: string; children: React.ReactNode 
       <div className="mb-1 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-ink-faint)]">
         {label}
       </div>
-      <div className="text-sm text-[color:var(--color-ink-soft)]">{children}</div>
+      <div className="text-base text-[color:var(--color-ink-soft)]">{children}</div>
     </div>
   );
 }
@@ -1141,7 +1148,7 @@ function Callout({
   const t = TONE[tone];
   return (
     <div
-      className="mt-5 rounded-md border-l-4 p-4 text-sm text-[color:var(--color-ink-soft)]"
+      className="mt-5 rounded-md border-l-4 p-4 text-base text-[color:var(--color-ink-soft)]"
       style={{ background: t.bg, borderColor: t.bar }}
     >
       <div className="mb-1 font-semibold text-[color:var(--color-ink)]">{title}</div>
@@ -1177,7 +1184,7 @@ function Timer({ seconds }: { seconds: number }) {
           setRunning(false);
         } else setRunning((r) => !r);
       }}
-      className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-[color:var(--color-line)] px-2.5 py-1 text-xs font-medium tabular-nums text-[color:var(--color-ink-soft)] transition-colors hover:border-[color:var(--color-accent)]"
+      className="mt-2 inline-flex min-h-11 items-center gap-1.5 rounded-full border border-[color:var(--color-line)] px-2.5 py-1 text-xs font-medium tabular-nums text-[color:var(--color-ink-soft)] transition-colors hover:border-[color:var(--color-accent)]"
     >
       <Icon name="clock" size={14} />
       {done ? 'Done · reset' : `${mm}:${ss.toString().padStart(2, '0')}`}

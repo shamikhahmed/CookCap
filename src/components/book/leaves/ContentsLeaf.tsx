@@ -48,7 +48,7 @@ export function ContentsLeaf() {
                 onClick={() => goToRecipe(idea.recipe.id)}
                 className="group flex w-full items-center gap-2.5 py-2 text-left transition-colors first:pt-1.5 last:pb-1 hover:bg-[color:var(--color-paper-raised)]/80"
               >
-                <span className="w-14 shrink-0 text-[0.6rem] font-medium uppercase tracking-wide text-[color:var(--color-ink-faint)] sm:w-16">
+                <span className="w-14 shrink-0 text-xs font-medium uppercase tracking-wide text-[color:var(--color-ink-faint)] sm:w-16">
                   {idea.eyebrow}
                 </span>
                 <span className="min-w-0 flex-1">
@@ -86,7 +86,7 @@ export function ContentsLeaf() {
                       key={r.id}
                       type="button"
                       onClick={() => goToRecipe(r.id)}
-                      className="min-h-9 rounded-full border border-[color:var(--color-line)] px-2.5 text-xs text-[color:var(--color-ink)]"
+                      className="min-h-11 rounded-full border border-[color:var(--color-line)] px-2.5 text-xs text-[color:var(--color-ink)]"
                     >
                       {r.title}
                     </button>

@@ -332,7 +332,7 @@ export function Book() {
     const max = coverOpenRef.current ? COVER_DEG : MAX_DEG;
     return Math.min(1, Math.abs(v) / max);
   });
-  const revealShadow = useTransform(progressAbs, [0, 0.5, 1], [0, 0.3, 0.05]);
+  const revealShadow = useTransform(progressAbs, [0, 0.5, 1], [0, 0.35, 0.06]);
   /** Cover cast shadow peaks mid-swing (−90°), then fades (bible §6). */
   const castShadow = useTransform(deg, (v) => {
     if (!coverOpenRef.current) return 0;
@@ -344,13 +344,13 @@ export function Book() {
     if (!coverOpenRef.current) return 0.14;
     return 0.14 + 0.22 * Math.min(1, Math.abs(v) / COVER_DEG);
   });
-  const sheetShade = useTransform(deg, [0, -90, -MAX_DEG], [0, 0.42, 0.64]);
-  const curlOpacity = useTransform(progressAbs, [0, 0.12, 0.85, 1], [0, 0.55, 0.4, 0]);
+  const sheetShade = useTransform(deg, [0, -90, -MAX_DEG], [0, 0.48, 0.68]);
+  const curlOpacity = useTransform(progressAbs, [0, 0.12, 0.85, 1], [0, 0.62, 0.45, 0]);
   // Visible paper thickness on the lifting edge, and a faint bend squash — the
   // cues that make the turning sheet read as a real leaf, not a flat plane.
-  const edgeThickness = useTransform(progressAbs, [0, 0.1, 0.6, 1], [0, 5, 7, 2]);
-  const edgeOpacity = useTransform(progressAbs, [0, 0.1, 0.9, 1], [0, 0.7, 0.55, 0]);
-  const bendSquash = useTransform(deg, [0, -84, -MAX_DEG], [1, 0.985, 1]);
+  const edgeThickness = useTransform(progressAbs, [0, 0.1, 0.6, 1], [0, 6, 8, 2.5]);
+  const edgeOpacity = useTransform(progressAbs, [0, 0.1, 0.9, 1], [0, 0.78, 0.58, 0]);
+  const bendSquash = useTransform(deg, [0, -84, -MAX_DEG], [1, 0.982, 1]);
 
   const baseLeaf = turn ? turn.base : leaves[index]!;
   const overlayLeaf = turn?.overlay ?? null;
