@@ -46,3 +46,11 @@ No scrollbar chrome · no scroll-to-turn · WarmLeafPool/AssetPreloader · offli
 targets 44`, `fix: whats-new one-time + hero`, `feat: flip/tab/micro polish`). Bump
 version + SW, CHANGELOG/HANDOVER/QA-MATRIX/PERF/Capricorn. Push. Regenerate gallery.
 Report: measured body-px, min-font-px, count of sub-44 targets (→0), real-device shots.
+
+## Measured after fix (v3.4.0)
+
+```
+bodyMin=16 bodyMedian=16 minFont=12 sub44=0/135
+```
+
+Gate: `node scripts/assert-polish-v34.mjs`
