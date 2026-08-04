@@ -13,6 +13,8 @@ Cooks" · estimates labeled · no telemetry · no fake-AI copy.
   `_next/static` cache-first, ChunkLoadError reload, designed error screens).
 - Wood **is** in the reader (DOM-proven since 3.2.0).
 - Catalog is **790** (family + local world table). Older “223-only” notes are stale.
+- **Act III (partial):** dresser idle/drawers shipped **3.3.1**; cover open shipped **3.3.2**.
+  Remaining: page-flip polish depth, tab peel perfection, micro-interactions audit.
 
 ## Spec index (all authoritative)
 `cursor-sw-crash-v3.2.2.md` · `cursor-master-punchlist-v3.3.md` · `animation-bible.md` ·

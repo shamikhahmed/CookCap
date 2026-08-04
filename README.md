@@ -7,6 +7,7 @@ Cap-family offline-first cookbook PWA. Name your book → **`{Name} Cooks`**.
 ## Features
 
 - Hardcover flip book + cook mode + search + shopping + meal planner
+- Cover opens on a leather hinge (animation bible); dresser first-run feels like wood
 - **790 recipes** — family editorial + local world table (no live MealDB)
 - Wooden reading table + paper tabs stuck to wood (phone wood frame)
 - Footer: Home · ±5 jump · scrub slider · go-to page #

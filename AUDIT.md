@@ -63,7 +63,10 @@
 - Footer Home / ±5 / scrub / go-to page (3.1.0)  
 - Wooden reader + world table restore + `gate:wood` (3.2.0)  
 - Even paper wash on dark skins (3.2.1)
-- Animation bible Act III dresser motion (3.3.2)  
+- P0 stale-SW crash fix + error screens + motion tokens (3.3.0)
+- Animation bible Act III dresser motion (3.3.1)
+- Cover open hinge — leather −160° / inside / fan / gutter (3.3.2)  
+- Full gallery + docs pack sync (3.3.2) 
 
 ## Gates
 

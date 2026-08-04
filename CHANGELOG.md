@@ -8,6 +8,7 @@
 
 ### Docs
 - Capricorn + HANDOVER sync
+- Full pack + gallery regen (desktop/mobile + checkpoints)
 
 ### Chore
 - SW → `cookcap-v36`

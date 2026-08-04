@@ -28,9 +28,11 @@ Demo edition: **Ayesha**. Recipes: **790** (family + world table; hero-only).
 - Reading screen shows **wood**, not cream desk (desktop + phone)  
 - `03-friends.png` — even paper wash (no grey/black split on candlelit)  
 - `05-recipe.png` — one hero, no step photos  
+- `01-cover.png` — leather cover; tap opens with hinge (not flat curl)  
 - `19-page-nav.png` — footer Home / scrub / page count (if captured)  
 - Guacamole leaf — honest green dip (not samosas)  
 - Paper tabs = cream notes on wood  
+- `dresser/*` — wood drawers + lamp pool (idle motes may be still-frame)  
 
 ## Gates
 
@@ -38,6 +40,7 @@ Demo edition: **Ayesha**. Recipes: **790** (family + world table; hero-only).
 npm run gate:anti-2d
 npm run gate:wood
 npm run gate:recipes
+npm run smoke:product
 ```
 
 Checkpoints: `docs/gallery/checkpoints/`.

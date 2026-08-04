@@ -6,7 +6,8 @@ https://shamikhahmed.github.io/CookCap/
 
 1. First visit: **Begin** on the dresser (or calm full-screen steps if reduced motion). Name the book → cover becomes **YourName Cooks**. Skip → **Our Family Cookbook** (never “Family Cooks”).
 2. Optional: who eats + how you cook (or skip → Reader).
-3. Flip pages on the wooden desk. Phone: wood-tinted chrome + **Tabs** in footer.
+3. Book lands on the **wooden desk**. Tap the cover — leather swings open on the spine (or a quick fade if reduced motion).
+4. Flip pages. Phone: wood-tinted chrome + **Tabs** in footer.
 
 ## Page navigation (footer)
 
@@ -67,9 +68,9 @@ Smart search / swaps = **Smart Assistant** (rules) — not generative AI.
 
 ## Accessibility
 
+- Prefer **reduced motion** → calm onboard + cover cross-fade (no hinge / no drawer 3D).
+- Targets ≥44×44px; Escape closes drawers; focus trap in modals.
 - **Skip to book** on keyboard focus.
-- Drawers trap focus; Escape closes.
-- Reduce Motion → calmer transitions.
 - High-contrast / forced-colors outlines.
 - Screen reader announces page turns.
 

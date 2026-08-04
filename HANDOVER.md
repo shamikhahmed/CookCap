@@ -50,6 +50,13 @@ GATE_URL=http://127.0.0.1:3456/CookCap npm run gate:wood
 - Escape during dresser confirms before skip
 - Low CPU / reduced motion → Simple onboard (`OnboardingFlow`)
 
+## Cover open
+
+- **v3.3.2** — cover leaf tap / drag forward → hinge `rotateY 0→−160°` (620ms `--e-page`)
+- Paper inside cover past −90°; cast shadow peaks mid-swing; 4-sheet right-edge fan
+- Spine gutter deepens while open; reduced-motion = 200ms cross-fade
+- Spec: `docs/animation-bible.md` §6 · impl: `src/components/book/Book.tsx`
+
 ## Recipes
 
 - One hero only (no step photos); honest photos or generated art

@@ -1,6 +1,6 @@
 # Universal Product-Standard — Phase report (through v3.3.2)
 
-**Date:** 2026-08-03 · **App:** CookCap · **SW:** `cookcap-v36`
+**Date:** 2026-08-04 · **App:** CookCap · **SW:** `cookcap-v36`
 
 See `docs/REVIEW-PACK.md` for Claude audit entry.
 
@@ -11,12 +11,12 @@ See `docs/REVIEW-PACK.md` for Claude audit entry.
 | Phase | Done | Evidence |
 |-------|------|----------|
 | 1 Discover | Yes | `AUDIT.md` 3.3.2 |
-| 2 Code health | Yes | Through 3.3.2 wood + world table |
+| 2 Code health | Yes | Through 3.3.2 cover open + dresser motion |
 | 3 IA | Yes | Footer page nav; wooden desk frame |
 | 4 Design system | Yes | `--dr-wood*` reader; paper tabs |
 | 5 Forms/selection | Yes | Go-to page dialog; guest PIN |
 | 6 Platforms | Smoke | 320 / 768 / 1920 |
-| 7 A11y | Partial | Dialogs + 44px; contrast sweep 3.3.2 |
+| 7 A11y | Partial | Dialogs + 44px; contrast sweep 3.2.1+ |
 | 8 Perf | Yes | WarmLeafPool; measure:perf; 790 watch |
 | 9 Security | Yes | Local-only; SECURITY.md; P15 |
 | 10 Offline/API | Yes | SW + IDB cookcap |

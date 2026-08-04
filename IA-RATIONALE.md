@@ -10,7 +10,7 @@
 | Surface | Job | Not responsible for |
 |---------|-----|---------------------|
 | **Splash** | Quiet launch mark | Settings |
-| **Cover leaf** | Book identity + open + optional cover photo | App settings |
+| **Cover leaf** | Book identity + hinge open + optional cover photo | App settings |
 | **Book leaves** | Read recipes / chapters / For You; Serve with; kitchen copy | Shopping CRUD |
 | **Wooden desk** | Frame book (`--dr-wood*`) — not content | Recipe text |
 | **Top bar** | Global wayfinding + mode/profile | Deep editing |
