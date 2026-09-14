@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { useBook } from '@/components/book/BookController';
 import { useApp } from '@/components/app/AppStore';
 import { PRODUCT_NAME } from '@/lib/edition';
+import { getCatalogRecipeCount } from '@/lib/recipes/count';
 
 /**
  * The closed-book cover, rendered as the first leaf. Embossed gold title on
@@ -56,7 +57,7 @@ export function CoverLeaf() {
         className="cover-rise relative z-10 px-10 transition-opacity duration-300"
         style={{ opacity: editionReady ? 1 : 0 }}
       >
-        <p className="gold-foil mb-6 text-sm uppercase tracking-[0.5em]" suppressHydrationWarning>
+        <p className="gold-foil mb-6 font-sans text-xs font-semibold tracking-[0.02em]" suppressHydrationWarning>
           {edition.coverEyebrow}
         </p>
         <h1
@@ -68,8 +69,11 @@ export function CoverLeaf() {
           {edition.coverLine2}
         </h1>
         <div className="mx-auto my-8 h-px w-24 bg-gradient-to-r from-transparent via-[color:var(--color-gold)]/60 to-transparent" />
-        <p className="gold-foil text-xs uppercase tracking-[0.4em] opacity-80" suppressHydrationWarning>
+        <p className="gold-foil font-sans text-xs font-semibold tracking-[0.02em] opacity-80" suppressHydrationWarning>
           {edition.tagline}
+        </p>
+        <p className="gold-foil mt-3 font-sans text-xs font-semibold tracking-[0.02em] opacity-70" suppressHydrationWarning>
+          {getCatalogRecipeCount()} recipes
         </p>
       </div>
 

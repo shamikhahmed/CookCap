@@ -16,6 +16,7 @@ import { LogMealDialog } from '@/components/profiles/LogMealDialog';
 import { Icon } from '@/components/ui/Icon';
 import { formatCost, estCostPkr } from '@/lib/cost/ingredient-cost';
 import { applyHealthier } from '@/lib/profiles/nutrition';
+import { getImage } from '@/lib/recipes/images';
 import { storyByline } from '@/lib/edition';
 import { RECIPES } from '@/lib/recipes/data';
 import * as store from '@/lib/db/store';
@@ -107,6 +108,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
   const { goToRecipe } = useBook();
   const fav = isFavorite(recipe.id);
   const isTip = recipe.chapter === 'tips';
+  const heroCredit = getImage(recipe.id)?.credit;
   const heroFileRef = useRef<HTMLInputElement>(null);
   const customOverride = customs.find((c) => c.id === recipe.id);
   const isBundled = RECIPES.some((r) => r.id === recipe.id);
@@ -352,13 +354,11 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 p-4 pr-14 sm:p-5 sm:pr-16">
-          <span
-            className="text-xs font-medium uppercase tracking-[0.3em] text-white/80 sm:tracking-[0.35em]"
-          >
+          <span className="font-sans text-xs font-semibold tracking-[0.02em] text-white/90">
             From our family kitchen
           </span>
           <p
-            className="mt-1 text-xs font-medium uppercase tracking-[0.3em] sm:tracking-[0.35em]"
+            className="mt-1 font-sans text-xs font-semibold tracking-[0.02em]"
             style={{ color: chapter.tab }}
           >
             {recipe.cuisine}
@@ -366,6 +366,11 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
           <h2 className="font-serif text-[clamp(1.45rem,5.5vw,2.4rem)] font-bold leading-tight text-white text-balance">
             {recipe.title}
           </h2>
+          {heroCredit ? (
+            <p className="mt-1 font-sans text-[11px] font-medium tracking-[0.02em] text-white/70">
+              Photo · {heroCredit}
+            </p>
+          ) : null}
         </div>
         <button
           onClick={() => {
@@ -401,7 +406,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
         {/* ── Quick facts (refined editorial hierarchy) ─────*/}
         <dl className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
           <Meta icon="clock" label="Prep" value={`${recipe.prepMin}m`} index={0} />
-          <Meta icon="flame" label="Cook" value={`${recipe.cookMin}m`} index={1} />
+          <Meta icon="pot" label="Cook" value={`${recipe.cookMin}m`} index={1} />
           <Meta icon="gauge" label="Level" value={DIFF_LABEL[recipe.difficulty]} index={2} />
           {!isTip && (
             <Meta
@@ -416,13 +421,6 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
           <p className="mt-2 text-xs text-[color:var(--color-ink-faint)]">
             Ingredients {recipeCost}{' '}
             <span className="opacity-80">(grocery estimate — not a receipt)</span>
-          </p>
-        )}
-        {!isTip && (
-          <p className="mt-1 text-xs text-[color:var(--color-ink-faint)]">
-            {recipe.macrosVerified
-              ? 'Macros hand-checked for this edition.'
-              : 'Macros are kitchen estimates — not lab values.'}
           </p>
         )}
         {!isTip && (
@@ -807,9 +805,8 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
         {!isTip && (
           <Section title="Nutrition" accent={chapter.tab}>
             <p className="mb-2 text-xs text-[color:var(--color-ink-faint)]">
-              Per serving, kitchen estimate — family cooking, not a lab label.
-              {!recipe.macrosVerified && ' · Estimated macros.'}
-              {healthierOn && mode !== 'reader' && ' · Healthier swaps applied.'}
+              Nutrition values are estimates.
+              {healthierOn && mode !== 'reader' ? ' Healthier swaps applied.' : ''}
             </p>
             <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
               {(
@@ -1164,7 +1161,7 @@ function Meta({
   value,
   index = 0,
 }: {
-  icon: 'clock' | 'flame' | 'gauge' | 'flame-cal';
+  icon: 'clock' | 'flame' | 'pot' | 'gauge' | 'flame-cal';
   label: string;
   value: string;
   index?: number;

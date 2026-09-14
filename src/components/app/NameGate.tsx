@@ -42,6 +42,7 @@ export function NameGate({
   const [profileName, setProfileName] = useState('');
   const [error, setError] = useState('');
   const [profileError, setProfileError] = useState('');
+  const namePreview = sanitizeOwnerName(value);
 
   const handleClose = useCallback(() => {
     if (dismissible) onDismiss?.();
@@ -63,7 +64,7 @@ export function NameGate({
   const submitName = () => {
     const name = sanitizeOwnerName(value);
     if (!name) {
-      setError('Enter a first name (or nickname).');
+      setError('Enter a first name (or nickname). Your book will read “{Name} Cooks”.');
       return;
     }
     if (dismissible) {
@@ -182,8 +183,12 @@ export function NameGate({
                 </h2>
                 <p className="mt-2 text-sm text-[color:var(--color-ink-soft)]">
                   Cover title becomes{' '}
-                  <span className="font-serif italic">YourName Cooks</span>. Change later from the
-                  ··· menu.
+                  <span className="font-serif italic">
+                    {namePreview
+                      ? `${namePreview.split(' ')[0]} Cooks`
+                      : 'YourName Cooks'}
+                  </span>
+                  . Stays on this device. Change later from the ··· menu.
                 </p>
                 <label
                   className="mt-5 block text-sm text-[color:var(--color-ink-soft)]"

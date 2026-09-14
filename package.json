@@ -1,8 +1,8 @@
 {
   "name": "cookcap",
-  "version": "3.4.1",
+  "version": "3.5.0",
   "private": true,
-  "description": "CookCap — heirloom family cookbook Progressive Web App (Cap family).",
+  "description": "CookCap \u2014 heirloom family cookbook Progressive Web App (Cap family).",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -19,7 +19,9 @@
     "smoke:product": "node scripts/smoke-product.mjs",
     "measure:perf": "node scripts/measure-perf-956.mjs",
     "record:onboard-flip": "node scripts/record-onboard-flip.mjs",
-    "pages:build": "NEXT_PUBLIC_BASE_PATH=/CookCap next build"
+    "pages:build": "NEXT_PUBLIC_BASE_PATH=/CookCap next build",
+    "gate:count": "node scripts/assert-recipe-count.mjs",
+    "test:e2e": "playwright test e2e/finish.spec.ts"
   },
   "dependencies": {
     "idb": "^8.0.0",
@@ -29,6 +31,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "^4.0.0",
     "@types/node": "^22.10.0",
     "@types/react": "^19.0.0",

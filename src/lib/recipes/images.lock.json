@@ -1532,150 +1532,199 @@
       "id": "edamame",
       "status": "ok",
       "source": "archive",
-      "matched": "Salted edamame"
+      "matched": "Salted edamame",
+      "license": "Catalog archive",
+      "attribution": "CookCap catalog archive: Salted edamame"
     },
     {
       "id": "tea-eggs",
       "status": "ok",
       "source": "archive",
-      "matched": "Chinese tea eggs"
+      "matched": "Chinese tea eggs",
+      "license": "Catalog archive",
+      "attribution": "CookCap catalog archive: Chinese tea eggs"
     },
     {
       "id": "iced-blueberry-latte",
       "status": "ok",
       "source": "Unsplash",
-      "matched": "Purple berry iced drink"
+      "matched": "Purple berry iced drink",
+      "license": "Unsplash License",
+      "attribution": "Photo via Unsplash: Purple berry iced drink"
     },
     {
       "id": "iced-mocha-orange-latte",
       "status": "ok",
       "source": "Unsplash",
-      "matched": "Iced mocha-style coffee"
+      "matched": "Iced mocha-style coffee",
+      "license": "Unsplash License",
+      "attribution": "Photo via Unsplash: Iced mocha-style coffee"
     },
     {
       "id": "minestrone",
       "status": "ok",
       "source": "Unsplash",
-      "matched": "Vegetable soup"
+      "matched": "Vegetable soup",
+      "license": "Unsplash License",
+      "attribution": "Photo via Unsplash: Vegetable soup"
     },
     {
       "id": "masala-chai",
       "status": "ok",
       "source": "Unsplash",
-      "matched": "Masala chai cup"
+      "matched": "Masala chai cup",
+      "license": "Unsplash License",
+      "attribution": "Photo via Unsplash: Masala chai cup"
     },
     {
       "id": "karak-chai",
       "status": "ok",
       "source": "Unsplash",
-      "matched": "Chai tea"
+      "matched": "Chai tea",
+      "license": "Unsplash License",
+      "attribution": "Photo via Unsplash: Chai tea"
     },
     {
       "id": "doodh-patti",
       "status": "ok",
       "source": "Unsplash",
-      "matched": "Milk tea"
+      "matched": "Milk tea",
+      "license": "Unsplash License",
+      "attribution": "Photo via Unsplash: Milk tea"
     },
     {
       "id": "jia-chai-ritual",
       "status": "ok",
       "source": "Unsplash",
-      "matched": "Chai ritual"
+      "matched": "Chai ritual",
+      "license": "Unsplash License",
+      "attribution": "Photo via Unsplash: Chai ritual"
     },
     {
       "id": "mango-lassi",
       "status": "ok",
       "source": "Unsplash",
-      "matched": "Mango lassi"
+      "matched": "Mango lassi",
+      "license": "Unsplash License",
+      "attribution": "Photo via Unsplash: Mango lassi"
     },
     {
       "id": "nihari-beef",
       "status": "ok",
       "source": "FoodFusion",
       "matched": "Best Tender Beef Nihari in Multi Cooker",
-      "slug": "best-tender-beef-nihari-in-multi-cooker"
+      "slug": "best-tender-beef-nihari-in-multi-cooker",
+      "license": "Unknown \u2014 pending rights review",
+      "attribution": "FoodFusion (verify before commercial use): Best Tender Beef Nihari in Multi Cooker"
     },
     {
       "id": "karahi-mutton",
       "status": "ok",
       "source": "FoodFusion",
       "matched": "Mutton Karahi Gosht",
-      "slug": "mutton-karahi-gosht"
+      "slug": "mutton-karahi-gosht",
+      "license": "Unknown \u2014 pending rights review",
+      "attribution": "FoodFusion (verify before commercial use): Mutton Karahi Gosht"
     },
     {
       "id": "jia-karahi",
       "status": "ok",
       "source": "FoodFusion",
       "matched": "Special Chicken White Karahi",
-      "slug": "special-chicken-karahi"
+      "slug": "special-chicken-karahi",
+      "license": "Unknown \u2014 pending rights review",
+      "attribution": "FoodFusion (verify before commercial use): Special Chicken White Karahi"
     },
     {
       "id": "qorma-chicken",
       "status": "ok",
       "source": "FoodFusion",
       "matched": "Danedaar Degi Chicken Korma",
-      "slug": "danedaar-degi-chicken-korma"
+      "slug": "danedaar-degi-chicken-korma",
+      "license": "Unknown \u2014 pending rights review",
+      "attribution": "FoodFusion (verify before commercial use): Danedaar Degi Chicken Korma"
     },
     {
       "id": "qorma-mutton",
       "status": "ok",
       "source": "FoodFusion",
       "matched": "Delhi Korma",
-      "slug": "delhi-korma"
+      "slug": "delhi-korma",
+      "license": "Unknown \u2014 pending rights review",
+      "attribution": "FoodFusion (verify before commercial use): Delhi Korma"
     },
     {
       "id": "badami-qorma-chicken",
       "status": "ok",
       "source": "FoodFusion",
       "matched": "White Chicken Korma",
-      "slug": "white-chicken-korma"
+      "slug": "white-chicken-korma",
+      "license": "Unknown \u2014 pending rights review",
+      "attribution": "FoodFusion (verify before commercial use): White Chicken Korma"
     },
     {
       "id": "badami-qorma-mutton",
       "status": "ok",
       "source": "FoodFusion",
       "matched": "Maharaja Mutton Lazeez Handi",
-      "slug": "maharaja-mutton-lazeez-handi"
+      "slug": "maharaja-mutton-lazeez-handi",
+      "license": "Unknown \u2014 pending rights review",
+      "attribution": "FoodFusion (verify before commercial use): Maharaja Mutton Lazeez Handi"
     },
     {
       "id": "handi-mutton",
       "status": "ok",
       "source": "FoodFusion",
       "matched": "Noormehal Mutton Handi",
-      "slug": "noormehal-mutton-handi"
+      "slug": "noormehal-mutton-handi",
+      "license": "Unknown \u2014 pending rights review",
+      "attribution": "FoodFusion (verify before commercial use): Noormehal Mutton Handi"
     },
     {
       "id": "veggie-curry",
       "status": "ok",
       "source": "FoodFusion",
       "matched": "Mix Vegetable Karahi",
-      "slug": "mix-vegetable-karahi"
+      "slug": "mix-vegetable-karahi",
+      "license": "Unknown \u2014 pending rights review",
+      "attribution": "FoodFusion (verify before commercial use): Mix Vegetable Karahi"
     },
     {
       "id": "naan",
       "status": "ok",
       "source": "FoodFusion",
       "matched": "Cheesy Garlic Naan",
-      "slug": "cheesy-garlic-naan"
+      "slug": "cheesy-garlic-naan",
+      "license": "Unknown \u2014 pending rights review",
+      "attribution": "FoodFusion (verify before commercial use): Cheesy Garlic Naan"
     },
     {
       "id": "strawberry-oreo-latte",
       "status": "ok",
       "source": "FoodFusion",
       "matched": "No-Bake Oreo Cups with Oreo Shake",
-      "slug": "no-bake-oreo-cups-with-oreo-shake"
+      "slug": "no-bake-oreo-cups-with-oreo-shake",
+      "license": "Unknown \u2014 pending rights review",
+      "attribution": "FoodFusion (verify before commercial use): No-Bake Oreo Cups with Oreo Shake"
     },
     {
       "id": "saadi-biryani-chicken",
-      "status": "blur-backfill"
+      "status": "blur-backfill",
+      "license": "Unknown",
+      "attribution": "unknown"
     },
     {
       "id": "sindhi-biryani-chicken",
-      "status": "blur-backfill"
+      "status": "blur-backfill",
+      "license": "Unknown",
+      "attribution": "unknown"
     },
     {
       "id": "zaffarani-biryani-chicken",
-      "status": "blur-backfill"
+      "status": "blur-backfill",
+      "license": "Unknown",
+      "attribution": "unknown"
     }
-  ]
+  ],
+  "rightsPolicy": "Each hero should declare source, license, attribution. Unknown FoodFusion entries use illustrated placeholder until cleared."
 }

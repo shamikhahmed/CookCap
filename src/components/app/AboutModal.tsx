@@ -5,6 +5,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { useDialogA11y, motionReduce } from '@/lib/a11y/dialog';
 import { PRODUCT_NAME } from '@/lib/edition';
 import { APP_VERSION, PRODUCT_TAGLINE, SW_CACHE } from '@/lib/version';
+import { getCatalogRecipeCount } from '@/lib/recipes/count';
 import * as store from '@/lib/db/store';
 import { useGuest } from '@/components/app/GuestMode';
 
@@ -140,6 +141,14 @@ export function AboutModal({
               About {PRODUCT_NAME}
             </h2>
             <p className="mt-1 text-sm text-[color:var(--color-ink-soft)]">{PRODUCT_TAGLINE}</p>
+            <p className="mt-2 text-sm text-[color:var(--color-ink-faint)]">
+              {getCatalogRecipeCount()} catalog recipes · Nutrition values are estimates.
+            </p>
+            <p className="mt-1 text-sm">
+              <a className="underline underline-offset-2" href="privacy.html">
+                Privacy policy
+              </a>
+            </p>
             <p className="mt-3 text-xs uppercase tracking-[0.2em] text-[color:var(--color-ink-faint)]">
               Version {APP_VERSION} · cache {SW_CACHE}
             </p>
