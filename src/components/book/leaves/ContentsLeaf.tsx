@@ -8,6 +8,7 @@ import { Icon, type IconName } from '@/components/ui/Icon';
 import { ideasForToday } from '@/lib/recipes/ideas';
 import { favoritesLabel } from '@/lib/edition';
 import { OCCASION_TEMPLATES, occasionRail } from '@/lib/occasions/templates';
+import { getCatalogRecipeCount } from '@/lib/recipes/count';
 
 /** Table of contents + today’s kitchen ideas — one scroll, no stuck hero. */
 export function ContentsLeaf() {
@@ -27,6 +28,9 @@ export function ContentsLeaf() {
         <h2 className="font-serif text-3xl font-semibold text-[color:var(--color-ink)]">
           The Chapters
         </h2>
+        <p className="mt-1 text-sm text-[color:var(--color-ink-faint)]">
+          {getCatalogRecipeCount()} recipes in this edition
+        </p>
         <div className="mt-3 h-px w-full bg-[color:var(--color-line)]" />
       </header>
 

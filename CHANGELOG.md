@@ -1,3 +1,8 @@
+## [3.5.0] — 2026-09-15
+
+- Tier 1 finish (COOK-P1): header no-truncate + book title ≥600px; hero eyebrows sans 12px; Prep clock / Cook pot / Cal flame; single “Nutrition values are estimates.”; `getCatalogRecipeCount()` shared by cover, contents, About; name gate live title preview; scrubber/counter spacing; images.lock `license`+`attribution`; privacy.html; finish e2e scaffold
+- SW `cookcap-v39`
+
 # Changelog
 
 ## 3.4.1 — 2026-08-04

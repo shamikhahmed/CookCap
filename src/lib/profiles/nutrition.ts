@@ -1,7 +1,7 @@
 import type { Nutrition } from '@/lib/recipes/types';
 import type { Profile, Targets } from './types';
 
-export const NUTRITION_DISCLAIMER = 'Estimates only — not medical advice.';
+export const NUTRITION_DISCLAIMER = 'Nutrition values are estimates.';
 
 export function bmrMifflin(args: {
   sex?: 'f' | 'm' | 'na';

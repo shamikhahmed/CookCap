@@ -2,13 +2,13 @@
 
 Cap-family offline-first cookbook PWA. Name your book → **`{Name} Cooks`**.
 
-**Live:** https://shamikhahmed.github.io/CookCap/ · **v3.4.1**
+**Live:** https://shamikhahmed.github.io/CookCap/ · **v3.5.0**
 
 ## Features
 
 - Hardcover flip book + cook mode + search + shopping + meal planner
 - Cover opens on a leather hinge (animation bible); dresser first-run feels like wood
-- **790 recipes** — family editorial + local world table (no live MealDB)
+- **807 recipes** (from `getCatalogRecipeCount()`) — family editorial + local world table (no live MealDB)
 - Wooden reading table + paper tabs stuck to wood (phone wood frame)
 - Footer: Home · ±5 jump · scrub slider · go-to page #
 - Smart search phrases · occasions · print · guest PIN · merge backup
@@ -18,7 +18,7 @@ Cap-family offline-first cookbook PWA. Name your book → **`{Name} Cooks`**.
 
 ## Stack
 
-Next.js 15 (`output: 'export'`) · React 19 · Tailwind v4 · Motion · IndexedDB · SW `cookcap-v38`
+Next.js 15 (`output: 'export'`) · React 19 · Tailwind v4 · Motion · IndexedDB · SW `cookcap-v39`
 
 ## Run
 

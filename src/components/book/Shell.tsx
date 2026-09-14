@@ -376,19 +376,27 @@ function TopBar({
   return (
     <header className="app-header relative z-50 flex shrink-0 items-center justify-between gap-2 sm:gap-3">
       <div className="flex min-w-0 items-center gap-2 text-[color:var(--color-ink)]">
-        <Icon name="book" size={20} />
+        <Icon name="book" size={20} aria-hidden />
         <div className="min-w-0 leading-tight">
-          <span className="block truncate font-serif text-base font-semibold italic tracking-tight sm:text-lg">
+          <span className="block whitespace-nowrap font-serif text-base font-semibold italic tracking-tight sm:text-lg">
             {PRODUCT_NAME}
           </span>
-          {kitchen && (
+          {/* Book title only ≥ 600px (COOK-P1-01) */}
+          {edition.bookTitle ? (
             <span
               suppressHydrationWarning
-              className="block truncate text-xs uppercase tracking-[0.18em] text-[color:var(--color-ink-faint)] sm:tracking-[0.2em]"
+              className="mt-0.5 hidden whitespace-nowrap text-xs font-medium tracking-[0.02em] text-[color:var(--color-ink-faint)] min-[600px]:block"
             >
-              {kitchen}
+              {edition.bookTitle}
             </span>
-          )}
+          ) : kitchen ? (
+            <span
+              suppressHydrationWarning
+              className="mt-0.5 hidden whitespace-nowrap text-xs font-medium tracking-[0.02em] text-[color:var(--color-ink-faint)] min-[600px]:block"
+            >
+              {kitchen.replace(/^—\s*/, '')}
+            </span>
+          ) : null}
         </div>
       </div>
       <div className="flex shrink-0 items-center gap-0.5 sm:gap-1">
@@ -658,7 +666,7 @@ function BottomBar() {
         <Icon name="arrow-left" size={20} />
       </IconBtn>
 
-      <label className="relative mx-0.5 flex h-11 min-w-0 flex-1 items-center sm:mx-1">
+      <label className="relative mx-1 flex h-11 min-w-0 flex-1 items-center px-1 sm:mx-2">
         <span className="sr-only">Scrub pages</span>
         <input
           type="range"
@@ -684,7 +692,7 @@ function BottomBar() {
           type="button"
           disabled={!ready || busy}
           onClick={() => setGotoOpen((v) => !v)}
-          className="min-h-11 min-w-12 rounded-full px-2 text-center text-xs tabular-nums text-[color:var(--color-ink)] hover:bg-[color:var(--color-paper-sunk)] disabled:opacity-30 sm:min-w-14"
+          className="min-h-11 min-w-[3.25rem] shrink-0 rounded-full px-2 text-center text-xs tabular-nums text-[color:var(--color-ink)] hover:bg-[color:var(--color-paper-sunk)] disabled:opacity-30 sm:min-w-14"
           title={
             extras > 0
               ? `Go to page — this edition: ${total} pages (includes ${extras} imported).`
