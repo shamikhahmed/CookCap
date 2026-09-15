@@ -15,6 +15,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { useDialogA11y, motionReduce } from '@/lib/a11y/dialog';
 import { Icon } from '@/components/ui/Icon';
 import { type Locale, localeDir } from '@/lib/i18n/strings';
+import { CCBrand } from '@/brand/colors';
 
 export type Skin = 'editorial' | 'candlelit' | 'lightbook' | 'modern';
 /** `paper` = shipped world nav. Legacy styles kept for localStorage / code paths. */
@@ -44,10 +45,10 @@ const ALL_TABS: TabStyle[] = ['paper', 'cloth', 'index', 'top', 'pills'];
 const READS: ReadMode[] = ['flip', 'fast'];
 
 const SKIN_META: Record<Skin, { label: string; swatch: string; desk: string }> = {
-  editorial: { label: 'Editorial Cream', swatch: '#f6f1e7', desk: '#efe7d7' },
-  candlelit: { label: 'Candlelit', swatch: '#2a2320', desk: '#17120f' },
-  lightbook: { label: 'Light Book', swatch: '#f3ecdb', desk: '#e7dcc6' },
-  modern: { label: 'Modern', swatch: '#faf7f2', desk: '#f3efe9' },
+  editorial: { label: 'Editorial Cream', swatch: CCBrand.h_f6f1e7, desk: CCBrand.h_efe7d7 },
+  candlelit: { label: 'Candlelit', swatch: CCBrand.h_2a2320, desk: CCBrand.h_17120f },
+  lightbook: { label: 'Light Book', swatch: CCBrand.h_f3ecdb, desk: CCBrand.h_e7dcc6 },
+  modern: { label: 'Modern', swatch: CCBrand.h_faf7f2, desk: CCBrand.h_f3efe9 },
 };
 
 const TAB_META: Record<TabStyle, string> = {

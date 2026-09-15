@@ -1,4 +1,5 @@
 import type { Chapter } from './types';
+import { CCBrand } from '@/brand/colors';
 
 /**
  * Chapters. Order = bookmark tab order + page-turn order.
@@ -11,7 +12,7 @@ export const CHAPTERS: Chapter[] = [
     subtitle: 'Home, in spices',
     blurb: 'The food I grew up on — built in slow, patient layers of spice.',
     quote: '“This is the smell of my mother’s kitchen on a Sunday.”',
-    tab: '#4f7a4a',
+    tab: CCBrand.h_4f7a4a,
     icon: 'flame',
   },
   {
@@ -20,7 +21,7 @@ export const CHAPTERS: Chapter[] = [
     subtitle: 'The wok sings',
     blurb: 'Fast, hot, and balanced — everything ready before the pan is.',
     quote: '“Have everything chopped first. Then it’s over in a minute.”',
-    tab: '#c23a2a',
+    tab: CCBrand.h_c23a2a,
     icon: 'chili',
   },
   {
@@ -29,7 +30,7 @@ export const CHAPTERS: Chapter[] = [
     subtitle: 'Few things, done well',
     blurb: 'A short list of good ingredients, treated with a little respect.',
     quote: '“You don’t need much. You just need to pay attention.”',
-    tab: '#a3552a',
+    tab: CCBrand.h_a3552a,
     icon: 'olive',
   },
   {
@@ -38,7 +39,7 @@ export const CHAPTERS: Chapter[] = [
     subtitle: 'Across the Channel',
     blurb: 'Spanish tapas, French stews, Greek meze, British Sunday plates — Europe at our table.',
     quote: '“A passport stamped in olive oil and butter.”',
-    tab: '#5a6f9a',
+    tab: CCBrand.h_5a6f9a,
     icon: 'olive',
   },
   {
@@ -47,7 +48,7 @@ export const CHAPTERS: Chapter[] = [
     subtitle: 'Tables far from home',
     blurb: 'Caribbean heat, Maghrebi spice, American comfort, and dishes that refuse one flag.',
     quote: '“Travel by pan when you can’t travel by plane.”',
-    tab: '#3d6b8a',
+    tab: CCBrand.h_3d6b8a,
     icon: 'sparkle',
   },
   {
@@ -56,7 +57,7 @@ export const CHAPTERS: Chapter[] = [
     subtitle: 'A little theatre',
     blurb: 'The sweet ending. Weigh carefully and don’t rush the chilling.',
     quote: '“Dessert is where I show off. Let me.”',
-    tab: '#c96b8f',
+    tab: CCBrand.h_c96b8f,
     icon: 'cake',
   },
   {
@@ -65,7 +66,7 @@ export const CHAPTERS: Chapter[] = [
     subtitle: 'Something warm',
     blurb: 'The cup that starts the morning and ends the meal.',
     quote: '“Sit. Have chai first. The cooking can wait.”',
-    tab: '#8a5a3a',
+    tab: CCBrand.h_8a5a3a,
     icon: 'cup',
   },
   {
@@ -74,7 +75,7 @@ export const CHAPTERS: Chapter[] = [
     subtitle: 'First light',
     blurb: 'Eggs, toast, porridge, and the gentle start before the day asks too much.',
     quote: '“Breakfast is a kindness to tomorrow’s self.”',
-    tab: '#d4a04a',
+    tab: CCBrand.h_d4a04a,
     icon: 'sunrise',
   },
   {
@@ -83,7 +84,7 @@ export const CHAPTERS: Chapter[] = [
     subtitle: 'Flour & patience',
     blurb: 'Dough asks for time, not effort. Let it do the work.',
     quote: '“Bread teaches you to slow down. Trust it.”',
-    tab: '#b58a5c',
+    tab: CCBrand.h_b58a5c,
     icon: 'wheat',
   },
   {
@@ -92,7 +93,7 @@ export const CHAPTERS: Chapter[] = [
     subtitle: 'The cosy chemistry',
     blurb: 'Weigh, whisk, and trust the oven. This is my happy place.',
     quote: '“Baking is just chemistry that smells wonderful.”',
-    tab: '#c7913f',
+    tab: CCBrand.h_c7913f,
     icon: 'whisk',
   },
   {
@@ -101,7 +102,7 @@ export const CHAPTERS: Chapter[] = [
     subtitle: 'Little bites',
     blurb: 'For the in-between hours, and the friends who drop by.',
     quote: '“Someone’s always hungry. This is for them.”',
-    tab: '#d0724a',
+    tab: CCBrand.h_d0724a,
     icon: 'cookie',
   },
   {
@@ -110,7 +111,7 @@ export const CHAPTERS: Chapter[] = [
     subtitle: 'Plants first',
     blurb: 'Full plates without the meat — pulse, dairy, spice, and clever swaps.',
     quote: '“Nobody misses the meat when the spices show up.”',
-    tab: '#5a8f5a',
+    tab: CCBrand.h_5a8f5a,
     icon: 'leaf',
   },
   {
@@ -119,7 +120,7 @@ export const CHAPTERS: Chapter[] = [
     subtitle: 'Weeknight suppers',
     blurb: 'Real dinners for real evenings — kind to your time.',
     quote: '“Tired is not an excuse for a sad dinner.”',
-    tab: '#6f9a5f',
+    tab: CCBrand.h_6f9a5f,
     icon: 'pot',
   },
   {
@@ -128,7 +129,7 @@ export const CHAPTERS: Chapter[] = [
     subtitle: 'The ones we make most',
     blurb: 'The recipes we come back to again and again. Tap a heart, and yours gather here too.',
     quote: '“If we could only keep a handful, it would be these.”',
-    tab: '#c98a2e',
+    tab: CCBrand.h_c98a2e,
     icon: 'heart',
   },
   {
@@ -137,7 +138,7 @@ export const CHAPTERS: Chapter[] = [
     subtitle: 'What I wish I’d known',
     blurb: 'Small lessons from years of burnt onions and happy accidents.',
     quote: '“Every mistake in here, I made first — so you don’t have to.”',
-    tab: '#7c6f9a',
+    tab: CCBrand.h_7c6f9a,
     icon: 'sparkle',
   },
 ];

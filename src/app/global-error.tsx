@@ -1,3 +1,4 @@
+import { CCBrand } from '@/brand/colors';
 'use client';
 
 /**
@@ -19,8 +20,8 @@ export default function GlobalError({
           display: 'grid',
           placeItems: 'center',
           fontFamily: 'Georgia, serif',
-          background: '#2e241c',
-          color: '#f7f0e6',
+          background: CCBrand.h_2e241c,
+          color: CCBrand.h_f7f0e6,
           padding: '1.5rem',
           textAlign: 'center',
         }}
@@ -46,8 +47,8 @@ export default function GlobalError({
               borderRadius: 999,
               border: 0,
               padding: '0 1.25rem',
-              background: '#c2683c',
-              color: '#fff',
+              background: CCBrand.h_c2683c,
+              color: CCBrand.h_fff,
               fontSize: 14,
               cursor: 'pointer',
             }}
@@ -65,7 +66,7 @@ export default function GlobalError({
                 border: 0,
                 padding: '0 1.25rem',
                 background: 'transparent',
-                color: '#ddd0c0',
+                color: CCBrand.h_ddd0c0,
                 fontSize: 14,
                 cursor: 'pointer',
               }}

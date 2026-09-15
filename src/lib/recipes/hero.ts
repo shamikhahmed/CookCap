@@ -1,3 +1,4 @@
+import { CCBrand } from '@/brand/colors';
 /**
  * Procedural hero illustration. Every recipe gets a deterministic, layered
  * "plated dish" abstraction generated from its `heroSeed` — a warm gradient
@@ -71,9 +72,9 @@ export function generateHero(seed: number, tab: string): string {
       <stop offset="100%" stop-color="${bgB}"/>
     </radialGradient>
     <radialGradient id="p${seed}" cx="45%" cy="40%" r="60%">
-      <stop offset="0%" stop-color="#f6efe4"/>
-      <stop offset="82%" stop-color="#e6dccb"/>
-      <stop offset="100%" stop-color="#cdbfa9"/>
+      <stop offset="0%" stop-color=CCBrand.h_f6efe4/>
+      <stop offset="82%" stop-color=CCBrand.h_e6dccb/>
+      <stop offset="100%" stop-color=CCBrand.h_cdbfa9/>
     </radialGradient>
     <filter id="s${seed}" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="rgba(0,0,0,0.45)"/>

@@ -93,7 +93,7 @@ export function DresserOnboarding({
   } = api;
 
   const confirmSetupLater = useCallback(() => {
-    if (window.confirm('Skip naming and set up later?')) setupLater();
+    setupLater();
   }, [setupLater]);
 
   useDialogA11y(open, confirmSetupLater, panelRef, {
@@ -392,7 +392,7 @@ export function DresserOnboarding({
                               />
                             </div>
                             {error && (
-                              <p className="mt-2 text-sm text-[color:var(--color-danger,#b33)]" role="alert">
+                              <p className="mt-2 text-sm text-[color:var(--color-danger)]" role="alert">
                                 {error}
                               </p>
                             )}
@@ -428,7 +428,7 @@ export function DresserOnboarding({
                               />
                             </div>
                             {profileError && (
-                              <p className="mt-2 text-sm text-[color:var(--color-danger,#b33)]" role="alert">
+                              <p className="mt-2 text-sm text-[color:var(--color-danger)]" role="alert">
                                 {profileError}
                               </p>
                             )}

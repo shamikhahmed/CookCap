@@ -6,9 +6,10 @@
  * `color` tints the body; faces are always the same warm ink. Sizes are square.
  */
 import type { CSSProperties } from 'react';
+import { CCBrand } from '@/brand/colors';
 
-const INK = '#3d2b22';
-const BLUSH = '#e79a86';
+const INK = CCBrand.h_3d2b22;
+const BLUSH = CCBrand.h_e79a86;
 
 function Face({ cx, cy, scale = 1 }: { cx: number; cy: number; scale?: number }) {
   const s = scale;
@@ -18,8 +19,8 @@ function Face({ cx, cy, scale = 1 }: { cx: number; cy: number; scale?: number })
       <circle cx={cx + 9 * s} cy={cy + 5 * s} r={4 * s} fill={BLUSH} opacity={0.6} />
       <circle cx={cx - 6 * s} cy={cy} r={2.1 * s} fill={INK} />
       <circle cx={cx + 6 * s} cy={cy} r={2.1 * s} fill={INK} />
-      <circle cx={cx - 6.7 * s} cy={cy - 0.8 * s} r={0.7 * s} fill="#fff" />
-      <circle cx={cx + 5.3 * s} cy={cy - 0.8 * s} r={0.7 * s} fill="#fff" />
+      <circle cx={cx - 6.7 * s} cy={cy - 0.8 * s} r={0.7 * s} fill=CCBrand.h_fff />
+      <circle cx={cx + 5.3 * s} cy={cy - 0.8 * s} r={0.7 * s} fill=CCBrand.h_fff />
       <path
         d={`M${cx - 4 * s} ${cy + 4 * s} q ${4 * s} ${4 * s} ${8 * s} 0`}
         stroke={INK}
