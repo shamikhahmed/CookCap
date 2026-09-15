@@ -2,8 +2,8 @@
   "app": "cookcap",
   "version": "3.5.1",
   "swCache": "cookcap-v40",
-  "generatedAt": "2026-09-15T11:19:35.668Z",
-  "status": "FAIL",
+  "generatedAt": "2026-09-15T11:24:25.224Z",
+  "status": "PASS",
   "pass": [
     {
       "id": "version:field",
@@ -44,6 +44,10 @@
     {
       "id": "app-ready",
       "detail": "window.__APP_READY__ referenced"
+    },
+    {
+      "id": "ci:main",
+      "detail": "Merge finish/cookcap-use-client → success https://github.com/shamikhahmed/CookCap/actions/runs/34962880610"
     },
     {
       "id": "tag",
@@ -94,12 +98,7 @@
       "detail": "0"
     }
   ],
-  "fail": [
-    {
-      "id": "ci:main",
-      "detail": "Merge finish/cookcap-report-pad2 → failure https://github.com/shamikhahmed/CookCap/actions/runs/34962609389"
-    }
-  ],
+  "fail": [],
   "warn": [
     {
       "id": "matrix:shots",

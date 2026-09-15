@@ -14,3 +14,7 @@ Header, hero eyebrows, icons, nutrition footnote, catalog count, onboarding prev
   - finish-matrix not yet primary-pass green
   - Lighthouse JSON missing (C-22)
   - __APP_READY__ gap (C-20)
+
+## 2026-09-15 — Tier 1 automated PASS
+- CI green after use-client / CCBrand fixes
+- VO ⛔ · next: PulseCap
