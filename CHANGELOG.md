@@ -1,3 +1,7 @@
+## 3.5.1 — 2026-09-15
+- C-16: Remove `scripts/tmp-ff/` Google Fonts scratch files.
+- C-20: Set `window.__APP_READY__` when splash dismisses (first real screen).
+
 ## [3.5.0] — 2026-09-15
 
 - Tier 1 finish (COOK-P1): header no-truncate + book title ≥600px; hero eyebrows sans 12px; Prep clock / Cook pot / Cal flame; single “Nutrition values are estimates.”; `getCatalogRecipeCount()` shared by cover, contents, About; name gate live title preview; scrubber/counter spacing; images.lock `license`+`attribution`; privacy.html; finish e2e scaffold

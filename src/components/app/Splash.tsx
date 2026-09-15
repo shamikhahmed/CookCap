@@ -28,6 +28,8 @@ export function Splash() {
       setShow(false);
       try {
         sessionStorage.setItem('cookcap-splash-ms', String(Math.round(performance.now() - started)));
+        (window as Window & { __APP_READY__?: boolean }).__APP_READY__ = true;
+        document.documentElement.dataset.appReady = 'true';
       } catch {
         /* ignore */
       }
