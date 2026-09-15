@@ -17,6 +17,8 @@ const BASE = process.env.GALLERY_URL || 'http://localhost:3000';
 const RECIPE = process.env.GALLERY_RECIPE || 'butter-chicken';
 /** Demo edition — not a hard-coded product name */
 const DEMO = 'Ayesha';
+/** Skip modes/appearance/tabs — chrome + onboard only. */
+const QUICK = process.env.GALLERY_QUICK === '1';
 /** Keep in sync with VERSION.json — suppresses What’s new sheet. */
 const APP_VER = (() => {
   try {
@@ -64,10 +66,37 @@ async function waitFooterPage(page, n, timeout = 45000) {
   await settle(page, 350);
 }
 
+/** Jump via localStorage page index (0-based) — more reliable than Next on narrow viewports. */
+async function gotoBookPage(page, n) {
+  await page.evaluate(
+    ({ name, ver, pos }) => {
+      localStorage.setItem('cookcap-owner', name);
+      localStorage.setItem('cookcap-onboarded', '1');
+      localStorage.setItem('cookcap-theme', 'light');
+      localStorage.setItem('cookcap-whats-new', ver);
+      localStorage.setItem('cookcap-pos', String(pos));
+    },
+    { name: DEMO, ver: APP_VER, pos: Math.max(0, n - 1) },
+  );
+  await page.goto(`${BASE}/?for=${encodeURIComponent(DEMO)}`, {
+    waitUntil: 'domcontentloaded',
+    timeout: 60000,
+  });
+  await dismissWhatsNew(page);
+  await waitFooterPage(page, n);
+}
+
 async function nextPage(page) {
   await dismissWhatsNew(page);
-  await page.getByRole('button', { name: 'Next page' }).click();
-  await settle(page, 500);
+  const next = page.getByRole('button', { name: 'Next page' });
+  try {
+    await next.click({ timeout: 5000 });
+    await settle(page, 500);
+  } catch {
+    /* Mobile / overlay: fall through — caller should use gotoBookPage */
+    await page.keyboard.press('ArrowRight').catch(() => {});
+    await settle(page, 400);
+  }
 }
 
 async function openMore(page) {
@@ -420,35 +449,27 @@ async function captureDresserOnboarding(page, folder) {
   }
 }
 
+async function advanceToPage(page, n) {
+  try {
+    await nextPage(page);
+    await waitFooterPage(page, n, 12000);
+  } catch {
+    await gotoBookPage(page, n);
+  }
+}
+
 async function captureBookChrome(page, folder) {
   // Assumes already past onboarding with DEMO owner (or set owner)
-  await page.evaluate(
-    ({ name, ver }) => {
-      localStorage.setItem('cookcap-owner', name);
-      localStorage.setItem('cookcap-onboarded', '1');
-      localStorage.setItem('cookcap-theme', 'light');
-      localStorage.setItem('cookcap-whats-new', ver);
-    },
-    { name: DEMO, ver: APP_VER },
-  );
-
-  await page.goto(`${BASE}/?for=${encodeURIComponent(DEMO)}`, {
-    waitUntil: 'domcontentloaded',
-  });
-  await dismissWhatsNew(page);
-  await waitFooterPage(page, 1);
+  await gotoBookPage(page, 1);
   await shot(page, `${folder}/01-cover.png`);
 
-  await nextPage(page);
-  await waitFooterPage(page, 2);
+  await advanceToPage(page, 2);
   await shot(page, `${folder}/02-title.png`);
 
-  await nextPage(page);
-  await waitFooterPage(page, 3);
+  await advanceToPage(page, 3);
   await shot(page, `${folder}/03-friends.png`);
 
-  await nextPage(page);
-  await waitFooterPage(page, 4);
+  await advanceToPage(page, 4);
   await shot(page, `${folder}/04-contents.png`);
 
   await page.goto(`${BASE}/?recipe=${RECIPE}&for=${encodeURIComponent(DEMO)}`, {
@@ -617,6 +638,10 @@ async function captureBookChrome(page, folder) {
 async function captureSet(page, folder) {
   await captureSimpleOnboarding(page, folder);
   await captureBookChrome(page, folder);
+  if (QUICK) {
+    console.log(`  quick mode — skip scroll/modes (${folder})`);
+    return;
+  }
   await captureScrollables(page, folder);
   await captureEveryMode(page, folder);
 }
@@ -769,24 +794,28 @@ async function main() {
     const page = await context.newPage();
     console.log('Mobile (simple onboard + chrome)…');
     await captureSet(page, 'mobile');
-    console.log('Mobile appearance matrix…');
-    await captureAppearanceMatrix(page, 'mobile');
-    console.log('Mobile tab options…');
-    await captureTabOptions(page, 'mobile');
+    if (!QUICK) {
+      console.log('Mobile appearance matrix…');
+      await captureAppearanceMatrix(page, 'mobile');
+      console.log('Mobile tab options…');
+      await captureTabOptions(page, 'mobile');
+    }
     await context.close();
 
-    const dresserCtx = await browser.newContext({
-      viewport: { width: 390, height: 844 },
-      deviceScaleFactor: 2,
-      isMobile: true,
-      hasTouch: true,
-      colorScheme: 'light',
-      reducedMotion: 'no-preference',
-    });
-    const dresserPage = await dresserCtx.newPage();
-    console.log('Mobile dresser…');
-    await captureDresserOnboarding(dresserPage, 'mobile');
-    await dresserCtx.close();
+    if (!QUICK) {
+      const dresserCtx = await browser.newContext({
+        viewport: { width: 390, height: 844 },
+        deviceScaleFactor: 2,
+        isMobile: true,
+        hasTouch: true,
+        colorScheme: 'light',
+        reducedMotion: 'no-preference',
+      });
+      const dresserPage = await dresserCtx.newPage();
+      console.log('Mobile dresser…');
+      await captureDresserOnboarding(dresserPage, 'mobile');
+      await dresserCtx.close();
+    }
   }
 
   await browser.close();
