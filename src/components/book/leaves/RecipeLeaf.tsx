@@ -22,8 +22,8 @@ import { RECIPES } from '@/lib/recipes/data';
 import * as store from '@/lib/db/store';
 import { suggestSwaps } from '@/lib/assistant/substitutes';
 import type { Recipe } from '@/lib/recipes/types';
-import {
 import { CCBrand } from '@/brand/colors';
+import {
   DUR_ODOMETER_MS,
   DUR_STAR_STAGGER_MS,
   flyToCart,
@@ -458,7 +458,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
         {/* ── Kitchen note ───────────────────────────────────*/}
         {recipe.story && (
           <div className="mt-5 flex gap-3 rounded-xl bg-[color:var(--color-paper-sunk)] p-4">
-            <CharacterArt id="chef-whisk" color=CCBrand.h_c7913f size={44} className="mt-0.5 shrink-0" />
+            <CharacterArt id="chef-whisk" color={CCBrand.h_c7913f} size={44} className="mt-0.5 shrink-0" />
             <div>
               <p className="mb-1 font-serif text-sm font-semibold text-[color:var(--color-ink)]">
                 {storyByline(edition)}
