@@ -22,7 +22,8 @@
     "pages:build": "NEXT_PUBLIC_BASE_PATH=/CookCap next build",
     "gate:count": "node scripts/assert-recipe-count.mjs",
     "test:e2e": "playwright test e2e/finish.spec.ts",
-    "test:matrix": "FINISH_MATRIX=1 playwright test e2e/finish-matrix.spec.ts"
+    "test:matrix": "FINISH_MATRIX=1 playwright test e2e/finish-matrix.spec.ts",
+    "tier1": "node ../capricorn-tooling/shared/testing/tier1.mjs"
   },
   "dependencies": {
     "idb": "^8.0.0",
