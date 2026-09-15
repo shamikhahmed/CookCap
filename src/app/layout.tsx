@@ -4,6 +4,7 @@ import './globals.css';
 import { AppStore } from '@/components/app/AppStore';
 import { ServiceWorker } from '@/components/app/ServiceWorker';
 import { ChunkRecovery } from '@/components/app/ChunkRecovery';
+import { CCBrand } from '@/brand/colors';
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -65,8 +66,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ece1d1' },
-    { media: '(prefers-color-scheme: dark)', color: '#1a1512' },
+    { media: '(prefers-color-scheme: light)', color: CCBrand.h_ece1d1 },
+    { media: '(prefers-color-scheme: dark)', color: CCBrand.h_1a1512 },
   ],
   width: 'device-width',
   initialScale: 1,

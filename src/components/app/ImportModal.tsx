@@ -170,7 +170,7 @@ export function ImportModal({ open, onClose }: { open: boolean; onClose: () => v
                 </div>
               )}
               {error && (
-                <p className="text-sm text-[color:var(--color-danger,#b33)]" role="alert">
+                <p className="text-sm text-[color:var(--color-danger)]" role="alert">
                   {error}
                 </p>
               )}

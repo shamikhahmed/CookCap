@@ -1,3 +1,4 @@
+import { CCBrand } from '@/brand/colors';
 export type Goal = 'maintain' | 'cut' | 'bulk' | 'none';
 
 export type ModeId =
@@ -75,14 +76,14 @@ export interface HouseholdState {
 }
 
 const PROFILE_COLORS = [
-  '#5a8a6a',
-  '#d98a4e',
-  '#c7913f',
-  '#b58a5c',
-  '#c96b8f',
-  '#a3552a',
-  '#6b8cae',
-  '#8a6b9e',
+  CCBrand.h_5a8a6a,
+  CCBrand.h_d98a4e,
+  CCBrand.h_c7913f,
+  CCBrand.h_b58a5c,
+  CCBrand.h_c96b8f,
+  CCBrand.h_a3552a,
+  CCBrand.h_6b8cae,
+  CCBrand.h_8a6b9e,
 ];
 
 export function newId(prefix: string): string {

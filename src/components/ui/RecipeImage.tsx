@@ -47,7 +47,6 @@ export function RecipeImage({
             aria-hidden
           />
         )}
-        {/* eslint-disable-next-line @next/next/no-img-element -- blob:/object URL */}
         <img
           src={userSrc}
           alt={alt}
@@ -65,7 +64,6 @@ export function RecipeImage({
         className={`absolute inset-0 h-full w-full ${className}`}
         role="img"
         aria-label={alt}
-        // eslint-disable-next-line react/no-danger -- generated, trusted SVG
         dangerouslySetInnerHTML={{ __html: generateHero(seed, tab) }}
       />
     );

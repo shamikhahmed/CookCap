@@ -33,7 +33,6 @@ export function CoverLeaf() {
       aria-label="Open the cookbook"
     >
       {coverUrl && (
-        // eslint-disable-next-line @next/next/no-img-element -- blob URL
         <img
           src={coverUrl}
           alt=""

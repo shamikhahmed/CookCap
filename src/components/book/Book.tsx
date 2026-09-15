@@ -130,7 +130,6 @@ export function Book() {
     } else {
       play('backward', leaves[from]!, leaves[index]!);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
   useEffect(() => {

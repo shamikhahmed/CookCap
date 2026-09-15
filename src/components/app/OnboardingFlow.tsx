@@ -44,7 +44,7 @@ export function OnboardingFlow({
   } = api;
 
   const confirmSetupLater = useCallback(() => {
-    if (window.confirm('Skip naming and set up later?')) setupLater();
+    setupLater();
   }, [setupLater]);
 
   useDialogA11y(open, confirmSetupLater, panelRef, { initialFocus: 'none' });
@@ -70,7 +70,7 @@ export function OnboardingFlow({
           aria-modal="true"
           aria-labelledby={titleId}
           data-overlay
-          className="fixed inset-0 z-[100] flex flex-col bg-[color:var(--desk,#ebe4d4)]"
+          className="fixed inset-0 z-[100] flex flex-col bg-[color:var(--desk)]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -159,7 +159,7 @@ export function OnboardingFlow({
                   className="mt-1.5 min-h-11 w-full rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-3.5 py-2.5 text-[color:var(--color-ink)]"
                 />
                 {error && (
-                  <p className="mt-2 text-sm text-[color:var(--color-danger,#b33)]" role="alert">
+                  <p className="mt-2 text-sm text-[color:var(--color-danger)]" role="alert">
                     {error}
                   </p>
                 )}
@@ -200,7 +200,7 @@ export function OnboardingFlow({
                   className="mt-1.5 min-h-11 w-full rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-3.5 py-2.5"
                 />
                 {profileError && (
-                  <p className="mt-2 text-sm text-[color:var(--color-danger,#b33)]" role="alert">
+                  <p className="mt-2 text-sm text-[color:var(--color-danger)]" role="alert">
                     {profileError}
                   </p>
                 )}

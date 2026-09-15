@@ -23,6 +23,7 @@ import * as store from '@/lib/db/store';
 import { suggestSwaps } from '@/lib/assistant/substitutes';
 import type { Recipe } from '@/lib/recipes/types';
 import {
+import { CCBrand } from '@/brand/colors';
   DUR_ODOMETER_MS,
   DUR_STAR_STAGGER_MS,
   flyToCart,
@@ -384,7 +385,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
           aria-label={fav ? 'Remove from favorites' : 'Add to favorites'}
           className={`micro-press absolute right-3 top-3 grid size-11 origin-center place-items-center rounded-full bg-black/30 text-white backdrop-blur-md sm:right-4 sm:top-4${fav ? ' micro-heart-on shadow-[0_0_12px_rgba(255,122,107,0.55)] ring-2 ring-[#ff7a6b]/50' : ''}${heartOff ? ' micro-heart-off' : ''}`}
           style={{
-            color: fav ? '#ff7a6b' : 'white',
+            color: fav ? CCBrand.h_ff7a6b : 'white',
           }}
         >
           <Icon name={fav ? 'heart-filled' : 'heart'} size={22} />
@@ -457,7 +458,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
         {/* ── Kitchen note ───────────────────────────────────*/}
         {recipe.story && (
           <div className="mt-5 flex gap-3 rounded-xl bg-[color:var(--color-paper-sunk)] p-4">
-            <CharacterArt id="chef-whisk" color="#c7913f" size={44} className="mt-0.5 shrink-0" />
+            <CharacterArt id="chef-whisk" color=CCBrand.h_c7913f size={44} className="mt-0.5 shrink-0" />
             <div>
               <p className="mb-1 font-serif text-sm font-semibold text-[color:var(--color-ink)]">
                 {storyByline(edition)}

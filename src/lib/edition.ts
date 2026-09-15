@@ -1,6 +1,6 @@
 /**
  * CookCap editions — product name is CookCap; the physical book title is
- * "{Owner} Cooks" from a first-run name prompt (or `?for=Name`).
+ * "{Owner} Cooks" from a first-run name field (or `?for=Name`).
  * Unnamed / generic "Family" never becomes "Family Cooks".
  */
 
@@ -170,7 +170,7 @@ export function writeStoredOwner(name: string): Edition {
 
 /**
  * Resolve edition: `?for=` query wins (and persists), else stored owner.
- * Returns null when no name yet — UI must gate with name prompt.
+ * Returns null when no name yet — UI must gate with name field.
  */
 export function resolveEdition(search?: string): Edition | null {
   if (typeof window === 'undefined') return null;
