@@ -30,3 +30,11 @@ matrix:shots · VO · Next.js Pages deploy CI verify
 
 ## Appendix
 Evidence paths kept under qa/finish-loop/. No estimated scores (C-09). Fleet Tier 1 requires VO.
+
+
+### Evidence checklist
+- [x] TIER1.json PASS
+- [x] SINKS.md
+- [x] lighthouse JSON
+- [ ] matrix shots
+- [ ] VO
