@@ -1,3 +1,5 @@
+> Superseded on 2026-09-15 by docs/audit-2026-09-14 + HANDOVER (C-24).
+
 # CookCap — MASTER BUILD PROMPT (self-continuing)
 
 > **Honesty gate 2026-08-02 (v2.0.0):** Phases **0–12 shipped** — stabilize +

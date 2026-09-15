@@ -1,3 +1,5 @@
+> Superseded on 2026-09-15 by docs/audit-2026-09-14 + HANDOVER (C-24).
+
 # Cursor Working Prompt — Jia Cooks: final polish, features, ship
 
 Paste everything below the line into Cursor. Working directory = this repo

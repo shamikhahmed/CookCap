@@ -9,3 +9,5 @@ next-env.d.ts
 test-results/
 
 out/
+
+qa/finish-loop/shots/

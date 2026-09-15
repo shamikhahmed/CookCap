@@ -1,3 +1,5 @@
+> Superseded on 2026-09-15 by docs/audit-2026-09-14 + HANDOVER (C-24).
+
 # CookCap — FINAL SHIP PROMPT (binding, self-continuing)
 
 Paste this together with your full 13-phase + Appendix A–L framework. BOTH are
