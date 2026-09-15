@@ -1,8 +1,9 @@
+'use client';
+
 /**
  * RecipeImage: user IDB hero → blur manifest → disk → generated art.
  * Skeleton while first paint / decode.
  */
-'use client';
 
 import Image from 'next/image';
 import { useState } from 'react';
