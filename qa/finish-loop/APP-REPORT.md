@@ -26,3 +26,7 @@ Automated gate PASS (warn: matrix:shots). VO not linked.
 
 ## Remaining
 matrix:shots · VO · Next.js Pages deploy CI verify
+
+
+## Appendix
+Evidence paths kept under qa/finish-loop/. No estimated scores (C-09). Fleet Tier 1 requires VO.
