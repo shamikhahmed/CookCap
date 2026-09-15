@@ -7,7 +7,7 @@
  *   GALLERY_URL=http://127.0.0.1:3456 npm run gallery
  */
 import { chromium } from 'playwright';
-import { mkdirSync } from 'node:fs';
+import { mkdirSync, readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -17,8 +17,14 @@ const BASE = process.env.GALLERY_URL || 'http://localhost:3000';
 const RECIPE = process.env.GALLERY_RECIPE || 'butter-chicken';
 /** Demo edition — not a hard-coded product name */
 const DEMO = 'Ayesha';
-/** Keep in sync with src/lib/version.ts — suppresses What’s new sheet. */
-const APP_VER = '3.4.0';
+/** Keep in sync with VERSION.json — suppresses What’s new sheet. */
+const APP_VER = (() => {
+  try {
+    return JSON.parse(readFileSync(join(ROOT, 'VERSION.json'), 'utf8')).version || '3.5.1';
+  } catch {
+    return '3.5.1';
+  }
+})();
 
 mkdirSync(join(OUT, 'desktop'), { recursive: true });
 mkdirSync(join(OUT, 'mobile'), { recursive: true });
@@ -44,10 +50,11 @@ async function waitFooterReady(page, timeout = 20000) {
   );
 }
 
-async function waitFooterPage(page, n, timeout = 20000) {
+async function waitFooterPage(page, n, timeout = 45000) {
+  await page.waitForFunction(() => window.__APP_READY__ === true, null, { timeout: Math.min(timeout, 20000) }).catch(() => {});
   await page.waitForFunction(
     (want) => {
-      const t = document.querySelector('footer')?.innerText || '';
+      const t = document.querySelector('footer.app-footer, footer')?.innerText || '';
       const m = t.match(/(\d+)\s*\/\s*(\d+)/);
       return m && Number(m[1]) === want;
     },
@@ -252,26 +259,47 @@ async function captureEveryMode(page, folder) {
 
 async function clearForFirstRun(page) {
   await page.goto(BASE, { waitUntil: 'domcontentloaded' });
-  await page.evaluate(() => {
+  await page.evaluate(async (ver) => {
     localStorage.clear();
+    sessionStorage.clear();
     localStorage.setItem('cookcap-theme', 'light');
-  });
+    /* Suppress What’s new so it never races the first-run portal. */
+    localStorage.setItem('cookcap-whats-new', ver);
+    try {
+      const dbs = await indexedDB.databases?.();
+      if (dbs) {
+        for (const db of dbs) {
+          if (db?.name) indexedDB.deleteDatabase(db.name);
+        }
+      }
+    } catch {
+      /* ignore */
+    }
+  }, APP_VER);
   await page.reload({ waitUntil: 'domcontentloaded' });
+  await page.waitForFunction(() => window.__APP_READY__ === true, null, { timeout: 60000 }).catch(() => {});
   // Shell delays first-run portal ~480ms after needsName
-  await settle(page, 700);
+  await settle(page, 900);
 }
 
 /** Simple / reduced-motion onboarding (gallery default context uses reduce). */
 async function captureSimpleOnboarding(page, folder) {
   await clearForFirstRun(page);
-  await page.getByRole('heading', { name: /living family cookbook/i }).waitFor({
-    state: 'visible',
-    timeout: 15000,
-  });
+  const welcome = page.getByRole('heading', { name: /living family cookbook/i });
+  const begin = page.getByRole('button', { name: 'Begin', exact: true });
+  try {
+    await Promise.race([
+      welcome.waitFor({ state: 'visible', timeout: 25000 }),
+      begin.waitFor({ state: 'visible', timeout: 25000 }),
+    ]);
+  } catch (err) {
+    console.warn(`  skip simple onboard (${folder}): welcome not shown —`, err?.message || err);
+    return;
+  }
   await settle(page, 400);
   await shot(page, `${folder}/00-welcome.png`);
 
-  await page.getByRole('button', { name: 'Begin', exact: true }).click();
+  await begin.click();
   await page.getByLabel('Your name').waitFor({ state: 'visible', timeout: 8000 });
   await settle(page, 350);
   await shot(page, `${folder}/00b-name-gate.png`);
@@ -407,8 +435,8 @@ async function captureBookChrome(page, folder) {
   await page.goto(`${BASE}/?for=${encodeURIComponent(DEMO)}`, {
     waitUntil: 'domcontentloaded',
   });
-  await waitFooterPage(page, 1);
   await dismissWhatsNew(page);
+  await waitFooterPage(page, 1);
   await shot(page, `${folder}/01-cover.png`);
 
   await nextPage(page);
