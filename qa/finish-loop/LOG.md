@@ -24,3 +24,8 @@ Header, hero eyebrows, icons, nutrition footnote, catalog count, onboarding prev
 - Failure: TimeoutError at waitFooterPage (captureBookChrome) after desktop cover shot
 - Partial shots: desktop/00-welcome through 01-cover only
 - Action: logged and continued; no commit
+
+## 2026-09-15 — Gallery regen SUCCESS (supersedes FAIL note above)
+- Desktop: `adfc1df` (APP_VER from VERSION.json + hardened waits)
+- Mobile: `7343afd` (page-jump fallback + GALLERY_QUICK)
+- Prior waitFooterPage FAIL was mid-loop race; not current main state.
