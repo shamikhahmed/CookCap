@@ -44,3 +44,6 @@ Header, hero eyebrows, icons, nutrition footnote, catalog count, onboarding prev
 - Committed: C-29 `tokens.css` + brand-palette rename; C-31 matrix env-gate (no `test.skip`); CI-WORKFLOW.txt; empty skip-allowlist; honest TIER1 FAIL (kill-list cleared via tokens).
 - Left uncommitted: none in this tree.
 - Not merging to main (Tier1 still FAIL: matrix-results / axe / gallery).
+
+## 2026-09-16 — matrix evidence
+- Committed: matrix-results.json (6/6). Left uncommitted: playwright.config.ts `reuseExistingServer: true` (local convenience; masks CI).

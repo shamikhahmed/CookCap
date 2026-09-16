@@ -2,7 +2,7 @@
   "app": "cookcap",
   "version": "3.5.1",
   "swCache": "cookcap-v40",
-  "generatedAt": "2026-09-16T10:43:38.845Z",
+  "generatedAt": "2026-09-16T10:52:21.343Z",
   "status": "FAIL",
   "pass": [
     {
@@ -62,6 +62,18 @@
       "detail": "e2e/finish-matrix.spec.ts"
     },
     {
+      "id": "matrix:failures",
+      "detail": "0"
+    },
+    {
+      "id": "matrix:shot-count",
+      "detail": "6 shots (need routes×viewports×themes = 6)"
+    },
+    {
+      "id": "matrix:freshness",
+      "detail": "2026-09-16T10:49:55.391Z"
+    },
+    {
       "id": "sinks:SINKS.md",
       "detail": "present"
     },
@@ -100,12 +112,8 @@
   ],
   "fail": [
     {
-      "id": "matrix:results",
-      "detail": "missing qa/finish-loop/matrix-results.json (CI must set FINISH_MATRIX=1)"
-    },
-    {
       "id": "lighthouse:home-demo-mobile.json",
-      "detail": "fetchTime 2026-09-15T11:16:57.092Z before last UI commit 2026-09-16T15:17:30+05:00"
+      "detail": "fetchTime 2026-09-15T11:16:57.092Z before last UI commit 2026-09-16T15:46:11+05:00"
     },
     {
       "id": "lighthouse:passing",
