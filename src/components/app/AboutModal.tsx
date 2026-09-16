@@ -224,6 +224,7 @@ export function AboutModal({
                   type="file"
                   accept="application/json,.json"
                   className="sr-only"
+                  aria-label="Restore backup JSON file"
                   onChange={(e) => {
                     const f = e.target.files?.[0];
                     if (f) void importData(f);

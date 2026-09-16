@@ -847,6 +847,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
             type="file"
             accept="image/*"
             className="sr-only"
+            aria-label={heroUrls[recipe.id] ? 'Change recipe photo' : 'Add recipe photo'}
             onChange={(e) => {
               const f = e.target.files?.[0];
               if (f) void setRecipeHero(recipe.id, f);

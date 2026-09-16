@@ -47,3 +47,10 @@ Header, hero eyebrows, icons, nutrition footnote, catalog count, onboarding prev
 
 ## 2026-09-16 — matrix evidence
 - Committed: matrix-results.json (6/6). Left uncommitted: playwright.config.ts `reuseExistingServer: true` (local convenience; masks CI).
+
+## 2026-09-16 — Review 3 product loop (hardened tier1)
+
+- **Before:** 11 fail (test-skip, ci:workflow-name, matrix:results, LH stale, axe, gallery, kill hex/sub11/important/outline)
+- **Changes:** CI-WORKFLOW=`Deploy GitHub Pages`; finish-matrix `if (RUN)` + writeMatrixResults; `brand-palette.ts`; `tokens.css` hex lock; strip counted `!important`; outline/sub-11 fixes; smoke matrix 6/6
+- **After:** killList cleared; remaining: LH freshness/thresholds, axe, gallery, live VERSION.json 404
+- **Not faked:** no LH scores invented; no axe stubs

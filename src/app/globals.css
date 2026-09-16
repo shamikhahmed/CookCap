@@ -1553,10 +1553,11 @@
   left: 0;
   display: flex;
   align-items: center;
+  /* Target-size ≥24×24 with neighbor clearance (C-32 / LH a11y) */
   min-height: 2.75rem;
   min-width: 5.5rem;
   max-width: 8.5rem;
-  padding: 0.4rem 0.7rem 0.4rem 0.55rem;
+  padding: 0.55rem 0.7rem 0.55rem 0.55rem;
   border-radius: 0 0.4rem 0.4rem 0;
   /* Paper note stuck to wood */
   border: 1px solid color-mix(in srgb, var(--color-ink) 14%, var(--color-line));

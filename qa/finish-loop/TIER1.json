@@ -2,7 +2,7 @@
   "app": "cookcap",
   "version": "3.5.1",
   "swCache": "cookcap-v40",
-  "generatedAt": "2026-09-16T10:52:21.343Z",
+  "generatedAt": "2026-09-16T11:21:17.201Z",
   "status": "FAIL",
   "pass": [
     {
@@ -120,12 +120,12 @@
       "detail": "0/1 files meet thresholds"
     },
     {
-      "id": "axe:dir",
-      "detail": "missing qa/finish-loop/axe/ (JSON per route×theme)"
+      "id": "axe:serious-critical",
+      "detail": "home-demo-dark.json: 1 serious/critical (nested-interactive)\nhome-demo-light.json: 1 serious/critical (nested-interactive)"
     },
     {
-      "id": "gallery:manifest",
-      "detail": "gallery-manifest.json not found"
+      "id": "gallery:freshness",
+      "detail": "docs/screenshots/gallery/gallery-manifest.json not in git history"
     }
   ],
   "warn": [

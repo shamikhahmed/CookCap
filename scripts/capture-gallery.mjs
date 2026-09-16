@@ -7,12 +7,15 @@
  *   GALLERY_URL=http://127.0.0.1:3456 npm run gallery
  */
 import { chromium } from 'playwright';
-import { mkdirSync, readFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, 'docs', 'gallery');
+/** Tier1 gallery freshness path (C-32). */
+const MANIFEST_DIR = join(ROOT, 'docs', 'screenshots', 'gallery');
+const MANIFEST = join(MANIFEST_DIR, 'gallery-manifest.json');
 const BASE = process.env.GALLERY_URL || 'http://localhost:3000';
 const RECIPE = process.env.GALLERY_RECIPE || 'butter-chicken';
 /** Demo edition — not a hard-coded product name */
@@ -819,6 +822,46 @@ async function main() {
   }
 
   await browser.close();
+
+  // Write tier1 gallery-manifest (points at docs/gallery shots).
+  const shots = [];
+  for (const viewport of ['desktop', 'mobile']) {
+    const dir = join(OUT, viewport);
+    let files = [];
+    try {
+      files = readdirSync(dir).filter((f) => f.endsWith('.png')).sort();
+    } catch {
+      files = [];
+    }
+    for (const file of files) {
+      shots.push({
+        file: `${viewport}/${file}`,
+        theme: 'light',
+        viewport,
+        section: file.replace(/\.png$/, ''),
+        screenId: file.replace(/\.png$/, ''),
+        label: file.replace(/\.png$/, '').replace(/^\d+[a-z]?-/, ''),
+        route: 'book',
+        path: `docs/gallery/${viewport}/${file}`,
+      });
+    }
+  }
+  mkdirSync(MANIFEST_DIR, { recursive: true });
+  writeFileSync(
+    MANIFEST,
+    JSON.stringify(
+      {
+        app: 'CookCap',
+        version: APP_VER,
+        generated: new Date().toISOString(),
+        galleryRoot: 'docs/gallery',
+        shots,
+      },
+      null,
+      2,
+    ),
+  );
+  console.log(`Wrote ${MANIFEST} (${shots.length} shots)`);
   console.log('Done.');
 }
 

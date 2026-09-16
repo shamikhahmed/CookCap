@@ -12,48 +12,50 @@ import { getCatalogRecipeCount } from '@/lib/recipes/count';
  *
  * Brand hierarchy: big personal title (or Our Family / Cookbook), tiny CookCap
  * foil mark as publisher at the bottom. Optional user cover photo under scrim.
+ *
+ * Open control is a sibling button (not a role=button wrapper) so photo
+ * controls are not nested interactive (axe nested-interactive).
  */
 export function CoverLeaf() {
   const { next } = useBook();
   const { edition, editionReady, coverUrl, setCoverPhoto, clearCoverPhoto } = useApp();
   const fileRef = useRef<HTMLInputElement>(null);
+  const openLabel = `${edition.coverLine1} ${edition.coverLine2} — Tap to open`;
 
   return (
     <div
       data-tap-advance
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          next();
-        }
-      }}
       className="leather relative flex h-full w-full cursor-pointer flex-col items-center justify-center overflow-hidden text-center"
-      aria-label="Open the cookbook"
     >
+      <button
+        type="button"
+        className="absolute inset-0 z-[5] cursor-pointer bg-transparent"
+        aria-label={openLabel}
+        onClick={() => next()}
+      />
+
       {coverUrl && (
         <img
           src={coverUrl}
           alt=""
           aria-hidden
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+          className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover"
         />
       )}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-black/40 to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-6 bg-gradient-to-r from-black/40 to-transparent" />
       <div
-        className={`pointer-events-none absolute inset-0 rounded-[inherit] ${
+        className={`pointer-events-none absolute inset-0 z-[1] rounded-[inherit] ${
           coverUrl ? 'bg-black/45 shadow-[inset_0_0_60px_rgba(0,0,0,0.55)]' : 'shadow-[inset_0_0_60px_rgba(0,0,0,0.5)]'
         }`}
       />
 
       <div className="foil-sweep pointer-events-none absolute inset-0 z-20" />
 
-      <div className="pointer-events-none absolute inset-6 rounded-lg border border-[color:var(--color-gold)]/40" />
-      <div className="pointer-events-none absolute inset-8 rounded-md border border-[color:var(--color-gold)]/25" />
+      <div className="pointer-events-none absolute inset-6 z-[2] rounded-lg border border-[color:var(--color-gold)]/40" />
+      <div className="pointer-events-none absolute inset-8 z-[2] rounded-md border border-[color:var(--color-gold)]/25" />
 
       <div
-        className="cover-rise relative z-10 px-10 transition-opacity duration-300"
+        className="cover-rise pointer-events-none relative z-10 px-10 transition-opacity duration-300"
         style={{ opacity: editionReady ? 1 : 0 }}
       >
         <p className="gold-foil mb-6 font-sans text-xs font-semibold tracking-[0.02em]" suppressHydrationWarning>
@@ -76,16 +78,13 @@ export function CoverLeaf() {
         </p>
       </div>
 
-      <div
-        className="absolute bottom-[4.5rem] z-30 flex gap-2"
-        onClick={(e) => e.stopPropagation()}
-        onKeyDown={(e) => e.stopPropagation()}
-      >
+      <div className="absolute bottom-[4.5rem] z-30 flex gap-2">
         <input
           ref={fileRef}
           type="file"
           accept="image/*"
           className="sr-only"
+          aria-label={coverUrl ? 'Change cover photo' : 'Add cover photo'}
           onChange={(e) => {
             const f = e.target.files?.[0];
             if (f) void setCoverPhoto(f);
@@ -110,11 +109,11 @@ export function CoverLeaf() {
         )}
       </div>
 
-      <span className="cover-hint absolute bottom-14 z-10 text-xs uppercase tracking-[0.35em] text-[color:var(--color-gold)]/70">
+      <span className="cover-hint pointer-events-none absolute bottom-14 z-10 text-xs uppercase tracking-[0.35em] text-[color:var(--color-gold)]/70">
         Tap to open
       </span>
       <span
-        className="absolute bottom-5 z-10 font-serif text-xs uppercase tracking-[0.35em] text-[color:var(--color-gold)]/55"
+        className="pointer-events-none absolute bottom-5 z-10 font-serif text-xs uppercase tracking-[0.35em] text-[color:var(--color-gold)]/55"
         aria-hidden
       >
         {PRODUCT_NAME}

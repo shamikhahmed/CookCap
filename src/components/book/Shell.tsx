@@ -410,7 +410,7 @@ function TopBar({
                 : 'Open profiles'
             }
             title={activeProfile?.name ?? 'Profiles'}
-            className="grid size-11 place-items-center rounded-full text-xs font-semibold text-white transition-transform active:scale-90"
+            className="grid size-11 min-h-11 min-w-11 shrink-0 place-items-center rounded-full text-xs font-semibold text-white transition-transform active:scale-90"
             style={{
               background: activeProfile?.color ?? 'var(--color-accent)',
             }}
@@ -423,7 +423,7 @@ function TopBar({
           onClick={onMode}
           aria-label={`Mode — ${modeDef.label}`}
           title={modeDef.label}
-          className="grid size-11 place-items-center rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)] text-xs font-semibold text-[color:var(--color-ink-soft)] transition-transform hover:border-[color:var(--color-accent)] active:scale-90"
+          className="grid size-11 min-h-11 min-w-11 shrink-0 place-items-center rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)] text-xs font-semibold text-[color:var(--color-ink-soft)] transition-transform hover:border-[color:var(--color-accent)] active:scale-90"
           style={{ color: modeDef.color }}
         >
           {modeLetter}
@@ -456,7 +456,7 @@ function TopBar({
           title={
             shoppingCount > 0 ? `Shopping list (${shoppingCount})` : 'Shopping list'
           }
-          className="relative grid size-11 place-items-center rounded-full text-[color:var(--color-ink-soft)] transition-all hover:bg-[color:var(--color-paper-sunk)] hover:text-[color:var(--color-ink)] active:scale-90"
+          className="relative grid size-11 min-h-11 min-w-11 shrink-0 place-items-center rounded-full text-[color:var(--color-ink-soft)] transition-all hover:bg-[color:var(--color-paper-sunk)] hover:text-[color:var(--color-ink)] active:scale-90"
         >
           <Icon name="cart" size={20} />
           {(shoppingCount > 0 || cartBump) && (
@@ -470,10 +470,12 @@ function TopBar({
         </button>
 
         <div className="relative" ref={moreRef}>
-          <IconBtn label="More" onClick={() => setMore((v) => !v)} ariaExpanded={more}>
-            <span className="text-lg leading-none" aria-hidden>
-              ···
-            </span>
+          <IconBtn label="More menu" onClick={() => setMore((v) => !v)} ariaExpanded={more}>
+            <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+              <circle cx="4" cy="10" r="1.75" fill="currentColor" />
+              <circle cx="10" cy="10" r="1.75" fill="currentColor" />
+              <circle cx="16" cy="10" r="1.75" fill="currentColor" />
+            </svg>
           </IconBtn>
           <AnimatePresence>
             {more && (
@@ -795,7 +797,7 @@ function IconBtn({
       aria-label={label}
       aria-expanded={ariaExpanded}
       title={label}
-      className="grid size-11 place-items-center rounded-full text-[color:var(--color-ink-soft)] transition-all hover:bg-[color:var(--color-paper-sunk)] hover:text-[color:var(--color-ink)] active:scale-90 disabled:pointer-events-none disabled:opacity-30"
+      className="grid size-11 min-h-11 min-w-11 shrink-0 place-items-center rounded-full text-[color:var(--color-ink-soft)] transition-all hover:bg-[color:var(--color-paper-sunk)] hover:text-[color:var(--color-ink)] active:scale-90 disabled:pointer-events-none disabled:opacity-30"
     >
       {children}
     </button>
