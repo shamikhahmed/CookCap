@@ -1,6 +1,6 @@
 'use client';
 
-import { CCBrand } from '@/brand/colors';
+import { CCBrand } from '@/brand/brand-palette';
 /**
  * Root error UI (replaces Next default when layout itself fails).
  */

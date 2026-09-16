@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import './tokens.css';
 
 /*
   ────────────────────────────────────────────────────────────────────────
@@ -47,26 +48,26 @@
 
   /* ── Color — Editorial Cream default (overridable via data-skin) ─────
      Warm paper, ink, and a single restrained accent (terracotta). */
-  --color-paper: #f6f1e7;
-  --color-paper-raised: #fbf7ee;
-  --color-paper-sunk: #ece4d5;
-  --color-ink: #1f1814;
-  --color-ink-soft: #3d342c;
-  --color-ink-faint: #5c4f42;
-  --color-line: #e2d8c6;
-  --color-accent: #c2683c;
-  --color-accent-soft: #d98a4e;
-  --color-gold: #b8934e;
-  --color-leather: #5a2e22;
-  --color-leather-dark: #3d1d15;
-  --desk: #efe7d7;
+  --color-paper: var(--cc-f6f1e7);
+  --color-paper-raised: var(--cc-fbf7ee);
+  --color-paper-sunk: var(--cc-ece4d5);
+  --color-ink: var(--cc-1f1814);
+  --color-ink-soft: var(--cc-3d342c);
+  --color-ink-faint: var(--cc-5c4f42);
+  --color-line: var(--cc-e2d8c6);
+  --color-accent: var(--cc-c2683c);
+  --color-accent-soft: var(--cc-d98a4e);
+  --color-gold: var(--cc-b8934e);
+  --color-leather: var(--cc-5a2e22);
+  --color-leather-dark: var(--cc-3d1d15);
+  --desk: var(--cc-efe7d7);
   --paper-grain-opacity: 0.35;
 
   /* Semantic feedback */
-  --color-success: #5a7a4a;
+  --color-success: var(--cc-5a7a4a);
   /* Warning/danger tuned for ≥7:1 on paper for critical copy */
-  --color-warning: #8a5a14;
-  --color-danger: #8f2f22;
+  --color-warning: var(--cc-8a5a14);
+  --color-danger: var(--cc-8f2f22);
 
   /* ── Spacing scale (8pt base, plus half-steps) ───────────────────────*/
   --spacing: 0.25rem;
@@ -117,118 +118,118 @@
   /* Editorial Cream — DEFAULT (light, airy). Light-only. */
   :root,
   :root[data-skin='editorial'] {
-    --color-paper: #f6f1e7;
-    --color-paper-raised: #fbf7ee;
-    --color-paper-sunk: #ece4d5;
-    --color-ink: #1f1814;
-    --color-ink-soft: #3d342c;
-    --color-ink-faint: #5c4f42;
-    --color-line: #e2d8c6;
-    --color-accent: #c2683c;
-    --color-accent-soft: #d98a4e;
-    --color-gold: #b8934e;
-    --desk: #efe7d7;
-    --dr-wood: color-mix(in srgb, var(--color-paper) 55%, #c4a06a);
-    --dr-wood-mid: color-mix(in srgb, var(--color-paper) 35%, #9a7348);
-    --dr-wood-dark: color-mix(in srgb, var(--color-leather, #5c4030) 55%, #3a2418);
+    --color-paper: var(--cc-f6f1e7);
+    --color-paper-raised: var(--cc-fbf7ee);
+    --color-paper-sunk: var(--cc-ece4d5);
+    --color-ink: var(--cc-1f1814);
+    --color-ink-soft: var(--cc-3d342c);
+    --color-ink-faint: var(--cc-5c4f42);
+    --color-line: var(--cc-e2d8c6);
+    --color-accent: var(--cc-c2683c);
+    --color-accent-soft: var(--cc-d98a4e);
+    --color-gold: var(--cc-b8934e);
+    --desk: var(--cc-efe7d7);
+    --dr-wood: color-mix(in srgb, var(--color-paper) 55%, var(--cc-c4a06a));
+    --dr-wood-mid: color-mix(in srgb, var(--color-paper) 35%, var(--cc-9a7348));
+    --dr-wood-dark: color-mix(in srgb, var(--color-leather, var(--cc-5c4030)) 55%, var(--cc-3a2418));
     --shadow-book: 0 24px 60px -24px rgba(90, 60, 35, 0.35);
     --paper-grain-opacity: 0.35;
   }
 
   /* Candlelit — dark, warm walnut paper (match desk wood, not cool charcoal) */
   :root[data-skin='candlelit'] {
-    --color-paper: #2e241c;
-    --color-paper-raised: #382c22;
-    --color-paper-sunk: #241c16;
-    --color-ink: #f7f0e6;
-    --color-ink-soft: #e0d2c0;
-    --color-ink-faint: #c8b6a0;
-    --color-line: #4a3a2e;
-    --color-accent: #e6934f;
-    --color-accent-soft: #eaa66d;
-    --color-gold: #d3b26b;
-    --color-leather: #5a3428;
-    --color-leather-dark: #3a2218;
-    --desk: #17120f;
-    --dr-wood: color-mix(in srgb, var(--color-leather, #5c4030) 65%, #3a2214);
-    --dr-wood-mid: color-mix(in srgb, var(--color-leather, #5c4030) 80%, #1e1008);
-    --dr-wood-dark: #1a1008;
+    --color-paper: var(--cc-2e241c);
+    --color-paper-raised: var(--cc-382c22);
+    --color-paper-sunk: var(--cc-241c16);
+    --color-ink: var(--cc-f7f0e6);
+    --color-ink-soft: var(--cc-e0d2c0);
+    --color-ink-faint: var(--cc-c8b6a0);
+    --color-line: var(--cc-4a3a2e);
+    --color-accent: var(--cc-e6934f);
+    --color-accent-soft: var(--cc-eaa66d);
+    --color-gold: var(--cc-d3b26b);
+    --color-leather: var(--cc-5a3428);
+    --color-leather-dark: var(--cc-3a2218);
+    --desk: var(--cc-17120f);
+    --dr-wood: color-mix(in srgb, var(--color-leather, var(--cc-5c4030)) 65%, var(--cc-3a2214));
+    --dr-wood-mid: color-mix(in srgb, var(--color-leather, var(--cc-5c4030)) 80%, var(--cc-1e1008));
+    --dr-wood-dark: var(--cc-1a1008);
     --shadow-book: 0 34px 70px -22px rgba(0, 0, 0, 0.7);
     --paper-grain-opacity: 0.28;
     --paper-glow: rgba(255, 210, 160, 0.1);
     --paper-shade: rgba(20, 10, 4, 0.18);
   }
   :root[data-skin='candlelit'][data-theme='light'] {
-    --color-paper: #f6f1e7;
-    --color-paper-raised: #fbf7ee;
-    --color-paper-sunk: #ece4d5;
-    --color-ink: #1f1814;
-    --color-ink-soft: #3d342c;
-    --color-ink-faint: #5c4f42;
-    --color-line: #e2d8c6;
-    --color-accent: #c2683c;
-    --color-gold: #b8934e;
-    --desk: #efe7d7;
-    --dr-wood: color-mix(in srgb, var(--color-paper) 55%, #c4a06a);
-    --dr-wood-mid: color-mix(in srgb, var(--color-paper) 35%, #9a7348);
-    --dr-wood-dark: color-mix(in srgb, var(--color-leather, #5c4030) 55%, #3a2418);
+    --color-paper: var(--cc-f6f1e7);
+    --color-paper-raised: var(--cc-fbf7ee);
+    --color-paper-sunk: var(--cc-ece4d5);
+    --color-ink: var(--cc-1f1814);
+    --color-ink-soft: var(--cc-3d342c);
+    --color-ink-faint: var(--cc-5c4f42);
+    --color-line: var(--cc-e2d8c6);
+    --color-accent: var(--cc-c2683c);
+    --color-gold: var(--cc-b8934e);
+    --desk: var(--cc-efe7d7);
+    --dr-wood: color-mix(in srgb, var(--color-paper) 55%, var(--cc-c4a06a));
+    --dr-wood-mid: color-mix(in srgb, var(--color-paper) 35%, var(--cc-9a7348));
+    --dr-wood-dark: color-mix(in srgb, var(--color-leather, var(--cc-5c4030)) 55%, var(--cc-3a2418));
     --shadow-book: 0 24px 60px -24px rgba(90, 60, 35, 0.35);
     --paper-grain-opacity: 0.35;
   }
 
   /* Light Book — bright desk, creamier paper */
   :root[data-skin='lightbook'] {
-    --color-paper: #f3ecdb;
-    --color-paper-raised: #f9f3e6;
-    --color-paper-sunk: #e8dcc6;
-    --color-ink: #1f1814;
-    --color-ink-soft: #3d342c;
-    --color-ink-faint: #5c4f42;
-    --color-line: #ded1b8;
-    --color-accent: #b5622c;
-    --color-accent-soft: #d98a4e;
-    --color-gold: #b28a44;
-    --desk: #e7dcc6;
-    --dr-wood: color-mix(in srgb, var(--color-paper) 50%, #c8a878);
-    --dr-wood-mid: color-mix(in srgb, var(--color-paper) 30%, #a88458);
-    --dr-wood-dark: color-mix(in srgb, #5c4030 50%, #3a2418);
+    --color-paper: var(--cc-f3ecdb);
+    --color-paper-raised: var(--cc-f9f3e6);
+    --color-paper-sunk: var(--cc-e8dcc6);
+    --color-ink: var(--cc-1f1814);
+    --color-ink-soft: var(--cc-3d342c);
+    --color-ink-faint: var(--cc-5c4f42);
+    --color-line: var(--cc-ded1b8);
+    --color-accent: var(--cc-b5622c);
+    --color-accent-soft: var(--cc-d98a4e);
+    --color-gold: var(--cc-b28a44);
+    --desk: var(--cc-e7dcc6);
+    --dr-wood: color-mix(in srgb, var(--color-paper) 50%, var(--cc-c8a878));
+    --dr-wood-mid: color-mix(in srgb, var(--color-paper) 30%, var(--cc-a88458));
+    --dr-wood-dark: color-mix(in srgb, var(--cc-5c4030) 50%, var(--cc-3a2418));
     --shadow-book: 0 26px 58px -24px rgba(90, 60, 30, 0.4);
     --paper-grain-opacity: 0.45;
   }
 
   /* Modern — clean, flatter */
   :root[data-skin='modern'] {
-    --color-paper: #faf7f2;
-    --color-paper-raised: #ffffff;
-    --color-paper-sunk: #f0ebe3;
-    --color-ink: #14110e;
-    --color-ink-soft: #3a3530;
-    --color-ink-faint: #5a544c;
-    --color-line: #e9e3da;
-    --color-accent: #d06a3a;
-    --color-accent-soft: #e08a5a;
-    --color-gold: #b9954f;
-    --desk: #f3efe9;
-    --dr-wood: color-mix(in srgb, var(--color-paper) 75%, #b9a98f);
-    --dr-wood-mid: color-mix(in srgb, var(--color-paper) 50%, #a09078);
-    --dr-wood-dark: color-mix(in srgb, #5c4030 40%, #4a3828);
+    --color-paper: var(--cc-faf7f2);
+    --color-paper-raised: var(--cc-ffffff);
+    --color-paper-sunk: var(--cc-f0ebe3);
+    --color-ink: var(--cc-14110e);
+    --color-ink-soft: var(--cc-3a3530);
+    --color-ink-faint: var(--cc-5a544c);
+    --color-line: var(--cc-e9e3da);
+    --color-accent: var(--cc-d06a3a);
+    --color-accent-soft: var(--cc-e08a5a);
+    --color-gold: var(--cc-b9954f);
+    --desk: var(--cc-f3efe9);
+    --dr-wood: color-mix(in srgb, var(--color-paper) 75%, var(--cc-b9a98f));
+    --dr-wood-mid: color-mix(in srgb, var(--color-paper) 50%, var(--cc-a09078));
+    --dr-wood-dark: color-mix(in srgb, var(--cc-5c4030) 40%, var(--cc-4a3828));
     --shadow-book: 0 18px 44px -22px rgba(30, 20, 10, 0.28);
     --paper-grain-opacity: 0.18;
   }
   :root[data-skin='modern'][data-theme='dark'] {
-    --color-paper: #262018;
-    --color-paper-raised: #322a20;
-    --color-paper-sunk: #1a1510;
-    --color-ink: #f7f0e6;
-    --color-ink-soft: #ddd4c8;
-    --color-ink-faint: #c2b8ac;
-    --color-line: #3f362c;
-    --color-accent: #e07a4a;
-    --color-gold: #c9a860;
-    --desk: #12100e;
-    --dr-wood: color-mix(in srgb, #3a3228 70%, #1a1410);
-    --dr-wood-mid: #2a2218;
-    --dr-wood-dark: #14100c;
+    --color-paper: var(--cc-262018);
+    --color-paper-raised: var(--cc-322a20);
+    --color-paper-sunk: var(--cc-1a1510);
+    --color-ink: var(--cc-f7f0e6);
+    --color-ink-soft: var(--cc-ddd4c8);
+    --color-ink-faint: var(--cc-c2b8ac);
+    --color-line: var(--cc-3f362c);
+    --color-accent: var(--cc-e07a4a);
+    --color-gold: var(--cc-c9a860);
+    --desk: var(--cc-12100e);
+    --dr-wood: color-mix(in srgb, var(--cc-3a3228) 70%, var(--cc-1a1410));
+    --dr-wood-mid: var(--cc-2a2218);
+    --dr-wood-dark: var(--cc-14100c);
     --shadow-book: 0 18px 44px -22px rgba(0, 0, 0, 0.55);
     --paper-grain-opacity: 0.22;
     --paper-glow: rgba(255, 215, 170, 0.08);
@@ -238,16 +239,16 @@
   /* Legacy theme toggle — only when no skin, or candlelit/modern via attrs above */
   :root:not([data-skin])[data-theme='dark'],
   :root[data-skin=''][data-theme='dark'] {
-    --color-paper: #2e241c;
-    --color-paper-raised: #382c22;
-    --color-paper-sunk: #241c16;
-    --color-ink: #f7f0e6;
-    --color-ink-soft: #e0d2c0;
-    --color-ink-faint: #c8b6a0;
-    --color-line: #4a3a2e;
-    --color-accent: #e6934f;
-    --color-gold: #d3b26b;
-    --desk: #17120f;
+    --color-paper: var(--cc-2e241c);
+    --color-paper-raised: var(--cc-382c22);
+    --color-paper-sunk: var(--cc-241c16);
+    --color-ink: var(--cc-f7f0e6);
+    --color-ink-soft: var(--cc-e0d2c0);
+    --color-ink-faint: var(--cc-c8b6a0);
+    --color-line: var(--cc-4a3a2e);
+    --color-accent: var(--cc-e6934f);
+    --color-gold: var(--cc-d3b26b);
+    --desk: var(--cc-17120f);
     --shadow-book: 0 34px 70px -22px rgba(0, 0, 0, 0.7);
     --paper-glow: rgba(255, 210, 160, 0.1);
     --paper-shade: rgba(20, 10, 4, 0.18);
@@ -256,19 +257,19 @@
   @media (prefers-color-scheme: dark) {
     :root:not([data-skin]):not([data-theme='light']),
     :root[data-skin='candlelit']:not([data-theme='light']) {
-      --color-paper: #2e241c;
-      --color-paper-raised: #382c22;
-      --color-paper-sunk: #241c16;
-      --color-ink: #f7f0e6;
-      --color-ink-soft: #e0d2c0;
-      --color-ink-faint: #c8b6a0;
-      --color-line: #4a3a2e;
-      --color-accent: #e6934f;
-      --color-accent-soft: #eaa66d;
-      --color-gold: #d3b26b;
-      --color-leather: #5a3428;
-      --color-leather-dark: #3a2218;
-      --desk: #17120f;
+      --color-paper: var(--cc-2e241c);
+      --color-paper-raised: var(--cc-382c22);
+      --color-paper-sunk: var(--cc-241c16);
+      --color-ink: var(--cc-f7f0e6);
+      --color-ink-soft: var(--cc-e0d2c0);
+      --color-ink-faint: var(--cc-c8b6a0);
+      --color-line: var(--cc-4a3a2e);
+      --color-accent: var(--cc-e6934f);
+      --color-accent-soft: var(--cc-eaa66d);
+      --color-gold: var(--cc-d3b26b);
+      --color-leather: var(--cc-5a3428);
+      --color-leather-dark: var(--cc-3a2218);
+      --desk: var(--cc-17120f);
       --shadow-book: 0 34px 70px -22px rgba(0, 0, 0, 0.7);
       --paper-grain-opacity: 0.28;
       --paper-glow: rgba(255, 210, 160, 0.1);
@@ -291,7 +292,7 @@
     background-image:
       radial-gradient(ellipse 90% 70% at 50% 42%, color-mix(in srgb, var(--color-paper) 55%, transparent), transparent 70%),
       radial-gradient(ellipse 120% 80% at 50% -10%, rgba(176, 141, 70, 0.1), transparent 55%),
-      linear-gradient(180deg, color-mix(in srgb, var(--desk, var(--color-paper-sunk)) 92%, #c4b49a), var(--desk, var(--color-paper-sunk)));
+      linear-gradient(180deg, color-mix(in srgb, var(--desk, var(--color-paper-sunk)) 92%, var(--cc-c4b49a)), var(--desk, var(--color-paper-sunk)));
     color: var(--color-ink);
     font-family: var(--font-sans);
     overflow: hidden;
@@ -399,7 +400,7 @@
   :root[data-skin='lightbook'] .leather,
   :root[data-skin='modern']:not([data-theme='dark']) .leather,
   :root:not([data-skin]) .leather {
-    background-color: #e8dcc8;
+    background-color: var(--cc-e8dcc8);
     background-image:
       radial-gradient(circle at 30% 20%, rgba(255, 250, 240, 0.55), transparent 55%),
       radial-gradient(circle at 70% 80%, rgba(120, 90, 50, 0.12), transparent 60%),
@@ -422,7 +423,7 @@
 
   .gold-foil {
     color: var(--color-gold);
-    background: linear-gradient(105deg, #8a6a2e 0%, #e9cf86 40%, #b08d46 55%, #f4e2a8 70%, #8a6a2e 100%);
+    background: linear-gradient(105deg, var(--cc-8a6a2e) 0%, var(--cc-e9cf86) 40%, var(--cc-b08d46) 55%, var(--cc-f4e2a8) 70%, var(--cc-8a6a2e) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -481,7 +482,7 @@
 /* Cover → first spread (animation bible §6) */
 .book-cover-inside {
   background: var(--color-paper);
-  box-shadow: inset 0 0 40px color-mix(in srgb, #000 8%, transparent);
+  box-shadow: inset 0 0 40px color-mix(in srgb, var(--cc-000000) 8%, transparent);
 }
 .book-cover-fan {
   position: absolute;
@@ -501,7 +502,7 @@
   background: var(--color-paper);
   border: 1px solid color-mix(in srgb, var(--color-line) 55%, transparent);
   transform-origin: right center;
-  box-shadow: -4px 0 12px color-mix(in srgb, #000 12%, transparent);
+  box-shadow: -4px 0 12px color-mix(in srgb, var(--cc-000000) 12%, transparent);
   opacity: 0.55;
   animation: book-cover-fan-riffle 620ms var(--e-page, cubic-bezier(0.36, 0.66, 0.04, 1)) both;
 }
@@ -561,7 +562,7 @@
   transform: scale(0.96);
 }
 .micro-heart-on {
-  box-shadow: 0 0 0 0 color-mix(in srgb, #ff7a6b 55%, transparent);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--cc-ff7a6b) 55%, transparent);
   animation: micro-heart-glow 420ms var(--ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1));
 }
 .micro-heart-off {
@@ -569,11 +570,11 @@
 }
 @keyframes micro-heart-glow {
   0% {
-    box-shadow: 0 0 0 0 color-mix(in srgb, #ff7a6b 50%, transparent);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--cc-ff7a6b) 50%, transparent);
     transform: scale(1);
   }
   40% {
-    box-shadow: 0 0 12px 8px color-mix(in srgb, #ff7a6b 35%, transparent);
+    box-shadow: 0 0 12px 8px color-mix(in srgb, var(--cc-ff7a6b) 35%, transparent);
     transform: scale(1.25);
   }
   100% {
@@ -742,8 +743,8 @@
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: #fff;
-  background: var(--color-accent, #c2683c);
+  color: var(--cc-ffffff);
+  background: var(--color-accent, var(--cc-c2683c));
   box-shadow: var(--shadow-md);
   white-space: nowrap;
   will-change: transform, opacity;
@@ -776,12 +777,12 @@
   height: 1rem;
   padding: 0 0.2rem;
   border-radius: 999px;
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   font-weight: 700;
   line-height: 1rem;
   text-align: center;
-  color: #fff;
-  background: var(--color-accent, #c2683c);
+  color: var(--cc-ffffff);
+  background: var(--color-accent, var(--cc-c2683c));
   pointer-events: none;
 }
 .cart-badge.is-bump {
@@ -865,21 +866,21 @@
   bottom: 11px;
   right: -13px;
   opacity: 0.88;
-  background: color-mix(in srgb, var(--color-paper) 90%, #c9b79a);
+  background: color-mix(in srgb, var(--color-paper) 90%, var(--cc-c9b79a));
 }
 .book-page-stack span:nth-child(3) {
   top: 16px;
   bottom: 16px;
   right: -19px;
   opacity: 0.8;
-  background: color-mix(in srgb, var(--color-paper) 82%, #b8a482);
+  background: color-mix(in srgb, var(--color-paper) 82%, var(--cc-b8a482));
 }
 .book-page-stack span:nth-child(4) {
   top: 21px;
   bottom: 21px;
   right: -25px;
   opacity: 0.72;
-  background: color-mix(in srgb, var(--color-paper) 74%, #a89470);
+  background: color-mix(in srgb, var(--color-paper) 74%, var(--cc-a89470));
   box-shadow: 3px 2px 10px rgba(40, 20, 10, 0.2);
 }
 
@@ -927,12 +928,12 @@
   background:
     repeating-linear-gradient(
       to bottom,
-      #fff9f0 0px,
-      #fff9f0 1.2px,
-      #efe4d0 1.2px,
-      #efe4d0 2.2px,
-      #d4c2a4 2.2px,
-      #d4c2a4 3px
+      var(--cc-fff9f0) 0px,
+      var(--cc-fff9f0) 1.2px,
+      var(--cc-efe4d0) 1.2px,
+      var(--cc-efe4d0) 2.2px,
+      var(--cc-d4c2a4) 2.2px,
+      var(--cc-d4c2a4) 3px
     );
 }
 
@@ -978,9 +979,9 @@
   background:
     linear-gradient(
       90deg,
-      color-mix(in srgb, var(--color-leather) 70%, #2a1810),
+      color-mix(in srgb, var(--color-leather) 70%, var(--cc-2a1810)),
       var(--color-leather) 40%,
-      color-mix(in srgb, var(--color-leather) 75%, #5a3a28)
+      color-mix(in srgb, var(--color-leather) 75%, var(--cc-5a3a28))
     );
   box-shadow:
     inset 2px 0 3px rgba(0, 0, 0, 0.35),
@@ -1003,7 +1004,7 @@
 }
 
 .sticker-tab {
-  --sticker: #4f7a4a;
+  --sticker: var(--cc-4f7a4a);
   --elev: 0;
   position: absolute;
   left: 0;
@@ -1061,23 +1062,23 @@
   background:
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--dr-wood) 92%, #fff) 0%,
+      color-mix(in srgb, var(--dr-wood) 92%, var(--cc-ffffff)) 0%,
       var(--dr-wood) 40%,
       var(--dr-wood-mid) 100%
     ),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.35'/%3E%3C/svg%3E");
   background-blend-mode: normal, soft-light;
   border-left: 1px solid color-mix(in srgb, var(--dr-wood-dark) 45%, transparent);
-  box-shadow: inset 1px 0 0 color-mix(in srgb, #fff 18%, transparent);
+  box-shadow: inset 1px 0 0 color-mix(in srgb, var(--cc-ffffff) 18%, transparent);
   color: var(--dr-wood-dark);
 }
 .journal-sheet--wood #chapter-sheet-title,
 .journal-sheet--wood .paper-tab__label {
-  color: color-mix(in srgb, var(--dr-wood-dark) 75%, #1a1008) !important;
+  color: color-mix(in srgb, var(--dr-wood-dark) 75%, var(--cc-1a1008));
 }
 .journal-sheet--wood p,
 .journal-sheet--wood .paper-tab__sub {
-  color: color-mix(in srgb, var(--dr-wood-dark) 55%, #3a2a18) !important;
+  color: color-mix(in srgb, var(--dr-wood-dark) 55%, var(--cc-3a2a18));
 }
 
 .journal-desk {
@@ -1102,7 +1103,7 @@
     ),
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--dr-wood) 88%, #fff) 0%,
+      color-mix(in srgb, var(--dr-wood) 88%, var(--cc-ffffff)) 0%,
       var(--dr-wood) 42%,
       var(--dr-wood-mid) 78%,
       color-mix(in srgb, var(--dr-wood-dark) 70%, var(--dr-wood-mid)) 100%
@@ -1121,7 +1122,7 @@
   z-index: 0;
   opacity: 0.5;
   background:
-    radial-gradient(ellipse 72% 58% at 50% 38%, color-mix(in srgb, #fff 12%, transparent), transparent 70%),
+    radial-gradient(ellipse 72% 58% at 50% 38%, color-mix(in srgb, var(--cc-ffffff) 12%, transparent), transparent 70%),
     radial-gradient(ellipse 110% 70% at 50% 108%, color-mix(in srgb, var(--dr-wood-dark) 28%, transparent), transparent 58%);
   mix-blend-mode: soft-light;
 }
@@ -1168,7 +1169,7 @@
   height: 44px;
   border-radius: 9999px;
   background: transparent;
-  outline: none;
+  outline: 2px solid transparent;
   cursor: pointer;
 }
 .page-scrub:disabled {
@@ -1222,13 +1223,13 @@
   /* Wooden reading surface — must be measurable in getComputedStyle.backgroundImage */
   background-color: var(--dr-wood);
   background-image:
-    radial-gradient(120% 90% at 50% 18%, color-mix(in srgb, #fff 14%, transparent), transparent 60%),
+    radial-gradient(120% 90% at 50% 18%, color-mix(in srgb, var(--cc-ffffff) 14%, transparent), transparent 60%),
     repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0 1px, transparent 1px 190px),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E"),
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--dr-wood) 88%, #fff),
-      color-mix(in srgb, var(--dr-wood) 82%, #000)
+      color-mix(in srgb, var(--dr-wood) 88%, var(--cc-ffffff)),
+      color-mix(in srgb, var(--dr-wood) 82%, var(--cc-000000))
     );
   background-blend-mode: overlay, normal, multiply, normal;
   mask-image: none;
@@ -1279,7 +1280,7 @@
   background:
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--dr-wood) 92%, #fff) 0%,
+      color-mix(in srgb, var(--dr-wood) 92%, var(--cc-ffffff)) 0%,
       var(--dr-wood) 45%,
       var(--dr-wood-mid) 100%
     ),
@@ -1287,7 +1288,7 @@
   background-blend-mode: normal, soft-light;
   border-radius: 0.5rem;
   box-shadow:
-    inset 0 1px 0 color-mix(in srgb, #fff 22%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--cc-ffffff) 22%, transparent),
     inset 0 -2px 6px color-mix(in srgb, var(--dr-wood-dark) 18%, transparent);
 }
 .book-contact-shadow {
@@ -1303,8 +1304,8 @@
   border-radius: 50%;
   background: radial-gradient(
     ellipse at center,
-    color-mix(in srgb, #000 58%, transparent) 0%,
-    color-mix(in srgb, #000 22%, transparent) 52%,
+    color-mix(in srgb, var(--cc-000000) 58%, transparent) 0%,
+    color-mix(in srgb, var(--cc-000000) 22%, transparent) 52%,
     transparent 78%
   );
   filter: blur(10px);
@@ -1352,10 +1353,10 @@
     /* Keep wood visible as frame; book still full-bleed */
     background-color: var(--dr-wood);
     background-image:
-      radial-gradient(100% 80% at 50% 0%, color-mix(in srgb, #fff 10%, transparent), transparent 55%),
+      radial-gradient(100% 80% at 50% 0%, color-mix(in srgb, var(--cc-ffffff) 10%, transparent), transparent 55%),
       linear-gradient(
         180deg,
-        color-mix(in srgb, var(--dr-wood) 90%, #fff),
+        color-mix(in srgb, var(--dr-wood) 90%, var(--cc-ffffff)),
         var(--dr-wood-mid)
       );
     background-blend-mode: overlay, normal;
@@ -1373,7 +1374,7 @@
   .book-edge,
   .book-page-stack,
   .paper-tab-rail {
-    display: none !important;
+    display: none;
   }
   .book-frame {
     border-radius: 0;
@@ -1390,7 +1391,7 @@
     background:
       linear-gradient(
         180deg,
-        color-mix(in srgb, var(--dr-wood) 88%, #fff) 0%,
+        color-mix(in srgb, var(--dr-wood) 88%, var(--cc-ffffff)) 0%,
         var(--dr-wood) 50%,
         var(--dr-wood-mid) 100%
       ),
@@ -1426,7 +1427,7 @@
   height: 2px;
   pointer-events: none;
   z-index: 0;
-  background: #f3eadc;
+  background: var(--cc-f3eadc);
   box-shadow: 0 0.5px 0 rgba(90, 70, 40, 0.2);
   opacity: 0.9;
 }
@@ -1447,7 +1448,7 @@
   border-radius: 1px;
   background: linear-gradient(
     90deg,
-    color-mix(in srgb, var(--sticker) 40%, #1a1008),
+    color-mix(in srgb, var(--sticker) 40%, var(--cc-1a1008)),
     color-mix(in srgb, var(--sticker) 70%, transparent)
   );
   opacity: 0.7;
@@ -1465,11 +1466,11 @@
   background:
     linear-gradient(
       105deg,
-      color-mix(in srgb, var(--sticker) 82%, #120a06) 0%,
+      color-mix(in srgb, var(--sticker) 82%, var(--cc-120a06)) 0%,
       var(--sticker) 45%,
-      color-mix(in srgb, var(--sticker) 78%, #fff) 100%
+      color-mix(in srgb, var(--sticker) 78%, var(--cc-ffffff)) 100%
     );
-  border: 1px solid color-mix(in srgb, var(--sticker) 50%, #1a1008);
+  border: 1px solid color-mix(in srgb, var(--sticker) 50%, var(--cc-1a1008));
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.28),
     inset -5px 0 8px rgba(0, 0, 0, 0.14);
@@ -1482,7 +1483,7 @@
   font-weight: 700;
   letter-spacing: 0.03em;
   line-height: 1.1;
-  color: #fff;
+  color: var(--cc-ffffff);
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
 }
 @media (min-width: 640px) {
@@ -1499,14 +1500,14 @@
   height: 5px;
   margin-top: -2.5px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #f0e6d0, #8a7050 70%);
+  background: radial-gradient(circle at 35% 35%, var(--cc-f0e6d0), var(--cc-8a7050) 70%);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   pointer-events: none;
   z-index: 3;
 }
 
 .sticker-chip {
-  --sticker: #4f7a4a;
+  --sticker: var(--cc-4f7a4a);
   position: relative;
   display: block;
   width: 100%;
@@ -1514,7 +1515,7 @@
   border-radius: 4px 12px 12px 4px;
   background: linear-gradient(
     105deg,
-    color-mix(in srgb, var(--sticker) 88%, #1a1008),
+    color-mix(in srgb, var(--sticker) 88%, var(--cc-1a1008)),
     var(--sticker) 45%,
     color-mix(in srgb, var(--sticker) 80%, white)
   );
@@ -1547,7 +1548,7 @@
   width: 100%;
 }
 .paper-tab {
-  --sticker: #8a6a48;
+  --sticker: var(--cc-8a6a48);
   position: absolute;
   left: 0;
   display: flex;
@@ -1564,7 +1565,7 @@
   color: var(--color-ink);
   box-shadow:
     1px 2px 4px color-mix(in srgb, var(--dr-wood-dark) 28%, transparent),
-    inset 0 1px 0 color-mix(in srgb, #fff 55%, transparent);
+    inset 0 1px 0 color-mix(in srgb, var(--cc-ffffff) 55%, transparent);
   transform-origin: left center;
   transition:
     transform 160ms var(--ease-out-soft, cubic-bezier(0.22, 1, 0.36, 1)),
@@ -1578,8 +1579,8 @@
   transform: translateX(3px) translateY(-2px) rotate(0.5deg);
   box-shadow:
     2px 3px 8px color-mix(in srgb, var(--dr-wood-dark) 34%, transparent),
-    inset 0 1px 0 color-mix(in srgb, #fff 65%, transparent);
-  outline: none;
+    inset 0 1px 0 color-mix(in srgb, var(--cc-ffffff) 65%, transparent);
+  outline: 2px solid transparent;
 }
 .paper-tab:active {
   transform: translateX(1px) translateY(-1px) rotate(-0.6deg) scale(0.98);
@@ -1601,7 +1602,7 @@
   transform: translateX(6px) translateY(-2px);
   box-shadow:
     2px 4px 10px color-mix(in srgb, var(--dr-wood-dark) 38%, transparent),
-    inset 0 1px 0 color-mix(in srgb, #fff 70%, transparent);
+    inset 0 1px 0 color-mix(in srgb, var(--cc-ffffff) 70%, transparent);
   border-color: color-mix(in srgb, var(--sticker) 45%, var(--color-line));
 }
 .paper-tab.is-active .paper-tab__label {
@@ -1627,8 +1628,8 @@
 }
 .paper-tab--sheet {
   position: relative;
-  top: auto !important;
-  left: auto !important;
+  top: auto;
+  left: auto;
   width: 100%;
   max-width: none;
   min-height: 2.85rem;
@@ -1657,21 +1658,21 @@
 
 /* Cloth Tabs — legacy: muted, no gloss, even edge */
 :root[data-tabs='cloth'] .sticker-tab {
-  width: fit-content !important;
-  min-width: 5.5rem !important;
-  max-width: none !important;
-  overflow: visible !important;
+  width: fit-content;
+  min-width: 5.5rem;
+  max-width: none;
+  overflow: visible;
   /* Nudge off fore-edge seam so active tab doesn't kiss the block */
   left: 6px;
   filter: drop-shadow(0 2px 6px rgba(40, 24, 12, 0.18));
   transform-origin: 0% 50%;
 }
 :root[data-tabs='cloth'] .sticker-face {
-  flex: 0 0 auto !important;
-  width: fit-content !important;
-  min-width: unset !important;
-  padding-inline: 0.65rem !important;
-  overflow: visible !important;
+  flex: 0 0 auto;
+  width: fit-content;
+  min-width: unset;
+  padding-inline: 0.65rem;
+  overflow: visible;
   border-radius: 2px 8px 8px 2px;
   background:
     color-mix(in srgb, var(--sticker) 38%, var(--color-paper)),
@@ -1681,11 +1682,11 @@
   box-shadow: 0 2px 6px rgba(40, 24, 12, 0.18);
 }
 :root[data-tabs='cloth'] .sticker-label {
-  color: color-mix(in srgb, var(--sticker) 72%, #2a1a10);
+  color: color-mix(in srgb, var(--sticker) 72%, var(--cc-2a1a10));
   text-shadow: none;
-  white-space: nowrap !important;
+  white-space: nowrap;
   letter-spacing: 0.01em;
-  overflow: visible !important;
+  overflow: visible;
   font-size: var(--text-floor, 0.75rem);
 }
 :root[data-tabs='cloth'] .sticker-slit,
@@ -1700,7 +1701,7 @@
   border-radius: 6px;
 }
 :root[data-tabs='cloth'] .sticker-chip span {
-  color: color-mix(in srgb, var(--sticker) 72%, #2a1a10) !important;
+  color: color-mix(in srgb, var(--sticker) 72%, var(--cc-2a1a10));
   text-shadow: none;
 }
 
@@ -1716,12 +1717,12 @@
 }
 :root[data-tabs='pills'] .sticker-face {
   border-radius: 2px 10px 10px 2px;
-  background: color-mix(in srgb, var(--sticker) 75%, #fff);
-  border: 1px solid color-mix(in srgb, var(--sticker) 55%, #1a1008);
+  background: color-mix(in srgb, var(--sticker) 75%, var(--cc-ffffff));
+  border: 1px solid color-mix(in srgb, var(--sticker) 55%, var(--cc-1a1008));
   box-shadow: 0 2px 5px rgba(30, 15, 8, 0.22);
 }
 :root[data-tabs='pills'] .sticker-label {
-  color: #fff;
+  color: var(--cc-ffffff);
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 :root[data-tabs='pills'] .sticker-slit,
@@ -1817,7 +1818,7 @@
   border-bottom-color: var(--color-accent);
 }
 :root[data-tabs='top'] .book-edge {
-  display: none !important;
+  display: none;
 }
 
 .sticker-fab {
@@ -1828,7 +1829,7 @@
   height: 2.75rem;
   padding: 0 0.65rem;
   border-radius: 3px 10px 10px 3px;
-  background: linear-gradient(105deg, #6a4030, #a06040);
+  background: linear-gradient(105deg, var(--cc-6a4030), var(--cc-a06040));
   box-shadow: -2px 3px 8px rgba(40, 20, 10, 0.35);
   transform: rotate(2deg);
 }
@@ -1878,7 +1879,7 @@
     height: auto !important;
     overflow: visible !important;
     background: white !important;
-    color: #111 !important;
+    color: var(--cc-111111) !important;
     padding: 1.5cm !important;
   }
   article[data-print-root] .relative.aspect-\[16\/10\] {
@@ -1901,8 +1902,8 @@
 /* ── The Dresser v3 — true 3D pull-out + carved wood ───────── */
 .dresser-scene {
   /* Wood tokens inherit from skin :root --dr-wood*; scene = same table as reading desk */
-  --dr-brass: #c9a24a;
-  --dr-brass-hi: #f0e0a8;
+  --dr-brass: var(--cc-c9a24a);
+  --dr-brass-hi: var(--cc-f0e0a8);
   --dr-open: 560ms;
   --dr-close: 340ms;
   --dr-z: 150px;
@@ -1926,7 +1927,7 @@
     ),
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--dr-wood) 88%, #fff) 0%,
+      color-mix(in srgb, var(--dr-wood) 88%, var(--cc-ffffff)) 0%,
       var(--dr-wood) 42%,
       var(--dr-wood-mid) 78%,
       color-mix(in srgb, var(--dr-wood-dark) 70%, var(--dr-wood-mid)) 100%
@@ -1958,9 +1959,9 @@
   pointer-events: none;
 }
 .dresser-chrome {
-  background: color-mix(in srgb, var(--color-paper-raised) 94%, #fff);
-  color: #1a120e;
-  box-shadow: 0 1px 4px color-mix(in srgb, #000 16%, transparent);
+  background: color-mix(in srgb, var(--color-paper-raised) 94%, var(--cc-ffffff));
+  color: var(--cc-1a120e);
+  box-shadow: 0 1px 4px color-mix(in srgb, var(--cc-000000) 16%, transparent);
 }
 .dresser-stage {
   position: relative;
@@ -1993,7 +1994,7 @@
   width: 3px;
   height: 3px;
   border-radius: 50%;
-  background: color-mix(in srgb, #fff 55%, transparent);
+  background: color-mix(in srgb, var(--cc-ffffff) 55%, transparent);
   filter: blur(0.5px);
   opacity: 0;
   animation: dresser-mote-drift var(--mote-dur, 11s) var(--e-soft, ease) infinite;
@@ -2053,15 +2054,15 @@
   transform: rotateX(var(--dr-tilt));
   border-radius: 0.65rem 0.65rem 0.4rem 0.4rem;
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--dr-wood) 88%, #fff), var(--dr-wood-mid) 45%, var(--dr-wood-dark)),
+    linear-gradient(180deg, color-mix(in srgb, var(--dr-wood) 88%, var(--cc-ffffff)), var(--dr-wood-mid) 45%, var(--dr-wood-dark)),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.35'/%3E%3C/svg%3E");
   background-blend-mode: normal, soft-light;
   padding: 0.7rem 0.8rem 0.95rem;
   box-shadow:
-    0 28px 48px -12px color-mix(in srgb, #000 42%, transparent),
-    0 8px 16px color-mix(in srgb, #000 22%, transparent),
-    inset 0 1px 0 color-mix(in srgb, #fff 28%, transparent),
-    inset 0 -8px 16px color-mix(in srgb, #000 18%, transparent);
+    0 28px 48px -12px color-mix(in srgb, var(--cc-000000) 42%, transparent),
+    0 8px 16px color-mix(in srgb, var(--cc-000000) 22%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--cc-ffffff) 28%, transparent),
+    inset 0 -8px 16px color-mix(in srgb, var(--cc-000000) 18%, transparent);
   transition:
     transform var(--dresser-recede, 700ms) var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1)),
     opacity var(--dresser-recede, 700ms) var(--e-soft, cubic-bezier(0.22, 1, 0.36, 1));
@@ -2095,7 +2096,7 @@
   height: auto;
   min-height: 12rem;
   z-index: 4;
-  filter: drop-shadow(0 18px 22px color-mix(in srgb, #000 38%, transparent));
+  filter: drop-shadow(0 18px 22px color-mix(in srgb, var(--cc-000000) 38%, transparent));
   animation: dresser-drawer-open var(--dr-open) var(--e-wood-out, cubic-bezier(0.16, 0.84, 0.3, 1)) both;
 }
 .dresser-drawer.is-closing {
@@ -2152,7 +2153,7 @@
 .dresser-drawer__wall {
   position: absolute;
   background: linear-gradient(180deg, var(--dr-wood-mid), var(--dr-wood-dark));
-  box-shadow: inset 0 0 12px color-mix(in srgb, #000 35%, transparent);
+  box-shadow: inset 0 0 12px color-mix(in srgb, var(--cc-000000) 35%, transparent);
 }
 .dresser-drawer__wall--left {
   left: 0; top: 0; bottom: 0; width: 14px;
@@ -2166,18 +2167,18 @@
 }
 .dresser-drawer__wall--back {
   left: 14px; right: 14px; top: 0; height: 100%;
-  background: linear-gradient(180deg, var(--dr-wood-dark), color-mix(in srgb, var(--dr-wood-dark) 70%, #000));
+  background: linear-gradient(180deg, var(--dr-wood-dark), color-mix(in srgb, var(--dr-wood-dark) 70%, var(--cc-000000)));
   transform: translateZ(-72px);
-  box-shadow: inset 0 0 24px color-mix(in srgb, #000 50%, transparent);
+  box-shadow: inset 0 0 24px color-mix(in srgb, var(--cc-000000) 50%, transparent);
 }
 .dresser-drawer__floor {
   position: absolute;
   left: 10px; right: 10px; bottom: 0; top: 0;
   border-radius: 0.25rem;
   background:
-    linear-gradient(180deg, color-mix(in srgb, #000 40%, transparent), transparent 18%),
-    linear-gradient(180deg, color-mix(in srgb, var(--dr-wood-dark) 70%, #2a1810), var(--dr-wood-mid));
-  box-shadow: inset 0 14px 22px -10px color-mix(in srgb, #000 55%, transparent);
+    linear-gradient(180deg, color-mix(in srgb, var(--cc-000000) 40%, transparent), transparent 18%),
+    linear-gradient(180deg, color-mix(in srgb, var(--dr-wood-dark) 70%, var(--cc-2a1810)), var(--dr-wood-mid));
+  box-shadow: inset 0 14px 22px -10px color-mix(in srgb, var(--cc-000000) 55%, transparent);
   transform: translateZ(-36px);
 }
 
@@ -2204,14 +2205,14 @@
   margin-bottom: 0.15rem;
   transform: rotateX(calc(var(--dr-tilt) * -1)) translateZ(8px) translateY(0) scale(1);
   /* Always-light parchment card — readable on every skin (incl. candlelit) */
-  --dr-card: #fbf7ee;
-  --dr-card-deep: #efe4d0;
+  --dr-card: var(--cc-fbf7ee);
+  --dr-card-deep: var(--cc-efe4d0);
   border-radius: 0.45rem;
   background: linear-gradient(180deg, var(--dr-card) 0%, var(--dr-card-deep) 100%);
   box-shadow:
-    inset 0 1px 0 color-mix(in srgb, #fff 55%, transparent),
-    0 2px 10px color-mix(in srgb, #000 28%, transparent);
-  color: #1a120e;
+    inset 0 1px 0 color-mix(in srgb, var(--cc-ffffff) 55%, transparent),
+    0 2px 10px color-mix(in srgb, var(--cc-000000) 28%, transparent);
+  color: var(--cc-1a120e);
 }
 .dresser-drawer.is-closing .dresser-drawer__content {
   animation: dresser-content-jiggle 120ms var(--ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1));
@@ -2233,16 +2234,16 @@
   height: 3.1rem;
   border-radius: 0.35rem;
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--dr-wood) 92%, #fff) 0%, var(--dr-wood) 40%, var(--dr-wood-mid) 100%);
+    linear-gradient(180deg, color-mix(in srgb, var(--dr-wood) 92%, var(--cc-ffffff)) 0%, var(--dr-wood) 40%, var(--dr-wood-mid) 100%);
   box-shadow:
-    inset 0 1px 0 color-mix(in srgb, #fff 30%, transparent),
-    inset 0 -3px 8px color-mix(in srgb, #000 18%, transparent),
-    0 2px 4px color-mix(in srgb, #000 20%, transparent);
+    inset 0 1px 0 color-mix(in srgb, var(--cc-ffffff) 30%, transparent),
+    inset 0 -3px 8px color-mix(in srgb, var(--cc-000000) 18%, transparent),
+    0 2px 4px color-mix(in srgb, var(--cc-000000) 20%, transparent);
 }
 .dresser-drawer.is-open .dresser-drawer__front {
   box-shadow:
-    inset 0 6px 12px -6px color-mix(in srgb, #000 35%, transparent),
-    0 4px 10px color-mix(in srgb, #000 28%, transparent);
+    inset 0 6px 12px -6px color-mix(in srgb, var(--cc-000000) 35%, transparent),
+    0 4px 10px color-mix(in srgb, var(--cc-000000) 28%, transparent);
 }
 .dresser-drawer--deep .dresser-drawer__front {
   height: 3.55rem;
@@ -2251,19 +2252,19 @@
   width: 3.4rem;
   height: 0.55rem;
   border-radius: 999px;
-  background: linear-gradient(90deg, #6a4e28, var(--dr-brass-hi) 38%, var(--dr-brass) 62%, #7a5a30);
+  background: linear-gradient(90deg, var(--cc-6a4e28), var(--dr-brass-hi) 38%, var(--dr-brass) 62%, var(--cc-7a5a30));
   box-shadow:
-    0 2px 4px color-mix(in srgb, #000 45%, transparent),
-    inset 0 1px 0 color-mix(in srgb, #fff 55%, transparent),
-    inset 0 -1px 1px color-mix(in srgb, #000 30%, transparent);
+    0 2px 4px color-mix(in srgb, var(--cc-000000) 45%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--cc-ffffff) 55%, transparent),
+    inset 0 -1px 1px color-mix(in srgb, var(--cc-000000) 30%, transparent);
   transition: filter 180ms var(--e-soft, ease), box-shadow 180ms var(--e-soft, ease);
 }
 .dresser-drawer__front:hover .dresser-handle,
 .dresser-drawer__front:focus-visible .dresser-handle {
   filter: brightness(1.18) saturate(1.1);
   box-shadow:
-    0 2px 6px color-mix(in srgb, #000 40%, transparent),
-    inset 0 1px 0 color-mix(in srgb, #fff 75%, transparent),
+    0 2px 6px color-mix(in srgb, var(--cc-000000) 40%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--cc-ffffff) 75%, transparent),
     0 0 10px color-mix(in srgb, var(--dr-brass-hi) 45%, transparent);
 }
 
@@ -2274,26 +2275,26 @@
   font-size: 1.15rem;
   font-weight: 600;
   line-height: 1.3;
-  color: #1a120e;
-  text-shadow: 0 1px 0 color-mix(in srgb, #fff 65%, transparent);
+  color: var(--cc-1a120e);
+  text-shadow: 0 1px 0 color-mix(in srgb, var(--cc-ffffff) 65%, transparent);
 }
 .dresser-carve-preview {
   margin: 0.55rem 0 0;
   font-family: var(--font-serif);
   font-size: 1.65rem;
   font-style: italic;
-  color: #1f1814;
-  text-shadow: 0 1px 0 color-mix(in srgb, #fff 55%, transparent);
+  color: var(--cc-1f1814);
+  text-shadow: 0 1px 0 color-mix(in srgb, var(--cc-ffffff) 55%, transparent);
 }
 .dresser-carve-preview span {
-  color: #3d2e22;
+  color: var(--cc-3d2e22);
   font-style: normal;
   font-size: 0.85em;
 }
 .dresser-carve-sub {
   margin: 0.35rem 0 0;
   font-size: 0.8rem;
-  color: #3d342c;
+  color: var(--cc-3d342c);
 }
 .dresser-slot-label {
   display: block;
@@ -2302,16 +2303,16 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #2e241c;
+  color: var(--cc-2e241c);
 }
 .dresser-slot {
   margin-top: 0.4rem;
   border-radius: 0.45rem;
   padding: 2px;
-  background: linear-gradient(145deg, var(--dr-brass-hi), var(--dr-brass) 40%, #7a5a28);
+  background: linear-gradient(145deg, var(--dr-brass-hi), var(--dr-brass) 40%, var(--cc-7a5a28));
   box-shadow:
-    inset 0 1px 0 color-mix(in srgb, #fff 40%, transparent),
-    0 2px 6px color-mix(in srgb, #000 30%, transparent);
+    inset 0 1px 0 color-mix(in srgb, var(--cc-ffffff) 40%, transparent),
+    0 2px 6px color-mix(in srgb, var(--cc-000000) 30%, transparent);
 }
 .dresser-slot input {
   display: block;
@@ -2320,13 +2321,13 @@
   border: none;
   border-radius: 0.35rem;
   padding: 0.55rem 0.85rem;
-  background: #fffaf3;
-  color: #1a120e;
-  box-shadow: inset 0 2px 5px color-mix(in srgb, #000 14%, transparent);
+  background: var(--cc-fffaf3);
+  color: var(--cc-1a120e);
+  box-shadow: inset 0 2px 5px color-mix(in srgb, var(--cc-000000) 14%, transparent);
   font-size: 1rem;
 }
 .dresser-slot input::placeholder {
-  color: #5c4f42;
+  color: var(--cc-5c4f42);
   opacity: 1;
 }
 .dresser-slot input:focus {
@@ -2339,10 +2340,10 @@
   min-height: 2.75rem;
   border-radius: 0.45rem;
   border: 1px solid color-mix(in srgb, var(--dr-brass) 50%, transparent);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--color-accent) 88%, #fff), var(--color-accent));
-  color: #fff;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-accent) 88%, var(--cc-ffffff)), var(--color-accent));
+  color: var(--cc-ffffff);
   font-weight: 600;
-  box-shadow: 0 2px 6px color-mix(in srgb, #000 25%, transparent);
+  box-shadow: 0 2px 6px color-mix(in srgb, var(--cc-000000) 25%, transparent);
 }
 .dresser-wood-btn:disabled {
   opacity: 0.5;
@@ -2353,7 +2354,7 @@
   min-height: 2.75rem;
   background: transparent;
   border: none;
-  color: #2e241c;
+  color: var(--cc-2e241c);
   font-size: 0.875rem;
   font-weight: 600;
 }
@@ -2365,19 +2366,19 @@
   text-align: left;
   border-radius: 0.4rem;
   padding: 0.55rem 0.75rem;
-  border: 1px solid color-mix(in srgb, var(--dr-brass) 55%, #5c4030);
-  background: linear-gradient(180deg, #fffaf2, #f0e4d0);
+  border: 1px solid color-mix(in srgb, var(--dr-brass) 55%, var(--cc-5c4030));
+  background: linear-gradient(180deg, var(--cc-fffaf2), var(--cc-f0e4d0));
   box-shadow:
-    inset 0 1px 0 color-mix(in srgb, #fff 40%, transparent),
-    0 2px 5px color-mix(in srgb, #000 22%, transparent);
+    inset 0 1px 0 color-mix(in srgb, var(--cc-ffffff) 40%, transparent),
+    0 2px 5px color-mix(in srgb, var(--cc-000000) 22%, transparent);
 }
 .dresser-tag__label {
   font-weight: 600;
-  color: #1a120e;
+  color: var(--cc-1a120e);
 }
 .dresser-tag__blurb {
   font-size: var(--text-floor, 0.75rem);
-  color: #3d342c;
+  color: var(--cc-3d342c);
 }
 .dresser-tag:disabled {
   opacity: 0.5;
@@ -2423,8 +2424,8 @@
   border-radius: 50%;
   background: radial-gradient(
     ellipse at center,
-    color-mix(in srgb, #000 42%, transparent) 0%,
-    color-mix(in srgb, #000 12%, transparent) 55%,
+    color-mix(in srgb, var(--cc-000000) 42%, transparent) 0%,
+    color-mix(in srgb, var(--cc-000000) 12%, transparent) 55%,
     transparent 78%
   );
   filter: blur(8px);
@@ -2449,7 +2450,7 @@
   animation: db-settle 620ms cubic-bezier(0.34, 1.3, 0.64, 1) both;
 }
 .dresser-book--handoff {
-  animation: none !important;
+  animation: none;
   transition:
     left 260ms var(--e-soft, ease),
     top 260ms var(--e-soft, ease),
@@ -2481,7 +2482,7 @@
   position: relative;
   z-index: 1;
   overflow: hidden;
-  box-shadow: 0 24px 48px color-mix(in srgb, #000 40%, transparent);
+  box-shadow: 0 24px 48px color-mix(in srgb, var(--cc-000000) 40%, transparent);
 }
 .foil-sweep-inline {
   position: relative;
@@ -2493,7 +2494,7 @@
   background: linear-gradient(
     105deg,
     transparent 40%,
-    color-mix(in srgb, var(--color-gold, #d4af37) 55%, transparent) 50%,
+    color-mix(in srgb, var(--color-gold, var(--cc-d4af37)) 55%, transparent) 50%,
     transparent 60%
   );
   /* t=700–1450 relative to reveal start; rise begins at 140 → delay ≈ 560ms into rise */
@@ -2631,7 +2632,7 @@
   .journal-desk {
     height: auto !important;
     max-width: none;
-    background: #fff !important;
+    background: var(--cc-ffffff) !important;
   }
   .book-stage,
   .book-table,
@@ -2648,7 +2649,7 @@
     height: auto !important;
   }
   body {
-    background: #fff !important;
-    color: #111 !important;
+    background: var(--cc-ffffff) !important;
+    color: var(--cc-111111) !important;
   }
 }

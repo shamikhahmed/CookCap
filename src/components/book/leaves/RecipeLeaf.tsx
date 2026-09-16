@@ -22,7 +22,7 @@ import { RECIPES } from '@/lib/recipes/data';
 import * as store from '@/lib/db/store';
 import { suggestSwaps } from '@/lib/assistant/substitutes';
 import type { Recipe } from '@/lib/recipes/types';
-import { CCBrand } from '@/brand/colors';
+import { CCBrand } from '@/brand/brand-palette';
 import {
   DUR_ODOMETER_MS,
   DUR_STAR_STAGGER_MS,

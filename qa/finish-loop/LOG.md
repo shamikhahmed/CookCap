@@ -39,3 +39,8 @@ Header, hero eyebrows, icons, nutrition footnote, catalog count, onboarding prev
 - First-load: AssetPreloader uses windowed decode (WINDOW=12, CONCURRENCY=3) — not a blocking fake timer; timeout more likely network/SW on cold GH Pages. No payload cut this pass.
 - Risks: brief empty Today's kitchen until mount.
 - Verification: no #418 on reload; WhatsNew has no version in heading.
+
+## 2026-09-16 — Finish Review 3 follow-up (finish/cookcap-stepR)
+- Committed: C-29 `tokens.css` + brand-palette rename; C-31 matrix env-gate (no `test.skip`); CI-WORKFLOW.txt; empty skip-allowlist; honest TIER1 FAIL (kill-list cleared via tokens).
+- Left uncommitted: none in this tree.
+- Not merging to main (Tier1 still FAIL: matrix-results / axe / gallery).

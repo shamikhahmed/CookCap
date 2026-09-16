@@ -6,7 +6,7 @@
  * `color` tints the body; faces are always the same warm ink. Sizes are square.
  */
 import type { CSSProperties } from 'react';
-import { CCBrand } from '@/brand/colors';
+import { CCBrand } from '@/brand/brand-palette';
 
 const INK = CCBrand.h_3d2b22;
 const BLUSH = CCBrand.h_e79a86;

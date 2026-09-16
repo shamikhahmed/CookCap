@@ -2,7 +2,7 @@
   "app": "cookcap",
   "version": "3.5.1",
   "swCache": "cookcap-v40",
-  "generatedAt": "2026-09-16T10:33:24.017Z",
+  "generatedAt": "2026-09-16T10:43:38.845Z",
   "status": "FAIL",
   "pass": [
     {
@@ -42,8 +42,16 @@
       "detail": "none"
     },
     {
+      "id": "test-skip",
+      "detail": "none"
+    },
+    {
       "id": "app-ready",
       "detail": "window.__APP_READY__ assigned in product code"
+    },
+    {
+      "id": "ci:main",
+      "detail": "Deploy GitHub Pages @ bc9341f → success https://github.com/shamikhahmed/CookCap/actions/runs/35079716338"
     },
     {
       "id": "tag",
@@ -58,7 +66,23 @@
       "detail": "present"
     },
     {
+      "id": "kill:raw-hex",
+      "detail": "0"
+    },
+    {
+      "id": "kill:sub-11px",
+      "detail": "0"
+    },
+    {
+      "id": "kill:important",
+      "detail": "0"
+    },
+    {
       "id": "kill:native-dialogs",
+      "detail": "0"
+    },
+    {
+      "id": "kill:outline-none",
       "detail": "0"
     },
     {
@@ -75,14 +99,6 @@
     }
   ],
   "fail": [
-    {
-      "id": "test-skip",
-      "detail": "1 hits (allowlist: none)\ne2e/finish-matrix.spec.ts:14: test.skip(!RUN, 'Set FINISH_MATRIX=1');"
-    },
-    {
-      "id": "ci:workflow-name",
-      "detail": "set TIER1_CI_WORKFLOW or qa/finish-loop/CI-WORKFLOW.txt to the exact workflow name"
-    },
     {
       "id": "matrix:results",
       "detail": "missing qa/finish-loop/matrix-results.json (CI must set FINISH_MATRIX=1)"
@@ -102,22 +118,6 @@
     {
       "id": "gallery:manifest",
       "detail": "gallery-manifest.json not found"
-    },
-    {
-      "id": "kill:raw-hex",
-      "detail": "310"
-    },
-    {
-      "id": "kill:sub-11px",
-      "detail": "1"
-    },
-    {
-      "id": "kill:important",
-      "detail": "19"
-    },
-    {
-      "id": "kill:outline-none",
-      "detail": "2"
     }
   ],
   "warn": [
@@ -127,11 +127,11 @@
     }
   ],
   "killList": {
-    "rawHex": 310,
-    "sub11": 1,
-    "important": 19,
+    "rawHex": 0,
+    "sub11": 0,
+    "important": 0,
     "nativeDialog": 0,
-    "outlineNone": 2,
+    "outlineNone": 0,
     "consoleLog": 0,
     "googleFonts": 0,
     "innerHTML": 0

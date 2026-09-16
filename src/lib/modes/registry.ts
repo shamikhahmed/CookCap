@@ -1,6 +1,6 @@
 import type { ModeId } from '@/lib/profiles/types';
 import type { ModeDef } from './types';
-import { CCBrand } from '@/brand/colors';
+import { CCBrand } from '@/brand/brand-palette';
 
 export const MODES: ModeDef[] = [
   {

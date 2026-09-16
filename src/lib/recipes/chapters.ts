@@ -1,5 +1,5 @@
 import type { Chapter } from './types';
-import { CCBrand } from '@/brand/colors';
+import { CCBrand } from '@/brand/brand-palette';
 
 /**
  * Chapters. Order = bookmark tab order + page-turn order.
