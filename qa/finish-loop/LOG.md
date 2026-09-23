@@ -57,3 +57,8 @@ Header, hero eyebrows, icons, nutrition footnote, catalog count, onboarding prev
 
 ## 2026-09-23 — axe nested-interactive
 - CoverLeaf: file input aria-hidden; button owns label; stopPropagation on cover actions.
+
+## 2026-09-23 — live Pages Lighthouse
+- desktop: P82 A96 BP96 LCP~1584 TBT~171 — below perf≥90
+- mobile: P42 A96 BP96 LCP~7400 TBT~1392 — below thresholds
+- Not claiming lighthouse:passing.
