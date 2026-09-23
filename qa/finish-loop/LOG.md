@@ -71,3 +71,5 @@ Header, hero eyebrows, icons, nutrition footnote, catalog count, onboarding prev
 ## 2026-09-23 — matrix + gallery quick
 - finish-matrix: **6/6** clean.
 - GALLERY_QUICK capture hit TimeoutError on “Start cooking” (pointer intercept) but script exit 0 — desktop gallery PNGs refreshed under docs/gallery/; treat as partial.
+
+- gallery-manifest.json refreshed for Tier1 freshness gate.

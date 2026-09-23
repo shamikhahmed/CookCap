@@ -1,0 +1,529 @@
+{
+  "app": "CookCap",
+  "version": "3.5.1",
+  "generated": "2026-09-23T05:53:29.535Z",
+  "galleryRoot": "docs/gallery",
+  "note": "Review 3: committed existing gallery shots; capture-gallery.mjs still flakes on Start cooking click (pointer intercept).",
+  "shots": [
+    {
+      "file": "desktop/00-name-gate.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "00-name-gate",
+      "screenId": "00-name-gate",
+      "label": "name-gate",
+      "route": "book",
+      "path": "docs/gallery/desktop/00-name-gate.png"
+    },
+    {
+      "file": "desktop/00-welcome.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "00-welcome",
+      "screenId": "00-welcome",
+      "label": "welcome",
+      "route": "book",
+      "path": "docs/gallery/desktop/00-welcome.png"
+    },
+    {
+      "file": "desktop/00b-name-gate.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "00b-name-gate",
+      "screenId": "00b-name-gate",
+      "label": "name-gate",
+      "route": "book",
+      "path": "docs/gallery/desktop/00b-name-gate.png"
+    },
+    {
+      "file": "desktop/00c-profile.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "00c-profile",
+      "screenId": "00c-profile",
+      "label": "profile",
+      "route": "book",
+      "path": "docs/gallery/desktop/00c-profile.png"
+    },
+    {
+      "file": "desktop/00d-mode.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "00d-mode",
+      "screenId": "00d-mode",
+      "label": "mode",
+      "route": "book",
+      "path": "docs/gallery/desktop/00d-mode.png"
+    },
+    {
+      "file": "desktop/00e-reveal.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "00e-reveal",
+      "screenId": "00e-reveal",
+      "label": "reveal",
+      "route": "book",
+      "path": "docs/gallery/desktop/00e-reveal.png"
+    },
+    {
+      "file": "desktop/01-cover.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "01-cover",
+      "screenId": "01-cover",
+      "label": "cover",
+      "route": "book",
+      "path": "docs/gallery/desktop/01-cover.png"
+    },
+    {
+      "file": "desktop/02-title.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "02-title",
+      "screenId": "02-title",
+      "label": "title",
+      "route": "book",
+      "path": "docs/gallery/desktop/02-title.png"
+    },
+    {
+      "file": "desktop/03-friends.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "03-friends",
+      "screenId": "03-friends",
+      "label": "friends",
+      "route": "book",
+      "path": "docs/gallery/desktop/03-friends.png"
+    },
+    {
+      "file": "desktop/04-contents.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "04-contents",
+      "screenId": "04-contents",
+      "label": "contents",
+      "route": "book",
+      "path": "docs/gallery/desktop/04-contents.png"
+    },
+    {
+      "file": "desktop/05-recipe.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "05-recipe",
+      "screenId": "05-recipe",
+      "label": "recipe",
+      "route": "book",
+      "path": "docs/gallery/desktop/05-recipe.png"
+    },
+    {
+      "file": "desktop/06-cook-mode.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "06-cook-mode",
+      "screenId": "06-cook-mode",
+      "label": "cook-mode",
+      "route": "book",
+      "path": "docs/gallery/desktop/06-cook-mode.png"
+    },
+    {
+      "file": "desktop/07-search.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "07-search",
+      "screenId": "07-search",
+      "label": "search",
+      "route": "book",
+      "path": "docs/gallery/desktop/07-search.png"
+    },
+    {
+      "file": "desktop/08-shopping.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "08-shopping",
+      "screenId": "08-shopping",
+      "label": "shopping",
+      "route": "book",
+      "path": "docs/gallery/desktop/08-shopping.png"
+    },
+    {
+      "file": "desktop/09-meal-planner.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "09-meal-planner",
+      "screenId": "09-meal-planner",
+      "label": "meal-planner",
+      "route": "book",
+      "path": "docs/gallery/desktop/09-meal-planner.png"
+    },
+    {
+      "file": "desktop/10-recipe-dark.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "10-recipe-dark",
+      "screenId": "10-recipe-dark",
+      "label": "recipe-dark",
+      "route": "book",
+      "path": "docs/gallery/desktop/10-recipe-dark.png"
+    },
+    {
+      "file": "desktop/11-chapter.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "11-chapter",
+      "screenId": "11-chapter",
+      "label": "chapter",
+      "route": "book",
+      "path": "docs/gallery/desktop/11-chapter.png"
+    },
+    {
+      "file": "desktop/13-mode-chooser.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "13-mode-chooser",
+      "screenId": "13-mode-chooser",
+      "label": "mode-chooser",
+      "route": "book",
+      "path": "docs/gallery/desktop/13-mode-chooser.png"
+    },
+    {
+      "file": "desktop/14-profiles.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "14-profiles",
+      "screenId": "14-profiles",
+      "label": "profiles",
+      "route": "book",
+      "path": "docs/gallery/desktop/14-profiles.png"
+    },
+    {
+      "file": "desktop/15-calendar.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "15-calendar",
+      "screenId": "15-calendar",
+      "label": "calendar",
+      "route": "book",
+      "path": "docs/gallery/desktop/15-calendar.png"
+    },
+    {
+      "file": "desktop/16-pantry.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "16-pantry",
+      "screenId": "16-pantry",
+      "label": "pantry",
+      "route": "book",
+      "path": "docs/gallery/desktop/16-pantry.png"
+    },
+    {
+      "file": "desktop/17-recipe-plate.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "17-recipe-plate",
+      "screenId": "17-recipe-plate",
+      "label": "recipe-plate",
+      "route": "book",
+      "path": "docs/gallery/desktop/17-recipe-plate.png"
+    },
+    {
+      "file": "desktop/18-appearance.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "18-appearance",
+      "screenId": "18-appearance",
+      "label": "appearance",
+      "route": "book",
+      "path": "docs/gallery/desktop/18-appearance.png"
+    },
+    {
+      "file": "desktop/19-page-nav.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "19-page-nav",
+      "screenId": "19-page-nav",
+      "label": "page-nav",
+      "route": "book",
+      "path": "docs/gallery/desktop/19-page-nav.png"
+    },
+    {
+      "file": "desktop/grounding-1280-reload.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "grounding-1280-reload",
+      "screenId": "grounding-1280-reload",
+      "label": "grounding-1280-reload",
+      "route": "book",
+      "path": "docs/gallery/desktop/grounding-1280-reload.png"
+    },
+    {
+      "file": "desktop/grounding-1440-reload.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "grounding-1440-reload",
+      "screenId": "grounding-1440-reload",
+      "label": "grounding-1440-reload",
+      "route": "book",
+      "path": "docs/gallery/desktop/grounding-1440-reload.png"
+    },
+    {
+      "file": "desktop/grounding-1920-reload.png",
+      "theme": "light",
+      "viewport": "desktop",
+      "section": "grounding-1920-reload",
+      "screenId": "grounding-1920-reload",
+      "label": "grounding-1920-reload",
+      "route": "book",
+      "path": "docs/gallery/desktop/grounding-1920-reload.png"
+    },
+    {
+      "file": "mobile/00-name-gate.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "00-name-gate",
+      "screenId": "00-name-gate",
+      "label": "name-gate",
+      "route": "book",
+      "path": "docs/gallery/mobile/00-name-gate.png"
+    },
+    {
+      "file": "mobile/00-welcome.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "00-welcome",
+      "screenId": "00-welcome",
+      "label": "welcome",
+      "route": "book",
+      "path": "docs/gallery/mobile/00-welcome.png"
+    },
+    {
+      "file": "mobile/00b-name-gate.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "00b-name-gate",
+      "screenId": "00b-name-gate",
+      "label": "name-gate",
+      "route": "book",
+      "path": "docs/gallery/mobile/00b-name-gate.png"
+    },
+    {
+      "file": "mobile/00c-profile.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "00c-profile",
+      "screenId": "00c-profile",
+      "label": "profile",
+      "route": "book",
+      "path": "docs/gallery/mobile/00c-profile.png"
+    },
+    {
+      "file": "mobile/00d-mode.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "00d-mode",
+      "screenId": "00d-mode",
+      "label": "mode",
+      "route": "book",
+      "path": "docs/gallery/mobile/00d-mode.png"
+    },
+    {
+      "file": "mobile/00e-reveal.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "00e-reveal",
+      "screenId": "00e-reveal",
+      "label": "reveal",
+      "route": "book",
+      "path": "docs/gallery/mobile/00e-reveal.png"
+    },
+    {
+      "file": "mobile/01-cover.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "01-cover",
+      "screenId": "01-cover",
+      "label": "cover",
+      "route": "book",
+      "path": "docs/gallery/mobile/01-cover.png"
+    },
+    {
+      "file": "mobile/02-title.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "02-title",
+      "screenId": "02-title",
+      "label": "title",
+      "route": "book",
+      "path": "docs/gallery/mobile/02-title.png"
+    },
+    {
+      "file": "mobile/03-friends.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "03-friends",
+      "screenId": "03-friends",
+      "label": "friends",
+      "route": "book",
+      "path": "docs/gallery/mobile/03-friends.png"
+    },
+    {
+      "file": "mobile/04-contents.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "04-contents",
+      "screenId": "04-contents",
+      "label": "contents",
+      "route": "book",
+      "path": "docs/gallery/mobile/04-contents.png"
+    },
+    {
+      "file": "mobile/05-recipe.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "05-recipe",
+      "screenId": "05-recipe",
+      "label": "recipe",
+      "route": "book",
+      "path": "docs/gallery/mobile/05-recipe.png"
+    },
+    {
+      "file": "mobile/06-cook-mode.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "06-cook-mode",
+      "screenId": "06-cook-mode",
+      "label": "cook-mode",
+      "route": "book",
+      "path": "docs/gallery/mobile/06-cook-mode.png"
+    },
+    {
+      "file": "mobile/07-search.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "07-search",
+      "screenId": "07-search",
+      "label": "search",
+      "route": "book",
+      "path": "docs/gallery/mobile/07-search.png"
+    },
+    {
+      "file": "mobile/08-shopping.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "08-shopping",
+      "screenId": "08-shopping",
+      "label": "shopping",
+      "route": "book",
+      "path": "docs/gallery/mobile/08-shopping.png"
+    },
+    {
+      "file": "mobile/09-meal-planner.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "09-meal-planner",
+      "screenId": "09-meal-planner",
+      "label": "meal-planner",
+      "route": "book",
+      "path": "docs/gallery/mobile/09-meal-planner.png"
+    },
+    {
+      "file": "mobile/10-recipe-dark.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "10-recipe-dark",
+      "screenId": "10-recipe-dark",
+      "label": "recipe-dark",
+      "route": "book",
+      "path": "docs/gallery/mobile/10-recipe-dark.png"
+    },
+    {
+      "file": "mobile/11-chapter.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "11-chapter",
+      "screenId": "11-chapter",
+      "label": "chapter",
+      "route": "book",
+      "path": "docs/gallery/mobile/11-chapter.png"
+    },
+    {
+      "file": "mobile/12-tabs-sheet.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "12-tabs-sheet",
+      "screenId": "12-tabs-sheet",
+      "label": "tabs-sheet",
+      "route": "book",
+      "path": "docs/gallery/mobile/12-tabs-sheet.png"
+    },
+    {
+      "file": "mobile/13-mode-chooser.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "13-mode-chooser",
+      "screenId": "13-mode-chooser",
+      "label": "mode-chooser",
+      "route": "book",
+      "path": "docs/gallery/mobile/13-mode-chooser.png"
+    },
+    {
+      "file": "mobile/14-profiles.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "14-profiles",
+      "screenId": "14-profiles",
+      "label": "profiles",
+      "route": "book",
+      "path": "docs/gallery/mobile/14-profiles.png"
+    },
+    {
+      "file": "mobile/15-calendar.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "15-calendar",
+      "screenId": "15-calendar",
+      "label": "calendar",
+      "route": "book",
+      "path": "docs/gallery/mobile/15-calendar.png"
+    },
+    {
+      "file": "mobile/16-pantry.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "16-pantry",
+      "screenId": "16-pantry",
+      "label": "pantry",
+      "route": "book",
+      "path": "docs/gallery/mobile/16-pantry.png"
+    },
+    {
+      "file": "mobile/17-recipe-plate.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "17-recipe-plate",
+      "screenId": "17-recipe-plate",
+      "label": "recipe-plate",
+      "route": "book",
+      "path": "docs/gallery/mobile/17-recipe-plate.png"
+    },
+    {
+      "file": "mobile/18-appearance.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "18-appearance",
+      "screenId": "18-appearance",
+      "label": "appearance",
+      "route": "book",
+      "path": "docs/gallery/mobile/18-appearance.png"
+    },
+    {
+      "file": "mobile/19-page-nav.png",
+      "theme": "light",
+      "viewport": "mobile",
+      "section": "19-page-nav",
+      "screenId": "19-page-nav",
+      "label": "page-nav",
+      "route": "book",
+      "path": "docs/gallery/mobile/19-page-nav.png"
+    }
+  ]
+}
