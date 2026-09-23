@@ -1,63 +1,10 @@
 {
-  "url": "http://127.0.0.1:55737/?demo=1",
+  "url": "http://127.0.0.1:54798/?demo=1",
   "route": "home-demo",
   "theme": "dark",
-  "timestamp": "2026-09-16T11:20:26.394Z",
-  "violations": [
-    {
-      "id": "nested-interactive",
-      "impact": "serious",
-      "tags": [
-        "cat.keyboard",
-        "wcag2a",
-        "wcag412",
-        "TTv5",
-        "TT6.a",
-        "EN-301-549",
-        "EN-9.4.1.2",
-        "RGAAv4",
-        "RGAA-7.1.1"
-      ],
-      "description": "Ensure interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
-      "help": "Interactive controls must not be nested",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/nested-interactive?application=playwright",
-      "nodes": [
-        {
-          "any": [
-            {
-              "id": "no-focusable-content",
-              "data": null,
-              "relatedNodes": [
-                {
-                  "html": "<input type=\"file\" accept=\"image/*\" class=\"sr-only\" aria-label=\"Add cover photo\">",
-                  "target": [
-                    "input[type=\"file\"]"
-                  ]
-                },
-                {
-                  "html": "<button type=\"button\" class=\"min-h-11 rounded-full border border-[color:var(--color-gold)]/50 bg-black/35 px-3 py-1.5 text-xs uppercase tracking-[0.2em] text-[color:var(--color-gold)] backdrop-blur-sm\">Add photo</button>",
-                  "target": [
-                    ".border-\\[color\\:var\\(--color-gold\\)\\]\\/50"
-                  ]
-                }
-              ],
-              "impact": "serious",
-              "message": "Element has focusable descendants"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": "serious",
-          "html": "<div data-tap-advance=\"true\" role=\"button\" tabindex=\"0\" class=\"leather relative flex h-full w-full cursor-pointer flex-col items-center justify-center overflow-hidden text-center\" aria-label=\"Ayesha Cooks — Tap to open\">",
-          "target": [
-            ".leather"
-          ],
-          "failureSummary": "Fix any of the following:\n  Element has focusable descendants"
-        }
-      ]
-    }
-  ],
-  "passes": 40,
+  "timestamp": "2026-09-23T05:30:32.513Z",
+  "violations": [],
+  "passes": 39,
   "incomplete": 1,
-  "inapplicable": 49
+  "inapplicable": 50
 }

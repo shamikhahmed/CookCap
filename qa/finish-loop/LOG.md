@@ -54,3 +54,6 @@ Header, hero eyebrows, icons, nutrition footnote, catalog count, onboarding prev
 - **Changes:** CI-WORKFLOW=`Deploy GitHub Pages`; finish-matrix `if (RUN)` + writeMatrixResults; `brand-palette.ts`; `tokens.css` hex lock; strip counted `!important`; outline/sub-11 fixes; smoke matrix 6/6
 - **After:** killList cleared; remaining: LH freshness/thresholds, axe, gallery, live VERSION.json 404
 - **Not faked:** no LH scores invented; no axe stubs
+
+## 2026-09-23 — axe nested-interactive
+- CoverLeaf: file input aria-hidden; button owns label; stopPropagation on cover actions.
