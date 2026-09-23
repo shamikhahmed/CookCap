@@ -2,7 +2,7 @@
   "app": "cookcap",
   "version": "3.5.1",
   "swCache": "cookcap-v40",
-  "generatedAt": "2026-09-23T05:59:39.723Z",
+  "generatedAt": "2026-09-23T06:08:38.022Z",
   "status": "FAIL",
   "pass": [
     {
@@ -70,8 +70,16 @@
       "detail": "6 shots (need routes×viewports×themes = 6)"
     },
     {
+      "id": "matrix:freshness",
+      "detail": "2026-09-23T06:00:03.577Z"
+    },
+    {
       "id": "axe:serious-critical",
       "detail": "2 JSON clean"
+    },
+    {
+      "id": "gallery:freshness",
+      "detail": "docs/screenshots/gallery/gallery-manifest.json @ 2026-09-23T10:59:39+05:00"
     },
     {
       "id": "sinks:SINKS.md",
@@ -112,10 +120,6 @@
   ],
   "fail": [
     {
-      "id": "matrix:freshness",
-      "detail": "matrix 2026-09-23T05:51:53.526Z before last UI commit 2026-09-23T10:54:23+05:00"
-    },
-    {
       "id": "lighthouse:home-demo-desktop.json",
       "detail": "perf 51 a11y 100 bp 100 LCP 16973.22346053149 TBT 306.5 CLS 0.00003254899600151767"
     },
@@ -126,10 +130,6 @@
     {
       "id": "lighthouse:passing",
       "detail": "0/2 files meet thresholds"
-    },
-    {
-      "id": "gallery:freshness",
-      "detail": "gallery 2026-09-23T10:53:45+05:00 before last UI commit 2026-09-23T10:54:23+05:00"
     }
   ],
   "warn": [
