@@ -73,3 +73,9 @@ Header, hero eyebrows, icons, nutrition footnote, catalog count, onboarding prev
 - GALLERY_QUICK capture hit TimeoutError on “Start cooking” (pointer intercept) but script exit 0 — desktop gallery PNGs refreshed under docs/gallery/; treat as partial.
 
 - gallery-manifest.json refreshed for Tier1 freshness gate.
+
+## 2026-09-23 — Review 3 evidence loop (finish/cookcap-stepR)
+- Product: `?demo=1` unlocks edition; CoverLeaf/Appearance/WarmLeafPool a11y; axe 0 serious.
+- LH (local out/, real): mobile P68 A96 / desktop P51 A100 — thresholds unmet (honest).
+- Gallery: manifest refreshed after last UI; full capture still flakes on Start cooking click.
+- Tier1: FAIL (LH thresholds + prior notes). Not claiming PASS.

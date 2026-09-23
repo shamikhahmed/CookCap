@@ -1,7 +1,7 @@
 {
   "app": "CookCap",
   "version": "3.5.1",
-  "generated": "2026-09-23T05:53:29.535Z",
+  "generated": "2026-09-23T05:59:37.248Z",
   "galleryRoot": "docs/gallery",
   "note": "Review 3: committed existing gallery shots; capture-gallery.mjs still flakes on Start cooking click (pointer intercept).",
   "shots": [
