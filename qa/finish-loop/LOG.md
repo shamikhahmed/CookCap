@@ -62,3 +62,8 @@ Header, hero eyebrows, icons, nutrition footnote, catalog count, onboarding prev
 - desktop: P82 A96 BP96 LCP~1584 TBT~171 — below perf≥90
 - mobile: P42 A96 BP96 LCP~7400 TBT~1392 — below thresholds
 - Not claiming lighthouse:passing.
+
+## 2026-09-23 — axe clean + LH mobile
+- CoverLeaf nested-interactive + Appearance 44px + WarmLeafPool inert (not aria-hidden).
+- axe home light/dark: 0 serious/critical.
+- LH mobile local/live still ~P42–44 — not claiming lighthouse:passing; desktop JSON pending re-run.
