@@ -2,7 +2,7 @@
 **Agent:** Builder-CookCap  
 **Updated:** 2026-10-14T11:28:00Z  
 **Phase:** F — hand Auditor for CK-V3-2 ✅ VERIFIED (then Phase I release 3.6.0)  
-**Branch:** `perfection/cookcap-v3` @ tip (will stamp after push)  
+**Branch:** `perfection/cookcap-v3` @ `d5e1eaa99fd6730881937f123815614cc8dc0523`  
 **Base:** `main` @ `c43a70c`  
 **Remote:** `origin/perfection/cookcap-v3` (no force)
 
