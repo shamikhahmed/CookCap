@@ -35,8 +35,8 @@ Auditor: ✅ VERIFIED 2026-10-14 — Phase 0 merge on lineage
 
 ### CK-V3-5 — screen-gallery.html both themes
 severity: P2     status: ✅ FIXED (Gallery Builder 2026-10-14)
-Where: `screen-gallery.html` + `docs/screenshots/gallery/gallery-manifest.json` · dark book chrome desktop+mobile (9 dark / 61 total)  
-Fix: `capture-gallery.mjs` dark pass + hub capture; recipe step flaky on live → partial chrome OK for Wave G  
+Where: hub `/?demo=1` · `e2e/gallery-v3.spec.ts` · schema 2 manifest  
+Evidence: **18** shots (Cover/Contents/Recipe × light/dark × iphone/ipad/mac) · **9** dark · G17 ✅  
 Auditor: —
 
 ### CK-V3-6 — hub CookCap screenshot placeholder

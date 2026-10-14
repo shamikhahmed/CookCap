@@ -13,6 +13,7 @@
     "rematch:heroes": "node scripts/rematch-heroes.mjs",
     "lock:heroes": "node scripts/lock-heroes.mjs",
     "gallery": "node scripts/capture-gallery.mjs",
+    "gallery:v3:hub": "GALLERY_BASE_URL=https://shamikhahmed.github.io/CookCap CAPTURE_GALLERY=1 playwright test --config=playwright.gallery.config.ts",
     "gate:anti-2d": "node scripts/assert-anti-2d.mjs",
     "gate:wood": "node scripts/assert-wood-reader.mjs",
     "gate:recipes": "node scripts/assert-recipe-linkage.mjs",

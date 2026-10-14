@@ -1,10 +1,260 @@
 {
   "app": "CookCap",
   "version": "3.6.1",
-  "generated": "2026-10-14T12:39:39.023Z",
-  "galleryRoot": "docs/gallery",
-  "note": "Perfection v3: light + dark book chrome; viewer at /screen-gallery.html",
+  "capturedAt": "2026-10-14T13:03:47.551Z",
+  "accent": "#8b4513",
+  "schema": 2,
+  "note": "v3 hub capture — Cover/Contents/Recipe × light/dark × iphone/ipad/mac (CK-V3-5). Legacy docs/gallery PNG index retained under legacyShots.",
+  "legacyGalleryRoot": "docs/gallery",
+  "v3": {
+    "themesRequired": [
+      "light",
+      "dark"
+    ],
+    "devicesRequired": [
+      "iphone",
+      "ipad",
+      "mac"
+    ],
+    "darkShots": 9
+  },
   "shots": [
+    {
+      "id": "book-contents-demo",
+      "group": "Book",
+      "screen": "Contents",
+      "state": "demo",
+      "theme": "dark",
+      "device": "ipad",
+      "file": "dark/ipad/book--contents--demo.webp",
+      "route": "/?demo=1",
+      "caption": "The Chapters — full TOC and occasions.",
+      "w": 2360,
+      "h": 1640
+    },
+    {
+      "id": "book-cover-demo",
+      "group": "Book",
+      "screen": "Cover",
+      "state": "demo",
+      "theme": "dark",
+      "device": "ipad",
+      "file": "dark/ipad/book--cover--demo.webp",
+      "route": "/?demo=1",
+      "caption": "Leather cover — Ayesha Cooks demo edition.",
+      "w": 2360,
+      "h": 1640
+    },
+    {
+      "id": "book-recipe-demo",
+      "group": "Book",
+      "screen": "Recipe",
+      "state": "demo",
+      "theme": "dark",
+      "device": "ipad",
+      "file": "dark/ipad/book--recipe--demo.webp",
+      "route": "/?demo=1",
+      "caption": "Primary recipe leaf (Butter Chicken).",
+      "w": 2360,
+      "h": 1640
+    },
+    {
+      "id": "book-contents-demo",
+      "group": "Book",
+      "screen": "Contents",
+      "state": "demo",
+      "theme": "dark",
+      "device": "iphone",
+      "file": "dark/iphone/book--contents--demo.webp",
+      "route": "/?demo=1",
+      "caption": "The Chapters — full TOC and occasions.",
+      "w": 1170,
+      "h": 2532
+    },
+    {
+      "id": "book-cover-demo",
+      "group": "Book",
+      "screen": "Cover",
+      "state": "demo",
+      "theme": "dark",
+      "device": "iphone",
+      "file": "dark/iphone/book--cover--demo.webp",
+      "route": "/?demo=1",
+      "caption": "Leather cover — Ayesha Cooks demo edition.",
+      "w": 1170,
+      "h": 2532
+    },
+    {
+      "id": "book-recipe-demo",
+      "group": "Book",
+      "screen": "Recipe",
+      "state": "demo",
+      "theme": "dark",
+      "device": "iphone",
+      "file": "dark/iphone/book--recipe--demo.webp",
+      "route": "/?demo=1",
+      "caption": "Primary recipe leaf (Butter Chicken).",
+      "w": 1170,
+      "h": 2532
+    },
+    {
+      "id": "book-contents-demo",
+      "group": "Book",
+      "screen": "Contents",
+      "state": "demo",
+      "theme": "dark",
+      "device": "mac",
+      "file": "dark/mac/book--contents--demo.webp",
+      "route": "/?demo=1",
+      "caption": "The Chapters — full TOC and occasions.",
+      "w": 2880,
+      "h": 1800
+    },
+    {
+      "id": "book-cover-demo",
+      "group": "Book",
+      "screen": "Cover",
+      "state": "demo",
+      "theme": "dark",
+      "device": "mac",
+      "file": "dark/mac/book--cover--demo.webp",
+      "route": "/?demo=1",
+      "caption": "Leather cover — Ayesha Cooks demo edition.",
+      "w": 2880,
+      "h": 1800
+    },
+    {
+      "id": "book-recipe-demo",
+      "group": "Book",
+      "screen": "Recipe",
+      "state": "demo",
+      "theme": "dark",
+      "device": "mac",
+      "file": "dark/mac/book--recipe--demo.webp",
+      "route": "/?demo=1",
+      "caption": "Primary recipe leaf (Butter Chicken).",
+      "w": 2880,
+      "h": 1800
+    },
+    {
+      "id": "book-contents-demo",
+      "group": "Book",
+      "screen": "Contents",
+      "state": "demo",
+      "theme": "light",
+      "device": "ipad",
+      "file": "light/ipad/book--contents--demo.webp",
+      "route": "/?demo=1",
+      "caption": "The Chapters — full TOC and occasions.",
+      "w": 2360,
+      "h": 1640
+    },
+    {
+      "id": "book-cover-demo",
+      "group": "Book",
+      "screen": "Cover",
+      "state": "demo",
+      "theme": "light",
+      "device": "ipad",
+      "file": "light/ipad/book--cover--demo.webp",
+      "route": "/?demo=1",
+      "caption": "Leather cover — Ayesha Cooks demo edition.",
+      "w": 2360,
+      "h": 1640
+    },
+    {
+      "id": "book-recipe-demo",
+      "group": "Book",
+      "screen": "Recipe",
+      "state": "demo",
+      "theme": "light",
+      "device": "ipad",
+      "file": "light/ipad/book--recipe--demo.webp",
+      "route": "/?demo=1",
+      "caption": "Primary recipe leaf (Butter Chicken).",
+      "w": 2360,
+      "h": 1640
+    },
+    {
+      "id": "book-contents-demo",
+      "group": "Book",
+      "screen": "Contents",
+      "state": "demo",
+      "theme": "light",
+      "device": "iphone",
+      "file": "light/iphone/book--contents--demo.webp",
+      "route": "/?demo=1",
+      "caption": "The Chapters — full TOC and occasions.",
+      "w": 1170,
+      "h": 2532
+    },
+    {
+      "id": "book-cover-demo",
+      "group": "Book",
+      "screen": "Cover",
+      "state": "demo",
+      "theme": "light",
+      "device": "iphone",
+      "file": "light/iphone/book--cover--demo.webp",
+      "route": "/?demo=1",
+      "caption": "Leather cover — Ayesha Cooks demo edition.",
+      "w": 1170,
+      "h": 2532
+    },
+    {
+      "id": "book-recipe-demo",
+      "group": "Book",
+      "screen": "Recipe",
+      "state": "demo",
+      "theme": "light",
+      "device": "iphone",
+      "file": "light/iphone/book--recipe--demo.webp",
+      "route": "/?demo=1",
+      "caption": "Primary recipe leaf (Butter Chicken).",
+      "w": 1170,
+      "h": 2532
+    },
+    {
+      "id": "book-contents-demo",
+      "group": "Book",
+      "screen": "Contents",
+      "state": "demo",
+      "theme": "light",
+      "device": "mac",
+      "file": "light/mac/book--contents--demo.webp",
+      "route": "/?demo=1",
+      "caption": "The Chapters — full TOC and occasions.",
+      "w": 2880,
+      "h": 1800
+    },
+    {
+      "id": "book-cover-demo",
+      "group": "Book",
+      "screen": "Cover",
+      "state": "demo",
+      "theme": "light",
+      "device": "mac",
+      "file": "light/mac/book--cover--demo.webp",
+      "route": "/?demo=1",
+      "caption": "Leather cover — Ayesha Cooks demo edition.",
+      "w": 2880,
+      "h": 1800
+    },
+    {
+      "id": "book-recipe-demo",
+      "group": "Book",
+      "screen": "Recipe",
+      "state": "demo",
+      "theme": "light",
+      "device": "mac",
+      "file": "light/mac/book--recipe--demo.webp",
+      "route": "/?demo=1",
+      "caption": "Primary recipe leaf (Butter Chicken).",
+      "w": 2880,
+      "h": 1800
+    }
+  ],
+  "legacyShots": [
     {
       "file": "desktop/00-name-gate.png",
       "theme": "light",
@@ -615,19 +865,5 @@
       "route": "book",
       "path": "docs/gallery/dark/mobile/04-contents.png"
     }
-  ],
-  "v3": {
-    "schema": "pending-v2",
-    "themesRequired": [
-      "light",
-      "dark"
-    ],
-    "devicesRequired": [
-      "iphone",
-      "ipad-landscape",
-      "desktop"
-    ],
-    "darkShots": 9,
-    "note": "CK-V3-5 dark book chrome captured (Wave G)"
-  }
+  ]
 }
