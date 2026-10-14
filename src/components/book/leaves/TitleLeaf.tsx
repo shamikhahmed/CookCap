@@ -6,12 +6,15 @@ import { useApp } from '@/components/app/AppStore';
  * Title page after the cover — personalized "{Name} Cooks" + kitchen doodles.
  */
 export function TitleLeaf() {
-  const { edition } = useApp();
-  const nameLine = edition.coverLine1;
-  const cooksLine = edition.coverLine2;
-  const loveLine = edition.named
-    ? `— with love, ${edition.ownerName}`
-    : '— with love, from our kitchen';
+  const { edition, editionReady } = useApp();
+  // Stable SSR/first-paint copy; personalize only after editionReady (CK-V3-1 / 3.6.1).
+  const nameLine = editionReady ? edition.coverLine1 : 'Our Family';
+  const cooksLine = editionReady ? edition.coverLine2 : 'Cookbook';
+  const eyebrow = editionReady ? edition.coverEyebrow : 'A Family Cookbook';
+  const loveLine =
+    editionReady && edition.named
+      ? `— with love, ${edition.ownerName}`
+      : '— with love, from our kitchen';
 
   return (
     <div
@@ -26,12 +29,9 @@ export function TitleLeaf() {
 
       <div className="cover-rise relative z-10">
         <p className="mb-3 font-serif text-sm uppercase tracking-[0.5em] text-[color:var(--color-ink-faint)]">
-          {edition.coverEyebrow}
+          {eyebrow}
         </p>
-        <h1
-          className="text-balance font-serif text-[clamp(3rem,12vw,5.5rem)] font-black italic leading-[0.9] tracking-tight text-[color:var(--color-ink)]"
-          suppressHydrationWarning
-        >
+        <h1 className="text-balance font-serif text-[clamp(3rem,12vw,5.5rem)] font-black italic leading-[0.9] tracking-tight text-[color:var(--color-ink)]">
           {nameLine}
           <br />
           <span className="text-[color:var(--color-accent)]">{cooksLine}</span>
@@ -46,12 +46,7 @@ export function TitleLeaf() {
         <p className="mx-auto max-w-xs font-serif text-lg italic text-[color:var(--color-ink-soft)] text-balance">
           Recipes, stories, and a little mess — written down so they’re never lost.
         </p>
-        <p
-          className="mt-6 font-serif text-base text-[color:var(--color-ink-faint)]"
-          suppressHydrationWarning
-        >
-          {loveLine}
-        </p>
+        <p className="mt-6 font-serif text-base text-[color:var(--color-ink-faint)]">{loveLine}</p>
       </div>
     </div>
   );

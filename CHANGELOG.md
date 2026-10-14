@@ -1,3 +1,8 @@
+## 3.6.1 — 2026-10-14
+
+- Harden hydration against React #418 on live Pages (edition/ideas gated until post-mount)
+- SW → `cookcap-v42`
+
 ## 3.6.0 — 2026-10-14
 
 Perfection Loop v3 finish release (Wave A).

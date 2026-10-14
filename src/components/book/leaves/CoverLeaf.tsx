@@ -19,7 +19,11 @@ import { getCatalogRecipeCount } from '@/lib/recipes/count';
 export function CoverLeaf() {
   const { next } = useBook();
   const { edition, editionReady, coverUrl, setCoverPhoto, clearCoverPhoto } = useApp();
-  const openLabel = `${edition.coverLine1} ${edition.coverLine2} — Tap to open`;
+  // CK-V3-1 / 3.6.1: keep cover copy out of the DOM until edition resolves post-mount
+  // so SSR HTML never disagrees with the first client tree (React #418).
+  const openLabel = editionReady
+    ? `${edition.coverLine1} ${edition.coverLine2} — Tap to open`
+    : 'Open cookbook';
 
   return (
     <div
@@ -57,24 +61,25 @@ export function CoverLeaf() {
         className="cover-rise pointer-events-none relative z-10 px-10 transition-opacity duration-300"
         style={{ opacity: editionReady ? 1 : 0 }}
       >
-        <p className="gold-foil mb-6 font-sans text-xs font-semibold tracking-[0.02em]" suppressHydrationWarning>
-          {edition.coverEyebrow}
-        </p>
-        <h1
-          className="gold-foil text-balance font-serif text-[clamp(2.8rem,9vw,4.6rem)] font-black italic leading-[0.92] tracking-tight"
-          suppressHydrationWarning
-        >
-          {edition.coverLine1}
-          <br />
-          {edition.coverLine2}
-        </h1>
-        <div className="mx-auto my-8 h-px w-24 bg-gradient-to-r from-transparent via-[color:var(--color-gold)]/60 to-transparent" />
-        <p className="gold-foil font-sans text-xs font-semibold tracking-[0.02em] opacity-80" suppressHydrationWarning>
-          {edition.tagline}
-        </p>
-        <p className="gold-foil mt-3 font-sans text-xs font-semibold tracking-[0.02em] opacity-70" suppressHydrationWarning>
-          {getCatalogRecipeCount()} recipes
-        </p>
+        {editionReady ? (
+          <>
+            <p className="gold-foil mb-6 font-sans text-xs font-semibold tracking-[0.02em]">
+              {edition.coverEyebrow}
+            </p>
+            <h1 className="gold-foil text-balance font-serif text-[clamp(2.8rem,9vw,4.6rem)] font-black italic leading-[0.92] tracking-tight">
+              {edition.coverLine1}
+              <br />
+              {edition.coverLine2}
+            </h1>
+            <div className="mx-auto my-8 h-px w-24 bg-gradient-to-r from-transparent via-[color:var(--color-gold)]/60 to-transparent" />
+            <p className="gold-foil font-sans text-xs font-semibold tracking-[0.02em] opacity-80">
+              {edition.tagline}
+            </p>
+            <p className="gold-foil mt-3 font-sans text-xs font-semibold tracking-[0.02em] opacity-70">
+              {getCatalogRecipeCount()} recipes
+            </p>
+          </>
+        ) : null}
       </div>
 
       <div className="absolute bottom-[4.5rem] z-30 flex gap-2" data-no-flip>

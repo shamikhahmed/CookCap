@@ -14,11 +14,13 @@ import { getCatalogRecipeCount } from '@/lib/recipes/count';
 /** Table of contents + today’s kitchen ideas — one scroll, no stuck hero. */
 export function ContentsLeaf() {
   const { goToChapter, goToRecipe } = useBook();
-  const { allRecipes, edition } = useApp();
-  // Client-only: ideasForToday uses local hour/date — SSR must stay deterministic (C-37).
+  const { allRecipes, edition, editionReady } = useApp();
+  // Client-only: ideasForToday uses local hour/date — SSR must stay deterministic (C-37 / CK-V3-1).
   const [ideas, setIdeas] = useState<CookIdea[]>([]);
+  const [ideasReady, setIdeasReady] = useState(false);
   useEffect(() => {
     setIdeas(ideasForToday(allRecipes));
+    setIdeasReady(true);
   }, [allRecipes]);
 
   return (
@@ -39,11 +41,8 @@ export function ContentsLeaf() {
         <div className="mt-3 h-px w-full bg-[color:var(--color-line)]" />
       </header>
 
-      {/* Tonight / today ideas — filled after mount only (CK-V3-1 / C-37). */}
-      <section
-        className="mb-4 shrink-0 rounded-xl border border-[color:var(--color-line)]/80 bg-[color:var(--color-paper-sunk)]/55 px-3 py-2.5 sm:px-4 sm:py-3"
-        suppressHydrationWarning
-      >
+      {/* Tonight / today ideas — shell only until after mount (avoids #418 vs stale HTML). */}
+      <section className="mb-4 shrink-0 rounded-xl border border-[color:var(--color-line)]/80 bg-[color:var(--color-paper-sunk)]/55 px-3 py-2.5 sm:px-4 sm:py-3">
         <div className="flex items-baseline justify-between gap-2">
           <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--color-accent)]">
             Today’s kitchen
@@ -52,29 +51,33 @@ export function ContentsLeaf() {
             What shall we cook?
           </p>
         </div>
-        <ul className="mt-2 divide-y divide-[color:var(--color-line)]/60" suppressHydrationWarning>
-          {ideas.map((idea) => (
-            <li key={idea.recipe.id}>
-              <button
-                type="button"
-                onClick={() => goToRecipe(idea.recipe.id)}
-                className="group flex w-full items-center gap-2.5 py-2 text-left transition-colors first:pt-1.5 last:pb-1 hover:bg-[color:var(--color-paper-raised)]/80"
-              >
-                <span className="w-14 shrink-0 text-xs font-medium uppercase tracking-wide text-[color:var(--color-ink-faint)] sm:w-16">
-                  {idea.eyebrow}
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block truncate font-serif text-[0.95rem] text-[color:var(--color-ink)] group-hover:text-[color:var(--color-accent)] sm:text-base">
-                    {idea.recipe.title}
+        {ideasReady ? (
+          <ul className="mt-2 divide-y divide-[color:var(--color-line)]/60">
+            {ideas.map((idea) => (
+              <li key={idea.recipe.id}>
+                <button
+                  type="button"
+                  onClick={() => goToRecipe(idea.recipe.id)}
+                  className="group flex w-full items-center gap-2.5 py-2 text-left transition-colors first:pt-1.5 last:pb-1 hover:bg-[color:var(--color-paper-raised)]/80"
+                >
+                  <span className="w-14 shrink-0 text-xs font-medium uppercase tracking-wide text-[color:var(--color-ink-faint)] sm:w-16">
+                    {idea.eyebrow}
                   </span>
-                  <span className="mt-0.5 hidden truncate text-xs text-[color:var(--color-ink-faint)] sm:block">
-                    {idea.why}
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate font-serif text-[0.95rem] text-[color:var(--color-ink)] group-hover:text-[color:var(--color-accent)] sm:text-base">
+                      {idea.recipe.title}
+                    </span>
+                    <span className="mt-0.5 hidden truncate text-xs text-[color:var(--color-ink-faint)] sm:block">
+                      {idea.why}
+                    </span>
                   </span>
-                </span>
-              </button>
-            </li>
-          ))}
-        </ul>
+                </button>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div className="mt-2 h-[4.5rem]" aria-hidden />
+        )}
       </section>
 
       <section className="mb-4 shrink-0">
@@ -133,7 +136,11 @@ export function ContentsLeaf() {
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="block truncate font-serif text-lg text-[color:var(--color-ink)]">
-                    {c.id === 'favorites' ? favoritesLabel(edition) : c.title}
+                    {c.id === 'favorites'
+                      ? editionReady
+                        ? favoritesLabel(edition)
+                        : 'Favorites'
+                      : c.title}
                   </span>
                   <span className="block truncate text-xs text-[color:var(--color-ink-faint)]">
                     {c.subtitle}

@@ -315,6 +315,7 @@ function TopBar({
     theme,
     setTheme,
     edition,
+    editionReady,
     soundOn,
     setSoundOn,
     shoppingCount,
@@ -381,19 +382,13 @@ function TopBar({
           <span className="block whitespace-nowrap font-serif text-base font-semibold italic tracking-tight sm:text-lg">
             {PRODUCT_NAME}
           </span>
-          {/* Book title only ≥ 600px (COOK-P1-01) */}
-          {edition.bookTitle ? (
-            <span
-              suppressHydrationWarning
-              className="mt-0.5 hidden whitespace-nowrap text-xs font-medium tracking-[0.02em] text-[color:var(--color-ink-faint)] min-[600px]:block"
-            >
+          {/* Book title only ≥ 600px (COOK-P1-01); wait for editionReady to avoid #418 */}
+          {editionReady && edition.bookTitle ? (
+            <span className="mt-0.5 hidden whitespace-nowrap text-xs font-medium tracking-[0.02em] text-[color:var(--color-ink-faint)] min-[600px]:block">
               {edition.bookTitle}
             </span>
-          ) : kitchen ? (
-            <span
-              suppressHydrationWarning
-              className="mt-0.5 hidden whitespace-nowrap text-xs font-medium tracking-[0.02em] text-[color:var(--color-ink-faint)] min-[600px]:block"
-            >
+          ) : editionReady && kitchen ? (
+            <span className="mt-0.5 hidden whitespace-nowrap text-xs font-medium tracking-[0.02em] text-[color:var(--color-ink-faint)] min-[600px]:block">
               {kitchen.replace(/^—\s*/, '')}
             </span>
           ) : null}
