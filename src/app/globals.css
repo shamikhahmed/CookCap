@@ -1161,11 +1161,12 @@
   min-height: calc(var(--footer-h) + var(--safe-b));
 }
 
-/* Page scrubber — 44px hit via tall transparent track; visual thumb stays compact */
+/* Page scrubber — 44×44 hit (CK-V3-2); flex footer must not shrink width below 44 */
 .page-scrub {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
+  min-width: 44px;
   height: 44px;
   border-radius: 9999px;
   background: transparent;

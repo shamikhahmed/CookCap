@@ -656,7 +656,9 @@ function BottomBar() {
         <Icon name="home" size={20} />
       </IconBtn>
 
+      {/* Hide ±5 jumps on phone — frees width so page-scrub stays ≥44px (CK-V3-2) without overflow */}
       <IconBtn
+        className="hidden sm:grid"
         label={`Jump back ${JUMP} pages`}
         onClick={() => goToLeaf(index - JUMP)}
         disabled={atStart || busy}
@@ -668,7 +670,8 @@ function BottomBar() {
         <Icon name="arrow-left" size={20} />
       </IconBtn>
 
-      <label className="relative mx-1 flex h-11 min-w-0 flex-1 items-center px-1 sm:mx-2">
+      {/* CK-V3-2: min-w-11 so flex shrink cannot leave the range INPUT under 32×44 on android */}
+      <label className="relative mx-1 flex h-11 min-w-11 flex-1 items-center px-1 sm:mx-2">
         <span className="sr-only">Scrub pages</span>
         <input
           type="range"
@@ -756,6 +759,7 @@ function BottomBar() {
       </IconBtn>
 
       <IconBtn
+        className="hidden sm:grid"
         label={`Jump forward ${JUMP} pages`}
         onClick={() => goToLeaf(index + JUMP)}
         disabled={atEnd || busy}
@@ -782,12 +786,14 @@ function IconBtn({
   onClick,
   disabled,
   ariaExpanded,
+  className = '',
 }: {
   children: React.ReactNode;
   label: string;
   onClick: () => void;
   disabled?: boolean;
   ariaExpanded?: boolean;
+  className?: string;
 }) {
   return (
     <button
@@ -797,7 +803,7 @@ function IconBtn({
       aria-label={label}
       aria-expanded={ariaExpanded}
       title={label}
-      className="grid size-11 min-h-11 min-w-11 shrink-0 place-items-center rounded-full text-[color:var(--color-ink-soft)] transition-all hover:bg-[color:var(--color-paper-sunk)] hover:text-[color:var(--color-ink)] active:scale-90 disabled:pointer-events-none disabled:opacity-30"
+      className={`grid size-11 min-h-11 min-w-11 shrink-0 place-items-center rounded-full text-[color:var(--color-ink-soft)] transition-all hover:bg-[color:var(--color-paper-sunk)] hover:text-[color:var(--color-ink)] active:scale-90 disabled:pointer-events-none disabled:opacity-30 ${className}`}
     >
       {children}
     </button>

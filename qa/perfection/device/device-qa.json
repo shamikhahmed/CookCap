@@ -7,7 +7,7 @@
       "url": "http://127.0.0.1:8877/CookCap/?demo=1",
       "file": "CookCap-webkit-iphone-se.png",
       "overflowX": false,
-      "scrollWidth": 376,
+      "scrollWidth": 375,
       "offscreen": [],
       "smallTargets": [],
       "smallCount": 0,
@@ -121,24 +121,26 @@
       "title": "CookCap — A Family Cookbook",
       "errors": [
         "Failed to load resource: net::ERR_CONNECTION_RESET",
-        "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED",
+        "Failed to load resource: net::ERR_CONNECTION_RESET",
         "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED",
         "Failed to load resource: net::ERR_CONNECTION_RESET",
-        "ChunkLoadError: Loading chunk 195 failed.\n(error: http://127.0.0.1:8877/CookCap/_next/static/chunks/195.5f037b788fdc323a.js)\n    at r.f.j (http://127.0.0.1:8877"
+        "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED",
+        "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED"
       ],
       "hubOriginErrors": [
-        "Failed to load resource: net::ERR_CONNECTION_RESET @ http://127.0.0.1:8877/CookCap/_next/static/chunks/195.5f037b788fdc323a.js",
-        "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED @ http://127.0.0.1:8877/CookCap/_next/static/chunks/991.ae74acf1884652df.js",
-        "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED @ http://127.0.0.1:8877/CookCap/_next/static/chunks/455.affb5adc2b483be9.js",
-        "Failed to load resource: net::ERR_CONNECTION_RESET @ http://127.0.0.1:8877/CookCap/_next/static/chunks/803.0cc4ff1d6d0080ec.js",
-        "ChunkLoadError: Loading chunk 195 failed.\n(error: http://127.0.0.1:8877/CookCap/_next/static/chunks/195.5f037b788fdc323a.js)\n    at r.f.j (http://127.0.0.1:8877 @ http://127.0.0.1:8877/CookCap/_next/static/chunks/255-d4a1d96d82015aa5.js"
+        "Failed to load resource: net::ERR_CONNECTION_RESET @ http://127.0.0.1:8877/CookCap/_next/static/chunks/570-badabe4884c187f3.js",
+        "Failed to load resource: net::ERR_CONNECTION_RESET @ http://127.0.0.1:8877/CookCap/_next/static/chunks/app/error-bffed7d0095da533.js",
+        "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED @ http://127.0.0.1:8877/CookCap/_next/static/chunks/app/not-found-fc90740299424408.js",
+        "Failed to load resource: net::ERR_CONNECTION_RESET @ http://127.0.0.1:8877/CookCap/_next/static/chunks/293-6f19858675cced28.js",
+        "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED @ http://127.0.0.1:8877/CookCap/_next/static/chunks/app/page-ce9a04363c78d4fc.js",
+        "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED @ http://127.0.0.1:8877/CookCap/_next/static/chunks/app/global-error-3f0b25ece1d6c136.js"
       ],
-      "hubOriginConsoleErrors": 5,
+      "hubOriginConsoleErrors": 6,
       "pageErrorCount": 0,
       "bad": [],
       "soft": [
-        "5 console err",
-        "5 hub-console"
+        "6 console err",
+        "6 hub-console"
       ]
     },
     {
@@ -150,39 +152,44 @@
       "overflowX": false,
       "scrollWidth": 412,
       "offscreen": [],
-      "smallTargets": [
-        "INPUT"
-      ],
-      "smallCount": 1,
+      "smallTargets": [],
+      "smallCount": 0,
       "tinyCount": 0,
       "tinySample": [],
       "title": "CookCap — A Family Cookbook",
       "errors": [
+        "Failed to load resource: net::ERR_CONNECTION_RESET",
         "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED",
-        "Failed to load resource: net::ERR_CONNECTION_RESET"
+        "Failed to load resource: net::ERR_CONNECTION_RESET",
+        "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED",
+        "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED",
+        "ChunkLoadError: Loading chunk 195 failed.\n(error: http://127.0.0.1:8877/CookCap/_next/static/chunks/195.5f037b788fdc323a.js)\n    at r.f.j (http://127.0.0.1:8877"
       ],
       "hubOriginErrors": [
-        "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED @ http://127.0.0.1:8877/CookCap/recipes/chana-masala.webp",
-        "Failed to load resource: net::ERR_CONNECTION_RESET @ http://127.0.0.1:8877/CookCap/recipes/chana-masala@sm.webp"
+        "Failed to load resource: net::ERR_CONNECTION_RESET @ http://127.0.0.1:8877/CookCap/_next/static/chunks/195.5f037b788fdc323a.js",
+        "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED @ http://127.0.0.1:8877/CookCap/_next/static/chunks/243.9fb55d00ca53d584.js",
+        "Failed to load resource: net::ERR_CONNECTION_RESET @ http://127.0.0.1:8877/CookCap/_next/static/chunks/991.ae74acf1884652df.js",
+        "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED @ http://127.0.0.1:8877/CookCap/_next/static/chunks/455.affb5adc2b483be9.js",
+        "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED @ http://127.0.0.1:8877/CookCap/_next/static/chunks/803.0cc4ff1d6d0080ec.js",
+        "ChunkLoadError: Loading chunk 195 failed.\n(error: http://127.0.0.1:8877/CookCap/_next/static/chunks/195.5f037b788fdc323a.js)\n    at r.f.j (http://127.0.0.1:8877 @ http://127.0.0.1:8877/CookCap/_next/static/chunks/255-d4a1d96d82015aa5.js"
       ],
-      "hubOriginConsoleErrors": 2,
+      "hubOriginConsoleErrors": 6,
       "pageErrorCount": 0,
       "bad": [],
       "soft": [
-        "1 tap<32px",
-        "2 console err",
-        "2 hub-console"
+        "6 console err",
+        "6 hub-console"
       ]
     }
   ],
   "summary": {
     "hardFailures": 0,
-    "tapUnder32": 1,
+    "tapUnder32": 0,
     "textUnder11": 0,
     "pageErrors": 0,
-    "hubOriginConsoleErrors": 7,
+    "hubOriginConsoleErrors": 12,
     "runs": 7,
-    "generatedAt": "2026-10-14T11:10:24.798Z",
+    "generatedAt": "2026-10-14T11:24:24.347Z",
     "pwCore": "/Users/shamikhahmed/Projects/Cap/Cap-Apps/MasteryCap/node_modules/playwright-core"
   }
 }
