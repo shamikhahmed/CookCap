@@ -43,3 +43,9 @@ Auditor: —
 severity: P2     status: ⏳ OPEN (Hub Engineer)
 Where: hub assets — Builder cannot write hub repo under this lock  
 Auditor: —
+
+### CK-V3-7 — matrix extended overlays × states × engines
+severity: P2     status: ⏳ OPEN
+Where: import/SW/guest/offline/empty × light/dark × full device-qa grid beyond home smoke
+Evidence: MATRIX.md extended section ⏳
+Auditor: —
