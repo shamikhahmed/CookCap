@@ -2,13 +2,13 @@
 Seeded from §13.14 + Auditor baseline 2026-10-14. Status: only Auditor sets ✅ VERIFIED.
 
 ### CK-V3-1 — React hydration error #418
-severity: P0     status: ✅ VERIFIED
+severity: P0     status: ✅ FIXED (live @ 3.6.1)
 Where: /CookCap/?demo=1 · every device  
-Evidence: live before = Auditor `auditor-baseline-live/` (#418); local before = empty ideas SSR on main C-37; after = `qa/perfection/device/`  
-Cause: Live Pages still SSR'd time-of-day kitchen ideas (`ideasForToday(new Date())`) → text mismatch on hydrate.  
-Fix: Keep client-only ideas fill after mount (C-37); `suppressHydrationWarning` on ideas section; Appearance portal gated on `mounted` (no SSR/`typeof document` split).  
-Test: device-qa 0 pageerrors on local `out/` under `/CookCap/?demo=1`  
-Auditor: ✅ VERIFIED 2026-10-14 — auditor-independent pageErr=0 @ f000469/aa36490
+Evidence: 3.6.0 live regression (#418 all devices); hotfix `e435bba` / tag `v3.6.1`; `qa/perfection/live-v3.6.1/` 7/7 pageErr=0  
+Cause: Stale HTML/JS during Pages deploy + edition-dependent copy in SSR (cover/title/topbar/ideas).  
+Fix: Gate edition copy + kitchen ideas until `editionReady` / post-mount; G-8 bump SW `cookcap-v42`.  
+Test: device-qa local `local-v3.6.1/` + live `live-v3.6.1/` — hard=0 pageErr=0  
+Auditor: pending re-verify on live 3.6.1
 
 ### CK-V3-2 — INPUT tap target &lt; 32px
 severity: P1     status: ✅ VERIFIED

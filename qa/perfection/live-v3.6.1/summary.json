@@ -1,0 +1,10 @@
+{
+  "app": "CookCap",
+  "version": "3.6.1",
+  "tag": "v3.6.1",
+  "commit": "e435bba",
+  "url": "https://shamikhahmed.github.io/CookCap/?demo=1",
+  "verifiedAt": "2026-10-14T12:04:00Z",
+  "deviceQa": { "runs": 7, "hard": 0, "pageErr": 0, "tapUnder32": 0, "textUnder11": 0, "hubConsole": 0 },
+  "ci": "https://github.com/shamikhahmed/CookCap/actions/runs/38560545459"
+}
