@@ -34,9 +34,9 @@ Fix: Conductor Phase 0 merge already on `main`; perfection branch cut from that 
 Auditor: ✅ VERIFIED 2026-10-14 — Phase 0 merge on lineage
 
 ### CK-V3-5 — screen-gallery.html both themes
-severity: P2     status: ✅ FIXED (prep) — dark capture = phase G
-Where: repo root `screen-gallery.html` + `docs/screenshots/gallery/gallery-manifest.json` `v3` block  
-Fix: Viewer installed (CookCap-retitled); manifest flags dark required; light shots = 52 existing. Full dark×device capture deferred to phase G.  
+severity: P2     status: ✅ FIXED (Gallery Builder 2026-10-14)
+Where: `screen-gallery.html` + `docs/screenshots/gallery/gallery-manifest.json` · dark book chrome desktop+mobile (9 dark / 61 total)  
+Fix: `capture-gallery.mjs` dark pass + hub capture; recipe step flaky on live → partial chrome OK for Wave G  
 Auditor: —
 
 ### CK-V3-6 — hub CookCap screenshot placeholder

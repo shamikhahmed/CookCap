@@ -1,9 +1,9 @@
 {
   "app": "CookCap",
   "version": "3.6.1",
-  "generated": "2026-09-23T05:59:37.248Z",
+  "generated": "2026-10-14T12:39:39.023Z",
   "galleryRoot": "docs/gallery",
-  "note": "Perfection v3: light shots present; dark theme capture queued (CK-V3-5). Viewer at /screen-gallery.html",
+  "note": "Perfection v3: light + dark book chrome; viewer at /screen-gallery.html",
   "shots": [
     {
       "file": "desktop/00-name-gate.png",
@@ -524,6 +524,96 @@
       "label": "page-nav",
       "route": "book",
       "path": "docs/gallery/mobile/19-page-nav.png"
+    },
+    {
+      "file": "dark/desktop/01-cover.png",
+      "theme": "dark",
+      "viewport": "desktop",
+      "section": "01-cover",
+      "screenId": "01-cover",
+      "label": "cover",
+      "route": "book",
+      "path": "docs/gallery/dark/desktop/01-cover.png"
+    },
+    {
+      "file": "dark/desktop/02-title.png",
+      "theme": "dark",
+      "viewport": "desktop",
+      "section": "02-title",
+      "screenId": "02-title",
+      "label": "title",
+      "route": "book",
+      "path": "docs/gallery/dark/desktop/02-title.png"
+    },
+    {
+      "file": "dark/desktop/03-friends.png",
+      "theme": "dark",
+      "viewport": "desktop",
+      "section": "03-friends",
+      "screenId": "03-friends",
+      "label": "friends",
+      "route": "book",
+      "path": "docs/gallery/dark/desktop/03-friends.png"
+    },
+    {
+      "file": "dark/desktop/04-contents.png",
+      "theme": "dark",
+      "viewport": "desktop",
+      "section": "04-contents",
+      "screenId": "04-contents",
+      "label": "contents",
+      "route": "book",
+      "path": "docs/gallery/dark/desktop/04-contents.png"
+    },
+    {
+      "file": "dark/desktop/05-recipe.png",
+      "theme": "dark",
+      "viewport": "desktop",
+      "section": "05-recipe",
+      "screenId": "05-recipe",
+      "label": "recipe",
+      "route": "book",
+      "path": "docs/gallery/dark/desktop/05-recipe.png"
+    },
+    {
+      "file": "dark/mobile/01-cover.png",
+      "theme": "dark",
+      "viewport": "mobile",
+      "section": "01-cover",
+      "screenId": "01-cover",
+      "label": "cover",
+      "route": "book",
+      "path": "docs/gallery/dark/mobile/01-cover.png"
+    },
+    {
+      "file": "dark/mobile/02-title.png",
+      "theme": "dark",
+      "viewport": "mobile",
+      "section": "02-title",
+      "screenId": "02-title",
+      "label": "title",
+      "route": "book",
+      "path": "docs/gallery/dark/mobile/02-title.png"
+    },
+    {
+      "file": "dark/mobile/03-friends.png",
+      "theme": "dark",
+      "viewport": "mobile",
+      "section": "03-friends",
+      "screenId": "03-friends",
+      "label": "friends",
+      "route": "book",
+      "path": "docs/gallery/dark/mobile/03-friends.png"
+    },
+    {
+      "file": "dark/mobile/04-contents.png",
+      "theme": "dark",
+      "viewport": "mobile",
+      "section": "04-contents",
+      "screenId": "04-contents",
+      "label": "contents",
+      "route": "book",
+      "path": "docs/gallery/dark/mobile/04-contents.png"
     }
   ],
   "v3": {
@@ -537,7 +627,7 @@
       "ipad-landscape",
       "desktop"
     ],
-    "darkShots": 0,
-    "note": "CK-V3-5 prep: shared screen-gallery.html installed; dark capture pending phase G"
+    "darkShots": 9,
+    "note": "CK-V3-5 dark book chrome captured (Wave G)"
   }
 }

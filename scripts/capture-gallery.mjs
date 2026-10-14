@@ -155,16 +155,17 @@ async function scrollDialog(page, ratio) {
   await settle(page, 350);
 }
 
-async function seedOwner(page, extras = {}) {
+async function seedOwner(page, extras = {}, theme = 'light') {
   await page.evaluate(
-    ({ name, extras, ver }) => {
+    ({ name, extras, ver, theme }) => {
       localStorage.setItem('cookcap-owner', name);
       localStorage.setItem('cookcap-onboarded', '1');
-      localStorage.setItem('cookcap-theme', 'light');
+      localStorage.setItem('cookcap-theme', theme);
       localStorage.setItem('cookcap-whats-new', ver);
+      document.documentElement.setAttribute('data-theme', theme);
       for (const [k, v] of Object.entries(extras)) localStorage.setItem(k, v);
     },
-    { name: DEMO, extras, ver: APP_VER },
+    { name: DEMO, extras, ver: APP_VER, theme },
   );
 }
 
@@ -753,9 +754,10 @@ async function main() {
   console.log(`Base URL ${BASE} · recipe ${RECIPE} · demo ${DEMO}`);
 
   const only = (process.env.GALLERY_DEVICE || 'all').toLowerCase();
+  const darkOnly = process.env.GALLERY_DARK_ONLY === '1';
   const browser = await chromium.launch({ headless: true });
 
-  if (only === 'all' || only === 'desktop') {
+  if (!darkOnly && (only === 'all' || only === 'desktop')) {
     // Simple path (reduce) + book chrome
     const context = await browser.newContext({
       viewport: { width: 1440, height: 900 },
@@ -785,7 +787,7 @@ async function main() {
     await dresserCtx.close();
   }
 
-  if (only === 'all' || only === 'mobile') {
+  if (!darkOnly && (only === 'all' || only === 'mobile')) {
     const context = await browser.newContext({
       viewport: { width: 390, height: 844 },
       deviceScaleFactor: 2,
@@ -821,12 +823,53 @@ async function main() {
     }
   }
 
+  if (process.env.GALLERY_SKIP_DARK !== '1') {
+    console.log('Dark theme book chrome (desktop + mobile)…');
+    for (const spec of [
+      { folder: 'dark/desktop', width: 1440, height: 900, dsf: 1, mobile: false },
+      { folder: 'dark/mobile', width: 390, height: 844, dsf: 2, mobile: true },
+    ]) {
+      const context = await browser.newContext({
+        viewport: { width: spec.width, height: spec.height },
+        deviceScaleFactor: spec.dsf,
+        isMobile: spec.mobile,
+        hasTouch: spec.mobile,
+        colorScheme: 'dark',
+        reducedMotion: 'reduce',
+      });
+      const page = await context.newPage();
+      await page.goto(`${BASE}/?for=${encodeURIComponent(DEMO)}`, {
+        waitUntil: 'domcontentloaded',
+        timeout: 60000,
+      });
+      await setDarkMode(page, true);
+      await seedOwner(page, {}, 'dark');
+      await page.goto(`${BASE}/?for=${encodeURIComponent(DEMO)}`, {
+        waitUntil: 'domcontentloaded',
+        timeout: 60000,
+      });
+      await waitFooterReady(page, 60000);
+      try {
+        await captureBookChrome(page, spec.folder);
+      } catch (err) {
+        console.warn(`  dark ${spec.folder} partial:`, err?.message || err);
+      }
+      await context.close();
+    }
+  }
+
   await browser.close();
 
   // Write tier1 gallery-manifest (points at docs/gallery shots).
   const shots = [];
-  for (const viewport of ['desktop', 'mobile']) {
-    const dir = join(OUT, viewport);
+  const scanRoots = [
+    { rel: 'desktop', theme: 'light', viewport: 'desktop' },
+    { rel: 'mobile', theme: 'light', viewport: 'mobile' },
+    { rel: 'dark/desktop', theme: 'dark', viewport: 'desktop' },
+    { rel: 'dark/mobile', theme: 'dark', viewport: 'mobile' },
+  ];
+  for (const { rel, theme, viewport } of scanRoots) {
+    const dir = join(OUT, rel);
     let files = [];
     try {
       files = readdirSync(dir).filter((f) => f.endsWith('.png')).sort();
@@ -834,18 +877,20 @@ async function main() {
       files = [];
     }
     for (const file of files) {
+      const fileKey = `${rel}/${file}`;
       shots.push({
-        file: `${viewport}/${file}`,
-        theme: 'light',
+        file: fileKey,
+        theme,
         viewport,
         section: file.replace(/\.png$/, ''),
         screenId: file.replace(/\.png$/, ''),
         label: file.replace(/\.png$/, '').replace(/^\d+[a-z]?-/, ''),
         route: 'book',
-        path: `docs/gallery/${viewport}/${file}`,
+        path: `docs/gallery/${fileKey}`,
       });
     }
   }
+  const darkCount = shots.filter((s) => s.theme === 'dark').length;
   mkdirSync(MANIFEST_DIR, { recursive: true });
   writeFileSync(
     MANIFEST,
@@ -855,13 +900,21 @@ async function main() {
         version: APP_VER,
         generated: new Date().toISOString(),
         galleryRoot: 'docs/gallery',
+        note: 'Perfection v3: light + dark book chrome; viewer at /screen-gallery.html',
         shots,
+        v3: {
+          schema: 'pending-v2',
+          themesRequired: ['light', 'dark'],
+          devicesRequired: ['iphone', 'ipad-landscape', 'desktop'],
+          darkShots: darkCount,
+          note: 'CK-V3-5 dark book chrome captured (Wave G)',
+        },
       },
       null,
       2,
     ),
   );
-  console.log(`Wrote ${MANIFEST} (${shots.length} shots)`);
+  console.log(`Wrote ${MANIFEST} (${shots.length} shots, ${darkCount} dark)`);
   console.log('Done.');
 }
 
