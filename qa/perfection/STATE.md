@@ -2,7 +2,7 @@
 **Agent:** Builder-CookCap  
 **Updated:** 2026-10-14T11:25:00Z  
 **Phase:** F (re-hand-off after CK-V3-2 reject)  
-**Branch:** `perfection/cookcap-v3` (tip after push)  
+**Branch:** `perfection/cookcap-v3` @ `9ff7894`  
 **Base:** `main` @ `c43a70c`  
 **Remote:** `origin/perfection/cookcap-v3` (no force)
 
