@@ -1,11 +1,12 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { CHAPTERS } from '@/lib/recipes/chapters';
 import { useApp } from '@/components/app/AppStore';
 import { useBook } from '@/components/book/BookController';
 import { Icon, type IconName } from '@/components/ui/Icon';
-import { ideasForToday } from '@/lib/recipes/ideas';
+import { ideasForToday, type CookIdea } from '@/lib/recipes/ideas';
 import { favoritesLabel } from '@/lib/edition';
 import { OCCASION_TEMPLATES, occasionRail } from '@/lib/occasions/templates';
 import { getCatalogRecipeCount } from '@/lib/recipes/count';
@@ -14,7 +15,11 @@ import { getCatalogRecipeCount } from '@/lib/recipes/count';
 export function ContentsLeaf() {
   const { goToChapter, goToRecipe } = useBook();
   const { allRecipes, edition } = useApp();
-  const ideas = ideasForToday(allRecipes);
+  // Client-only: ideasForToday uses local hour/date — SSR must stay deterministic (C-37).
+  const [ideas, setIdeas] = useState<CookIdea[]>([]);
+  useEffect(() => {
+    setIdeas(ideasForToday(allRecipes));
+  }, [allRecipes]);
 
   return (
     <div

@@ -18,8 +18,12 @@ export function WarmLeafPool({ index, leaves }: { index: number; leaves: Leaf[] 
   const full = FULL_OFFSETS.map((d) => index + d).filter((i) => i >= 0 && i < leaves.length);
   const shell = SHELL_OFFSETS.map((d) => index + d).filter((i) => i >= 0 && i < leaves.length);
 
+  // Off-screen prefetch: inert (not aria-hidden) so LH aria-hidden-focus stays clean.
   return (
-    <div className="pointer-events-none absolute h-0 w-0 overflow-hidden opacity-0" aria-hidden>
+    <div
+      className="pointer-events-none absolute h-0 w-0 overflow-hidden opacity-0"
+      inert
+    >
       {full.map((i) => {
         const leaf = leaves[i]!;
         return (

@@ -1,4 +1,4 @@
-import { CCBrand } from '@/brand/colors';
+import { CCBrand } from '@/brand/brand-palette';
 /**
  * Jia's Kitchen Friends — the little cast that appears through the book. Each is
  * a hand-drawn character (see CharacterArt.tsx) with a one-line personality and

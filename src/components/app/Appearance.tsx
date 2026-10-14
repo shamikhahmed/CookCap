@@ -15,7 +15,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { useDialogA11y, motionReduce } from '@/lib/a11y/dialog';
 import { Icon } from '@/components/ui/Icon';
 import { type Locale, localeDir } from '@/lib/i18n/strings';
-import { CCBrand } from '@/brand/colors';
+import { CCBrand } from '@/brand/brand-palette';
 
 export type Skin = 'editorial' | 'candlelit' | 'lightbook' | 'modern';
 /** `paper` = shipped world nav. Legacy styles kept for localStorage / code paths. */
@@ -203,7 +203,7 @@ export function AppearanceButton() {
         aria-label="Appearance"
         title="Appearance"
         aria-expanded={open}
-        className="grid size-10 place-items-center rounded-full text-[color:var(--color-ink-soft)] transition-all hover:bg-[color:var(--color-paper-sunk)] hover:text-[color:var(--color-ink)] active:scale-90"
+        className="grid size-11 min-h-11 min-w-11 shrink-0 place-items-center rounded-full text-[color:var(--color-ink-soft)] transition-all hover:bg-[color:var(--color-paper-sunk)] hover:text-[color:var(--color-ink)] active:scale-90"
       >
         <Icon name="palette" size={20} />
       </button>

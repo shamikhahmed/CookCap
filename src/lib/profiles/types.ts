@@ -1,4 +1,4 @@
-import { CCBrand } from '@/brand/colors';
+import { CCBrand } from '@/brand/brand-palette';
 export type Goal = 'maintain' | 'cut' | 'bulk' | 'none';
 
 export type ModeId =

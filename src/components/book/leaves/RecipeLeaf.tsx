@@ -22,7 +22,7 @@ import { RECIPES } from '@/lib/recipes/data';
 import * as store from '@/lib/db/store';
 import { suggestSwaps } from '@/lib/assistant/substitutes';
 import type { Recipe } from '@/lib/recipes/types';
-import { CCBrand } from '@/brand/colors';
+import { CCBrand } from '@/brand/brand-palette';
 import {
   DUR_ODOMETER_MS,
   DUR_STAR_STAGGER_MS,
@@ -847,6 +847,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
             type="file"
             accept="image/*"
             className="sr-only"
+            aria-label={heroUrls[recipe.id] ? 'Change recipe photo' : 'Add recipe photo'}
             onChange={(e) => {
               const f = e.target.files?.[0];
               if (f) void setRecipeHero(recipe.id, f);

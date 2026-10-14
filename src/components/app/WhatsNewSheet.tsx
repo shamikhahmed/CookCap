@@ -105,7 +105,7 @@ export function WhatsNewSheet() {
               id="whats-new-title"
               className="font-serif text-base text-[color:var(--color-ink)]"
             >
-              What’s new · v{APP_VERSION}
+              What’s new
             </h2>
             <ul className="mt-1.5 list-disc space-y-0.5 pl-4 text-xs leading-snug text-[color:var(--color-ink-soft)]">
               {bullets.map((b) => (

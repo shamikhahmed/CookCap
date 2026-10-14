@@ -171,6 +171,9 @@ export function writeStoredOwner(name: string): Edition {
 /**
  * Resolve edition: `?for=` query wins (and persists), else stored owner.
  * Returns null when no name yet — UI must gate with name field.
+ *
+ * `?demo=1` unlocks a fictional owner without persisting so Lighthouse / axe /
+ * matrix hit the real book chrome (Cap demo contract), not the name gate.
  */
 export function resolveEdition(search?: string): Edition | null {
   if (typeof window === 'undefined') return null;
@@ -182,6 +185,14 @@ export function resolveEdition(search?: string): Edition | null {
       if (fromQuery && !isGenericName(fromQuery)) return writeStoredOwner(fromQuery);
       const legacy = LEGACY_SLUG_NAMES[q.toLowerCase()];
       if (legacy) return writeStoredOwner(legacy);
+    }
+    if (params.get('demo') === '1') {
+      try {
+        localStorage.setItem(ONBOARD_DONE_KEY, '1');
+      } catch {
+        /* ignore */
+      }
+      return buildEdition('Ayesha');
     }
   } catch {
     /* ignore */

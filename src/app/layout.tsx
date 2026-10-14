@@ -4,7 +4,7 @@ import './globals.css';
 import { AppStore } from '@/components/app/AppStore';
 import { ServiceWorker } from '@/components/app/ServiceWorker';
 import { ChunkRecovery } from '@/components/app/ChunkRecovery';
-import { CCBrand } from '@/brand/colors';
+import { CCBrand } from '@/brand/brand-palette';
 
 const fraunces = Fraunces({
   subsets: ['latin'],

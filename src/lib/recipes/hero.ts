@@ -5,7 +5,7 @@
  * fully offline (no photo payload) while still giving each page a distinct,
  * editorial image. Palette is tied to the recipe's chapter tab color.
  */
-import { CCBrand } from '@/brand/colors';
+import { CCBrand } from '@/brand/brand-palette';
 
 function mulberry32(seed: number) {
   let a = seed >>> 0;
