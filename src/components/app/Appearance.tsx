@@ -178,11 +178,14 @@ export function skinSupportsThemeToggle(skin: Skin): boolean {
 
 export function AppearanceButton() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const reduce = useReducedMotion();
   const panelRef = useRef<HTMLDivElement>(null);
   const { skin, tabStyle, readMode, locale, setSkin, setTabStyle, setReadMode, setLocale } =
     useAppearance();
   const [narrow, setNarrow] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 639px)');
@@ -208,7 +211,7 @@ export function AppearanceButton() {
         <Icon name="palette" size={20} />
       </button>
 
-      {typeof document !== 'undefined' &&
+      {mounted &&
         createPortal(
           <AnimatePresence>
             {open && (

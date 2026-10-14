@@ -110,7 +110,6 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
   const fav = isFavorite(recipe.id);
   const isTip = recipe.chapter === 'tips';
   const heroCredit = getImage(recipe.id)?.credit;
-  const heroFileRef = useRef<HTMLInputElement>(null);
   const customOverride = customs.find((c) => c.id === recipe.id);
   const isBundled = RECIPES.some((r) => r.id === recipe.id);
   const isFork = Boolean(customOverride && isBundled);
@@ -842,23 +841,21 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
 
         {/* ── Personalize (P1) ────────────────────────────────*/}
         <Section title="Your kitchen copy" accent={chapter.tab}>
-          <input
-            ref={heroFileRef}
-            type="file"
-            accept="image/*"
-            className="sr-only"
-            aria-label={heroUrls[recipe.id] ? 'Change recipe photo' : 'Add recipe photo'}
-            onChange={(e) => {
-              const f = e.target.files?.[0];
-              if (f) void setRecipeHero(recipe.id, f);
-              e.target.value = '';
-            }}
-          />
           <div className="flex flex-wrap gap-2">
             <button
               type="button"
               className="min-h-11 rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-3 py-1.5 text-sm text-[color:var(--color-ink)]"
-              onClick={() => heroFileRef.current?.click()}
+              aria-label={heroUrls[recipe.id] ? 'Change recipe photo' : 'Add recipe photo'}
+              onClick={() => {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'image/*';
+                input.onchange = () => {
+                  const f = input.files?.[0];
+                  if (f) void setRecipeHero(recipe.id, f);
+                };
+                input.click();
+              }}
             >
               {heroUrls[recipe.id] ? 'Change photo' : 'Add photo'}
             </button>
