@@ -1,3 +1,13 @@
+## 3.6.0 — 2026-10-14
+
+Perfection Loop v3 finish release (Wave A).
+
+- CK-V3-1: Fix React hydration #418 — client-only kitchen ideas + Appearance portal mount gate
+- CK-V3-2: Page-scrub tap target ≥44px on android; hide ±5 jumps below `sm`; on-demand file inputs; NameGate min-h-11
+- CK-V3-3: Publish `public/VERSION.json` on Pages export
+- CK-V3-4: Phase 0 `finish/cookcap-stepR` already on main lineage
+- SW → `cookcap-v41`
+
 ## 3.5.1 — 2026-09-15
 - C-16: Remove `scripts/tmp-ff/` Google Fonts scratch files.
 - C-20: Set `window.__APP_READY__` when splash dismisses (first real screen).
