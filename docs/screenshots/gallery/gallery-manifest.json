@@ -3,7 +3,7 @@
   "version": "3.5.1",
   "generated": "2026-09-23T05:59:37.248Z",
   "galleryRoot": "docs/gallery",
-  "note": "Review 3: committed existing gallery shots; capture-gallery.mjs still flakes on Start cooking click (pointer intercept).",
+  "note": "Perfection v3: light shots present; dark theme capture queued (CK-V3-5). Viewer at /screen-gallery.html",
   "shots": [
     {
       "file": "desktop/00-name-gate.png",
@@ -525,5 +525,19 @@
       "route": "book",
       "path": "docs/gallery/mobile/19-page-nav.png"
     }
-  ]
+  ],
+  "v3": {
+    "schema": "pending-v2",
+    "themesRequired": [
+      "light",
+      "dark"
+    ],
+    "devicesRequired": [
+      "iphone",
+      "ipad-landscape",
+      "desktop"
+    ],
+    "darkShots": 0,
+    "note": "CK-V3-5 prep: shared screen-gallery.html installed; dark capture pending phase G"
+  }
 }

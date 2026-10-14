@@ -214,7 +214,7 @@ export function NameGate({
                     }
                   }}
                   placeholder="e.g. Ayesha"
-                  className="mt-1.5 w-full rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3.5 py-2.5 text-[color:var(--color-ink)] placeholder:text-[color:var(--color-ink-faint)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)]"
+                  className="mt-1.5 min-h-11 w-full rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3.5 py-2.5 text-[color:var(--color-ink)] placeholder:text-[color:var(--color-ink-faint)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)]"
                 />
                 {error && (
                   <p className="mt-2 text-sm text-[color:var(--color-danger)]" role="alert">
@@ -224,7 +224,7 @@ export function NameGate({
                 <button
                   type="button"
                   onClick={submitName}
-                  className="mt-5 w-full rounded-xl bg-[color:var(--color-accent)] px-4 py-2.5 font-medium text-white transition-transform active:scale-[0.98]"
+                  className="mt-5 min-h-11 w-full rounded-xl bg-[color:var(--color-accent)] px-4 py-2.5 font-medium text-white transition-transform active:scale-[0.98]"
                 >
                   {dismissible ? 'Save name' : 'Continue'}
                 </button>
@@ -273,7 +273,7 @@ export function NameGate({
                     }
                   }}
                   placeholder="e.g. Ayesha"
-                  className="mt-1.5 w-full rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3.5 py-2.5 text-[color:var(--color-ink)] placeholder:text-[color:var(--color-ink-faint)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)]"
+                  className="mt-1.5 min-h-11 w-full rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-3.5 py-2.5 text-[color:var(--color-ink)] placeholder:text-[color:var(--color-ink-faint)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)]"
                 />
                 {profileError && (
                   <p className="mt-2 text-sm text-[color:var(--color-danger)]" role="alert">
@@ -283,7 +283,7 @@ export function NameGate({
                 <button
                   type="button"
                   onClick={() => void createProfile()}
-                  className="mt-5 w-full rounded-xl bg-[color:var(--color-accent)] px-4 py-2.5 font-medium text-white transition-transform active:scale-[0.98]"
+                  className="mt-5 min-h-11 w-full rounded-xl bg-[color:var(--color-accent)] px-4 py-2.5 font-medium text-white transition-transform active:scale-[0.98]"
                 >
                   Create profile
                 </button>

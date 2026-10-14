@@ -39,8 +39,11 @@ export function ContentsLeaf() {
         <div className="mt-3 h-px w-full bg-[color:var(--color-line)]" />
       </header>
 
-      {/* Tonight / today ideas — compact; scrolls away with chapters */}
-      <section className="mb-4 shrink-0 rounded-xl border border-[color:var(--color-line)]/80 bg-[color:var(--color-paper-sunk)]/55 px-3 py-2.5 sm:px-4 sm:py-3">
+      {/* Tonight / today ideas — filled after mount only (CK-V3-1 / C-37). */}
+      <section
+        className="mb-4 shrink-0 rounded-xl border border-[color:var(--color-line)]/80 bg-[color:var(--color-paper-sunk)]/55 px-3 py-2.5 sm:px-4 sm:py-3"
+        suppressHydrationWarning
+      >
         <div className="flex items-baseline justify-between gap-2">
           <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--color-accent)]">
             Today’s kitchen
@@ -49,7 +52,7 @@ export function ContentsLeaf() {
             What shall we cook?
           </p>
         </div>
-        <ul className="mt-2 divide-y divide-[color:var(--color-line)]/60">
+        <ul className="mt-2 divide-y divide-[color:var(--color-line)]/60" suppressHydrationWarning>
           {ideas.map((idea) => (
             <li key={idea.recipe.id}>
               <button

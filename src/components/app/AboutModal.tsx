@@ -21,7 +21,6 @@ export function AboutModal({
 }) {
   const reduce = useReducedMotion();
   const panelRef = useRef<HTMLDivElement>(null);
-  const fileRef = useRef<HTMLInputElement>(null);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState('');
   const [confirmWipe, setConfirmWipe] = useState(false);
@@ -210,31 +209,29 @@ export function AboutModal({
                 >
                   Download backup (JSON)
                 </button>
-                <label className="flex min-h-11 cursor-pointer items-center gap-2 text-sm text-[color:var(--color-ink-soft)]">
+                <label className="flex min-h-11 cursor-pointer items-center gap-3 text-sm text-[color:var(--color-ink-soft)]">
                   <input
                     type="checkbox"
                     checked={mergeMode}
                     onChange={(e) => setMergeMode(e.target.checked)}
-                    className="size-4 accent-[color:var(--color-accent)]"
+                    className="size-8 shrink-0 accent-[color:var(--color-accent)]"
                   />
                   Merge on restore (keep existing rows)
                 </label>
-                <input
-                  ref={fileRef}
-                  type="file"
-                  accept="application/json,.json"
-                  className="sr-only"
-                  aria-label="Restore backup JSON file"
-                  onChange={(e) => {
-                    const f = e.target.files?.[0];
-                    if (f) void importData(f);
-                    e.target.value = '';
-                  }}
-                />
                 <button
                   type="button"
                   disabled={busy || guestActive}
-                  onClick={() => fileRef.current?.click()}
+                  aria-label="Restore backup JSON file"
+                  onClick={() => {
+                    const input = document.createElement('input');
+                    input.type = 'file';
+                    input.accept = 'application/json,.json';
+                    input.onchange = () => {
+                      const f = input.files?.[0];
+                      if (f) void importData(f);
+                    };
+                    input.click();
+                  }}
                   className="min-h-11 rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-4 py-2.5 text-left text-sm text-[color:var(--color-ink)] hover:border-[color:var(--color-accent)] disabled:opacity-40"
                 >
                   Restore backup…
