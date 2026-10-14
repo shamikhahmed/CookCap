@@ -470,7 +470,7 @@ function TopBar({
         </button>
 
         <div className="relative" ref={moreRef}>
-          <IconBtn label="More menu" onClick={() => setMore((v) => !v)} ariaExpanded={more}>
+          <IconBtn label="More" onClick={() => setMore((v) => !v)} ariaExpanded={more}>
             <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
               <circle cx="4" cy="10" r="1.75" fill="currentColor" />
               <circle cx="10" cy="10" r="1.75" fill="currentColor" />
