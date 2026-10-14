@@ -2,7 +2,7 @@
 **Agent:** Builder-CookCap  
 **Updated:** 2026-10-14T11:20:00Z  
 **Phase:** F (Verify hand-off) — Wave A P0/P1 fixes complete locally  
-**Branch:** `perfection/cookcap-v3` @ `aa36490`  
+**Branch:** `perfection/cookcap-v3` @ `bd3691e` (fix tip `aa36490`)  
 **Base:** `main` @ `c43a70c` (finish/cookcap-stepR already merged — CK-V3-4)  
 **Remote:** `origin/perfection/cookcap-v3` pushed (no force)
 
@@ -12,6 +12,7 @@ Local prod: `out/` served under `/CookCap/` (basePath).
 `PLAYWRIGHT_BROWSERS_PATH=$HOME/Library/Caches/ms-playwright`
 
 ## Last builder commits
+- `bd3691e` docs(qa): record tip SHA for Auditor hand-off
 - `aa36490` fix(cookcap): Wave A perfection — hydration #418, VERSION.json, tap targets
 
 ## FIXED this wave (Builder — not Auditor-verified)
