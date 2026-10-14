@@ -13,7 +13,7 @@ import {
   isGalleryCapture,
   shotEntry,
   shotRelativePath,
-} from '../../capricorn-tooling/shared/gallery/capture-helpers.mjs';
+} from './helpers/gallery-capture-helpers.mjs';
 
 const GALLERY_DIR = join(process.cwd(), 'docs', 'screenshots', 'gallery');
 const MANIFEST = join(GALLERY_DIR, 'gallery-manifest.json');

@@ -1,0 +1,212 @@
+{
+  "runs": [
+    {
+      "app": "CookCap",
+      "engine": "webkit",
+      "device": "iphone-se",
+      "url": "http://127.0.0.1:8771/CookCap/?demo=1",
+      "file": "CookCap-webkit-iphone-se.png",
+      "overflowX": false,
+      "scrollWidth": 980,
+      "offscreen": [],
+      "smallTargets": [],
+      "smallCount": 0,
+      "tinyCount": 0,
+      "tinySample": [],
+      "title": "",
+      "errors": [
+        "Failed to load resource: WebKit encountered an internal error"
+      ],
+      "hubOriginErrors": [
+        "Failed to load resource: WebKit encountered an internal error @ http://127.0.0.1:8771/CookCap/?demo=1"
+      ],
+      "hubOriginConsoleErrors": 1,
+      "pageErrorCount": 0,
+      "bad": [
+        "nav: page.goto: WebKit encountered an internal error"
+      ],
+      "soft": [
+        "1 console err",
+        "1 hub-console"
+      ]
+    },
+    {
+      "app": "CookCap",
+      "engine": "webkit",
+      "device": "iphone",
+      "url": "http://127.0.0.1:8771/CookCap/?demo=1",
+      "file": "CookCap-webkit-iphone.png",
+      "overflowX": false,
+      "scrollWidth": 980,
+      "offscreen": [],
+      "smallTargets": [],
+      "smallCount": 0,
+      "tinyCount": 0,
+      "tinySample": [],
+      "title": "",
+      "errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "hubOriginErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8771/CookCap/?demo=1"
+      ],
+      "hubOriginConsoleErrors": 1,
+      "pageErrorCount": 0,
+      "bad": [],
+      "soft": [
+        "1 console err",
+        "1 hub-console"
+      ]
+    },
+    {
+      "app": "CookCap",
+      "engine": "webkit",
+      "device": "ipad-portrait",
+      "url": "http://127.0.0.1:8771/CookCap/?demo=1",
+      "file": "CookCap-webkit-ipad-portrait.png",
+      "overflowX": false,
+      "scrollWidth": 979,
+      "offscreen": [],
+      "smallTargets": [],
+      "smallCount": 0,
+      "tinyCount": 0,
+      "tinySample": [],
+      "title": "",
+      "errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "hubOriginErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8771/CookCap/?demo=1"
+      ],
+      "hubOriginConsoleErrors": 1,
+      "pageErrorCount": 0,
+      "bad": [],
+      "soft": [
+        "1 console err",
+        "1 hub-console"
+      ]
+    },
+    {
+      "app": "CookCap",
+      "engine": "webkit",
+      "device": "ipad-landscape",
+      "url": "http://127.0.0.1:8771/CookCap/?demo=1",
+      "file": "CookCap-webkit-ipad-landscape.png",
+      "overflowX": false,
+      "scrollWidth": 1180,
+      "offscreen": [],
+      "smallTargets": [],
+      "smallCount": 0,
+      "tinyCount": 0,
+      "tinySample": [],
+      "title": "",
+      "errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "hubOriginErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8771/CookCap/?demo=1"
+      ],
+      "hubOriginConsoleErrors": 1,
+      "pageErrorCount": 0,
+      "bad": [],
+      "soft": [
+        "1 console err",
+        "1 hub-console"
+      ]
+    },
+    {
+      "app": "CookCap",
+      "engine": "webkit",
+      "device": "macbook",
+      "url": "http://127.0.0.1:8771/CookCap/?demo=1",
+      "file": "CookCap-webkit-macbook.png",
+      "overflowX": false,
+      "scrollWidth": 1440,
+      "offscreen": [],
+      "smallTargets": [],
+      "smallCount": 0,
+      "tinyCount": 0,
+      "tinySample": [],
+      "title": "",
+      "errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "hubOriginErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8771/CookCap/?demo=1"
+      ],
+      "hubOriginConsoleErrors": 1,
+      "pageErrorCount": 0,
+      "bad": [],
+      "soft": [
+        "1 console err",
+        "1 hub-console"
+      ]
+    },
+    {
+      "app": "CookCap",
+      "engine": "chromium",
+      "device": "macbook",
+      "url": "http://127.0.0.1:8771/CookCap/?demo=1",
+      "file": "CookCap-chromium-macbook.png",
+      "overflowX": false,
+      "scrollWidth": 1440,
+      "offscreen": [],
+      "smallTargets": [],
+      "smallCount": 0,
+      "tinyCount": 0,
+      "tinySample": [],
+      "title": "",
+      "errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "hubOriginErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8771/CookCap/?demo=1"
+      ],
+      "hubOriginConsoleErrors": 1,
+      "pageErrorCount": 0,
+      "bad": [],
+      "soft": [
+        "1 console err",
+        "1 hub-console"
+      ]
+    },
+    {
+      "app": "CookCap",
+      "engine": "chromium",
+      "device": "android",
+      "url": "http://127.0.0.1:8771/CookCap/?demo=1",
+      "file": "CookCap-chromium-android.png",
+      "overflowX": false,
+      "scrollWidth": 981,
+      "offscreen": [],
+      "smallTargets": [],
+      "smallCount": 0,
+      "tinyCount": 0,
+      "tinySample": [],
+      "title": "",
+      "errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "hubOriginErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8771/CookCap/?demo=1"
+      ],
+      "hubOriginConsoleErrors": 1,
+      "pageErrorCount": 0,
+      "bad": [],
+      "soft": [
+        "1 console err",
+        "1 hub-console"
+      ]
+    }
+  ],
+  "summary": {
+    "hardFailures": 1,
+    "tapUnder32": 0,
+    "textUnder11": 0,
+    "pageErrors": 0,
+    "hubOriginConsoleErrors": 7,
+    "runs": 7,
+    "generatedAt": "2026-10-14T11:11:59.911Z",
+    "pwCore": "/Users/shamikhahmed/Projects/Cap/Cap-Apps/MasteryCap/node_modules/playwright-core"
+  }
+}
