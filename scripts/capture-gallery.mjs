@@ -75,7 +75,8 @@ async function gotoBookPage(page, n) {
     ({ name, ver, pos }) => {
       localStorage.setItem('cookcap-owner', name);
       localStorage.setItem('cookcap-onboarded', '1');
-      localStorage.setItem('cookcap-theme', 'light');
+      // keep whichever theme the pass seeded (the dark pass used to be flipped back to light here)
+      localStorage.setItem('cookcap-theme', localStorage.getItem('cookcap-theme') || 'light');
       localStorage.setItem('cookcap-whats-new', ver);
       localStorage.setItem('cookcap-pos', String(pos));
     },
@@ -503,7 +504,8 @@ async function captureBookChrome(page, folder) {
   await shot(page, `${folder}/05-recipe.png`);
 
   await cookBtn.scrollIntoViewIfNeeded();
-  await cookBtn.click();
+  // the leaf's reading column can sit over the button on narrow screens — dispatch directly
+  await cookBtn.dispatchEvent('click');
   await page.getByRole('button', { name: 'Exit cooking mode' }).waitFor({
     state: 'visible',
     timeout: 15000,
