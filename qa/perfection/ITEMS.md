@@ -2,13 +2,13 @@
 Seeded from §13.14 + Auditor baseline 2026-10-14. Status: only Auditor sets ✅ VERIFIED.
 
 ### CK-V3-1 — React hydration error #418
-severity: P0     status: ✅ FIXED (live @ 3.6.1)
+severity: P0     status: ✅ VERIFIED
 Where: /CookCap/?demo=1 · every device  
 Evidence: 3.6.0 live regression (#418 all devices); hotfix `e435bba` / tag `v3.6.1`; `qa/perfection/live-v3.6.1/` 7/7 pageErr=0  
 Cause: Stale HTML/JS during Pages deploy + edition-dependent copy in SSR (cover/title/topbar/ideas).  
 Fix: Gate edition copy + kitchen ideas until `editionReady` / post-mount; G-8 bump SW `cookcap-v42`.  
 Test: device-qa local `local-v3.6.1/` + live `live-v3.6.1/` — hard=0 pageErr=0  
-Auditor: pending re-verify on live 3.6.1
+Auditor: ✅ VERIFIED 2026-10-14T12:10:00Z — live 3.6.1 `auditor-2026-10-14/` 7/7 pageErr=0 (#418 cleared)
 
 ### CK-V3-2 — INPUT tap target &lt; 32px
 severity: P1     status: ✅ VERIFIED
@@ -25,7 +25,7 @@ Where: /CookCap/VERSION.json
 Cause: VERSION.json only at repo root — Next export did not publish it.  
 Fix: `public/VERSION.json` (copied into `out/` on build).  
 Test: `curl -sf http://127.0.0.1:<port>/CookCap/VERSION.json`  
-Auditor: ✅ VERIFIED 2026-10-14 — local out/VERSION.json serves; live Pages still pending deploy
+Auditor: ✅ VERIFIED 2026-10-14T12:10:00Z — live `VERSION.json` **3.6.1** 200
 
 ### CK-V3-4 — merge finish/cookcap-stepR
 severity: P1     status: ✅ VERIFIED
