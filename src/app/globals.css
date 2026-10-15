@@ -115,7 +115,7 @@
 
 /* ── Skins (data-skin on <html>) ───────────────────────────────────────*/
 @layer base {
-  /* Editorial Cream — DEFAULT (light, airy). Light-only. */
+  /* Editorial Cream — DEFAULT (light paper). Dark = night paper via data-theme. */
   :root,
   :root[data-skin='editorial'] {
     --color-paper: var(--cc-f6f1e7);
@@ -134,6 +134,33 @@
     --dr-wood-dark: color-mix(in srgb, var(--color-leather, var(--cc-5c4030)) 55%, var(--cc-3a2418));
     --shadow-book: 0 24px 60px -24px rgba(90, 60, 35, 0.35);
     --paper-grain-opacity: 0.35;
+  }
+  /* Editorial night paper — warm near-black + cream ink + muted gold rules */
+  :root[data-skin='editorial'][data-theme='dark'] {
+    --color-paper: var(--cc-17140f);
+    --color-paper-raised: var(--cc-1f1b14);
+    --color-paper-sunk: var(--cc-120f0b);
+    --color-ink: var(--cc-efe6d6);
+    --color-ink-soft: var(--cc-ddd2bc);
+    --color-ink-faint: var(--cc-c4b79e);
+    --color-line: var(--cc-5a4a32);
+    /* Accent deep enough for white label text (≥4.5:1) incl. AA-aliased glyphs */
+    --color-accent: var(--cc-8f4520);
+    --color-accent-soft: var(--cc-e08a5a);
+    --color-gold: var(--cc-c9a860);
+    --color-success: var(--cc-8ab07a);
+    --color-warning: var(--cc-d4af37);
+    --color-danger: var(--cc-e0796b);
+    --color-leather: var(--cc-5a3428);
+    --color-leather-dark: var(--cc-3a2218);
+    --desk: var(--cc-0e0c09);
+    --dr-wood: color-mix(in srgb, var(--cc-3a3228) 70%, var(--cc-1a1410));
+    --dr-wood-mid: var(--cc-2a2218);
+    --dr-wood-dark: var(--cc-14100c);
+    --shadow-book: 0 28px 64px -22px rgba(0, 0, 0, 0.65);
+    --paper-grain-opacity: 0.24;
+    --paper-glow: rgba(255, 220, 170, 0.08);
+    --paper-shade: rgba(10, 6, 2, 0.22);
   }
 
   /* Candlelit — dark, warm walnut paper (match desk wood, not cool charcoal) */
@@ -275,6 +302,32 @@
       --paper-glow: rgba(255, 210, 160, 0.1);
       --paper-shade: rgba(20, 10, 4, 0.18);
     }
+    /* Editorial Auto → night paper when system is dark */
+    :root[data-skin='editorial']:not([data-theme='light']) {
+      --color-paper: var(--cc-17140f);
+      --color-paper-raised: var(--cc-1f1b14);
+      --color-paper-sunk: var(--cc-120f0b);
+      --color-ink: var(--cc-efe6d6);
+      --color-ink-soft: var(--cc-ddd2bc);
+      --color-ink-faint: var(--cc-c4b79e);
+      --color-line: var(--cc-5a4a32);
+      --color-accent: var(--cc-8f4520);
+      --color-accent-soft: var(--cc-e08a5a);
+      --color-gold: var(--cc-c9a860);
+      --color-success: var(--cc-8ab07a);
+      --color-warning: var(--cc-d4af37);
+      --color-danger: var(--cc-e0796b);
+      --color-leather: var(--cc-5a3428);
+      --color-leather-dark: var(--cc-3a2218);
+      --desk: var(--cc-0e0c09);
+      --dr-wood: color-mix(in srgb, var(--cc-3a3228) 70%, var(--cc-1a1410));
+      --dr-wood-mid: var(--cc-2a2218);
+      --dr-wood-dark: var(--cc-14100c);
+      --shadow-book: 0 28px 64px -22px rgba(0, 0, 0, 0.65);
+      --paper-grain-opacity: 0.24;
+      --paper-glow: rgba(255, 220, 170, 0.08);
+      --paper-shade: rgba(10, 6, 2, 0.22);
+    }
   }
 
   * {
@@ -396,7 +449,7 @@
   }
 
   /* Linen/cream cover for light skins — not heavy dark leather */
-  :root[data-skin='editorial'] .leather,
+  :root[data-skin='editorial']:not([data-theme='dark']) .leather,
   :root[data-skin='lightbook'] .leather,
   :root[data-skin='modern']:not([data-theme='dark']) .leather,
   :root:not([data-skin]) .leather {
@@ -406,19 +459,29 @@
       radial-gradient(circle at 70% 80%, rgba(120, 90, 50, 0.12), transparent 60%),
       linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(90, 60, 30, 0.08));
   }
-  :root[data-skin='editorial'] .leather .cover-hint,
+  :root[data-skin='editorial']:not([data-theme='dark']) .leather .cover-hint,
   :root[data-skin='lightbook'] .leather .cover-hint,
   :root[data-skin='modern']:not([data-theme='dark']) .leather .cover-hint,
   :root:not([data-skin]) .leather .cover-hint {
     color: color-mix(in srgb, var(--color-ink) 55%, var(--color-gold));
   }
   :root[data-skin='candlelit'] .leather,
+  :root[data-skin='editorial'][data-theme='dark'] .leather,
   :root[data-skin='modern'][data-theme='dark'] .leather {
     background-color: var(--color-leather);
     background-image:
       radial-gradient(circle at 30% 20%, rgba(255, 200, 150, 0.12), transparent 55%),
       radial-gradient(circle at 70% 80%, rgba(0, 0, 0, 0.35), transparent 60%),
       linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.25));
+  }
+  @media (prefers-color-scheme: dark) {
+    :root[data-skin='editorial']:not([data-theme='light']) .leather {
+      background-color: var(--color-leather);
+      background-image:
+        radial-gradient(circle at 30% 20%, rgba(255, 200, 150, 0.12), transparent 55%),
+        radial-gradient(circle at 70% 80%, rgba(0, 0, 0, 0.35), transparent 60%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.25));
+    }
   }
 
   .gold-foil {

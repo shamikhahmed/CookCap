@@ -404,7 +404,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
         </div>
 
         {/* ── Quick facts (refined editorial hierarchy) ─────*/}
-        <dl className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4" role="list">
           <Meta icon="clock" label="Prep" value={`${recipe.prepMin}m`} index={0} />
           <Meta icon="pot" label="Cook" value={`${recipe.cookMin}m`} index={1} />
           <Meta icon="gauge" label="Level" value={DIFF_LABEL[recipe.difficulty]} index={2} />
@@ -416,7 +416,7 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
               index={3}
             />
           )}
-        </dl>
+        </div>
         {recipeCost && (
           <p className="mt-2 text-xs text-[color:var(--color-ink-faint)]">
             Ingredients {recipeCost}{' '}
@@ -485,7 +485,11 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
                 <span className="text-xs uppercase tracking-wide text-[color:var(--color-ink-faint)]">
                   Spice
                 </span>
-                <span className="flex gap-0.5" aria-label={`Spice level ${recipe.spiceLevel} of 5`}>
+                <span
+                  className="flex gap-0.5"
+                  role="img"
+                  aria-label={`Spice level ${recipe.spiceLevel} of 5`}
+                >
                   {[1, 2, 3, 4, 5].map((n) => (
                     <span
                       key={n}
@@ -1167,6 +1171,7 @@ function Meta({
 }) {
   return (
     <div
+      role="listitem"
       className="micro-fact flex items-center gap-2 rounded-md bg-[color:var(--color-paper-sunk)] px-3 py-2"
       style={{ ['--micro-i' as string]: index }}
     >

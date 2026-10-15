@@ -111,7 +111,9 @@ async function openMore(page) {
 async function setDarkMode(page, dark) {
   await page.evaluate((wantDark) => {
     localStorage.setItem('cookcap-theme', wantDark ? 'dark' : 'light');
+    localStorage.setItem('cookcap-skin', 'editorial');
     document.documentElement.setAttribute('data-theme', wantDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-skin', 'editorial');
   }, dark);
   await settle(page, 300);
 }
@@ -894,22 +896,37 @@ async function main() {
   }
   const darkCount = shots.filter((s) => s.theme === 'dark').length;
   mkdirSync(MANIFEST_DIR, { recursive: true });
+  // Preserve schema-2 v3 shots (webp) if present; merge legacy PNG index.
+  let prior = {};
+  try {
+    prior = JSON.parse(readFileSync(MANIFEST, 'utf8'));
+  } catch {
+    /* first write */
+  }
+  const v3Shots = Array.isArray(prior.shots)
+    ? prior.shots.filter((s) => s && s.device && s.file && !String(s.file).includes('docs/gallery'))
+    : [];
   writeFileSync(
     MANIFEST,
     JSON.stringify(
       {
         app: 'CookCap',
         version: APP_VER,
+        capturedAt: new Date().toISOString(),
         generated: new Date().toISOString(),
+        accent: '#8b4513',
+        schema: 2,
         galleryRoot: 'docs/gallery',
-        note: 'Perfection v3: light + dark book chrome; viewer at /screen-gallery.html',
-        shots,
+        legacyGalleryRoot: 'docs/gallery',
+        note: 'Perfection v4: Editorial night paper dark + light; viewer at /screen-gallery.html',
+        schemes: ['light', 'dark'],
+        shots: v3Shots.length ? v3Shots : shots,
+        legacyShots: shots,
         v3: {
-          schema: 'pending-v2',
           themesRequired: ['light', 'dark'],
-          devicesRequired: ['iphone', 'ipad-landscape', 'desktop'],
-          darkShots: darkCount,
-          note: 'CK-V3-5 dark book chrome captured (Wave G)',
+          devicesRequired: ['iphone', 'ipad', 'mac'],
+          darkShots: (v3Shots.length ? v3Shots : shots).filter((s) => s.theme === 'dark').length,
+          note: 'CK-V3-5 / v4 Editorial night paper dark gallery',
         },
       },
       null,

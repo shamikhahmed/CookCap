@@ -1,18 +1,22 @@
 /* C-29 palette — raw hex allowed only in tokens.* (brand lock) */
 :root {
   --cc-000000: #000000;
+  --cc-0e0c09: #0e0c09;
   --cc-111111: #111111;
   --cc-120a06: #120a06;
   --cc-12100e: #12100e;
   --cc-14100c: #14100c;
   --cc-14110e: #14110e;
   --cc-17120f: #17120f;
+  --cc-17140f: #17140f;
   --cc-1a1008: #1a1008;
   --cc-1a120e: #1a120e;
   --cc-1a1410: #1a1410;
   --cc-1a1510: #1a1510;
   --cc-1e1008: #1e1008;
   --cc-1f1814: #1f1814;
+  --cc-1f1b14: #1f1b14;
+  --cc-120f0b: #120f0b;
   --cc-241c16: #241c16;
   --cc-262018: #262018;
   --cc-2a1810: #2a1810;
@@ -38,6 +42,7 @@
   --cc-5a3428: #5a3428;
   --cc-5a3a28: #5a3a28;
   --cc-5a544c: #5a544c;
+  --cc-5a4a32: #5a4a32;
   --cc-5a7a4a: #5a7a4a;
   --cc-5c4030: #5c4030;
   --cc-5c4f42: #5c4f42;
@@ -49,14 +54,18 @@
   --cc-8a6a2e: #8a6a2e;
   --cc-8a6a48: #8a6a48;
   --cc-8a7050: #8a7050;
+  --cc-8ab07a: #8ab07a;
+  --cc-8f4520: #8f4520;
   --cc-8f2f22: #8f2f22;
   --cc-9a7348: #9a7348;
+  --cc-a05028: #a05028;
   --cc-a06040: #a06040;
   --cc-a09078: #a09078;
   --cc-a88458: #a88458;
   --cc-a89470: #a89470;
   --cc-b08d46: #b08d46;
   --cc-b28a44: #b28a44;
+  --cc-b55a30: #b55a30;
   --cc-b5622c: #b5622c;
   --cc-b8934e: #b8934e;
   --cc-b8a482: #b8a482;
@@ -66,6 +75,7 @@
   --cc-c2b8ac: #c2b8ac;
   --cc-c4a06a: #c4a06a;
   --cc-c4b49a: #c4b49a;
+  --cc-c4b79e: #c4b79e;
   --cc-c8a878: #c8a878;
   --cc-c8b6a0: #c8b6a0;
   --cc-c9a24a: #c9a24a;
@@ -76,8 +86,10 @@
   --cc-d4af37: #d4af37;
   --cc-d4c2a4: #d4c2a4;
   --cc-d98a4e: #d98a4e;
+  --cc-ddd2bc: #ddd2bc;
   --cc-ddd4c8: #ddd4c8;
   --cc-ded1b8: #ded1b8;
+  --cc-e0796b: #e0796b;
   --cc-e07a4a: #e07a4a;
   --cc-e08a5a: #e08a5a;
   --cc-e0d2c0: #e0d2c0;
@@ -91,6 +103,7 @@
   --cc-eaa66d: #eaa66d;
   --cc-ece4d5: #ece4d5;
   --cc-efe4d0: #efe4d0;
+  --cc-efe6d6: #efe6d6;
   --cc-efe7d7: #efe7d7;
   --cc-f0e0a8: #f0e0a8;
   --cc-f0e4d0: #f0e4d0;

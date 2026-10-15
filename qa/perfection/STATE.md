@@ -1,8 +1,8 @@
 # CookCap — Perfection v3 STATE
 **Agent:** Builder-CookCap  
 **Updated:** 2026-10-14T12:05:00Z  
-**Phase:** I patch **done** — **3.6.1** live  
-**Version:** 3.6.1 · SW `cookcap-v42` · tag `v3.6.1` · tip `e435bba`  
+**Phase:** Editorial night paper **done** — **3.7.0**  
+**Version:** 3.7.0 · SW `cookcap-v43` · gallery schemes light+dark  
 **Live:** https://shamikhahmed.github.io/CookCap/?demo=1  
 
 ## Done

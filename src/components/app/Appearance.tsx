@@ -171,9 +171,9 @@ export function useAppearance(): AppearanceState {
   return ctx;
 }
 
-/** True when skin supports light/dark toggle (Candlelit / Modern). */
+/** True when skin supports light/dark toggle (Editorial night paper / Candlelit / Modern). */
 export function skinSupportsThemeToggle(skin: Skin): boolean {
-  return skin === 'candlelit' || skin === 'modern';
+  return skin === 'editorial' || skin === 'candlelit' || skin === 'modern';
 }
 
 export function AppearanceButton() {

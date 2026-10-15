@@ -145,7 +145,7 @@ export function ShoppingDrawer({ open, onClose }: { open: boolean; onClose: () =
 
             <div className="min-h-0 flex-1 overflow-y-auto px-5 py-4">
               {rows.length === 0 ? (
-                <p className="rounded-lg bg-[color:var(--color-paper-sunk)] p-5 text-center text-sm text-[color:var(--color-ink-faint)]">
+                <p className="rounded-lg bg-[color:var(--color-paper-sunk)] p-5 text-center text-sm text-[color:var(--color-ink-soft)]">
                   Your list is empty. Open a recipe → Add to shopping — items wait here offline. Duplicates merge automatically.
                 </p>
               ) : (

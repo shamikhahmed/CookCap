@@ -8,6 +8,10 @@ import { fadeTransition } from '@/lib/motion';
 const KEY = 'cookcap-whats-new';
 
 const NOTES: Record<string, string[]> = {
+  '3.7.0': [
+    'Night paper — Editorial dark mode: warm near-black pages, cream ink, muted gold rules',
+    'Appearance Dark / Auto now work on the default Editorial skin (not only Modern)',
+  ],
   '3.4.1': [
     'Micro moments — heart glow, star sweep, step strike, fly-to-cart',
     'Servings roll · quick-facts settle in · buttons press soft',

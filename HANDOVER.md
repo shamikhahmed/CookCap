@@ -1,6 +1,6 @@
 # CookCap — Handover
 
-Heirloom family cookbook PWA (Cap family). Version **3.4.1**.
+Heirloom family cookbook PWA (Cap family). Version **3.7.0**.
 
 ## Live
 
@@ -10,19 +10,26 @@ Next `output: 'export'` + Actions Pages. `NEXT_PUBLIC_BASE_PATH=/CookCap` on CI.
 
 ## Stack
 
-Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v4 (`cookcap`, migrates `jia-cooks`) · SW `cookcap-v38`
+Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v4 (`cookcap`, migrates `jia-cooks`) · SW `cookcap-v43`
 
 Heroes locked: `src/lib/recipes/images.lock.json` — rematch/fill need `--force-unlock`.  
 Gates: `gate:recipes` · `gate:anti-2d` · `gate:wood` · `smoke:product` (CI after build).  
-Catalog: **790** recipes (`gate:recipes`) — family editorial + local **world table** (`data-world-table.ts`).  
+Catalog: family editorial + local **world table** (`data-world-table.ts`).  
 User media: IDB `user-heroes` + `cover-image`; fork merge in `buildLeaves`.  
 Serve with → `src/lib/recipes/serve-with.ts`. Phase map: `docs/ROADMAP.md`. Hard nos: `docs/SECURITY.md`.  
 **Claude review entry:** `docs/REVIEW-PACK.md`
 
+## Appearance (v3.7.0)
+
+- Default skin **Editorial** supports light cream paper **and** night paper dark (`#17140f` / cream ink `#efe6d6` / muted gold rules)
+- Appearance → Dark / Auto works on Editorial (not only Modern); `skinSupportsThemeToggle` includes `editorial`
+- Tokens: `:root[data-skin='editorial'][data-theme='dark']` + `prefers-color-scheme` Auto in `src/app/globals.css`
+- Photos unchanged across themes
+
 ## Run
 
 ```bash
-cd "/Users/shamikhahmed/CookBook Website"
+cd "/Users/shamikhahmed/Projects/Cap/Cap-Apps/CookCap"
 npm install && npm run dev
 npm run typecheck && npm run gate:recipes && npm run gate:anti-2d && npm run gate:wood
 npm run pages:build
@@ -30,6 +37,8 @@ npm run pages:build
 mkdir -p /tmp/gal-root && ln -sfn "$PWD/out" /tmp/gal-root/CookCap
 python3 -m http.server 3456 --directory /tmp/gal-root &
 GALLERY_URL=http://127.0.0.1:3456/CookCap npm run gallery
+# Dark v3 webp (same ids as light):
+GALLERY_URL=http://127.0.0.1:3456/CookCap node scripts/capture-gallery-v3-dark.mjs
 GATE_URL=http://127.0.0.1:3456/CookCap npm run gate:wood
 ```
 
@@ -39,39 +48,9 @@ GATE_URL=http://127.0.0.1:3456/CookCap npm run gate:wood
 - Tokens: `--safe-t/b/l/r`, `--header-h`, `--footer-h`, `--chrome-total`
 - `.app-header` / `.app-footer` carry insets; desk is `100dvh` flex column
 - Footer nav: Home · ±5 · prev/next · **page scrubber** · tap page count → go-to #
-- **v3.2.0** reading desk = real wood (`--dr-wood`), not cream; phone chrome wood-tinted
-- **v3.3.1** dresser animation bible — idle (lamp/motes/parallax) + wood drawer open/close
-- **v3.3.2** cover open hinge — leather swing, inside paper, page fan
-- **v3.4.0** type ≥16 · taps 44 · WhatsNew corner · hero/tabs polish
-- **v3.4.1** bible §9 micros + onboard→flip 60fps proof
-
-## Dresser
-
-- Dressing table onboard → book lands on **same** wooden table → paper tabs stuck to wood
-- **v3.3.1** — lamp breathe, dust motes, ≤±4° mouse parallax; drawer break-free open + thunk close
-- Escape during dresser confirms before skip
-- Low CPU / reduced motion → Simple onboard (`OnboardingFlow`)
-
-## Cover open
-
-- **v3.3.2** — cover leaf tap / drag forward → hinge `rotateY 0→−160°` (620ms `--e-page`)
-- Paper inside cover past −90°; cast shadow peaks mid-swing; 4-sheet right-edge fan
-- Spine gutter deepens while open; reduced-motion = 200ms cross-fade
-- Spec: `docs/animation-bible.md` §6 · impl: `src/components/book/Book.tsx`
-
-## Micros (v3.4.1)
-
-- Heart / stars / step strike / fly-to-cart / servings odo / facts stagger / micro-press
-- Spec: `docs/animation-bible.md` §9 · `src/lib/motion.ts` · RecipeLeaf + Shell
-- Proof: `docs/gallery/recordings/onboard-flip.webm` (`npm run record:onboard-flip`)
-
-## Polish (v3.4.0)
-
-- Reading body ≥16px; chrome floor ≥12px (`--text-floor`)
-- Interactive hits ≥44px; scrub track 44px tall
-- WhatsNew = deferred corner toast + dismiss backdrop
-- Recipe hero scrim + title clears heart; paper tabs short labels (World/Europe/…)
-- Spec: `docs/cursor-polish-v3.4.md`
+- Reading desk = real wood (`--dr-wood`); phone chrome wood-tinted
+- Dresser animation bible — idle + wood drawer open/close
+- Cover open hinge — leather swing, inside paper, page fan
 
 ## Recipes
 

@@ -1,5 +1,11 @@
 # CookCap finish LOG
 
+## 2026-10-15 — 3.7.0 Editorial night paper
+- **Changed:** `:root[data-skin='editorial'][data-theme='dark']` night paper tokens; Auto via `prefers-color-scheme`; `skinSupportsThemeToggle` includes editorial; leather cover follows dark; version → 3.7.0 / SW `cookcap-v43`; gallery schemes light+dark; `public/changelog.html`.
+- **Root cause:** Editorial was light-only; Dark toggle only appeared for candlelit/modern.
+- **Why:** Smallest token + toggle surface change; photos untouched.
+- **Tests:** typecheck · gates · e2e · axe (as available) · dark gallery capture.
+
 ### COOK-P1-01…09 ✅ (2026-09-15)
 Header, hero eyebrows, icons, nutrition footnote, catalog count, onboarding preview, scrubber spacing, images.lock rights fields, privacy.html, e2e scaffold.
 

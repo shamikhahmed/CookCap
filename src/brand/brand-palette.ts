@@ -1,6 +1,7 @@
 /** CookCap brand palette — Tier 1 brandOk path */
 export const CCBrand = {
   h_17120f: '#17120f',
+  h_17140f: '#17140f',
   h_1a1512: '#1a1512',
   h_2a2320: '#2a2320',
   h_2e241c: '#2e241c',
@@ -36,6 +37,7 @@ export const CCBrand = {
   h_e7dcc6: '#e7dcc6',
   h_ebe4d4: '#ebe4d4',
   h_ece1d1: '#ece1d1',
+  h_efe6d6: '#efe6d6',
   h_efe7d7: '#efe7d7',
   h_f3ecdb: '#f3ecdb',
   h_f3efe9: '#f3efe9',

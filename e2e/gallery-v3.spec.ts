@@ -68,8 +68,10 @@ async function applyTheme(page: Page, theme: 'light' | 'dark') {
     ({ theme, ver }) => {
       localStorage.setItem('cookcap-onboarded', '1');
       localStorage.setItem('cookcap-theme', theme);
+      localStorage.setItem('cookcap-skin', 'editorial');
       localStorage.setItem('cookcap-whats-new', ver);
       document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('data-skin', 'editorial');
     },
     { theme, ver: APP_VER },
   );
@@ -194,8 +196,9 @@ function writeManifest(shots: Shot[]) {
         capturedAt: new Date().toISOString(),
         accent: ACCENT,
         schema: 2,
-        note: 'v3 hub capture — Cover/Contents/Recipe × light/dark × iphone/ipad/mac (CK-V3-5). Legacy docs/gallery PNG index retained under legacyShots.',
+        note: 'v3/v4 gallery — book/cook/plan screens × light/dark on iPhone + Mac (+ hub on iPad). Editorial night paper dark.',
         legacyGalleryRoot: 'docs/gallery',
+        schemes: ['light', 'dark'],
         v3: {
           themesRequired: ['light', 'dark'],
           devicesRequired: ['iphone', 'ipad', 'mac'],

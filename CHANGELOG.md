@@ -1,3 +1,13 @@
+## 3.7.0 — 2026-10-15
+
+Editorial **night paper** dark mode (Perfection Loop v4).
+
+- Appearance → Dark now switches default Editorial skin (warm near-black paper `#17140f`, cream ink `#efe6d6`, muted gold rules) — not only Modern
+- Auto follows system `prefers-color-scheme` for Editorial
+- `skinSupportsThemeToggle` includes `editorial`; cover leather follows night paper
+- Photos unchanged; semantic feedback colors tuned for WCAG AA on night paper
+- Gallery schemes: `light` + `dark`; SW → `cookcap-v43`
+
 ## 3.6.1 — 2026-10-14
 
 - Harden hydration against React #418 on live Pages (edition/ideas gated until post-mount)
