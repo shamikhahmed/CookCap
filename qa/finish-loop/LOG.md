@@ -1,5 +1,13 @@
 # CookCap finish LOG
 
+
+## 2026-10-16 — §6 dark gallery plate-view fix
+- **Root cause:** Dark capture left `cookcap-mode=plate` after lenses/plate shots; `cook--recipe--default` never reset to `reader`, so plate+recipe were byte-identical (hub `ingestGallery` drops same-md5 siblings).
+- **Changed:** `scripts/capture-gallery-v3-dark.mjs` — explicit reader/plate seeding, wait for `Mode — My Plate` / `Mode — Reader` + healthier chrome + hero decode; `GALLERY_ONLY` / `GALLERY_DEVICES` filters. Recaptured dark iphone+mac plate-view + recipe. Manifest timestamp refreshed. No version bump (gallery assets only).
+- **MD5:** before iphone/mac plate==recipe; after differ. Live hub path after redeploy: `/apps/cookcap/shots/dark/{iphone,mac}/…` via `capricorn-lab` `build-minisites.mjs` ingest.
+- **iPad:** N/A (no light plate-view source set).
+
+
 ## 2026-10-15 — 3.7.0 Editorial night paper
 - **Changed:** `:root[data-skin='editorial'][data-theme='dark']` night paper tokens; Auto via `prefers-color-scheme`; `skinSupportsThemeToggle` includes editorial; leather cover follows dark; version → 3.7.0 / SW `cookcap-v43`; gallery schemes light+dark; `public/changelog.html`.
 - **Root cause:** Editorial was light-only; Dark toggle only appeared for candlelit/modern.

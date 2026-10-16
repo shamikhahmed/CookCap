@@ -55,6 +55,20 @@ async function settle(page, ms = 400) {
   await page.waitForTimeout(ms);
 }
 
+/** Wait until the recipe leaf hero has decoded pixels (avoids empty plate/recipe shots). */
+async function waitRecipeHero(page, timeout = 20000) {
+  await page.waitForFunction(
+    () => {
+      const root = document.querySelector('[data-leaf-scroll]');
+      if (!root) return false;
+      const imgs = [...root.querySelectorAll('img')];
+      return imgs.some((img) => img.complete && img.naturalWidth > 40);
+    },
+    null,
+    { timeout },
+  );
+}
+
 async function seedDark(page) {
   await page.evaluate(
     ({ name, ver }) => {
@@ -162,19 +176,32 @@ async function captureOne(page, device, file) {
     return shotWebp(page, device, file);
   }
   if (base === 'cook--recipe--default' || base === 'book--recipe--demo') {
-    await seedDark(page);
+    // Reader must be explicit — earlier plate/lenses shots leave cookcap-mode=plate.
+    await page.evaluate((name) => {
+      localStorage.setItem('cookcap-mode', 'reader');
+      localStorage.setItem('cookcap-owner', name);
+      localStorage.setItem('cookcap-theme', 'dark');
+      localStorage.setItem('cookcap-skin', 'editorial');
+    }, DEMO);
     await page.goto(`${BASE}/?recipe=${RECIPE}&for=${encodeURIComponent(DEMO)}`, {
       waitUntil: 'domcontentloaded',
       timeout: 90000,
     });
     await seedDark(page);
     await waitFooter(page);
+    await page.getByRole('button', { name: 'Mode — Reader' }).waitFor({ state: 'visible', timeout: 15000 });
     await page.evaluate(() => document.querySelector('[data-leaf-scroll]')?.scrollTo(0, 0));
+    await waitRecipeHero(page);
     await settle(page, 600);
     return shotWebp(page, device, file);
   }
   if (base === 'cook--cooking-mode--default') {
-    await seedDark(page);
+    await page.evaluate((name) => {
+      localStorage.setItem('cookcap-mode', 'reader');
+      localStorage.setItem('cookcap-owner', name);
+      localStorage.setItem('cookcap-theme', 'dark');
+      localStorage.setItem('cookcap-skin', 'editorial');
+    }, DEMO);
     await page.goto(`${BASE}/?recipe=${RECIPE}&for=${encodeURIComponent(DEMO)}`, {
       waitUntil: 'domcontentloaded',
       timeout: 90000,
@@ -201,11 +228,16 @@ async function captureOne(page, device, file) {
     });
     await seedDark(page);
     await waitFooter(page);
+    // Prove plate mode mounted (Mode letter + healthier chrome) before shooting.
+    await page.getByRole('button', { name: 'Mode — My Plate' }).waitFor({ state: 'visible', timeout: 15000 });
     if (base === 'cook--cooking-lenses--default') {
       await page.getByRole('button', { name: /^Mode —/ }).click();
       await page.getByRole('heading', { name: 'Choose a mode' }).waitFor({ state: 'visible', timeout: 8000 });
       await settle(page, 400);
     } else {
+      await page.getByText('Make it healthier').first().waitFor({ state: 'visible', timeout: 10000 });
+      await page.evaluate(() => document.querySelector('[data-leaf-scroll]')?.scrollTo(0, 0));
+      await waitRecipeHero(page);
       await settle(page, 600);
     }
     return shotWebp(page, device, file);
@@ -304,14 +336,33 @@ function mergeManifest(newShots) {
   console.log(`Wrote manifest (${merged.length} shots, ${out.v3.darkShots} dark)`);
 }
 
+/** Optional: GALLERY_ONLY=cook--plate-view--default,cook--recipe--default */
+function onlyFilter(files) {
+  const raw = (process.env.GALLERY_ONLY || '').trim();
+  if (!raw) return files;
+  const want = new Set(
+    raw
+      .split(',')
+      .map((s) => s.trim().replace(/\.webp$/, ''))
+      .filter(Boolean)
+      .map((s) => (s.endsWith('.webp') ? s : `${s}.webp`)),
+  );
+  return files.filter((f) => want.has(f));
+}
+
 async function main() {
   console.log(`Dark v3 gallery → ${GALLERY}`);
   console.log(`Base ${BASE} · ver ${APP_VER}`);
   const browser = await chromium.launch({ headless: true });
   const collected = [];
+  const deviceFilter = (process.env.GALLERY_DEVICES || '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
 
   for (const [device, vp] of Object.entries(DEVICES)) {
-    const files = lightFiles(device);
+    if (deviceFilter.length && !deviceFilter.includes(device)) continue;
+    const files = onlyFilter(lightFiles(device));
     if (!files.length) {
       console.warn(`No light/${device} webps — skipping device`);
       continue;
