@@ -1,10 +1,10 @@
 {
   "app": "CookCap",
-  "version": "3.7.0",
+  "version": "3.7.1",
   "capturedAt": "2026-10-16T11:48:22.902Z",
   "accent": "#8b4513",
   "schema": 2,
-  "note": "v4 gallery — Editorial night paper dark + light; same screen ids across schemes.",
+  "note": "v4 gallery \u2014 Editorial night paper dark + light; same screen ids across schemes.",
   "legacyGalleryRoot": "docs/gallery",
   "schemes": [
     "light",
@@ -32,7 +32,7 @@
       "device": "ipad",
       "file": "dark/ipad/book--contents--demo.webp",
       "route": "book",
-      "caption": "Dark · book--contents--demo",
+      "caption": "Dark \u00b7 book--contents--demo",
       "w": 2048,
       "h": 1536
     },
@@ -45,7 +45,7 @@
       "device": "ipad",
       "file": "dark/ipad/book--cover--demo.webp",
       "route": "book",
-      "caption": "Dark · book--cover--demo",
+      "caption": "Dark \u00b7 book--cover--demo",
       "w": 2048,
       "h": 1536
     },
@@ -58,7 +58,7 @@
       "device": "ipad",
       "file": "dark/ipad/book--recipe--demo.webp",
       "route": "book",
-      "caption": "Dark · book--recipe--demo",
+      "caption": "Dark \u00b7 book--recipe--demo",
       "w": 2048,
       "h": 1536
     },
@@ -71,7 +71,7 @@
       "device": "iphone",
       "file": "dark/iphone/book--chapter--default.webp",
       "route": "book",
-      "caption": "Dark · book--chapter--default",
+      "caption": "Dark \u00b7 book--chapter--default",
       "w": 780,
       "h": 1688
     },
@@ -84,7 +84,7 @@
       "device": "iphone",
       "file": "dark/iphone/book--contents--default.webp",
       "route": "book",
-      "caption": "Dark · book--contents--default",
+      "caption": "Dark \u00b7 book--contents--default",
       "w": 780,
       "h": 1688
     },
@@ -97,7 +97,7 @@
       "device": "iphone",
       "file": "dark/iphone/book--cover--default.webp",
       "route": "book",
-      "caption": "Dark · book--cover--default",
+      "caption": "Dark \u00b7 book--cover--default",
       "w": 780,
       "h": 1688
     },
@@ -110,7 +110,7 @@
       "device": "iphone",
       "file": "dark/iphone/book--family-friends--default.webp",
       "route": "book",
-      "caption": "Dark · book--family-friends--default",
+      "caption": "Dark \u00b7 book--family-friends--default",
       "w": 780,
       "h": 1688
     },
@@ -123,7 +123,7 @@
       "device": "iphone",
       "file": "dark/iphone/book--page-navigator--default.webp",
       "route": "book",
-      "caption": "Dark · book--page-navigator--default",
+      "caption": "Dark \u00b7 book--page-navigator--default",
       "w": 780,
       "h": 1688
     },
@@ -136,7 +136,7 @@
       "device": "iphone",
       "file": "dark/iphone/book--paper-tabs--default.webp",
       "route": "book",
-      "caption": "Dark · book--paper-tabs--default",
+      "caption": "Dark \u00b7 book--paper-tabs--default",
       "w": 780,
       "h": 1688
     },
@@ -149,7 +149,7 @@
       "device": "iphone",
       "file": "dark/iphone/book--title-page--default.webp",
       "route": "book",
-      "caption": "Dark · book--title-page--default",
+      "caption": "Dark \u00b7 book--title-page--default",
       "w": 780,
       "h": 1688
     },
@@ -162,7 +162,7 @@
       "device": "iphone",
       "file": "dark/iphone/cook--cooking-lenses--default.webp",
       "route": "book",
-      "caption": "Dark · cook--cooking-lenses--default",
+      "caption": "Dark \u00b7 cook--cooking-lenses--default",
       "w": 780,
       "h": 1688
     },
@@ -175,7 +175,7 @@
       "device": "iphone",
       "file": "dark/iphone/cook--cooking-mode--default.webp",
       "route": "book",
-      "caption": "Dark · cook--cooking-mode--default",
+      "caption": "Dark \u00b7 cook--cooking-mode--default",
       "w": 780,
       "h": 1688
     },
@@ -188,7 +188,7 @@
       "device": "iphone",
       "file": "dark/iphone/cook--plate-view--default.webp",
       "route": "book",
-      "caption": "Dark · cook--plate-view--default",
+      "caption": "Dark \u00b7 cook--plate-view--default",
       "w": 780,
       "h": 1688
     },
@@ -201,7 +201,7 @@
       "device": "iphone",
       "file": "dark/iphone/cook--recipe--default.webp",
       "route": "book",
-      "caption": "Dark · cook--recipe--default",
+      "caption": "Dark \u00b7 cook--recipe--default",
       "w": 780,
       "h": 1688
     },
@@ -214,7 +214,7 @@
       "device": "iphone",
       "file": "dark/iphone/family--profiles--default.webp",
       "route": "book",
-      "caption": "Dark · family--profiles--default",
+      "caption": "Dark \u00b7 family--profiles--default",
       "w": 780,
       "h": 1688
     },
@@ -227,7 +227,7 @@
       "device": "iphone",
       "file": "dark/iphone/find--search--default.webp",
       "route": "book",
-      "caption": "Dark · find--search--default",
+      "caption": "Dark \u00b7 find--search--default",
       "w": 780,
       "h": 1688
     },
@@ -240,7 +240,7 @@
       "device": "iphone",
       "file": "dark/iphone/plan--calendar--default.webp",
       "route": "book",
-      "caption": "Dark · plan--calendar--default",
+      "caption": "Dark \u00b7 plan--calendar--default",
       "w": 780,
       "h": 1688
     },
@@ -253,7 +253,7 @@
       "device": "iphone",
       "file": "dark/iphone/plan--meal-planner--default.webp",
       "route": "book",
-      "caption": "Dark · plan--meal-planner--default",
+      "caption": "Dark \u00b7 plan--meal-planner--default",
       "w": 780,
       "h": 1688
     },
@@ -266,7 +266,7 @@
       "device": "iphone",
       "file": "dark/iphone/plan--pantry--default.webp",
       "route": "book",
-      "caption": "Dark · plan--pantry--default",
+      "caption": "Dark \u00b7 plan--pantry--default",
       "w": 780,
       "h": 1688
     },
@@ -279,7 +279,7 @@
       "device": "iphone",
       "file": "dark/iphone/plan--shopping-list--default.webp",
       "route": "book",
-      "caption": "Dark · shopping list",
+      "caption": "Dark \u00b7 shopping list",
       "w": 780,
       "h": 1688
     },
@@ -292,7 +292,7 @@
       "device": "iphone",
       "file": "dark/iphone/you--appearance--default.webp",
       "route": "book",
-      "caption": "Dark · you--appearance--default",
+      "caption": "Dark \u00b7 you--appearance--default",
       "w": 780,
       "h": 1688
     },
@@ -305,7 +305,7 @@
       "device": "mac",
       "file": "dark/mac/book--chapter--default.webp",
       "route": "book",
-      "caption": "Dark · book--chapter--default",
+      "caption": "Dark \u00b7 book--chapter--default",
       "w": 1440,
       "h": 900
     },
@@ -318,7 +318,7 @@
       "device": "mac",
       "file": "dark/mac/book--contents--default.webp",
       "route": "book",
-      "caption": "Dark · book--contents--default",
+      "caption": "Dark \u00b7 book--contents--default",
       "w": 1440,
       "h": 900
     },
@@ -331,7 +331,7 @@
       "device": "mac",
       "file": "dark/mac/book--cover--default.webp",
       "route": "book",
-      "caption": "Dark · book--cover--default",
+      "caption": "Dark \u00b7 book--cover--default",
       "w": 1440,
       "h": 900
     },
@@ -344,7 +344,7 @@
       "device": "mac",
       "file": "dark/mac/book--family-friends--default.webp",
       "route": "book",
-      "caption": "Dark · book--family-friends--default",
+      "caption": "Dark \u00b7 book--family-friends--default",
       "w": 1440,
       "h": 900
     },
@@ -357,7 +357,7 @@
       "device": "mac",
       "file": "dark/mac/book--page-navigator--default.webp",
       "route": "book",
-      "caption": "Dark · book--page-navigator--default",
+      "caption": "Dark \u00b7 book--page-navigator--default",
       "w": 1440,
       "h": 900
     },
@@ -370,7 +370,7 @@
       "device": "mac",
       "file": "dark/mac/book--title-page--default.webp",
       "route": "book",
-      "caption": "Dark · book--title-page--default",
+      "caption": "Dark \u00b7 book--title-page--default",
       "w": 1440,
       "h": 900
     },
@@ -383,7 +383,7 @@
       "device": "mac",
       "file": "dark/mac/cook--cooking-lenses--default.webp",
       "route": "book",
-      "caption": "Dark · cook--cooking-lenses--default",
+      "caption": "Dark \u00b7 cook--cooking-lenses--default",
       "w": 1440,
       "h": 900
     },
@@ -396,7 +396,7 @@
       "device": "mac",
       "file": "dark/mac/cook--cooking-mode--default.webp",
       "route": "book",
-      "caption": "Dark · cook--cooking-mode--default",
+      "caption": "Dark \u00b7 cook--cooking-mode--default",
       "w": 1440,
       "h": 900
     },
@@ -409,7 +409,7 @@
       "device": "mac",
       "file": "dark/mac/cook--plate-view--default.webp",
       "route": "book",
-      "caption": "Dark · cook--plate-view--default",
+      "caption": "Dark \u00b7 cook--plate-view--default",
       "w": 1440,
       "h": 900
     },
@@ -422,7 +422,7 @@
       "device": "mac",
       "file": "dark/mac/cook--recipe--default.webp",
       "route": "book",
-      "caption": "Dark · cook--recipe--default",
+      "caption": "Dark \u00b7 cook--recipe--default",
       "w": 1440,
       "h": 900
     },
@@ -435,7 +435,7 @@
       "device": "mac",
       "file": "dark/mac/family--profiles--default.webp",
       "route": "book",
-      "caption": "Dark · family--profiles--default",
+      "caption": "Dark \u00b7 family--profiles--default",
       "w": 1440,
       "h": 900
     },
@@ -448,7 +448,7 @@
       "device": "mac",
       "file": "dark/mac/find--search--default.webp",
       "route": "book",
-      "caption": "Dark · find--search--default",
+      "caption": "Dark \u00b7 find--search--default",
       "w": 1440,
       "h": 900
     },
@@ -461,7 +461,7 @@
       "device": "mac",
       "file": "dark/mac/plan--calendar--default.webp",
       "route": "book",
-      "caption": "Dark · plan--calendar--default",
+      "caption": "Dark \u00b7 plan--calendar--default",
       "w": 1440,
       "h": 900
     },
@@ -474,7 +474,7 @@
       "device": "mac",
       "file": "dark/mac/plan--meal-planner--default.webp",
       "route": "book",
-      "caption": "Dark · plan--meal-planner--default",
+      "caption": "Dark \u00b7 plan--meal-planner--default",
       "w": 1440,
       "h": 900
     },
@@ -487,7 +487,7 @@
       "device": "mac",
       "file": "dark/mac/plan--pantry--default.webp",
       "route": "book",
-      "caption": "Dark · plan--pantry--default",
+      "caption": "Dark \u00b7 plan--pantry--default",
       "w": 1440,
       "h": 900
     },
@@ -500,7 +500,7 @@
       "device": "mac",
       "file": "dark/mac/plan--shopping-list--default.webp",
       "route": "book",
-      "caption": "Dark · shopping list",
+      "caption": "Dark \u00b7 shopping list",
       "w": 1440,
       "h": 900
     },
@@ -513,7 +513,7 @@
       "device": "mac",
       "file": "dark/mac/you--appearance--default.webp",
       "route": "book",
-      "caption": "Dark · you--appearance--default",
+      "caption": "Dark \u00b7 you--appearance--default",
       "w": 1440,
       "h": 900
     },
@@ -747,7 +747,7 @@
       "device": "iphone",
       "file": "light/iphone/plan--meal-planner--default.webp",
       "route": "book",
-      "caption": "Plan the week’s meals.",
+      "caption": "Plan the week\u2019s meals.",
       "w": 780,
       "h": 1688
     },
@@ -760,7 +760,7 @@
       "device": "iphone",
       "file": "light/iphone/plan--pantry--default.webp",
       "route": "book",
-      "caption": "What’s already in your kitchen.",
+      "caption": "What\u2019s already in your kitchen.",
       "w": 780,
       "h": 1688
     },
@@ -968,7 +968,7 @@
       "device": "mac",
       "file": "light/mac/plan--meal-planner--default.webp",
       "route": "book",
-      "caption": "Plan the week’s meals.",
+      "caption": "Plan the week\u2019s meals.",
       "w": 1440,
       "h": 900
     },
@@ -981,7 +981,7 @@
       "device": "mac",
       "file": "light/mac/plan--pantry--default.webp",
       "route": "book",
-      "caption": "What’s already in your kitchen.",
+      "caption": "What\u2019s already in your kitchen.",
       "w": 1440,
       "h": 900
     },

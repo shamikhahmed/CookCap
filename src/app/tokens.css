@@ -71,7 +71,9 @@
   --cc-b8a482: #b8a482;
   --cc-b9954f: #b9954f;
   --cc-b9a98f: #b9a98f;
-  --cc-c2683c: #c2683c;
+  /* Light-skin copper fill darkened for white text ≥4.5:1 (was #c2683c @ 3.93:1) */
+  --cc-c2683c: #a9542c;
+  --cc-a9542c: #a9542c;
   --cc-c2b8ac: #c2b8ac;
   --cc-c4a06a: #c4a06a;
   --cc-c4b49a: #c4b49a;

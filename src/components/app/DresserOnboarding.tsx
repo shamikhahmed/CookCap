@@ -255,14 +255,19 @@ export function DresserOnboarding({
           <div className="dresser-scrim" aria-hidden />
 
           <header className="dresser-chrome relative z-20 mx-3 mt-[max(0.5rem,env(safe-area-inset-top))] flex items-center justify-between gap-3 rounded-xl px-4 py-2">
-            <p className="font-serif text-sm font-semibold italic">{PRODUCT_NAME}</p>
-            <p className="text-[0.75rem] font-semibold tabular-nums" aria-live="polite">
+            <p className="font-serif text-sm font-semibold italic text-[color:var(--cc-1a120e)]">
+              {PRODUCT_NAME}
+            </p>
+            <p
+              className="text-[0.75rem] font-semibold tabular-nums text-[color:var(--cc-1a120e)]"
+              aria-live="polite"
+            >
               {progressLabel}
             </p>
             <button
               type="button"
               onClick={setupLater}
-              className="min-h-11 rounded-lg px-2 text-xs font-semibold underline-offset-2 hover:underline"
+              className="min-h-11 rounded-lg px-2 text-xs font-semibold text-[color:var(--cc-1a120e)] underline-offset-2 hover:underline"
             >
               Set up later
             </button>

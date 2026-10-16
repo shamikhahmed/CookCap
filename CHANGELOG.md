@@ -1,3 +1,11 @@
+## 3.7.1 — 2026-10-16
+
+Perfection Loop v5 §2 a11y:
+
+- Light Editorial copper fill `#a9542c` (white text ≥4.5:1; was `#c2683c` @ 3.93:1)
+- Dresser chrome product name + progress label explicit ink contrast
+- SW → `cookcap-v44`
+
 ## 3.7.0 — 2026-10-15
 
 Editorial **night paper** dark mode (Perfection Loop v4).
