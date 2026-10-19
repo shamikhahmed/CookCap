@@ -2025,8 +2025,13 @@
   pointer-events: none;
 }
 .dresser-chrome {
-  background: color-mix(in srgb, var(--color-paper-raised) 94%, var(--cc-ffffff));
-  color: var(--cc-1a120e);
+  /* Always-light bar — AA ink on every skin (theme paper-raised was too dim on night paper) */
+  background: linear-gradient(
+    180deg,
+    var(--cc-fbf7ee) 0%,
+    color-mix(in srgb, var(--cc-efe4d0) 96%, var(--cc-ffffff)) 100%
+  );
+  color: var(--cc-1f1814);
   box-shadow: 0 1px 4px color-mix(in srgb, var(--cc-000000) 16%, transparent);
 }
 .dresser-stage {

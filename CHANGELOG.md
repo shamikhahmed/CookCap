@@ -1,3 +1,11 @@
+## 3.7.2 — 2026-10-19
+
+Perfection Loop v5 §2 a11y (dresser chrome follow-up):
+
+- Dresser onboarding header uses always-light parchment chrome + `#1f1814` ink (fixes AA on Editorial night paper; removes brittle `text-[color:var(--cc-1a120e)]` overrides)
+- Light Editorial copper fill remains `#a9542c` (white text ≥4.5:1)
+- SW → `cookcap-v45`
+
 ## 3.7.1 — 2026-10-16
 
 Perfection Loop v5 §2 a11y:
