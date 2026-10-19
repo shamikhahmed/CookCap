@@ -8,6 +8,9 @@ import { fadeTransition } from '@/lib/motion';
 const KEY = 'cookcap-whats-new';
 
 const NOTES: Record<string, string[]> = {
+  '3.7.3': [
+    'Accessibility — copper buttons and labels meet WCAG AA on parchment and gradients',
+  ],
   '3.7.2': [
     'Accessibility — dresser onboarding header readable on every skin (WCAG AA)',
   ],

@@ -1,3 +1,10 @@
+## 3.7.3 — 2026-10-19
+
+Perfection Loop v5 §2 a11y (copper everywhere):
+
+- Light Editorial copper `--cc-c2683c` → `#8f4520` (was `#a9542c` @ 5.26:1 solid — still failed dresser 88% white-mix buttons ~4.18:1 and copper text on parchment ~4.07:1)
+- SW → `cookcap-v46`
+
 ## 3.7.2 — 2026-10-19
 
 Perfection Loop v5 §2 a11y (dresser chrome follow-up):

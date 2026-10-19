@@ -93,3 +93,9 @@ Header, hero eyebrows, icons, nutrition footnote, catalog count, onboarding prev
 - LH (local out/, real): mobile P68 A96 / desktop P51 A100 — thresholds unmet (honest).
 - Gallery: manifest refreshed after last UI; full capture still flakes on Start cooking click.
 - Tier1: FAIL (LH thresholds + prior notes). Not claiming PASS.
+
+## 2026-10-19 — D-COOK-LH-1 copper contrast (3.7.3)
+
+- **Problem:** `#a9542c` solid white ~5.26:1 still failed LH color-contrast on dresser gradient buttons (~4.18 via 88% white mix) and copper-as-text on parchment (~4.07).
+- **Fix:** `--cc-c2683c` / `--cc-a9542c` → `#8f4520`; brand-palette aligned; SW `cookcap-v46`.
+- **Verify:** contrast math solid 6.91 / grad88 5.29 / text-on-#ece1d1 5.35; then honest LH + CI after push.
