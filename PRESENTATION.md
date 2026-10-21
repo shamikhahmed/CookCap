@@ -26,3 +26,15 @@ Prior: **v3.2.0** wood + world catalog · **v3.1.0** page nav · **v3.0.1** hone
 
 Gallery: [docs/gallery/README.md](./docs/gallery/README.md)  
 Review pack: [docs/REVIEW-PACK.md](./docs/REVIEW-PACK.md)
+
+---
+
+## Slide — Real people (illustrative)
+
+Three fictional personas show how people use CookCap day to day — before/after numbers, timeline screenshots, and a short silent video with captions.
+
+**Stories:** https://shamikhahmed.github.io/apps/cookcap/  
+**Index:** https://shamikhahmed.github.io/stories/
+
+*Illustrative story. People and data are fictional.*
+

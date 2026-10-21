@@ -1,3 +1,9 @@
+## [3.7.4] — 2026-10-21
+
+- HIG v7: iOS tokens / native feel; Dynamic Type & hit targets where applicable
+- Real-people stories live on hub (`/apps/<slug>/` + `/stories/`)
+- Pitch/presentation/README synced to 3.7.4
+
 ## 3.7.3 — 2026-10-19
 
 Perfection Loop v5 §2 a11y (copper everywhere):
