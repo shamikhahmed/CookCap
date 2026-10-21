@@ -33,7 +33,7 @@ npm run gallery   # see HANDOVER for /CookCap serve
 
 Start: [`docs/REVIEW-PACK.md`](docs/REVIEW-PACK.md) · [`HANDOVER.md`](HANDOVER.md) · [`CHANGELOG.md`](CHANGELOG.md)
 
-## Real stories
+## Example stories
 
 Illustrative day-in-the-life stories (fictional personas) with screenshots and captions:
 
