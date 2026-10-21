@@ -38,7 +38,7 @@
   /* Modular type scale. Body ≥16px. UI floor ≥12px (no sub-12 captions). */
   --text-caption: 0.75rem;
   --text-sm: 0.875rem;
-  --text-base: 1rem;
+  --text-base: var(--ios-body, 1.0625rem); /* HIG 17pt */
   --text-lg: 1.125rem;
   --text-xl: 1.375rem;
   --text-2xl: clamp(1.5rem, 1.2rem + 1.4vw, 1.9rem);
