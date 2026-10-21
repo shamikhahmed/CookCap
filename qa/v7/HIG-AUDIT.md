@@ -67,10 +67,10 @@ Script: `capricorn-tooling/scripts/hig-check.mjs --url … --out … --viewport=
 
 | Viewport | Light | Dark |
 |---|---|---|
-| iphone-se | FAIL (body-font,hit-target) | FAIL (body-font,hit-target) |
-| iphone-16-pro | FAIL (body-font,hit-target) | FAIL (body-font,hit-target) |
-| ipad-air | FAIL (body-font,hit-target) | FAIL (body-font,hit-target) |
-| macbook-14 | FAIL (body-font,hit-target) | FAIL (body-font,hit-target) |
+| iphone-se | FAIL (hit-target) | FAIL (hit-target) |
+| iphone-16-pro | FAIL (hit-target) | FAIL (hit-target) |
+| ipad-air | FAIL (hit-target) | FAIL (hit-target) |
+| macbook-14 | FAIL (hit-target) | FAIL (hit-target) |
 
 ## Device / chrome checklist (§2.2 layout)
 
@@ -84,7 +84,7 @@ Script: `capricorn-tooling/scripts/hig-check.mjs --url … --out … --viewport=
 | Dark mode | mixed — see matrix | hig-check `--color-scheme=dark` |
 | No horizontal overflow | PASS | hig-check rule `horizontal-overflow` |
 | axe serious/critical = 0 | PASS | hig-check axe block (or noted FAIL) |
-| Body ≥17px computed | FAIL | hig-check `body-font` |
+| Body ≥17px computed | PASS | hig-check `body-font` |
 | Interactive ≥44px (or data-hit-dense ≥28) | FAIL | hig-check `hit-target` |
 | Min font ≥11px | PASS | hig-check `min-font` |
 | Skip link / landmark where web | PASS | index.html / layout landmarks (spot) |
@@ -101,4 +101,4 @@ Script: `capricorn-tooling/scripts/hig-check.mjs --url … --out … --viewport=
 | Multiple brand display faces | Accepted for heirloom book skin; system stack in ios-tokens |
 | Full VoiceOver every control | Spot-check 10 controls in sim — see APP-REPORT |
 
-**Gate:** 10 FAIL rows remaining for §2.2 acceptance on shipped UI chrome.
+**Gate:** 9 FAIL rows remaining for §2.2 acceptance on shipped UI chrome.
