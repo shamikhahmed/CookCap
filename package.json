@@ -25,7 +25,8 @@
     "test:e2e": "playwright test e2e/finish.spec.ts",
     "test:matrix": "FINISH_MATRIX=1 playwright test e2e/finish-matrix.spec.ts",
     "axe": "node scripts/capture-axe.mjs",
-    "tier1": "node ../capricorn-tooling/shared/testing/tier1.mjs"
+    "tier1": "node ../capricorn-tooling/shared/testing/tier1.mjs",
+    "verify": "npm run typecheck && npm run gate:recipes && npm run gate:count && NEXT_PUBLIC_BASE_PATH=/CookCap npm run build && npm run test:e2e"
   },
   "dependencies": {
     "idb": "^8.0.0",
