@@ -74,7 +74,7 @@ export const viewport: Viewport = {
   viewportFit: 'cover',
 };
 
-const themeInit = `(function(){try{var d=document.documentElement;var t=localStorage.getItem('cookcap-theme')||localStorage.getItem('jia-theme')||localStorage.getItem('grimoire-theme');if(t&&t!=='system')d.setAttribute('data-theme',t);var s=localStorage.getItem('cookcap-skin')||'editorial';d.setAttribute('data-skin',s);var tabs=localStorage.getItem('cookcap-tabs')||'paper';d.setAttribute('data-tabs',tabs);var r=localStorage.getItem('cookcap-readmode')||'flip';d.setAttribute('data-readmode',r);}catch(e){}})();`;
+const themeInit = `(function(){try{var d=document.documentElement;var t=localStorage.getItem('cookcap-theme')||localStorage.getItem('jia-theme')||localStorage.getItem('grimoire-theme');if(t&&t!=='system')d.setAttribute('data-theme',t);var s=localStorage.getItem('cookcap-skin')||'editorial';d.setAttribute('data-skin',s);var tabs=localStorage.getItem('cookcap-tabs')||'paper';d.setAttribute('data-tabs',tabs);var r=localStorage.getItem('cookcap-readmode')||'flip';d.setAttribute('data-readmode',r);var sc=parseFloat(d.style.getPropertyValue('--dt-scale'))||parseFloat(getComputedStyle(d).getPropertyValue('--dt-scale'))||1;var q=new URLSearchParams(location.search).get('dt');if(q)sc=parseFloat(q)||sc;try{var st=localStorage.getItem('cookcap-dt-scale');if(st&&!q)sc=parseFloat(st)||sc}catch(e){}sc=Math.min(2,Math.max(0.85,sc));d.style.setProperty('--dt-scale',sc.toFixed(3));d.dataset.dtScale=sc.toFixed(2);window.applyDynamicType=function(){}}catch(e){}})();`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

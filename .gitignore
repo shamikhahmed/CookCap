@@ -12,3 +12,4 @@ out/
 
 qa/finish-loop/shots/
 qa/perfection/**/*.png
+build/
