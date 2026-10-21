@@ -1,0 +1,34 @@
+{
+  "id": "cookcap-mariam",
+  "name": "Mariam Saleem",
+  "age": 26,
+  "city": "Islamabad, Pakistan",
+  "role": "New cook",
+  "tech": "medium",
+  "accessibility": "standard",
+  "device": "iPhone 15",
+  "goal": "Learning recipes with cook mode",
+  "pain_before": [
+    "Scattered notes",
+    "Forgot to log"
+  ],
+  "how_she_uses_it": [
+    "cook-mode",
+    "nutrition-estimates"
+  ],
+  "numbers": {
+    "before": {
+      "minutes_lost": 15
+    },
+    "after": {
+      "minutes_lost": 2
+    }
+  },
+  "quote": "Cook mode keeps the screen awake.",
+  "seed": "qa/v7/personas/cookcap-mariam.seed.json",
+  "features_used": [
+    "cook-mode",
+    "nutrition-estimates"
+  ],
+  "fictional": true
+}

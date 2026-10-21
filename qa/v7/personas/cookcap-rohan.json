@@ -1,0 +1,34 @@
+{
+  "id": "cookcap-rohan",
+  "name": "Rohan Patel",
+  "age": 31,
+  "city": "London, UK",
+  "role": "Weeknight cook",
+  "tech": "medium",
+  "accessibility": "standard",
+  "device": "iPhone 15",
+  "goal": "Meal plan and shopping list",
+  "pain_before": [
+    "Scattered notes",
+    "Forgot to log"
+  ],
+  "how_she_uses_it": [
+    "shopping-list",
+    "cook-mode"
+  ],
+  "numbers": {
+    "before": {
+      "minutes_lost": 15
+    },
+    "after": {
+      "minutes_lost": 2
+    }
+  },
+  "quote": "Shop once. Cook four nights.",
+  "seed": "qa/v7/personas/cookcap-rohan.seed.json",
+  "features_used": [
+    "shopping-list",
+    "cook-mode"
+  ],
+  "fictional": true
+}
