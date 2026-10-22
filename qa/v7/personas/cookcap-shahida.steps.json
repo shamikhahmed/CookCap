@@ -1,5 +1,6 @@
 {
   "personaId": "cookcap-shahida",
+  "personaName": "Shahida Begum",
   "baseUrl": "/",
   "viewport": {
     "width": 402,
@@ -9,26 +10,53 @@
   "prep": [
     {
       "action": "goto",
-      "path": "/"
+      "path": "/?demo=1&for=Shahida"
     },
     {
       "action": "wait",
-      "ms": 800
+      "ms": 1500
     }
   ],
   "steps": [
     {
-      "id": "01-home",
-      "title": "Home",
-      "action": "screenshot",
-      "route": "home",
-      "alt": "cookcap-shahida home screen with sample data"
+      "id": "01-iphone",
+      "title": "Add a recipe",
+      "action": "goto",
+      "path": "/?demo=1&for=Shahida",
+      "waitMs": 1200,
+      "alt": "Add recipe"
     },
     {
-      "id": "02-task",
-      "title": "Primary task",
-      "action": "screenshot",
-      "alt": "cookcap-shahida primary task view"
+      "id": "02-ipad",
+      "title": "Book on iPad",
+      "action": "goto",
+      "path": "/?demo=1&for=Shahida",
+      "waitMs": 1200,
+      "alt": "Cookbook"
+    },
+    {
+      "id": "03-mac",
+      "title": "Laptop edit",
+      "action": "goto",
+      "path": "/?demo=1&for=Shahida",
+      "waitMs": 1200,
+      "alt": "Edit"
+    },
+    {
+      "id": "04-mac",
+      "title": "Family profiles",
+      "action": "goto",
+      "path": "/?demo=1&for=Shahida",
+      "waitMs": 1200,
+      "alt": "Family"
+    },
+    {
+      "id": "05-iphone",
+      "title": "Phone",
+      "action": "goto",
+      "path": "/?demo=1&for=Shahida",
+      "waitMs": 1200,
+      "alt": "Tonight"
     }
   ]
 }

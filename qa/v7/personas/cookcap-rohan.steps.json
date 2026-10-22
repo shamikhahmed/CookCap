@@ -1,5 +1,6 @@
 {
   "personaId": "cookcap-rohan",
+  "personaName": "Rohan Mehta",
   "baseUrl": "/",
   "viewport": {
     "width": 402,
@@ -9,26 +10,53 @@
   "prep": [
     {
       "action": "goto",
-      "path": "/"
+      "path": "/?demo=1&for=Rohan"
     },
     {
       "action": "wait",
-      "ms": 800
+      "ms": 1500
     }
   ],
   "steps": [
     {
-      "id": "01-home",
-      "title": "Home",
-      "action": "screenshot",
-      "route": "home",
-      "alt": "cookcap-rohan home screen with sample data"
+      "id": "01-mac",
+      "title": "Sunday plan",
+      "action": "goto",
+      "path": "/?demo=1&for=Rohan",
+      "waitMs": 1200,
+      "alt": "Meal plan"
     },
     {
-      "id": "02-task",
-      "title": "Primary task",
-      "action": "screenshot",
-      "alt": "cookcap-rohan primary task view"
+      "id": "02-iphone",
+      "title": "Phone cook",
+      "action": "goto",
+      "path": "/?demo=1&for=Rohan",
+      "waitMs": 1200,
+      "alt": "Recipe"
+    },
+    {
+      "id": "03-ipad",
+      "title": "iPad shop",
+      "action": "goto",
+      "path": "/?demo=1&for=Rohan",
+      "waitMs": 1200,
+      "alt": "Shopping"
+    },
+    {
+      "id": "04-mac",
+      "title": "Laptop tweak",
+      "action": "goto",
+      "path": "/?demo=1&for=Rohan",
+      "waitMs": 1200,
+      "alt": "Tweak"
+    },
+    {
+      "id": "05-iphone",
+      "title": "Phone",
+      "action": "goto",
+      "path": "/?demo=1&for=Rohan",
+      "waitMs": 1200,
+      "alt": "Tomorrow"
     }
   ]
 }

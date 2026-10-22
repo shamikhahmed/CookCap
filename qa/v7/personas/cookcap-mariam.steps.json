@@ -1,5 +1,6 @@
 {
   "personaId": "cookcap-mariam",
+  "personaName": "Mariam Syed",
   "baseUrl": "/",
   "viewport": {
     "width": 402,
@@ -9,26 +10,53 @@
   "prep": [
     {
       "action": "goto",
-      "path": "/"
+      "path": "/?demo=1&for=Mariam"
     },
     {
       "action": "wait",
-      "ms": 800
+      "ms": 1500
     }
   ],
   "steps": [
     {
-      "id": "01-home",
-      "title": "Home",
-      "action": "screenshot",
-      "route": "home",
-      "alt": "cookcap-mariam home screen with sample data"
+      "id": "01-iphone",
+      "title": "Save recipe",
+      "action": "goto",
+      "path": "/?demo=1&for=Mariam",
+      "waitMs": 1200,
+      "alt": "Save"
     },
     {
-      "id": "02-task",
-      "title": "Primary task",
-      "action": "screenshot",
-      "alt": "cookcap-mariam primary task view"
+      "id": "02-ipad",
+      "title": "iPad study",
+      "action": "goto",
+      "path": "/?demo=1&for=Mariam",
+      "waitMs": 1200,
+      "alt": "Study"
+    },
+    {
+      "id": "03-mac",
+      "title": "Laptop list",
+      "action": "goto",
+      "path": "/?demo=1&for=Mariam",
+      "waitMs": 1200,
+      "alt": "List"
+    },
+    {
+      "id": "04-iphone",
+      "title": "Cook phone",
+      "action": "goto",
+      "path": "/?demo=1&for=Mariam",
+      "waitMs": 1200,
+      "alt": "Cook"
+    },
+    {
+      "id": "05-mac",
+      "title": "Laptop notes",
+      "action": "goto",
+      "path": "/?demo=1&for=Mariam",
+      "waitMs": 1200,
+      "alt": "Notes"
     }
   ]
 }
