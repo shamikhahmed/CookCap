@@ -1,0 +1,14 @@
+npm warn Unknown env config "devdir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> cookcap@3.7.5 test:e2e
+> playwright test e2e/finish.spec.ts
+
+[WebServer] npm warn Unknown env config "devdir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+Running 1 test using 1 worker
+
+(node:79647) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e/finish.spec.ts:8:7 › CookCap finish journeys › name gate → contents → recipe leaf → shopping entry points (1.9s)
+
+  1 passed (17.9s)

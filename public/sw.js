@@ -7,12 +7,14 @@
   - navigate / HTML → network-first (never pin old index.html to new chunk hashes)
   - /_next/static/* → cache-first (content-hashed, immutable)
   - other same-origin assets → stale-while-revalidate
-  - install: skipWaiting; activate: claim + delete foreign caches
+  - install/activate: NEVER auto skipWaiting / clients.claim (HIG iPhone recipe).
+    New SW waits; SwUpdateToast posts SKIP_WAITING on user Reload only.
+    First install still activates via ServiceWorker.tsx when no controller yet.
 
   Works under GitHub Pages project path (/CookCap/) by deriving BASE from the
   script URL. Local/static export root uses BASE ''.
 */
-const VERSION = 'cookcap-v374';
+const VERSION = 'cookcap-v375';
 const SHELL = `${VERSION}-shell`;
 const ASSETS = `${VERSION}-assets`;
 const BASE = new URL('./', self.location.href).pathname.replace(/\/$/, '');
@@ -43,7 +45,8 @@ async function precacheShell() {
 }
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(precacheShell().then(() => self.skipWaiting()));
+  // Precache only — do not skipWaiting (avoids mid-session takeover on iPhone).
+  event.waitUntil(precacheShell());
 });
 
 self.addEventListener('activate', (event) => {
@@ -52,8 +55,7 @@ self.addEventListener('activate', (event) => {
       .keys()
       .then((keys) =>
         Promise.all(keys.filter((k) => !k.startsWith(VERSION)).map((k) => caches.delete(k))),
-      )
-      .then(() => self.clients.claim()),
+      ),
   );
 });
 

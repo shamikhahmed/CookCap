@@ -8,6 +8,10 @@ import { fadeTransition } from '@/lib/motion';
 const KEY = 'cookcap-whats-new';
 
 const NOTES: Record<string, string[]> = {
+  '3.7.5': [
+    'HIG chrome — floating glass page bar, copper tint tokens, quieter sheets',
+    'Smoother iPhone sheets — scroll stays put when drawers open',
+  ],
   '3.7.3': [
     'Accessibility — copper buttons and labels meet WCAG AA on parchment and gradients',
   ],

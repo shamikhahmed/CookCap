@@ -1,0 +1,219 @@
+/**
+ * CookCap — HIG design tokens (render-blocking, unlayered).
+ * Ported from ScentCap 3 / PulseCap: semantic colours for light / dark / increased contrast,
+ * SF system type at 17pt body, 44pt targets. CookCap keeps its own accent: copper terracotta.
+ * Brand hex palette stays in src/app/tokens.css; this file bridges --color-* for existing screens.
+ */
+
+:root,
+:root[data-theme='light'],
+:root[data-skin='editorial']:not([data-theme='dark']) {
+  --bg: #f2f2f7;
+  --surface: #ffffff;
+  --surface-2: #f7f7fa;
+  --surface-elevated: #ffffff;
+  --fill: rgba(120, 120, 128, 0.12);
+  --fill-2: rgba(120, 120, 128, 0.2);
+  --separator: rgba(60, 60, 67, 0.18);
+  --label: #000000;
+  --label-2: rgba(60, 60, 67, 0.78);
+  --label-3: rgba(60, 60, 67, 0.64);
+  --label-4: rgba(60, 60, 67, 0.3);
+  /* Copper fill (#8f4520) — AA ≥4.5:1 white on fill; text uses deeper --tint-text on light paper. */
+  --tint: #8f4520;
+  --tint-text: #6e3418;
+  --tint-hover: #7a3a1b;
+  --tint-soft: rgba(143, 69, 32, 0.14);
+  --on-tint: #ffffff;
+  --success: #248a3d;
+  --warning: #b25000;
+  --danger: #d70015;
+  --glass-material: rgba(249, 249, 251, 0.78);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-2: 0 6px 24px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-3: 0 18px 50px rgba(0, 0, 0, 0.1);
+  --scrim: rgba(0, 0, 0, 0.35);
+  color-scheme: light;
+}
+
+:root[data-theme='dark'],
+:root[data-skin='editorial'][data-theme='dark'] {
+  --bg: #000000;
+  --surface: #1c1c1e;
+  --surface-2: #232326;
+  --surface-elevated: #2c2c2e;
+  --fill: rgba(118, 118, 128, 0.24);
+  --fill-2: rgba(118, 118, 128, 0.32);
+  --separator: rgba(84, 84, 88, 0.6);
+  --label: #ffffff;
+  --label-2: rgba(235, 235, 245, 0.75);
+  --label-3: rgba(235, 235, 245, 0.6);
+  --label-4: rgba(235, 235, 245, 0.28);
+  /* Brighter copper for dark surfaces; dark ink on fill. */
+  --tint: #e08a5a;
+  --tint-text: #e08a5a;
+  --tint-hover: #ebb873;
+  --tint-soft: rgba(224, 138, 90, 0.18);
+  --on-tint: #1a1206;
+  --success: #30d158;
+  --warning: #ff9f0a;
+  --danger: #ff453a;
+  --glass-material: rgba(28, 28, 30, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --shadow-1: none;
+  --shadow-2: 0 0 0 0.5px rgba(255, 255, 255, 0.06);
+  --shadow-3: 0 18px 50px rgba(0, 0, 0, 0.5);
+  --scrim: rgba(0, 0, 0, 0.5);
+  color-scheme: dark;
+}
+
+@media (prefers-contrast: more) {
+  :root,
+  :root[data-theme='light'] {
+    --label-2: rgba(60, 60, 67, 0.9);
+    --label-3: rgba(60, 60, 67, 0.82);
+    --separator: rgba(60, 60, 67, 0.4);
+    --tint: #6e3418;
+    --tint-text: #5a2a12;
+  }
+  :root[data-theme='dark'] {
+    --label-2: rgba(235, 235, 245, 0.9);
+    --label-3: rgba(235, 235, 245, 0.8);
+    --separator: rgba(140, 140, 145, 0.8);
+    --tint: #f0bf7c;
+    --tint-text: #f0bf7c;
+  }
+}
+
+:root {
+  --font-ui: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, 'Segoe UI', sans-serif;
+  --font-serif-ui: ui-serif, 'Iowan Old Style', 'New York', Georgia, 'Times New Roman', serif;
+  --t-large: 2.125rem;
+  --t-title1: 1.75rem;
+  --t-title2: 1.375rem;
+  --t-title3: 1.25rem;
+  --t-headline: 1.0625rem;
+  --t-body: 1.0625rem;
+  --t-callout: 1rem;
+  --t-subhead: 0.9375rem;
+  --t-footnote: 0.8125rem;
+  --t-caption: 0.75rem;
+  --t-caption2: 0.6875rem;
+
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --dur: 220ms;
+  --hit: 44px;
+  --gutter: 20px;
+  --tabbar-h: 58px;
+  --glass: var(--glass-material);
+}
+
+/* ---------- Legacy bridge: existing CookCap screens inherit HIG palette ---------- */
+
+:root {
+  --color-accent: var(--tint);
+  --color-accent-soft: var(--tint-soft);
+  --ios-body: var(--t-body);
+  --ios-large-title: var(--t-large);
+  --ios-title1: var(--t-title1);
+  --ios-title2: var(--t-title2);
+  --ios-title3: var(--t-title3);
+  --ios-headline: var(--t-headline);
+  --ios-callout: var(--t-callout);
+  --ios-subhead: var(--t-subhead);
+  --ios-footnote: var(--t-footnote);
+  --ios-caption1: var(--t-caption);
+  --ios-caption2: var(--t-caption2);
+  --hit-min: var(--hit);
+  --secondary-label: var(--label-2);
+  --tertiary-label: var(--label-3);
+  --system-background: var(--bg);
+}
+
+/* Keep editorial paper as the reading surface; HIG --bg is for chrome / sheets. */
+:root:not([data-theme='dark']),
+:root[data-skin='editorial']:not([data-theme='dark']) {
+  --color-paper: var(--cc-f6f1e7, #f6f1e7);
+  --color-paper-raised: var(--cc-fbf7ee, #fbf7ee);
+  --color-paper-sunk: var(--cc-ece4d5, #ece4d5);
+  --color-ink: var(--cc-1f1814, #1f1814);
+  --color-ink-soft: var(--cc-3d342c, #3d342c);
+  --color-ink-faint: var(--cc-5c4f42, #5c4f42);
+  --color-line: var(--cc-e2d8c6, #e2d8c6);
+  --desk: var(--cc-efe7d7, #efe7d7);
+}
+
+:root[data-theme='dark'],
+:root[data-skin='editorial'][data-theme='dark'] {
+  --color-paper: var(--cc-17140f, #17140f);
+  --color-paper-raised: var(--cc-1f1b14, #1f1b14);
+  --color-paper-sunk: var(--cc-120f0b, #120f0b);
+  --color-ink: var(--cc-efe6d6, #efe6d6);
+  --color-ink-soft: var(--cc-ddd2bc, #ddd2bc);
+  --color-ink-faint: var(--cc-c4b79e, #c4b79e);
+  --color-line: var(--cc-5a4a32, #5a4a32);
+  --desk: var(--cc-17140f, #17140f);
+}
+
+/* ---------- iPhone / PWA touch behaviour (unlayered so it wins) ---------- */
+
+html,
+body {
+  scroll-behavior: auto !important;
+  overflow-x: clip;
+  overscroll-behavior-y: auto;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  overscroll-behavior-x: none;
+  /* Do not pin overflow:hidden — iOS ignores it for touch and it kills document rubber-band. */
+  overflow-y: auto;
+}
+
+input,
+select,
+textarea {
+  font-size: max(16px, 1em);
+}
+
+a,
+button,
+input,
+select,
+textarea,
+label,
+summary,
+[role='button'],
+[role='radio'],
+[role='tab'],
+[role='menuitem'],
+[data-act] {
+  touch-action: manipulation;
+}
+
+button,
+.ui-tab,
+.ui-chip,
+.ui-btn {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Hover styles only where a pointer can hover (avoids stuck :hover after tap on iPhone). */
+@media (hover: none) {
+  .ui-btn--primary:hover,
+  button:hover {
+    /* no-op: keep declared non-hover colours */
+  }
+}

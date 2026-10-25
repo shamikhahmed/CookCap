@@ -1,12 +1,20 @@
 @import 'tailwindcss';
 @import './tokens.css';
-@import './ios-tokens.css';
+/* HIG tokens: unlayered, render-blocking — must win over legacy resets. */
+@import '../design/tokens.css';
+
+@layer legacy, components;
+
+@import './ios-tokens.css' layer(legacy);
+@import '../design/system.css';
+@import '../design/cookcap.css';
 
 /*
   ────────────────────────────────────────────────────────────────────────
   CookCap — Design System
   Tailwind v4 CSS-first tokens. Everything the product looks like flows from
   this @theme block: change a value here, the whole app follows.
+  HIG semantic tokens + ui-* primitives: src/design/{tokens,system,cookcap}.css
   ────────────────────────────────────────────────────────────────────────
 */
 
@@ -349,8 +357,11 @@
       linear-gradient(180deg, color-mix(in srgb, var(--desk, var(--color-paper-sunk)) 92%, var(--cc-c4b49a)), var(--desk, var(--color-paper-sunk)));
     color: var(--color-ink);
     font-family: var(--font-sans);
-    overflow: hidden;
-    overscroll-behavior: none;
+    /* HIG iPhone recipe: never overflow:hidden on body (iOS ignores it / kills rubber-band). */
+    overflow-x: clip;
+    overflow-y: auto;
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: auto;
   }
 
   ::selection {
@@ -1193,7 +1204,7 @@
 /* Stacking: do NOT force every desk child to z-index:1 — that trapped
    fixed overlays (Appearance/Search) under the book stage. Grain stays on ::before. */
 .journal-desk > header {
-  position: relative;
+  /* sticky glass set in src/design/cookcap.css (HIG) */
   z-index: 50;
 }
 .journal-desk > main {
@@ -1201,8 +1212,8 @@
   z-index: 0;
 }
 .journal-desk > footer {
-  position: relative;
-  z-index: 30;
+  /* fixed glass float set in src/design/cookcap.css (HIG) */
+  z-index: 60;
 }
 .journal-desk > [data-overlay] {
   position: relative;

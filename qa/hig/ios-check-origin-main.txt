@@ -1,0 +1,13 @@
+PASS  footer + header controls tappable
+PASS  hit areas ≥44pt (footer buttons)
+FAIL  page bar floats ≥14px above bottom  ({"gap":0,"pad":0,"h":60,"pos":"relative"})
+FAIL  page bar is fixed (glass float)  (relative)
+FAIL  content padding clears page bar  ({"gap":0,"pad":0,"h":60,"pos":"relative"})
+PASS  no sideways overflow (book)
+FAIL  body not overflow:hidden  (hidden)
+PASS  book leaf may use inner scroller (intentional)
+PASS  programmatic scroll lands instantly
+FAIL  sheet flow  (locator.click: Timeout 12000ms exceeded.)
+PASS  no reload during session
+FAIL  SW: skipWaiting only on user request
+FAIL  SW: no auto clients.claim

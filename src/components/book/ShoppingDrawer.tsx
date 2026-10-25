@@ -9,7 +9,6 @@ import {
   clearAllShopping,
 } from '@/lib/db/store';
 import { useApp } from '@/components/app/AppStore';
-import { Icon } from '@/components/ui/Icon';
 import { motionReduce, useDialogA11y } from '@/lib/a11y/dialog';
 
 type Row = {
@@ -119,29 +118,36 @@ export function ShoppingDrawer({ open, onClose }: { open: boolean; onClose: () =
             aria-modal="true"
             aria-labelledby="shopping-drawer-title"
           >
-            <header className="flex items-center justify-between border-b border-[color:var(--color-line)] px-5 py-4">
-              <div>
+            <div className="sheet-grabber md:hidden" aria-hidden />
+            <div className="sheet-bar border-b border-[color:var(--color-line)]">
+              <button
+                type="button"
+                onClick={onClose}
+                className="min-h-11 rounded-full px-3 text-[length:var(--t-body)] text-[color:var(--tint-text,var(--color-accent))]"
+              >
+                Cancel
+              </button>
+              <div className="text-center">
                 <h2
                   id="shopping-drawer-title"
-                  className="font-serif text-2xl font-semibold text-[color:var(--color-ink)]"
+                  className="sheet-bar__title font-serif"
                 >
                   Shopping
                 </h2>
                 {rows.length > 0 && (
-                  <p className="text-xs text-[color:var(--color-ink-faint)]">
-                    {unchecked} left · {rows.length} total · grouped by aisle
+                  <p className="text-[length:var(--t-caption)] text-[color:var(--color-ink-faint)]">
+                    {unchecked} left · {rows.length} total
                   </p>
                 )}
               </div>
               <button
                 type="button"
                 onClick={onClose}
-                aria-label="Close"
-                className="grid size-11 place-items-center text-[color:var(--color-ink-faint)]"
+                className="min-h-11 rounded-full px-3 text-[length:var(--t-body)] font-semibold text-[color:var(--tint-text,var(--color-accent))]"
               >
-                <Icon name="close" size={22} />
+                Done
               </button>
-            </header>
+            </div>
 
             <div className="min-h-0 flex-1 overflow-y-auto px-5 py-4">
               {rows.length === 0 ? (

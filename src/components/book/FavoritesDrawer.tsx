@@ -106,31 +106,29 @@ export function FavoritesDrawer({ open, onClose }: { open: boolean; onClose: () 
             aria-modal="true"
             aria-labelledby="favorites-drawer-title"
           >
-            <header className="flex items-center justify-between border-b border-[color:var(--color-line)] px-5 py-4 print:hidden">
+            <div className="sheet-grabber md:hidden print:hidden" aria-hidden />
+            <div className="sheet-bar border-b border-[color:var(--color-line)] print:hidden">
+              <button
+                type="button"
+                onClick={closeHandler}
+                className="min-h-11 rounded-full px-3 text-[length:var(--t-body)] text-[color:var(--tint-text,var(--color-accent))]"
+              >
+                Cancel
+              </button>
               <h2
                 id="favorites-drawer-title"
-                className="font-serif text-2xl font-semibold text-[color:var(--color-ink)]"
+                className="sheet-bar__title font-serif"
               >
                 Your Kitchen
               </h2>
-              <div className="flex items-center gap-1">
-                <button
-                  type="button"
-                  onClick={() => window.print()}
-                  className="min-h-11 rounded-full px-3 text-xs text-[color:var(--color-ink-soft)] hover:bg-[color:var(--color-paper-sunk)]"
-                >
-                  Print
-                </button>
-                <button
-                  type="button"
-                  onClick={onClose}
-                  aria-label="Close"
-                  className="grid size-11 place-items-center text-[color:var(--color-ink-faint)]"
-                >
-                  <Icon name="close" size={22} />
-                </button>
-              </div>
-            </header>
+              <button
+                type="button"
+                onClick={() => window.print()}
+                className="min-h-11 rounded-full px-3 text-[length:var(--t-body)] font-semibold text-[color:var(--tint-text,var(--color-accent))]"
+              >
+                Print
+              </button>
+            </div>
 
             <div className="min-h-0 flex-1 overflow-y-auto px-5 py-4">
               {editing ? (

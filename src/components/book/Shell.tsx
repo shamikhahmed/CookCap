@@ -156,7 +156,7 @@ function Frame() {
   const firstRunGate = needsName;
 
   return (
-    <div className="journal-desk flex h-[100dvh] flex-col">
+    <div className="journal-desk flex min-h-[100dvh] flex-col">
       <a href="#book-main" className="sr-only skip-to-book">
         Skip to book
       </a>

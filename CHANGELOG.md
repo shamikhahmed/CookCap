@@ -1,3 +1,11 @@
+## [3.7.5] — 2026-10-25
+
+- HIG 3 design system: `src/design/{tokens,system,cookcap}.css` + kit Sheet
+- Copper `--tint` / `--tint-text` (Jia Cooks brand); floating glass page bar
+- iOS ScrollLock (`position:fixed` + restore); SW no auto skipWaiting/clients.claim
+- Favorites / Shopping sheets: grabber + Cancel/Title/Done
+- `scripts/ios-behaviour-check.mjs`; evidence in `qa/hig/`
+
 ## [3.7.4] — 2026-10-21
 
 - HIG v7: iOS tokens / native feel; Dynamic Type & hit targets where applicable

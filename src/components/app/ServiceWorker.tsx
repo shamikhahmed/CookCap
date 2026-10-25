@@ -12,7 +12,7 @@ export function ServiceWorker() {
     if (process.env.NODE_ENV !== 'production') return;
     if (!('serviceWorker' in navigator)) return;
 
-    const swUrl = `${BASE_PATH}/sw.js?v=cookcap-v46`;
+    const swUrl = `${BASE_PATH}/sw.js?v=cookcap-v375`;
     const scope = `${BASE_PATH}/` || '/';
 
     const warm = (reg: ServiceWorkerRegistration) => {
