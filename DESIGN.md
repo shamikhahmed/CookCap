@@ -35,6 +35,16 @@ Legacy `--color-*` / editorial paper tokens are bridged so existing leaves inher
 - **Sheets / drawers:** grabber + Cancel / Title / Done (Favorites, Shopping); `ScrollLock` pins `body` with `position:fixed; top:-scrollY`.
 - **Book leaves** keep `[data-leaf-scroll]` inner scrollers (intentional — page metaphor). Documented in `qa/hig/REPORT.md`.
 
+### Scroll exceptions
+
+Document scrolls. These inner overflow containers are deliberate:
+
+| Selector | Why |
+|---|---|
+| `[data-leaf-scroll]` | Book leaf page metaphor (recipe / contents / chapter scroll inside the frame) |
+| `.deck` | Presentation deck snap scroller (`presentation.html` only) |
+| `.ui-sheet`, `.sheet-body`, `[role="dialog"]` | Modal sheet bodies (ScrollLock pins `body` with `position:fixed`) |
+
 ## Cascade
 
 ```
