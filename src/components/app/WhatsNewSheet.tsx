@@ -9,18 +9,18 @@ const KEY = 'cookcap-whats-new';
 
 const NOTES: Record<string, string[]> = {
   '3.7.8': [
-    'Offline reload boots the book without claiming clients on activate',
-    'Chapter tabs sheet matches Shopping — opaque paper, scrim, shadow',
-    'Offline banner sits under the header and auto-hides',
+    'The cookbook opens even with no connection',
+    'Chapter tabs are easier to read',
+    'A small note tells you when you’re offline, then gets out of the way',
   ],
   '3.7.7': [
-    'Offline reload boots the book (shell precaches scripts and styles)',
-    'Sheets cover the page bar; Go-to-page is an opaque anchored popover',
-    'Cover Add photo and small caps meet contrast; search hints stay on desktop',
+    'Sheets no longer hide behind the page bar',
+    'Jump straight to any page number',
+    'Easier-to-read cover text',
   ],
   '3.7.6': [
-    'Clearer night chrome — header and page bar stay readable in dark mode',
-    'Cover foil and cuisine labels meet contrast targets on leather and photos',
+    'Header and page bar are easier to read at night',
+    'Clearer labels on the cover and recipe photos',
   ],
   '3.7.5': [
     'HIG chrome — floating glass page bar, copper tint tokens, quieter sheets',
