@@ -51,7 +51,8 @@
 ## Commits on `design/hig-3` (this audit)
 
 1. `c216866` — dark chrome + cover foil + hero cuisine contrast  
-2. *(pending)* — page-bar AA, VERSION 3.7.6, docs, REPORT
+2. `5059806` — page-bar `--label` AA + ship 3.7.6 / `cookcap-v376`  
+3. `6119584` — prod-ready inventory, REPORT, audit evidence
 
 ## Remaining FAIL / gaps
 
