@@ -26,6 +26,7 @@ import { Icon } from '@/components/ui/Icon';
 import { PRODUCT_NAME, kitchenLine } from '@/lib/edition';
 import { getMode } from '@/lib/modes/registry';
 import { t } from '@/lib/i18n/strings';
+import { useDialogA11y } from '@/lib/a11y/dialog';
 import { TopChapterBar } from './BookmarkRail';
 import { CART_BUMP_EVENT, prefersReducedMotion } from '@/lib/motion';
 
@@ -646,22 +647,18 @@ function BottomBar() {
     return () => window.clearTimeout(t);
   }, [gotoOpen, index]);
 
+  // Esc, Tab trap, scroll lock and focus return to the page counter
+  useDialogA11y(gotoOpen, () => setGotoOpen(false), gotoPanelRef);
+
   useEffect(() => {
     if (!gotoOpen) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setGotoOpen(false);
-    };
     const onDoc = (e: MouseEvent) => {
       const t = e.target as Node;
       if (gotoPanelRef.current?.contains(t) || gotoBtnRef.current?.contains(t)) return;
       setGotoOpen(false);
     };
-    window.addEventListener('keydown', onKey);
     document.addEventListener('mousedown', onDoc);
-    return () => {
-      window.removeEventListener('keydown', onKey);
-      document.removeEventListener('mousedown', onDoc);
-    };
+    return () => document.removeEventListener('mousedown', onDoc);
   }, [gotoOpen]);
 
   const submitGoto = () => {
@@ -741,15 +738,15 @@ function BottomBar() {
                   role="dialog"
                   aria-label="Go to page"
                   data-goto-popover=""
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 6 }}
+                  /* Centre via motion's x — a style.transform would be overwritten by the y animation */
+                  initial={{ opacity: 0, x: '-50%', y: 6 }}
+                  animate={{ opacity: 1, x: '-50%', y: 0 }}
+                  exit={{ opacity: 0, x: '-50%', y: 6 }}
                   transition={{ duration: 0.15 }}
                   style={{
                     position: 'fixed',
                     left: gotoPos?.left ?? '50%',
                     bottom: gotoPos?.bottom ?? 88,
-                    transform: 'translateX(-50%)',
                     zIndex: 90,
                     /* Solid sheet — never inherit glass footer backdrop-filter */
                     background: 'var(--color-paper-raised, #fbf7ee)',

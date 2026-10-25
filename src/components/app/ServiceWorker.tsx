@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { BASE_PATH } from '@/lib/base-path';
+import { SW_CACHE } from '@/lib/version';
 
 /**
  * Registers SW in production and warms the asset cache with scripts/styles
@@ -12,7 +13,7 @@ export function ServiceWorker() {
     if (process.env.NODE_ENV !== 'production') return;
     if (!('serviceWorker' in navigator)) return;
 
-    const swUrl = `${BASE_PATH}/sw.js?v=cookcap-v378`;
+    const swUrl = `${BASE_PATH}/sw.js?v=${SW_CACHE}`;
     const scope = `${BASE_PATH}/` || '/';
 
     const warm = (reg: ServiceWorkerRegistration) => {

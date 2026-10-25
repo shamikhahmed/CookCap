@@ -13,7 +13,7 @@ const EXIT_MS = 400;
 
 /**
  * Quiet launch mark — dissolves when the book store is ready.
- * `__APP_READY__` fires when the splash is gone (first real screen).
+ * `__APP_READY__` fires when the splash starts to hide (book already rendered behind it).
  * Never lingers more than 1s after the store is ready.
  */
 export function Splash() {
@@ -44,7 +44,11 @@ export function Splash() {
     const holdBudget = Math.max(0, MAX_AFTER_READY_MS - exitMs);
     const hold = reduce ? 0 : Math.max(0, Math.min(MIN_HOLD_MS, holdBudget) - elapsed);
 
-    const hideTimer = window.setTimeout(() => setShow(false), hold);
+    // The book is rendered behind the splash once the store is ready — signal then, not after the fade
+    const hideTimer = window.setTimeout(() => {
+      setShow(false);
+      markReady();
+    }, hold);
     const hardTimer = window.setTimeout(() => {
       setShow(false);
       markReady();

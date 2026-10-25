@@ -53,13 +53,16 @@ async function putOk(cache, request, res) {
 
 async function cacheHtmlAndAssets(htmlRequest, htmlResponse) {
   const shell = await caches.open(SHELL);
-  await putOk(shell, htmlRequest, htmlResponse);
   let html = '';
   try {
     html = await htmlResponse.clone().text();
   } catch {
     return;
   }
+  // Unchanged HTML → same asset list, already cached; skip the rescan
+  const prev = await shell.match(htmlRequest);
+  if (prev && (await prev.text()) === html) return;
+  await putOk(shell, htmlRequest, htmlResponse);
   const assets = await caches.open(ASSETS);
   const list = assetUrlsFromHtml(html, htmlResponse.url || self.location.origin + root('/'));
   await Promise.all(
@@ -154,15 +157,24 @@ self.addEventListener('fetch', (event) => {
       fetch(request, { cache: 'no-store' })
         .then((res) => {
           if (res.ok) {
-            // Cache HTML + linked JS/CSS so a later offline reload can boot the book
-            event.waitUntil(cacheHtmlAndAssets(root('/'), res.clone()));
+            const copy = res.clone();
+            const p = url.pathname;
+            const isShell = p === BASE || p === `${BASE}/` || p === root('/index.html');
+            // Only the app route refreshes the root shell (+ its JS/CSS); other pages
+            // (privacy, changelog, 404) are cached under their own URL.
+            event.waitUntil(
+              isShell
+                ? cacheHtmlAndAssets(root('/'), copy)
+                : caches.open(SHELL).then((c) => putOk(c, request, copy)),
+            );
           }
           return res;
         })
         .catch(() =>
           caches
-            .match(root('/'))
-            .then((r) => r || caches.match(root('/offline.html')) || caches.match(request)),
+            .match(request)
+            .then((r) => r || caches.match(root('/')))
+            .then((r) => r || caches.match(root('/offline.html'))),
         ),
     );
     return;
