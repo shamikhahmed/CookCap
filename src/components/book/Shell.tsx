@@ -376,7 +376,7 @@ function TopBar({
 
   return (
     <header className="app-header relative z-50 flex shrink-0 items-center justify-between gap-2 sm:gap-3">
-      <div className="flex min-w-0 items-center gap-2 text-[color:var(--color-ink)]">
+      <div className="flex min-w-0 items-center gap-2 text-[color:var(--label,var(--color-ink))]">
         <Icon name="book" size={20} aria-hidden />
         <div className="min-w-0 leading-tight">
           <span className="block whitespace-nowrap font-serif text-base font-semibold italic tracking-tight sm:text-lg">
@@ -451,7 +451,7 @@ function TopBar({
           title={
             shoppingCount > 0 ? `Shopping list (${shoppingCount})` : 'Shopping list'
           }
-          className="relative grid size-11 min-h-11 min-w-11 shrink-0 place-items-center rounded-full text-[color:var(--color-ink-soft)] transition-all hover:bg-[color:var(--color-paper-sunk)] hover:text-[color:var(--color-ink)] active:scale-90"
+          className="relative grid size-11 min-h-11 min-w-11 shrink-0 place-items-center rounded-full text-[color:var(--label-2,var(--color-ink-soft))] transition-all hover:bg-[color:var(--fill,var(--color-paper-sunk))] hover:text-[color:var(--label,var(--color-ink))] active:scale-90"
         >
           <Icon name="cart" size={20} />
           {(shoppingCount > 0 || cartBump) && (
@@ -692,7 +692,7 @@ function BottomBar() {
           type="button"
           disabled={!ready || busy}
           onClick={() => setGotoOpen((v) => !v)}
-          className="min-h-11 min-w-[3.25rem] shrink-0 rounded-full px-2 text-center text-xs tabular-nums text-[color:var(--color-ink)] hover:bg-[color:var(--color-paper-sunk)] disabled:opacity-30 sm:min-w-14"
+          className="min-h-11 min-w-[3.25rem] shrink-0 rounded-full px-2 text-center text-xs tabular-nums text-[color:var(--label,var(--color-ink))] hover:bg-[color:var(--fill,var(--color-paper-sunk))] disabled:opacity-40 sm:min-w-14"
           title={
             extras > 0
               ? `Go to page — this edition: ${total} pages (includes ${extras} imported).`
@@ -764,7 +764,7 @@ function BottomBar() {
 
       <button
         type="button"
-        className="min-h-11 rounded-full px-2.5 py-2.5 font-serif text-xs font-semibold text-[color:var(--color-ink-soft)] hover:bg-[color:var(--color-paper-sunk)] sm:hidden disabled:opacity-30"
+        className="min-h-11 rounded-full px-2.5 py-2.5 font-serif text-xs font-semibold text-[color:var(--label-2,var(--color-ink-soft))] hover:bg-[color:var(--fill,var(--color-paper-sunk))] sm:hidden disabled:opacity-40"
         aria-label="Open chapter tabs"
         disabled={busy}
         onClick={() => window.dispatchEvent(new Event('cookcap-open-chapters'))}
@@ -798,7 +798,7 @@ function IconBtn({
       aria-label={label}
       aria-expanded={ariaExpanded}
       title={label}
-      className={`grid size-11 min-h-11 min-w-11 shrink-0 place-items-center rounded-full text-[color:var(--color-ink-soft)] transition-all hover:bg-[color:var(--color-paper-sunk)] hover:text-[color:var(--color-ink)] active:scale-90 disabled:pointer-events-none disabled:opacity-30 ${className}`}
+      className={`grid size-11 min-h-11 min-w-11 shrink-0 place-items-center rounded-full text-[color:var(--label-2,var(--color-ink-soft))] transition-all hover:bg-[color:var(--fill,var(--color-paper-sunk))] hover:text-[color:var(--label,var(--color-ink))] active:scale-90 disabled:pointer-events-none disabled:opacity-40 ${className}`}
     >
       {children}
     </button>

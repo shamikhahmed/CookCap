@@ -471,12 +471,7 @@
       radial-gradient(circle at 70% 80%, rgba(120, 90, 50, 0.12), transparent 60%),
       linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(90, 60, 30, 0.08));
   }
-  :root[data-skin='editorial']:not([data-theme='dark']) .leather .cover-hint,
-  :root[data-skin='lightbook'] .leather .cover-hint,
-  :root[data-skin='modern']:not([data-theme='dark']) .leather .cover-hint,
-  :root:not([data-skin]) .leather .cover-hint {
-    color: color-mix(in srgb, var(--color-ink) 55%, var(--color-gold));
-  }
+  /* Cover hint uses .gold-foil (AA --color-gold-text); do not wash it with ink mix. */
   :root[data-skin='candlelit'] .leather,
   :root[data-skin='editorial'][data-theme='dark'] .leather,
   :root[data-skin='modern'][data-theme='dark'] .leather {
@@ -497,8 +492,41 @@
   }
 
   .gold-foil {
-    color: var(--color-gold);
-    background: linear-gradient(105deg, var(--cc-8a6a2e) 0%, var(--cc-e9cf86) 40%, var(--cc-b08d46) 55%, var(--cc-f4e2a8) 70%, var(--cc-8a6a2e) 100%);
+    /* Fallback solid AA gold; gradient clips on supporting engines */
+    color: var(--color-gold-text, var(--color-gold));
+    background: linear-gradient(
+      105deg,
+      var(--foil-1, var(--cc-8a6a2e)) 0%,
+      var(--foil-2, var(--cc-e9cf86)) 40%,
+      var(--foil-3, var(--cc-b08d46)) 55%,
+      var(--foil-4, var(--cc-f4e2a8)) 70%,
+      var(--foil-5, var(--cc-8a6a2e)) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /*
+    Light parchment: bright foil highlights fail AA. Prefer solid deep gold
+    (still reads as stamped foil via weight/tracking); keep gradient on dark leather.
+  */
+  :root[data-theme='light'] .gold-foil,
+  :root:not([data-theme='dark']) .leather .gold-foil {
+    background: none;
+    -webkit-text-fill-color: var(--color-gold-text, var(--cc-7a5a20));
+    color: var(--color-gold-text, var(--cc-7a5a20));
+  }
+  :root[data-theme='dark'] .gold-foil {
+    /* restore clip gradient for night leather */
+    background: linear-gradient(
+      105deg,
+      var(--foil-1) 0%,
+      var(--foil-2) 40%,
+      var(--foil-3) 55%,
+      var(--foil-4) 70%,
+      var(--foil-5) 100%
+    );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -526,7 +554,8 @@
     opacity: 0;
   }
   100% {
-    opacity: 0.7;
+    /* Full opacity — foil already tuned for ≥4.5:1; 0.7 washed AA away */
+    opacity: 1;
   }
 }
 @keyframes foil-sweep {

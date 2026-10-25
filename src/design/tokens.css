@@ -5,9 +5,14 @@
  * Brand hex palette stays in src/app/tokens.css; this file bridges --color-* for existing screens.
  */
 
+/*
+  Light / dark HIG chrome. Do NOT use `:not([data-theme='dark'])` for light —
+  theme=system leaves data-theme unset until JS resolves it, and that selector
+  forced black --label/--color-ink onto night paper (unreadable header + page bar).
+  Boot script + applyTheme always set data-theme to the resolved light|dark.
+*/
 :root,
-:root[data-theme='light'],
-:root[data-skin='editorial']:not([data-theme='dark']) {
+:root[data-theme='light'] {
   --bg: #f2f2f7;
   --surface: #ffffff;
   --surface-2: #f7f7fa;
@@ -37,8 +42,7 @@
   color-scheme: light;
 }
 
-:root[data-theme='dark'],
-:root[data-skin='editorial'][data-theme='dark'] {
+:root[data-theme='dark'] {
   --bg: #000000;
   --surface: #1c1c1e;
   --surface-2: #232326;
@@ -66,6 +70,38 @@
   --shadow-3: 0 18px 50px rgba(0, 0, 0, 0.5);
   --scrim: rgba(0, 0, 0, 0.5);
   color-scheme: dark;
+}
+
+/* FOUC / no-JS: OS dark before boot script writes data-theme */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #000000;
+    --surface: #1c1c1e;
+    --surface-2: #232326;
+    --surface-elevated: #2c2c2e;
+    --fill: rgba(118, 118, 128, 0.24);
+    --fill-2: rgba(118, 118, 128, 0.32);
+    --separator: rgba(84, 84, 88, 0.6);
+    --label: #ffffff;
+    --label-2: rgba(235, 235, 245, 0.75);
+    --label-3: rgba(235, 235, 245, 0.6);
+    --label-4: rgba(235, 235, 245, 0.28);
+    --tint: #e08a5a;
+    --tint-text: #e08a5a;
+    --tint-hover: #ebb873;
+    --tint-soft: rgba(224, 138, 90, 0.18);
+    --on-tint: #1a1206;
+    --success: #30d158;
+    --warning: #ff9f0a;
+    --danger: #ff453a;
+    --glass-material: rgba(28, 28, 30, 0.72);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --shadow-1: none;
+    --shadow-2: 0 0 0 0.5px rgba(255, 255, 255, 0.06);
+    --shadow-3: 0 18px 50px rgba(0, 0, 0, 0.5);
+    --scrim: rgba(0, 0, 0, 0.5);
+    color-scheme: dark;
+  }
 }
 
 @media (prefers-contrast: more) {
@@ -136,8 +172,8 @@
 }
 
 /* Keep editorial paper as the reading surface; HIG --bg is for chrome / sheets. */
-:root:not([data-theme='dark']),
-:root[data-skin='editorial']:not([data-theme='dark']) {
+:root,
+:root[data-theme='light'] {
   --color-paper: var(--cc-f6f1e7, #f6f1e7);
   --color-paper-raised: var(--cc-fbf7ee, #fbf7ee);
   --color-paper-sunk: var(--cc-ece4d5, #ece4d5);
@@ -146,10 +182,20 @@
   --color-ink-faint: var(--cc-5c4f42, #5c4f42);
   --color-line: var(--cc-e2d8c6, #e2d8c6);
   --desk: var(--cc-efe7d7, #efe7d7);
+  /*
+    Foil text on cream parchment leather.
+    Keep every gradient stop ≤ ~#8a6a2e so small text stays ≥4.5:1 on #f6f1e7.
+    Bright champagne highlights wash out to ~2:1 on cream — reserve those for dark leather.
+  */
+  --color-gold-text: var(--cc-7a5a20, #7a5a20);
+  --foil-1: var(--cc-5c4518, #5c4518);
+  --foil-2: var(--cc-8a6a2e, #8a6a2e);
+  --foil-3: var(--cc-7a5a20, #7a5a20);
+  --foil-4: var(--cc-9a7348, #9a7348);
+  --foil-5: var(--cc-5c4518, #5c4518);
 }
 
-:root[data-theme='dark'],
-:root[data-skin='editorial'][data-theme='dark'] {
+:root[data-theme='dark'] {
   --color-paper: var(--cc-17140f, #17140f);
   --color-paper-raised: var(--cc-1f1b14, #1f1b14);
   --color-paper-sunk: var(--cc-120f0b, #120f0b);
@@ -158,6 +204,32 @@
   --color-ink-faint: var(--cc-c4b79e, #c4b79e);
   --color-line: var(--cc-5a4a32, #5a4a32);
   --desk: var(--cc-17140f, #17140f);
+  /* Foil text on dark leather — brighter stops; no near-brown midtones */
+  --color-gold-text: var(--cc-e8c87a, #e8c87a);
+  --foil-1: var(--cc-c9a860, #c9a860);
+  --foil-2: var(--cc-f0d48a, #f0d48a);
+  --foil-3: var(--cc-e8c87a, #e8c87a);
+  --foil-4: var(--cc-f5e6b8, #f5e6b8);
+  --foil-5: var(--cc-d4b06a, #d4b06a);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-paper: var(--cc-17140f, #17140f);
+    --color-paper-raised: var(--cc-1f1b14, #1f1b14);
+    --color-paper-sunk: var(--cc-120f0b, #120f0b);
+    --color-ink: var(--cc-efe6d6, #efe6d6);
+    --color-ink-soft: var(--cc-ddd2bc, #ddd2bc);
+    --color-ink-faint: var(--cc-c4b79e, #c4b79e);
+    --color-line: var(--cc-5a4a32, #5a4a32);
+    --desk: var(--cc-17140f, #17140f);
+    --color-gold-text: var(--cc-e8c87a, #e8c87a);
+    --foil-1: var(--cc-c9a860, #c9a860);
+    --foil-2: var(--cc-f0d48a, #f0d48a);
+    --foil-3: var(--cc-e8c87a, #e8c87a);
+    --foil-4: var(--cc-f5e6b8, #f5e6b8);
+    --foil-5: var(--cc-d4b06a, #d4b06a);
+  }
 }
 
 /* ---------- iPhone / PWA touch behaviour (unlayered so it wins) ---------- */

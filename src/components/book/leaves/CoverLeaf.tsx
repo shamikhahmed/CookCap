@@ -72,10 +72,10 @@ export function CoverLeaf() {
               {edition.coverLine2}
             </h1>
             <div className="mx-auto my-8 h-px w-24 bg-gradient-to-r from-transparent via-[color:var(--color-gold)]/60 to-transparent" />
-            <p className="gold-foil font-sans text-xs font-semibold tracking-[0.02em] opacity-80">
+            <p className="gold-foil font-sans text-xs font-semibold tracking-[0.02em]">
               {edition.tagline}
             </p>
-            <p className="gold-foil mt-3 font-sans text-xs font-semibold tracking-[0.02em] opacity-70">
+            <p className="gold-foil mt-3 font-sans text-xs font-semibold tracking-[0.02em]">
               {getCatalogRecipeCount()} recipes
             </p>
           </>
@@ -115,11 +115,11 @@ export function CoverLeaf() {
         )}
       </div>
 
-      <span className="cover-hint pointer-events-none absolute bottom-14 z-10 text-xs uppercase tracking-[0.35em] text-[color:var(--color-gold)]/70">
+      <span className="cover-hint gold-foil pointer-events-none absolute bottom-14 z-10 text-xs font-semibold uppercase tracking-[0.35em]">
         Tap to open
       </span>
       <span
-        className="pointer-events-none absolute bottom-5 z-10 font-serif text-xs uppercase tracking-[0.35em] text-[color:var(--color-gold)]/55"
+        className="gold-foil pointer-events-none absolute bottom-5 z-10 font-serif text-xs font-semibold uppercase tracking-[0.35em]"
         aria-hidden
       >
         {PRODUCT_NAME}

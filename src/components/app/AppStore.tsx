@@ -115,10 +115,14 @@ const BUDGET_KEY = 'cookcap-weekly-budget';
 const CURRENCY_KEY = 'cookcap-currency';
 const HEALTHIER_KEY = 'cookcap-healthier';
 
+function resolvedTheme(theme: Theme): 'light' | 'dark' {
+  if (theme === 'light' || theme === 'dark') return theme;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+/** Always write resolved light|dark so HIG --label/--glass match chrome (never leave data-theme unset). */
 function applyTheme(theme: Theme) {
-  const root = document.documentElement;
-  if (theme === 'system') root.removeAttribute('data-theme');
-  else root.setAttribute('data-theme', theme);
+  document.documentElement.setAttribute('data-theme', resolvedTheme(theme));
 }
 
 export function AppStore({ children }: { children: ReactNode }) {
@@ -229,6 +233,15 @@ export function AppStore({ children }: { children: ReactNode }) {
     localStorage.setItem(THEME_KEY, t);
     applyTheme(t);
   }, []);
+
+  /* Keep data-theme in sync when user preference is "system" and OS scheme flips. */
+  useEffect(() => {
+    if (theme !== 'system') return;
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    const onChange = () => applyTheme('system');
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, [theme]);
 
   const setSoundOn = useCallback((v: boolean) => {
     setSoundOnState(v);
