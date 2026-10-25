@@ -735,12 +735,11 @@ function BottomBar() {
         {typeof document !== 'undefined' &&
           createPortal(
             <AnimatePresence>
-              {gotoOpen && gotoPos && (
+              {gotoOpen && (
                 <motion.div
                   ref={gotoPanelRef}
                   role="dialog"
                   aria-label="Go to page"
-                  /* Not data-overlay — that rule hides .app-footer, which is our anchor. */
                   data-goto-popover=""
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -748,8 +747,8 @@ function BottomBar() {
                   transition={{ duration: 0.15 }}
                   style={{
                     position: 'fixed',
-                    left: gotoPos.left,
-                    bottom: gotoPos.bottom,
+                    left: gotoPos?.left ?? '50%',
+                    bottom: gotoPos?.bottom ?? 88,
                     transform: 'translateX(-50%)',
                     zIndex: 90,
                     /* Solid sheet — never inherit glass footer backdrop-filter */

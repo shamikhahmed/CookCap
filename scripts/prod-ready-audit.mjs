@@ -43,6 +43,7 @@ async function seed(page, theme = 'light') {
         localStorage.setItem('cookcap-owner', 'Ayesha');
         localStorage.setItem('cookcap-whats-new', ver);
         localStorage.setItem('cookcap-onboarded', '1');
+        localStorage.setItem('cookcap-install-dismissed', '1');
       } catch {
         /* ignore */
       }
@@ -71,14 +72,18 @@ async function waitAppReady(page, timeout = 45000) {
 
 async function goPage(page, n) {
   const trigger = page.locator('.app-footer button[aria-haspopup="dialog"]').first();
-  await trigger.click({ force: true });
-  const dialog = page.locator('[role="dialog"][aria-label="Go to page"]');
-  await dialog.waitFor({ state: 'visible', timeout: 3000 });
-  const num = dialog.locator('input[type="number"]').first();
-  await num.fill(String(n));
+  // Close if already open
+  if ((await trigger.getAttribute('aria-expanded')) === 'true') {
+    await page.keyboard.press('Escape');
+    await page.waitForTimeout(150);
+  }
+  await trigger.click();
+  const dialog = page.locator('[data-goto-popover]');
+  await dialog.waitFor({ state: 'visible', timeout: 8000 });
+  await dialog.locator('input[type="number"]').fill(String(n));
   await dialog.getByRole('button', { name: /^Go$/i }).click();
-  await dialog.waitFor({ state: 'hidden', timeout: 3000 }).catch(() => undefined);
-  await page.waitForTimeout(400);
+  await dialog.waitFor({ state: 'hidden', timeout: 5000 });
+  await page.waitForTimeout(450);
 }
 
 async function shot(page, name) {
