@@ -8,6 +8,9 @@ import { fadeTransition } from '@/lib/motion';
 const KEY = 'cookcap-whats-new';
 
 const NOTES: Record<string, string[]> = {
+  '3.7.8': [
+    'Service worker claims the page so offline reload reaches the book',
+  ],
   '3.7.7': [
     'Offline reload boots the book (shell precaches scripts and styles)',
     'Sheets cover the page bar; Go-to-page is an opaque anchored popover',

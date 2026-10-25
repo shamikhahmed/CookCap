@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [3.7.8] — 2026-10-25
+
+### Fixed
+- Service worker `clients.claim()` on activate so the page is controlled after first install — offline navigations hit the cache (no more splash/chunk pause)
+
 ## [3.7.7] — 2026-10-25
 
 ### Fixed

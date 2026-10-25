@@ -29,7 +29,7 @@ page.setDefaultTimeout(12000);
 await page.addInitScript(() => {
   try {
     localStorage.setItem('cookcap-owner', 'Ayesha');
-    localStorage.setItem('cookcap-whats-new', '3.7.6');
+    localStorage.setItem('cookcap-whats-new', '3.7.8');
     localStorage.setItem('cookcap-onboarded', '1');
     localStorage.setItem('jia-owner', 'Ayesha');
   } catch {
@@ -187,7 +187,13 @@ try {
 }
 const autoSkip = sw.replace(/addEventListener\(['"]message['"][\s\S]*?\}\);/, '');
 check('SW: skipWaiting only on user request', !/skipWaiting\(\)/.test(autoSkip));
-check('SW: no auto clients.claim', !/clients\.claim\(\)/.test(autoSkip));
+// clients.claim on activate is required so first install / user Reload actually
+// controls the page (otherwise offline nav bypasses the SW). Forbid claim in install.
+const installBlock = sw.match(/addEventListener\(\s*['"]install['"][\s\S]*?\n\}\);/)?.[0] || '';
+check(
+  'SW: clients.claim on activate (not install)',
+  /clients\.claim\(\)/.test(sw) && !/clients\.claim\(\)/.test(installBlock),
+);
 
 await browser.close();
 let fail = 0;

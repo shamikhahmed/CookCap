@@ -1,51 +1,10 @@
 {
-  "base": "http://127.0.0.1:8920/",
+  "base": "http://127.0.0.1:8926/",
   "browser": "chromium (iPhone 15 Pro metrics — WebKit not required here)",
-  "started": "2026-10-25T09:52:55.756Z",
+  "started": "2026-10-25T10:21:32.486Z",
   "console": [],
   "pageErrors": [],
-  "findings": [
-    {
-      "id": "leaf-cover-light",
-      "severity": "serious",
-      "msg": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
-      "nodes": 2
-    },
-    {
-      "id": "leaf-contents-light",
-      "severity": "serious",
-      "msg": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
-      "nodes": 2
-    },
-    {
-      "id": "leaf-recipe-light",
-      "severity": "serious",
-      "msg": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
-      "nodes": 2
-    },
-    {
-      "id": "overlay-search",
-      "severity": "serious",
-      "msg": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
-      "nodes": 2
-    },
-    {
-      "id": "overlay-shop",
-      "severity": "serious",
-      "msg": "color-contrast: Elements must meet minimum color contrast ratio thresholds",
-      "nodes": 2
-    },
-    {
-      "id": "shop",
-      "severity": "high",
-      "msg": "overlay failed: locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /cancel|close|done/i }).first()\n    - locator resolved to <button aria-pressed=\"false\" aria-label=\"Mark step 1 done\" class=\"micro-press micro-step-check grid size-11 shrink-0 place-items-center rounded-full font-serif text-sm font-bold text-white\">1</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"min-h-0 flex-1 overflow-y-auto px-5 py-4\">…</div> from <div class=\"fixed inset-0 z-50 bg-black/50 backdrop-blur-sm\">…</div> subtree intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not stable\n    - retrying click action\n      - waiting 100ms\n    - waiting for element to be visible, enabled and stable\n    - element is not stable\n  57 × retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"min-h-0 flex-1 overflow-y-auto px-5 py-4\">…</div> from <div class=\"fixed inset-0 z-50 bg-black/50 backdrop-blur-sm\">…</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting 500ms\n"
-    },
-    {
-      "id": "more-about",
-      "severity": "high",
-      "msg": "overlay failed: locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /^More$/i })\n    - locator resolved to <button title=\"More\" type=\"button\" aria-label=\"More\" aria-expanded=\"false\" class=\"grid size-11 min-h-11 min-w-11 shrink-0 place-items-center rounded-full text-[color:var(--label-2,var(--color-ink-soft))] transition-all hover:bg-[color:var(--fill,var(--color-paper-sunk))] hover:text-[color:var(--label,var(--color-ink))] active:scale-90 disabled:pointer-events-none disabled:opacity-40 \">…</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <button type=\"button\" class=\"min-h-11 rounded-full px-3 text-[length:var(--t-body)] font-semibold text-[color:var(--tint-text,var(--color-accent))]\">Done</button> from <div class=\"fixed inset-0 z-50 bg-black/50 backdrop-blur-sm\">…</div> subtree intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <button type=\"button\" class=\"min-h-11 rounded-full px-3 text-[length:var(--t-body)] font-semibold text-[color:var(--tint-text,var(--color-accent))]\">Done</button> from <div class=\"fixed inset-0 z-50 bg-black/50 backdrop-blur-sm\">…</div> subtree intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    58 × waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <button type=\"button\" class=\"min-h-11 rounded-full px-3 text-[length:var(--t-body)] font-semibold text-[color:var(--tint-text,var(--color-accent))]\">Done</button> from <div class=\"fixed inset-0 z-50 bg-black/50 backdrop-blur-sm\">…</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
-    }
-  ],
+  "findings": [],
   "screens": [
     "leaf-cover-light",
     "leaf-contents-light",
@@ -56,24 +15,40 @@
   ],
   "axe": {
     "leaf-cover-light": {
-      "violations": 1,
-      "serious": 1
+      "violations": 0,
+      "serious": 0
     },
     "leaf-contents-light": {
-      "violations": 1,
-      "serious": 1
+      "violations": 0,
+      "serious": 0
     },
     "leaf-recipe-light": {
-      "violations": 1,
-      "serious": 1
+      "violations": 0,
+      "serious": 0
     },
     "overlay-search": {
-      "violations": 1,
-      "serious": 1
+      "violations": 0,
+      "serious": 0
     },
     "overlay-shop": {
-      "violations": 1,
-      "serious": 1
+      "violations": 0,
+      "serious": 0
+    },
+    "overlay-favorites": {
+      "violations": 0,
+      "serious": 0
+    },
+    "overlay-tabs": {
+      "violations": 0,
+      "serious": 0
+    },
+    "overlay-whats-new": {
+      "violations": 0,
+      "serious": 0
+    },
+    "overlay-more-about": {
+      "violations": 0,
+      "serious": 0
     },
     "leaf-recipe-dark": {
       "violations": 0,
@@ -87,32 +62,62 @@
     },
     {
       "id": "shop",
-      "ok": false,
-      "err": "locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /cancel|close|done/i }).first()\n    - locator resolved to <button aria-pressed=\"false\" aria-label=\"Mark step 1 done\" class=\"micro-press micro-step-check grid size-11 shrink-0 place-items-center rounded-full font-serif text-sm font-bold text-white\">1</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"min-h-0 flex-1 overflow-y-auto px-5 py-4\">…</div> from <div class=\"fixed inset-0 z-50 bg-black/50 backdrop-blur-sm\">…</div> subtree intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not stable\n    - retrying click action\n      - waiting 100ms\n    - waiting for element to be visible, enabled and stable\n    - element is not stable\n  57 × retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"min-h-0 flex-1 overflow-y-auto px-5 py-4\">…</div> from <div class=\"fixed inset-0 z-50 bg-black/50 backdrop-blur-sm\">…</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting 500ms\n"
+      "ok": true
+    },
+    {
+      "id": "favorites",
+      "ok": true
+    },
+    {
+      "id": "tabs",
+      "ok": true
+    },
+    {
+      "id": "whats-new",
+      "ok": true
     },
     {
       "id": "more-about",
-      "ok": false,
-      "err": "locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /^More$/i })\n    - locator resolved to <button title=\"More\" type=\"button\" aria-label=\"More\" aria-expanded=\"false\" class=\"grid size-11 min-h-11 min-w-11 shrink-0 place-items-center rounded-full text-[color:var(--label-2,var(--color-ink-soft))] transition-all hover:bg-[color:var(--fill,var(--color-paper-sunk))] hover:text-[color:var(--label,var(--color-ink))] active:scale-90 disabled:pointer-events-none disabled:opacity-40 \">…</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <button type=\"button\" class=\"min-h-11 rounded-full px-3 text-[length:var(--t-body)] font-semibold text-[color:var(--tint-text,var(--color-accent))]\">Done</button> from <div class=\"fixed inset-0 z-50 bg-black/50 backdrop-blur-sm\">…</div> subtree intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <button type=\"button\" class=\"min-h-11 rounded-full px-3 text-[length:var(--t-body)] font-semibold text-[color:var(--tint-text,var(--color-accent))]\">Done</button> from <div class=\"fixed inset-0 z-50 bg-black/50 backdrop-blur-sm\">…</div> subtree intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    58 × waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <button type=\"button\" class=\"min-h-11 rounded-full px-3 text-[length:var(--t-body)] font-semibold text-[color:var(--tint-text,var(--color-accent))]\">Done</button> from <div class=\"fixed inset-0 z-50 bg-black/50 backdrop-blur-sm\">…</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+      "ok": true
+    },
+    {
+      "id": "search-dark",
+      "ok": true
+    },
+    {
+      "id": "shop-dark",
+      "ok": true
+    },
+    {
+      "id": "favorites-dark",
+      "ok": true
+    },
+    {
+      "id": "tabs-dark",
+      "ok": true
     }
   ],
   "offline": {
     "ok": true,
-    "hasDesk": true,
-    "title": "CookCap — A Family Cookbook",
-    "ready": null,
-    "bodyText": "Skip to book\nCookCap\nR\n\nA FAMILY COOKBOOK\n\nOur Family\nCookbook\n\nRecipes, stories"
+    "waitedForAppReady": true,
+    "ready": "true",
+    "desk": true,
+    "book": true
   },
   "emptyProfile": {
     "hasNameGate": false,
     "dresser": true,
+    "subtitle": {
+      "title": "What’s new",
+      "sub": ""
+    },
     "shot": "fresh-first-run.png"
   },
   "dataActs": [],
-  "finished": "2026-10-25T09:54:45.279Z",
+  "finished": "2026-10-25T10:22:56.808Z",
   "summary": {
-    "findings": 7,
-    "serious": 7,
+    "findings": 1,
+    "serious": 1,
     "consoleErrors": 0,
     "pageErrors": 0
   }

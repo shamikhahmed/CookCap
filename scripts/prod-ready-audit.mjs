@@ -402,47 +402,22 @@ const browser = await chromium.launch({
   await page.goto(BASE + '?demo=1', { waitUntil: 'networkidle' }).catch(() =>
     page.goto(BASE + '?demo=1', { waitUntil: 'domcontentloaded' }),
   );
-  await waitAppReady(page).catch(() => undefined);
-  // Drop stale SW caches from prior builds, then re-warm against this out/
-  await page.evaluate(async () => {
-    if (!('serviceWorker' in navigator) || !('caches' in window)) return;
-    const keys = await caches.keys();
-    await Promise.all(keys.map((k) => caches.delete(k)));
-    const regs = await navigator.serviceWorker.getRegistrations();
-    await Promise.all(regs.map((r) => r.unregister()));
-  });
-  await page.reload({ waitUntil: 'networkidle' }).catch(() =>
-    page.reload({ waitUntil: 'domcontentloaded' }),
-  );
-  await waitAppReady(page).catch(() => undefined);
+  await waitAppReady(page);
+  // Wait until SW controls this client (clients.claim), then warm shell + scripts
+  await page.waitForFunction(() => !!navigator.serviceWorker.controller, { timeout: 25000 }).catch(() => undefined);
   await page.evaluate(async () => {
     if (!('serviceWorker' in navigator)) return;
     const reg = await navigator.serviceWorker.ready;
-    if (!navigator.serviceWorker.controller) {
-      await new Promise((resolve) => {
-        const t = window.setTimeout(resolve, 4000);
-        navigator.serviceWorker.addEventListener(
-          'controllerchange',
-          () => {
-            window.clearTimeout(t);
-            resolve(undefined);
-          },
-          { once: true },
-        );
-      });
-    }
     const urls = [
-      location.href.split('?')[0],
+      location.origin + (location.pathname.endsWith('/') ? location.pathname : location.pathname + '/').replace(/\/+$/, '/') || '/',
+      location.origin + '/',
       ...[...document.querySelectorAll('script[src],link[rel="stylesheet"]')].map(
         (el) => /** @type {HTMLScriptElement|HTMLLinkElement} */ (el).href || /** @type {HTMLScriptElement} */ (el).src,
       ),
     ].filter(Boolean);
     reg.active?.postMessage({ type: 'CACHE_URLS', urls });
-    // Also hit each URL so SW fetch handlers populate ASSETS
-    await Promise.all(
-      urls.map((u) => fetch(u, { credentials: 'same-origin' }).catch(() => null)),
-    );
-    await new Promise((r) => setTimeout(r, 2500));
+    await Promise.all(urls.map((u) => fetch(u, { credentials: 'same-origin' }).catch(() => null)));
+    await new Promise((r) => setTimeout(r, 3000));
   });
   await ctx.setOffline(true);
   await page.reload({ waitUntil: 'domcontentloaded' }).catch((e) => e);
