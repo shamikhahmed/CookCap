@@ -1,7 +1,8 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { BookController, useBook } from './BookController';
 import { Book } from './Book';
@@ -606,12 +607,37 @@ function BottomBar() {
   const { ready, customs } = useApp();
   const [gotoOpen, setGotoOpen] = useState(false);
   const [draft, setDraft] = useState('');
-  const gotoRef = useRef<HTMLDivElement>(null);
+  const [gotoPos, setGotoPos] = useState<{ left: number; bottom: number } | null>(null);
+  const gotoBtnRef = useRef<HTMLButtonElement>(null);
+  const gotoPanelRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const JUMP = 5;
   const busy = locked || turning;
   const extras = customs.length;
   const maxIdx = Math.max(0, total - 1);
+
+  useLayoutEffect(() => {
+    if (!gotoOpen) {
+      setGotoPos(null);
+      return;
+    }
+    const place = () => {
+      const btn = gotoBtnRef.current;
+      if (!btn) return;
+      const r = btn.getBoundingClientRect();
+      setGotoPos({
+        left: Math.min(Math.max(12, r.left + r.width / 2), window.innerWidth - 12),
+        bottom: Math.max(12, window.innerHeight - r.top + 8),
+      });
+    };
+    place();
+    window.addEventListener('resize', place);
+    window.addEventListener('scroll', place, true);
+    return () => {
+      window.removeEventListener('resize', place);
+      window.removeEventListener('scroll', place, true);
+    };
+  }, [gotoOpen]);
 
   useEffect(() => {
     if (!gotoOpen) return;
@@ -626,9 +652,9 @@ function BottomBar() {
       if (e.key === 'Escape') setGotoOpen(false);
     };
     const onDoc = (e: MouseEvent) => {
-      if (gotoRef.current && !gotoRef.current.contains(e.target as Node)) {
-        setGotoOpen(false);
-      }
+      const t = e.target as Node;
+      if (gotoPanelRef.current?.contains(t) || gotoBtnRef.current?.contains(t)) return;
+      setGotoOpen(false);
     };
     window.addEventListener('keydown', onKey);
     document.addEventListener('mousedown', onDoc);
@@ -687,8 +713,9 @@ function BottomBar() {
         />
       </label>
 
-      <div className="relative" ref={gotoRef}>
+      <div className="relative">
         <button
+          ref={gotoBtnRef}
           type="button"
           disabled={!ready || busy}
           onClick={() => setGotoOpen((v) => !v)}
@@ -705,48 +732,74 @@ function BottomBar() {
           {ready ? `${index + 1} / ${total}` : '…'}
         </button>
 
-        <AnimatePresence>
-          {gotoOpen && (
-            <motion.div
-              role="dialog"
-              aria-label="Go to page"
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 6 }}
-              transition={{ duration: 0.15 }}
-              className="absolute bottom-[calc(100%+0.5rem)] left-1/2 z-40 w-[11.5rem] -translate-x-1/2 rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] p-3 shadow-[var(--shadow-lg)]"
-            >
-              <p className="mb-2 text-xs uppercase tracking-[0.16em] text-[color:var(--color-ink-faint)]">
-                Go to page
-              </p>
-              <form
-                className="flex gap-2"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  submitGoto();
-                }}
-              >
-                <input
-                  ref={inputRef}
-                  type="number"
-                  inputMode="numeric"
-                  min={1}
-                  max={total}
-                  value={draft}
-                  onChange={(e) => setDraft(e.target.value)}
-                  className="min-h-11 w-full rounded-lg border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-2 text-center text-sm tabular-nums text-[color:var(--color-ink)]"
-                  aria-label={`Page number, 1 to ${total}`}
-                />
-                <button
-                  type="submit"
-                  className="min-h-11 shrink-0 rounded-full bg-[color:var(--color-accent)] px-3 text-sm font-medium text-white"
+        {typeof document !== 'undefined' &&
+          createPortal(
+            <AnimatePresence>
+              {gotoOpen && gotoPos && (
+                <motion.div
+                  ref={gotoPanelRef}
+                  role="dialog"
+                  aria-label="Go to page"
+                  data-overlay="goto-page"
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 6 }}
+                  transition={{ duration: 0.15 }}
+                  style={{
+                    position: 'fixed',
+                    left: gotoPos.left,
+                    bottom: gotoPos.bottom,
+                    transform: 'translateX(-50%)',
+                    zIndex: 90,
+                    /* Solid sheet — never inherit glass footer backdrop-filter */
+                    background: 'var(--color-paper-raised, #fbf7ee)',
+                    WebkitBackdropFilter: 'none',
+                    backdropFilter: 'none',
+                  }}
+                  className="w-[13.5rem] rounded-xl border border-[color:var(--color-line)] p-3 shadow-[var(--shadow-lg)]"
                 >
-                  Go
-                </button>
-              </form>
-            </motion.div>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-[color:var(--color-ink-soft)]">
+                    Go to page
+                  </p>
+                  <form
+                    className="flex flex-col gap-2"
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      submitGoto();
+                    }}
+                  >
+                    <input
+                      ref={inputRef}
+                      type="number"
+                      inputMode="numeric"
+                      min={1}
+                      max={total}
+                      value={draft}
+                      onChange={(e) => setDraft(e.target.value)}
+                      className="min-h-11 w-full rounded-lg border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-2 text-center text-base tabular-nums text-[color:var(--color-ink)]"
+                      aria-label={`Page number, 1 to ${total}`}
+                    />
+                    <div className="flex gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setGotoOpen(false)}
+                        className="min-h-11 flex-1 rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)] px-3 text-sm font-medium text-[color:var(--color-ink)]"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        type="submit"
+                        className="min-h-11 flex-1 rounded-full bg-[color:var(--color-accent)] px-3 text-sm font-medium text-white"
+                      >
+                        Go
+                      </button>
+                    </div>
+                  </form>
+                </motion.div>
+              )}
+            </AnimatePresence>,
+            document.body,
           )}
-        </AnimatePresence>
       </div>
 
       <IconBtn label="Next page" onClick={next} disabled={atEnd || busy}>
