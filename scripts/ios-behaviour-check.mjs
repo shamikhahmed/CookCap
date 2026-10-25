@@ -187,13 +187,7 @@ try {
 }
 const autoSkip = sw.replace(/addEventListener\(['"]message['"][\s\S]*?\}\);/, '');
 check('SW: skipWaiting only on user request', !/skipWaiting\(\)/.test(autoSkip));
-// clients.claim on activate is required so first install / user Reload actually
-// controls the page (otherwise offline nav bypasses the SW). Forbid claim in install.
-const installBlock = sw.match(/addEventListener\(\s*['"]install['"][\s\S]*?\n\}\);/)?.[0] || '';
-check(
-  'SW: clients.claim on activate (not install)',
-  /clients\.claim\(\)/.test(sw) && !/clients\.claim\(\)/.test(installBlock),
-);
+check('SW: no auto clients.claim', !/clients\.claim\(\)/.test(autoSkip));
 
 await browser.close();
 let fail = 0;

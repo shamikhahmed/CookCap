@@ -11,7 +11,7 @@
   - install: NEVER auto skipWaiting (HIG iPhone recipe). New SW waits;
     SwUpdateToast posts SKIP_WAITING on user Reload only.
     First install still skipWaiting via ServiceWorker.tsx when no controller yet.
-  - activate: clients.claim() so the page is controlled after first install / Reload
+  - activate: prune old caches only (never claims clients — a running page is not taken over)
     (otherwise offline navigations bypass the SW and chunk caches never fill).
 
   Works under GitHub Pages project path (/CookCap/) by deriving BASE from the
@@ -105,9 +105,8 @@ self.addEventListener('activate', (event) => {
     (async () => {
       const keys = await caches.keys();
       await Promise.all(keys.filter((k) => !k.startsWith(VERSION)).map((k) => caches.delete(k)));
-      // Take control after first install (skipWaiting) or user Reload (SwUpdateToast).
-      // Without claim, navigations never hit this SW — offline reload stays on splash/chunk errors.
-      await self.clients.claim();
+      // Never claim clients: a running page is not taken over by a new worker. The next
+      // navigation (reload, relaunch) is served by this worker, which is all offline needs.
     })(),
   );
 });
