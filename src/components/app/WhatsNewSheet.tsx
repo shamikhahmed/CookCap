@@ -8,6 +8,11 @@ import { fadeTransition } from '@/lib/motion';
 const KEY = 'cookcap-whats-new';
 
 const NOTES: Record<string, string[]> = {
+  '3.7.7': [
+    'Offline reload boots the book (shell precaches scripts and styles)',
+    'Sheets cover the page bar; Go-to-page is an opaque anchored popover',
+    'Cover Add photo and small caps meet contrast; search hints stay on desktop',
+  ],
   '3.7.6': [
     'Clearer night chrome — header and page bar stay readable in dark mode',
     'Cover foil and cuisine labels meet contrast targets on leather and photos',

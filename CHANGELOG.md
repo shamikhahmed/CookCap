@@ -1,5 +1,14 @@
 ## [Unreleased]
 
+## [3.7.7] — 2026-10-25
+
+### Fixed
+- Offline reload: SW precaches index HTML plus linked JS/CSS so the book boots past splash
+- Go-to-page popover: opaque body portal (no glass ghost over contents)
+- Sheets/drawers sit above the glass page bar; safe-area bottom padding
+- Cover Add photo secondary button + small-caps AA (foil on title only)
+- Search keyboard hints only on `(hover:hover)` + `(pointer:fine)`
+
 ## [3.7.6] — 2026-10-25
 
 Prod-ready contrast (HIG 3 audit):

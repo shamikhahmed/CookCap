@@ -7,6 +7,7 @@
   - navigate / HTML → network-first (never pin old index.html to new chunk hashes)
   - /_next/static/* → cache-first (content-hashed, immutable)
   - other same-origin assets → stale-while-revalidate
+  - install: precache shell HTML + its script/link assets so offline reload reaches the book
   - install/activate: NEVER auto skipWaiting / clients.claim (HIG iPhone recipe).
     New SW waits; SwUpdateToast posts SKIP_WAITING on user Reload only.
     First install still activates via ServiceWorker.tsx when no controller yet.
@@ -14,7 +15,7 @@
   Works under GitHub Pages project path (/CookCap/) by deriving BASE from the
   script URL. Local/static export root uses BASE ''.
 */
-const VERSION = 'cookcap-v376';
+const VERSION = 'cookcap-v377';
 const SHELL = `${VERSION}-shell`;
 const ASSETS = `${VERSION}-assets`;
 const BASE = new URL('./', self.location.href).pathname.replace(/\/$/, '');
@@ -30,13 +31,61 @@ const SHELL_URLS = [
   root('/icons/maskable-512.png'),
 ];
 
+function assetUrlsFromHtml(html, baseHref) {
+  const urls = new Set();
+  const re = /(?:src|href)=["']([^"']+\.(?:js|css))["']/gi;
+  let m;
+  while ((m = re.exec(html))) {
+    try {
+      urls.add(new URL(m[1], baseHref).href);
+    } catch {
+      /* ignore bad URL */
+    }
+  }
+  return [...urls];
+}
+
+async function putOk(cache, request, res) {
+  if (res && res.ok) await cache.put(request, res.clone());
+}
+
+async function cacheHtmlAndAssets(htmlRequest, htmlResponse) {
+  const shell = await caches.open(SHELL);
+  await putOk(shell, htmlRequest, htmlResponse);
+  let html = '';
+  try {
+    html = await htmlResponse.clone().text();
+  } catch {
+    return;
+  }
+  const assets = await caches.open(ASSETS);
+  const list = assetUrlsFromHtml(html, htmlResponse.url || self.location.origin + root('/'));
+  await Promise.all(
+    list.map(async (u) => {
+      try {
+        const cached = await assets.match(u);
+        if (cached) return;
+        const res = await fetch(u, { credentials: 'same-origin' });
+        await putOk(assets, u, res);
+      } catch {
+        /* offline install — skip */
+      }
+    }),
+  );
+}
+
 async function precacheShell() {
   const cache = await caches.open(SHELL);
   await Promise.all(
     SHELL_URLS.map(async (u) => {
       try {
         const res = await fetch(u, { cache: 'no-store', credentials: 'same-origin' });
-        if (res.ok) await cache.put(u, res.clone());
+        if (!res.ok) return;
+        if (u === root('/') || u.endsWith('.html')) {
+          await cacheHtmlAndAssets(u, res);
+        } else {
+          await putOk(cache, u, res);
+        }
       } catch {
         /* offline install — skip */
       }
@@ -102,8 +151,8 @@ self.addEventListener('fetch', (event) => {
       fetch(request, { cache: 'no-store' })
         .then((res) => {
           if (res.ok) {
-            const copy = res.clone();
-            caches.open(SHELL).then((c) => c.put(root('/'), copy));
+            // Cache HTML + linked JS/CSS so a later offline reload can boot the book
+            event.waitUntil(cacheHtmlAndAssets(root('/'), res.clone()));
           }
           return res;
         })

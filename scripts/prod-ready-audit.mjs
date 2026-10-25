@@ -60,14 +60,25 @@ async function dismissChrome(page) {
   }
 }
 
+async function waitAppReady(page, timeout = 45000) {
+  await page.waitForFunction(
+    () =>
+      document.documentElement.dataset.appReady === 'true' ||
+      window.__APP_READY__ === true,
+    { timeout },
+  );
+}
+
 async function goPage(page, n) {
-  await page.locator('.app-footer button[aria-haspopup="dialog"]').first().click({ force: true });
-  await page.waitForTimeout(150);
-  const num = page.locator('input[type="number"]').first();
-  await num.waitFor({ state: 'visible', timeout: 3000 });
+  const trigger = page.locator('.app-footer button[aria-haspopup="dialog"]').first();
+  await trigger.click({ force: true });
+  const dialog = page.locator('[role="dialog"][aria-label="Go to page"]');
+  await dialog.waitFor({ state: 'visible', timeout: 3000 });
+  const num = dialog.locator('input[type="number"]').first();
   await num.fill(String(n));
-  await num.press('Enter');
-  await page.waitForTimeout(500);
+  await dialog.getByRole('button', { name: /^Go$/i }).click();
+  await dialog.waitFor({ state: 'hidden', timeout: 3000 }).catch(() => undefined);
+  await page.waitForTimeout(400);
 }
 
 async function shot(page, name) {
@@ -285,30 +296,54 @@ const browser = await chromium.launch({
   await page.goto(BASE + '?demo=1', { waitUntil: 'networkidle' }).catch(() =>
     page.goto(BASE + '?demo=1', { waitUntil: 'domcontentloaded' }),
   );
-  await page.waitForTimeout(3000);
+  await waitAppReady(page).catch(() => undefined);
+  // Ensure SW controls the page and has warmed shell + JS/CSS before cutting network
   await page.evaluate(async () => {
-    if (!('serviceWorker' in navigator)) return;
-    const regs = await navigator.serviceWorker.getRegistrations();
-    // wait briefly for controlling SW
-    await new Promise((r) => setTimeout(r, 1500));
-    return regs.length;
+    if (!('serviceWorker' in navigator)) return { regs: 0 };
+    const reg = await navigator.serviceWorker.ready;
+    // Ask active SW to cache current document scripts/styles
+    const urls = [...document.querySelectorAll('script[src],link[rel="stylesheet"]')]
+      .map((el) => el.href || el.src)
+      .filter(Boolean);
+    reg.active?.postMessage({ type: 'CACHE_URLS', urls });
+    await new Promise((r) => setTimeout(r, 2000));
+    return { regs: (await navigator.serviceWorker.getRegistrations()).length, controlled: !!navigator.serviceWorker.controller };
   });
   await ctx.setOffline(true);
   await page.reload({ waitUntil: 'domcontentloaded' }).catch((e) => e);
-  await page.waitForTimeout(1500);
+  let ready = false;
+  try {
+    await waitAppReady(page, 45000);
+    ready = true;
+  } catch {
+    ready = false;
+  }
   const offlineOk = await page.evaluate(() => {
-    const desk = document.querySelector('.journal-desk, [data-app-ready], body');
+    const splash = !!document.querySelector('.fixed.inset-0.z-\\[100\\], [aria-hidden] .font-serif');
     return {
       hasDesk: !!document.querySelector('.journal-desk'),
+      hasBook: !!document.querySelector('.book-frame, .leather, [data-leaf-scroll]'),
       title: document.title,
       ready: document.documentElement.dataset.appReady || null,
-      bodyText: (document.body?.innerText || '').slice(0, 80),
+      appReadyFlag: window.__APP_READY__ === true,
+      bodyText: (document.body?.innerText || '').slice(0, 120),
+      splashOnly:
+        /cookcap\s*v?\s*[\d.]+/i.test((document.body?.innerText || '').trim()) &&
+        !(document.documentElement.dataset.appReady === 'true'),
     };
   });
   await shot(page, 'offline-reload.png');
-  log.offline = { ok: offlineOk.hasDesk || /cookcap|cookbook/i.test(offlineOk.title + offlineOk.bodyText), ...offlineOk };
+  log.offline = {
+    ok: ready && offlineOk.hasDesk && offlineOk.ready === 'true' && !offlineOk.splashOnly,
+    waitedForAppReady: ready,
+    ...offlineOk,
+  };
   if (!log.offline.ok) {
-    log.findings.push({ id: 'offline', severity: 'high', msg: 'offline reload did not show app shell' });
+    log.findings.push({
+      id: 'offline',
+      severity: 'high',
+      msg: 'offline reload did not reach app-ready / book (splash-only or timeout)',
+    });
   }
   await ctx.close();
 }

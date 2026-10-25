@@ -2,7 +2,7 @@
 
 Cap-family offline-first cookbook PWA. Name your book → **`{Name} Cooks`**.
 
-**Live:** https://shamikhahmed.github.io/CookCap/ · **v3.7.6** (HIG 3 chrome + AA dark/cover contrast)
+**Live:** https://shamikhahmed.github.io/CookCap/ · **v3.7.7** (HIG 3 chrome + offline shell + AA cover)
 
 ## Features
 
@@ -18,7 +18,7 @@ Cap-family offline-first cookbook PWA. Name your book → **`{Name} Cooks`**.
 
 ## Stack
 
-Next.js 15 (`output: 'export'`) · React 19 · Tailwind v4 · Motion · IndexedDB · SW `cookcap-v376`
+Next.js 15 (`output: 'export'`) · React 19 · Tailwind v4 · Motion · IndexedDB · SW `cookcap-v377`
 
 ## Run
 

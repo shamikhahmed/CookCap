@@ -1,7 +1,7 @@
 {
   "name": "CookCap",
-  "version": "3.7.6",
-  "swCache": "cookcap-v376",
+  "version": "3.7.7",
+  "swCache": "cookcap-v377",
   "updated": "2026-10-25",
-  "notes": "Prod-ready contrast: dark chrome labels, AA cover foil, hero cuisine"
+  "notes": "Offline shell precaches JS/CSS; sheets above page bar; cover AA"
 }
