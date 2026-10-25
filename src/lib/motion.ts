@@ -47,10 +47,10 @@ export function fadeTransition(reduce: boolean | null, ms = 200) {
   return { type: 'tween' as const, duration: ms / 1000, ease: EASE_OUT_SOFT };
 }
 
-/** Splash dissolve. */
+/** Splash dissolve — keep ≤0.4s so splash clears within 1s of store-ready. */
 export function splashTransition(reduce: boolean | null) {
   if (reduce) return { type: 'tween' as const, duration: 0.08 };
-  return { type: 'tween' as const, duration: 0.45, ease: EASE_OUT_SOFT };
+  return { type: 'tween' as const, duration: 0.4, ease: EASE_OUT_SOFT };
 }
 
 /** Book / page curl settle. */
