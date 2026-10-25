@@ -161,7 +161,6 @@ function Frame() {
       <a href="#book-main" className="sr-only skip-to-book">
         Skip to book
       </a>
-      <OfflineChip />
       <SwUpdateToast />
       <WhatsNewSheet />
       {guestActive && (
@@ -214,6 +213,7 @@ function Frame() {
           onPantry={() => setPantryOpen(true)}
           onAbout={() => setAboutOpen(true)}
         />
+        <OfflineChip />
 
         <main
           id="book-main"
