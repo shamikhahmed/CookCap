@@ -68,6 +68,8 @@ async function waitAppReady(page, timeout = 45000) {
       window.__APP_READY__ === true,
     { timeout },
   );
+  // Splash sets APP_READY on exit complete — still wait until the mark is gone.
+  await page.locator('[data-splash]').waitFor({ state: 'detached', timeout: 2000 }).catch(() => undefined);
 }
 
 async function goPage(page, n) {
@@ -230,13 +232,16 @@ const browser = await chromium.launch({
           } catch {
             /* ignore */
           }
+          window.dispatchEvent(new Event('cookcap-open-whats-new'));
         });
-        await page.reload({ waitUntil: 'domcontentloaded' });
-        await waitAppReady(page).catch(() => page.waitForTimeout(2000));
-        await dismissChrome(page);
+        await page.locator('[data-overlay="whats-new"]').waitFor({ state: 'visible', timeout: 5000 });
+        await page.waitForTimeout(300);
       },
       close: async () => {
-        const b = page.getByRole('button', { name: /got it|dismiss|close/i }).first();
+        const b = page
+          .locator('[data-overlay="whats-new"]')
+          .getByRole('button', { name: /got it|dismiss|close/i })
+          .first();
         if (await b.isVisible().catch(() => false)) await b.click();
         else await page.keyboard.press('Escape');
       },
@@ -403,7 +408,7 @@ const browser = await chromium.launch({
     page.goto(BASE + '?demo=1', { waitUntil: 'domcontentloaded' }),
   );
   await waitAppReady(page);
-  // Wait until SW controls this client (clients.claim), then warm shell + scripts
+  // Warm SW cache (controller may appear after first fetch; no clients.claim)
   await page.waitForFunction(() => !!navigator.serviceWorker.controller, { timeout: 25000 }).catch(() => undefined);
   await page.evaluate(async () => {
     if (!('serviceWorker' in navigator)) return;
@@ -428,17 +433,21 @@ const browser = await chromium.launch({
   } catch {
     ready = false;
   }
+  // Banner auto-hides ~4.5s — capture while still under the header if present.
+  await page.locator('[data-offline-banner]').waitFor({ state: 'visible', timeout: 2000 }).catch(() => undefined);
+  await page.waitForTimeout(200);
   const offlineOk = await page.evaluate(() => {
-    const splash = !!document.querySelector('.fixed.inset-0.z-\\[100\\], [aria-hidden] .font-serif');
     return {
       hasDesk: !!document.querySelector('.journal-desk'),
       hasBook: !!document.querySelector('.book-frame, .leather, [data-leaf-scroll]'),
       title: document.title,
       ready: document.documentElement.dataset.appReady || null,
       appReadyFlag: window.__APP_READY__ === true,
+      splashGone: !document.querySelector('[data-splash]'),
+      offlineBanner: !!document.querySelector('[data-offline-banner]'),
       bodyText: (document.body?.innerText || '').slice(0, 120),
       splashOnly:
-        /cookcap\s*v?\s*[\d.]+/i.test((document.body?.innerText || '').trim()) &&
+        !!document.querySelector('[data-splash]') &&
         !(document.documentElement.dataset.appReady === 'true'),
     };
   });
