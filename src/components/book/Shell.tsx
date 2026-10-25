@@ -740,7 +740,8 @@ function BottomBar() {
                   ref={gotoPanelRef}
                   role="dialog"
                   aria-label="Go to page"
-                  data-overlay="goto-page"
+                  /* Not data-overlay — that rule hides .app-footer, which is our anchor. */
+                  data-goto-popover=""
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 6 }}

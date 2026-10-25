@@ -138,7 +138,7 @@ const browser = await chromium.launch({
   page.on('pageerror', (e) => log.pageErrors.push({ theme: 'light', text: String(e) }));
   await seed(page, 'light');
   await page.goto(BASE + '?demo=1', { waitUntil: 'domcontentloaded', timeout: 60000 });
-  await page.waitForTimeout(2000);
+  await waitAppReady(page).catch(() => page.waitForTimeout(2500));
   await dismissChrome(page);
 
   const sizes = [
@@ -170,11 +170,23 @@ const browser = await chromium.launch({
   ]) {
     await goPage(page, n);
     await shot(page, `${name}.png`);
+    // Alias contrast-fix names for cover/recipe
+    if (name === 'leaf-cover-light') await shot(page, 'after-contrast-light-cover.png');
+    if (name === 'leaf-recipe-light') await shot(page, 'after-contrast-light-recipe.png');
     log.screens.push(name);
     log.axe[name] = await axeScan(page, name, log.findings);
   }
 
-  // Overlays
+  const closeSheet = async () => {
+    const done = page.locator('[data-overlay]').getByRole('button', { name: /^(Done|Cancel|Close)$/i }).first();
+    if (await done.isVisible({ timeout: 800 }).catch(() => false)) {
+      await done.click();
+      return;
+    }
+    await page.keyboard.press('Escape');
+  };
+
+  // Overlays at 390×844 light (inventory sheets)
   const overlayOps = [
     {
       id: 'search',
@@ -184,9 +196,43 @@ const browser = await chromium.launch({
     {
       id: 'shop',
       open: async () => page.getByRole('button', { name: /shopping/i }).first().click(),
+      close: closeSheet,
+    },
+    {
+      id: 'favorites',
+      open: async () => {
+        await page.getByRole('button', { name: /^More$/i }).click();
+        await page.waitForTimeout(150);
+        await page.getByRole('menuitem', { name: /favorites/i }).click();
+      },
+      close: closeSheet,
+    },
+    {
+      id: 'tabs',
+      open: async () => {
+        const tabs = page.getByRole('button', { name: /tabs|chapter/i }).first();
+        if (await tabs.isVisible().catch(() => false)) await tabs.click();
+        else await page.evaluate(() => window.dispatchEvent(new Event('cookcap-open-chapters')));
+      },
+      close: closeSheet,
+    },
+    {
+      id: 'whats-new',
+      open: async () => {
+        await page.evaluate(() => {
+          try {
+            localStorage.removeItem('cookcap-whats-new');
+          } catch {
+            /* ignore */
+          }
+        });
+        await page.reload({ waitUntil: 'domcontentloaded' });
+        await waitAppReady(page).catch(() => page.waitForTimeout(2000));
+        await dismissChrome(page);
+      },
       close: async () => {
-        const c = page.getByRole('button', { name: /cancel|close|done/i }).first();
-        if (await c.isVisible().catch(() => false)) await c.click();
+        const b = page.getByRole('button', { name: /got it|dismiss|close/i }).first();
+        if (await b.isVisible().catch(() => false)) await b.click();
         else await page.keyboard.press('Escape');
       },
     },
@@ -197,17 +243,13 @@ const browser = await chromium.launch({
         await page.waitForTimeout(200);
         await page.getByRole('menuitem', { name: /about/i }).click();
       },
-      close: async () => {
-        const c = page.getByRole('button', { name: /close|done|cancel/i }).first();
-        if (await c.isVisible().catch(() => false)) await c.click();
-        else await page.keyboard.press('Escape');
-      },
+      close: closeSheet,
     },
   ];
   for (const op of overlayOps) {
     try {
       await op.open();
-      await page.waitForTimeout(500);
+      await page.waitForTimeout(600);
       await shot(page, `overlay-${op.id}.png`);
       log.axe[`overlay-${op.id}`] = await axeScan(page, `overlay-${op.id}`, log.findings);
       await op.close();
@@ -216,6 +258,7 @@ const browser = await chromium.launch({
     } catch (e) {
       log.overlays.push({ id: op.id, ok: false, err: String(e.message || e) });
       log.findings.push({ id: op.id, severity: 'high', msg: `overlay failed: ${e.message || e}` });
+      await page.keyboard.press('Escape').catch(() => undefined);
     }
   }
 
@@ -228,30 +271,73 @@ const browser = await chromium.launch({
   await ctx.close();
 }
 
-// ——— Dark recipe (already contrast-fixed) ———
+// ——— Dark recipe + overlays ———
 {
   const ctx = await phoneCtx(browser, { colorScheme: 'dark' });
   const page = await ctx.newPage();
   await seed(page, 'dark');
   await page.goto(BASE + '?demo=1', { waitUntil: 'domcontentloaded' });
-  await page.waitForTimeout(1800);
+  await waitAppReady(page).catch(() => page.waitForTimeout(2000));
   await dismissChrome(page);
+  await goPage(page, 1);
+  await shot(page, 'after-contrast-dark-cover.png');
+  await shot(page, 'after-contrast-system-dark-cover.png');
   await goPage(page, 7);
   await shot(page, 'leaf-recipe-dark.png');
+  await shot(page, 'after-contrast-dark-recipe.png');
+  await shot(page, 'after-contrast-system-dark-recipe.png');
+  for (const [id, open] of [
+    ['search', async () => page.getByRole('button', { name: /search/i }).first().click()],
+    ['shop', async () => page.getByRole('button', { name: /shopping/i }).first().click()],
+    [
+      'favorites',
+      async () => {
+        await page.getByRole('button', { name: /^More$/i }).click();
+        await page.waitForTimeout(150);
+        await page.getByRole('menuitem', { name: /favorites/i }).click();
+      },
+    ],
+    [
+      'tabs',
+      async () => {
+        const tabs = page.getByRole('button', { name: /tabs|chapter/i }).first();
+        if (await tabs.isVisible().catch(() => false)) await tabs.click();
+        else await page.evaluate(() => window.dispatchEvent(new Event('cookcap-open-chapters')));
+      },
+    ],
+  ]) {
+    try {
+      await open();
+      await page.waitForTimeout(500);
+      await shot(page, `overlay-${id}-dark.png`);
+      await page.keyboard.press('Escape');
+      await page.waitForTimeout(250);
+      log.overlays.push({ id: `${id}-dark`, ok: true });
+    } catch (e) {
+      log.overlays.push({ id: `${id}-dark`, ok: false, err: String(e.message || e) });
+      await page.keyboard.press('Escape').catch(() => undefined);
+    }
+  }
   log.screens.push('leaf-recipe-dark');
   log.axe['leaf-recipe-dark'] = await axeScan(page, 'leaf-recipe-dark', log.findings);
   await ctx.close();
 }
 
-// ——— iPad / desktop ———
+// ——— iPad / desktop (cover + contents + shop) ———
 {
   const ctx = await browser.newContext({ viewport: { width: 1180, height: 820 }, deviceScaleFactor: 1 });
   const page = await ctx.newPage();
   await seed(page, 'light');
   await page.goto(BASE + '?demo=1', { waitUntil: 'domcontentloaded' });
-  await page.waitForTimeout(1800);
+  await waitAppReady(page).catch(() => page.waitForTimeout(2000));
   await dismissChrome(page);
   await shot(page, 'ipad-cover-light.png');
+  await goPage(page, 4);
+  await shot(page, 'ipad-contents-light.png');
+  await page.getByRole('button', { name: /shopping/i }).first().click().catch(() => undefined);
+  await page.waitForTimeout(500);
+  await shot(page, 'ipad-overlay-shop.png');
+  await page.keyboard.press('Escape').catch(() => undefined);
   log.screens.push('ipad-cover-light');
   await ctx.close();
 }
@@ -260,9 +346,15 @@ const browser = await chromium.launch({
   const page = await ctx.newPage();
   await seed(page, 'light');
   await page.goto(BASE + '?demo=1', { waitUntil: 'domcontentloaded' });
-  await page.waitForTimeout(1500);
+  await waitAppReady(page).catch(() => page.waitForTimeout(2000));
   await dismissChrome(page);
   await shot(page, 'desktop-cover-light.png');
+  await goPage(page, 4);
+  await shot(page, 'desktop-contents-light.png');
+  await page.getByRole('button', { name: /search/i }).first().click().catch(() => undefined);
+  await page.waitForTimeout(500);
+  await shot(page, 'desktop-overlay-search.png');
+  await page.keyboard.press('Escape').catch(() => undefined);
   log.screens.push('desktop-cover-light');
   await ctx.close();
 }
@@ -275,16 +367,25 @@ const browser = await chromium.launch({
   await page.addInitScript(() => {
     try {
       localStorage.clear();
+      localStorage.setItem('cookcap-force-dresser', '1');
     } catch {
       /* ignore */
     }
   });
   await page.goto(BASE, { waitUntil: 'domcontentloaded' });
-  await page.waitForTimeout(2500);
+  await page.waitForTimeout(2800);
   await shot(page, 'fresh-first-run.png');
   const hasNameGate = await page.getByRole('textbox').or(page.getByLabel(/name/i)).first().isVisible().catch(() => false);
-  const dresser = await page.locator('text=/name your|welcome|begin|your cookbook/i').first().isVisible().catch(() => false);
-  log.emptyProfile = { hasNameGate, dresser, shot: 'fresh-first-run.png' };
+  const dresser = await page.locator('text=/name your|welcome|begin|your cookbook|living family/i').first().isVisible().catch(() => false);
+  const subtitle = await page.evaluate(() => {
+    const h = document.querySelector('h1, h2');
+    const p = h?.parentElement?.querySelector('p');
+    return { title: h?.textContent?.trim() || '', sub: p?.textContent?.trim() || '' };
+  });
+  log.emptyProfile = { hasNameGate, dresser, subtitle, shot: 'fresh-first-run.png' };
+  if (subtitle.title && subtitle.sub && subtitle.sub.startsWith(subtitle.title)) {
+    log.findings.push({ id: 'fresh-subtitle', severity: 'high', msg: 'first-run subtitle still repeats title' });
+  }
   await ctx.close();
 }
 
