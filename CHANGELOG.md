@@ -5,6 +5,11 @@
 ### Fixed
 - Service worker `clients.claim()` on activate so the page is controlled after first install — offline navigations hit the cache (no more splash/chunk pause)
 
+### Marketing
+- Static site: `landing.html`, `pitch.html`, `presentation.html`, `support.html`, `privacy.html`, `terms.html` + shared `public/site/site.css` (HIG tokens, copper accent)
+- Walkthrough slot with captions (`public/site/walkthrough.vtt`); capture via `bash qa/marketing/capture.sh`
+- README / HANDOVER / PRESENTATION synced to 3.7.8 and 790-recipe catalog count
+
 ## [3.7.7] — 2026-10-25
 
 ### Fixed

@@ -1,6 +1,6 @@
 # CookCap — Presentation
 
-**v3.4.1** · https://shamikhahmed.github.io/CookCap/
+**v3.7.8** · https://shamikhahmed.github.io/CookCap/ · Deck: [`public/presentation.html`](public/presentation.html)
 
 ## Pitch
 
@@ -12,19 +12,16 @@ CookCap opens like a hardcover on a **wooden table**. Name the book in a 3D dres
 2. Contents — occasions + kitchen + chapters (incl. world / european / breakfast / veg)  
 3. Recipe — serve-with, party scale, print, swap ideas, **Start cooking**  
 4. Footer — Home · ±5 · scrub · go-to page #  
-5. ⌘K — smart phrases (“30 min yogurt”) · Guest PIN in About  
+5. Search — smart phrases (“30 min yogurt”) · Guest PIN in About  
 
 ## Status
 
-**v3.4.1** = bible §9 micros + onboard→flip 60fps proof · SW `cookcap-v38`.  
-**v3.4.0** = type ≥16 / taps 44 / hero + tabs polish · SW `cookcap-v37`.  
-**v3.3.2** = cover open hinge (bible §6) · SW `cookcap-v36`.  
-**v3.3.1** = dresser animation bible (idle + drawer wood feel) · SW `cookcap-v35`.  
-**v3.3.0** = P0 stale-SW crash fix · designed error screens · motion tokens.  
-**v3.2.1** = even paper wash on dark skins · SW `cookcap-v33`.  
-Prior: **v3.2.0** wood + world catalog · **v3.1.0** page nav · **v3.0.1** honest guacamole · **v3.0.0** P7–P14.
+**v3.7.8** = SW `clients.claim()` on activate (offline shell) · marketing site refresh · SW `cookcap-v378`.  
+**v3.7.7** = offline precache HTML/JS/CSS · sheet/page-bar stacking · cover AA.  
+**v3.7.6** = Editorial night paper + HIG contrast · SW `cookcap-v376`.  
+**v3.7.5** = HIG 3 design system · copper tint · glass page bar.
 
-Gallery: [docs/gallery/README.md](./docs/gallery/README.md)  
+Gallery: [docs/gallery/README.md](./docs/gallery/README.md) · Marketing capture: `bash qa/marketing/capture.sh`  
 Review pack: [docs/REVIEW-PACK.md](./docs/REVIEW-PACK.md)
 
 ---
@@ -37,4 +34,3 @@ Three fictional personas show how people use CookCap day to day — before/after
 **Index:** https://shamikhahmed.github.io/stories/
 
 *Illustrative story. People and data are fictional.*
-

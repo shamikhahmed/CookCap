@@ -8,13 +8,28 @@ Cap-family offline-first cookbook PWA. Name your book → **`{Name} Cooks`**.
 
 - Hardcover flip book + cook mode + search + shopping + meal planner
 - Cover opens on a leather hinge (animation bible); dresser first-run feels like wood
-- **807 recipes** (from `getCatalogRecipeCount()`) — family editorial + local world table (no live MealDB)
+- **790 recipes** (`getCatalogRecipeCount()` / `RECIPES.length`) — family editorial + local world table (no live MealDB)
 - Wooden reading table + paper tabs stuck to wood (phone wood frame)
 - Footer: Home · ±5 jump · scrub slider · go-to page #
 - Smart search phrases · occasions · print · guest PIN · merge backup
 - Chapters: Pakistani, Chinese, Italian, European, world, desserts, chai, breakfast, breads, baking, snacks, vegetarian, meals, favorites, tips
 - Optional lenses: profiles, My Plate / Mother / Budget / more modes
 - **Dresser World** — same wood tokens dresser → reader
+
+## Marketing site (static)
+
+Served from `public/` alongside the app:
+
+| Page | Path |
+|------|------|
+| Landing | [`landing.html`](https://shamikhahmed.github.io/CookCap/landing.html) |
+| Pitch | `pitch.html` |
+| Presentation | `presentation.html` |
+| Support / Privacy / Terms | `support.html` · `privacy.html` · `terms.html` |
+
+Shared styles: `public/site/site.css` (HIG tokens + copper accent). Walkthrough: `public/site/walkthrough.*` + captions.
+
+Capture (reviewer, outside sandbox): `bash qa/marketing/capture.sh`
 
 ## Stack
 
@@ -35,8 +50,7 @@ Start: [`docs/REVIEW-PACK.md`](docs/REVIEW-PACK.md) · [`HANDOVER.md`](HANDOVER.
 
 ## Example stories
 
-Illustrative day-in-the-life stories (fictional personas) with screenshots and captions:
+Illustrative day-in-the-life stories (**fictional personas**, labelled on-page) with screenshots and captions:
 
 - App stories: https://shamikhahmed.github.io/apps/cookcap/
 - All Cap stories: https://shamikhahmed.github.io/stories/
-
