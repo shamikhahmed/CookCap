@@ -15,7 +15,144 @@
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
-<link rel="stylesheet" href="site/site.css">
+<style>
+/* CookCap 3.7 — marketing site. Mirrors src/design/tokens.css (HIG + copper accent). */
+:root {
+  --bg: #f2f2f7;
+  --surface: #ffffff;
+  --fill: rgba(120, 120, 128, 0.12);
+  --separator: rgba(60, 60, 67, 0.16);
+  --label: #1d1d1f;
+  --label-2: rgba(29, 29, 31, 0.72);
+  --label-3: rgba(29, 29, 31, 0.56);
+  --tint: #8f4520;
+  --tint-hover: #7a3a1b;
+  --tint-soft: rgba(143, 69, 32, 0.14);
+  --on-tint: #ffffff;
+  --font-ui: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+  --font-serif: ui-serif, "New York", Georgia, "Times New Roman", serif;
+  --r: 22px;
+  --ease: cubic-bezier(0.32, 0.72, 0, 1);
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000;
+    --surface: #1c1c1e;
+    --fill: rgba(118, 118, 128, 0.24);
+    --separator: rgba(84, 84, 88, 0.6);
+    --label: #f5f5f7;
+    --label-2: rgba(245, 245, 247, 0.74);
+    --label-3: rgba(245, 245, 247, 0.56);
+    --tint: #e08a5a;
+    --tint-hover: #ebb873;
+    --tint-soft: rgba(224, 138, 90, 0.18);
+    --on-tint: #1a1206;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: auto; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+body { margin: 0; background: var(--bg); color: var(--label); font: 17px/1.5 var(--font-ui); letter-spacing: -0.012em; -webkit-font-smoothing: antialiased; }
+img, video { max-width: 100%; display: block; }
+a { color: var(--tint); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+.nav a, .brand, .btn { text-decoration: none; }
+.nav a:hover, .brand:hover { text-decoration: underline; }
+:focus-visible { outline: 3px solid color-mix(in srgb, var(--tint) 70%, transparent); outline-offset: 2px; border-radius: 8px; }
+.wrap { width: min(1120px, 100% - 40px); margin: 0 auto; }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--tint); margin: 0 0 10px; }
+h1, h2, h3 { margin: 0; letter-spacing: -0.03em; line-height: 1.06; }
+h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); font-weight: 700; }
+h2 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; }
+h3 { font-size: 1.2rem; font-weight: 650; letter-spacing: -0.02em; line-height: 1.25; }
+.lead { font-size: clamp(1.1rem, 2vw, 1.35rem); color: var(--label-2); max-width: 40ch; margin: 18px 0 0; }
+.muted { color: var(--label-3); font-size: 14px; }
+.chip { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--tint); background: var(--tint-soft); padding: 4px 10px; border-radius: 999px; }
+
+.nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 78%, transparent); -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px); border-bottom: 0.5px solid var(--separator); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 52px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--label); font-weight: 650; }
+.brand img { width: 26px; height: 26px; border-radius: 6px; }
+.nav nav { display: flex; gap: 22px; align-items: center; font-size: 14px; }
+.nav nav a { color: var(--label-2); }
+.nav nav a.btn { color: var(--on-tint); }
+@media (max-width: 640px) { .nav nav a:not(.btn) { display: none; } }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 22px; border-radius: 999px; background: var(--tint); color: var(--on-tint); font-weight: 600; font-size: 16px; transition: background-color .2s, transform .2s var(--ease); }
+.btn:hover { background: var(--tint-hover); text-decoration: none; }
+.muted a { text-decoration: underline; text-underline-offset: 2px; }
+.btn:active { transform: scale(.97); }
+.btn--ghost { background: var(--fill); color: var(--label); }
+.btn--ghost:hover { background: var(--fill); filter: brightness(.96); }
+.btn--sm { min-height: 34px; padding: 0 14px; font-size: 14px; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+
+section { padding: clamp(64px, 10vw, 120px) 0; }
+.center { text-align: center; }
+.center .lead { margin-left: auto; margin-right: auto; }
+
+.hero { padding-top: clamp(48px, 8vw, 96px); overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; }
+@media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; text-align: center; } .hero-grid .lead { margin-inline: auto; } .hero-grid .actions { justify-content: center; } }
+.phones { position: relative; height: 620px; }
+.phone { position: absolute; width: 270px; border-radius: 44px; padding: 10px; background: #1d1d1f; box-shadow: 0 40px 80px rgba(0,0,0,.18), 0 0 0 1px rgba(255,255,255,.06) inset; }
+.phone img { border-radius: 34px; width: 100%; height: auto; }
+.phone--a { left: 50%; top: 0; transform: translateX(-62%) rotate(-4deg); z-index: 2; }
+.phone--b { left: 50%; top: 60px; transform: translateX(-2%) rotate(5deg); }
+@media (max-width: 860px) { .phones { height: 520px; } .phone { width: 230px; } }
+
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+@media (max-width: 860px) { .grid3 { grid-template-columns: 1fr; } }
+.card { background: var(--surface); border-radius: var(--r); padding: 26px; }
+.card p { color: var(--label-2); margin: 8px 0 0; font-size: 16px; }
+.icon { width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center; background: var(--tint-soft); color: var(--tint); margin-bottom: 16px; }
+.icon svg { width: 20px; height: 20px; }
+
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.row + .row { margin-top: 96px; }
+.row--flip .row-media { order: -1; }
+@media (max-width: 860px) { .row { grid-template-columns: 1fr; gap: 28px; } .row--flip .row-media { order: 0; } }
+.row-media { display: flex; justify-content: center; }
+.row-media .phone { position: static; transform: none; width: min(300px, 80vw); }
+.list { margin: 20px 0 0; padding: 0; list-style: none; }
+.list li { padding: 10px 0; border-top: 0.5px solid var(--separator); color: var(--label-2); }
+
+.video { border-radius: 28px; overflow: hidden; background: #000; box-shadow: 0 30px 70px rgba(0,0,0,.18); margin-top: 44px; aspect-ratio: 9 / 16; max-width: 420px; margin-inline: auto; }
+.video video { width: 100%; height: 100%; object-fit: cover; }
+
+.ipad { margin: 44px auto 0; max-width: 900px; border-radius: 36px; padding: 14px; background: #1d1d1f; box-shadow: 0 40px 90px rgba(0,0,0,.2); }
+.ipad img { border-radius: 24px; width: 100%; height: auto; }
+
+.quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px; }
+@media (max-width: 860px) { .quotes { grid-template-columns: 1fr; } }
+.quote { background: var(--surface); border-radius: var(--r); padding: 26px; }
+.quote blockquote { margin: 0; font-family: var(--font-serif); font-size: 1.25rem; line-height: 1.35; }
+.quote cite { display: block; margin-top: 16px; font-style: normal; font-size: 14px; color: var(--label-3); }
+
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 44px; }
+@media (max-width: 760px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+.stat { background: var(--surface); border-radius: var(--r); padding: 22px; }
+.stat b { display: block; font-size: 2.2rem; letter-spacing: -0.03em; line-height: 1; }
+.stat span { color: var(--label-2); font-size: 14px; }
+
+.legal { max-width: 40rem; margin: 0 auto; padding: clamp(48px, 8vw, 80px) 24px 64px; }
+.legal h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 8px; }
+.legal h2 { font-size: 1.15rem; margin: 28px 0 8px; }
+.legal p, .legal li { color: var(--label-2); }
+.legal table { width: 100%; border-collapse: collapse; font-size: 0.95rem; margin: 12px 0 20px; }
+.legal th, .legal td { text-align: left; padding: 0.4rem 0.35rem; border-bottom: 0.5px solid var(--separator); vertical-align: top; }
+
+footer { border-top: 0.5px solid var(--separator); padding: 36px 0 48px; color: var(--label-3); font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+footer nav { display: flex; gap: 18px; flex-wrap: wrap; }
+footer a { color: var(--label-2); }
+
+.deck { height: 100dvh; overflow-y: auto; scroll-snap-type: y mandatory; }
+.slide { min-height: 100dvh; scroll-snap-align: start; display: grid; align-content: center; padding: 64px 0; }
+.slide-num { position: fixed; right: 20px; bottom: 16px; font-size: 13px; color: var(--label-3); font-variant-numeric: tabular-nums; }
+
+</style>
 </head>
 <body>
 <header class="nav"><div class="wrap">
@@ -36,8 +173,8 @@
     <p class="muted" style="margin-top:18px">Works in any browser and installs to your Home Screen.</p>
   </div>
   <div class="phones" aria-hidden="true">
-    <div class="phone phone--a"><img src="site/cover.webp" alt="" width="390" height="844"></div>
-    <div class="phone phone--b"><img src="site/recipe.webp" alt="" width="390" height="844" loading="lazy"></div>
+    <div class="phone phone--a"><img src="site/cover.webp" alt="" width="560" height="1212" fetchpriority="high" decoding="async"></div>
+    <div class="phone phone--b"><img src="site/recipe.webp" alt="" width="560" height="1212" loading="lazy" decoding="async"></div>
   </div>
 </div></section>
 
@@ -59,17 +196,17 @@
   <div class="row">
     <div><p class="eyebrow">The book</p><h2>Open it. Smell the wood.</h2>
       <ul class="list"><li>Dresser first-run names your hardcover</li><li>Cover opens on a leather hinge</li><li>Chapters: Pakistani, Chinese, Italian, European, world, desserts, chai, breakfast, breads, and more</li><li>One honest hero photo per recipe</li></ul></div>
-    <div class="row-media"><div class="phone"><img src="site/cover.webp" alt="CookCap leather cover for a named family edition" width="390" height="844" loading="lazy"></div></div>
+    <div class="row-media"><div class="phone"><img src="site/cover.webp" alt="CookCap leather cover for a named family edition" width="560" height="1212" loading="lazy" decoding="async"></div></div>
   </div>
   <div class="row row--flip">
     <div><p class="eyebrow">Contents</p><h2>Today’s kitchen and every chapter.</h2>
       <ul class="list"><li>Occasions and chapter rails in one scroll</li><li>Paper tabs stuck to the wood frame</li><li>Jump ±5 or scrub to any page</li></ul></div>
-    <div class="row-media"><div class="phone"><img src="site/contents.webp" alt="CookCap contents page with chapters" width="390" height="844" loading="lazy"></div></div>
+    <div class="row-media"><div class="phone"><img src="site/contents.webp" alt="CookCap contents page with chapters" width="560" height="1212" loading="lazy" decoding="async"></div></div>
   </div>
   <div class="row">
     <div><p class="eyebrow">Recipe</p><h2>Cook when you’re ready.</h2>
       <ul class="list"><li>Ingredients, steps, serve-with, and print</li><li>Start cooking for a focused cook mode</li><li>Optional lenses never rewrite the reader</li></ul></div>
-    <div class="row-media"><div class="phone"><img src="site/recipe.webp" alt="CookCap recipe leaf with hero photo" width="390" height="844" loading="lazy"></div></div>
+    <div class="row-media"><div class="phone"><img src="site/recipe.webp" alt="CookCap recipe leaf with hero photo" width="560" height="1212" loading="lazy" decoding="async"></div></div>
   </div>
 </div></section>
 
@@ -77,7 +214,7 @@
   <p class="eyebrow">See it in motion</p>
   <h2>Thirty seconds with CookCap.</h2>
   <div class="video">
-    <video controls playsinline preload="none" poster="site/walkthrough-poster.webp" width="390" height="844">
+    <video controls playsinline preload="none" poster="site/walkthrough-poster.webp" width="560" height="1212">
       <source src="site/walkthrough.mp4" type="video/mp4">
       <source src="site/walkthrough.webm" type="video/webm">
       <track kind="captions" src="site/walkthrough.vtt" srclang="en" label="English" default>
@@ -90,7 +227,7 @@
 <section style="background:var(--surface)"><div class="wrap center">
   <p class="eyebrow">Made for every screen</p>
   <h2>Beautiful on iPad and Mac, too.</h2>
-  <div class="ipad"><img src="site/ipad-contents.webp" alt="CookCap contents on a wide reading desk" width="1024" height="768" loading="lazy"></div>
+  <div class="ipad"><img src="site/ipad-contents.webp" alt="CookCap contents on a wide reading desk" width="1200" height="834" loading="lazy" decoding="async"></div>
 </div></section>
 
 <section id="stories"><div class="wrap center">
