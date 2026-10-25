@@ -160,8 +160,7 @@ export function NameGate({
                   A living family cookbook
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-[color:var(--color-ink-soft)]">
-                  {PRODUCT_TAGLINE} Flip pages, keep favorites, cook offline — recipes stay on this
-                  device.
+                  {PRODUCT_TAGLINE}
                 </p>
                 <button
                   type="button"
