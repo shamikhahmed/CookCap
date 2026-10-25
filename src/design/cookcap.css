@@ -48,8 +48,9 @@ body {
   Sheets/drawers mount at z≥80 (data-overlay). Hide the glass page bar while any
   overlay is open so it never paints through a translucent sheet edge.
   Go-to-page popover uses data-goto-popover (not data-overlay) so the footer stays.
+  What's new is a small floating card, not a sheet — the page bar stays usable under it.
 */
-.journal-desk:has([data-overlay]) .app-footer {
+.journal-desk:has([data-overlay]:not([data-overlay="whats-new"])) .app-footer {
   visibility: hidden;
   pointer-events: none;
 }
