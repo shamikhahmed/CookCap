@@ -73,12 +73,13 @@ body {
 .app-footer button {
   min-height: 44px;
   min-width: 44px;
-  color: var(--label-2);
+  /* Warm glass (#e6d6bd) makes --label-2 land at ~4.49:1 — use full --label for AA */
+  color: var(--label);
 }
 
 .app-footer button:disabled {
-  opacity: 0.4;
-  color: var(--label-3);
+  opacity: 0.45;
+  color: var(--label);
 }
 
 .journal-desk > header.app-header,

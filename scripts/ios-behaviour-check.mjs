@@ -29,7 +29,7 @@ page.setDefaultTimeout(12000);
 await page.addInitScript(() => {
   try {
     localStorage.setItem('cookcap-owner', 'Ayesha');
-    localStorage.setItem('cookcap-whats-new', '3.7.5');
+    localStorage.setItem('cookcap-whats-new', '3.7.6');
     localStorage.setItem('cookcap-onboarded', '1');
     localStorage.setItem('jia-owner', 'Ayesha');
   } catch {

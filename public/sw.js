@@ -14,7 +14,7 @@
   Works under GitHub Pages project path (/CookCap/) by deriving BASE from the
   script URL. Local/static export root uses BASE ''.
 */
-const VERSION = 'cookcap-v375';
+const VERSION = 'cookcap-v376';
 const SHELL = `${VERSION}-shell`;
 const ASSETS = `${VERSION}-assets`;
 const BASE = new URL('./', self.location.href).pathname.replace(/\/$/, '');

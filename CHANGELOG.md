@@ -1,3 +1,16 @@
+## [Unreleased]
+
+## [3.7.6] — 2026-10-25
+
+Prod-ready contrast (HIG 3 audit):
+
+- System theme resolves to `data-theme=light|dark` so HIG `--label` / `--glass` match chrome under OS dark
+- Cover foil AA on cream parchment (solid deep gold) and dark leather (brighter foil stops)
+- Recipe hero cuisine lifted on photo scrims
+- Page bar Tabs / page index use `--label` (was `--label-2` @ 4.49:1 on warm glass)
+- `public/VERSION.json` kept in sync with root; SW `cookcap-v376`
+- Evidence: `qa/prod-ready/`
+
 ## [3.7.5] — 2026-10-25
 
 - HIG 3 design system: `src/design/{tokens,system,cookcap}.css` + kit Sheet

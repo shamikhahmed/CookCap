@@ -27,7 +27,7 @@ async function boot(kind) {
   await page.addInitScript(() => {
     try {
       localStorage.setItem('cookcap-owner', 'Ayesha');
-      localStorage.setItem('cookcap-whats-new', '3.7.5');
+      localStorage.setItem('cookcap-whats-new', '3.7.6');
       localStorage.setItem('cookcap-onboarded', '1');
     } catch {
       /* ignore */
