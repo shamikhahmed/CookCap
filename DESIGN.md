@@ -11,6 +11,9 @@ Source of truth: `src/design/{tokens,system,cookcap}.css` and `src/components/ki
 3. **System type.** SF (`--font-ui`) for chrome at 17pt body; Fraunces / Source Serif stay for recipe editorial voice.
 4. **Native patterns.** Large titles where screens allow, floating glass page bar, sheets with grabber + Cancel / Title / Done.
 5. **Accessible by default.** 44pt targets, AA contrast, reduced motion + transparency honoured.
+   Theme always resolves to `data-theme=light|dark` (including System) so chrome `--label` /
+   `--glass` never stay on light defaults under OS dark. Cover foil uses solid deep gold on
+   cream parchment and brighter stops on dark leather; page-bar text uses `--label` on warm glass.
 
 ## Tokens (`src/design/tokens.css`, unlayered)
 

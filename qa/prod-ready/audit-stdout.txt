@@ -1,0 +1,68 @@
+{
+  "findings": 7,
+  "serious": 7,
+  "consoleErrors": 0,
+  "pageErrors": 0
+}
+Wrote /Users/shamikhahmed/Projects/Cap/Cap-Apps/_workspace/CookCap-hig/qa/prod-ready/audit-log.json
+Findings:
+- [serious] leaf-cover-light: color-contrast: Elements must meet minimum color contrast ratio thresholds
+- [serious] leaf-contents-light: color-contrast: Elements must meet minimum color contrast ratio thresholds
+- [serious] leaf-recipe-light: color-contrast: Elements must meet minimum color contrast ratio thresholds
+- [serious] overlay-search: color-contrast: Elements must meet minimum color contrast ratio thresholds
+- [serious] overlay-shop: color-contrast: Elements must meet minimum color contrast ratio thresholds
+- [high] shop: overlay failed: locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('button', { name: /cancel|close|done/i }).first()
+    - locator resolved to <button aria-pressed="false" aria-label="Mark step 1 done" class="micro-press micro-step-check grid size-11 shrink-0 place-items-center rounded-full font-serif text-sm font-bold text-white">1</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="min-h-0 flex-1 overflow-y-auto px-5 py-4">…</div> from <div class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm">…</div> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not stable
+    - retrying click action
+      - waiting 100ms
+    - waiting for element to be visible, enabled and stable
+    - element is not stable
+  57 × retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div class="min-h-0 flex-1 overflow-y-auto px-5 py-4">…</div> from <div class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm">…</div> subtree intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+
+- [high] more-about: overlay failed: locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('button', { name: /^More$/i })
+    - locator resolved to <button title="More" type="button" aria-label="More" aria-expanded="false" class="grid size-11 min-h-11 min-w-11 shrink-0 place-items-center rounded-full text-[color:var(--label-2,var(--color-ink-soft))] transition-all hover:bg-[color:var(--fill,var(--color-paper-sunk))] hover:text-[color:var(--label,var(--color-ink))] active:scale-90 disabled:pointer-events-none disabled:opacity-40 ">…</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <button type="button" class="min-h-11 rounded-full px-3 text-[length:var(--t-body)] font-semibold text-[color:var(--tint-text,var(--color-accent))]">Done</button> from <div class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm">…</div> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <button type="button" class="min-h-11 rounded-full px-3 text-[length:var(--t-body)] font-semibold text-[color:var(--tint-text,var(--color-accent))]">Done</button> from <div class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm">…</div> subtree intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    58 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <button type="button" class="min-h-11 rounded-full px-3 text-[length:var(--t-body)] font-semibold text-[color:var(--tint-text,var(--color-accent))]">Done</button> from <div class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm">…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
