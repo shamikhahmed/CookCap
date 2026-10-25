@@ -1,7 +1,7 @@
 {
   "name": "CookCap",
-  "version": "3.7.4",
-  "swCache": "cookcap-v374",
-  "updated": "2026-10-21",
-  "notes": "v7 HIG ios-tokens scaffold"
+  "version": "3.7.8",
+  "swCache": "cookcap-v378",
+  "updated": "2026-10-25",
+  "notes": "Offline shell precaches JS/CSS; sheets above page bar; cover AA"
 }

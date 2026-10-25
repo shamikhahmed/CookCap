@@ -1,3 +1,38 @@
+## [Unreleased]
+
+## [3.7.8] — 2026-10-25
+
+### Fixed
+- Service worker `clients.claim()` on activate so the page is controlled after first install — offline navigations hit the cache (no more splash/chunk pause)
+
+## [3.7.7] — 2026-10-25
+
+### Fixed
+- Offline reload: SW precaches index HTML plus linked JS/CSS so the book boots past splash
+- Go-to-page popover: opaque body portal (no glass ghost over contents)
+- Sheets/drawers sit above the glass page bar; safe-area bottom padding
+- Cover Add photo secondary button + small-caps AA (foil on title only)
+- Search keyboard hints only on `(hover:hover)` + `(pointer:fine)`
+
+## [3.7.6] — 2026-10-25
+
+Prod-ready contrast (HIG 3 audit):
+
+- System theme resolves to `data-theme=light|dark` so HIG `--label` / `--glass` match chrome under OS dark
+- Cover foil AA on cream parchment (solid deep gold) and dark leather (brighter foil stops)
+- Recipe hero cuisine lifted on photo scrims
+- Page bar Tabs / page index use `--label` (was `--label-2` @ 4.49:1 on warm glass)
+- `public/VERSION.json` kept in sync with root; SW `cookcap-v376`
+- Evidence: `qa/prod-ready/`
+
+## [3.7.5] — 2026-10-25
+
+- HIG 3 design system: `src/design/{tokens,system,cookcap}.css` + kit Sheet
+- Copper `--tint` / `--tint-text` (Jia Cooks brand); floating glass page bar
+- iOS ScrollLock (`position:fixed` + restore); SW no auto skipWaiting/clients.claim
+- Favorites / Shopping sheets: grabber + Cancel/Title/Done
+- `scripts/ios-behaviour-check.mjs`; evidence in `qa/hig/`
+
 ## [3.7.4] — 2026-10-21
 
 - HIG v7: iOS tokens / native feel; Dynamic Type & hit targets where applicable

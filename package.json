@@ -1,8 +1,8 @@
 {
   "name": "cookcap",
-  "version": "3.7.4",
+  "version": "3.7.8",
   "private": true,
-  "description": "CookCap \u2014 heirloom family cookbook Progressive Web App (Cap family).",
+  "description": "CookCap — heirloom family cookbook Progressive Web App (Cap family).",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -24,6 +24,7 @@
     "gate:count": "node scripts/assert-recipe-count.mjs",
     "test:e2e": "playwright test e2e/finish.spec.ts",
     "test:matrix": "FINISH_MATRIX=1 playwright test e2e/finish-matrix.spec.ts",
+    "ios:check": "node scripts/ios-behaviour-check.mjs",
     "axe": "node scripts/capture-axe.mjs",
     "tier1": "node ../capricorn-tooling/shared/testing/tier1.mjs",
     "verify": "npm run typecheck && npm run gate:recipes && npm run gate:count && NEXT_PUBLIC_BASE_PATH=/CookCap npm run build && npm run test:e2e"

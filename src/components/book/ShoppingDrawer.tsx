@@ -9,7 +9,6 @@ import {
   clearAllShopping,
 } from '@/lib/db/store';
 import { useApp } from '@/components/app/AppStore';
-import { Icon } from '@/components/ui/Icon';
 import { motionReduce, useDialogA11y } from '@/lib/a11y/dialog';
 
 type Row = {
@@ -104,7 +103,8 @@ export function ShoppingDrawer({ open, onClose }: { open: boolean; onClose: () =
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={motionReduce(reduce)}
-          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+          data-overlay="shop"
+          className="fixed inset-0 z-[80] bg-black/50 backdrop-blur-sm"
           onClick={onClose}
         >
           <motion.aside
@@ -114,36 +114,43 @@ export function ShoppingDrawer({ open, onClose }: { open: boolean; onClose: () =
             exit={{ x: '100%' }}
             transition={motionReduce(reduce)}
             onClick={(e) => e.stopPropagation()}
-            className="absolute right-0 top-0 flex h-full w-full max-w-sm flex-col bg-[color:var(--color-paper-raised)] shadow-[var(--shadow-lg)]"
+            className="absolute right-0 top-0 flex h-full w-full max-w-sm flex-col bg-[color:var(--color-paper-raised)] pb-[env(safe-area-inset-bottom,0px)] shadow-[var(--shadow-lg)]"
             role="dialog"
             aria-modal="true"
             aria-labelledby="shopping-drawer-title"
           >
-            <header className="flex items-center justify-between border-b border-[color:var(--color-line)] px-5 py-4">
-              <div>
+            <div className="sheet-grabber md:hidden" aria-hidden />
+            <div className="sheet-bar border-b border-[color:var(--color-line)]">
+              <button
+                type="button"
+                onClick={onClose}
+                className="min-h-11 rounded-full px-3 text-[length:var(--t-body)] text-[color:var(--tint-text,var(--color-accent))]"
+              >
+                Cancel
+              </button>
+              <div className="text-center">
                 <h2
                   id="shopping-drawer-title"
-                  className="font-serif text-2xl font-semibold text-[color:var(--color-ink)]"
+                  className="sheet-bar__title font-serif"
                 >
                   Shopping
                 </h2>
                 {rows.length > 0 && (
-                  <p className="text-xs text-[color:var(--color-ink-faint)]">
-                    {unchecked} left · {rows.length} total · grouped by aisle
+                  <p className="text-[length:var(--t-caption)] text-[color:var(--color-ink-faint)]">
+                    {unchecked} left · {rows.length} total
                   </p>
                 )}
               </div>
               <button
                 type="button"
                 onClick={onClose}
-                aria-label="Close"
-                className="grid size-11 place-items-center text-[color:var(--color-ink-faint)]"
+                className="min-h-11 rounded-full px-3 text-[length:var(--t-body)] font-semibold text-[color:var(--tint-text,var(--color-accent))]"
               >
-                <Icon name="close" size={22} />
+                Done
               </button>
-            </header>
+            </div>
 
-            <div className="min-h-0 flex-1 overflow-y-auto px-5 py-4">
+            <div className="min-h-0 flex-1 overflow-y-auto px-5 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
               {rows.length === 0 ? (
                 <p className="rounded-lg bg-[color:var(--color-paper-sunk)] p-5 text-center text-sm text-[color:var(--color-ink-soft)]">
                   Your list is empty. Open a recipe → Add to shopping — items wait here offline. Duplicates merge automatically.
@@ -194,7 +201,7 @@ export function ShoppingDrawer({ open, onClose }: { open: boolean; onClose: () =
             </div>
 
             {rows.length > 0 && (
-              <footer className="flex gap-2 border-t border-[color:var(--color-line)] px-5 py-3">
+              <footer className="flex gap-2 border-t border-[color:var(--color-line)] px-5 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
                 <button
                   type="button"
                   onClick={() => void clearChecked()}

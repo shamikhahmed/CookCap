@@ -1,0 +1,15 @@
+PASS  footer + header controls tappable
+PASS  hit areas ≥44pt (footer buttons)
+PASS  page bar floats ≥14px above bottom
+PASS  page bar is fixed (glass float)
+PASS  content padding clears page bar
+PASS  no sideways overflow (book)
+PASS  body not overflow:hidden
+PASS  book leaf may use inner scroller (intentional)
+PASS  programmatic scroll lands instantly
+PASS  page locked behind sheet
+PASS  sheet keeps scroll position
+PASS  inputs ≥16px (no zoom-on-focus)
+PASS  no reload during session
+PASS  SW: skipWaiting only on user request
+PASS  SW: no auto clients.claim

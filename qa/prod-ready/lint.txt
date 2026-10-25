@@ -1,0 +1,18 @@
+npm warn Unknown env config "devdir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> cookcap@3.7.8 lint
+> next lint
+
+`next lint` is deprecated and will be removed in Next.js 16.
+For new projects, use create-next-app to choose your preferred linter.
+For existing projects, migrate to the ESLint CLI:
+npx @next/codemod@canary next-lint-to-eslint-cli .
+
+
+./src/components/book/Book.tsx
+133:6  Warning: React Hook useEffect has missing dependencies: 'animateJump', 'clearAnimateJump', 'leaves', 'play', 'reduce', and 'snapIdle'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/components/book/leaves/RecipeLeaf.tsx
+257:36  Warning: The ref value 'stepAnimTimers.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'stepAnimTimers.current' to a variable inside the effect, and use that variable in the cleanup function.  react-hooks/exhaustive-deps
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules

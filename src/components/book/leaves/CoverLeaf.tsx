@@ -63,7 +63,8 @@ export function CoverLeaf() {
       >
         {editionReady ? (
           <>
-            <p className="gold-foil mb-6 font-sans text-xs font-semibold tracking-[0.02em]">
+            {/* Small caps: solid ink (≥4.5:1). Foil reserved for the big title only. */}
+            <p className="cover-meta mb-6 font-sans text-xs font-semibold tracking-[0.02em] text-[color:var(--color-ink-soft)]">
               {edition.coverEyebrow}
             </p>
             <h1 className="gold-foil text-balance font-serif text-[clamp(2.8rem,9vw,4.6rem)] font-black italic leading-[0.92] tracking-tight">
@@ -72,10 +73,10 @@ export function CoverLeaf() {
               {edition.coverLine2}
             </h1>
             <div className="mx-auto my-8 h-px w-24 bg-gradient-to-r from-transparent via-[color:var(--color-gold)]/60 to-transparent" />
-            <p className="gold-foil font-sans text-xs font-semibold tracking-[0.02em] opacity-80">
+            <p className="cover-meta font-sans text-xs font-semibold tracking-[0.02em] text-[color:var(--color-ink-soft)]">
               {edition.tagline}
             </p>
-            <p className="gold-foil mt-3 font-sans text-xs font-semibold tracking-[0.02em] opacity-70">
+            <p className="cover-meta mt-3 font-sans text-xs font-semibold tracking-[0.02em] text-[color:var(--color-ink-soft)]">
               {getCatalogRecipeCount()} recipes
             </p>
           </>
@@ -85,7 +86,7 @@ export function CoverLeaf() {
       <div className="absolute bottom-[4.5rem] z-30 flex gap-2" data-no-flip>
         <button
           type="button"
-          className="relative z-10 min-h-11 rounded-full border border-[color:var(--color-gold)]/50 bg-black/35 px-3 py-1.5 text-xs uppercase tracking-[0.2em] text-[color:var(--color-gold)] backdrop-blur-sm"
+          className="cover-photo-btn relative z-10 inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--color-ink)] shadow-[var(--shadow-sm)]"
           aria-label={coverUrl ? 'Change cover photo' : 'Add cover photo'}
           onClick={(e) => {
             e.stopPropagation();
@@ -104,7 +105,7 @@ export function CoverLeaf() {
         {coverUrl && (
           <button
             type="button"
-            className="relative z-10 min-h-11 rounded-full border border-[color:var(--color-gold)]/40 bg-black/35 px-3 py-1.5 text-xs uppercase tracking-[0.2em] text-[color:var(--color-gold)]/80 backdrop-blur-sm"
+            className="cover-photo-btn relative z-10 inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--color-ink)] shadow-[var(--shadow-sm)]"
             onClick={(e) => {
               e.stopPropagation();
               void clearCoverPhoto();
@@ -115,11 +116,11 @@ export function CoverLeaf() {
         )}
       </div>
 
-      <span className="cover-hint pointer-events-none absolute bottom-14 z-10 text-xs uppercase tracking-[0.35em] text-[color:var(--color-gold)]/70">
+      <span className="cover-hint cover-meta pointer-events-none absolute bottom-14 z-10 text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--color-ink-soft)]">
         Tap to open
       </span>
       <span
-        className="pointer-events-none absolute bottom-5 z-10 font-serif text-xs uppercase tracking-[0.35em] text-[color:var(--color-gold)]/55"
+        className="cover-meta pointer-events-none absolute bottom-5 z-10 font-serif text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--color-ink-soft)]"
         aria-hidden
       >
         {PRODUCT_NAME}

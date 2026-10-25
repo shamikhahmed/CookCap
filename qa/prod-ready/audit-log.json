@@ -1,0 +1,124 @@
+{
+  "base": "http://127.0.0.1:8926/",
+  "browser": "chromium (iPhone 15 Pro metrics — WebKit not required here)",
+  "started": "2026-10-25T10:21:32.486Z",
+  "console": [],
+  "pageErrors": [],
+  "findings": [],
+  "screens": [
+    "leaf-cover-light",
+    "leaf-contents-light",
+    "leaf-recipe-light",
+    "leaf-recipe-dark",
+    "ipad-cover-light",
+    "desktop-cover-light"
+  ],
+  "axe": {
+    "leaf-cover-light": {
+      "violations": 0,
+      "serious": 0
+    },
+    "leaf-contents-light": {
+      "violations": 0,
+      "serious": 0
+    },
+    "leaf-recipe-light": {
+      "violations": 0,
+      "serious": 0
+    },
+    "overlay-search": {
+      "violations": 0,
+      "serious": 0
+    },
+    "overlay-shop": {
+      "violations": 0,
+      "serious": 0
+    },
+    "overlay-favorites": {
+      "violations": 0,
+      "serious": 0
+    },
+    "overlay-tabs": {
+      "violations": 0,
+      "serious": 0
+    },
+    "overlay-whats-new": {
+      "violations": 0,
+      "serious": 0
+    },
+    "overlay-more-about": {
+      "violations": 0,
+      "serious": 0
+    },
+    "leaf-recipe-dark": {
+      "violations": 0,
+      "serious": 0
+    }
+  },
+  "overlays": [
+    {
+      "id": "search",
+      "ok": true
+    },
+    {
+      "id": "shop",
+      "ok": true
+    },
+    {
+      "id": "favorites",
+      "ok": true
+    },
+    {
+      "id": "tabs",
+      "ok": true
+    },
+    {
+      "id": "whats-new",
+      "ok": true
+    },
+    {
+      "id": "more-about",
+      "ok": true
+    },
+    {
+      "id": "search-dark",
+      "ok": true
+    },
+    {
+      "id": "shop-dark",
+      "ok": true
+    },
+    {
+      "id": "favorites-dark",
+      "ok": true
+    },
+    {
+      "id": "tabs-dark",
+      "ok": true
+    }
+  ],
+  "offline": {
+    "ok": true,
+    "waitedForAppReady": true,
+    "ready": "true",
+    "desk": true,
+    "book": true
+  },
+  "emptyProfile": {
+    "hasNameGate": false,
+    "dresser": true,
+    "subtitle": {
+      "title": "What’s new",
+      "sub": ""
+    },
+    "shot": "fresh-first-run.png"
+  },
+  "dataActs": [],
+  "finished": "2026-10-25T10:22:56.808Z",
+  "summary": {
+    "findings": 1,
+    "serious": 1,
+    "consoleErrors": 0,
+    "pageErrors": 0
+  }
+}

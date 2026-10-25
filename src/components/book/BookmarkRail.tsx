@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react';
+import { createPortal } from 'react-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { CHAPTERS } from '@/lib/recipes/chapters';
 import { motionReduce, useDialogA11y } from '@/lib/a11y/dialog';
@@ -308,58 +309,68 @@ export function BookmarkRail() {
   }, []);
 
   if (narrow) {
-    const woodSheet = tabStyle === 'paper';
-    return (
+    const paperCopy = tabStyle === 'paper';
+    if (typeof document === 'undefined') return null;
+    return createPortal(
       <AnimatePresence>
         {sheetOpen && (
           <motion.div
-            className="fixed inset-0 z-50 flex justify-end"
+            data-overlay="chapters"
+            className="fixed inset-0 z-[80] bg-black/50 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={motionReduce(reduce)}
+            onClick={closeSheet}
           >
-            <button
-              type="button"
-              aria-label="Close chapters"
-              className="absolute inset-0 bg-black/45 backdrop-blur-[2px]"
-              onClick={closeSheet}
-            />
             <motion.nav
               ref={sheetRef}
               role="dialog"
               aria-modal="true"
               aria-labelledby="chapter-sheet-title"
-              initial={{ x: 48 }}
+              initial={{ x: '100%' }}
               animate={{ x: 0 }}
-              exit={{ x: 48 }}
+              exit={{ x: '100%' }}
               transition={motionReduce(reduce)}
-              className={`journal-sheet relative flex h-full w-[min(18rem,90vw)] flex-col gap-2 overflow-y-auto p-5 shadow-[var(--shadow-lg)]${
-                woodSheet ? ' journal-sheet--wood' : ''
-              }`}
+              onClick={(e) => e.stopPropagation()}
+              className="absolute right-0 top-0 flex h-full w-full max-w-sm flex-col bg-[color:var(--color-paper-raised)] pb-[env(safe-area-inset-bottom,0px)] shadow-[var(--shadow-lg)]"
             >
-              <p
-                id="chapter-sheet-title"
-                className="mb-0.5 font-serif text-xl font-semibold text-[color:var(--color-ink)]"
-              >
-                Chapter tabs
-              </p>
-              <p className="mb-3 text-xs leading-relaxed text-[color:var(--color-ink-faint)]">
-                {woodSheet
-                  ? 'Paper tabs stuck to the table — tap to flip toward that chapter.'
-                  : 'Tap a flag — pages flip toward that chapter.'}
-              </p>
-              <SheetChips
-                tabStyle={tabStyle}
-                onPick={(id) => {
-                  goToChapter(id);
-                  closeSheet();
-                }}
-              />
+              <div className="sheet-grabber md:hidden" aria-hidden />
+              <div className="sheet-bar border-b border-[color:var(--color-line)]">
+                <button
+                  type="button"
+                  onClick={closeSheet}
+                  className="min-h-11 rounded-full px-3 text-[length:var(--t-body)] text-[color:var(--tint-text,var(--color-accent))]"
+                >
+                  Close
+                </button>
+                <h2
+                  id="chapter-sheet-title"
+                  className="sheet-bar__title font-serif"
+                >
+                  Chapter tabs
+                </h2>
+                <span className="min-w-[3.5rem]" aria-hidden />
+              </div>
+              <div className="min-h-0 flex-1 overflow-y-auto px-5 py-4 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
+                <p className="mb-3 text-xs leading-relaxed text-[color:var(--color-ink-faint)]">
+                  {paperCopy
+                    ? 'Paper tabs stuck to the table — tap to flip toward that chapter.'
+                    : 'Tap a flag — pages flip toward that chapter.'}
+                </p>
+                <SheetChips
+                  tabStyle={tabStyle}
+                  onPick={(id) => {
+                    goToChapter(id);
+                    closeSheet();
+                  }}
+                />
+              </div>
             </motion.nav>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>,
+      document.body,
     );
   }
 

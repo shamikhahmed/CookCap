@@ -7,12 +7,17 @@
   - navigate / HTML → network-first (never pin old index.html to new chunk hashes)
   - /_next/static/* → cache-first (content-hashed, immutable)
   - other same-origin assets → stale-while-revalidate
-  - install: skipWaiting; activate: claim + delete foreign caches
+  - install: precache shell HTML + its script/link assets so offline reload reaches the book
+  - install: NEVER auto skipWaiting (HIG iPhone recipe). New SW waits;
+    SwUpdateToast posts SKIP_WAITING on user Reload only.
+    First install still skipWaiting via ServiceWorker.tsx when no controller yet.
+  - activate: prune old caches only (never claims clients — a running page is not taken over)
+    (otherwise offline navigations bypass the SW and chunk caches never fill).
 
   Works under GitHub Pages project path (/CookCap/) by deriving BASE from the
   script URL. Local/static export root uses BASE ''.
 */
-const VERSION = 'cookcap-v374';
+const VERSION = 'cookcap-v378';
 const SHELL = `${VERSION}-shell`;
 const ASSETS = `${VERSION}-assets`;
 const BASE = new URL('./', self.location.href).pathname.replace(/\/$/, '');
@@ -28,13 +33,64 @@ const SHELL_URLS = [
   root('/icons/maskable-512.png'),
 ];
 
+function assetUrlsFromHtml(html, baseHref) {
+  const urls = new Set();
+  const re = /(?:src|href)=["']([^"']+\.(?:js|css))["']/gi;
+  let m;
+  while ((m = re.exec(html))) {
+    try {
+      urls.add(new URL(m[1], baseHref).href);
+    } catch {
+      /* ignore bad URL */
+    }
+  }
+  return [...urls];
+}
+
+async function putOk(cache, request, res) {
+  if (res && res.ok) await cache.put(request, res.clone());
+}
+
+async function cacheHtmlAndAssets(htmlRequest, htmlResponse) {
+  const shell = await caches.open(SHELL);
+  let html = '';
+  try {
+    html = await htmlResponse.clone().text();
+  } catch {
+    return;
+  }
+  // Unchanged HTML → same asset list, already cached; skip the rescan
+  const prev = await shell.match(htmlRequest);
+  if (prev && (await prev.text()) === html) return;
+  await putOk(shell, htmlRequest, htmlResponse);
+  const assets = await caches.open(ASSETS);
+  const list = assetUrlsFromHtml(html, htmlResponse.url || self.location.origin + root('/'));
+  await Promise.all(
+    list.map(async (u) => {
+      try {
+        const cached = await assets.match(u);
+        if (cached) return;
+        const res = await fetch(u, { credentials: 'same-origin' });
+        await putOk(assets, u, res);
+      } catch {
+        /* offline install — skip */
+      }
+    }),
+  );
+}
+
 async function precacheShell() {
   const cache = await caches.open(SHELL);
   await Promise.all(
     SHELL_URLS.map(async (u) => {
       try {
         const res = await fetch(u, { cache: 'no-store', credentials: 'same-origin' });
-        if (res.ok) await cache.put(u, res.clone());
+        if (!res.ok) return;
+        if (u === root('/') || u.endsWith('.html')) {
+          await cacheHtmlAndAssets(u, res);
+        } else {
+          await putOk(cache, u, res);
+        }
       } catch {
         /* offline install — skip */
       }
@@ -43,17 +99,18 @@ async function precacheShell() {
 }
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(precacheShell().then(() => self.skipWaiting()));
+  // Precache only — do not skipWaiting (avoids mid-session takeover on iPhone).
+  event.waitUntil(precacheShell());
 });
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches
-      .keys()
-      .then((keys) =>
-        Promise.all(keys.filter((k) => !k.startsWith(VERSION)).map((k) => caches.delete(k))),
-      )
-      .then(() => self.clients.claim()),
+    (async () => {
+      const keys = await caches.keys();
+      await Promise.all(keys.filter((k) => !k.startsWith(VERSION)).map((k) => caches.delete(k)));
+      // Never claim clients: a running page is not taken over by a new worker. The next
+      // navigation (reload, relaunch) is served by this worker, which is all offline needs.
+    })(),
   );
 });
 
@@ -101,14 +158,23 @@ self.addEventListener('fetch', (event) => {
         .then((res) => {
           if (res.ok) {
             const copy = res.clone();
-            caches.open(SHELL).then((c) => c.put(root('/'), copy));
+            const p = url.pathname;
+            const isShell = p === BASE || p === `${BASE}/` || p === root('/index.html');
+            // Only the app route refreshes the root shell (+ its JS/CSS); other pages
+            // (privacy, changelog, 404) are cached under their own URL.
+            event.waitUntil(
+              isShell
+                ? cacheHtmlAndAssets(root('/'), copy)
+                : caches.open(SHELL).then((c) => putOk(c, request, copy)),
+            );
           }
           return res;
         })
         .catch(() =>
           caches
-            .match(root('/'))
-            .then((r) => r || caches.match(root('/offline.html')) || caches.match(request)),
+            .match(request)
+            .then((r) => r || caches.match(root('/')))
+            .then((r) => r || caches.match(root('/offline.html'))),
         ),
     );
     return;

@@ -185,7 +185,7 @@ export function MealPlannerDrawer({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={motionReduce(reduce)}
-          className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 p-0 backdrop-blur-sm sm:items-center sm:p-4"
+          data-overlay className="fixed inset-0 z-[80] flex items-end justify-center bg-black/50 p-0 pb-[env(safe-area-inset-bottom,0px)] backdrop-blur-sm sm:items-center sm:p-4"
           onClick={closeHandler}
         >
           <motion.aside

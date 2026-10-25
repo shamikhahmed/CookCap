@@ -195,7 +195,7 @@ export function ProfilesDrawer({ open, onClose }: { open: boolean; onClose: () =
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={motionReduce(reduce)}
-          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+          data-overlay className="fixed inset-0 z-[80] bg-black/50 backdrop-blur-sm"
           onClick={closeHandler}
         >
           <motion.aside

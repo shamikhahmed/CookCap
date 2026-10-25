@@ -2,12 +2,22 @@
 
 import { useEffect, useState } from 'react';
 
-/** Quiet connectivity chip — offline cooking still works from cache. */
+const HIDE_MS = 4500;
+
+/**
+ * Quiet connectivity banner under the header — offline cooking still works.
+ * Auto-hides after a few seconds; role=status for screen readers.
+ */
 export function OfflineChip() {
   const [online, setOnline] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const sync = () => setOnline(navigator.onLine);
+    const sync = () => {
+      const on = navigator.onLine;
+      setOnline(on);
+      if (!on) setVisible(true);
+    };
     sync();
     window.addEventListener('online', sync);
     window.addEventListener('offline', sync);
@@ -17,12 +27,19 @@ export function OfflineChip() {
     };
   }, []);
 
-  if (online) return null;
+  useEffect(() => {
+    if (online || !visible) return;
+    const t = window.setTimeout(() => setVisible(false), HIDE_MS);
+    return () => window.clearTimeout(t);
+  }, [online, visible]);
+
+  if (online || !visible) return null;
 
   return (
     <div
       role="status"
-      className="pointer-events-none fixed left-1/2 top-[max(0.5rem,env(safe-area-inset-top))] z-[90] -translate-x-1/2 rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] px-3 py-1.5 text-xs font-medium text-[color:var(--color-ink-soft)] shadow-[var(--shadow-md)]"
+      data-offline-banner=""
+      className="relative z-[55] shrink-0 border-b border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)] px-4 py-1.5 text-center text-xs font-medium text-[color:var(--color-ink-soft)]"
     >
       Offline — book still works on this device
     </div>

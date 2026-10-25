@@ -1,12 +1,13 @@
 'use client';
 
 import { useEffect, useLayoutEffect, useRef, type RefObject } from 'react';
+import { lockScroll, unlockScroll } from '@/lib/scroll-lock';
 
 const FOCUSABLE =
   'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 /**
- * Dialog a11y: lock body scroll, focus first control, Tab-trap inside panel,
+ * Dialog a11y: iOS-safe scroll lock, focus first control (preventScroll), Tab-trap,
  * Escape → onClose, restore focus to opener on unmount.
  *
  * `onClose` is held in a ref so callers can pass inline lambdas without
@@ -16,7 +17,7 @@ export function useDialogA11y(
   open: boolean,
   onClose: () => void,
   panelRef: RefObject<HTMLElement | null>,
-  opts?: { initialFocus?: 'first' | 'none' },
+  opts?: { initialFocus?: 'first' | 'none' | 'panel' },
 ) {
   const openerRef = useRef<HTMLElement | null>(null);
   const onCloseRef = useRef(onClose);
@@ -30,14 +31,18 @@ export function useDialogA11y(
     if (!open) return;
 
     openerRef.current = document.activeElement as HTMLElement | null;
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
+    lockScroll();
 
     const panel = panelRef.current;
     const focusFirst = () => {
-      if (!panel || initial === 'none') return;
+      if (!panel) return;
+      if (initial === 'none') return;
+      if (initial === 'panel') {
+        panel.focus({ preventScroll: true });
+        return;
+      }
       const el = panel.querySelector<HTMLElement>(FOCUSABLE);
-      el?.focus();
+      el?.focus({ preventScroll: true });
     };
     const raf = requestAnimationFrame(focusFirst);
 
@@ -61,11 +66,11 @@ export function useDialogA11y(
       if (e.shiftKey) {
         if (document.activeElement === first || !panel.contains(document.activeElement)) {
           e.preventDefault();
-          last.focus();
+          last.focus({ preventScroll: true });
         }
       } else if (document.activeElement === last || !panel.contains(document.activeElement)) {
         e.preventDefault();
-        first.focus();
+        first.focus({ preventScroll: true });
       }
     };
 
@@ -73,11 +78,11 @@ export function useDialogA11y(
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener('keydown', onKey, true);
-      document.body.style.overflow = prevOverflow;
+      unlockScroll();
       const opener = openerRef.current;
       if (opener && typeof opener.focus === 'function') {
         try {
-          opener.focus();
+          opener.focus({ preventScroll: true });
         } catch {
           /* detached */
         }

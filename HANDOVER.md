@@ -1,6 +1,6 @@
 # CookCap — Handover
 
-Heirloom family cookbook PWA (Cap family). Version **3.7.1**.
+Heirloom family cookbook PWA (Cap family). Version **3.7.8**.
 
 ## Live
 
@@ -10,7 +10,7 @@ Next `output: 'export'` + Actions Pages. `NEXT_PUBLIC_BASE_PATH=/CookCap` on CI.
 
 ## Stack
 
-Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v4 (`cookcap`, migrates `jia-cooks`) · SW `cookcap-v44`
+Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v4 (`cookcap`, migrates `jia-cooks`) · SW `cookcap-v378`
 
 Heroes locked: `src/lib/recipes/images.lock.json` — rematch/fill need `--force-unlock`.  
 Gates: `gate:recipes` · `gate:anti-2d` · `gate:wood` · `smoke:product` (CI after build).  
@@ -19,12 +19,13 @@ User media: IDB `user-heroes` + `cover-image`; fork merge in `buildLeaves`.
 Serve with → `src/lib/recipes/serve-with.ts`. Phase map: `docs/ROADMAP.md`. Hard nos: `docs/SECURITY.md`.  
 **Claude review entry:** `docs/REVIEW-PACK.md`
 
-## Appearance (v3.7.1)
+## Appearance (v3.7.6)
 
 - Default skin **Editorial** supports light cream paper **and** night paper dark (`#17140f` / cream ink `#efe6d6` / muted gold rules)
-- Appearance → Dark / Auto works on Editorial (not only Modern); `skinSupportsThemeToggle` includes `editorial`
-- Tokens: `:root[data-skin='editorial'][data-theme='dark']` + `prefers-color-scheme` Auto in `src/app/globals.css`
+- Appearance → Dark / Auto / System: boot + `applyTheme` always set resolved `data-theme=light|dark` (HIG `--label` / `--glass` stay coherent under OS dark)
+- Tokens: `src/design/tokens.css` (HIG) + `src/app/globals.css` skins; cover foil AA via `--color-gold-text` / `--foil-*`
 - Photos unchanged across themes
+- Prod-ready evidence: `qa/prod-ready/REPORT.md`
 
 ## Run
 

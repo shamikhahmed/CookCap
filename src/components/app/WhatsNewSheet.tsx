@@ -8,6 +8,24 @@ import { fadeTransition } from '@/lib/motion';
 const KEY = 'cookcap-whats-new';
 
 const NOTES: Record<string, string[]> = {
+  '3.7.8': [
+    'The cookbook opens even with no connection',
+    'Chapter tabs are easier to read',
+    'A small note tells you when you’re offline, then gets out of the way',
+  ],
+  '3.7.7': [
+    'Sheets no longer hide behind the page bar',
+    'Jump straight to any page number',
+    'Easier-to-read cover text',
+  ],
+  '3.7.6': [
+    'Header and page bar are easier to read at night',
+    'Clearer labels on the cover and recipe photos',
+  ],
+  '3.7.5': [
+    'HIG chrome — floating glass page bar, copper tint tokens, quieter sheets',
+    'Smoother iPhone sheets — scroll stays put when drawers open',
+  ],
   '3.7.3': [
     'Accessibility — copper buttons and labels meet WCAG AA on parchment and gradients',
   ],
@@ -84,6 +102,12 @@ export function WhatsNewSheet() {
     }
   }, [reduce]);
 
+  useEffect(() => {
+    const openSheet = () => setOpen(true);
+    window.addEventListener('cookcap-open-whats-new', openSheet);
+    return () => window.removeEventListener('cookcap-open-whats-new', openSheet);
+  }, []);
+
   const dismiss = () => {
     try {
       localStorage.setItem(KEY, APP_VERSION);
@@ -107,20 +131,25 @@ export function WhatsNewSheet() {
       {open && (
           <motion.div
             role="dialog"
+            aria-modal="true"
             aria-labelledby="whats-new-title"
             initial={{ opacity: 0, y: reduce ? 0 : -8, scale: reduce ? 1 : 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: reduce ? 0 : -6 }}
             transition={fadeTransition(reduce, 200)}
-            className="fixed top-[max(4.75rem,calc(env(safe-area-inset-top)+3.75rem))] right-[max(0.75rem,env(safe-area-inset-right))] z-[94] w-[min(17.5rem,calc(100vw-1.5rem))] rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] p-3 shadow-[var(--shadow-lg)]"
+            data-overlay="whats-new"
+            className="fixed top-[max(4.75rem,calc(env(safe-area-inset-top)+3.75rem))] right-[max(0.75rem,env(safe-area-inset-right))] z-[94] w-[min(17.5rem,calc(100vw-1.5rem))] rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] p-3.5 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[var(--shadow-lg)]"
           >
             <h2
               id="whats-new-title"
-              className="font-serif text-base text-[color:var(--color-ink)]"
+              className="font-serif text-lg text-[color:var(--color-ink)]"
             >
               What’s new
             </h2>
-            <ul className="mt-1.5 list-disc space-y-0.5 pl-4 text-xs leading-snug text-[color:var(--color-ink-soft)]">
+            <p className="mt-0.5 text-[length:var(--t-caption)] text-[color:var(--color-ink-faint)]">
+              CookCap {APP_VERSION}
+            </p>
+            <ul className="mt-2 list-disc space-y-1 pl-4 text-xs leading-snug text-[color:var(--color-ink-soft)]">
               {bullets.map((b) => (
                 <li key={b}>{b}</li>
               ))}
@@ -128,7 +157,7 @@ export function WhatsNewSheet() {
             <button
               type="button"
               onClick={dismiss}
-              className="mt-2.5 min-h-11 w-full rounded-full bg-[color:var(--color-accent)] text-sm font-medium text-white"
+              className="mt-3 min-h-11 w-full rounded-full bg-[color:var(--color-accent)] text-sm font-medium text-white"
             >
               Got it
             </button>

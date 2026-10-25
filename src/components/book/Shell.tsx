@@ -1,7 +1,8 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { BookController, useBook } from './BookController';
 import { Book } from './Book';
@@ -25,6 +26,7 @@ import { Icon } from '@/components/ui/Icon';
 import { PRODUCT_NAME, kitchenLine } from '@/lib/edition';
 import { getMode } from '@/lib/modes/registry';
 import { t } from '@/lib/i18n/strings';
+import { useDialogA11y } from '@/lib/a11y/dialog';
 import { TopChapterBar } from './BookmarkRail';
 import { CART_BUMP_EVENT, prefersReducedMotion } from '@/lib/motion';
 
@@ -156,11 +158,10 @@ function Frame() {
   const firstRunGate = needsName;
 
   return (
-    <div className="journal-desk flex h-[100dvh] flex-col">
+    <div className="journal-desk flex h-[100dvh] min-h-[100dvh] flex-col">
       <a href="#book-main" className="sr-only skip-to-book">
         Skip to book
       </a>
-      <OfflineChip />
       <SwUpdateToast />
       <WhatsNewSheet />
       {guestActive && (
@@ -213,6 +214,7 @@ function Frame() {
           onPantry={() => setPantryOpen(true)}
           onAbout={() => setAboutOpen(true)}
         />
+        <OfflineChip />
 
         <main
           id="book-main"
@@ -376,7 +378,7 @@ function TopBar({
 
   return (
     <header className="app-header relative z-50 flex shrink-0 items-center justify-between gap-2 sm:gap-3">
-      <div className="flex min-w-0 items-center gap-2 text-[color:var(--color-ink)]">
+      <div className="flex min-w-0 items-center gap-2 text-[color:var(--label,var(--color-ink))]">
         <Icon name="book" size={20} aria-hidden />
         <div className="min-w-0 leading-tight">
           <span className="block whitespace-nowrap font-serif text-base font-semibold italic tracking-tight sm:text-lg">
@@ -451,7 +453,7 @@ function TopBar({
           title={
             shoppingCount > 0 ? `Shopping list (${shoppingCount})` : 'Shopping list'
           }
-          className="relative grid size-11 min-h-11 min-w-11 shrink-0 place-items-center rounded-full text-[color:var(--color-ink-soft)] transition-all hover:bg-[color:var(--color-paper-sunk)] hover:text-[color:var(--color-ink)] active:scale-90"
+          className="relative grid size-11 min-h-11 min-w-11 shrink-0 place-items-center rounded-full text-[color:var(--label,var(--color-ink))] transition-all hover:bg-[color:var(--fill,var(--color-paper-sunk))] active:scale-90"
         >
           <Icon name="cart" size={20} />
           {(shoppingCount > 0 || cartBump) && (
@@ -606,12 +608,37 @@ function BottomBar() {
   const { ready, customs } = useApp();
   const [gotoOpen, setGotoOpen] = useState(false);
   const [draft, setDraft] = useState('');
-  const gotoRef = useRef<HTMLDivElement>(null);
+  const [gotoPos, setGotoPos] = useState<{ left: number; bottom: number } | null>(null);
+  const gotoBtnRef = useRef<HTMLButtonElement>(null);
+  const gotoPanelRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const JUMP = 5;
   const busy = locked || turning;
   const extras = customs.length;
   const maxIdx = Math.max(0, total - 1);
+
+  useLayoutEffect(() => {
+    if (!gotoOpen) {
+      setGotoPos(null);
+      return;
+    }
+    const place = () => {
+      const btn = gotoBtnRef.current;
+      if (!btn) return;
+      const r = btn.getBoundingClientRect();
+      setGotoPos({
+        left: Math.min(Math.max(12, r.left + r.width / 2), window.innerWidth - 12),
+        bottom: Math.max(12, window.innerHeight - r.top + 8),
+      });
+    };
+    place();
+    window.addEventListener('resize', place);
+    window.addEventListener('scroll', place, true);
+    return () => {
+      window.removeEventListener('resize', place);
+      window.removeEventListener('scroll', place, true);
+    };
+  }, [gotoOpen]);
 
   useEffect(() => {
     if (!gotoOpen) return;
@@ -620,22 +647,18 @@ function BottomBar() {
     return () => window.clearTimeout(t);
   }, [gotoOpen, index]);
 
+  // Esc, Tab trap, scroll lock and focus return to the page counter
+  useDialogA11y(gotoOpen, () => setGotoOpen(false), gotoPanelRef);
+
   useEffect(() => {
     if (!gotoOpen) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setGotoOpen(false);
-    };
     const onDoc = (e: MouseEvent) => {
-      if (gotoRef.current && !gotoRef.current.contains(e.target as Node)) {
-        setGotoOpen(false);
-      }
+      const t = e.target as Node;
+      if (gotoPanelRef.current?.contains(t) || gotoBtnRef.current?.contains(t)) return;
+      setGotoOpen(false);
     };
-    window.addEventListener('keydown', onKey);
     document.addEventListener('mousedown', onDoc);
-    return () => {
-      window.removeEventListener('keydown', onKey);
-      document.removeEventListener('mousedown', onDoc);
-    };
+    return () => document.removeEventListener('mousedown', onDoc);
   }, [gotoOpen]);
 
   const submitGoto = () => {
@@ -687,12 +710,13 @@ function BottomBar() {
         />
       </label>
 
-      <div className="relative" ref={gotoRef}>
+      <div className="relative">
         <button
+          ref={gotoBtnRef}
           type="button"
           disabled={!ready || busy}
           onClick={() => setGotoOpen((v) => !v)}
-          className="min-h-11 min-w-[3.25rem] shrink-0 rounded-full px-2 text-center text-xs tabular-nums text-[color:var(--color-ink)] hover:bg-[color:var(--color-paper-sunk)] disabled:opacity-30 sm:min-w-14"
+          className="min-h-11 min-w-[3.25rem] shrink-0 rounded-full px-2 text-center text-xs font-medium tabular-nums text-[color:var(--label,var(--color-ink))] hover:bg-[color:var(--fill,var(--color-paper-sunk))] disabled:opacity-45 sm:min-w-14"
           title={
             extras > 0
               ? `Go to page — this edition: ${total} pages (includes ${extras} imported).`
@@ -705,48 +729,74 @@ function BottomBar() {
           {ready ? `${index + 1} / ${total}` : '…'}
         </button>
 
-        <AnimatePresence>
-          {gotoOpen && (
-            <motion.div
-              role="dialog"
-              aria-label="Go to page"
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 6 }}
-              transition={{ duration: 0.15 }}
-              className="absolute bottom-[calc(100%+0.5rem)] left-1/2 z-40 w-[11.5rem] -translate-x-1/2 rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] p-3 shadow-[var(--shadow-lg)]"
-            >
-              <p className="mb-2 text-xs uppercase tracking-[0.16em] text-[color:var(--color-ink-faint)]">
-                Go to page
-              </p>
-              <form
-                className="flex gap-2"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  submitGoto();
-                }}
-              >
-                <input
-                  ref={inputRef}
-                  type="number"
-                  inputMode="numeric"
-                  min={1}
-                  max={total}
-                  value={draft}
-                  onChange={(e) => setDraft(e.target.value)}
-                  className="min-h-11 w-full rounded-lg border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-2 text-center text-sm tabular-nums text-[color:var(--color-ink)]"
-                  aria-label={`Page number, 1 to ${total}`}
-                />
-                <button
-                  type="submit"
-                  className="min-h-11 shrink-0 rounded-full bg-[color:var(--color-accent)] px-3 text-sm font-medium text-white"
+        {typeof document !== 'undefined' &&
+          createPortal(
+            <AnimatePresence>
+              {gotoOpen && (
+                <motion.div
+                  ref={gotoPanelRef}
+                  role="dialog"
+                  aria-label="Go to page"
+                  data-goto-popover=""
+                  /* Centre via motion's x — a style.transform would be overwritten by the y animation */
+                  initial={{ opacity: 0, x: '-50%', y: 6 }}
+                  animate={{ opacity: 1, x: '-50%', y: 0 }}
+                  exit={{ opacity: 0, x: '-50%', y: 6 }}
+                  transition={{ duration: 0.15 }}
+                  style={{
+                    position: 'fixed',
+                    left: gotoPos?.left ?? '50%',
+                    bottom: gotoPos?.bottom ?? 88,
+                    zIndex: 90,
+                    /* Solid sheet — never inherit glass footer backdrop-filter */
+                    background: 'var(--color-paper-raised, #fbf7ee)',
+                    WebkitBackdropFilter: 'none',
+                    backdropFilter: 'none',
+                  }}
+                  className="w-[13.5rem] rounded-xl border border-[color:var(--color-line)] p-3 shadow-[var(--shadow-lg)]"
                 >
-                  Go
-                </button>
-              </form>
-            </motion.div>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-[color:var(--color-ink-soft)]">
+                    Go to page
+                  </p>
+                  <form
+                    className="flex flex-col gap-2"
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      submitGoto();
+                    }}
+                  >
+                    <input
+                      ref={inputRef}
+                      type="number"
+                      inputMode="numeric"
+                      min={1}
+                      max={total}
+                      value={draft}
+                      onChange={(e) => setDraft(e.target.value)}
+                      className="min-h-11 w-full rounded-lg border border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-2 text-center text-base tabular-nums text-[color:var(--color-ink)]"
+                      aria-label={`Page number, 1 to ${total}`}
+                    />
+                    <div className="flex gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setGotoOpen(false)}
+                        className="min-h-11 flex-1 rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-paper-sunk)] px-3 text-sm font-medium text-[color:var(--color-ink)]"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        type="submit"
+                        className="min-h-11 flex-1 rounded-full bg-[color:var(--color-accent)] px-3 text-sm font-medium text-white"
+                      >
+                        Go
+                      </button>
+                    </div>
+                  </form>
+                </motion.div>
+              )}
+            </AnimatePresence>,
+            document.body,
           )}
-        </AnimatePresence>
       </div>
 
       <IconBtn label="Next page" onClick={next} disabled={atEnd || busy}>
@@ -764,7 +814,7 @@ function BottomBar() {
 
       <button
         type="button"
-        className="min-h-11 rounded-full px-2.5 py-2.5 font-serif text-xs font-semibold text-[color:var(--color-ink-soft)] hover:bg-[color:var(--color-paper-sunk)] sm:hidden disabled:opacity-30"
+        className="min-h-11 rounded-full px-2.5 py-2.5 font-serif text-xs font-semibold text-[color:var(--label,var(--color-ink))] hover:bg-[color:var(--fill,var(--color-paper-sunk))] sm:hidden disabled:opacity-45"
         aria-label="Open chapter tabs"
         disabled={busy}
         onClick={() => window.dispatchEvent(new Event('cookcap-open-chapters'))}
@@ -798,7 +848,7 @@ function IconBtn({
       aria-label={label}
       aria-expanded={ariaExpanded}
       title={label}
-      className={`grid size-11 min-h-11 min-w-11 shrink-0 place-items-center rounded-full text-[color:var(--color-ink-soft)] transition-all hover:bg-[color:var(--color-paper-sunk)] hover:text-[color:var(--color-ink)] active:scale-90 disabled:pointer-events-none disabled:opacity-30 ${className}`}
+      className={`grid size-11 min-h-11 min-w-11 shrink-0 place-items-center rounded-full text-[color:var(--label,var(--color-ink))] transition-all hover:bg-[color:var(--fill,var(--color-paper-sunk))] active:scale-90 disabled:pointer-events-none disabled:opacity-45 ${className}`}
     >
       {children}
     </button>

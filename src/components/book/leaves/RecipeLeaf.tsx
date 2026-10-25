@@ -358,8 +358,12 @@ function RecipeContent({ recipe, prefetch = false }: { recipe: Recipe; prefetch?
             From our family kitchen
           </span>
           <p
-            className="mt-1 font-sans text-xs font-semibold tracking-[0.02em]"
-            style={{ color: chapter.tab }}
+            className="hero-cuisine mt-1 font-sans text-xs font-semibold tracking-[0.02em]"
+            style={{
+              /* Chapter tab greens/reds sit <3:1 on photo scrims — lift hard toward white + shadow. */
+              color: `color-mix(in srgb, ${chapter.tab} 28%, white)`,
+              textShadow: '0 1px 2px rgba(0,0,0,0.9), 0 0 10px rgba(0,0,0,0.55)',
+            }}
           >
             {recipe.cuisine}
           </p>
