@@ -12,4 +12,4 @@ PASS  sheet keeps scroll position
 PASS  inputs ≥16px (no zoom-on-focus)
 PASS  no reload during session
 PASS  SW: skipWaiting only on user request
-PASS  SW: clients.claim on activate (not install)
+PASS  SW: no auto clients.claim
