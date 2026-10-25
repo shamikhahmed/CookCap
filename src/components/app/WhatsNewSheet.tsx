@@ -120,7 +120,8 @@ export function WhatsNewSheet() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: reduce ? 0 : -6 }}
             transition={fadeTransition(reduce, 200)}
-            className="fixed top-[max(4.75rem,calc(env(safe-area-inset-top)+3.75rem))] right-[max(0.75rem,env(safe-area-inset-right))] z-[94] w-[min(17.5rem,calc(100vw-1.5rem))] rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] p-3 shadow-[var(--shadow-lg)]"
+            data-overlay="whats-new"
+            className="fixed top-[max(4.75rem,calc(env(safe-area-inset-top)+3.75rem))] right-[max(0.75rem,env(safe-area-inset-right))] z-[94] w-[min(17.5rem,calc(100vw-1.5rem))] rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper-raised)] p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[var(--shadow-lg)]"
           >
             <h2
               id="whats-new-title"

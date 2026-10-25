@@ -44,6 +44,15 @@ body {
 
 /* ---------- Floating glass page bar (CookCap's bottom chrome) ---------- */
 
+/*
+  Sheets/drawers mount at z≥80 (data-overlay). Hide the glass page bar while any
+  overlay is open so it never paints through a translucent sheet edge.
+*/
+.journal-desk:has([data-overlay]) .app-footer {
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .journal-desk > footer.app-footer,
 .app-footer {
   position: fixed !important;

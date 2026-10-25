@@ -91,7 +91,8 @@ export function FavoritesDrawer({ open, onClose }: { open: boolean; onClose: () 
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={motionReduce(reduce)}
-          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+          data-overlay="favorites"
+          className="fixed inset-0 z-[80] bg-black/50 backdrop-blur-sm"
           onClick={closeHandler}
         >
           <motion.aside
@@ -101,7 +102,7 @@ export function FavoritesDrawer({ open, onClose }: { open: boolean; onClose: () 
             exit={{ x: '100%' }}
             transition={motionReduce(reduce)}
             onClick={(e) => e.stopPropagation()}
-            className="absolute right-0 top-0 flex h-full w-full max-w-sm flex-col bg-[color:var(--color-paper-raised)] shadow-[var(--shadow-lg)]"
+            className="absolute right-0 top-0 flex h-full w-full max-w-sm flex-col bg-[color:var(--color-paper-raised)] pb-[env(safe-area-inset-bottom,0px)] shadow-[var(--shadow-lg)]"
             role="dialog"
             aria-modal="true"
             aria-labelledby="favorites-drawer-title"
@@ -130,7 +131,7 @@ export function FavoritesDrawer({ open, onClose }: { open: boolean; onClose: () 
               </button>
             </div>
 
-            <div className="min-h-0 flex-1 overflow-y-auto px-5 py-4">
+            <div className="min-h-0 flex-1 overflow-y-auto px-5 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
               {editing ? (
                 <CustomEditor
                   recipe={editing}

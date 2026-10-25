@@ -159,7 +159,8 @@ export function SearchOverlay({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={reduce ? { duration: 0 } : { duration: 0.15 }}
-          className="fixed inset-0 z-50 flex items-start justify-center bg-black/55 p-3 backdrop-blur-md sm:pt-[12vh]"
+          data-overlay="search"
+          className="fixed inset-0 z-[80] flex items-start justify-center bg-black/55 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-md sm:pt-[12vh]"
           onClick={onClose}
         >
           <motion.div

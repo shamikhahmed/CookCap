@@ -313,7 +313,8 @@ export function BookmarkRail() {
       <AnimatePresence>
         {sheetOpen && (
           <motion.div
-            className="fixed inset-0 z-50 flex justify-end"
+            data-overlay="chapters"
+            className="fixed inset-0 z-[80] flex justify-end"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -334,7 +335,7 @@ export function BookmarkRail() {
               animate={{ x: 0 }}
               exit={{ x: 48 }}
               transition={motionReduce(reduce)}
-              className={`journal-sheet relative flex h-full w-[min(18rem,90vw)] flex-col gap-2 overflow-y-auto p-5 shadow-[var(--shadow-lg)]${
+              className={`journal-sheet relative flex h-full w-[min(18rem,90vw)] flex-col gap-2 overflow-y-auto p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] shadow-[var(--shadow-lg)]${
                 woodSheet ? ' journal-sheet--wood' : ''
               }`}
             >

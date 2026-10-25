@@ -95,7 +95,7 @@ export function ImportModal({ open, onClose }: { open: boolean; onClose: () => v
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={motionReduce(reduce)}
-          className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm sm:items-center sm:p-6"
+          data-overlay className="fixed inset-0 z-[80] flex items-end justify-center bg-black/50 pb-[env(safe-area-inset-bottom,0px)] backdrop-blur-sm sm:items-center sm:p-6"
           onClick={close}
         >
           <motion.div

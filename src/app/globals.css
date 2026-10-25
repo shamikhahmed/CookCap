@@ -1244,8 +1244,9 @@
   /* fixed glass float set in src/design/cookcap.css (HIG) */
   z-index: 60;
 }
-.journal-desk > [data-overlay] {
-  position: relative;
+.journal-desk > [data-overlay],
+.journal-desk [data-overlay],
+[data-overlay] {
   z-index: 80;
 }
 
