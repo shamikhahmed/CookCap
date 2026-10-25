@@ -17,12 +17,29 @@ body {
   overscroll-behavior-y: auto;
 }
 
+/*
+  Book reader is a full-height surface: .book-stage → .book-table → .book-frame → leaf
+  all use flex:1 / height:100%. Those % heights need a definite containing block.
+  Do NOT set height:auto on .journal-desk — that collapses the cover to ~content size
+  (~35vh) and stacks absolute cover chrome on top of itself.
+  Footer is position:fixed (out of flow); padding-bottom clears the glass page bar.
+  html/body stay overflow:auto (no overflow:hidden) for iOS rubber-band.
+*/
 .journal-desk {
   min-height: 100dvh;
-  height: auto !important;
-  /* Room for floating glass page bar */
+  height: 100dvh;
+  /* Room for floating glass page bar — leaf content ends above this band */
   padding-bottom: calc(var(--tabbar-h) + 48px + env(safe-area-inset-bottom, 0px));
   box-sizing: border-box;
+}
+
+/* Floor for the stage so percent-height leaves never shrink if flex math wobbles.
+   Desk padding-bottom already clears the glass bar; do not also pad leaf scrollers
+   (that would double-count empty space inside the page). */
+.journal-desk .journal-stage {
+  min-height: calc(
+    100dvh - var(--header-h) - var(--safe-t) - (var(--tabbar-h) + 48px + env(safe-area-inset-bottom, 0px))
+  );
 }
 
 /* ---------- Floating glass page bar (CookCap's bottom chrome) ---------- */
