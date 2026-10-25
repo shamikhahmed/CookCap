@@ -127,6 +127,13 @@ body {
   }
 }
 
+/* Search keyboard hints — desktop / trackpad only */
+@media (hover: hover) and (pointer: fine) {
+  .search-kbd-hints {
+    display: flex;
+  }
+}
+
 @layer components {
 
 input:not([type='range']):not([type='checkbox']):not([type='radio']),

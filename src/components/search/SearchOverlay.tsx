@@ -391,7 +391,8 @@ export function SearchOverlay({
               })}
             </ul>
 
-            <div className="flex items-center justify-between border-t border-[color:var(--color-line)] px-4 py-2 text-xs text-[color:var(--color-ink-faint)]">
+            {/* Keyboard chrome only when a fine pointer + hover exist (not phones). */}
+            <div className="search-kbd-hints hidden items-center justify-between border-t border-[color:var(--color-line)] px-4 py-2 text-xs text-[color:var(--color-ink-faint)]">
               <span>↑↓ navigate · ↵ open</span>
               <span>{isMac ? '⌘K' : 'Ctrl+K'} anytime</span>
             </div>
