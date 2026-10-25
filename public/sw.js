@@ -8,14 +8,16 @@
   - /_next/static/* → cache-first (content-hashed, immutable)
   - other same-origin assets → stale-while-revalidate
   - install: precache shell HTML + its script/link assets so offline reload reaches the book
-  - install/activate: NEVER auto skipWaiting / clients.claim (HIG iPhone recipe).
-    New SW waits; SwUpdateToast posts SKIP_WAITING on user Reload only.
-    First install still activates via ServiceWorker.tsx when no controller yet.
+  - install: NEVER auto skipWaiting (HIG iPhone recipe). New SW waits;
+    SwUpdateToast posts SKIP_WAITING on user Reload only.
+    First install still skipWaiting via ServiceWorker.tsx when no controller yet.
+  - activate: clients.claim() so the page is controlled after first install / Reload
+    (otherwise offline navigations bypass the SW and chunk caches never fill).
 
   Works under GitHub Pages project path (/CookCap/) by deriving BASE from the
   script URL. Local/static export root uses BASE ''.
 */
-const VERSION = 'cookcap-v377';
+const VERSION = 'cookcap-v378';
 const SHELL = `${VERSION}-shell`;
 const ASSETS = `${VERSION}-assets`;
 const BASE = new URL('./', self.location.href).pathname.replace(/\/$/, '');
@@ -100,11 +102,13 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches
-      .keys()
-      .then((keys) =>
-        Promise.all(keys.filter((k) => !k.startsWith(VERSION)).map((k) => caches.delete(k))),
-      ),
+    (async () => {
+      const keys = await caches.keys();
+      await Promise.all(keys.filter((k) => !k.startsWith(VERSION)).map((k) => caches.delete(k)));
+      // Take control after first install (skipWaiting) or user Reload (SwUpdateToast).
+      // Without claim, navigations never hit this SW — offline reload stays on splash/chunk errors.
+      await self.clients.claim();
+    })(),
   );
 });
 

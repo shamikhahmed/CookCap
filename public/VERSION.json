@@ -1,7 +1,7 @@
 {
   "name": "CookCap",
-  "version": "3.7.7",
-  "swCache": "cookcap-v377",
+  "version": "3.7.8",
+  "swCache": "cookcap-v378",
   "updated": "2026-10-25",
   "notes": "Offline shell precaches JS/CSS; sheets above page bar; cover AA"
 }
