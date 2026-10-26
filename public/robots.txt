@@ -1,2 +1,8 @@
+# CookCap — allow marketing pages to be crawled.
+# App shell (index.html / SPA) stays noindex via <meta name="robots"> — intentional.
 User-agent: *
-Disallow: /
+Allow: /
+
+Disallow: /offline.html
+
+Sitemap: https://shamikhahmed.github.io/CookCap/sitemap.xml
