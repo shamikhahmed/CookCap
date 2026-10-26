@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CookCap 3.7 — Presentation</title><meta name="description" content="CookCap 3.7 in eight slides.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://shamikhahmed.github.io/CookCap/presentation.html">
+<meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="site/site.css"></head>
+<body><main class="deck" id="deck">
+<section class="slide" id="s1" aria-label="Slide 1: CookCap 3.7"><div class="wrap"><div class="row"><div><p class="eyebrow">CookCap 3.7.8</p><h1>Your family cookbook, kept like a real book.</h1><p class="lead">Capricorn Systems · 2026</p></div><div class="row-media"><div class="phone"><img src="site/cover.webp" alt="CookCap cover" width="560" height="1212" loading="eager"></div></div></div></div></section>
+<section class="slide" id="s2" aria-label="Slide 2: Problem"><div class="wrap"><div style="max-width:820px"><p class="eyebrow">Problem</p><h2>Great recipes. Nowhere to keep them.</h2><p class="lead">Screenshots, chats, and cloud apps don’t feel like the hardcover on the counter.</p></div></div></section>
+<section class="slide" id="s3" aria-label="Slide 3: Book"><div class="wrap"><div class="row"><div><p class="eyebrow">Book</p><h2>Leather, wood, and paper tabs.</h2><p class="lead">Name the edition. Flip cover → contents → chapters on a wooden desk with a page scrubber.</p></div><div class="row-media"><div class="phone"><img src="site/contents.webp" alt="CookCap contents" width="560" height="1212" loading="lazy"></div></div></div></div></section>
+<section class="slide" id="s4" aria-label="Slide 4: Catalog"><div class="wrap"><div class="row"><div><p class="eyebrow">Catalog</p><h2>790 recipes, offline.</h2><p class="lead">Family editorial plus a local world table — one honest hero each. No live MealDB branding.</p></div><div class="row-media"><div class="phone"><img src="site/recipe.webp" alt="CookCap recipe" width="560" height="1212" loading="lazy"></div></div></div></div></section>
+<section class="slide" id="s5" aria-label="Slide 5: Cook"><div class="wrap"><div class="row"><div><p class="eyebrow">Cook</p><h2>Start cooking. Optional lenses.</h2><p class="lead">Focused cook mode when you need it. Plate, Mother, Budget, Ramadan and more stay additive.</p></div><div class="row-media"><div class="phone"><img src="site/cook.webp" alt="CookCap cook mode" width="560" height="1212" loading="lazy"></div></div></div></div></section>
+<section class="slide" id="s6" aria-label="Slide 6: Plan"><div class="wrap"><div class="row"><div><p class="eyebrow">Plan</p><h2>Search, shop, and plan the week.</h2><p class="lead">Smart phrases, shopping list, meal planner — stored on device with the rest of the edition.</p></div><div class="row-media"><div class="phone"><img src="site/shopping.webp" alt="CookCap shopping list" width="560" height="1212" loading="lazy"></div></div></div></div></section>
+<section class="slide" id="s7" aria-label="Slide 7: Privacy"><div class="wrap"><div style="max-width:820px"><p class="eyebrow">Privacy</p><h2>No account. No tracking.</h2><p class="lead">Local-first by design. Static assets from GitHub Pages; your kitchen data never leaves the device.</p></div></div></section>
+<section class="slide" id="s8" aria-label="Slide 8: Next"><div class="wrap"><div style="max-width:820px"><p class="eyebrow">Next</p><h2>App Store packaging. Same book.</h2><p class="lead">PWA live today. <a href="./">Open CookCap →</a></p></div></div></section>
+</main><div class="slide-num" id="num" aria-live="polite">1 / 8</div>
+<script>
+(() => {
+  const deck = document.getElementById('deck'), slides = [...deck.querySelectorAll('.slide')], num = document.getElementById('num');
+  const cur = () => Math.round(deck.scrollTop / deck.clientHeight);
+  const go = (i) => slides[Math.max(0, Math.min(slides.length - 1, i))].scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  deck.addEventListener('scroll', () => { num.textContent = (cur() + 1) + ' / ' + slides.length; }, { passive: true });
+  addEventListener('keydown', (e) => {
+    if (['ArrowDown', 'ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); go(cur() + 1); }
+    if (['ArrowUp', 'ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); go(cur() - 1); }
+  });
+})();
+</script></body></html>

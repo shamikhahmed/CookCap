@@ -8,18 +8,20 @@ https://shamikhahmed.github.io/CookCap/
 
 Next `output: 'export'` + Actions Pages. `NEXT_PUBLIC_BASE_PATH=/CookCap` on CI.
 
+Marketing (static, no JS bundles): `/landing.html`, `/pitch.html`, `/presentation.html`, `/support.html`, `/privacy.html`, `/terms.html` · styles `public/site/site.css`.
+
 ## Stack
 
 Next.js 15 · React 19 · TypeScript · Tailwind v4 · Motion · IndexedDB v4 (`cookcap`, migrates `jia-cooks`) · SW `cookcap-v378`
 
 Heroes locked: `src/lib/recipes/images.lock.json` — rematch/fill need `--force-unlock`.  
 Gates: `gate:recipes` · `gate:anti-2d` · `gate:wood` · `smoke:product` (CI after build).  
-Catalog: family editorial + local **world table** (`data-world-table.ts`).  
+Catalog: family editorial + local **world table** (`data-world-table.ts`) — **790** via `getCatalogRecipeCount()`.  
 User media: IDB `user-heroes` + `cover-image`; fork merge in `buildLeaves`.  
 Serve with → `src/lib/recipes/serve-with.ts`. Phase map: `docs/ROADMAP.md`. Hard nos: `docs/SECURITY.md`.  
 **Claude review entry:** `docs/REVIEW-PACK.md`
 
-## Appearance (v3.7.6)
+## Appearance (v3.7.6+)
 
 - Default skin **Editorial** supports light cream paper **and** night paper dark (`#17140f` / cream ink `#efe6d6` / muted gold rules)
 - Appearance → Dark / Auto / System: boot + `applyTheme` always set resolved `data-theme=light|dark` (HIG `--label` / `--glass` stay coherent under OS dark)
@@ -30,7 +32,7 @@ Serve with → `src/lib/recipes/serve-with.ts`. Phase map: `docs/ROADMAP.md`. Ha
 ## Run
 
 ```bash
-cd "/Users/shamikhahmed/Projects/Cap/Cap-Apps/CookCap"
+cd "/Users/shamikhahmed/Projects/Cap/Cap-Apps/_workspace/CookCap-hig"
 npm install && npm run dev
 npm run typecheck && npm run gate:recipes && npm run gate:anti-2d && npm run gate:wood
 npm run pages:build
@@ -41,6 +43,8 @@ GALLERY_URL=http://127.0.0.1:3456/CookCap npm run gallery
 # Dark v3 webp (same ids as light):
 GALLERY_URL=http://127.0.0.1:3456/CookCap node scripts/capture-gallery-v3-dark.mjs
 GATE_URL=http://127.0.0.1:3456/CookCap npm run gate:wood
+# Marketing capture (ports 8920–8929; outside sandbox):
+bash qa/marketing/capture.sh
 ```
 
 ## Chrome / safe areas
